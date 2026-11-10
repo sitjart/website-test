@@ -8,6 +8,8 @@ endTime: "15:00"
 venue: "Online"
 registration: "https://elixiruknode.org/activities/uk-training-club/"
 image: "https://elixiruknode.org/wp-content/uploads/2024/10/banner-person-responding-training-engage.webp"
+related:
+  activities: ["uk-training-club"]
 ---
 
 <p class="has-large-font-size">With Saskia Hiltemann, University of Freiburg.</p>

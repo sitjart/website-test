@@ -7,6 +7,8 @@ startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
 image: "https://elixiruknode.org/wp-content/uploads/2024/12/photo-lights-tunel.jpg"
+related:
+  activities: ["uk-human-data-community"]
 ---
 
 <p>We are excited to invite you to the upcoming UK Human Data Community Call. This session is a great opportunity to learn more about the ELIXIR Human Data Communities at the European level, their activities and how you can get involved.</p>

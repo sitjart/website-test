@@ -6,6 +6,10 @@ online: false
 end: 2026-05-12
 registration: "https://forms.clickup.com/20526645/f/kjdhn-17852/WRBL9B39JQEWP02HAP"
 image: "https://elixiruknode.org/wp-content/uploads/2025/06/banner-background-geometric.webp"
+related:
+  activities: ["uk-rdm-club"]
+  news: ["fair-in-action-bridge-building-the-practical-tools-rdm-professionals-need"]
+  projects: ["fair-in-action-bridge"]
 ---
 
 <p>The FAIR-in-action Bridge is a BioFAIR Pathfinder project led by the ELIXIR-UK RDM Club Coordinators to co-create two facilitator-ready playbooks: How to approach FAIRification and How to communicate and advocate FAIR.</p>

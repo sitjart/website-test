@@ -4,6 +4,9 @@ date: 2023-04-28
 standfirst: "Galaxy is an open-source FAIR data analysis platform that enables researchers to use tools from various domains, manage data, run code in interactive environments and more. The majority of the available Galaxy servers ar"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2023/04/stream-of-binary-matrix-code-numbers-on-the-screen-2023-11-27-05-34-02-utc-scaled.webp"
+related:
+  activities: ["galaxy-community"]
+  members: ["university-of-manchester"]
 ---
 
 <p><a href="https://galaxyproject.org/">Galaxy</a> is an open-source<a href="https://www.go-fair.org/fair-principles/"> FAIR</a> data analysis platform that enables researchers to use tools from various domains, manage data, run code in interactive environments and more. The majority of the available <a href="https://galaxyproject.org/use/">Galaxy servers</a> are free to use, and open to all.</p>

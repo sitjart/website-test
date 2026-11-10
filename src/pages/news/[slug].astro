@@ -2,7 +2,11 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHeader from '../../components/PageHeader.astro';
+import RemoteImage from '../../components/RemoteImage.astro';
+import SmartTabs from '../../components/SmartTabs.astro';
 import { longDate } from '../../lib/format';
+import { tagSlug } from '../../lib/graph';
+import { url } from '../../lib/url';
 
 export async function getStaticPaths() {
   const news = await getCollection('news');
@@ -10,33 +14,40 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const n = entry.data;
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'NewsArticle',
-  headline: entry.data.title,
-  datePublished: entry.data.date.toISOString().slice(0, 10),
-  image: entry.data.image,
-  description: entry.data.standfirst,
+  headline: n.title,
+  datePublished: n.date.toISOString().slice(0, 10),
+  image: n.image,
+  description: n.standfirst,
   publisher: { '@type': 'Organization', name: 'ELIXIR-UK' },
 };
 ---
-<BaseLayout title={entry.data.title} description={entry.data.standfirst} {jsonLd}>
-  <PageHeader title={entry.data.title} eyebrow={`${entry.data.category} · ${longDate(entry.data.date)}`} intro={entry.data.standfirst} />
-  <article class="section">
-    <div class="container prose">
-      {entry.data.image && <img class="prose__lead" src={entry.data.image} alt="" />}
-      <Content />
+<BaseLayout title={n.title} description={n.standfirst} {jsonLd}>
+  <PageHeader title={n.title} intro={n.standfirst} />
+  <article class="article">
+    <div class="container article__inner">
+      <p class="article__meta">
+        <a class="tag" href={url(`/news/category/${tagSlug(n.category)}/`)}>{n.category}</a>
+        <time datetime={n.date.toISOString().slice(0, 10)}>{longDate(n.date)}</time>
+      </p>
+      {n.image && <figure class="article__lead"><RemoteImage src={n.image} width={1200} loading="eager" /></figure>}
+      <div class="prose"><Content /></div>
+      <div class="article__related">
+        <SmartTabs kind="news" slug={entry.id} />
+      </div>
     </div>
   </article>
 </BaseLayout>
 
 <style>
-  .prose { max-width: 760px; font-size: 1.05rem; }
-  .prose__lead { border-radius: 8px; margin-bottom: 2rem; width: 100%; }
-  .prose :global(img) { border-radius: 6px; margin-block: 1.5rem; }
-  .prose :global(figure) { margin: 1.5rem 0; }
-  .prose :global(figcaption) { font-size: 14px; color: var(--text); text-align: left; }
-  .prose :global(h2), .prose :global(h3) { margin-top: 2rem; }
-  .prose :global(blockquote) { border-left: 3px solid var(--orange); margin: 1.5rem 0; padding-left: 1.25rem; font-style: italic; }
+  .article { padding-block: 2.5rem 5rem; }
+  .article__inner { max-width: 820px; }
+  .article__meta { display: flex; align-items: center; gap: 0.75rem; font-size: 14px; margin-bottom: 1.5rem; }
+  .article__lead { margin: 0 0 2rem; border-radius: 8px; overflow: hidden; background: var(--grey-light); }
+  .article__lead :global(img) { width: 100%; max-height: 460px; object-fit: contain; }
+  .article__related { margin-top: 3.5rem; }
 </style>

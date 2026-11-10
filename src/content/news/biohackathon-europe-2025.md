@@ -4,6 +4,9 @@ date: 2025-12-02
 standfirst: "Earlier this month, ELIXIR-UK contributors took part in BioHackathon Europe 2025, leading and supporting projects that advanced FAIR data, benchmarking, interoperability and sustainable workflow development across the ELIXIR ecosystem."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/12/2025_photo-biohackathon-uk-group-scaled.webp"
+related:
+  members: ["university-of-manchester", "earlham-institute", "university-of-cambridge", "university-oxford"]
+  services: ["rdmkit", "fair-cookbook", "fairsharing", "galaxy"]
 ---
 
 <p>Earlier this month, around 300 people from across the international life science and open data communities gathered in Berlin for BioHackathon Europe 2025. Now in its eighth year, the event has become one of ELIXIR’s most productive community-led development spaces: more than 2,200 participants have contributed to over 275 projects since its launch. <strong>ELIXIR-UK continues to be a significant part of these efforts, with UK teams leading and supporting work that strengthens FAIR data practices, sustainable workflows and interoperable research infrastructure across Europe.</strong></p>

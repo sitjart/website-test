@@ -4,6 +4,9 @@ date: 2025-06-17
 standfirst: "A collaborative meeting deepening connections with other Nodes and RIs"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/06/photo-2025-all-hands-greece-10.jpg"
+related:
+  collaborations: ["biofair"]
+  members: ["earlham-institute", "university-of-manchester", "rothamsted-research", "university-of-nottingham", "university-of-bradford", "quadram-institute", "university-college-london", "cardiff-university", "university-oxford", "hdr-uk"]
 ---
 
 <p>The <strong>ELIXIR All Hands Meeting 2025</strong>, held in Thessaloniki, Greece, 2-6 June, brought together members from across Europe to exchange ideas, coordinate infrastructure development, and shape the shared future of life science data. Among the many contributors, colleagues from UK-based institutes participated actively across sessions, working alongside partners from other Nodes to strengthen collaborations and advance areas of shared interest.</p>

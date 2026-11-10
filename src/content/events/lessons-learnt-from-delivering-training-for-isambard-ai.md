@@ -7,6 +7,8 @@ end: 2026-10-28
 startTime: "14:00"
 endTime: "15:00"
 image: "https://elixiruknode.org/wp-content/uploads/2025/12/banner_circuit-board-and-ai-micro-processor-artificial-i.webp"
+related:
+  activities: ["uk-training-club"]
 ---
 
 <p>The Bristol Centre for Supercomputing (BriCS) operates Isambard-AI, the UK's fastest supercomputer and part of the national AI Research Resource (AIRR). Supporting a user base of thousands of researchers across academia, government, and industry, BriCS has developed a training programme to help users of all experience levels access and exploit their systems effectively. BriCS delivers workshops for AI professionals, ranging from short introductory sessions to full-day events, covering a modular set of tutorials spanning chatbot creation, distributed training and inference, installing and running software, and domain-specific applications such as AlphaFold-based protein structure prediction. </p>

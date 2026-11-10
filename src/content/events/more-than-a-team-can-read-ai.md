@@ -5,6 +5,8 @@ type: "Community Call"
 online: false
 end: 2026-11-03
 image: "https://elixiruknode.org/wp-content/uploads/2026/10/photo-futuristic-technology-abstract-tunnel0-ai.webp"
+related:
+  activities: ["uk-rdm-club"]
 ---
 
 <p>When data outgrows what a human team can process, AI is most useful as infrastructure: turning unstructured text into structured, computable forms that support automated processing and reasoning at scale.</p>

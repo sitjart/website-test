@@ -4,6 +4,9 @@ date: 2025-04-15
 standfirst: "Maria Traka’s appointment strengthens UK efforts in FAIR data, interoperability, and nutrition science."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/04/photo-maria-traka-lab.jpg"
+related:
+  activities: ["food-and-nutrition-community"]
+  members: ["quadram-institute"]
 ---
 
 <p>In March 2025, <a href="https://elixiruknode.org/people/maria-traka/">Dr Maria Traka</a> was appointed as the new co-Lead of the <a href="https://elixir-europe.org/communities/food-and-nutrition">ELIXIR Food &amp; Nutrition Community</a>, joining <a href="https://www.universiteitleiden.nl/en/staffmembers/jildau-bouwman#tab-1">Dr Jildau Bouwmann</a> (ELIXIR Netherlands) and <a href="https://www.sib.swiss/frederique-lisacek-group">Dr Frédérique Lisacek</a> (ELIXIR Switzerland) in shaping the future of this collaborative community. With an extensive background in nutrition research and data harmonisation, Maria brings extensive expertise that aligns closely with the Community’s mission to standardise food and nutrition data, improve accessibility and foster interoperability across tools and services.</p>

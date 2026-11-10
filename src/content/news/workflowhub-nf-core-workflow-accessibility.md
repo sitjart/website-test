@@ -4,6 +4,9 @@ date: 2024-06-27
 standfirst: "This development marks a major step forward in making high-quality, best-practice workflows more accessible to researchers and stakeholders in the scientific community."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/06/streamline-and-organize-the-process-enhance-effic-2024-02-14-11-09-52-utc-2.webp"
+related:
+  members: ["university-of-manchester"]
+  services: ["workflowhub"]
 ---
 
 <p>WorkflowHub announces a significant advancement in the accessibility and visibility of computational workflows by integrating nf-core community workflows into its registry. This development marks a major step forward in making high-quality, best-practice workflows more accessible to researchers and stakeholders in the scientific community.</p>

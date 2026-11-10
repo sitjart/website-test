@@ -7,7 +7,11 @@ startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
 registration: "https://elixiruknode.org/activities/uk-rdm-club/"
+recording: "https://youtu.be/zW32V3syfM0"
 image: "https://elixiruknode.org/wp-content/uploads/2024/10/banner-halloween-pumpkin-horror.webp"
+related:
+  activities: ["uk-rdm-club"]
+  members: ["cardiff-university", "rothamsted-research", "university-oxford", "university-of-liverpool"]
 ---
 
 During this month's Club Call, we adopt a relaxed format and panel. FAIR data stewards in the UK will talk about how they came into their roles and describe data horror stories they’ve experienced. It’s October, it’s Halloween.

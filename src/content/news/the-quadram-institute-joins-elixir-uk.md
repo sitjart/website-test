@@ -4,6 +4,8 @@ date: 2021-07-14
 standfirst: "We are very pleased to announce that the Quadram Institute (QIB) has become the most recent organisation to join ELIXIR-UK, bringing our total number of member organisations to 20. You can view the full list of member or"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-microbes-2.webp"
+related:
+  members: ["quadram-institute"]
 ---
 
 <p>We are very pleased to announce that the <a href="https://quadram.ac.uk/">Quadram Institute</a> (QIB) has become the most recent organisation to join ELIXIR-UK, bringing our total number of member organisations to 20. You can view the <a href="https://elixiruknode.org/about/members/">full list of member organisations here</a>.</p>

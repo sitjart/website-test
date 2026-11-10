@@ -4,6 +4,9 @@ date: 2023-03-20
 standfirst: "The University of Manchester and the Software Sustainability Institute (SSI) are piloting a new course on intermediate research software skills for Earth, atmospheric and oceanic sciences at a workshop from 27 to 31 Marc"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-code.webp"
+related:
+  collaborations: ["software-sustainability-institute-ssi"]
+  members: ["university-of-manchester"]
 ---
 
 <p>The <a href="https://www.manchester.ac.uk/">University of Manchester</a> and <a href="https://software.ac.uk/" target="_blank" rel="noreferrer noopener">the Software Sustainability Institute (SSI)</a> are piloting a new <a href="https://uomresearchit.github.io/python-intermediate-development-nerc/index.html" target="_blank" rel="noreferrer noopener">course on intermediate research software skills for Earth, atmospheric and oceanic sciences</a> at a <a href="https://uk-carpentries.github.io/2023-03-27-manchester-intermediate-swc/" target="_blank" rel="noreferrer noopener">workshop from 27 to 31 March 2023</a> at the University of Manchester.</p>

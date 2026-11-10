@@ -1,0 +1,49 @@
+---
+// Profile layout from the live site: grey sidebar on the left (picture, name, roles, contact),
+// main column on the right with the smart tabs.
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  jsonLd?: Record<string, unknown>;
+}
+const { title, description, jsonLd } = Astro.props;
+---
+<BaseLayout {title} {description} {jsonLd}>
+  <div class="profile">
+    <aside class="profile__side">
+      <div class="profile__side-inner">
+        <slot name="side" />
+      </div>
+    </aside>
+    <div class="profile__main">
+      <slot />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .profile {
+    display: grid;
+    grid-template-columns: minmax(280px, 30%) 1fr;
+    min-height: 70vh;
+  }
+  .profile__side { background: var(--grey-light); }
+  .profile__side-inner {
+    position: sticky;
+    top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 3.5rem clamp(1.5rem, 4vw, 3.5rem);
+    text-align: center;
+  }
+  .profile__main { padding: 3.5rem clamp(1.5rem, 5vw, 5rem) 5rem; max-width: 900px; }
+  @media (max-width: 860px) {
+    .profile { grid-template-columns: 1fr; }
+    .profile__side-inner { position: static; padding-block: 2.5rem; }
+    .profile__main { padding-top: 2rem; }
+  }
+</style>

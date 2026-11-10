@@ -1,0 +1,1077 @@
+[
+ {
+  "slug": "cardiff-university",
+  "name": "Cardiff University",
+  "website": "https://www.cardiff.ac.uk",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-cardiff-university.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2019-01-01",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "lipid-maps"
+   ],
+   "news": [
+    "elixir-uk-announces-new-fair-data-stewards-training-project",
+    "uk-node-at-ahm-2024-uppsala",
+    "elixir-uk-all-hands-2024-a-celebration-of-collaboration-and-innovation",
+    "data-and-research-governance-its-a-complex-issue",
+    "2025-all-hands-greece",
+    "fairytale-local-instance-dsw",
+    "strengthening-career-pathways-for-data-stewards-through-casdar",
+    "elixir-uk-members-selected-for-the-biofair-fellowship",
+    "community-insights-on-ai-all-hands-2025",
+    "fair-in-action-bridge-building-the-practical-tools-rdm-professionals-need"
+   ],
+   "activities": [
+    "microbial-biotechnology-community",
+    "uk-rdm-club"
+   ],
+   "events": [
+    "elixir-uk-all-hands-2024",
+    "elevenses-and-data-horror-stories",
+    "elevenses-and-data-love-stories",
+    "showcasing-example-data-management-plans-with-data-stewardship-wizard",
+    "elixir-uk-all-hands-2025",
+    "discover-the-rdm-club-biofair-pathfinder-project"
+   ],
+   "projects": [
+    "fair-in-action-bridge"
+   ]
+  }
+ },
+ {
+  "slug": "earlham-institute",
+  "name": "Earlham Institute",
+  "website": "https://www.earlham.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-earlham-institute.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "copo",
+    "cyverse-uk",
+    "signalink",
+    "rdmkit",
+    "galaxy"
+   ],
+   "events": [
+    "2023-elixir-uk-all-hands",
+    "elixir-uk-health-data-workshop",
+    "intermediate-software-development",
+    "introduction-to-cbioportal",
+    "2025-hdr-uk-elixir-uk-hackathon",
+    "elixir-uk-all-hands-2024",
+    "driven-by-impact-online-workshop",
+    "elixir-uk-all-hands-2025",
+    "co-creating-a-proposal-for-an-elixir-staff-exchange",
+    "discover-peerladder-a-qa-webinar-for-prospective-applicants",
+    "discover-the-rdm-club-biofair-pathfinder-project"
+   ],
+   "news": [
+    "ukri-dri-congress",
+    "uk-node-at-ahm-2024-uppsala",
+    "2024-galaxy-community-conference",
+    "manchester-hosts-two-elixir-annual-meetings-on-interoperability-and-tools",
+    "uk-contributes-to-the-2024-elixir-rdm-community-meeting",
+    "2025-all-hands-greece",
+    "supporting-strategy-data-stewardship",
+    "ismb-eccb-elixir-uk",
+    "strengthening-career-pathways-for-data-stewards-through-casdar",
+    "biohackathon-europe-2025",
+    "elixir-uk-members-selected-for-the-biofair-fellowship",
+    "community-insights-on-ai-all-hands-2025",
+    "discourse-peerladder-funding",
+    "measuring-progress-on-gender-balance-in-elixir-leadership",
+    "new-resources-for-sustainable-rdm-services",
+    "fair-in-action-bridge-building-the-practical-tools-rdm-professionals-need",
+    "biofairs-new-4m-methods-commons-builds-on-foundations-elixir-uk-helped-lay"
+   ],
+   "activities": [
+    "galaxy-community",
+    "microbial-biotechnology-community",
+    "food-and-nutrition-community",
+    "plant-sciences-community",
+    "rdm-community",
+    "federated-human-data-community",
+    "biodiversity-community",
+    "impact-focus-group",
+    "innovation-industry-focus-group"
+   ],
+   "projects": [
+    "2024-technology-tools",
+    "fair-in-action-bridge",
+    "biofair-methods-commons"
+   ]
+  }
+ },
+ {
+  "slug": "hdr-uk",
+  "name": "HDR UK",
+  "website": "https://www.hdruk.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-hdr-uk.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2023-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "hdr-uk-becomes-elixir-uks-25th-member",
+    "eosc-entrust-launch",
+    "uk-node-at-ahm-2024-uppsala",
+    "innovation-in-action-first-hackathon",
+    "2025-all-hands-greece",
+    "ismb-eccb-elixir-uk",
+    "health-data-research-gateway-joins-elixir-uk-services",
+    "checking-the-paperwork-safe-people-registry",
+    "national-discussions-on-training-for-digital-research-professionals",
+    "measuring-progress-on-gender-balance-in-elixir-leadership",
+    "uk-human-and-health-data-communities-merge-hdr-uk"
+   ],
+   "events": [
+    "2025-hdr-uk-elixir-uk-hackathon",
+    "federated-discovery-of-datasets-via-meta",
+    "elixir-uk-all-hands-2025",
+    "showcase-feedback-session-hdr-gateway-safe-people-registry-cohort-discovery",
+    "federation-for-a-sustainable-health-data-ecosystem",
+    "ahm-lyon-debrief-health-data-takes-the-stage",
+    "sensitive-data-research-satre-and-sacro"
+   ]
+  }
+ },
+ {
+  "slug": "heriot-watt-university",
+  "name": "Heriot Watt University",
+  "website": "https://www.hw.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-hariot-watt-university.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "fair-cookbook",
+    "biomedical-atlas-centre"
+   ],
+   "news": [
+    "towards-better-findability-bioschemas-meets-schema-org"
+   ],
+   "activities": [
+    "biodiversity-community"
+   ],
+   "projects": [
+    "fair-service-architecture"
+   ]
+  }
+ },
+ {
+  "slug": "imperial-college-london",
+  "name": "Imperial College London",
+  "website": "https://www.imperial.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-imperial-college-london.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "phyre2",
+    "fair-cookbook",
+    "missense3d"
+   ],
+   "projects": [
+    "2024-technology-interoperability"
+   ],
+   "news": [
+    "uk-node-at-ahm-2024-uppsala"
+   ]
+  }
+ },
+ {
+  "slug": "kings-college-london",
+  "name": "King's College London",
+  "website": "https://www.kcl.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-kings-college-london.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2021-01-04",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "brepertoire"
+   ],
+   "news": [
+    "kings-college-london-joins-elixir-uk"
+   ]
+  }
+ },
+ {
+  "slug": "newcastle-university",
+  "name": "Newcastle University",
+  "website": "https://www.ncl.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-newcastle-university.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "rdmkit",
+    "biomedical-atlas-centre"
+   ],
+   "activities": [
+    "microbial-biotechnology-community",
+    "innovation-industry-focus-group"
+   ],
+   "news": [
+    "supporting-uk-led-projects-at-biohackathon-europe-2024"
+   ]
+  }
+ },
+ {
+  "slug": "open-life-science",
+  "name": "Open Life Sciences (OLS)",
+  "website": "https://openlifesci.org/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-ols.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2022-01-03",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "open-life-science-joins-elixir-uk",
+    "elixir-uk-at-the-ssi-collaborations-workshop-2023",
+    "uk-node-at-ahm-2024-uppsala",
+    "strengthening-career-pathways-for-data-stewards-through-casdar",
+    "discourse-peerladder-funding"
+   ],
+   "events": [
+    "discover-peerladder-a-qa-webinar-for-prospective-applicants"
+   ]
+  }
+ },
+ {
+  "slug": "quadram-institute",
+  "name": "Quadram Institute",
+  "website": "https://www.quadram.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-quadram-institute.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2021-01-04",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "the-quadram-institute-joins-elixir-uk",
+    "maria-traka-uk-leadership-food-nutrition-community",
+    "2025-all-hands-greece",
+    "elixir-uk-members-selected-for-the-biofair-fellowship"
+   ],
+   "activities": [
+    "food-and-nutrition-community",
+    "federated-human-data-community"
+   ],
+   "projects": [
+    "2024-technology-interoperability"
+   ]
+  }
+ },
+ {
+  "slug": "qmul",
+  "name": "Queen Mary University of London",
+  "website": "https://www.qmul.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-queen-mary-university-of-london.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2024-03-01",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "events": [
+    "making-clinical-datasets-fair"
+   ],
+   "news": [
+    "qmul-joins-elixir-uk"
+   ]
+  }
+ },
+ {
+  "slug": "queens-university-belfast",
+  "name": "Queen's University Belfast",
+  "website": "https://www.qub.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2026/07/logo-queens-university-belfast-qub.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2026-07-28",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "queens-university-belfast-joins-elixir-uk"
+   ]
+  }
+ },
+ {
+  "slug": "rothamsted-research",
+  "name": "Rothamsted Research",
+  "website": "https://www.rothamsted.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-rothamsted-research.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "phi-base",
+    "knetminer"
+   ],
+   "activities": [
+    "plant-sciences-community"
+   ],
+   "events": [
+    "elevenses-and-data-horror-stories"
+   ],
+   "news": [
+    "supporting-uk-led-projects-at-biohackathon-europe-2024",
+    "phi-base-update-deeper-insights-into-pathogen-and-host-genes",
+    "2025-all-hands-greece",
+    "customising-data-stewardship-wizard-for-an-institute",
+    "knetminer-connects-plant-pangenome-data-to-gene-function-and-literature"
+   ],
+   "projects": [
+    "fair-in-action-bridge",
+    "e-pan-enhancing-pan-genome-analysis-in-plants"
+   ]
+  }
+ },
+ {
+  "slug": "swansea-university",
+  "name": "Swansea University",
+  "website": "https://www.swansea.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-swansea-university.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2024-02-12",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "swansea-joins"
+   ]
+  }
+ },
+ {
+  "slug": "the-open-university",
+  "name": "The Open University",
+  "website": "https://www.open.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-open-university.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2022-01-03",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "gtn",
+    "galaxy"
+   ],
+   "events": [
+    "fair-single-cell-analysis",
+    "designing-effective-surveys-for-training-evaluation",
+    "galaxy-training-academy-large-scale-online-training"
+   ],
+   "news": [
+    "uk-node-at-ahm-2024-uppsala",
+    "2024-galaxy-community-conference",
+    "supporting-uk-led-projects-at-biohackathon-europe-2024",
+    "bioinformatics-projects-learning-pathway-for-students",
+    "elixir-uk-members-selected-for-the-biofair-fellowship"
+   ]
+  }
+ },
+ {
+  "slug": "the-pirbright-institute",
+  "name": "The Pirbright Institute",
+  "website": "https://www.pirbright.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-pirbright-instiute.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2023-12-11",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "elixir-uk-welcomes-pirbright"
+   ]
+  }
+ },
+ {
+  "slug": "ukceh",
+  "name": "UK Centre for Ecology & Hydrology",
+  "website": "https://www.ceh.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-uk-ceh.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "events": [
+    "elevenses-and-data-horror-stories-2"
+   ],
+   "news": [
+    "strengthening-career-pathways-for-data-stewards-through-casdar"
+   ]
+  }
+ },
+ {
+  "slug": "university-college-london",
+  "name": "University College London",
+  "website": "http://www.ucl.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-ucl.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "cath",
+    "pombase",
+    "brepertoire"
+   ],
+   "activities": [
+    "3d-bioinfo-community"
+   ],
+   "news": [
+    "supporting-uk-led-projects-at-biohackathon-europe-2024",
+    "2025-all-hands-greece",
+    "a-day-in-the-life-of-a-ucl-research-data-steward",
+    "strengthening-career-pathways-for-data-stewards-through-casdar",
+    "fair-in-action-bridge-building-the-practical-tools-rdm-professionals-need"
+   ],
+   "events": [
+    "fair-data-accelerator-pilot-addressing-social-and-cultural-barriers-to-data-sharing",
+    "elevenses-and-data-love-stories"
+   ],
+   "projects": [
+    "fair-in-action-bridge"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-birmingham",
+  "name": "University of Birmingham",
+  "website": "https://www.birmingham.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-univeristy-of-birmingham.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "birmingham-metabolomics-training-centre"
+   ],
+   "events": [
+    "2018-elixir-uk-all-hands"
+   ],
+   "activities": [
+    "metabolomics-community"
+   ],
+   "news": [
+    "advancing-fair-data-in-toxicology",
+    "toxicology-fair-training-workshop-birmingham-2025"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-bradford",
+  "name": "University of Bradford",
+  "website": "https://www.bradford.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-bradford.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2019-01-01",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "gtn"
+   ],
+   "news": [
+    "elixir-uk-announces-new-fair-data-stewards-training-project",
+    "uk-node-at-ahm-2024-uppsala",
+    "advancing-fair-data-in-toxicology",
+    "2025-all-hands-greece",
+    "toxicology-fair-training-workshop-birmingham-2025",
+    "bioinformatics-skills-gap-europe"
+   ],
+   "activities": [
+    "human-copy-number-variation-community",
+    "innovation-industry-focus-group",
+    "uk-training-club",
+    "training-platform"
+   ],
+   "events": [
+    "intermediate-software-development",
+    "introduction-to-cbioportal",
+    "data-management-medicinal-chemistry",
+    "rembi-short-course",
+    "making-clinical-datasets-fair",
+    "dm-for-peatland-research-and-monitoring",
+    "fair-single-cell-analysis",
+    "galaxy-training-network-and-accessibility",
+    "ismb-eccb-unpacked",
+    "ahm-lyon-debrief-training-across-the-programme",
+    "northernbug-16"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-cambridge",
+  "name": "University of Cambridge",
+  "website": "https://www.cam.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-unvieristy-of-cambridge.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "cambridge-bioinformatics-training",
+    "flybase",
+    "hgnc",
+    "pombase",
+    "rdmkit",
+    "intermine"
+   ],
+   "news": [
+    "ukri-dri-congress",
+    "uk-node-at-ahm-2024-uppsala",
+    "toxicology-fair-training-workshop-birmingham-2025",
+    "biohackathon-europe-2025",
+    "national-discussions-on-training-for-digital-research-professionals",
+    "new-resources-for-sustainable-rdm-services",
+    "scaling-biocuration-with-ai"
+   ],
+   "activities": [
+    "metabolomics-community",
+    "rdm-community",
+    "human-copy-number-variation-community",
+    "training-platform",
+    "impact-focus-group",
+    "uk-training-club"
+   ],
+   "projects": [
+    "learning-paths-2018",
+    "2022-tess",
+    "2022-trp4",
+    "gap-analysis-training-materials-development-and-training-delivery",
+    "2024-technology-data"
+   ],
+   "events": [
+    "ahm-lyon-debrief-training-across-the-programme"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-dundee",
+  "name": "University of Dundee",
+  "website": "https://www.dundee.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-dundee.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "drasp",
+    "health-informatics-centre-hic",
+    "jalview",
+    "rdmkit"
+   ],
+   "news": [
+    "eosc-entrust-launch"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-east-anglia",
+  "name": "University of East Anglia",
+  "website": "https://www.uea.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-east-anglia.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2020-01-06",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "the-university-of-east-anglia-joins-elixir-uk"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-edinburgh",
+  "name": "University of Edinburgh",
+  "website": "https://www.ed.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-edinburgh.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "lipid-maps",
+    "biomedical-atlas-centre",
+    "ensembl",
+    "iuphar-bps"
+   ],
+   "events": [
+    "data-management-medicinal-chemistry",
+    "make-like-a-snake"
+   ],
+   "news": [
+    "uk-node-at-ahm-2024-uppsala"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-exeter",
+  "name": "University of Exeter",
+  "website": "https://www.exeter.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-exeter.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2022-01-03",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "the-university-of-exter-joins-elixir-uk",
+    "elixir-uk-members-selected-for-the-biofair-fellowship",
+    "community-insights-on-ai-all-hands-2025"
+   ],
+   "events": [
+    "elixir-uk-all-hands-2025"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-leicester",
+  "name": "University of Leicester",
+  "website": "https://le.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-leicester.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2019-01-01",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "cafe-variome",
+    "gwas-central",
+    "variant-validator"
+   ],
+   "events": [
+    "elixir-uk-health-data-workshop",
+    "federated-discovery-of-datasets-via-meta"
+   ],
+   "activities": [
+    "human-copy-number-variation-community"
+   ],
+   "news": [
+    "supporting-uk-led-projects-at-biohackathon-europe-2024"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-liverpool",
+  "name": "University of Liverpool",
+  "website": "https://www.liverpool.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-liverpool.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "neof",
+    "veupathdb"
+   ],
+   "activities": [
+    "innovation-industry-focus-group",
+    "bioinfocoreleaders"
+   ],
+   "events": [
+    "elevenses-and-data-horror-stories",
+    "time-over-motivation",
+    "three-stories-many-lessons",
+    "formative-assessment-with-mcqs",
+    "dr-strangelove-learning-outcomes",
+    "orwellian-writing",
+    "elixir-uk-all-hands-2026",
+    "textured-classroom",
+    "data-horror-stories-what-core-facilities-see-when-fair-goes-wrong"
+   ],
+   "news": [
+    "community-insights-on-ai-all-hands-2025",
+    "fair-in-action-bridge-building-the-practical-tools-rdm-professionals-need",
+    "a-short-story-of-the-bioinfocoreleaders-club"
+   ],
+   "projects": [
+    "fair-in-action-bridge"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-manchester",
+  "name": "University of Manchester",
+  "website": "https://www.manchester.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-the-university-of-manchester.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-02-06",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "tess",
+    "variant-validator",
+    "workflowhub",
+    "fair-cookbook",
+    "rdmkit",
+    "fairdom-seek"
+   ],
+   "projects": [
+    "elixir-uk-dash",
+    "agroserv",
+    "2022-eip2",
+    "biodiversity-network",
+    "2024-technology-compute",
+    "2024-technology-tools",
+    "2024-technology-interoperability",
+    "fair-in-action-bridge",
+    "biofair-methods-commons"
+   ],
+   "news": [
+    "introducing-tre-fx",
+    "ukri-dri-congress",
+    "a-new-research-development-course",
+    "elixir-steers-launches-uk-node-bolsters-green-strategies-workflows-and-training",
+    "elixir-uk-all-hands-and-conference-of-bioinformatics-and-computational-biology-2021",
+    "elixir-uk-alumni-teresa-attwood-wins-the-2021-iscb-outstanding-contributions-award",
+    "4-new-services",
+    "elixir-uk-announces-seven-new-services",
+    "elixir-uk-at-the-elixir-all-hands-2023",
+    "elixir-uk-at-the-ssi-collaborations-workshop-2023",
+    "galaxy-supports-exporting-structured-data-like-ro-crate",
+    "meet-our-new-fair-data-stewardship-training-fellows",
+    "open-life-science-joins-elixir-uk",
+    "software-sustainability-institute-to-improve-research-software-practices-with-6-5-million-ukri-funding",
+    "ukri-announce-34-million-in-funding-for-biofair",
+    "eosc-entrust-launch",
+    "workflowhub-nf-core-workflow-accessibility",
+    "uk-node-at-ahm-2024-uppsala",
+    "supporting-uk-led-projects-at-biohackathon-europe-2024",
+    "health-ri-exchange-offers-insights-into-shaping-a-national-biocommons",
+    "elixir-uk-at-the-eosc-symposium-2024-advancing-fair-data-and-interoperability",
+    "manchester-hosts-two-elixir-annual-meetings-on-interoperability-and-tools",
+    "uk-contributes-to-the-2024-elixir-rdm-community-meeting",
+    "adapting-elixir-training-at-manchester",
+    "2025-all-hands-greece",
+    "supporting-strategy-data-stewardship",
+    "fair-workflows-bees-2025",
+    "workflowhub-presentation-carole-goble",
+    "pistoia-sustainable-collaboration",
+    "ismb-eccb-elixir-uk",
+    "elixir-uk-rdm-infrastructure-cordi-base4nfdi-2025",
+    "oecd-research-software-access",
+    "strengthening-career-pathways-for-data-stewards-through-casdar",
+    "carole-goble-discussions-in-the-german-research-infrastructure-landscape",
+    "biohackathon-europe-2025",
+    "community-insights-on-ai-all-hands-2025",
+    "discourse-peerladder-funding",
+    "measuring-progress-on-gender-balance-in-elixir-leadership",
+    "uk-human-and-health-data-communities-merge-hdr-uk",
+    "new-resources-for-sustainable-rdm-services",
+    "fair-in-action-bridge-building-the-practical-tools-rdm-professionals-need",
+    "biofairs-new-4m-methods-commons-builds-on-foundations-elixir-uk-helped-lay"
+   ],
+   "events": [
+    "exploring-wes-and-weskit-implementation",
+    "the-elixir-research-data-management-kit-rdmkit",
+    "bbsrc-and-mrc-funders-perspectives",
+    "ga4gh-task-execution-service-tes-standard-within-tres",
+    "elevenses-and-data-love-stories",
+    "transforming-clinical-text-into-research-ready-data",
+    "elixir-uk-all-hands-2025",
+    "discover-peerladder-a-qa-webinar-for-prospective-applicants",
+    "discover-the-rdm-club-biofair-pathfinder-project",
+    "introducing-ro-crates",
+    "ahm-lyon-debrief-health-data-takes-the-stage",
+    "ahm-lyon-debrief-training-across-the-programme",
+    "workshop-are-your-powerpoints-legal"
+   ],
+   "activities": [
+    "microbial-biotechnology-community",
+    "plant-sciences-community",
+    "rdm-community",
+    "training-platform",
+    "impact-focus-group",
+    "uk-human-data-community",
+    "uk-rdm-club",
+    "interoperability-platform"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-nottingham",
+  "name": "University of Nottingham",
+  "website": "https://www.nottingham.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-nottingham.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "activities": [
+    "uk-human-data-community"
+   ],
+   "news": [
+    "eosc-entrust-launch",
+    "uk-node-at-ahm-2024-uppsala",
+    "supporting-uk-led-projects-at-biohackathon-europe-2024",
+    "2025-all-hands-greece",
+    "uk-human-and-health-data-communities-merge-hdr-uk"
+   ],
+   "events": [
+    "2025-hdr-uk-elixir-uk-hackathon",
+    "exploring-wes-and-weskit-implementation",
+    "bbsrc-and-mrc-funders-perspectives",
+    "ga4gh-task-execution-service-tes-standard-within-tres",
+    "dome-recommendations-for-machine-learning",
+    "ahm-lyon-debrief-health-data-takes-the-stage"
+   ]
+  }
+ },
+ {
+  "slug": "university-oxford",
+  "name": "University of Oxford",
+  "website": "https://www.ox.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-oxford.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2017-01-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "services": [
+    "fairsharing",
+    "isa",
+    "fair-cookbook",
+    "rdmkit",
+    "tess",
+    "copo"
+   ],
+   "news": [
+    "announcing-a-joint-effort-to-improve-research-transparency-fairsharing-and-top-guidelines",
+    "fairsharing-launch-a-new-educational-infographics-database",
+    "elixir-eosc-strategy",
+    "advancing-research-practices-ostrails-project-towards-open-science",
+    "top-6-data-attributes-for-policymakers",
+    "uk-node-at-ahm-2024-uppsala",
+    "efpia-playbook-fair-cookbook",
+    "supporting-uk-led-projects-at-biohackathon-europe-2024",
+    "manchester-hosts-two-elixir-annual-meetings-on-interoperability-and-tools",
+    "2024-rda-plenary",
+    "joining-up-the-research-data-management-dots",
+    "2025-all-hands-greece",
+    "oecd-research-software-access",
+    "biohackathon-europe-2025",
+    "measuring-progress-on-gender-balance-in-elixir-leadership",
+    "fair-in-action-bridge-building-the-practical-tools-rdm-professionals-need"
+   ],
+   "activities": [
+    "metabolomics-community",
+    "plant-sciences-community",
+    "interoperability-platform",
+    "impact-focus-group",
+    "innovation-industry-focus-group"
+   ],
+   "projects": [
+    "training-capacity-building",
+    "alignment-of-the-interoperability-platform-fair-service-architecture-framework-with-the-data-platform-communities-and-elixir-projects",
+    "biodiversity-network",
+    "2024-technology-data",
+    "2024-technology-interoperability",
+    "fair-in-action-bridge"
+   ],
+   "events": [
+    "fairsharing-enabling-fair",
+    "elevenses-and-data-horror-stories",
+    "fairsharing-and-ostrail",
+    "showcasing-example-data-management-plans-with-data-stewardship-wizard"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-southampton",
+  "name": "University of Southampton",
+  "website": "https://www.southampton.ac.uk",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-university-of-southampton.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2026-02-02",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "supporting-uk-led-projects-at-biohackathon-europe-2024",
+    "meet-our-new-fair-data-stewardship-training-fellows",
+    "software-sustainability-institute-to-improve-research-software-practices-with-6-5-million-ukri-funding",
+    "national-discussions-on-training-for-digital-research-professionals",
+    "strengthening-career-pathways-for-data-stewards-through-casdar",
+    "university-of-southampton-joins-elixir-uk"
+   ],
+   "events": [
+    "casdar-opening-up-careers-in-data-stewardship"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-warwick",
+  "name": "University of Warwick",
+  "website": "https://warwick.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-university-of-warwick.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2025-06-01",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "events": [
+    "rembi-short-course"
+   ],
+   "services": [
+    "enterobase"
+   ],
+   "activities": [
+    "fellowship"
+   ],
+   "news": [
+    "university-of-warwick-joins",
+    "enterobase-joins-elixir-uk-services",
+    "bioinfocoreleaders-club-consolidated-after-warwick-meeting"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-york",
+  "name": "University of York",
+  "website": "https://www.york.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-university-of-york.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": "2026-04-01",
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "events": [
+    "introduction-to-cbioportal"
+   ],
+   "news": [
+    "embedding-my-elixir-uk-material-in-university-teaching",
+    "edij-and-decolonisation-in-data-management",
+    "dash-fellows-attend-the-bioinformatics-education-summit",
+    "meet-our-new-fair-data-stewardship-training-fellows",
+    "university-of-york-joins-elixir-uk"
+   ],
+   "activities": [
+    "fellowship"
+   ]
+  }
+ }
+]

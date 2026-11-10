@@ -5,6 +5,9 @@ type: "Community Call"
 online: false
 end: 2026-10-06
 image: "https://elixiruknode.org/wp-content/uploads/2026/09/banner-spooky-halloween-night-with-tombstone-and-moon.webp"
+related:
+  activities: ["uk-rdm-club"]
+  members: ["university-of-liverpool"]
 ---
 
 <p>It is October, which means the RDM Club's Data Horror Stories panel is back. This year, bioinformatics core facility leads from the universities of Warwick, York and Cambridge share the darker side of supporting researchers to analyse and steward their life science data, and what "bad FAIR" looks like from where they sit.</p>

@@ -7,6 +7,9 @@ end: 2025-10-24
 venue: "Sandy Park Conference & Banqueting Centre"
 locality: "Exeter"
 image: "https://elixiruknode.org/wp-content/uploads/2024/11/photo-2024-all-hands-uk-18-scaled.jpg"
+related:
+  members: ["cardiff-university", "earlham-institute", "hdr-uk", "university-of-exeter", "university-of-manchester"]
+  news: ["community-insights-on-ai-all-hands-2025"]
 ---
 
 <div class="wp-block-greenshift-blocks-tabs gspb-tabs gspb_tabs-id-gsbp-e272d6d gstabs-pills" data-autoplay="false" data-autoplaytime="4"><div class="t-btn-container" role="tablist"><button class="t-btn active" aria-selected="true" role="tab" tabindex="0" id="gspb-tab-item-btn-gsbp-e272d6d-0" aria-controls="gspb-tab-item-content-gsbp-e272d6d-0"><div class="tabtitlelabel">About the event</div></button><button class="t-btn" aria-selected="false" role="tab" tabindex="-1" id="gspb-tab-item-btn-gsbp-e272d6d-1" aria-controls="gspb-tab-item-content-gsbp-e272d6d-1"><div class="tabtitlelabel">Day 1</div></button><button class="t-btn" aria-selected="false" role="tab" tabindex="-1" id="gspb-tab-item-btn-gsbp-e272d6d-2" aria-controls="gspb-tab-item-content-gsbp-e272d6d-2"><div class="tabtitlelabel">Day 2</div></button><button class="t-btn" aria-selected="false" role="tab" tabindex="-1" id="gspb-tab-item-btn-gsbp-e272d6d-3" aria-controls="gspb-tab-item-content-gsbp-e272d6d-3"><div class="tabtitlelabel">Speakers &amp; Organisers</div></button><button class="t-btn" aria-selected="false" role="tab" tabindex="-1" id="gspb-tab-item-btn-gsbp-e272d6d-4" aria-controls="gspb-tab-item-content-gsbp-e272d6d-4"><div class="tabtitlelabel">Sponsors</div></button></div><div class="t-panel-container"><div class="gswipertabs"><div class="swiper-wrapper">

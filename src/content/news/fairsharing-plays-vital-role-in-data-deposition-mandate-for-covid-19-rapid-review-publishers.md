@@ -4,6 +4,8 @@ date: 2021-01-22
 standfirst: "The C-19 Rapid Review Initiative is led by a group of scholarly communications organisations, including the Royal Society, OASPA and the ELIXIR-UK service FAIRsharing . The initiative was launched in April 2020 to maximi"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-covid-19-left-side.webp"
+related:
+  services: ["fairsharing"]
 ---
 
 <p>The C-19 Rapid Review Initiative is led by a group of scholarly communications organisations, including the Royal Society, OASPA and the ELIXIR-UK service <a href="https://fairsharing.org/">FAIRsharing</a>. The initiative was launched in April 2020 to maximise the efficiency of peer review to ensure that key work related to COVID-19 was published as quickly and as openly as possible.&nbsp;</p>

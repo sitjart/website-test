@@ -4,6 +4,9 @@ date: 2025-05-08
 standfirst: "ELIXIR-UK demonstrates its commitment to advancing FAIR (Findable, Accessible, Interoperable, Reusable) data practices in toxicology by participating in and organising several workshops as part of the ELIXIR Toxicology C"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/05/photo-intoxicom-project-workshop-2025.webp"
+related:
+  members: ["university-of-birmingham", "university-of-bradford"]
+  projects: ["integrating-the-toxicology-community-into-elixir"]
 ---
 
 <p>ELIXIR-UK demonstrates its commitment to advancing FAIR (Findable, Accessible, Interoperable, Reusable) data practices in toxicology by participating in and organising several workshops as part of the ELIXIR Toxicology Community. The workshops, funded as part of an ELIXIR internal project, <a href="https://elixiruknode.org/project/integrating-the-toxicology-community-into-elixir/">INTOXICOM (Integrating the Toxicology Community into ELIXIR)</a>, have brought together toxicologists, bioinformaticians and data managers from across Europe to explore strategies for making toxicology tools and data more accessible and interoperable.</p>

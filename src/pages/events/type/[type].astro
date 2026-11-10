@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+import EventList from '../../../components/EventList.astro';
+import { tagSlug } from '../../../lib/graph';
+
+export async function getStaticPaths() {
+  const events = await getCollection('events');
+  const types = [...new Set(events.map((e) => e.data.type))];
+  return types.map((t) => ({ params: { type: tagSlug(t) }, props: { name: t, items: events.filter((e) => e.data.type === t) } }));
+}
+const { name, items } = Astro.props;
+---
+<BaseLayout title={name}>
+  <PageHeader title={name} eyebrow="Events" />
+  <EventList {items} />
+</BaseLayout>

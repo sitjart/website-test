@@ -4,6 +4,9 @@ date: 2024-09-03
 standfirst: "In June 2024, members of the ELIXIR-UK community, including key contributors like Wendi Bacon and Nicola Soranzo , participated in the 2024 Galaxy Community Conference (GCC2024) , the flagship annual event about the use"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/09/picture-2024-galaxy-conference-2.webp"
+related:
+  activities: ["galaxy-community"]
+  members: ["earlham-institute", "the-open-university"]
 ---
 
 <p>In June 2024, members of the ELIXIR-UK community, including key contributors like <a href="https://elixiruknode.org/people/wendi-bacon/" data-type="people" data-id="18624">Wendi Bacon</a> and <a href="https://elixiruknode.org/people/nicola-soranzo/" data-type="people" data-id="18644">Nicola Soranzo</a>, participated in the <a href="https://galaxyproject.org/events/gcc2024/">2024 Galaxy Community Conference (GCC2024)</a>, the flagship annual event about the use and development of the Galaxy platform for data-intensive biomedical research. Their active involvement in various initiatives helped strengthen community engagement, promote diversity and advance research within the Galaxy ecosystem.</p>

@@ -6,6 +6,9 @@ online: true
 startTime: "11:00"
 endTime: "12:00"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-microbes-2.webp"
+related:
+  activities: ["uk-rdm-club"]
+  collaborations: ["euro-bioimaging-uk-node"]
 ---
 
 <p>This month, the RDM Club welcomes Isabel Kemmer from EuroBioImaging ERIC.</p>

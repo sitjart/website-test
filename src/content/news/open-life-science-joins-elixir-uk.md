@@ -4,6 +4,8 @@ date: 2023-04-12
 standfirst: "We are really excited to announce that Open Life Science (OLS) is the newest member of ELIXIR-UK, bringing us to 24 members! Check out our other members here. This mentoring and training programme for those interested in"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-bubbles.webp"
+related:
+  members: ["open-life-science", "university-of-manchester"]
 ---
 
 <p>We are really excited to announce that <a href="https://openlifesci.org/">Open Life Science</a> (OLS) is the newest member of ELIXIR-UK, bringing us to 24 members!</p>

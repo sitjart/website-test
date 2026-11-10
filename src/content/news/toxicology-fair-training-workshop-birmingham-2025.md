@@ -4,6 +4,10 @@ date: 2025-07-28
 standfirst: "Aligning national priorities on FAIR data and skills development while strengthening European collaboration"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/07/photo-2025-toxicology-community-fair-training.webp"
+related:
+  activities: ["toxicology-community", "training-platform"]
+  members: ["university-of-cambridge", "university-of-birmingham", "university-of-bradford"]
+  projects: ["integrating-the-toxicology-community-into-elixir"]
 ---
 
 <p>The University of Birmingham recently welcomed the ELIXIR Toxicology Community for a two-day workshop titled ”Making toxicology educational resources more FAIR”, bringing together educators, data specialists, and training coordinators from across Europe. Held on June 24–25, 2025, this hands-on workshop focused on practical ways to enhance the visibility, reuse and interoperability of training materials in toxicology and related areas.</p>

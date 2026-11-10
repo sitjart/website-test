@@ -4,6 +4,8 @@ date: 2026-04-21
 standfirst: "Building on a longstanding commitment to data stewardship and open science"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/photo-southampton-life_sciences_building.jpg"
+related:
+  members: ["university-of-southampton"]
 ---
 
 <p>The University of Southampton has become the latest institution to join ELIXIR-UK, the UK Node of the European life sciences data infrastructure.</p>

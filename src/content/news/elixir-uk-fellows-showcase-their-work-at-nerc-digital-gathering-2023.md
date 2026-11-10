@@ -4,6 +4,9 @@ date: 2023-08-07
 standfirst: "Fostering collaborations and upskilling the workforce: ELIXIR-UK Fellows shine. Two ELIXIR-UK Fellows, Gabriela López González from the University of Leeds and Richard Ostler from Rothamsted Research, were invited to spe"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2023/08/aerial-view-of-a-marigold-field-india.webp"
+related:
+  activities: ["fellowship"]
+  projects: ["elixir-uk-dash"]
 ---
 
 <p><strong><em><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-palette-color-2-color">Fostering collaborations and upskilling the workforce: ELIXIR-UK Fellows shine.</mark></em></strong></p>

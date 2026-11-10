@@ -1,0 +1,34 @@
+{
+  "tagline": "People. Services. AI-readiness.<br>Sustainable infrastructures",
+  "cta": {
+    "heading": "Ready to get involved?",
+    "text": "We open doors, you get real leadership and influence.",
+    "label": "Join in",
+    "href": "/join-in/"
+  },
+  "columns": [
+    { "heading": "Discover", "links": [
+      { "label": "News & Stories", "href": "/news/" },
+      { "label": "Who we are", "href": "/about/" },
+      { "label": "What we do", "href": "/what-we-do/" },
+      { "label": "Our people", "href": "/people/" },
+      { "label": "Our members", "href": "/members/" },
+      { "label": "Our projects", "href": "/projects/" }
+    ]},
+    { "heading": "Join in", "links": [
+      { "label": "Join an event", "href": "/events/" },
+      { "label": "Find a community", "href": "/activities/" },
+      { "label": "Find opportunities", "href": "https://elixiruknode.org/opportunities/" },
+      { "label": "Get your service endorsed", "href": "/services/" }
+    ]},
+    { "heading": "Contact us", "links": [
+      { "label": "Reach the Node office", "href": "/contact-us/" },
+      { "label": "Subscribe", "href": "https://subscribepage.io/dcrSdS" },
+      { "label": "Privacy Policy", "href": "/privacy-policy/" }
+    ]}
+  ],
+  "funding": {
+    "logo": "https://elixiruknode.org/wp-content/uploads/2025/08/logo-bbsrc-negative.svg",
+    "text": "ELIXIR-UK is supported by the Biotechnology and Biological Sciences Research Council – Current grant: BB/C001384/1."
+  }
+}

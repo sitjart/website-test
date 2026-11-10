@@ -5,6 +5,8 @@ type: "Community Call"
 online: false
 end: 2026-10-21
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-digital-societ-human-data-1.webp"
+related:
+  activities: ["uk-human-data-community"]
 ---
 
 <p>This UK Human Data &amp; Tech Club community call will introduce two platforms for genetic scores – <strong>PGS Catalog</strong> and <strong>OmicsPred</strong> – and the standards and infrastructure that keep them useful across research and clinical settings.</p>

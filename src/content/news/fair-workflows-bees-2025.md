@@ -4,6 +4,8 @@ date: 2025-07-07
 standfirst: "On June 30 2025, Professor Carole Goble , Head of Node of ELIXIR-UK, was invited to deliver a keynote at the LifeWatch Biodiversity and Ecosystem eScience (BEeS) Conference 2025 , hosted by the Hellenic Centre for Marine"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/07/photo-bees-2025.webp"
+related:
+  members: ["university-of-manchester"]
 ---
 
 <p>On June 30 2025, Professor <a href="https://elixiruknode.org/people/carole-goble/" data-type="people" data-id="18640">Carole Goble</a>, Head of Node of ELIXIR-UK, was invited to deliver a keynote at the <a href="https://www.lifewatch.eu/bees-2025/">LifeWatch Biodiversity and Ecosystem eScience (BEeS) Conference 2025</a>, hosted by the Hellenic Centre for Marine Research in Crete.</p>

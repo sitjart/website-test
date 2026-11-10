@@ -6,7 +6,12 @@ online: true
 startTime: "11:00"
 endTime: "12:00"
 venue: "online"
+recording: "https://youtu.be/nphNMU7hdVg"
 image: "https://elixiruknode.org/wp-content/uploads/2026/02/banner-secure-data-safe.webp"
+related:
+  activities: ["uk-human-data-community"]
+  members: ["hdr-uk"]
+  news: ["checking-the-paperwork-safe-people-registry"]
 ---
 
 <p>Join the February Human Data community call for a live, interactive showcase of three key technologies developed by HDR UK that support access, discovery and trust in the landscape of human data research:</p>

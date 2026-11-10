@@ -4,6 +4,11 @@ date: 2024-12-23
 standfirst: "How improving connectivity among ELIXIR tools enables FAIR across the research data life cycle"
 category: "Blog"
 image: "https://elixiruknode.org/wp-content/uploads/2024/04/banner-connecting-dots-neural-networks.webp"
+related:
+  collaborations: ["czech-technical-university-in-prague"]
+  members: ["university-oxford"]
+  projects: ["elixir-uk-dash"]
+  services: ["fairsharing"]
 ---
 
 <p style="margin-top:0;margin-bottom:var(--wp--preset--spacing--30)">By <a href="https://elixiruknode.org/people/allyson-lister/" data-type="people" data-id="18620">Allyson Lister</a> &amp; Marek Suchanek</p>

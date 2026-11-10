@@ -4,6 +4,8 @@ date: 2023-12-18
 standfirst: "In December 2023, ELIXIR announced the addition of four ELIXIR-UK services as Core Data Resources (CDRs): HGNC, LIPID MAPS ® , PomBase and VEuPathDB . These four resources have been identified as crucial for life science"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2023/12/wood-cube-building-blocks-2023-11-27-05-16-54-utc.webp"
+related:
+  services: ["lipid-maps", "hgnc", "pombase", "veupathdb"]
 ---
 
 <p>In December 2023, ELIXIR announced the addition of four ELIXIR-UK services as Core Data Resources (CDRs):<strong> HGNC, LIPID MAPS<sup>®</sup>, PomBase and VEuPathDB</strong>.&nbsp;</p>

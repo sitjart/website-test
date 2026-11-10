@@ -6,7 +6,12 @@ online: true
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
+recording: "https://youtu.be/3zNECDf2eEI"
+slides: "https://doi.org/10.5281/zenodo.17036361"
 image: "https://elixiruknode.org/wp-content/uploads/2025/08/banner-generic-group-people-minority.jpg"
+related:
+  activities: ["uk-rdm-club"]
+  members: ["university-of-southampton"]
 ---
 
 <p><strong>Introducing the Careers and Skills for Data-driven Research Network</strong> (<strong>CaSDAR</strong>). Discover a new landscape of data stewardship in UK research.</p>

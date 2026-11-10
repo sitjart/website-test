@@ -4,6 +4,10 @@ date: 2025-06-27
 standfirst: "A FAIRytale by Richard Ostler – a personal story about good data governance and data controllership from someone who understands the researcher’s perspectives and frustrations"
 category: "Blog"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-working-on-schema.webp"
+related:
+  activities: ["fellowship"]
+  members: ["rothamsted-research"]
+  projects: ["elixir-uk-dash"]
 ---
 
 <div class="wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-8b9644f" id="gspb_container-id-gsbp-8b9644f">

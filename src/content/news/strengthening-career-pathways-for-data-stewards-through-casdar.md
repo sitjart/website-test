@@ -4,6 +4,9 @@ date: 2025-10-14
 standfirst: "ELIXIR-UK members engage at the launch of the Careers and Skills for Data-driven Research Network"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/10/2025-09_casdar-launch-2.webp"
+related:
+  collaborations: ["the-alan-turing-institute"]
+  members: ["open-life-science", "ukceh", "university-of-manchester", "earlham-institute", "cardiff-university", "university-college-london", "university-of-southampton"]
 ---
 
 <p>On <strong>18 September 2025</strong>, the UK’s <strong>Research Data Stewardship</strong> community gathered for the launch of the <strong><a href="https://casdar.ac.uk/">Careers and Skills for Data-driven Research (CaSDaR) Network</a></strong>, a <strong>UKRI-funded Network+ project</strong> dedicated to professionalising the role of <strong>Data Stewards</strong>. The hybrid event, held at the <strong>Library of Birmingham</strong> and online, showcased presentations and active participation from diverse <strong>ELIXIR-UK members</strong>.</p>

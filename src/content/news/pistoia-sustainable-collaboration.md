@@ -4,6 +4,9 @@ date: 2025-08-06
 standfirst: "ELIXIR-UK contributes to a joint strategy meeting with Pistoia Alliance, ELIXIR and EMBL-EBI to shape sustainable, cross-sector collaboration in the life sciences."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/08/photo-2025-pistoia-embl-ebi-meeting.jpg"
+related:
+  collaborations: ["biofair"]
+  members: ["university-of-manchester"]
 ---
 
 <p>On 17 July 2025, ELIXIR-UK joined leaders from EMBL-EBI, the Pistoia Alliance, and the wider ELIXIR for a high-level strategy meeting held at the EMBL-EBI campus in Hinxton, UK.</p>

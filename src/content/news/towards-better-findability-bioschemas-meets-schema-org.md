@@ -4,6 +4,8 @@ date: 2021-07-09
 standfirst: "Schema.org has included five Bioschemas types for representing life sciences data in their latest release. It includes types for providing high-level descriptions of genes, proteins, molecular entities, chemical substanc"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-working-on-schema.webp"
+related:
+  members: ["heriot-watt-university"]
 ---
 
 <p><a href="https://schema.org/">Schema.org</a> has included five <a href="https://bioschemas.org/">Bioschemas</a> types for representing life sciences data in their latest release. It includes types for providing high-level descriptions of genes, proteins, molecular entities, chemical substances and taxons.</p>

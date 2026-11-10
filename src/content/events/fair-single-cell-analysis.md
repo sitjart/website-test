@@ -8,6 +8,8 @@ startTime: "13:00"
 endTime: "15:00"
 registration: "https://bradford-ac-uk.zoom.us/meeting/register/tZwtfuihrz0pGNLVbpJi_5v85NktsmcZl2T3"
 image: "https://elixiruknode.org/wp-content/uploads/2024/06/banner-cell-bacteria-microbe.webp"
+related:
+  members: ["university-of-bradford", "the-open-university"]
 ---
 
 <h2><span style="font-weight: 400;">What will you learn?</span></h2>

@@ -4,6 +4,8 @@ date: 2024-07-02
 standfirst: "UK Node members spread across the meeting, leading or presenting in more than half of the workshops and mini-symposia"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/img_1912-2-3.webp"
+related:
+  members: ["earlham-institute", "university-of-cambridge", "university-oxford", "cardiff-university", "university-of-manchester", "hdr-uk", "open-life-science", "imperial-college-london", "university-of-bradford", "university-of-nottingham", "university-of-edinburgh", "the-open-university"]
 ---
 
 <p class="has-medium-font-size">Members of ELIXIR-UK attended in force the 2024 ELIXIR Europe All Hands meeting in Uppsala, Sweden, during the week of June 13th, 2024, to discuss collaborative solutions to life sciences data challenges and align strategies with the new ELIXIR scientific programme.</p>

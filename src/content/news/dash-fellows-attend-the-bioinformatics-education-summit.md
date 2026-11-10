@@ -4,6 +4,9 @@ date: 2023-06-14
 standfirst: "The Bioinformatics Education Summit is created and hosted by Wellcome Connecting Science , based at the Wellcome Genome Campus in the UK. The goal of this working meeting was to promote the advancement of training and ed"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/BioEduSum23.webp"
+related:
+  activities: ["fellowship"]
+  members: ["university-of-york"]
 ---
 
 <p>The <a href="https://coursesandconferences.wellcomeconnectingscience.org/event/bioinformatics-education-summit-20230515/" target="_blank" rel="noopener" title="">Bioinformatics Education Summit</a> is created and hosted by <a href="https://www.wellcomeconnectingscience.org/" target="_blank" rel="noopener" title="">Wellcome Connecting Science</a>, based at the Wellcome Genome Campus in the UK. </p>

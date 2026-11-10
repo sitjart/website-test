@@ -1,0 +1,61 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { todayUK } from '../lib/format';
+import { url } from '../lib/url';
+import { tagSlug } from '../lib/graph';
+
+interface Props { items: CollectionEntry<'events'>[] }
+const today = todayUK();
+const upcoming = Astro.props.items.filter((e) => (e.data.end ?? e.data.start) >= today).sort((a, b) => a.data.start.getTime() - b.data.start.getTime());
+const past = Astro.props.items.filter((e) => (e.data.end ?? e.data.start) < today).sort((a, b) => b.data.start.getTime() - a.data.start.getTime());
+
+const day = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', timeZone: 'UTC' });
+const monthYear = (d: Date) => d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const groups = [
+  { title: 'Upcoming events', list: upcoming },
+  { title: 'Past events', list: past },
+];
+---
+{groups.map((g) => g.list.length > 0 && (
+  <section class="section">
+    <div class="container">
+      <h2>{g.title}</h2>
+      <ul class="event-list">
+        {g.list.map((e) => (
+          <li class="event">
+            <span class="event__date">
+              <span class="event__day">{day(e.data.start)}</span>
+              <span class="event__month">{monthYear(e.data.start)}</span>
+            </span>
+            <span>
+              <span class="event__meta">
+                <a class="tag" href={url(`/events/type/${tagSlug(e.data.type)}/`)}>{e.data.type}</a>
+                {e.data.online ? 'Online' : e.data.locality}
+              </span>
+              <a class="event__title" href={url(`/events/${e.id}/`)}>{e.data.title}</a>
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+))}
+
+<style>
+  .event-list { list-style: none; padding: 0; margin: 0; }
+  .event {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  /* Date style taken from the live site's custom CSS */
+  .event__day { display: block; font-size: 3rem; font-weight: 700; line-height: 1; letter-spacing: -0.02em; color: var(--navy); }
+  .event__month { display: block; font-size: 1.125rem; color: var(--navy); }
+  .event__meta { display: flex; align-items: center; gap: 0.75rem; font-size: 13px; margin-bottom: 0.4rem; }
+  .event__title { display: block; font-size: 1.3rem; font-weight: 700; color: var(--navy); }
+  .event__title:hover { color: var(--blue); }
+  @media (max-width: 600px) { .event { grid-template-columns: 1fr; gap: 0.5rem; } }
+</style>

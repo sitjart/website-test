@@ -6,6 +6,9 @@ online: true
 startTime: "11:00"
 endTime: "12:00"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-creating-connections.webp"
+related:
+  activities: ["uk-rdm-club"]
+  collaborations: ["biofair"]
 ---
 
 <p><a href="https://biofair.uk/"><strong>BioFAIR</strong></a><strong> is a proposed new UKRI investment of £34M</strong> to develop a federated digital research infrastructure (RI) connecting existing life sciences RIs, which will be assembled mainly through integrating existing services, resources and knowledge from across the UK. </p>

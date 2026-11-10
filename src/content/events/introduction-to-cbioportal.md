@@ -8,6 +8,9 @@ startTime: "12:30"
 endTime: "14:00"
 registration: "https://us02web.zoom.us/meeting/register/tZAlcuurqTgoGdDvOsqhLvir7KlNrVsVVvrG#/registration"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/scientist-holding-a-dna-sample-with-the-results-on-2023-11-27-05-15-49-utc-1.webp"
+related:
+  members: ["university-of-bradford", "earlham-institute", "university-of-york"]
+  projects: ["elixir-uk-dash"]
 ---
 
 <h2 id="what-will-you-learn" class="wp-block-heading">What will you learn?</h2>

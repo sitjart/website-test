@@ -8,6 +8,9 @@ startTime: "09:00"
 endTime: "17:00"
 registration: "https://na.eventscloud.com/ereg/newreg.php?eventid=759164"
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/all-hands-2023-group.webp"
+related:
+  members: ["earlham-institute"]
+  news: ["elixir-uk-all-hands-2023-unveils-collaborative-and-promising-plans"]
 ---
 
 <p><strong>The annual ELIXIR-UK All Hands brings together our 25 </strong><a href="https://elixiruknode.org/about/members/"><strong><u>ELIXIR-UK member institutions</u></strong></a><strong> to:</strong></p>

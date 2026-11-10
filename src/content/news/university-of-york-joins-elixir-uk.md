@@ -4,6 +4,8 @@ date: 2026-04-08
 standfirst: "Building on an already strong practice of data stewardship and open research"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/photo-uoy_biology-york-may-2017_alex-holland.jpg"
+related:
+  members: ["university-of-york"]
 ---
 
 <p class="has-small-font-size">This photo is courtesy of The University of York</p>

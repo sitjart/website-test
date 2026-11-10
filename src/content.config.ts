@@ -83,6 +83,8 @@ const pages = defineCollection({
   }),
 });
 
+const related = z.record(z.string(), z.array(z.string())).optional();
+
 // ---------------------------------------------------------------------------
 // Editorial content imported from WordPress (decision on news vs Baserow pending)
 // ---------------------------------------------------------------------------
@@ -94,6 +96,7 @@ const news = defineCollection({
     standfirst: z.string(),
     category: z.string().default('News'),
     image: z.string().optional(),
+    related,
   }),
 });
 
@@ -110,7 +113,10 @@ const events = defineCollection({
     venue: z.string().optional(),
     locality: z.string().optional(),
     registration: z.string().optional(),
+    recording: z.string().optional(),
+    slides: z.string().optional(),
     image: z.string().optional(),
+    related,
   }),
 });
 
@@ -125,6 +131,7 @@ const people = defineCollection({
       .filter((r) => selectValue(r['Website status']) === 'Consent given')
       .map((r) => {
         const name = `${r['First name']} ${r['Last name']}`;
+        const list = (v: unknown) => (Array.isArray(v) ? v.map((x) => (typeof x === 'object' && x && 'value' in x ? String(x.value) : String(x))) : []);
         return {
           id: slugify(name),
           name,
@@ -132,6 +139,11 @@ const people = defineCollection({
           institution: String(r['Institution'] ?? ''),
           bio: String(r['Bio'] ?? ''),
           orcid: (r['ORCID'] as string) || undefined,
+          website: (r['Website'] as string) || undefined,
+          linkedin: (r['LinkedIn'] as string) || undefined,
+          photo: (r['Photo URL'] as string) || undefined,
+          governance: list(r['Governance roles']),
+          related: (r['Related'] as Record<string, string[]>) ?? {},
         };
       });
   },
@@ -141,6 +153,11 @@ const people = defineCollection({
     institution: z.string(),
     bio: z.string(),
     orcid: z.string().optional(),
+    website: z.string().optional(),
+    linkedin: z.string().optional(),
+    photo: z.string().optional(),
+    governance: z.array(z.string()).default([]),
+    related: z.record(z.string(), z.array(z.string())).default({}),
   }),
 });
 

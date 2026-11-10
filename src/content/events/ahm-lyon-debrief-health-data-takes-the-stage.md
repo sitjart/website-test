@@ -5,6 +5,9 @@ type: "Community Call"
 online: false
 end: 2026-06-24
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-workshop-collaboration.webp"
+related:
+  activities: ["uk-human-data-community"]
+  members: ["university-of-nottingham", "university-of-manchester", "hdr-uk"]
 ---
 
 <p class="has-medium-font-size">Two workshops. One community. A growing impact.</p>

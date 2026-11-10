@@ -1,10 +1,13 @@
 ---
 // Shared layout for "What's new" and "Coming up": heading on the left,
 // a featured card plus two narrow cards on the right (as on the live home page).
+import RemoteImage from './RemoteImage.astro';
+
 interface Item {
   href: string;
   title: string;
   tag: string;
+  tagHref: string;
   meta: string;
   image?: string;
 }
@@ -20,7 +23,7 @@ const { heading, label, items, background = 'grey', allHref, allLabel } = Astro.
 ---
 <section class:list={['section', `section--${background}`, 'stories']}>
   <div class="container stories__inner">
-    <div class="stories__head" data-reveal="fade-right" style="--dur: 0.7s">
+    <div class="stories__head" data-reveal="fade-right">
       <h2>{heading}</h2>
       {allHref && <a class="stories__all" href={allHref}>{allLabel} →</a>}
     </div>
@@ -28,15 +31,13 @@ const { heading, label, items, background = 'grey', allHref, allLabel } = Astro.
       <p class="stories__label">{label}</p>
       <ul class="stories__grid">
         {items.map((item, i) => (
-          <li class:list={['story', { 'story--featured': i === 0 }]} data-reveal="fade-up" style={`--dur: 0.7s; --delay: ${i * 120}ms`}>
-            <a href={item.href}>
-              <div class="story__media">
-                {item.image ? <img src={item.image} alt="" loading="lazy" /> : <span class="story__placeholder" />}
-              </div>
-              <span class="story__tag">{item.tag}</span>
-              <h3 class="story__title">{item.title}</h3>
-              <p class="story__meta">{item.meta}</p>
+          <li class:list={['story', { 'story--featured': i === 0 }]} data-reveal="fade-up" style={`--delay: ${i * 120}ms`}>
+            <a class="story__media" href={item.href} tabindex="-1" aria-hidden="true">
+              {item.image ? <RemoteImage src={item.image} width={i === 0 ? 720 : 360} /> : <span class="story__placeholder" />}
             </a>
+            <a class="tag story__tag" href={item.tagHref}>{item.tag}</a>
+            <h3 class="story__title"><a href={item.href}>{item.title}</a></h3>
+            <p class="story__meta">{item.meta}</p>
           </li>
         ))}
       </ul>
@@ -68,8 +69,8 @@ const { heading, label, items, background = 'grey', allHref, allLabel } = Astro.
     margin: 0;
     padding: 0;
   }
-  .story a { display: block; color: var(--navy); }
   .story__media {
+    display: block;
     position: relative;
     aspect-ratio: 306 / 210;
     border-radius: 6px;
@@ -77,7 +78,7 @@ const { heading, label, items, background = 'grey', allHref, allLabel } = Astro.
     background: var(--blue);
   }
   .story:not(.story--featured) .story__media { aspect-ratio: 133 / 210; }
-  .story__media img {
+  .story__media :global(img) {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -95,26 +96,18 @@ const { heading, label, items, background = 'grey', allHref, allLabel } = Astro.
     opacity: 0.35;
     transition: opacity 0.4s var(--ease);
   }
-  .story a:hover .story__media img { transform: scale(1.05); filter: none; mix-blend-mode: normal; }
-  .story a:hover .story__media::after { opacity: 0; }
+  .story:hover .story__media :global(img) { transform: scale(1.05); filter: none; mix-blend-mode: normal; }
+  .story:hover .story__media::after { opacity: 0; }
   .story__placeholder { display: block; width: 100%; height: 100%; }
-  .story__tag {
-    display: inline-block;
-    margin: -14px 0 0 0;
-    position: relative;
-    padding: 0.15rem 0.6rem;
-    font-size: 13px;
-    color: var(--white);
-    background: var(--orange);
-    border-radius: 3px;
-  }
+  .story__tag { position: relative; margin-top: -14px; margin-left: 0; }
   .story__title {
     margin: 0.9rem 0 0.75rem;
     font-size: 1.05rem;
     transition: color 0.2s var(--ease);
   }
+  .story__title a { color: var(--navy); }
   .story--featured .story__title { font-size: 1.6rem; }
-  .story a:hover .story__title { color: var(--blue); }
+  .story:hover .story__title a { color: var(--blue); }
   .story__meta { font-size: 13px; color: var(--text); margin: 0; }
 
   @media (max-width: 960px) {

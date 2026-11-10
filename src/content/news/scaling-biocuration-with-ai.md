@@ -4,6 +4,8 @@ date: 2026-04-28
 standfirst: "ELIXIR-UK member Valerie Wood co-authors new paper on human-in-the-loop AI for biocuration"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-silicon-semiconductor-wafer-with-integrated.webp"
+related:
+  members: ["university-of-cambridge"]
 ---
 
 <p>A new paper in <em>Bioinformatics Advances</em> explores how human-in-the-loop AI can support literature curation for biological knowledgebases, while keeping expert curators at the centre of the process. The authors look at where large language models and agentic systems are supporting tasks such as literature screening, entity recognition, data extraction, summarisation, ontology development and quality control.</p>

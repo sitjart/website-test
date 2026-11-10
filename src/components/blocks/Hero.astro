@@ -11,15 +11,13 @@ const { heading, text, video, image, buttons = [] } = Astro.props;
 ---
 <section class="hero">
   {video ? (
-    <video class="hero__media" autoplay muted loop playsinline poster={image} aria-hidden="true">
-      <source src={video} type="video/webm" />
-    </video>
+    <video class="hero__media" muted loop playsinline preload="none" poster={image} aria-hidden="true" data-src={video}></video>
   ) : image ? (
     <img class="hero__media" src={image} alt="" />
   ) : null}
   <span class="hero__overlay" aria-hidden="true"></span>
   <div class="container hero__content">
-    <h1 data-reveal="fade-up" style="--dur: 0.9s">{heading}</h1>
+    <h1>{heading}</h1>
     {text && <p class="hero__text" data-reveal="fade-up" style="--delay: 150ms">{text}</p>}
     {buttons.length > 0 && (
       <div class="hero__buttons" data-reveal="fade-up" style="--delay: 300ms">
@@ -28,6 +26,16 @@ const { heading, text, video, image, buttons = [] } = Astro.props;
     )}
   </div>
 </section>
+
+<script>
+  // Load the background video after everything else, so it never delays the page
+  const start = () => document.querySelectorAll<HTMLVideoElement>('video[data-src]').forEach((v) => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || (navigator as any).connection?.saveData) return;
+    v.src = v.dataset.src!;
+    v.play().catch(() => {});
+  });
+  if (document.readyState === 'complete') start(); else addEventListener('load', start);
+</script>
 
 <style>
   .hero {
@@ -49,6 +57,7 @@ const { heading, text, video, image, buttons = [] } = Astro.props;
     z-index: -2;
   }
   /* Navy cover overlay, as on the live WordPress cover block */
+  .hero { background: var(--navy); }
   .hero__overlay {
     position: absolute;
     inset: 0;

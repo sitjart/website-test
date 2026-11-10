@@ -4,6 +4,11 @@ date: 2025-09-10
 standfirst: "ELIXIR-UK Training Coordinator Krzysztof Poterlowicz explains how national programmes, FAIR practices, and international collaboration are helping close Europe’s bioinformatics skills gap."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/09/banner-krzys-interview-ict-health.webp"
+related:
+  activities: ["fellowship", "training-platform", "uk-training-club"]
+  members: ["university-of-bradford"]
+  projects: ["elixir-uk-dash"]
+  services: ["gtn", "workflowhub", "tess"]
 ---
 
 <p>FAIR data practices and cross-border collaboration are key to closing Europe’s bioinformatics skills gap, according to <a href="https://elixiruknode.org/people/krzysztof-poterlowicz/" data-type="people" data-id="18756">Krzysztof Poterlowicz</a>, ELIXIR-UK Training Coordinator and Professor of Bioinformatics and Biomedical Data Sciences at the University of Bradford.</p>

@@ -7,6 +7,9 @@ startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
 image: "https://elixiruknode.org/wp-content/uploads/2025/05/banner-sticky-notes-1-2.webp"
+related:
+  activities: ["uk-human-data-community"]
+  members: ["university-of-liverpool"]
 ---
 
 <h3 class="wp-block-heading" id="cultural-frictions-and-practical-realities-in-human-research-data-projects">Cultural frictions and practical realities in human research data projects</h3>

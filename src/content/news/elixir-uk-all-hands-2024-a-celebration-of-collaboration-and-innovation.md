@@ -4,6 +4,9 @@ date: 2024-11-28
 standfirst: "With representation from the Welsh Government, BBSRC, and MRC as funders, ELIXIR-UK All Hands 2024 reaffirmed the network’s central role in shaping the future of life sciences research infrastructure in the UK."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/11/photo-2024-all-hands-uk-17-scaled.jpg"
+related:
+  collaborations: ["euro-bioimaging-uk-node", "aibio-uk", "phenomuk", "biofair"]
+  members: ["cardiff-university"]
 ---
 
 <p>The ELIXIR-UK All Hands Meeting 2024, held at Cardiff’s iconic Principality Stadium on November 19–20, brought together 70 attendees from across almost all members of ELIXIR-UK, and representatives from the Welsh Government, BBSRC and MRC. Participants joined in to reflect on achievements and discuss the future and direction of our efforts. Hosted by our members at <a href="https://elixiruknode.org/members/cardiff-university/" data-type="member" data-id="18576">Cardiff University</a>, the event showcased the power of collaboration in advancing research infrastructure and building a culture of collaboration in the life sciences.</p>

@@ -4,6 +4,8 @@ date: 2021-03-02
 standfirst: "ELIXIR CONVERGE has released one of its main outputs, the RDMKit. This project has been co-led by ELIXIR-UK alongside ELIXIR-BE and ELIXIR-NO. This new tool for empowering researchers in their data management has been a"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-creating-connections.webp"
+related:
+  services: ["rdmkit"]
 ---
 
 <p>ELIXIR CONVERGE has released one of its main outputs, the RDMKit. This project has been co-led by ELIXIR-UK alongside ELIXIR-BE and ELIXIR-NO.</p>

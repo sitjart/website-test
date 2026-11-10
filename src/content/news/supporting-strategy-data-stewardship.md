@@ -4,6 +4,8 @@ date: 2025-06-17
 standfirst: "UK Node contributes to shaping cross-community strategy and resources to support and professionalise digital research roles"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/06/photo-2025-elitma-tartu-estonia.jpg"
+related:
+  members: ["earlham-institute", "university-of-manchester"]
 ---
 
 <p>In May 2025, ELIXIR-UK members <a href="https://elixiruknode.org/people/xenia-perez-sitja/" data-type="people" data-id="18755">Xènia Pérez Sitjà</a> (<a href="https://elixiruknode.org/members/earlham-institute/" data-type="member" data-id="18575">Earlham Institute</a>) and <a href="https://elixiruknode.org/people/nick-juty/" data-type="people" data-id="18618">Nick Juty</a> (<a href="https://elixiruknode.org/members/university-of-manchester/" data-type="member" data-id="18574">University of Manchester</a>) took part in the <a href="https://elixir-europe.org/platforms/training/elitma">ELITMa course</a> on data management strategy for ELIXIR Nodes, organised by the <a href="https://elixiruknode.org/activities/rdm-community/" data-type="activity" data-id="20925">ELIXIR Research Data Management (RDM) Community</a> at the University of Tartu, Estonia. </p>

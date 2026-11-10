@@ -8,6 +8,9 @@ startTime: "12:00"
 endTime: "14:00"
 registration: "https://bradford-ac-uk.zoom.us/meeting/register/tZIlc-mhqDwjE9eqsgE-WiD6TEBshic1sGDQ"
 image: "https://elixiruknode.org/wp-content/uploads/2024/04/stethoscope-on-charts-and-graphs-spreadsheet-paper-2023-11-27-05-31-53-utc.webp"
+related:
+  members: ["qmul", "university-of-bradford"]
+  projects: ["elixir-uk-dash"]
 ---
 
 <h2>What will you learn?</h2>

@@ -4,6 +4,10 @@ date: 2021-09-16
 standfirst: "Please join us in welcoming the first nine Fellows who have been selected for the ELIXIR-UK FAIR data stewardship training Fellowship 2021! We received a number of strong applications and our Fellows have been selected f"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-circle-hands.webp"
+related:
+  activities: ["fellowship"]
+  members: ["university-of-manchester", "university-of-york", "university-of-southampton"]
+  projects: ["elixir-uk-dash"]
 ---
 
 <p>Please join us in welcoming the first nine Fellows who have been selected for the ELIXIR-UK FAIR data stewardship training Fellowship 2021! We received a number of strong applications and our Fellows have been selected for their experience, passion and knowledge of data stewardship and training in the life sciences. We look forward to working with them as part of this exciting new Fellowship.</p>

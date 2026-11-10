@@ -7,6 +7,10 @@ startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
 image: "https://elixiruknode.org/wp-content/uploads/2024/10/logo-biofair.svg"
+related:
+  activities: ["uk-rdm-club"]
+  members: ["cardiff-university", "earlham-institute", "university-of-manchester"]
+  projects: ["fair-in-action-bridge"]
 ---
 
 <p>The RDM Club is excited to share news about our Club's <strong>BioFAIR Pathfinder project</strong> – and what it means for our community.</p>

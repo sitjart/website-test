@@ -5,6 +5,8 @@ type: "Community Call"
 online: false
 end: 2026-11-24
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-futuristic-lines.webp"
+related:
+  activities: ["uk-training-club"]
 ---
 
 <p>Training materials are only useful if the people who need them can find them, and keeping that discoverability up by hand does not scale.</p>

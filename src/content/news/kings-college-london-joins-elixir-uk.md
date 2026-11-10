@@ -4,6 +4,8 @@ date: 2021-11-26
 standfirst: "We are very pleased to announce that King's College London has become the most recent organisation to join ELIXIR-UK, bringing our total number of member organisations to 21. You can view the full list of member organisa"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-lights.webp"
+related:
+  members: ["kings-college-london"]
 ---
 
 <p>We are very pleased to announce that <a href="https://www.kcl.ac.uk/" target="_blank" rel="noopener">King's College London</a> has become the most recent organisation to join ELIXIR-UK, bringing our total number of member organisations to 21. You can view the <a href="https://elixiruknode.org/about/members/">full list of member organisations here</a>.</p>

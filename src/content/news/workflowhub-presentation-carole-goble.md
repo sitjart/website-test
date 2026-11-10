@@ -4,6 +4,9 @@ date: 2025-07-29
 standfirst: "Carole Goble joined Johan Gustafsson for a Workflow Community Talk to showcase WorkflowHub, supporting FAIR sharing and reuse of over 1,200 registered computational workflows worldwide."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/07/banner-workflow-hub-presentation-2025.png"
+related:
+  members: ["university-of-manchester"]
+  services: ["workflowhub"]
 ---
 
 <p>On <strong>16 July 2025</strong>, Professor <strong><a href="https://elixiruknode.org/people/carole-goble/" data-type="people" data-id="18640">Carole Goble</a></strong>, Head of Node for ELIXIR-UK and based at the University of Manchester, delivered a presentation on <strong><a href="https://elixiruknode.org/service/workflowhub/" data-type="service" data-id="18745">WorkflowHub</a>, </strong>an ELIXIR-UK service, as part of the <strong><a href="https://workflows.community/talks" target="_blank" rel="noreferrer noopener nofollow">Workflow Community monthly talk series</a></strong>. She was joined by <strong>Dr Johan Gustafsson</strong> (<a href="https://www.biocommons.org.au/" target="_blank" rel="noreferrer noopener nofollow">Australian BioCommons</a>, University of Melbourne).</p>

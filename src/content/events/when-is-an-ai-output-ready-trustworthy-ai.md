@@ -4,7 +4,10 @@ start: 2026-07-07
 type: "Community Call"
 online: false
 end: 2026-07-07
+recording: "https://youtu.be/CedrRLCE6h0"
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-silicon-semiconductor-wafer-with-integrated.webp"
+related:
+  activities: ["uk-rdm-club"]
 ---
 
 <p>When does an AI output become evidenced, documented and reviewed enough to support a real experimental action? Our next RDM Club call takes on exactly that question. </p>

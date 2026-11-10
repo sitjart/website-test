@@ -8,6 +8,9 @@ venue: "Principality Stadium"
 locality: "Cardiff "
 registration: "https://forms.clickup.com/20526645/f/kjdhn-14432/WBQO6S7ZXM7E2F9MPI"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-all-hands.webp"
+related:
+  collaborations: ["aibio-uk", "euro-bioimaging-uk-node", "phenomuk", "the-alan-turing-institute", "biofair"]
+  members: ["cardiff-university", "earlham-institute"]
 ---
 
 <div class="wp-block-greenshift-blocks-tabs gspb-tabs gspb_tabs-id-gsbp-e272d6d gstabs-pills" data-autoplay="false" data-autoplaytime="4"><div class="t-btn-container" role="tablist"><button class="t-btn active" aria-selected="true" role="tab" tabindex="0" id="gspb-tab-item-btn-gsbp-e272d6d-0" aria-controls="gspb-tab-item-content-gsbp-e272d6d-0"><div class="tabtitlelabel">About the event</div></button><button class="t-btn" aria-selected="false" role="tab" tabindex="-1" id="gspb-tab-item-btn-gsbp-e272d6d-1" aria-controls="gspb-tab-item-content-gsbp-e272d6d-1"><div class="tabtitlelabel">Day 1</div></button><button class="t-btn" aria-selected="false" role="tab" tabindex="-1" id="gspb-tab-item-btn-gsbp-e272d6d-2" aria-controls="gspb-tab-item-content-gsbp-e272d6d-2"><div class="tabtitlelabel">Day 2</div></button><button class="t-btn" aria-selected="false" role="tab" tabindex="-1" id="gspb-tab-item-btn-gsbp-e272d6d-3" aria-controls="gspb-tab-item-content-gsbp-e272d6d-3"><div class="tabtitlelabel">Speakers &amp; Organisers</div></button><button class="t-btn" aria-selected="false" role="tab" tabindex="-1" id="gspb-tab-item-btn-gsbp-e272d6d-4" aria-controls="gspb-tab-item-content-gsbp-e272d6d-4"><div class="tabtitlelabel">Posters</div></button></div><div class="t-panel-container"><div class="gswipertabs"><div class="swiper-wrapper">

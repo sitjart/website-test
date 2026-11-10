@@ -3,6 +3,8 @@ title: "ELIXIR recognises 3 UK services for enabling data interoperability"
 date: 2023-12-14
 standfirst: "ELIXIR announces the addition of three ELIXIR-UK services as Recommended Interoperability Resources (RIR) : FAIR Cookbook, Jalview and RDMkit . Out of the seven selected RIRs this year, three of them are ELIXIR-UK servic"
 category: "News"
+related:
+  services: ["fair-cookbook", "jalview", "rdmkit"]
 ---
 
 <p>ELIXIR announces the addition of three ELIXIR-UK services as <a href="https://elixir-europe.org/platforms/interoperability/rirs">Recommended Interoperability Resources (RIR)</a>: <strong>FAIR Cookbook, Jalview and RDMkit</strong>. Out of the seven selected RIRs this year, three of them are ELIXIR-UK services, recognising the valuable contributions of the UK Node members and organisations.</p>

@@ -1,0 +1,49 @@
+---
+// Page for one record (a service, member, project ...), in the profile layout with smart tabs
+import ProfileLayout from '../layouts/ProfileLayout.astro';
+import ProfileSide from './ProfileSide.astro';
+import SmartTabs from './SmartTabs.astro';
+import { DIRECTORY, tagSlug, type DirectoryRecord } from '../lib/graph';
+import { url } from '../lib/url';
+
+interface Props { kind: keyof typeof DIRECTORY; record: DirectoryRecord }
+const { kind, record: r } = Astro.props;
+const { singular, title: plural } = DIRECTORY[kind];
+
+const year = (d: string | null) => (d ? d.slice(0, 4) : null);
+const facts = [
+  ...(r.tags.length ? [{ label: 'Type', value: r.tags.join(', '), href: url(`/${kind}/#${tagSlug(r.tags[0])}`) }] : []),
+  ...(kind === 'projects' && r.start ? [{ label: 'Duration', value: `${year(r.start)}${r.end ? `–${year(r.end)}` : ''}` }] : []),
+  ...(kind === 'members' && r.start ? [{ label: 'Member since', value: year(r.start)! }] : []),
+  ...(kind === 'services' && r.start ? [{ label: 'Endorsed since', value: year(r.start)! }] : []),
+];
+const links = [
+  ...(r.website ? [{ label: 'Website', href: r.website }] : []),
+  ...(r.joinLink ? [{ label: 'Join this community', href: r.joinLink }] : []),
+];
+
+const schemaType = { services: 'SoftwareApplication', members: 'Organization', collaborations: 'Organization', projects: 'ResearchProject', activities: 'Project', area: 'Thing' }[kind];
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': schemaType,
+  name: r.name,
+  url: r.website || undefined,
+  logo: r.logo || undefined,
+  description: r.summary || undefined,
+};
+---
+<ProfileLayout title={r.name} description={r.summary} {jsonLd}>
+  <Fragment slot="side">
+    <ProfileSide name={r.name} subtitle={singular} image={r.logo} {facts} {links} />
+    <a class="side-back" href={url(`/${kind}/`)}>← All {plural.toLowerCase()}</a>
+  </Fragment>
+  <SmartTabs {kind} slug={r.slug} hasBio={Boolean(r.body || r.summary)} bioLabel="About">
+    {r.body ? <div class="prose" set:html={r.body} /> : <p>{r.summary}</p>}
+  </SmartTabs>
+  {!r.body && !r.summary && <p class="empty">No description yet.</p>}
+</ProfileLayout>
+
+<style>
+  .side-back { font-size: 14px; align-self: flex-start; }
+  .empty { font-style: italic; }
+</style>

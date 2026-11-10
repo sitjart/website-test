@@ -1,7 +1,166 @@
 [
-  { "First name": "Alys", "Last name": "Penrose", "Job title": "Data Steward", "Institution": "Example University of the North", "Bio": "Invented sample profile for the mock-up. Supports research groups with data management plans and FAIR publishing.", "ORCID": "", "Status": { "id": 1, "value": "Active", "color": "green" }, "Website status": { "id": 11, "value": "Consent given", "color": "green" } },
-  { "First name": "Tomasz", "Last name": "Weller", "Job title": "Research Software Engineer", "Institution": "Example Institute of Genomics", "Bio": "Invented sample profile for the mock-up. Builds and maintains workflow tooling for genomics pipelines.", "ORCID": "", "Status": { "id": 1, "value": "Active", "color": "green" }, "Website status": { "id": 11, "value": "Consent given", "color": "green" } },
-  { "First name": "Priya", "Last name": "Nandakumar", "Job title": "Training Coordinator", "Institution": "Example Biosciences Centre", "Bio": "Invented sample profile for the mock-up. Runs the node's training programme for researchers and data professionals.", "ORCID": "", "Status": { "id": 1, "value": "Active", "color": "green" }, "Website status": { "id": 11, "value": "Consent given", "color": "green" } },
-  { "First name": "Hamish", "Last name": "Corrie", "Job title": "Infrastructure Lead", "Institution": "Example University of the North", "Bio": "Invented sample profile for the mock-up. Leads compute and storage services for the life sciences.", "ORCID": "", "Status": { "id": 1, "value": "Active", "color": "green" }, "Website status": { "id": 11, "value": "Consent given", "color": "green" } },
-  { "First name": "Withdrawn", "Last name": "Example", "Job title": "Should never appear", "Institution": "Test", "Bio": "This row checks the consent filter: withdrawn people are never built.", "ORCID": "", "Status": { "id": 1, "value": "Active", "color": "green" }, "Website status": { "id": 12, "value": "Withdrawn", "color": "red" } }
+  {
+    "First name": "Alys",
+    "Last name": "Penrose",
+    "Job title": "Data Steward",
+    "Institution": "Example University of the North",
+    "Bio": "Invented sample profile for the mock-up. Supports research groups with data management plans and FAIR publishing.",
+    "ORCID": "",
+    "Status": {
+      "id": 1,
+      "value": "Active",
+      "color": "green"
+    },
+    "Website status": {
+      "id": 11,
+      "value": "Consent given",
+      "color": "green"
+    },
+    "Related": {
+      "activities": [
+        "3d-bioinfo-community",
+        "machine-learning-focus-group"
+      ],
+      "services": [
+        "birmingham-metabolomics-training-centre",
+        "cafe-variome"
+      ],
+      "news": [
+        "15-new-fellows-dash-project",
+        "2024-galaxy-community-conference",
+        "2024-rda-plenary"
+      ],
+      "events": [
+        "uk-hdc-summer-drop-in-august-2025",
+        "ukri-data-policy"
+      ],
+      "projects": [
+        "2024-technology-compute"
+      ]
+    },
+    "Governance roles": [
+      {
+        "id": 1,
+        "value": "Management Committee"
+      },
+      {
+        "id": 2,
+        "value": "Coordination office"
+      }
+    ],
+    "Website": "",
+    "LinkedIn": "",
+    "Photo URL": ""
+  },
+  {
+    "First name": "Tomasz",
+    "Last name": "Weller",
+    "Job title": "Research Software Engineer",
+    "Institution": "Example Institute of Genomics",
+    "Bio": "Invented sample profile for the mock-up. Builds and maintains workflow tooling for genomics pipelines.",
+    "ORCID": "",
+    "Status": {
+      "id": 1,
+      "value": "Active",
+      "color": "green"
+    },
+    "Website status": {
+      "id": 11,
+      "value": "Consent given",
+      "color": "green"
+    },
+    "Related": {
+      "services": [
+        "cambridge-bioinformatics-training",
+        "cath",
+        "copo"
+      ],
+      "projects": [
+        "2024-technology-data",
+        "2024-technology-interoperability"
+      ]
+    },
+    "Governance roles": [],
+    "Website": "",
+    "LinkedIn": "",
+    "Photo URL": ""
+  },
+  {
+    "First name": "Priya",
+    "Last name": "Nandakumar",
+    "Job title": "Training Coordinator",
+    "Institution": "Example Biosciences Centre",
+    "Bio": "Invented sample profile for the mock-up. Runs the node's training programme for researchers and data professionals.",
+    "ORCID": "",
+    "Status": {
+      "id": 1,
+      "value": "Active",
+      "color": "green"
+    },
+    "Website status": {
+      "id": 11,
+      "value": "Consent given",
+      "color": "green"
+    },
+    "Related": {
+      "activities": [
+        "biodiversity-community",
+        "bioinfocoreleaders"
+      ],
+      "events": [
+        "when-is-an-ai-output-ready-trustworthy-ai",
+        "workshop-are-your-powerpoints-legal"
+      ]
+    },
+    "Governance roles": [
+      {
+        "id": 3,
+        "value": "Steering Committee"
+      }
+    ],
+    "Website": "",
+    "LinkedIn": "",
+    "Photo URL": ""
+  },
+  {
+    "First name": "Hamish",
+    "Last name": "Corrie",
+    "Job title": "Infrastructure Lead",
+    "Institution": "Example University of the North",
+    "Bio": "Invented sample profile for the mock-up. Leads compute and storage services for the life sciences.",
+    "ORCID": "",
+    "Status": {
+      "id": 1,
+      "value": "Active",
+      "color": "green"
+    },
+    "Website status": {
+      "id": 11,
+      "value": "Consent given",
+      "color": "green"
+    },
+    "Related": {},
+    "Governance roles": [],
+    "Website": "",
+    "LinkedIn": "",
+    "Photo URL": ""
+  },
+  {
+    "First name": "Withdrawn",
+    "Last name": "Example",
+    "Job title": "Should never appear",
+    "Institution": "Test",
+    "Bio": "This row checks the consent filter: withdrawn people are never built.",
+    "ORCID": "",
+    "Status": {
+      "id": 1,
+      "value": "Active",
+      "color": "green"
+    },
+    "Website status": {
+      "id": 12,
+      "value": "Withdrawn",
+      "color": "red"
+    }
+  }
 ]

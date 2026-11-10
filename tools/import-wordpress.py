@@ -68,11 +68,51 @@ def main(src: str):
     def cats(item, domain):
         return [c.text for c in item.findall('category') if c.get('domain') == domain]
 
+    # Directory types: WordPress post type -> (URL folder, data file name)
+    DIRECTORY = {
+        'service': 'services',
+        'member': 'members',
+        'project': 'projects',
+        'activity': 'activities',
+        'collaborator': 'collaborations',
+        'thematic-area': 'area',
+    }
+    # Everything that can be linked to (people are deliberately excluded)
+    linkable = {'post': 'news', 'event': 'events', **DIRECTORY}
+    by_id = {text(i, 'wp:post_id'): (linkable[text(i, 'wp:post_type')], text(i, 'wp:post_name'))
+             for i in published if text(i, 'wp:post_type') in linkable}
+
+    def related(item):
+        """Collect links to other published records from ACF relationship fields."""
+        out = {}
+        own = text(item, 'wp:post_id')
+        for key, value in meta(item).items():
+            if key.startswith('_') or not value.startswith('a:'):
+                continue
+            for ref in re.findall(r's:\d+:"(\d+)"', value):
+                if ref in by_id and ref != own:
+                    kind, slug = by_id[ref]
+                    out.setdefault(kind, [])
+                    if slug not in out[kind]:
+                        out[kind].append(slug)
+        return out
+
+    def related_yaml(rel):
+        lines = []
+        if rel:
+            lines.append('related:')
+            for kind, slugs in sorted(rel.items()):
+                lines.append(f'  {kind}: {json.dumps(slugs)}')
+        return lines
+
+    def reset(folder):
+        folder.mkdir(parents=True, exist_ok=True)
+        for old in folder.glob('*.md'):
+            old.unlink()
+        return folder
+
     # ---- News ----
-    news_dir = ROOT / 'src/content/news'
-    news_dir.mkdir(parents=True, exist_ok=True)
-    for old in news_dir.glob('*.md'):
-        old.unlink()
+    news_dir = reset(ROOT / 'src/content/news')
     for i in of_type('post'):
         m = meta(i)
         body = clean_html(text(i, 'content:encoded'))
@@ -85,13 +125,11 @@ def main(src: str):
         ]
         if attachments.get(m.get('_thumbnail_id', '')):
             fm.append(f'image: {yaml_str(attachments[m["_thumbnail_id"]])}')
+        fm += related_yaml(related(i))
         (news_dir / f'{text(i, "wp:post_name")}.md').write_text('---\n' + '\n'.join(fm) + '\n---\n\n' + body + '\n', encoding='utf8')
 
     # ---- Events ----
-    ev_dir = ROOT / 'src/content/events'
-    ev_dir.mkdir(parents=True, exist_ok=True)
-    for old in ev_dir.glob('*.md'):
-        old.unlink()
+    ev_dir = reset(ROOT / 'src/content/events')
     for i in of_type('event'):
         m = meta(i)
         fm = [
@@ -104,34 +142,67 @@ def main(src: str):
             fm.append(f'end: {wp_date(m.get("event_end_date"))}')
         for key, field in (('event_start_time', 'startTime'), ('event_end_time', 'endTime'),
                            ('event_venue_name', 'venue'), ('event_locality', 'locality'),
-                           ('registration_link', 'registration')):
+                           ('registration_link', 'registration'), ('event_recording', 'recording'),
+                           ('event_slides', 'slides')):
             if m.get(key):
                 fm.append(f'{field}: {yaml_str(m[key][:5] if "time" in key else m[key])}')
         if attachments.get(m.get('_thumbnail_id', '')):
             fm.append(f'image: {yaml_str(attachments[m["_thumbnail_id"]])}')
+        fm += related_yaml(related(i))
         body = clean_html(text(i, 'content:encoded'))
         (ev_dir / f'{text(i, "wp:post_name")}.md').write_text('---\n' + '\n'.join(fm) + '\n---\n\n' + body + '\n', encoding='utf8')
 
-    # ---- Services and members (stand-ins until they come from Baserow) ----
-    def org(i):
+    # ---- Pages (About, What we do, Join in ...) ----
+    skip_pages = {'home', 'test-2', 'job-test', 'events', 'news-and-stories'}
+    page_dir = ROOT / 'src/content/pages'
+    page_dir.mkdir(parents=True, exist_ok=True)
+    for old in page_dir.glob('*.md'):
+        if old.stem != 'home':
+            old.unlink()
+    page_count = 0
+    for i in of_type('page'):
+        slug = text(i, 'wp:post_name')
+        if slug in skip_pages:
+            continue
+        fm = [f'title: {yaml_str(html.unescape(text(i, "title")))}']
+        body = clean_html(text(i, 'content:encoded'))
+        (page_dir / f'{slug}.md').write_text('---\n' + '\n'.join(fm) + '\n---\n\n' + body + '\n', encoding='utf8')
+        page_count += 1
+
+    # ---- Directory records (stand-ins until they come from Baserow) ----
+    def record(i):
         m = meta(i)
-        return {
+        tags = [c.text for c in i.findall('category') if c.get('domain') not in ('category', 'post_tag')]
+        body = clean_html(text(i, 'content:encoded')) or (
+            f'<p>{html.escape(strip_tags(m.get("description", "")))}</p>' if m.get('description') else '')
+        logo = (attachments.get(m.get('logo', '')) or attachments.get(m.get('organisation_logo', ''))
+                or attachments.get(m.get('_thumbnail_id', '')) or '')
+        rec = {
             'slug': text(i, 'wp:post_name'),
             'name': html.unescape(text(i, 'title')),
-            'website': m.get('website', ''),
-            'logo': attachments.get(m.get('logo', '')) or attachments.get(m.get('organisation_logo', '')) or '',
-            'description': strip_tags(m.get('description', '')),
+            'website': m.get('website') or m.get('project_website') or m.get('organisation_website') or '',
+            'logo': logo,
+            'summary': strip_tags(m.get('description', '')) or strip_tags(body)[:200],
+            'body': body,
+            'tags': tags,
             'status': (cats(i, 'status-of-service') or [''])[0],
+            'start': wp_date(m.get('start_date') or m.get('year_membership_started') or m.get('year_service_selected')),
+            'end': wp_date(m.get('end_date')),
+            'joinLink': m.get('activity_join_in', ''),
+            'related': related(i),
         }
+        return rec
 
-    data_dir = ROOT / 'src/data'
-    services = sorted((org(i) for i in of_type('service')), key=lambda s: s['name'].lower())
-    members = sorted((org(i) for i in of_type('member')), key=lambda s: s['name'].lower())
-    (data_dir / 'services.json').write_text(json.dumps(services, indent=2, ensure_ascii=False) + '\n', encoding='utf8')
-    (data_dir / 'members.json').write_text(json.dumps(members, indent=2, ensure_ascii=False) + '\n', encoding='utf8')
+    data_dir = ROOT / 'src/data/directory'
+    data_dir.mkdir(parents=True, exist_ok=True)
+    counts = {}
+    for wp_type, name in DIRECTORY.items():
+        recs = sorted((record(i) for i in of_type(wp_type)), key=lambda r: r['name'].lower())
+        (data_dir / f'{name}.json').write_text(json.dumps(recs, indent=1, ensure_ascii=False) + '\n', encoding='utf8')
+        counts[name] = len(recs)
 
-    print(f'news: {len(of_type("post"))}, events: {len(of_type("event"))}, '
-          f'services: {len(services)}, members: {len(members)}')
+    print(f'news: {len(of_type("post"))}, events: {len(of_type("event"))}, pages: {page_count}, ' +
+          ', '.join(f'{k}: {v}' for k, v in counts.items()))
 
 
 if __name__ == '__main__':

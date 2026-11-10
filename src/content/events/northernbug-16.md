@@ -8,6 +8,8 @@ venue: "Norcroft Centre, University of Bradford"
 locality: "Bradford"
 registration: "https://northernbug.github.io/northernbug16"
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/aerial-shot-of-an-old-mill-in-the-city-of-bradford-2023-11-27-05-16-26-utc.webp"
+related:
+  members: ["university-of-bradford"]
 ---
 
 <p>NorthernBUG 16 brings the network's regular meeting to the University of Bradford for a day of talks, posters and open discussion. The event is free and open to anyone working with computational tools in the life sciences.</p>

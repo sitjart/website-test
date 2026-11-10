@@ -4,6 +4,9 @@ date: 2021-09-27
 standfirst: "Following the 2021 call for new services, we are pleased to announce seven new ELIXIR-UK services. These were selected by our panel to ensure high service quality and match UK priorities as identified by its funders. The"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-connection-close-up.webp"
+related:
+  members: ["university-of-manchester"]
+  services: ["cafe-variome", "missense3d", "neof", "fair-cookbook", "flybase", "copo", "knetminer", "workflowhub", "veupathdb"]
 ---
 
 <p>Following the 2021 call for new services, we are pleased to announce seven new ELIXIR-UK services. These were selected by our panel to ensure high service quality and match UK priorities as identified by its funders.</p>

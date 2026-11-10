@@ -4,6 +4,8 @@ date: 2023-06-19
 standfirst: "ELIXIR-UK has conceived BioFAIR , a new digital research infrastructure that enables the data and processing resources of ELIXIR and other partners to be delivered to researchers across the UK. A national BioCommons will"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2021/06/data-center-with-multiple-rows-of-fully-operationa-2023-11-27-05-01-58-utc.webp"
+related:
+  members: ["university-of-manchester"]
 ---
 
 <p>ELIXIR-UK has conceived <a href="https://biofair.uk/" target="_blank" rel="noopener" title="">BioFAIR</a>, a new digital research infrastructure that enables the data and processing resources of ELIXIR and other partners to be delivered to researchers across the UK. A national BioCommons will maximise the Findability, Accessibility, Interoperability, Reusability (FAIR) and Reproducibility of life science data and data workflows.</p>

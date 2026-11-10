@@ -4,6 +4,8 @@ date: 2024-03-05
 standfirst: "On 1 March 2024, the EU-funded EOSC-ENTRUST project launched to enhance European interoperability for sensitive data access and analysis. Led by ELIXIR and the EUDAT Collaborative Data Infrastructure (CDI) , this collabo"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-eu-collaboration.webp"
+related:
+  members: ["university-of-nottingham", "university-of-manchester", "university-of-dundee", "hdr-uk"]
 ---
 
 <p>On 1 March 2024, the EU-funded <a href="https://eosc-entrust.eu/">EOSC-ENTRUST</a> project launched to enhance European interoperability for sensitive data access and analysis. Led by <a href="https://elixir-europe.org/">ELIXIR</a> and the <a href="https://eudat.eu/eudat-cdi">EUDAT Collaborative Data Infrastructure (CDI)</a>, this collaborative effort involves partners from 15 European countries, including ELIXIR-UK members such as University of Dundee, University of Manchester, University of Nottingham and Health Data Research UK (HDR UK). With EU funding amounting to €4.2 million, EOSC-ENTRUST aims to address critical challenges over a three-year period.</p>

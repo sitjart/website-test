@@ -4,6 +4,10 @@ date: 2026-06-04
 standfirst: "Turning established FAIR resources into facilitator-ready materials for UK research organisations."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/06/banner-plann-notebook.jpg"
+related:
+  collaborations: ["oxford-brookes-university"]
+  events: ["fair-in-action-bridge-contentathon-1", "fair-in-action-bridge-contentathon-2", "fair-in-action-bridge-contentathon-3"]
+  members: ["earlham-institute", "cardiff-university", "university-of-manchester", "university-oxford", "university-college-london", "university-of-liverpool"]
 ---
 
 <p>Research Data Management professionals across the UK often face the same problem: plenty of FAIR guidance exists, but very little that is ready to pick up and use. FAIR-in-action Bridge is a BioFAIR Pathfinder project that addresses exactly that gap, co-creating reusable materials that help RDM professionals turn FAIR principles into everyday institutional practice.</p>

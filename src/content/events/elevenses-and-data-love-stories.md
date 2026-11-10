@@ -5,7 +5,11 @@ type: "Community Call"
 online: true
 startTime: "11:00"
 endTime: "12:00"
+recording: "https://youtu.be/NIwDsWKpztA"
 image: "https://elixiruknode.org/wp-content/uploads/2025/01/banner-valentines-love.jpg"
+related:
+  activities: ["uk-rdm-club"]
+  members: ["cardiff-university", "university-of-manchester", "university-college-london"]
 ---
 
 <p class="has-large-font-size">It’s February, it’s Valentine’s – we talk about what we love about Data Stewardship.</p>

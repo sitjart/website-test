@@ -8,6 +8,8 @@ venue: "Bluecoat"
 locality: "Liverpool"
 registration: "https://forms.clickup.com/20526645/f/kjdhn-18212/NOUS06KMEG2UEN443J"
 image: "https://elixiruknode.org/wp-content/uploads/2025/11/2025-elixir-uk-all-hands-03.webp"
+related:
+  members: ["university-of-liverpool"]
 ---
 
 <div class="wp-block-greenshift-blocks-pagenav alignfull gspb_pagenav_wrap"><div class="gspb_dotnav_tabs_wrap" id="gspb-pagenav-tabs-wrap-gsbp-1e39a1b"><div class="gspb_dotnav_tabs" id="gspb-pagenav-tabs-gsbp-1e39a1b"><div class="gspb_dotnav_tab_item" data-scrollto=""><div class="gspb_dotnav_tab_accent"></div><div class="gspb_dotnav_tab_name">About</div></div><div class="gspb_dotnav_tab_item" data-scrollto=""><div class="gspb_dotnav_tab_accent"></div><div class="gspb_dotnav_tab_name">Programme</div></div><div class="gspb_dotnav_tab_item" data-scrollto=""><div class="gspb_dotnav_tab_accent"></div><div class="gspb_dotnav_tab_name">Organising Committee</div></div><div class="gspb_dotnav_tab_item" data-scrollto=""><div class="gspb_dotnav_tab_accent"></div><div class="gspb_dotnav_tab_name">FAQs</div></div></div></div><div id="gspb-pagenav-gsbp-1e39a1b" class="gspb_pagenav " data-direction="tabs">

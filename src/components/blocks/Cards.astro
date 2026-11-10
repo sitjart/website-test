@@ -14,7 +14,7 @@ const { heading, overlap = false, background = 'page', reveal = 'fade-up', items
     {heading && <h2>{heading}</h2>}
     <ul class="cards__grid" style={`--cols: ${Math.min(items.length, 4)}`}>
       {items.map((item, i) => (
-        <li class="card" data-reveal={reveal === 'none' ? undefined : reveal} style={`--dur: 0.7s; --delay: ${i * 100}ms`}>
+        <li class="card" data-reveal={reveal === 'none' ? undefined : reveal} style={`--delay: ${i * 100}ms`}>
           {item.href ? (
             <a class="card__link" href={url(item.href)}>
               <h2 class="card__title">{item.title}</h2>

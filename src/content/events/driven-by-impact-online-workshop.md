@@ -8,6 +8,10 @@ endTime: "12:30"
 venue: "UK"
 registration: "https://elixir-europe-org.zoom.us/meeting/register/C3qZCHJkRcmlO219tInYXA"
 image: "https://elixiruknode.org/wp-content/uploads/2025/01/banner-building-block.jpg"
+related:
+  activities: ["impact-focus-group"]
+  collaborations: ["embl"]
+  members: ["earlham-institute"]
 ---
 
 <p>In research infrastructures like ELIXIR, much of the value created is not captured by traditional academic outputs such as publications or citations. Contributions such as data services, tools, standards, training and community building often generate long-term and collaborative impacts that remain difficult to evidence through metrics.</p>

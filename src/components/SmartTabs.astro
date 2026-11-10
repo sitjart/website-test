@@ -1,0 +1,125 @@
+---
+// "Smart tabs", rebuilt from the live profile pages: one tab per kind of linked record,
+// empty tabs are dropped, and the tab bar only appears when there is more than one tab.
+// Without JavaScript, all panels show one after another.
+import { linksFor, LABELS, TAB_ORDER, type Kind } from '../lib/graph';
+import { longDate } from '../lib/format';
+import { url } from '../lib/url';
+
+interface Props { kind: Kind; slug: string; bioLabel?: string; hasBio?: boolean }
+const { kind, slug, bioLabel = 'Bio', hasBio = false } = Astro.props;
+const groups = await linksFor(kind, slug);
+const panels = [
+  ...(hasBio ? [{ id: 'bio', label: bioLabel }] : []),
+  ...TAB_ORDER.filter((k) => groups[k]?.length).map((k) => ({ id: k, label: LABELS[k] })),
+];
+const uid = `tabs-${kind}-${slug}`;
+---
+{panels.length > 0 && (
+  <div class="smart-tabs" data-smart-tabs>
+    {panels.length > 1 && (
+      <nav class="smart-tabs-nav" role="tablist">
+        {panels.map((p, i) => (
+          <button type="button" role="tab" class:list={['smart-tab-btn', { active: i === 0 }]} id={`${uid}-tab-${p.id}`}
+            aria-controls={`${uid}-${p.id}`} aria-selected={i === 0 ? 'true' : 'false'} data-tab={p.id}>{p.label}</button>
+        ))}
+      </nav>
+    )}
+    {panels.map((p, i) => (
+      <div class:list={['tab-panel', { active: i === 0 }]} id={`${uid}-${p.id}`} role="tabpanel" aria-labelledby={`${uid}-tab-${p.id}`} data-panel={p.id}>
+        {p.id === 'bio' ? <slot /> : (
+          <ul class="tab-list">
+            {groups[p.id as Kind]!.map((n) => (
+              <li class="tab-item">
+                <a href={url(`/${n.kind}/${n.slug}/`)}>
+                  {(n.date || n.label) && (
+                    <span class="tab-item__meta">
+                      {n.date && longDate(n.date)}
+                      {n.date && n.label && <span class="tab-item__sep">|</span>}
+                      {n.label}
+                    </span>
+                  )}
+                  <span class="tab-item__title">{n.name}</span>
+                  {n.summary && <span class="tab-item__summary">{n.summary}</span>}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    ))}
+  </div>
+)}
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-smart-tabs]').forEach((box) => {
+    const buttons = box.querySelectorAll<HTMLButtonElement>('.smart-tab-btn');
+    if (!buttons.length) return;
+    box.classList.add('is-enhanced');
+    const show = (id: string) => {
+      buttons.forEach((b) => {
+        const on = b.dataset.tab === id;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-selected', String(on));
+        b.tabIndex = on ? 0 : -1;
+      });
+      box.querySelectorAll<HTMLElement>('.tab-panel').forEach((p) => p.classList.toggle('active', p.dataset.panel === id));
+    };
+    buttons.forEach((b, i) => {
+      b.addEventListener('click', () => show(b.dataset.tab!));
+      b.addEventListener('keydown', (e) => {
+        const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!step) return;
+        const next = buttons[(i + step + buttons.length) % buttons.length];
+        next.focus();
+        show(next.dataset.tab!);
+      });
+    });
+  });
+</script>
+
+<style>
+  /* Tab styles taken from the live site's custom CSS (.smart-tabs-nav / .smart-tab-btn) */
+  .smart-tabs-nav {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+  .smart-tab-btn {
+    font-family: var(--font);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.6rem 1rem;
+    margin-bottom: -2px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 160ms ease;
+  }
+  .smart-tab-btn:hover { color: var(--blue); }
+  .smart-tab-btn.active { color: var(--navy); border-bottom-color: var(--blue); font-weight: 700; }
+  .smart-tabs.is-enhanced .tab-panel { display: none; }
+  .smart-tabs.is-enhanced .tab-panel.active { display: block; animation: tab-in 0.25s var(--ease); }
+  @keyframes tab-in { from { opacity: 0; transform: translateY(6px); } }
+
+  .tab-list { list-style: none; margin: 0; padding: 0; }
+  .tab-item a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .tab-item__meta { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--navy); }
+  .tab-item__sep { margin: 0 0.6rem; color: var(--border); }
+  .tab-item__title { font-size: 1.2rem; line-height: 1.35; font-weight: 700; color: var(--navy); transition: color 0.2s var(--ease); }
+  .tab-item a:hover .tab-item__title { color: var(--blue); }
+  .tab-item__summary { font-size: 0.85rem; line-height: 1.5; }
+  @media (prefers-reduced-motion: reduce) { .smart-tabs.is-enhanced .tab-panel.active { animation: none; } }
+</style>

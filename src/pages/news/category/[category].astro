@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+import NewsList from '../../../components/NewsList.astro';
+import { tagSlug } from '../../../lib/graph';
+
+export async function getStaticPaths() {
+  const news = await getCollection('news');
+  const cats = [...new Set(news.map((n) => n.data.category))];
+  return cats.map((c) => ({ params: { category: tagSlug(c) }, props: { name: c, items: news.filter((n) => n.data.category === c) } }));
+}
+const { name, items } = Astro.props;
+---
+<BaseLayout title={name}>
+  <PageHeader title={name} eyebrow="News & stories" />
+  <NewsList {items} />
+</BaseLayout>

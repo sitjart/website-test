@@ -4,6 +4,10 @@ date: 2025-12-08
 standfirst: "A summary of panel discussions and World Café conversations exploring how AI is shaping research, skills and infrastructure across the UK"
 category: "Articles"
 image: "https://elixiruknode.org/wp-content/uploads/2025/12/banner_circuit-board-and-ai-micro-processor-artificial-i.webp"
+related:
+  collaborations: ["university-of-padova", "university-of-limerick"]
+  events: ["elixir-uk-all-hands-2025", "open-and-sustainable-ai"]
+  members: ["cardiff-university", "university-of-liverpool", "earlham-institute", "university-of-manchester", "university-of-exeter"]
 ---
 
 <p>The purpose of this report is to summarise the discussions that took place during the AI panel and World Café sessions at the <a href="https://elixiruknode.org/event/elixir-uk-all-hands-2025/">ELIXIR-UK 2025 All Hands meeting</a>.&nbsp;</p>

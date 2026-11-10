@@ -4,6 +4,8 @@ date: 2026-02-11
 standfirst: "Members are awarded DisCouRSE Flexible Fund support for PeerLadder, a new peer-mentoring pilot advancing inclusive leadership for digital Research Technical Professionals across UK research-performing organisations."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2026/02/banner-diversity-inclusion.webp"
+related:
+  members: ["open-life-science", "university-of-manchester", "earlham-institute"]
 ---
 
 <p><strong>ELIXIR-UK </strong>members have been awarded funding through the DisCouRSE Flexible Fund to deliver <strong>PeerLadder</strong>, a new peer-mentoring initiative supporting leadership development among underrepresented digital Research Technical Professionals (dRTPs) across UK research-performing organisations.</p>

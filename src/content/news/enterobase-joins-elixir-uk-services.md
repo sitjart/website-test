@@ -4,6 +4,9 @@ date: 2026-09-23
 standfirst: "EnteroBase joins ELIXIR-UK Services to strengthen European bacterial pathogen genomics"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2026/08/logo-service-enterobase.svg"
+related:
+  members: ["university-of-warwick"]
+  services: ["enterobase"]
 ---
 
 <p><a href="https://enterobase.warwick.ac.uk/">EnteroBase</a> has been added to the portfolio of endorsed ELIXIR-UK Services. Developed and maintained by the Bioinformatics &amp; Digital Health Service at the University of Warwick, EnteroBase provides free access to tools and compute for bacterial pathogen genome assembly and analysis, hosting over 1.7 million curated bacterial genomes and metadata for a global community of more than 5,000 registered users in over 100 countries.</p>

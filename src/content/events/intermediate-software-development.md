@@ -8,6 +8,9 @@ venue: "University of Bradford"
 locality: "Bradford"
 registration: "https://na.eventscloud.com/researchdevelopment2024bradford"
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/aerial-shot-of-an-old-mill-in-the-city-of-bradford-2023-11-27-05-16-26-utc.webp"
+related:
+  members: ["earlham-institute", "university-of-bradford"]
+  projects: ["elixir-uk-dash"]
 ---
 
 <h2 class="wp-block-stackable-divider stk-block-divider stk-block stk-92b1bed" data-block-id="92b1bed">What will you learn?</h2>

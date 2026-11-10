@@ -4,6 +4,10 @@ date: 2026-02-09
 standfirst: "ELIXIR-UK contributed to a national meeting on strengthening and coordinating training provision for digital Research Technical Professionals (dRTPs), highlighting its role in life science training and data stewardship through national and European infrastructure."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2026/02/banner-news-step-up-meeting.webp"
+related:
+  members: ["university-of-cambridge", "hdr-uk", "university-of-southampton"]
+  projects: ["elixir-uk-dash"]
+  services: ["tess"]
 ---
 
 <p>On 27 November 2025, ELIXIR-UK contributed to a national discussion on strengthening and coordinating training provision for digital Research Technical Professionals (dRTPs) at the <em>“</em><a href="https://www.tickettailor.com/events/stepupproject/1867117">Building a comprehensive and coordinated training landscape for dRTPs”</a> meeting held in London and organised by <a href="https://step-up.ac.uk/"><strong>STEP-UP</strong></a>.</p>

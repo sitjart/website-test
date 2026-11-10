@@ -6,6 +6,10 @@ online: false
 end: 2026-07-01
 registration: "https://forms.clickup.com/20526645/f/kjdhn-17852/WRBL9B39JQEWP02HAP"
 image: "https://elixiruknode.org/wp-content/uploads/2024/04/illustration-isometrics-mechanisms-like-extending-hand-join.svg"
+related:
+  activities: ["uk-rdm-club"]
+  news: ["fair-in-action-bridge-building-the-practical-tools-rdm-professionals-need"]
+  projects: ["fair-in-action-bridge"]
 ---
 
 <p>The cultural barriers to FAIR are just as real as the practical ones. RDM is too often treated as administrative box-ticking rather than as a core part of research excellence.</p>

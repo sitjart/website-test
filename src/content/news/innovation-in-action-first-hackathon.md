@@ -4,6 +4,8 @@ date: 2025-02-19
 standfirst: "Organising the first Joint Hackathon at the intersection of health data and life sciences"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/02/hackathon_group-photo.webp"
+related:
+  members: ["hdr-uk"]
 ---
 
 <p>The first <a href="https://elixiruknode.org/members/hdr-uk/" data-type="member" data-id="18557">HDR UK</a> &amp; ELIXIR-UK Joint Hackathon brought together technical professionals at the intersection of health data and life sciences for three days of collaboration, creativity, and problem-solving – driving forward solutions to shared challenges across the ecosystem.</p>

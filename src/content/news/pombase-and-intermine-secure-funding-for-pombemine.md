@@ -4,6 +4,8 @@ date: 2020-12-03
 standfirst: "Two of our ELIXIR-UK services, PomBase and InterMine, have received funding for a new collaboration to create a cloud version of the FAIR model organism database PomBase, by using the InterMine platform on the European O"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-cloud.webp"
+related:
+  services: ["intermine", "pombase"]
 ---
 
 <p>Two of our ELIXIR-UK services, PomBase and InterMine, have received funding for a new collaboration to create a cloud version of the FAIR model organism database PomBase, by using the InterMine platform on the European Open Science Cloud (EOSC)-Life OpenStack. The resulting PombeMine will provide web services and client libraries to enable PomBase data to be used in analytic workflows and a web interface that will allow flexible searching and data export for the fission yeast <em>Schizosaccharomyces pombe</em>.</p>

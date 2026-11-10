@@ -1,32 +1,124 @@
 ---
+// Footer rebuilt from the live site's "Footer" content block and bottom bar
 import site from '../data/site.json';
+import footer from '../data/footer.json';
+import { url } from '../lib/url';
+
 const year = new Date().getFullYear();
+const icons: Record<string, string> = {
+  LinkedIn: 'M18.6,0H1.4C0.6,0,0,0.6,0,1.4v17.1C0,19.4,0.6,20,1.4,20h17.1c0.8,0,1.4-0.6,1.4-1.4V1.4C20,0.6,19.4,0,18.6,0z M6,17.1h-3V7.6h3L6,17.1L6,17.1zM4.6,6.3c-1,0-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7c0.9,0,1.7,0.8,1.7,1.7C6.3,5.5,5.5,6.3,4.6,6.3z M17.2,17.1h-3v-4.6c0-1.1,0-2.5-1.5-2.5c-1.5,0-1.8,1.2-1.8,2.5v4.7h-3V7.6h2.8v1.3h0c0.4-0.8,1.4-1.5,2.8-1.5c3,0,3.6,2,3.6,4.5V17.1z',
+  YouTube: 'M15,0H5C2.2,0,0,2.2,0,5v10c0,2.8,2.2,5,5,5h10c2.8,0,5-2.2,5-5V5C20,2.2,17.8,0,15,0z M14.5,10.9l-6.8,3.8c-0.1,0.1-0.3,0.1-0.5,0.1c-0.5,0-1-0.4-1-1l0,0V6.2c0-0.5,0.4-1,1-1c0.2,0,0.3,0,0.5,0.1l6.8,3.8c0.5,0.3,0.7,0.8,0.4,1.3C14.8,10.6,14.6,10.8,14.5,10.9z',
+  Bluesky: 'M4.3 2.4C6.6 4.1 9.1 7.6 10 9.5v5c0-.1 0 0-.1.3-.5 1.4-2.3 6.8-6.5 2.5C1.2 15 2.2 12.7 6.3 12c-2.3.4-4.9-.3-5.6-2.8C.5 8.5.1 3.9.1 3.3 0 .1 2.7 1.1 4.3 2.4Zm11.4 0c-2.3 1.7-4.8 5.2-5.7 7.1v5c0-.1 0 0 .1.3.5 1.4 2.3 6.8 6.5 2.5 2.2-2.3 1.2-4.6-2.9-5.3 2.3.4 4.9-.3 5.6-2.8.2-.7.6-5.3.6-5.9 0-3.1-2.7-2.1-4.3-.9Z',
+  Slack: 'M7.4,0C6.2,0,5.2,1,5.2,2.2s1,2.2,2.2,2.2h2.2V2.2C9.6,1,8.6,0,7.4,0zM12.6,0c-1.2,0-2.2,1-2.2,2.2v5.2c0,1.2,1,2.2,2.2,2.2s2.2-1,2.2-2.2V2.2C14.8,1,13.8,0,12.6,0z M2.2,5.2C1,5.2,0,6.2,0,7.4s1,2.2,2.2,2.2h5.2c1.2,0,2.2-1,2.2-2.2s-1-2.2-2.2-2.2H2.2zM17.8,5.2c-1.2,0-2.2,1-2.2,2.2v2.2h2.2c1.2,0,2.2-1,2.2-2.2S19,5.2,17.8,5.2z M2.2,10.4c-1.2,0-2.2,1-2.2,2.2s1,2.2,2.2,2.2s2.2-1,2.2-2.2v-2.2H2.2zM7.4,10.4c-1.2,0-2.2,1-2.2,2.2v5.2c0,1.2,1,2.2,2.2,2.2s2.2-1,2.2-2.2v-5.2C9.6,11.4,8.6,10.4,7.4,10.4z M12.6,10.4c-1.2,0-2.2,1-2.2,2.2s1,2.2,2.2,2.2h5.2c1.2,0,2.2-1,2.2-2.2s-1-2.2-2.2-2.2H12.6zM10.4,15.7v2.2c0,1.2,1,2.2,2.2,2.2s2.2-1,2.2-2.2c0-1.2-1-2.2-2.2-2.2H10.4z',
+};
+const href = (h: string) => (/^https?:/.test(h) ? h : url(h));
 ---
 <footer class="site-footer">
-  <div class="container site-footer__inner">
-    <p>Copyright © {year} | {site.copyright}</p>
-    <ul class="site-footer__social">
-      {site.social.map((s) => <li><a href={s.href} rel="noopener">{s.label}</a></li>)}
-    </ul>
+  <div class="container site-footer__main">
+    <div class="site-footer__brand">
+      <div data-reveal="fade-up-blur">
+        <img class="site-footer__logo" src={url('/images/elixir-uk-logo.svg')} alt="ELIXIR United Kingdom" width="220" height="74" />
+        <p class="site-footer__tagline" set:html={footer.tagline} />
+      </div>
+      <a class="site-footer__cta" href={href(footer.cta.href)} data-reveal="fade-right">
+        <strong>{footer.cta.heading}</strong>
+        <span class="site-footer__cta-text">{footer.cta.text}</span>
+        <span class="site-footer__cta-link">
+          {footer.cta.label}
+          <svg viewBox="0 0 896 1024" width="14" height="16" aria-hidden="true"><path fill="currentColor" d="M436.202 76.202l-39.598 39.598c-9.372 9.372-9.372 24.568 0 33.942l310.26 310.26h-682.864c-13.254 0-24 10.746-24 24v56c0 13.254 10.746 24 24 24h682.864l-310.26 310.26c-9.372 9.372-9.372 24.568 0 33.942l39.598 39.598c9.372 9.372 24.568 9.372 33.942 0l418.828-418.828c9.372-9.372 9.372-24.568 0-33.942l-418.828-418.83c-9.374-9.372-24.57-9.372-33.942 0z" /></svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="site-footer__nav">
+      <div class="site-footer__cols" data-reveal="fade-down-blur">
+        {footer.columns.map((col) => (
+          <ul>
+            <li class="site-footer__heading">{col.heading}</li>
+            {col.links.map((l) => <li><a href={href(l.href)}>{l.label}</a></li>)}
+          </ul>
+        ))}
+      </div>
+      <div class="site-footer__funding" data-reveal="fade-up">
+        <img src={footer.funding.logo} alt="Biotechnology and Biological Sciences Research Council" width="150" height="40" loading="lazy" />
+        <p>{footer.funding.text}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__bar">
+    <div class="container site-footer__bar-inner">
+      <ul class="site-footer__social">
+        {site.social.map((s) => (
+          <li>
+            <a href={s.href} rel="noopener noreferrer" aria-label={s.label} target="_blank">
+              <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d={icons[s.label]} /></svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p>Copyright © {year} | {site.copyright}</p>
+    </div>
   </div>
 </footer>
 
 <style>
-  .site-footer {
-    background: var(--navy);
-    color: rgb(255 255 255 / 0.85);
-    font-size: 15px;
+  .site-footer { background: var(--navy); color: var(--white); font-size: 16px; }
+  .site-footer__main {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 124px;
+    padding-block: 76px 60px;
   }
-  .site-footer__inner {
+  .site-footer__brand { display: flex; flex-direction: column; justify-content: space-between; gap: 3rem; }
+  .site-footer__logo { width: 180px; height: auto; }
+  .site-footer__tagline { color: rgb(255 255 255 / 0.72); margin: 1.25rem 0 0; font-size: 15px; }
+
+  .site-footer__cta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 24px 28px;
+    background: var(--blue);
+    border-radius: 3px;
+    color: var(--white);
+    transition: background 0.25s var(--ease);
+  }
+  .site-footer__cta:hover { background: #036a8f; color: var(--white); }
+  .site-footer__cta strong { font-size: 17px; font-weight: 700; margin-bottom: 0.5rem; }
+  .site-footer__cta-text { color: rgb(255 255 255 / 0.72); max-width: 450px; font-size: 15px; margin-bottom: 1rem; }
+  .site-footer__cta-link { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; }
+  .site-footer__cta-link svg { transition: transform 0.25s var(--ease); }
+  .site-footer__cta:hover .site-footer__cta-link svg { transform: translateX(4px); }
+
+  .site-footer__nav { display: flex; flex-direction: column; justify-content: space-between; gap: 3rem; }
+  .site-footer__cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+  .site-footer__cols ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .site-footer__heading { color: var(--grey-light); font-weight: 300; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .site-footer__cols a { color: var(--white); font-size: 15px; }
+  .site-footer__cols a:hover { color: var(--orange); }
+
+  .site-footer__funding { display: flex; flex-direction: column; gap: 10px; opacity: 0.8; }
+  .site-footer__funding img { width: 150px; height: auto; }
+  .site-footer__funding p { margin: 0; font-weight: 300; font-size: 14px; max-width: 34rem; }
+
+  .site-footer__bar { background: #022c46; }
+  .site-footer__bar-inner {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem 2rem;
     align-items: center;
     justify-content: space-between;
-    padding-block: 2rem;
+    gap: 1rem;
+    padding-block: 15px;
   }
-  .site-footer p { margin: 0; }
-  .site-footer__social { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
-  .site-footer a { color: var(--white); }
-  .site-footer a:hover { color: var(--orange); }
+  .site-footer__social { display: flex; gap: 15px; list-style: none; margin: 0; padding: 0; }
+  .site-footer__social a { display: block; color: var(--border); transition: color 0.2s var(--ease); }
+  .site-footer__social svg { fill: currentColor; display: block; }
+  .site-footer__social a:hover { color: var(--orange); }
+  .site-footer__bar p { margin: 0; font-size: 15px; color: var(--border); }
+
+  @media (max-width: 960px) {
+    .site-footer__main { grid-template-columns: 1fr; gap: 3rem; padding-block: 50px; }
+    .site-footer__cols { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
 </style>

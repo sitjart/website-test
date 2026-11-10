@@ -4,6 +4,8 @@ date: 2024-09-03
 standfirst: "An important highlight for a service of the ELIXIR-UK Node, co-run with and recognised by the wider ELIXIR community"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/09/photo-datasharing-playbook-imi-ihi-scaled.webp"
+related:
+  members: ["university-oxford"]
 ---
 
 <p>In July 2024, EFPIA, the European Federation of Pharmaceutical Industries and Association, officially released a comprehensive playbook to guide Innovative Medicines Initiative (IMI) and Innovative Health Initiative (IHI) projects implementing best data-sharing practices. Among its key recommendations, the playbook highlights the <a href="https://elixiruknode.org/service/fair-cookbook/" data-type="service" data-id="18747">FAIR Cookbook</a>, a service of the ELIXIR-UK Node, co-run with and recognised by the wider ELIXIR community.</p>

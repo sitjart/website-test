@@ -4,6 +4,8 @@ date: 2024-11-12
 standfirst: "Supporting 22 participants from 11 organisations at BioHackathon Europe 2024"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/11/photo-biohackathon-2024-uk-team-scaled.webp"
+related:
+  members: ["newcastle-university", "university-of-leicester", "university-of-nottingham", "university-of-manchester", "the-open-university", "rothamsted-research", "university-college-london", "university-oxford", "university-of-southampton"]
 ---
 
 <p>ELIXIR-UK supported 22 participants from 11 organisations at <a href="https://biohackathon-europe.org/">BioHackathon Europe 2024</a>, held in November near Barcelona, where 300 participants from the life sciences research community gathered to tackle critical challenges in bioinformatics.</p>

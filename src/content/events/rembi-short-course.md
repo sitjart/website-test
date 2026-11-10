@@ -8,6 +8,9 @@ startTime: "12:00"
 endTime: "13:00"
 registration: "https://bradford-ac-uk.zoom.us/meeting/register/tZwrf-GqrzsrHNzSLNk7SVaab9xEirfitdRu"
 image: "https://elixiruknode.org/wp-content/uploads/2024/04/engineer-programming-the-machine-in-factory-with-l-2023-11-27-05-31-49-utc.webp"
+related:
+  members: ["university-of-bradford", "university-of-warwick"]
+  projects: ["elixir-uk-dash"]
 ---
 
 <h2 id="what-will-you-learn" class="wp-block-heading">What will you learn?</h2>

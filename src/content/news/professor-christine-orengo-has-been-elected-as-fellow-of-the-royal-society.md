@@ -4,6 +4,8 @@ date: 2019-04-25
 standfirst: "ELIXIR-UK is proud to announce that Professor Christine Orengo, who has been a member of ELIXIR-UK since its foundation, has been elected as a Fellow of the Royal Society. Professor Orengo, from University College London"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-gold-award-winner.webp"
+related:
+  activities: ["3d-bioinfo-community"]
 ---
 
 <p>ELIXIR-UK is proud to announce that Professor Christine Orengo, who has been a member of ELIXIR-UK since its foundation, has been elected as a Fellow of the Royal Society.&nbsp;&nbsp;</p>

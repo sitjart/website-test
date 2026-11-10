@@ -4,6 +4,8 @@ date: 2019-02-28
 standfirst: "The Software Sustainability Institute , a team of software experts, from the universities of Edinburgh, Manchester, Oxford and Southampton, has been awarded £6.5 million funding, from the seven UK Research Councils that"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-big-bang.webp"
+related:
+  members: ["university-of-manchester", "university-of-southampton"]
 ---
 
 <p><strong>The&nbsp;<a href="http://www.software.ac.uk/">Software Sustainability Institute</a>, a&nbsp;team of software experts, from the universities of Edinburgh, Manchester, Oxford and Southampton,&nbsp;has been awarded £6.5 million funding, from the seven UK Research Councils that are part of UK Research and Innovation (UKRI), to continue its world-leading work helping thousands of UK researchers from all areas use software to increase the impact of their research.</strong></p>

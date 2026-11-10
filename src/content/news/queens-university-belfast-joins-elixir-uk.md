@@ -4,6 +4,8 @@ date: 2026-07-28
 standfirst: "Bringing biodata, imaging and high-performance computing expertise, and extends the Node into Northern Ireland."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2026/07/photo-qub-entrance-1.webp"
+related:
+  members: ["queens-university-belfast"]
 ---
 
 <p>Queen's University Belfast (QUB) has joined ELIXIR-UK, extending the Node's reach into Northern Ireland. Because membership is institutional, joining opens ELIXIR participation to colleagues across the whole university. The staff members involved in the membership application encompass 11 academic units and cover all five ELIXIR areas: Data, Tools, Compute, Interoperability and Training.</p>

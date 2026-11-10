@@ -5,7 +5,12 @@ type: "Community Call"
 online: true
 startTime: "14:00"
 endTime: "15:00"
+recording: "https://youtu.be/voEeTgAoJ1c"
 image: "https://elixiruknode.org/wp-content/uploads/2025/02/banner-photo-snake.webp"
+related:
+  activities: ["uk-training-club"]
+  members: ["university-of-edinburgh"]
+  services: ["snakemake"]
 ---
 
 <p>The ability to orchestrate a complex analysis of a large dataset and to make that analysis both scalable and repeatable is a challenge that any modern bioinformatician must tackle, especially where high-throughput sequencing is involved. The <strong><a href="https://elixiruknode.org/service/snakemake/" data-type="service" data-id="23352">Snakemake</a> workflow </strong>engine is a powerful tool that can help with this, but many users at first struggle to understand what Snakemake can do for them and how to begin working with it.</p>

@@ -4,6 +4,8 @@ date: 2025-06-27
 standfirst: "A FAIRytale by Mo Aboshokor – a personal story about good data governance and data controllership from someone who understands the researcher’s perspectives and frustrations."
 category: "Blog"
 image: "https://elixiruknode.org/wp-content/uploads/2025/06/banner-plann-notebook.jpg"
+related:
+  members: ["cardiff-university"]
 ---
 
 <div class="wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-8b9644f" id="gspb_container-id-gsbp-8b9644f">

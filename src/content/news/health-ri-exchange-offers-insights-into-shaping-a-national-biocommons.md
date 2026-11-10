@@ -4,6 +4,9 @@ date: 2024-11-21
 standfirst: "In October 2024, ELIXIR-UK and its conceived initiative – BioFAIR – engaged in a knowledge exchange with the Netherlands' Health-RI (ELIXIR-NL) to refine governance and operational strategies for national research data i"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/11/img_5093.jpg"
+related:
+  collaborations: ["biofair"]
+  members: ["university-of-manchester"]
 ---
 
 <p>In October 2024, ELIXIR-UK and its conceived initiative – BioFAIR –  engaged in a knowledge exchange with the Netherlands' Health-RI (ELIXIR-NL) to refine governance and operational strategies for national research data infrastructures.</p>

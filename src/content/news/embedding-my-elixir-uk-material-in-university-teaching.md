@@ -4,6 +4,10 @@ date: 2026-01-12
 standfirst: "A FAIRy tale by Andrew Mason – a personal story about reusing FAIR training at University of York."
 category: "Blog"
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/2023-13-01-fellows-retreat-photo-18.webp"
+related:
+  activities: ["fellowship"]
+  members: ["university-of-york"]
+  projects: ["elixir-uk-dash"]
 ---
 
 <a href="https://doi.org/10.5281/zenodo.17832358"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17832358.svg" alt="DOI"></a>

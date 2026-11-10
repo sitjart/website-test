@@ -6,7 +6,10 @@ online: true
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
+recording: "https://youtu.be/HjB6yMy5EmI"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/scientist-holding-a-dna-sample-with-the-results-on-2023-11-27-05-15-49-utc-1.webp"
+related:
+  activities: ["uk-human-data-community"]
 ---
 
 <p>Cancer research depends on access to high-quality data, yet much of this data remains fragmented across institutions and systems.</p>

@@ -7,7 +7,12 @@ end: 2026-05-05
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
+recording: "https://youtu.be/iiuNHLroH1w"
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/ro-crate-wide.svg"
+related:
+  activities: ["uk-rdm-club"]
+  members: ["university-of-manchester"]
+  services: ["ro-crate"]
 ---
 
 <p><a href="https://www.researchobject.org/ro-crate/" data-type="link" data-id="https://www.researchobject.org/ro-crate/">RO-Crate</a> is a simple way to package research data together with the information that gives it meaning – who created it, what it relates to, how it was produced, and how it can be reused. In this session, Eli Chadwick from the University of Manchester will give a layperson-friendly introduction to RO-Crate, with a focus on what its is, why it matters, and how people can start making use of it.<a href="https://www.researchobject.org/ro-crate/specification/1.1/introduction.html" target="_blank" rel="noreferrer noopener"></a><a href="https://www.youtube.com/watch?v=7XSQKJOpZ20" target="_blank" rel="noreferrer noopener"></a><a href="https://www.ldaca.edu.au/news/posts/open-repositories-2024-ro-crate/" target="_blank" rel="noreferrer noopener"></a></p>

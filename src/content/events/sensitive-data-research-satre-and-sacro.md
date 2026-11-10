@@ -5,6 +5,9 @@ type: "Community Call"
 online: false
 end: 2026-07-21
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-digital-societ-human-data-1.webp"
+related:
+  activities: ["uk-human-data-community"]
+  members: ["hdr-uk"]
 ---
 
 <p>The 2026 July UK Human Data and Tech Club call looks at two <strong>DARE UK </strong>projects under the <strong>TREvolution</strong> programme. The call&nbsp; will introduce SATRE and SACRO – the work to standardise how Trusted Research Environments (<strong>TREs</strong>) are built and to make the checking of research outputs safer and faster. This is timely for the group: ELIXIR recently ran a session on standards across Europe at its All Hands meeting, where many countries reported not yet using <strong>SATRE</strong> or <strong>SACRO</strong>.</p>

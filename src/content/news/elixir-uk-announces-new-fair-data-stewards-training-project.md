@@ -4,6 +4,12 @@ date: 2021-03-04
 standfirst: "ELIXIR-UK have successfully secured funding for a new data steward training project as part of the UKRI Innovation Scholars: Data Science Training in Health and Bioscience call. This project is being led by the Universit"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-lights-2.webp"
+related:
+  activities: ["fellowship"]
+  collaborations: ["software-sustainability-institute-ssi"]
+  members: ["university-of-bradford", "cardiff-university"]
+  projects: ["elixir-uk-dash"]
+  services: ["rdmkit"]
 ---
 
 <p>ELIXIR-UK have successfully secured funding for a new data steward training project as part of the UKRI Innovation Scholars: Data Science Training in Health and Bioscience call. This project is being led by the University of Bradford. ELIXIR-UK training coordinator Krzysztof Poterlowicz from the University of Bradford leads the project, with ELIXIR-UK’s data management lead Robert Andrews from Cardiff University as co-lead.</p>

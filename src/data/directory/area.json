@@ -1,0 +1,57 @@
+[
+ {
+  "slug": "computational-workflows",
+  "name": "Computational workflows",
+  "website": "",
+  "logo": "",
+  "summary": "Workflows have become essential in research data processing, facilitating key activities such as data collection, cleaning, analytics, and populating public archives with updated data. Recognising the",
+  "body": "<p>Workflows have become essential in research data processing, facilitating key activities such as data collection, cleaning, analytics, and populating public archives with updated data.</p>\n\n<p>Recognising their critical role in life sciences research, the UK Node is actively involved in enhancing computational workflows in several areas.</p>\n\n<h2 class=\"wp-block-heading\" id=\"workflow-platforms\">Workflow platforms</h2>\n\n<p>Workflow platforms are vital for designing, executing, and sharing computational workflows in research. These tools ensure scalability, reproducibility, and transparency, enabling researchers to efficiently handle complex data processing tasks. ELIXIR-UK is deeply involved in promoting and developing best practices for these platforms, including:</p>\n\n<h2 class=\"wp-block-heading\" id=\"standards-and-methods\">Standards and methods&nbsp;</h2>\n\n<p>Workflows inherently contribute to the FAIR data principles by processing data according to established metadata standards, generating metadata during data processing, and meticulously tracking data provenance.</p>\n\n<p>However, for this to be possible, well-established standards and methods must be supported and used when developing and sharing workflows. To this end, ELIXIR-UK actively participates in the development and promotion of key standards such as:</p>\n\n<h2 class=\"wp-block-heading\" id=\"workflow-registres\">Workflow registres</h2>\n\n<p>Workflows are digital objects on their own, and as such, FAIR Principles should also be applied to them. To ensure that workflows are as accessible and citable as data, they need to be archived and referenced using citation metadata.</p>\n\n<p>However, most workflows still need to be registered in specialised repositories. They are often stored alongside software, or the specialised ones tend to cater only to specific Workflow Management Systems.&nbsp;</p>\n\n<p><a href=\"https://elixiruknode.org/service/workflowhub/\" data-type=\"service\" data-id=\"18745\">WorkflowHub</a> addresses these challenges by offering a comprehensive solution for workflow registries. It provides a centralised platform where workflows can be registered, archived and made accessible, complete with rich metadata and persistent identifiers. It also supports diverse WfMSs, fostering interoperability.</p>\n\n<p>ELIXIR-UK Node endorses WorkflowHub as a recognised Node service, and several Node members lead on its development and sustainability.&nbsp;&nbsp;</p>\n\n<h2 class=\"wp-block-heading\" id=\"related-projects\">Related projects</h2>",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "eosc-life",
+    "by-covid",
+    "biodt",
+    "fluxomics-workflows",
+    "cwl-2018",
+    "reference-hcnv-datasets"
+   ]
+  }
+ },
+ {
+  "slug": "research-data-management",
+  "name": "Research Data Management",
+  "website": "",
+  "logo": "",
+  "summary": "Good data management underpins reliable, reproducible, and FAIR (Findable, Accessible, Interoperable, Reusable) science. At ELIXIR-UK, we work to embed good data practices across the life sciences by ",
+  "body": "<div class=\"wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-7fd0a62\" id=\"gspb_container-id-gsbp-7fd0a62\">\n<p>Good data management underpins reliable, reproducible, and <strong>FAIR </strong>(Findable, Accessible, Interoperable, Reusable) science. At ELIXIR-UK, we work to embed good data practices across the life sciences by supporting the people, standards, and tools that enable responsible data stewardship at every stage of the research lifecycle.</p>\n\n<p>Whether you’re a researcher or a data steward/manager, we support you in making research data more valuable and more reusable.</p>\n\n<p>Our work includes:</p>\n\n<ul class=\"wp-block-list\">\n<li><strong>Supporting integration and alignment</strong> of national and European efforts, such as BioFAIR and the ELIXIR-wide best practices and communities.</li>\n\n<li><strong>Developing and customising DMP templates</strong> that align with UKRI and funder expectations, including machine-actionable formats via the Data Stewardship Wizard (DSW)</li>\n\n<li><strong>Providing community-led guidance and resources</strong> through contributions to RDMkit and the FAIR Cookbook</li>\n\n<li><strong>Championing the role of data stewards</strong> via initiatives like the Data Stewardship Fellowship and the ELIXIR RDM Community</li>\n</ul>\n</div>\n\n<h2 class=\"wp-block-heading\" id=\"the-rdm-services-we-support\"><strong>The RDM services we support</strong></h2>\n\n<p>We also offer visibility and support to RDM-related services as <a href=\"/services\">UK Node services</a>.</p>\n\n<h2 class=\"wp-block-heading\" id=\"get-involved\">Get involved</h2>\n\n<p>The best way to connect with the UK and European data management community is to join our informal monthly UK RDM Club. This open space is a great starting point for researchers, data stewards, data managers or any research technical professionals looking to:</p>\n\n<ul class=\"wp-block-list\">\n<li>Share practices and challenges around data management</li>\n\n<li>Learn about national and ELIXIR-wide initiatives</li>\n\n<li>Explore opportunities to contribute to guidance, infrastructure or policy</li>\n</ul>\n\n<p>By participating in the RDM Club, you'll also find routes into the wider ELIXIR Research Data Management Community, where European collaboration shapes the future of FAIR data in life sciences.</p>\n\n<p></p>",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "a-day-in-the-life-of-a-ucl-research-data-steward"
+   ]
+  }
+ },
+ {
+  "slug": "training",
+  "name": "Upskill the life sciences community",
+  "website": "",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2025/01/illustration-isometrics-training.svg",
+  "summary": "Our collaborative efforts towards improving life sciences training ELIXIR UK plays a significant role in the training landscape – not just in the UK but also globally. We co-lead activities and suppor",
+  "body": "<div class=\"wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-7fd0a62\" id=\"gspb_container-id-gsbp-7fd0a62\">\n<h2 class=\"wp-block-heading\" id=\"our-collaborative-efforts-towards-improving-life-sciences-training\"><strong>Our collaborative efforts towards improving life sciences training</strong></h2>\n\n<p>ELIXIR UK plays a significant role in the training landscape – not just in the UK but also globally. We co-lead activities and support training development to address skill gaps in the life sciences community.</p>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-9a17b6d\" id=\"gspb_container-id-gsbp-9a17b6d\">\n<h2 class=\"wp-block-heading\" id=\"tess-training-esupport-system\"><strong>TeSS:&nbsp; Training eSupport System</strong></h2>\n\n<p>The TeSS&nbsp;is ELIXIR’s training platform flagship portal/registry, providing a one-stop shop for trainers and trainees to discover online information and content, including training materials, events and interactive tutorials.</p>\n\n<p>For training providers, TeSS provides opportunities to promote training events and news and to contribute to a growing catalogue of materials; for trainers, the portal offers an environment for sharing materials and event information; for trainees, it provides a convenient gateway to identify relevant training events and resources, and to perform specific, guided analysis tasks via customised training workflows.</p>\n\n<p>The TeSS is the only ELIXIR-UK Node original service developed by the founding Node award and funded through the European Commission.</p>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-18db5e4\" id=\"gspb_container-id-gsbp-18db5e4\">\n<h2 class=\"wp-block-heading\" id=\"the-training-services-we-support\"><strong>The training services we support</strong></h2>\n\n<p>We also act as a conduit for nationally important bioinformatics training infrastructures to promote their activities to the ELIXIR community as selected <a href=\"/services\">UK Node services</a>.</p>\n</div>",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ }
+]

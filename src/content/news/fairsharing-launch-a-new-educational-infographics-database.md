@@ -4,6 +4,9 @@ date: 2023-04-18
 standfirst: "FAIRsharing is a manually curated, informative resource on data and metadata standards, inter-related databases and data policies. FAIRsharing is an ELIXIR Recommended Interoperability Resource and an intrinsic registry"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-blackboard-shapes.webp"
+related:
+  members: ["university-oxford"]
+  services: ["fairsharing"]
 ---
 
 <p><a href="https://fairsharing.org/">FAIRsharing</a> is a manually curated, informative resource on data and metadata standards, inter-related databases and data policies. FAIRsharing is an <a href="https://elixir-europe.org/platforms/interoperability/rirs">ELIXIR Recommended Interoperability Resource</a> and an intrinsic registry of the EOSC and the ELIXIR RDM know-how ecosystem.&nbsp;</p>

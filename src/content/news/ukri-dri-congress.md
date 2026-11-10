@@ -4,6 +4,8 @@ date: 2023-03-10
 standfirst: "On March 6th and 7th, members of ELIXIR-UK (Carole Goble, University of Manchester, Nicola Soranzo, Earlham Institute and Gos Micklem, University of Cambridge) attended the UKRI Digital Research Infrastructure (DRI) Comm"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-conference-chairs.webp"
+related:
+  members: ["university-of-manchester", "university-of-cambridge", "earlham-institute"]
 ---
 
 <p>On March 6th and 7th, members of ELIXIR-UK (Carole Goble, University of Manchester, Nicola Soranzo, Earlham Institute and Gos Micklem, University of Cambridge) attended the <a href="https://www.ukri.org/">UKRI</a> Digital Research Infrastructure (DRI) Community Congress. This year marked 5 years since the work was undertaken in the <a href="https://www.ukri.org/wp-content/uploads/2020/10/UKRI-201020-UKinfrastructure-opportunities-to-grow-our-capacity-FINAL.pdf">UKRI Infrastructure Roadmap</a>.</p>

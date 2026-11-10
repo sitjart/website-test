@@ -6,4 +6,8 @@ export default defineConfig({
   site: 'https://sitjart.github.io',
   base: '/website-test',
   trailingSlash: 'always',
+  image: {
+    // Images still live on WordPress; Astro downloads and optimises them at build time
+    domains: ['elixiruknode.org'],
+  },
 });

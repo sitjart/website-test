@@ -7,6 +7,9 @@ startTime: "14:00"
 endTime: "15:00"
 venue: "online"
 image: "https://elixiruknode.org/wp-content/uploads/2025/11/2025-elixir-uk-all-hands-15.webp"
+related:
+  activities: ["uk-training-club"]
+  members: ["earlham-institute"]
 ---
 
 <p>ELIXIR Europe is due to reopen its <a href="https://elixir-europe.org/internal-projects/commissioned-services/capacity-building-knowledge-exchange" target="_blank" rel="noreferrer noopener">staff exchanges</a> to support skills development, collaboration and knowledge transfer across Nodes. This Training Club session will bring the UK community together to shape a proposal that reflects our training needs and areas of expertise.<br>We will work through the following:</p>

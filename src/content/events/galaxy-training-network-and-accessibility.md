@@ -6,7 +6,11 @@ online: true
 startTime: "14:00"
 endTime: "15:00"
 registration: "https://elixiruknode.org/activities/uk-training-club/"
+recording: "https://youtu.be/drBPGeXfR6Y"
 image: "https://elixiruknode.org/wp-content/uploads/2024/10/banner-school-learn-education.webp"
+related:
+  activities: ["uk-training-club"]
+  members: ["university-of-bradford"]
 ---
 
 In this Training Club Call, we invite <a href="https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/">Helena Rasche</a> from Galaxy Training Network (GTN) to explore the latest features in Galaxy to improve accessibility in training materials.

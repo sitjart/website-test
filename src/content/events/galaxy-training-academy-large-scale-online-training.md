@@ -7,6 +7,9 @@ startTime: "14:00"
 endTime: "15:00"
 venue: "Online"
 image: "https://elixiruknode.org/wp-content/uploads/2025/01/banner-education-training.webp"
+related:
+  activities: ["uk-training-club"]
+  members: ["the-open-university"]
 ---
 
 <p>In this session, we explore different approaches to bioinformatics training, from structured tutorials and large-scale delivery to supporting independent analysis from the Galaxy Training Network. </p>

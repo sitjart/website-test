@@ -4,6 +4,8 @@ date: 2025-10-22
 standfirst: "The Health Data Research Gateway joins ELIXIR-UK Services, linking UK health data to European research through FAIR, secure and federated access."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/10/banner-health-data-gateway-scaled.webp"
+related:
+  members: ["hdr-uk"]
 ---
 
 <p>The <a href="https://healthdatagateway.org/">Health Data Research Gateway</a> has been added to the portfolio of ELIXIR-UK Services. Led by <a href="https://elixiruknode.org/people/peter-harrison/" data-type="people" data-id="24267">Peter Harrison</a> and <a href="https://elixiruknode.org/people/emily-jefferson/" data-type="people" data-id="18985">Emily Jefferson</a> at <a href="https://elixiruknode.org/members/hdr-uk/" data-type="member" data-id="18557">Health Data Research UK (HDR UK)</a>, the Gateway currently provides more than 43,000 annual users with a central portal for discovering and accessing health datasets across the UK, linking researchers to <strong>Trusted Research Environments (TREs)</strong> and secure compute environments.</p>

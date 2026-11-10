@@ -7,6 +7,9 @@ startTime: "14:00"
 endTime: "15:00"
 venue: "Online"
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner_abstract-the-old-grunge-wall-for-background.webp"
+related:
+  activities: ["uk-training-club"]
+  members: ["university-of-liverpool"]
 ---
 
 <p class="has-medium-font-size">Exploring when and how friction and smoothness should be used in teaching and learning</p>

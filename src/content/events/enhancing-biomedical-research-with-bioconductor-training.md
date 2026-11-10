@@ -8,6 +8,8 @@ endTime: "15:00"
 venue: "Online"
 registration: "https://elixiruknode.org/activities/uk-training-club/"
 image: "https://elixiruknode.org/wp-content/uploads/2024/10/banner-school-learn-education.webp"
+related:
+  activities: ["uk-training-club"]
 ---
 
 The rapid advancement of genomic research necessitates effective bioinformatics education and training. For over 20 years, Bioconductor has been a key resource in this domain, offering tools and training for genomic data analysis. This presentation will provide an overview of Bioconductor’s education and training initiatives, highlighting their successes and challenges.

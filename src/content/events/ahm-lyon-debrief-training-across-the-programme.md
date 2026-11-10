@@ -5,6 +5,9 @@ type: "Community Call"
 online: false
 end: 2026-06-29
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-training-keyboard.webp"
+related:
+  activities: ["uk-training-club"]
+  members: ["university-of-bradford", "university-of-manchester", "university-of-cambridge"]
 ---
 
 <p>The ELIXIR All Hands Meeting (AHM) is one of the most competitive spaces for a slot in the ELIXIR calendar of events – and this year, training ran right through the programme rather than sitting in a single session.</p>

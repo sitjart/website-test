@@ -4,6 +4,10 @@ date: 2024-11-21
 standfirst: "An in-depth article to understand the concept of decolonisation and EDIJ considerations in the field of data management."
 category: "Articles"
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-different-faces.jpg"
+related:
+  activities: ["fellowship"]
+  members: ["university-of-york"]
+  projects: ["elixir-uk-dash"]
 ---
 
 <div class="wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-0c98393" id="gspb_container-id-gsbp-0c98393">

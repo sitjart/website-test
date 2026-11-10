@@ -1,0 +1,44 @@
+---
+// Content pages imported from WordPress (About, What we do, Join in ...).
+// A page can also be built from sections, like the home page.
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Sections from '../components/Sections.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages.filter((p) => p.id !== 'home').map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const hasSections = entry.data.sections.length > 0;
+---
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  {hasSections ? <Sections sections={entry.data.sections} /> : (
+    <>
+      <PageHeader title={entry.data.title} />
+      <section class="section">
+        <div class="container wp-content">
+          <Content />
+        </div>
+      </section>
+    </>
+  )}
+</BaseLayout>
+
+<style>
+  /* Basic styling for WordPress block markup until each page is rebuilt from sections */
+  .wp-content { max-width: 980px; font-size: 1.05rem; }
+  .wp-content :global(img) { border-radius: 8px; }
+  .wp-content :global(.wp-block-buttons) { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0; }
+  .wp-content :global(.wp-block-button__link) {
+    display: inline-block; padding: 0.7em 1.5em; background: var(--orange); color: var(--white); border-radius: 5px;
+  }
+  .wp-content :global(.wp-block-button__link:hover) { background: var(--blue); color: var(--white); }
+  .wp-content :global(hr), .wp-content :global(.wp-block-separator) { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .wp-content :global(.gspb_row), .wp-content :global(.wp-block-columns) { display: flex; flex-wrap: wrap; gap: 2rem; }
+  .wp-content :global(.gspb_row > *), .wp-content :global(.wp-block-column) { flex: 1 1 260px; }
+  .wp-content :global(h2) { margin-top: 2.5rem; }
+  .wp-content :global(ul) { padding-left: 1.2rem; }
+</style>

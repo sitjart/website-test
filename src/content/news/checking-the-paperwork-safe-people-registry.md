@@ -4,6 +4,10 @@ date: 2026-02-03
 standfirst: "HDR UK technology soft launch: Safe People Registry"
 category: "Articles"
 image: "https://elixiruknode.org/wp-content/uploads/2026/02/banner_safe-registry-soft-launch-1.webp"
+related:
+  activities: ["uk-human-data-community"]
+  events: ["showcase-feedback-session-hdr-gateway-safe-people-registry-cohort-discovery"]
+  members: ["hdr-uk"]
 ---
 
 <p>Members of the <a href="https://elixiruknode.org/activities/uk-human-data-community/" data-type="activity" data-id="18994">ELIXIR-UK Human Data Community</a> have highlighted the recent soft launch of the <a href="https://safepeopleregistry.org/"><strong>Safe People Registry</strong></a>, an open-source tool developed by HDR UK to support ‘safe people’ access validation for sensitive and secure data. The registry aligns with the <a href="https://fivesafes.org/">Five Safes principles</a>, enabling data services to provide safe research access to data.</p>

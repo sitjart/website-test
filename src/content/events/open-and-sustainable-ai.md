@@ -6,7 +6,11 @@ online: true
 startTime: "11:00"
 endTime: "12:00"
 venue: "online"
+recording: "https://youtu.be/fbaVZJxKq9U"
 image: "https://elixiruknode.org/wp-content/uploads/2025/12/banner_circuit-board-and-ai-micro-processor-artificial-i.webp"
+related:
+  activities: ["uk-rdm-club"]
+  news: ["community-insights-on-ai-all-hands-2025"]
 ---
 
 <p>AI assets – including <strong>models and datasets</strong> – are increasingly fundamental research outputs in need of good data management practices to remain <strong>reusable, reproducible and sustainable</strong> over time.</p>

@@ -4,7 +4,11 @@ start: 2026-09-08
 type: "Community Call"
 online: false
 end: 2026-09-08
+recording: "https://youtu.be/mC509vYTIhw"
+slides: "https://drive.google.com/file/d/1yG7jOTq6__AhsxuB4pv9_tQRnBuflw71/view?usp=drive_link"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-stars.webp"
+related:
+  activities: ["uk-rdm-club"]
 ---
 
 <p>Single-record FAIR checkers work well at a small scale and stop working at the point most data stewards actually need them: an institutional collection. </p>

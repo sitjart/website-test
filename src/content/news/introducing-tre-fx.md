@@ -4,6 +4,8 @@ date: 2023-02-17
 standfirst: "Members of the ELIXIR-UK Node have been successful in an open call for proposals to inform the design of a wider network of UK-based Trusted Research Environments (TREs). Currently, across the UK, TREs follow different s"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-connections-multiple.webp"
+related:
+  members: ["university-of-manchester"]
 ---
 
 <p>Members of the ELIXIR-UK Node have been successful in an open call for proposals to inform the design of a wider network of UK-based Trusted Research Environments (TREs).&nbsp;</p>

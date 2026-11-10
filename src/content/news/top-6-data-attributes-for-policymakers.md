@@ -4,6 +4,9 @@ date: 2024-04-16
 standfirst: "Since 2016, when the FAIR Principles (Findable, Accessible, Interoperable, and Reusable) were first published to address data reusability, the concept has gone a long way towards becoming a well-established foundation fo"
 category: "Articles"
 image: "https://elixiruknode.org/wp-content/uploads/2024/04/banner-connecting-dots-neural-networks.webp"
+related:
+  members: ["university-oxford"]
+  services: ["fairsharing"]
 ---
 
 <p>Since 2016, when the <a href="https://www.nature.com/articles/sdata201618" target="_blank" rel="noreferrer noopener">FAIR Principles</a> (Findable, Accessible, Interoperable, and Reusable) were first published to address data reusability, the concept has gone a long way towards becoming a well-established foundation for those working with biological data. The policy world has been no exception to the permeability of the FAIR Principles across all life sciences domains.&nbsp;</p>

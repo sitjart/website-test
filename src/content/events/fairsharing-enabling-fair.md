@@ -8,6 +8,10 @@ startTime: "12:00"
 endTime: "13:30"
 registration: "https://us02web.zoom.us/meeting/register/tZMsdeiorjsjHNYkNVMlj9zMZ7-L2E02VDr3"
 image: "https://elixiruknode.org/wp-content/uploads/2024/05/banner-connections-2.webp"
+related:
+  members: ["university-oxford"]
+  projects: ["elixir-uk-dash"]
+  services: ["fairsharing"]
 ---
 
 Improve your knowledge of standards, repositories, and policies to help your decision-making and other activities related to the FAIR management of all digital research objects. This course is suitable for all disciplines.

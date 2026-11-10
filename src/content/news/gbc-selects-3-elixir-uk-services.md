@@ -4,6 +4,8 @@ date: 2023-12-18
 standfirst: "ELIXIR-UK is pleased to announce the inclusion of three UK Node services in the 2023 cohort of Global Core Biodata Resources. The recognition given to CATH , IUPHAR/BPS guide to pharmacology , LIPID MAPS ® , further ampl"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2023/12/blank-yellow-sticky-note-on-navy-blue-table-backgr-2023-11-27-05-22-36-utc.webp"
+related:
+  services: ["cath", "iuphar-bps", "lipid-maps"]
 ---
 
 <p>ELIXIR-UK is pleased to announce the inclusion of three UK Node services in the 2023 cohort of Global Core Biodata Resources. The recognition given to <strong>CATH</strong>, <strong>IUPHAR/BPS guide to pharmacology</strong>, <strong>LIPID MAPS<sup>®</sup></strong><em>, </em>further amplifies ELIXIR-UK members’ role in advancing life sciences and biomedical research globally, contributing to a vital network of essential biodata repositories.</p>

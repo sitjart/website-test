@@ -1,7 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageHeader from '../../components/PageHeader.astro';
+import ProfileLayout from '../../layouts/ProfileLayout.astro';
+import ProfileSide from '../../components/ProfileSide.astro';
+import SmartTabs from '../../components/SmartTabs.astro';
+import { url } from '../../lib/url';
 
 export async function getStaticPaths() {
   const people = await getCollection('people');
@@ -9,6 +11,12 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const p = entry.data;
+
+const links = [
+  ...(p.orcid ? [{ label: 'ORCID', href: p.orcid }] : []),
+  ...(p.website ? [{ label: 'Website', href: p.website }] : []),
+  ...(p.linkedin ? [{ label: 'LinkedIn', href: p.linkedin }] : []),
+];
 
 // Bioschemas / schema.org Person markup: makes each profile part of the public knowledge graph
 const jsonLd = {
@@ -21,11 +29,17 @@ const jsonLd = {
   memberOf: { '@type': 'Organization', name: 'ELIXIR-UK' },
 };
 ---
-<BaseLayout title={p.name} {jsonLd}>
-  <PageHeader title={p.name} eyebrow={p.role} intro={p.institution} />
-  <section class="section">
-    <div class="container" style="max-width: 760px" data-reveal="fade-up">
-      <p>{p.bio}</p>
-    </div>
-  </section>
-</BaseLayout>
+<ProfileLayout title={p.name} description={`${p.role}, ${p.institution}`} {jsonLd}>
+  <Fragment slot="side">
+    <ProfileSide name={p.name} subtitle={`${p.role}${p.institution ? `, ${p.institution}` : ''}`} image={p.photo} round
+      pills={{ heading: 'Governance roles', items: p.governance }} {links} />
+    <a class="side-back" href={url('/people/')}>← All people</a>
+  </Fragment>
+  <SmartTabs kind="people" slug={entry.id} hasBio={Boolean(p.bio)}>
+    <div class="prose"><p>{p.bio}</p></div>
+  </SmartTabs>
+</ProfileLayout>
+
+<style>
+  .side-back { font-size: 14px; align-self: flex-start; }
+</style>

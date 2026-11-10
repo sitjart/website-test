@@ -4,6 +4,9 @@ date: 2026-02-24
 standfirst: "HDR UK joins forces with ELIXIR-UK to amplify voices and exchange knowledge"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2026/02/banner-community-becomes-club.jpg"
+related:
+  activities: ["uk-human-data-community"]
+  members: ["hdr-uk", "university-of-manchester", "university-of-nottingham"]
 ---
 
 <p>HDR UK (member of ELIXIR-UK since 2023) has joined forces with ELIXIR-UK to strengthen the <a href="https://elixiruknode.org/activities/uk-human-data-community/" data-type="activity" data-id="18994">UK Human Data Community </a>convened by ELIXIR-UK in 2023. The collaboration supports closer alignment and shared visibility across the UK human data research infrastructure and health data spaces, and their contributions to ELIXIR, related European initiatives and further international ones.&nbsp;</p>

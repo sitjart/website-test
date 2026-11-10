@@ -4,6 +4,8 @@ date: 2022-07-26
 standfirst: "We are very pleased to announce that the University of Exeter has become the most recent organisation to join ELIXIR-UK, bringing our total number of member organisations to 22. You can view the full list of member organ"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-dna-shape-bridge.webp"
+related:
+  members: ["university-of-exeter"]
 ---
 
 <p>We are very pleased to announce that the <a href="https://www.exeter.ac.uk/" target="_blank" rel="noreferrer noopener">University of Exeter</a> has become the most recent organisation to join ELIXIR-UK, bringing our total number of member organisations to 22.</p>

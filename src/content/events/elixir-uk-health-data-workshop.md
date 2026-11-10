@@ -5,6 +5,9 @@ type: "Workshop"
 online: false
 end: 2021-06-21
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-training-online.webp"
+related:
+  activities: ["uk-human-data-community"]
+  members: ["university-of-leicester", "earlham-institute"]
 ---
 
 <p>This workshop is the first step in forming a UK health data community which identifies with the goals of ELIXIR. This event is aimed at those working in health data within the UK, including those working in academic institutions, healthcare and life science companies.&nbsp;</p>

@@ -7,7 +7,11 @@ end: 2024-10-07
 startTime: "11:00"
 endTime: "12:00"
 registration: "https://elixiruknode.org/activities/uk-human-data-community/"
+recording: "https://youtu.be/zdjM90-LZ-Y"
 image: "https://elixiruknode.org/wp-content/uploads/2024/04/banner-connecting-dots-neural-networks.webp"
+related:
+  activities: ["uk-human-data-community"]
+  members: ["university-of-nottingham", "university-of-manchester"]
 ---
 
 <h3>ELIXIR-UK Human Data Community Call with Sven Twardziok</h3>

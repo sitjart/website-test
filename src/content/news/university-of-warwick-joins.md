@@ -4,6 +4,8 @@ date: 2025-12-08
 standfirst: "The University of Warwick has joined ELIXIR-UK, strengthening national bioinformatics and digital health support. Warwick contributes extensive training expertise, a growing Bioinformatics Clinic model, and international resources."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/12/photo-warwick-only.webp"
+related:
+  members: ["university-of-warwick"]
 ---
 
 <p>Earlier this year, the <a href="https://elixiruknode.org/members/university-of-warwick/">University of Warwick</a> became a <a href="/members">member of ELIXIR-UK</a>, the UK Node of the European life sciences data infrastructure. Warwick brings its strong expertise in bioinformatics, digital health and computational biology to support researchers across the UK and beyond.</p>

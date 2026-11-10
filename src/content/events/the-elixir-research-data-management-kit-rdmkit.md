@@ -7,6 +7,10 @@ startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
 image: "https://elixiruknode.org/wp-content/uploads/2021/06/data-center-with-multiple-rows-of-fully-operationa-2023-11-27-05-01-58-utc.webp"
+related:
+  activities: ["uk-rdm-club"]
+  members: ["university-of-manchester"]
+  services: ["rdmkit"]
 ---
 
 <p>The ELIXIR Research Data Management Kit (RDMkit) has been designed to guide life scientists better to manage their research data following the FAIR Principles. It is based on the various steps of the data lifecycle, although not all will be relevant to everyone. Information is also organised around domain-specific guidelines, best practices, and general RDM tasks and challenges.</p>

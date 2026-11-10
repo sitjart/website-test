@@ -4,6 +4,8 @@ date: 2024-07-10
 standfirst: "With UKRI’s £34m investment approved, BioFAIR is poised to revolutionise UK life science research by transforming how we facilitate research data management. Supported by UK Research and Innovation’s (UKRI) Infrastructur"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-dna-shape-bridge.webp"
+related:
+  collaborations: ["biofair"]
 ---
 
 <p class="has-medium-font-size">With UKRI’s £34m investment approved, BioFAIR is poised to revolutionise UK life science research by transforming how we facilitate research data management.</p>

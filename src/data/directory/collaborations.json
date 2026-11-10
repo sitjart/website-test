@@ -1,0 +1,369 @@
+[
+ {
+  "slug": "aibio-uk",
+  "name": "AIBIO-UK",
+  "website": "https://aibio.ac.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/04/logo-aibiouk.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "elixir-uk-all-hands-2024-a-celebration-of-collaboration-and-innovation",
+    "ismb-eccb-elixir-uk"
+   ],
+   "events": [
+    "elixir-uk-all-hands-2024",
+    "airbds-ai-readiness-bioscience-data"
+   ]
+  }
+ },
+ {
+  "slug": "barcelona-supercomputing-center",
+  "name": "Barcelona Supercomputing Center",
+  "website": "https://www.bsc.es/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2026/04/logo-bsc.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "biofair",
+  "name": "BioFAIR",
+  "website": "https://biofair.uk/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/10/logo-biofair.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "health-ri-exchange-offers-insights-into-shaping-a-national-biocommons",
+    "elixir-uk-all-hands-2024-a-celebration-of-collaboration-and-innovation",
+    "appointment-of-tony-burdett-as-director-of-biofair",
+    "biofair-ukri-investment",
+    "2025-all-hands-greece",
+    "pistoia-sustainable-collaboration",
+    "ismb-eccb-elixir-uk",
+    "elixir-uk-members-selected-for-the-biofair-fellowship"
+   ],
+   "events": [
+    "elixir-uk-all-hands-2024",
+    "discovering-biofair"
+   ]
+  }
+ },
+ {
+  "slug": "cold-spring-harbor-laboratory",
+  "name": "Cold Spring Harbor Laboratory",
+  "website": "https://www.cshl.edu/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-cold-spring-harbor.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "czech-technical-university-in-prague",
+  "name": "Czech Technical University in Prague",
+  "website": "",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2025/06/collaborator-logo-ctu.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "joining-up-the-research-data-management-dots"
+   ]
+  }
+ },
+ {
+  "slug": "embl",
+  "name": "EMBL-EBI",
+  "website": "https://www.ebi.ac.uk",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-embl-ebi.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "events": [
+    "driven-by-impact-online-workshop"
+   ]
+  }
+ },
+ {
+  "slug": "euro-bioimaging-uk-node",
+  "name": "Euro-BioImaging UK Node",
+  "website": "",
+  "logo": "",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "elixir-uk-all-hands-2024-a-celebration-of-collaboration-and-innovation"
+   ],
+   "events": [
+    "elixir-uk-all-hands-2024",
+    "euro-bioimagings-guide-to-fair-bioimage-data"
+   ]
+  }
+ },
+ {
+  "slug": "open-targets",
+  "name": "Open Targets",
+  "website": "https://www.opentargets.org/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-open-targets.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "oxford-brookes-university",
+  "name": "Oxford Brookes University",
+  "website": "",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-oxford-brookes-university.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "fair-in-action-bridge"
+   ],
+   "news": [
+    "fair-in-action-bridge-building-the-practical-tools-rdm-professionals-need"
+   ]
+  }
+ },
+ {
+  "slug": "phenomuk",
+  "name": "PhenomUK",
+  "website": "",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/10/logo-phenomuk.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "elixir-uk-all-hands-2024-a-celebration-of-collaboration-and-innovation"
+   ],
+   "events": [
+    "elixir-uk-all-hands-2024"
+   ]
+  }
+ },
+ {
+  "slug": "royal-botanic-gardens",
+  "name": "Royal Botanic Gardens",
+  "website": "https://www.kew.org/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-royal-botanical-gardens.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "software-sustainability-institute-ssi",
+  "name": "Software Sustainability Institute (SSI)",
+  "website": "https://www.software.ac.uk",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-ssi.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "elixir-uk-announces-new-fair-data-stewards-training-project",
+    "a-new-research-development-course",
+    "elixir-uk-at-the-ssi-collaborations-workshop-2023"
+   ]
+  }
+ },
+ {
+  "slug": "the-alan-turing-institute",
+  "name": "The Alan Turing Institute",
+  "website": "https://www.turing.ac.uk",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-alan-turing.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "events": [
+    "elixir-uk-all-hands-2024"
+   ],
+   "news": [
+    "strengthening-career-pathways-for-data-stewards-through-casdar"
+   ]
+  }
+ },
+ {
+  "slug": "ukhsa",
+  "name": "UKHSA",
+  "website": "",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-ukhsa.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "ukrn",
+  "name": "UKRN",
+  "website": "https://www.ukrn.org",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-ukrn.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "university-of-leeds",
+  "name": "University of Leeds",
+  "website": "",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-university-of-leeds.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "events": [
+    "dm-for-peatland-research-and-monitoring"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-limerick",
+  "name": "University of Limerick",
+  "website": "",
+  "logo": "",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "community-insights-on-ai-all-hands-2025"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-padova",
+  "name": "University of Padova",
+  "website": "",
+  "logo": "",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "community-insights-on-ai-all-hands-2025"
+   ]
+  }
+ },
+ {
+  "slug": "university-of-sheffield",
+  "name": "University of Sheffield",
+  "website": "https://www.sheffield.ac.uk",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-university-sheffield.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "events": [
+    "research-data-stewardship-at-sheffield-and-across-the-n8"
+   ]
+  }
+ },
+ {
+  "slug": "vib",
+  "name": "VIB",
+  "website": "https://vib.be",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2026/04/logo_vib_notagline.svg",
+  "summary": "",
+  "body": "",
+  "tags": [],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "knetminer-connects-plant-pangenome-data-to-gene-function-and-literature"
+   ]
+  }
+ }
+]

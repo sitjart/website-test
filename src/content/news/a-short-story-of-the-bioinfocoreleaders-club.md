@@ -4,6 +4,8 @@ date: 2026-09-08
 standfirst: "Seventeen organisations sent someone to Liverpool in May to talk about problems they had each assumed were local. They were not. Eva Caamaño and Xènia Pérez Sitjà on how a set of informal conversations became a national community."
 category: "Blog"
 image: "https://elixiruknode.org/wp-content/uploads/2026/09/bioinfoconnecteventgroupshot19201280resized-4.webp"
+related:
+  members: ["university-of-liverpool"]
 ---
 
 <p>Since 2022, several leaders of bioinformatics core facilities have been meeting in an informal capacity, in May 2026, they worked to expand reach and formally met at the University of Liverpool to compare notes on a set of problems none of them had managed to solve alone. 17 organisations sent someone. Most arrived quietly assuming their own situation was unusual.</p>

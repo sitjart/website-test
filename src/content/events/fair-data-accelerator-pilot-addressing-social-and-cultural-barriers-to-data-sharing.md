@@ -6,7 +6,11 @@ online: true
 startTime: "11:00"
 endTime: "12:00"
 venue: "online"
+recording: "https://youtu.be/aakc1EpylEs"
 image: "https://elixiruknode.org/wp-content/uploads/2024/05/banner-connections-2.webp"
+related:
+  activities: ["uk-rdm-club"]
+  members: ["university-college-london"]
 ---
 
 <p>At the December 2024 RDM Club Call, we will discuss <a href="https://www.ucl.ac.uk/ioe/departments-and-centres/ucl-knowledge-lab/current-research/fair-data-accelerator-pilot-evolving-work-practices-research-communities">The FAIR Data Accelerator Pilot Project</a>.</p>

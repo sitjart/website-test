@@ -8,6 +8,8 @@ startTime: "14:00"
 endTime: "15:00"
 registration: "https://elixiruknode.org/activities/uk-training-club/"
 image: "https://elixiruknode.org/wp-content/uploads/2024/10/banner-e-learning-laptop.webp"
+related:
+  activities: ["uk-training-club"]
 ---
 
 <span style="font-weight: 400;">Join the Club call with <a href="https://www.sib.swiss/meet-geert-van-geest-bioinformatics-trainer" target="_blank" rel="noopener">Geert vanGeest</a>, ELIXIR Switzerland to discover how you can use the <a href="https://github.com/elixir-europe-training/ELIXIR-TrP-LessonTemplate-MkDocs">ELIXIR training lesson template</a> for your future materials. </span>

@@ -7,6 +7,8 @@ startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
 image: "https://elixiruknode.org/wp-content/uploads/2025/07/banner-hello-hi-orange.jpg"
+related:
+  activities: ["uk-human-data-community"]
 ---
 
 <p>The August Call of the UK Human Data Community will take place as an informal drop-in during the summer holiday period. With many colleagues away, we’re keeping it light and open-ended – no speaker this month.</p>

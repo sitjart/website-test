@@ -4,6 +4,9 @@ date: 2026-09-24
 standfirst: "BioinfoCoreLeaders Club, a national community for people leading bioinformatics and computational biology core facilities, was formally established at the University of Warwick on 10-11 September 2026. It is now an ELIXIR-UK-endorsed community, with four priority areas in development."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2026/09/bioinfoconnecteventgroupshot19201280resized-4.webp"
+related:
+  activities: ["bioinfocoreleaders"]
+  members: ["university-of-warwick"]
 ---
 
 <p>BioinfoCoreLeaders Club, a national community for people leading and managing bioinformatics and computational biology core facilities, was formally established as an ELIXIR-UK-endorsed community following their launch at a University of Liverpool-led event last May. The community has now inaugurated the Club at their second meeting at the University of Warwick on 10-11 September 2026, where members agreed specific working groups, meeting schedules and the community's first collective outputs.</p>

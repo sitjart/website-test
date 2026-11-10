@@ -7,6 +7,10 @@ startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-stars.webp"
+related:
+  activities: ["uk-rdm-club"]
+  members: ["university-oxford"]
+  services: ["fairsharing"]
 ---
 
 <p>In this month’s meeting we welcome <strong><a href="https://elixiruknode.org/people/allyson-lister/" data-type="people" data-id="18620">Allyson Lister</a>, <a href="https://elixiruknode.org/members/university-oxford/" data-type="member" data-id="18581">University of Oxford</a></strong>, to discuss FAIRsharing and the OSTrails project. </p>

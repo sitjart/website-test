@@ -7,6 +7,8 @@ end: 2026-11-12
 startTime: "11:00"
 endTime: "12:00"
 image: "https://elixiruknode.org/wp-content/uploads/2025/10/banner-nodes-connect-e1793349873137.webp"
+related:
+  activities: ["bioinfocoreleaders"]
 ---
 
 <p class="has-medium-font-size">How can we strengthen connections and amplify the collective voice of bioinformatics core facility leaders and aspiring leaders across the UK?</p>

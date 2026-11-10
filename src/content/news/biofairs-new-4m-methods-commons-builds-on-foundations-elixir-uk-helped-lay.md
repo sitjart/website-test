@@ -4,6 +4,9 @@ date: 2026-07-07
 standfirst: "BioFAIR has committed £4 million to a national Methods Commons for FAIR workflows, led by Carole Goble and partly built on ELIXIR-UK foundations."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2026/07/photo-biofair-showcase-1.jpg"
+related:
+  members: ["university-of-manchester", "earlham-institute"]
+  projects: ["biofair-methods-commons"]
 ---
 
 <p><strong>BioFAIR</strong> has announced a<strong> £4 million investment</strong> to establish the Methods Commons, the first spoke in its federated national infrastructure, led by the University of Manchester with the Earlham Institute and Seqera. For ELIXIR-UK, the announcement lands close to home. The Methods Commons will scale to national reach the capabilities the Node and its members have spent years building and sustaining: FAIR computational workflows, trusted registries, Galaxy and Nextflow execution, and the communities that hold them together.</p>

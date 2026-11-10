@@ -5,7 +5,11 @@ type: "Community Call"
 online: true
 startTime: "14:00"
 endTime: "15:00"
+recording: "https://youtu.be/QcC-h6mYGJY"
 image: "https://elixiruknode.org/wp-content/uploads/2025/09/banner_male-hand-choosing-one-of-three-options-scaled.webp"
+related:
+  activities: ["uk-training-club"]
+  members: ["university-of-liverpool"]
 ---
 
 <p>This month’s Training Club call will focus on <strong>formative assessment and the use of multiple-choice questions (MCQs) in digital training materials</strong> with <a href="https://elixiruknode.org/people/matthew-gemmell/" data-type="people" data-id="23634">Matthew Gemmell</a> (University of Liverpool). We’ll explore how MCQs can be designed and applied to support learning.</p>

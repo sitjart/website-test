@@ -1,0 +1,48 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import RemoteImage from './RemoteImage.astro';
+import { longDate } from '../lib/format';
+import { url } from '../lib/url';
+import { tagSlug } from '../lib/graph';
+
+interface Props { items: CollectionEntry<'news'>[] }
+const items = [...Astro.props.items].sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+<section class="section">
+  <ul class="container news-list">
+    {items.map((n) => (
+      <li class="news-item">
+        <a class="news-item__media" href={url(`/news/${n.id}/`)} tabindex="-1" aria-hidden="true">
+          {n.data.image && <RemoteImage src={n.data.image} width={480} />}
+        </a>
+        <div>
+          <span class="news-item__meta">
+            <a class="tag" href={url(`/news/category/${tagSlug(n.data.category)}/`)}>{n.data.category}</a>
+            {longDate(n.data.date)}
+          </span>
+          <h2 class="news-item__title"><a href={url(`/news/${n.id}/`)}>{n.data.title}</a></h2>
+          <p>{n.data.standfirst}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .news-list { list-style: none; padding: 0; display: grid; gap: 2rem; }
+  .news-item {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .news-item__media { display: block; aspect-ratio: 3 / 2; border-radius: 6px; overflow: hidden; background: var(--border); }
+  .news-item__media :global(img) { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+  .news-item__media:hover :global(img) { transform: scale(1.05); }
+  .news-item__meta { display: flex; align-items: center; gap: 0.75rem; font-size: 13px; color: var(--text); }
+  .news-item__title { font-size: 1.4rem; margin: 0.5rem 0 0.6rem; }
+  .news-item__title a { color: var(--navy); }
+  .news-item__title a:hover { color: var(--blue); }
+  @media (max-width: 700px) { .news-item { grid-template-columns: 1fr; gap: 1rem; } }
+</style>

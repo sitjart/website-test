@@ -6,6 +6,9 @@ online: true
 startTime: "11:00"
 endTime: "12:00"
 image: "https://elixiruknode.org/wp-content/uploads/2025/09/banner-halloween.webp"
+related:
+  activities: ["uk-rdm-club"]
+  members: ["ukceh"]
 ---
 
 <p>In keeping with the season, our October 2025 RDM Club call will be our Halloween special: the horrors of data stewardship – or perhaps more accurately, the horrors of not doing data stewardship.</p>

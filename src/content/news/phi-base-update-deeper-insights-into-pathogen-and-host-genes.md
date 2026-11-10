@@ -4,6 +4,9 @@ date: 2025-03-11
 standfirst: "Advancing pathogen-host interaction research with enhanced data integration and accessibility"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/03/banner-vessels-microscope.webp"
+related:
+  members: ["rothamsted-research"]
+  services: ["phi-base"]
 ---
 
 <p>ELIXIR UK is pleased to announce the release of <a href="https://phi5.phi-base.org/#/home"><strong>PHI-base 5</strong> </a>in January 2025, a significant update to the Pathogen-Host Interaction database. As an ELIXIR-UK-endorsed service, PHI-base has served the scientific community for two decades, providing valuable insights into pathogen-host interactions.</p>

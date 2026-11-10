@@ -5,7 +5,11 @@ type: "Community Call"
 online: true
 startTime: "11:00"
 endTime: "12:00"
+recording: "https://youtu.be/1vUDXs9Xnv8"
 image: "https://elixiruknode.org/wp-content/uploads/2021/06/data-center-with-multiple-rows-of-fully-operationa-2023-11-27-05-01-58-utc.webp"
+related:
+  activities: ["uk-rdm-club"]
+  members: ["cardiff-university", "university-oxford"]
 ---
 
 <p>At the July 2025 RDM Club Call, we will showcase work from the <a href="https://elixiruknode.org/activities/fellowship/">ELIXIR-UK DaSH Fellowship</a> and <a href="https://biofair.uk/">BioFAIR</a>, which brings together user stories and RDM tools to support FAIR data management. This collaborative effort, driven by data stewards and research software engineers (RSEs) from 10 UK research-performing organisations, features 17 example data management plans (DMPs) and a collection of guidance videos covering a wide range of Life Sciences data types.</p>

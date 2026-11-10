@@ -7,6 +7,9 @@ startTime: "11:00"
 endTime: "12:00"
 venue: "UK"
 image: "https://elixiruknode.org/wp-content/uploads/2024/04/stethoscope-on-charts-and-graphs-spreadsheet-paper-2023-11-27-05-31-53-utc.webp"
+related:
+  activities: ["uk-human-data-community"]
+  members: ["university-of-manchester"]
 ---
 
 <p>They will present on approaches to transforming clinical text into research-ready data, discussing key opportunities, risks, and considerations for good practice.</p>

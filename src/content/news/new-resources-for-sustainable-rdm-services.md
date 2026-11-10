@@ -4,6 +4,11 @@ date: 2026-03-24
 standfirst: "UK members collaborate on ELIXIR's first internally funded RDM Community outputs."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2026/03/2025-09_rdm-community-ghent-6.webp"
+related:
+  activities: ["rdm-community"]
+  members: ["earlham-institute", "university-of-manchester", "university-of-cambridge"]
+  projects: ["datarex"]
+  services: ["tess", "rdmkit"]
 ---
 
 <p>A suite of new and enhanced resources to support Research Data Management (RDM) services is now available, and the ELIXIR-UK community has been involved in their development.</p>

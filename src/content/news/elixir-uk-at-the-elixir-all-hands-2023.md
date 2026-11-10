@@ -4,6 +4,9 @@ date: 2023-06-12
 standfirst: "5-8 June 2023 saw almost 30 delegates from ELIXIR-UK head to Dublin for ELIXIR’s annual All Hands meeting (with more joining sessions remotely). Three of those were Fellows from our ELIXIR-UK DaSH Fellowship , and we wer"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/elieixr-all-hands-dublin-2023.webp"
+related:
+  activities: ["fellowship"]
+  members: ["university-of-manchester"]
 ---
 
 <p>5-8 June 2023 saw almost 30 delegates from ELIXIR-UK head to Dublin for ELIXIR’s annual All Hands meeting (with more joining sessions remotely). Three of those were Fellows from our <a title="" href="https://elixiruknode.org/activities/elixir-dash-fellowship/" target="_blank" rel="noopener">ELIXIR-UK DaSH Fellowship</a>, and we were joined by three of our HDR UK colleagues.</p>

@@ -4,6 +4,11 @@ date: 2026-09-23
 standfirst: "The KnetMiner team at Rothamsted has linked plant pangenome data from PLAZA to gene function, pathways and literature, letting researchers query both in one search"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2026/09/abstract-knetminer-connections.webp"
+related:
+  collaborations: ["vib"]
+  members: ["rothamsted-research"]
+  projects: ["e-pan-enhancing-pan-genome-analysis-in-plants"]
+  services: ["knetminer"]
 ---
 
 <p>The <a href="https://elixiruknode.org/service/knetminer/" data-type="service" data-id="18730">KnetMiner</a> team at Rothamsted Research has made pangenome data searchable alongside existing biological knowledge, as part of the ELIXIR-funded <a href="https://elixiruknode.org/project/e-pan-enhancing-pan-genome-analysis-in-plants/" data-type="project" data-id="25096">E-PAN project</a>.</p>

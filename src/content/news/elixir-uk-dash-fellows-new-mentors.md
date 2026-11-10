@@ -4,6 +4,9 @@ date: 2023-04-18
 standfirst: "Last month, our Fellows from the Data Stewardship Fellowship were paired with 11 ELIXIR-UK experts who will mentor them in their specialist areas. This will take the form of mentoring in training best practices and in de"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-people-at-the-top.webp"
+related:
+  activities: ["fellowship"]
+  projects: ["elixir-uk-dash"]
 ---
 
 <p>Last month, our Fellows from the Data Stewardship Fellowship were paired with 11 ELIXIR-UK experts who will mentor them in their specialist areas. This will take the form of mentoring in training best practices and in developing RDM content and activities in their disciplines.</p>

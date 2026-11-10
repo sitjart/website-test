@@ -7,6 +7,8 @@ startTime: "11:30"
 endTime: "12:30"
 venue: "Online"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-connections-multiple.webp"
+related:
+  activities: ["uk-human-data-community"]
 ---
 
 <p>The January Human Data Community call will kick off our 2026 programme of monthly meetings. This session will focus on <strong>planning, priorities, and strategic alignment</strong> for the year ahead, providing a space for open discussion and coordination across our UK community.</p>

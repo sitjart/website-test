@@ -4,6 +4,8 @@ date: 2024-11-12
 standfirst: "By Saskia Lawson-Tovey Disseminating and embedding ELIXIR knowledge and training is the primary goal of the ELIXIR DaSH fellowship. The University of Manchester (UoM) has established the UoM Office for Open Research (OOR"
 category: "Blog"
 image: "https://elixiruknode.org/wp-content/uploads/2024/12/photo-university-manchester.jpg"
+related:
+  members: ["university-of-manchester"]
 ---
 
 <p>By <a href="https://elixiruknode.org/people/saskia-lawson-tovey/" data-type="people" data-id="18663">Saskia Lawson-Tovey</a></p>

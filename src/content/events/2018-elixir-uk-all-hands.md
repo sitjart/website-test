@@ -10,6 +10,8 @@ venue: "University of Birmingham"
 locality: "Birmingham"
 registration: "https://www.earlham.ac.uk/events/elixir-uk-all-hands-2018#Programme-2"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-all-hands.webp"
+related:
+  members: ["university-of-birmingham"]
 ---
 
 <p>The annual ELIXIR-UK All Hands brings together people working at ELIXIR-UK consortium member institutions for this two-day meeting, which for 2018 is hosted by Birmingham University.</p>

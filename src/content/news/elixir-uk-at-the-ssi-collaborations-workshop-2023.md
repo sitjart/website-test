@@ -4,6 +4,10 @@ date: 2023-05-05
 standfirst: "From the 2nd to the 4th of May, the Software Sustainability Institute (SSI) ran its Collaborations Workshop for 2023 . This year's event had the theme ‘ Sustainable Career Development for those in the research software c"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2023/05/xeniacollabw23.webp"
+related:
+  activities: ["fellowship"]
+  collaborations: ["software-sustainability-institute-ssi"]
+  members: ["university-of-manchester", "open-life-science"]
 ---
 
 <p>From the 2nd to the 4th of May, the <a title="" href="https://software.ac.uk/" target="_blank" rel="noopener">Software Sustainability Institute</a> (SSI) ran its <a title="" href="https://software.ac.uk/cw23" target="_blank" rel="noopener">Collaborations Workshop for 2023</a>. This year's event had the theme ‘<strong>Sustainable Career Development for those in the research software community: looking after your software, your career, and yourself.</strong>’ which encompassed technical, career and personal development. The event was hybrid, with those in person being based in Manchester, UK.</p>

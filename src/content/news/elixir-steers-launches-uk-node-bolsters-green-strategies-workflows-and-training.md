@@ -4,6 +4,9 @@ date: 2024-02-08
 standfirst: "On February 1st 2024, ELIXIR initiated the EU-funded ELIXIR-STEERS project, propelling European research infrastructure forward with a substantial €4M budget. This collaborative three-year initiative aims to enhance larg"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-futuristic-lines.webp"
+related:
+  activities: ["galaxy-community"]
+  members: ["university-of-manchester"]
 ---
 
 <p>On February 1st 2024, ELIXIR initiated the EU-funded <a href="https://elixir-europe.org/about-us/how-funded/eu-projects/steers">ELIXIR-STEERS</a> project, propelling European research infrastructure forward with a substantial €4M budget. This collaborative three-year initiative aims to enhance large-scale, cross-border federated analysis in the life sciences within the European Research Area.</p>

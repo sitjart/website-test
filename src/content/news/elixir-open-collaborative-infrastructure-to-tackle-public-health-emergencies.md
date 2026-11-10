@@ -4,6 +4,8 @@ date: 2020-03-16
 standfirst: "The rapid spread of the COVID-19 virus highlights the need for an open analytics environment so that the global research community can collaborate on developing effective countermeasures. 27 February, Hinxton, UK. Open-a"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-virus.webp"
+related:
+  activities: ["galaxy-community"]
 ---
 
 <p><strong>The rapid spread of the COVID-19 virus highlights the need for an open analytics environment so that the global research community can collaborate on developing effective countermeasures.&nbsp;</strong></p>

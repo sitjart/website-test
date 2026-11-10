@@ -5,6 +5,9 @@ type: "Community Call"
 online: false
 end: 2026-09-29
 image: "https://elixiruknode.org/wp-content/uploads/2026/09/qtq80-jfc6yd.jpeg"
+related:
+  activities: ["uk-training-club"]
+  members: ["university-of-manchester"]
 ---
 
 <p>PowerPoint, Google Slides and Canva are now central to scientific communication and are widely used to create slide decks and posters. However, many authors use these applications in ways that present barriers to people using assistive technologies such as screen reader software. In some circumstances, these accessibility barriers may also create legal issues.</p>

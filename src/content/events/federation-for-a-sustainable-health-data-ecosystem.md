@@ -7,7 +7,12 @@ end: 2026-04-15
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
+recording: "https://youtu.be/274VBvOgrGQ"
+slides: "https://drive.google.com/file/d/1RR49tTtrh2DCUFoKyc68MpOA9f3HkZMA/view?usp=sharing"
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-digital-societ-human-data-1.webp"
+related:
+  activities: ["uk-human-data-community"]
+  members: ["hdr-uk"]
 ---
 
 <p>The HDR UK Federated Analytics programme is working with existing platform providers, TREs, and the public to drive the adoption of standards, build trust, enable federation, and accelerate research.</p>

@@ -4,6 +4,9 @@ date: 2025-01-18
 standfirst: "A FAIRytale by Liz Merrifield – a personal story about good data governance and data controllership from someone who understands the researcher’s perspectives and frustrations. My name is Liz Merrifield, and I have been"
 category: "Blog"
 image: "https://elixiruknode.org/wp-content/uploads/2025/01/banner-data-protection.jpg"
+related:
+  members: ["cardiff-university"]
+  projects: ["elixir-uk-dash"]
 ---
 
 <p class="has-large-font-size">A FAIRytale by<a href="https://elixiruknode.org/people/liz-merrifield/" data-type="people" data-id="23401"> Liz Merrifield</a> –&nbsp;a personal story about good data governance and data controllership from someone who understands the researcher’s perspectives and frustrations.</p>

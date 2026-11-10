@@ -7,6 +7,8 @@ startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
 image: "https://elixiruknode.org/wp-content/uploads/2026/01/banner-valentines-day-1.webp"
+related:
+  activities: ["uk-rdm-club"]
 ---
 
 <p><em>Elevenses and Data Love Stories</em> is the RDM Club’s annual conversation about <strong>what data stewardship looks like in practice</strong> – the routes into the role, the realities of the work that we enjoy, and the resources people actually use and love.</p>

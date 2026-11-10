@@ -4,6 +4,9 @@ date: 2025-12-03
 standfirst: "5 members of the ELIXIR-UK community have been selected for the inaugural national Fellowship supporting FAIR data and workflow practices across the UK. Their involvement reflects ELIXIR-UK’s growing role in strengthening reproducibility, interoperability and capability within UK life sciences."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/12/banner-leader-fellow-people-1.webp"
+related:
+  collaborations: ["biofair"]
+  members: ["cardiff-university", "the-open-university", "university-of-exeter", "earlham-institute", "quadram-institute"]
 ---
 
 <p>Members of the ELIXIR-UK community have been selected for the inaugural <a href="https://biofair.uk/updates/2025/biofair-fellowship-launches-to-empower-the-next-generation-of-fair-leaders/">BioFAIR  Fellowship programme</a> to support the national adoption and advocacy of FAIR practices across UK life sciences. The programme brings together those working to <strong>strengthen reproducibility, interoperability and the reuse of data.</strong></p>

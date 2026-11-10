@@ -4,6 +4,11 @@ date: 2025-07-01
 standfirst: "A FAIRytale by Nick Owen – a personal story about data stewardship role in modern academia"
 category: "Blog"
 image: "https://elixiruknode.org/wp-content/uploads/2025/02/banner-library-books.webp"
+related:
+  activities: ["uk-rdm-club", "rdm-community"]
+  area: ["research-data-management"]
+  events: ["research-data-stewardship-at-ucl"]
+  members: ["university-college-london"]
 ---
 
 <div class="wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-8b9644f" id="gspb_container-id-gsbp-8b9644f">

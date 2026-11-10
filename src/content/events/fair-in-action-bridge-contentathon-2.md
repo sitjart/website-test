@@ -6,6 +6,10 @@ online: false
 end: 2026-05-28
 registration: "https://forms.clickup.com/20526645/f/kjdhn-17852/WRBL9B39JQEWP02HAP"
 image: "https://elixiruknode.org/wp-content/uploads/2025/10/banner-isometrics-data.svg"
+related:
+  activities: ["uk-rdm-club"]
+  news: ["fair-in-action-bridge-building-the-practical-tools-rdm-professionals-need"]
+  projects: ["fair-in-action-bridge"]
 ---
 
 <p>On 28 May, we're rolling up our sleeves to draft the first FAIR-in-action playbook: How to approach FAIRification.</p>

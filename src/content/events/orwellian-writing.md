@@ -6,7 +6,12 @@ online: true
 startTime: "14:00"
 endTime: "15:00"
 venue: "online"
+recording: "https://youtu.be/y9pE7DhqWqQ"
+slides: "https://docs.google.com/presentation/d/1LikqCTABgQnlcx7wiT6ISKeOn7BFJqRxk4mLC6RIjjw/edit?usp=sharing"
 image: "https://elixiruknode.org/wp-content/uploads/2026/01/banner-working-bag.webp"
+related:
+  activities: ["uk-training-club"]
+  members: ["university-of-liverpool"]
 ---
 
 <p>This Training Club session explores practical writing techniques for creating clear, effective teaching materials. The session draws on guidance from George Orwell’s essay <em>Politics and the English Language</em>, adapting his principles for use in educational and training contexts.</p>

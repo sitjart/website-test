@@ -4,6 +4,9 @@ date: 2023-02-23
 standfirst: "Following the 2022 call for new services, we are pleased to announce four new ELIXIR-UK services. These were selected by our panel to ensure high service quality and match UK priorities as identified by its funders. The"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-four-shapes.webp"
+related:
+  members: ["university-of-manchester"]
+  services: ["rdmkit", "cafe-variome", "missense3d", "variant-validator", "brepertoire", "cyverse-uk", "health-informatics-centre-hic"]
 ---
 
 <p>Following the 2022 call for new services, we are pleased to announce four new ELIXIR-UK services. These were selected by our panel to ensure high service quality and match UK priorities as identified by its funders.</p>

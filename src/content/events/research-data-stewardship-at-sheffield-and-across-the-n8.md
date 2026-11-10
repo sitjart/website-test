@@ -7,6 +7,9 @@ startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
 image: "https://elixiruknode.org/wp-content/uploads/2025/02/banner-library-books.webp"
+related:
+  activities: ["uk-rdm-club"]
+  collaborations: ["university-of-sheffield"]
 ---
 
 <p>The University of Sheffield is strengthening data stewardship across its research community through coordinated initiatives that improve visibility, recognition, and support for data professionals. Current activities include a Library-based <a href="https://osf.io/preprints/metaarxiv/2ev6k_v1">FAIR data stewardship service pilot</a>, mapping stewardship practices across departments, and developing evidence to support a sustainable, university-wide approach.</p>

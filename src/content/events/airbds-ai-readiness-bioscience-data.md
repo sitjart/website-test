@@ -5,6 +5,9 @@ type: "Community Call"
 online: false
 end: 2026-06-02
 image: "https://elixiruknode.org/wp-content/uploads/2025/12/banner_circuit-board-and-ai-micro-processor-artificial-i.webp"
+related:
+  activities: ["uk-rdm-club"]
+  collaborations: ["aibio-uk"]
 ---
 
 <p>A practical question keeps surfacing: h<strong>ow ready is our data for AI in the first place? </strong>In this session, <strong>Charlie Harrison</strong> from <strong>AIBIO-UK </strong>introduces AIRBDS-core, a metric for quantifying the AI-readiness of bioscience data. The talk walks through the methodology and the aims behind constructing the metric, and opens the floor for feedback and contributions from the community ahead of the project's soon-to-be-released publication.</p>

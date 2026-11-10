@@ -1,0 +1,10 @@
+---
+import DirectoryRecord from '../../components/DirectoryRecord.astro';
+import { DIRECTORY } from '../../lib/graph';
+
+export function getStaticPaths() {
+  return DIRECTORY['collaborations'].records.map((record) => ({ params: { slug: record.slug }, props: { record } }));
+}
+const { record } = Astro.props;
+---
+<DirectoryRecord kind="collaborations" {record} />

@@ -6,7 +6,10 @@ online: true
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
+recording: "https://youtu.be/9US10UKxzJs"
 image: "https://elixiruknode.org/wp-content/uploads/2025/11/photo-all-hands-bbsrc.webp"
+related:
+  activities: ["uk-rdm-club"]
 ---
 
 <p>UKRI is in the process of updating and harmonising its research data expectations across all councils, following the publication of the draft <a href="https://engagementhub.ukri.org/ukri-openresearch/developing-ukris-research-data-policy/" target="_blank" rel="noreferrer noopener nofollow"><strong>UKRI-wide Research Data Policy in April 2025</strong></a>. While applicants and award holders must continue following existing council-specific policies (such as the BBSRC Data Sharing Policy and the UKRI Common Principles), the draft policy signals upcoming shifts in how research data, software, and other digital objects arising from UKRI funding should be managed and shared.</p>

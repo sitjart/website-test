@@ -6,7 +6,11 @@ online: true
 startTime: "14:00"
 endTime: "15:00"
 venue: "Online"
+recording: "https://youtu.be/nFYztmRMUD0"
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/2023-13-01-fellows-retreat-photo-13.webp"
+related:
+  activities: ["uk-training-club"]
+  members: ["university-of-liverpool"]
 ---
 
 <p>Join <em>Dr Strangelove or: How I learned to stop worrying and love the Learning Outcome</em>, a Training Club session led by <strong>Matthew Gemmell (University of Liverpool)</strong>. This practical, research-led workshop explores how <strong>SOLO and Bloom taxonomies</strong> can help educators design clear, achievable <strong>learning outcomes in higher education</strong>, particularly within <strong>computational biology and bioinformatics</strong>.</p>

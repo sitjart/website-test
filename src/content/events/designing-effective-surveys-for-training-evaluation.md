@@ -7,6 +7,9 @@ startTime: "14:00"
 endTime: "15:00"
 venue: "Online"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-training-online.webp"
+related:
+  activities: ["uk-training-club"]
+  members: ["the-open-university"]
 ---
 
 <p>This interactive workshop will focus on improving survey design for evaluating training courses. Participants will collaborate to create a shared template for high-quality, effective surveys.</p>

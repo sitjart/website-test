@@ -6,7 +6,11 @@ online: true
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
+recording: "https://www.youtube.com/watch?v=icLKa_QLZLg"
 image: "https://elixiruknode.org/wp-content/uploads/2025/02/banner-library-books.webp"
+related:
+  activities: ["uk-rdm-club"]
+  news: ["a-day-in-the-life-of-a-ucl-research-data-steward"]
 ---
 
 <p>At the March 2025 RDM Club Call, we will discuss UCL’s journey to building an&nbsp;<a href="https://www.ucl.ac.uk/advanced-research-computing/data-stewards">in-house Data Steward team</a>.</p>

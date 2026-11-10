@@ -1,0 +1,1018 @@
+[
+ {
+  "slug": "3d-bioinfo-community",
+  "name": "3D BioInfo Community",
+  "website": "https://elixir-europe.org/communities/3d-bioinfo",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-community-3dbioinfo.svg",
+  "summary": "Helping understand the structure of macromolecules like proteins and DNA.",
+  "body": "<p class=\"has-medium-font-size\">Helping understand the structure of macromolecules like proteins and DNA.</p>\n\n<p></p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe",
+   "Leading"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "3d-bioinfo-community",
+    "increasing-interoperability-protein-resources",
+    "building-pdbe-kb-chart"
+   ],
+   "news": [
+    "professor-christine-orengo-has-been-elected-as-fellow-of-the-royal-society"
+   ],
+   "services": [
+    "cath"
+   ],
+   "members": [
+    "university-college-london"
+   ]
+  }
+ },
+ {
+  "slug": "machine-learning-focus-group",
+  "name": "AI Ecosystem Focus Group",
+  "website": "https://elixir-europe.org/focus-groups/ai-ecosystem",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/04/icon-focus-group-machine-learning.svg",
+  "summary": "The field of scientific AI/ML has evolved rapidly in recent years. As AI/ML implementations are applied to complex life science challenges, common issues have emerged, such as the output of poorly des",
+  "body": "<p>The field of scientific AI/ML has evolved rapidly in recent years. As AI/ML implementations are applied to complex life science challenges, common issues have emerged, such as the output of poorly described AI datasets and models that commonly do not follow best practices. This has created fundamental problems with reproducibility, explainability, and trustworthiness, limiting the value of published AI datasets and models for the wider scientific community. In response, a diverse range of new AI/ML standards, metadata schemas, and AI-focused resources such as registries have been developed. However, these efforts have led to fragmentation and poor interoperability between AI/ML support infrastructure both within and outside of ELIXIR, creating a new set of challenges for building a harmonised ecosystem of impactful and reusable AI/ML research outputs.</p>\n\n<p>The AI Ecosystem Focus Group brings together experts from ELIXIR’s Nodes &nbsp;to address growing challenges within the scientific AI/ML field, particularly &nbsp;the need for harmonisation in AI/ML infrastructure. Building on the foundational work of the ELIXIR Machine Learning Focus Group, the AI Ecosystem Focus Group's main purpose is to coordinate efforts, address fragmentation, and support the standardisation of AI/ML infrastructure, ultimately aiming to build a more impactful and reusable ecosystem for AI/ML research outputs across ELIXIR.</p>",
+  "tags": [
+   "ELIXIR Europe",
+   "Focus Group",
+   "Participating"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "biodiversity-community",
+  "name": "Biodiversity Community",
+  "website": "https://elixir-europe.org/communities/biodiversity",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-community-biodiversity.svg",
+  "summary": "Developing networks and working on a longer-term biodiversity strategy.",
+  "body": "<p>Developing networks and working on a longer-term biodiversity strategy.</p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe",
+   "Leading"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "biodiversity-network"
+   ],
+   "members": [
+    "earlham-institute",
+    "heriot-watt-university"
+   ]
+  }
+ },
+ {
+  "slug": "bioinfocoreleaders",
+  "name": "BioinfoCoreLeaders Club",
+  "website": "",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2026/09/bioinfo-core-leaders-mark-transparent.svg",
+  "summary": "A UK community for leaders and managers of bioinformatics, computational biology and related core shared research facilities. Launched in 2026, it convened a national forum for people who lead, manage",
+  "body": "<p class=\"has-palette-color-4-color has-text-color has-link-color has-medium-font-size\" style=\"font-style:normal;font-weight:300\">A UK community for leaders and managers of bioinformatics, computational biology and related core shared research facilities.&nbsp;&nbsp;</p>\n\n<p>Launched in 2026, it convened a national forum for people who lead, manage or strategically support bioinformatics, computational biology, data science and related research service facilities in UK universities and not-for-profit research institutes.</p>\n\n<p>Open to all, the community exists to cut duplicated effort, share operational and strategic practice, and give facility leaders a route into national discussions about research infrastructure, workforce sustainability and the responsible use of AI.&nbsp;</p>\n\n<p>It grew out of an informal network of facility leaders and was formalised as an ELIXIR-UK community  through the Flexible Bursaries Scheme activity <em>BioinfoCore Connect UK</em>. Seventeen organisations took part in the first meeting at the University of Liverpool in May 2026, <em><a href=\"https://elixiruknode.org/blog/2026/a-short-story-of-the-bioinfocoreleaders-club/\" data-type=\"post\" data-id=\"25362\">A short story of the BioinfoCoreLeaders Club</a></em>.</p>\n\n<p>Recurring topics include cost recovery and pricing, service governance, procurement, demand against capacity, and career pathways and recognition for digital Research Technical Professionals (dRTPs). Longer term the community intends to produce good-practice resources, position statements, consultation responses and shared recommendations for funders and institutions.</p>\n\n<h2 class=\"wp-block-heading\" id=\"what-to-expect\">What to expect</h2>\n\n<div class=\"wp-block-greenshift-blocks-accordion gs-accordion gspb_accordion-id-gsbp-73e4238 togglelogic\" id=\"gspb_accordion-id-gsbp-73e4238\" itemscope itemtype=\"\">\n<div class=\"wp-block-greenshift-blocks-accordionitem gs-accordion-item gspb_accordionitem-gsbp-ea53094 gsclose\" id=\"gspb_accordionitem-gsbp-ea53094\" itemscope><div class=\"gs-accordion-item__title\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\" aria-controls=\"gspb-accordion-item-content-gsbp-ea53094\"><h3 class=\"gs-accordion-item__heading\">Compare costing and service models</h3><span class=\"iconfortoggle\"><span class=\"gs-iconbefore\"></span><span class=\"gs-iconafter\"></span></span></div><div class=\"gs-accordion-item__content\" itemscope id=\"gspb-accordion-item-content-gsbp-ea53094\"><div class=\"gs-accordion-item__text\">\n<p>Discuss pricing, cost recovery, procurement and the gap between demand and capacity with people running comparable facilities. Find out what others charge, what they refuse and how they justify it.</p>\n</div></div></div>\n\n<div class=\"wp-block-greenshift-blocks-accordionitem gs-accordion-item gspb_accordionitem-gsbp-7e2de8f gsclose\" id=\"gspb_accordionitem-gsbp-7e2de8f\" itemscope><div class=\"gs-accordion-item__title\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\" aria-controls=\"gspb-accordion-item-content-gsbp-7e2de8f\"><h3 class=\"gs-accordion-item__heading\">Borrow rather than build</h3><span class=\"iconfortoggle\"><span class=\"gs-iconbefore\"></span><span class=\"gs-iconafter\"></span></span></div><div class=\"gs-accordion-item__content\" itemscope id=\"gspb-accordion-item-content-gsbp-7e2de8f\"><div class=\"gs-accordion-item__text\">\n<p>Share templates, standard operating procedures, costing models, training approaches and examples of service governance, so each facility stops solving the same problem alone.</p>\n</div></div></div>\n\n<div class=\"wp-block-greenshift-blocks-accordionitem gs-accordion-item gspb_accordionitem-gsbp-be6eda2 gsclose\" id=\"gspb_accordionitem-gsbp-be6eda2\" itemscope><div class=\"gs-accordion-item__title\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\" aria-controls=\"gspb-accordion-item-content-gsbp-be6eda2\"><h3 class=\"gs-accordion-item__heading\">Strengthen FAIR and reproducible research</h3><span class=\"iconfortoggle\"><span class=\"gs-iconbefore\"></span><span class=\"gs-iconafter\"></span></span></div><div class=\"gs-accordion-item__content\" itemscope id=\"gspb-accordion-item-content-gsbp-be6eda2\"><div class=\"gs-accordion-item__text\">\n<p>Compare how facilities handle metadata, workflows, repositories, code sharing and data stewardship in a service setting, where reproducibility depends on work you do not own.</p>\n</div></div></div>\n\n<div class=\"wp-block-greenshift-blocks-accordionitem gs-accordion-item gspb_accordionitem-gsbp-b5c5fb9 gsclose\" id=\"gspb_accordionitem-gsbp-b5c5fb9\" itemscope><div class=\"gs-accordion-item__title\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\" aria-controls=\"gspb-accordion-item-content-gsbp-b5c5fb9\"><h3 class=\"gs-accordion-item__heading\">Talk frankly with peers</h3><span class=\"iconfortoggle\"><span class=\"gs-iconbefore\"></span><span class=\"gs-iconafter\"></span></span></div><div class=\"gs-accordion-item__content\" itemscope id=\"gspb-accordion-item-content-gsbp-b5c5fb9\"><div class=\"gs-accordion-item__text\">\n<p>Meet others carrying the same responsibilities for facility strategy, operations and staffing. Raise the problems that are difficult to discuss inside your own institution, in a trusted and informal setting.</p>\n</div></div></div>\n\n<div class=\"wp-block-greenshift-blocks-accordionitem gs-accordion-item gspb_accordionitem-gsbp-d93601b gsclose\" id=\"gspb_accordionitem-gsbp-d93601b\" itemscope><div class=\"gs-accordion-item__title\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\" aria-controls=\"gspb-accordion-item-content-gsbp-d93601b\"><h3 class=\"gs-accordion-item__heading\">Shape national conversations</h3><span class=\"iconfortoggle\"><span class=\"gs-iconbefore\"></span><span class=\"gs-iconafter\"></span></span></div><div class=\"gs-accordion-item__content\" itemscope id=\"gspb-accordion-item-content-gsbp-d93601b\"><div class=\"gs-accordion-item__text\">\n<p>Contribute evidence and expertise to discussions about service provision, FAIR practice, AI adoption, research integrity and sustainable infrastructure, through consultation responses and position statements.</p>\n</div></div></div>\n\n<div class=\"wp-block-greenshift-blocks-accordionitem gs-accordion-item gspb_accordionitem-gsbp-1ea291d gsclose\" id=\"gspb_accordionitem-gsbp-1ea291d\" itemscope><div class=\"gs-accordion-item__title\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\" aria-controls=\"gspb-accordion-item-content-gsbp-1ea291d\"><h3 class=\"gs-accordion-item__heading\">Connect to national infrastructure</h3><span class=\"iconfortoggle\"><span class=\"gs-iconbefore\"></span><span class=\"gs-iconafter\"></span></span></div><div class=\"gs-accordion-item__content\" itemscope id=\"gspb-accordion-item-content-gsbp-1ea291d\"><div class=\"gs-accordion-item__text\">\n<p>Build direct links between your facility and ELIXIR-UK and other national research infrastructure initiatives, and identify collaborators for joint resources and grant applications.</p>\n</div></div></div>\n</div>\n\n<h2 class=\"wp-block-heading\" id=\"who-is-this-for\">Who is this for</h2>\n\n<p>The community is open to all. It is aimed at people responsible for facility strategy, operations or service delivery in UK higher education and not-for-profit research organisations, including:</p>\n\n<ul class=\"wp-block-list\">\n<li>Heads and directors of bioinformatics, computational biology and related core facilities</li>\n\n<li>Facility managers and principal dRTPs</li>\n\n<li>People with an active interest in the leadership and strategic development of research service facilities</li>\n</ul>\n\n<p>Wider facility staff are welcome and can contribute through community activities and events, including bioinformaticians, data scientists, research software engineers, statisticians, data stewards, trainers and early-career dRTPs.</p>\n\n<h2 class=\"wp-block-heading\" id=\"initial-topic-leads\"><strong>Initial topic leads</strong></h2>\n\n<p>Four priority themes were identified at the inaugural meeting, with leads volunteering to take each forward.</p>\n\n<ul class=\"wp-block-list\">\n<li><strong>FAIR and reproducible practice</strong>: Robert Andrews, Sam Haynes and Nicholas Owen</li>\n\n<li><strong>Advocacy</strong>: Lauren Mee</li>\n\n<li><strong>Peer-community support</strong>: Leo Zeef and Matthieu Miossec</li>\n\n<li><strong>Network promotion</strong>: Sascha Ott</li>\n</ul>\n\n<h2 class=\"wp-block-heading\" id=\"faqs\">FAQs</h2>\n\n<div class=\"wp-block-greenshift-blocks-accordion gs-accordion gspb_accordion-id-gsbp-4f248aa togglelogic\" id=\"gspb_accordion-id-gsbp-4f248aa\" itemscope itemtype=\"https://schema.org/FAQPage\">\n<div class=\"wp-block-greenshift-blocks-accordionitem gs-accordion-item gspb_accordionitem-gsbp-5c04088 gsclose\" id=\"gspb_accordionitem-gsbp-5c04088\" itemscope itemprop=\"mainEntity\" itemtype=\"https://schema.org/Question\"><div class=\"gs-accordion-item__title\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\" aria-controls=\"gspb-accordion-item-content-gsbp-5c04088\"><h3 class=\"gs-accordion-item__heading\"><strong>Is there a cost to join?</strong></h3><meta itemprop=\"name\" content=\"<strong&gt;Is there a cost to join?</strong&gt;\"/><span class=\"iconfortoggle\"><span class=\"gs-iconbefore\"></span><span class=\"gs-iconafter\"></span></span></div><div class=\"gs-accordion-item__content\" itemscope itemprop=\"acceptedAnswer\" itemtype=\"https://schema.org/Answer\" id=\"gspb-accordion-item-content-gsbp-5c04088\"><div class=\"gs-accordion-item__text\" itemprop=\"text\">\n<p>No. Membership is free. ELIXIR-UK support gives the community a maintained digital platform at no cost to members, and the co-chairs are seeking further funding to widen access to in-person events.</p>\n</div></div></div>\n\n<div class=\"wp-block-greenshift-blocks-accordionitem gs-accordion-item gspb_accordionitem-gsbp-c7a2b68 gsclose\" id=\"gspb_accordionitem-gsbp-c7a2b68\" itemscope itemprop=\"mainEntity\" itemtype=\"https://schema.org/Question\"><div class=\"gs-accordion-item__title\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\" aria-controls=\"gspb-accordion-item-content-gsbp-c7a2b68\"><h3 class=\"gs-accordion-item__heading\"><strong>What commitment is expected?</strong></h3><meta itemprop=\"name\" content=\"<strong&gt;What commitment is expected?</strong&gt;\"/><span class=\"iconfortoggle\"><span class=\"gs-iconbefore\"></span><span class=\"gs-iconafter\"></span></span></div><div class=\"gs-accordion-item__content\" itemscope itemprop=\"acceptedAnswer\" itemtype=\"https://schema.org/Answer\" id=\"gspb-accordion-item-content-gsbp-c7a2b68\"><div class=\"gs-accordion-item__text\" itemprop=\"text\">\n<p>The community aims to meet monthly online. Members are encouraged to attend where they can and to share practice or evidence with the wider community. The model is deliberately light-touch while the network matures.</p>\n</div></div></div>\n\n<div class=\"wp-block-greenshift-blocks-accordionitem gs-accordion-item gspb_accordionitem-gsbp-fffd7a1 gsclose\" id=\"gspb_accordionitem-gsbp-fffd7a1\" itemscope itemprop=\"mainEntity\" itemtype=\"https://schema.org/Question\"><div class=\"gs-accordion-item__title\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\" aria-controls=\"gspb-accordion-item-content-gsbp-fffd7a1\"><h3 class=\"gs-accordion-item__heading\"><strong>Which organisations are involved?</strong></h3><meta itemprop=\"name\" content=\"<strong&gt;Which organisations are involved?</strong&gt;\"/><span class=\"iconfortoggle\"><span class=\"gs-iconbefore\"></span><span class=\"gs-iconafter\"></span></span></div><div class=\"gs-accordion-item__content\" itemscope itemprop=\"acceptedAnswer\" itemtype=\"https://schema.org/Answer\" id=\"gspb-accordion-item-content-gsbp-fffd7a1\"><div class=\"gs-accordion-item__text\" itemprop=\"text\">\n<p>17 organisations took part in the inaugural activity, spanning universities, research institutes and CRUK institutes, with further representation added since. <a href=\"https://elixiruknode.org/blog/2026/a-short-story-of-the-bioinfocoreleaders-club/\" data-type=\"post\" data-id=\"25362\">See how the community formed</a> for the full list.</p>\n</div></div></div>\n</div>",
+  "tags": [
+   "Club",
+   "ELIXIR-UK"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "https://elixir-uk-bbffsg.subscribepage.io/",
+  "related": {
+   "events": [
+    "bioinfocoreleaders-uk-building-our-community-and-shaping-our-next-steps"
+   ],
+   "news": [
+    "bioinfocoreleaders-club-consolidated-after-warwick-meeting"
+   ],
+   "members": [
+    "university-of-liverpool"
+   ]
+  }
+ },
+ {
+  "slug": "cancer-data-focus-group",
+  "name": "Cancer Data Community",
+  "website": "https://elixir-europe.org/focus-groups/cancer-data",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/04/icon-community-cancer-data.svg",
+  "summary": "Cancer research is highly data intensive, making efficient data management essential to enabling precision medicine for European citizens. The ELIXIR Cancer Data Community was established early in 202",
+  "body": "<p>Cancer research is highly data intensive, making efficient data management essential to enabling precision medicine for European citizens.</p>\n\n<p>The ELIXIR Cancer Data Community was established early in 2024, following the publication of the <a href=\"https://www.nature.com/articles/s43018-023-00717-6\" target=\"_blank\" rel=\"noreferrer noopener\">Community’s white paper</a>. The Community brings together expertise and resources to gather, manage and analyse clinical and biomedical data. By joining forces with other initiatives focused on human data, including several Horizon Europe-funded projects, ELIXIR aims to enhance the data infrastructure, improving the accessibility, quality and interoperability of data, ultimately accelerating discoveries in biomedical research and enabling better decision-making.</p>\n\n<p>Effective data management involves the adoption of standardised data formats, robust data privacy and the engagement of healthcare professionals. Broad interoperability of data, metadata, research software and computational infrastructure are all critical for data to make a difference to cancer prevention and treatment.</p>\n\n<p>The scope of the Community includes running pilot projects, delivering training and lectures, providing a network of experts to respond to funding opportunities, and influencing the direction of policy development in cancer research.</p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe",
+   "Participating"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "compute-platform",
+  "name": "Compute Platform",
+  "website": "https://elixir-europe.org/platforms/compute",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/icon-platform-compute.svg",
+  "summary": "Developing services to make it easier to store, share and analyse large datasets.",
+  "body": "<p class=\"has-medium-font-size\">Developing services to make it easier to store, share and analyse large datasets.</p>",
+  "tags": [
+   "ELIXIR Europe",
+   "Platform"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "2022-ecp2",
+    "making-container-services-integratable",
+    "cwl-2018",
+    "container-orchestration",
+    "2024-technology-compute"
+   ]
+  }
+ },
+ {
+  "slug": "credit-recognition-and-usage-focus-group",
+  "name": "Credit, Recognition and Usage Focus Group",
+  "website": "https://elixir-europe.org/focus-groups/credit-recognition-usage",
+  "logo": "",
+  "summary": "Modern life science research relies on contributions beyond traditional publications – software, workflows, datasets, training materials and the people who develop, curate, coordinate and maintain res",
+  "body": "<p>Modern life science research relies on contributions beyond traditional publications – software, workflows, datasets, training materials and the people who develop, curate, coordinate and maintain research infrastructure. These are often not adequately recognised by existing research evaluation systems.</p>\n\n<p>The Credit, Recognition and Usage Focus Group connects experts from ELIXIR Nodes, Platforms and Communities to coordinate ELIXIR-wide activities on credit, recognition and usage, align approaches and avoid duplication of effort. Its expected activities include mapping contribution and usage types across ELIXIR, developing best practice recommendations and supporting ELIXIR-led services such as APICURON and BIP! Scholar. The group also engages with external infrastructures such as OpenAIRE and ORCID.</p>\n\n<p>One thing to check: the source switches between “credit, recognition and usage” and “credit, recognition and metrics”. I’ve kept each where the source uses it, but you may want the page itself to settle on one.</p>",
+  "tags": [
+   "ELIXIR Europe",
+   "Focus Group"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "data-platform",
+  "name": "Data Platform",
+  "website": "https://elixir-europe.org/platforms/data",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/icon-platform-data.svg",
+  "summary": "Identifying critical data resources across Europe and supporting the linkages between data and literature.",
+  "body": "<p class=\"has-medium-font-size\">Identifying critical data resources across Europe and supporting the linkages between data and literature. </p>",
+  "tags": [
+   "ELIXIR Europe",
+   "Platform"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "2022-edp2",
+    "mapping-biocuration",
+    "fairness-core-resources",
+    "increasing-interoperability-protein-resources",
+    "2022-human-gen-phen",
+    "2022-lipid-pathways",
+    "2024-technology-data"
+   ],
+   "services": [
+    "cath"
+   ]
+  }
+ },
+ {
+  "slug": "fellowship",
+  "name": "Data Stewardship Training Fellowship",
+  "website": "https://fellowship.elixiruknode.org/",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/emblem-fellowship.svg",
+  "summary": "Professionalising data stewardship in the life sciences With a Fellowship of ambassadors across UK research-performing organisations Through UKRI funding gained in 2021, we have established a national",
+  "body": "<div class=\"wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-b7c4584\" id=\"gspb_container-id-gsbp-b7c4584\">\n<h1 class=\"wp-block-heading\" id=\"professionalising-data-stewardship-in-the-life-sciences\" style=\"margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)\">Professionalising data stewardship in the life sciences</h1>\n\n<p class=\"has-medium-font-size\" style=\"padding-top:0;padding-bottom:0\">With a <strong>Fellowship of ambassadors</strong> across UK research-performing organisations</p>\n\n<div class=\"wp-block-greenshift-blocks-row gspb_row gspb_row-id-gsbp-4044635 gspb_row--gutter-40\" id=\"gspb_row-id-gsbp-4044635\"><div class=\"gspb_row__content\"> \n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--8 gspb_col-id-gsbp-dc2ba5d\" id=\"gspb_col-id-gsbp-dc2ba5d\">\n<p>Through&nbsp;UKRI funding&nbsp;gained in 2021, we have established a&nbsp;national Data Stewardship Fellowship&nbsp;in a seedcorn group of 17 UK universities and institutes.</p>\n\n<p>Fellows have been supported in creating learning materials and offering local training in their fields of FAIR data expertise by leveraging existing resources, materials and contact points within their institutions.</p>\n\n<p>These activities have supported a short-term mission to develop a sustainable data skills training programme in the Life Sciences, realised through embedding material locally into existing in-house training programmes and research infrastructure.</p>\n\n<div class=\"wp-block-group\">\n<div class=\"wp-block-greenshift-blocks-counter gs-counterwrap gspb_counter-id-gsbp-633d6df\"><div class=\"gs-counterdiv\"><div class=\"gs-counter\" data-start=\"0\" data-end=\"24\" data-duration=\"2\">0</div><div class=\"gs-counterlabel\">Fellows</div></div></div>\n\n<div class=\"wp-block-greenshift-blocks-counter gs-counterwrap gspb_counter-id-gsbp-ca2bd48\"><div class=\"gs-counterdiv\"><div class=\"gs-counter\" data-start=\"0\" data-end=\"17\" data-duration=\"2\">0</div><div class=\"gs-counterlabel\">Organisations</div></div></div>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-row gspb_row gspb_row-id-gsbp-f0f4f41\" id=\"gspb_row-id-gsbp-f0f4f41\"><div class=\"gspb_row__content\"> \n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--6 gspb_row__col--md-12 gspb_row__col--xs-12 gspb_col-id-gsbp-117613d\" id=\"gspb_col-id-gsbp-117613d\">\n<h3 class=\"wp-block-heading\" id=\"learn-more-about-the-activities\">Learn more about the activities</h3>\n\n<p style=\"margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0\">You can find all the activities Fellows have been involved in by visiting the dedicated&nbsp;<strong>microsite</strong>.</p>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--6 gspb_row__col--md-12 gspb_row__col--xs-12 gspb_col-id-gsbp-e8fbc49\" id=\"gspb_col-id-gsbp-e8fbc49\">\n<div class=\"gspb_button_wrapper gspb_button-id-gsbp-b06420c\" id=\"gspb_button-id-gsbp-b06420c\"><a class=\"wp-block-greenshift-blocks-buttonbox gspb-buttonbox wp-element-button\" href=\"https://fellowship.elixiruknode.org/\" rel=\"noopener\"><span class=\"gspb-buttonbox-textwrap\"><span class=\"gspb-buttonbox-text\"><span class=\"gspb-buttonbox-title\">Visit fellowship site</span></span><span class=\"gspb-buttonbox-icon\"><svg class=\"\" style=\"display:inline-block;vertical-align:middle\" width=\"15\" height=\"15\" viewBox=\"0 0 896 1024\" xmlns=\"http://www.w3.org/2000/svg\"><path style=\"fill:#565D66\" d=\"M436.202 76.202l-39.598 39.598c-9.372 9.372-9.372 24.568 0 33.942l310.26 310.258h-682.864c-13.254 0-24 10.746-24 24v56c0 13.254 10.746 24 24 24h682.864l-310.26 310.26c-9.372 9.372-9.372 24.568 0 33.942l39.598 39.598c9.372 9.372 24.568 9.372 33.942 0l418.828-418.828c9.372-9.372 9.372-24.568 0-33.942l-418.83-418.828c-9.372-9.374-24.568-9.374-33.94 0z\"></path></svg></span></span></a></div>\n</div>\n </div></div>\n\n<p>This Fellowship now front-loads a longer-term vision to grow a FAIR data community and national capacity in Data Stewardship. Through mobilising ELIXIR&nbsp;<a href=\"https://elixir-europe.org/communities\">communities</a>,&nbsp;<a href=\"https://elixir-europe.org/services\">services</a>&nbsp;and&nbsp;<a href=\"https://elixir-europe.org/platforms\">platforms</a>, we aim to support Fellows and UK Data Stewards in becoming FAIR data ambassadors within a network of peers and mentors.</p>\n\n<p>This community aims to:</p>\n\n<ul class=\"wp-block-list\">\n<li>Support professionalising data stewardship in the life sciences</li>\n\n<li>Develop resources to help researchers make their data FAIR</li>\n\n<li>Upskill life sciences professionals about the importance of making their data FAIR</li>\n\n<li>Work with publishers to make sure that data is published in a FAIR way</li>\n</ul>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_col-id-gsbp-00a3014\" id=\"gspb_col-id-gsbp-00a3014\">\n<div class=\"wp-block-greenshift-blocks-image gspb_image gspb_image-id-gsbp-b26e4b7\" id=\"gspb_image-id-gsbp-b26e4b7\"><img src=\"https://elixiruknode.org/wp-content/uploads/2024/03/locations-all-fellows.svg\" data-src=\"\" alt=\"\" loading=\"lazy\" width=\"800px\" height=\"1714\"/></div>\n</div>\n </div></div>\n</div>\n\n<div style=\"height:40px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<div class=\"wp-block-greenshift-blocks-container alignfull gspb_container gspb_container-gsbp-1509a70\" id=\"gspb_container-id-gsbp-1509a70\">\n<h2 class=\"wp-block-heading\" id=\"tailoring-activities-with-a-conscious-approach-to-existing-resources\"><strong>Tailoring activities with a conscious approach to existing resources</strong></h2>\n\n<div style=\"height:15px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<div class=\"wp-block-greenshift-blocks-row gspb_row gspb_row-id-gsbp-f6f0c0f\" id=\"gspb_row-id-gsbp-f6f0c0f\"><div class=\"gspb_row__content\"> \n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_row__col--md-6 gspb_row__col--xs-12 gspb_col-id-gsbp-32df127\" id=\"gspb_col-id-gsbp-32df127\">\n<div class=\"wp-block-greenshift-blocks-counter gs-counterwrap gspb_counter-id-gsbp-28d4309\"><div class=\"gs-counterdiv\"><div class=\"gs-counter\" data-start=\"0\" data-end=\"60\" data-duration=\"2\">0</div><div class=\"gs-counterlabel\">RDMbites</div></div></div>\n\n<div id=\"gspb_text-id-gsbp-85b9194\" class=\"gspb_text gspb_text-id-gsbp-85b9194 \">Short informative videos (3-5 minutes) to describe basic and specialised aspects of RDM.</div>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_row__col--md-6 gspb_row__col--xs-12 gspb_col-id-gsbp-8eeaddf\" id=\"gspb_col-id-gsbp-8eeaddf\">\n<div class=\"wp-block-greenshift-blocks-counter gs-counterwrap gspb_counter-id-gsbp-47c03b0\"><div class=\"gs-counterdiv\"><div class=\"gs-counter\" data-start=\"0\" data-end=\"27\" data-duration=\"2\">0</div><div class=\"gs-counterlabel\">Contributions to resources</div></div></div>\n\n<div id=\"gspb_text-id-gsbp-5a11e67\" class=\"gspb_text gspb_text-id-gsbp-5a11e67 \">Contribute to existing resources with knowledge and expertise from Fellows.</div>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_row__col--md-6 gspb_row__col--xs-12 gspb_col-id-gsbp-5b755d0\" id=\"gspb_col-id-gsbp-5b755d0\">\n<div class=\"wp-block-greenshift-blocks-counter gs-counterwrap gspb_counter-id-gsbp-a0c36d5\"><div class=\"gs-counterdiv\"><div class=\"gs-counter\" data-start=\"0\" data-end=\"12\" data-duration=\"2\">0</div><div class=\"gs-counterlabel\">Training courses and workshops</div></div></div>\n\n<div id=\"gspb_text-id-gsbp-a3d4313\" class=\"gspb_text gspb_text-id-gsbp-a3d4313 \">Developed courses and workshops on basic and specialised topics in an open and reusable format</div>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_row__col--md-6 gspb_row__col--xs-12 gspb_col-id-gsbp-3479a5e\" id=\"gspb_col-id-gsbp-3479a5e\">\n<div class=\"wp-block-greenshift-blocks-counter gs-counterwrap gspb_counter-id-gsbp-cf60a10\"><div class=\"gs-counterdiv\"><div class=\"gs-counter\" data-start=\"0\" data-end=\"17\" data-duration=\"2\">0</div><div class=\"gs-counterlabel\">Training sessions delivered</div></div></div>\n\n<div id=\"gspb_text-id-gsbp-29b8e38\" class=\"gspb_text gspb_text-id-gsbp-29b8e38 \">Bringing the knowledge and expertise to professionals within Fellows’ organisations and virtual communities</div>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_row__col--md-6 gspb_row__col--xs-12 gspb_col-id-gsbp-8fb5acd\" id=\"gspb_col-id-gsbp-8fb5acd\">\n<div class=\"wp-block-greenshift-blocks-counter gs-counterwrap gspb_counter-id-gsbp-3fe3517\"><div class=\"gs-counterdiv\"><div class=\"gs-counter\" data-start=\"0\" data-end=\"9\" data-duration=\"2\">0</div><div class=\"gs-counterlabel\">Outreach and signposting activities</div></div></div>\n\n<div id=\"gspb_text-id-gsbp-f775f50\" class=\"gspb_text gspb_text-id-gsbp-f775f50 \">Embedding resources locally and amplifying the work of ELIXIR and this Fellowship</div>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_row__col--md-6 gspb_row__col--xs-12 gspb_col-id-gsbp-de7b889\" id=\"gspb_col-id-gsbp-de7b889\">\n<div class=\"wp-block-greenshift-blocks-counter gs-counterwrap gspb_counter-id-gsbp-69b69d1\"><div class=\"gs-counterdiv\"><div class=\"gs-counter\" data-start=\"0\" data-end=\"10\" data-duration=\"2\">0</div><div class=\"gs-counterlabel\">Sponsorships for events</div></div></div>\n\n<div id=\"gspb_text-id-gsbp-632b21a\" class=\"gspb_text gspb_text-id-gsbp-632b21a \">Sponsored Fellows to attend conferences and meetings with a focus on FAIR data or capacity building in bioinformatics</div>\n</div>\n </div></div>\n\n<div style=\"height:67px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n</div>\n\n<div style=\"height:40px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<div class=\"wp-block-greenshift-blocks-container alignfull gspb_container gspb_container-gsbp-d20a67c\" id=\"gspb_container-id-gsbp-d20a67c\">\n<section class=\"wp-block-greenshift-blocks-row alignfull gspb_row gspb_row-id-gsbp-2215004\" id=\"gspb_row-id-gsbp-2215004\"><div class=\"gspb_row__content\"> \n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--12 gspb_col-id-gsbp-67352b4\" id=\"gspb_col-id-gsbp-67352b4\">\n<h2 class=\"wp-block-heading\" id=\"what-s-new\">What's new</h2>\n\n<div class=\"wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-8ddecd4 hovertransition\" id=\"gspb_container-id-gsbp-8ddecd4\"><a class=\"gspb-containerlink\" href=\"https://elixiruknode.org/stories/\" rel=\"noopener\"></a>\n<div class=\"wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-b1dfbb8 gspb-hoverparent-101\" id=\"gspb_container-id-gsbp-b1dfbb8\"><div class=\"gspb_backgroundOverlay\"></div></div>\n\n<div class=\"wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-8187e41\" id=\"gspb_container-id-gsbp-8187e41\"><div class=\"gspb_backgroundOverlay\"></div></div>\n\n<div class=\"wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-462ac3b\" id=\"gspb_container-id-gsbp-462ac3b\">\n\n</div>\n</div>\n\n</div>\n </div></section>\n</div>\n\n<div style=\"height:40px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<h2 class=\"wp-block-heading\" id=\"what-s-new\">Meet our Fellows</h2>\n\n<div style=\"height:15px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<div class=\"wp-block-greenshift-blocks-container alignfull gspb_container gspb_container-gsbp-fb188ef\" id=\"gspb_container-id-gsbp-fb188ef\">\n\n<div class=\"wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-b9af4450-c88c\" id=\"gspb_container-id-gsbp-b9af4450-c88c\">\n\n</div>\n\n</div>\n\n<div style=\"height:120px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<div class=\"wp-block-greenshift-blocks-container alignfull gspb_container gspb_container-gsbp-70b66d1\" id=\"gspb_container-id-gsbp-70b66d1\">\n<h2 class=\"wp-block-heading\" id=\"the-community-s-landscape\"><strong>The community’s&nbsp;</strong>landscape</h2>\n\n<div class=\"wp-block-greenshift-blocks-row gspb_row gspb_row-id-gsbp-9c24024\" id=\"gspb_row-id-gsbp-9c24024\"><div class=\"gspb_row__content\"> \n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--6 gspb_col-id-gsbp-e3341db\" id=\"gspb_col-id-gsbp-e3341db\">\n<h3 class=\"wp-block-heading\" id=\"expanding-our-reach-beyond-the-elixir-uk-network\">Expanding our reach beyond the ELIXIR-UK Network&nbsp;</h3>\n\n<p>We have embedded the Fellowship programme within the broader ELIXIR-UK strategy, granting Fellows long-term support for their work with a national and international outlook.</p>\n\n<p>Through&nbsp;<a href=\"https://www.ukri.org/opportunity/innovation-scholars-data-science-training-in-health-bioscience/\">UKRI funding</a>&nbsp;gained in 2021, the Fellowship has founded a network of Data Stewards in a seedcorn group of UK research-performing organisations. A cohort of 24 Fellows across 17 organisations,&nbsp; spanning diverse bioscience disciplines, have mobilised their Research Data Management colleagues in libraries and research offices.</p>\n\n<p>Fellows come from both ELIXIR-UK members and other UK research-performing organisations, expanding the reach of our network and mission. As a result, some Fellows have spearheaded their organisations' applications to join the UK Node.</p>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--6 gspb_col-id-gsbp-dab5701\" id=\"gspb_col-id-gsbp-dab5701\">\n<div class=\"wp-block-greenshift-blocks-image gspb_image gspb_image-id-gsbp-2122e47\" id=\"gspb_image-id-gsbp-2122e47\"><img src=\"https://elixiruknode.org/wp-content/uploads/2024/03/ladnscape-UK-1.svg\" data-src=\"\" alt=\"\" loading=\"lazy\" width=\"800px\" height=\"3021\"/></div>\n</div>\n </div></div>\n\n<div class=\"wp-block-greenshift-blocks-row gspb_row gspb_row-id-gsbp-681e664 gspb_row--gutter-60\" id=\"gspb_row-id-gsbp-681e664\"><div class=\"gspb_row__content\"> \n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_col-id-gsbp-63eb06d\" id=\"gspb_col-id-gsbp-63eb06d\">\n<div class=\"wp-block-greenshift-blocks-image gspb_image gspb_image-id-gsbp-5ae574f\" id=\"gspb_image-id-gsbp-5ae574f\"><img src=\"https://elixiruknode.org/wp-content/uploads/2024/03/landscape-working-groups-fellowship.svg\" data-src=\"\" alt=\"\" loading=\"lazy\" width=\"800px\" height=\"500\"/></div>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--8 gspb_col-id-gsbp-9251cd0\" id=\"gspb_col-id-gsbp-9251cd0\">\n<h3 class=\"wp-block-heading\" id=\"embedding-fellows-into-the-node-s-core-activities\">Embedding Fellows into the Node’s core activities</h3>\n\n<p>Within the ELIXIR-UK community, dedicated RDM and training working groups facilitate cross-disciplinary cooperation. These groups hold monthly meetings, which also include the active participation of the Fellows.</p>\n\n<div class=\"wp-block-buttons\">\n<div class=\"wp-block-button\"><a class=\"wp-block-button__link wp-element-button\" href=\"https://elixiruknode.org/activities/uk-rdm-club/\">UK RDM Club</a></div>\n\n<div class=\"wp-block-button\"><a class=\"wp-block-button__link wp-element-button\" href=\"https://elixiruknode.org/activities/uk-training-club/\">UK Training Club</a></div>\n</div>\n</div>\n </div></div>\n\n<div class=\"wp-block-greenshift-blocks-row gspb_row gspb_row-id-gsbp-fe99dc8 gspb_row--gutter-60\" id=\"gspb_row-id-gsbp-fe99dc8\"><div class=\"gspb_row__content\"> \n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--6 gspb_col-id-gsbp-8fc0c08\" id=\"gspb_col-id-gsbp-8fc0c08\">\n<h3 class=\"wp-block-heading\" id=\"opening-up-fellows-to-the-wider-elixir-europe-network\">Opening up Fellows to the wider ELIXIR Europe network</h3>\n\n<p>Such groups are also connected to the pan-European ELIXIR Communities, including the recently established&nbsp;<a href=\"https://elixir-europe.org/communities/research-data-management\" target=\"_blank\" rel=\"noreferrer noopener\">Research Data Management Community</a>&nbsp;and the&nbsp;<a href=\"https://elixir-europe.org/platforms/training\" target=\"_blank\" rel=\"noreferrer noopener\">ELIXIR Training Platform</a>.&nbsp; Members of the fellowship coordination team lead many of these activities.&nbsp;</p>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--6 gspb_col-id-gsbp-14a25e0\" id=\"gspb_col-id-gsbp-14a25e0\">\n<h3 class=\"wp-block-heading\" id=\"partnering-with-other-initiatives-and-elixir-members\">Partnering with other initiatives and ELIXIR members</h3>\n\n<p>In addition, we are working with the ELIXIR Netherlands and Luxembourg Nodes to build their national data stewardship fellowship based on our success.</p>\n\n<p>Our partnership with the&nbsp;<a href=\"https://www.software.ac.uk/\">Software Sustainability Institute</a>&nbsp;(SSI) and the&nbsp;<a href=\"https://training.galaxyproject.org/\">Galaxy Training Network</a>, further provide us with valuable expertise in building communities of practice and fellowship programmes.&nbsp;</p>\n</div>\n </div></div>\n</div>\n\n<div style=\"height:50px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<div class=\"wp-block-greenshift-blocks-container alignfull gspb_container gspb_container-gsbp-7f0db20\" id=\"gspb_container-id-gsbp-7f0db20\">\n<h2 class=\"wp-block-heading\" id=\"the-community-s-operational-essentials\"><strong>The community’s operational essentials</strong></h2>\n\n<div class=\"wp-block-greenshift-blocks-row gspb_row gspb_row-id-gsbp-5d028c8 gspb_row--gutter-60\" id=\"gspb_row-id-gsbp-5d028c8\"><div class=\"gspb_row__content\"> \n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--8 gspb_col-id-gsbp-8f3f9ee\" id=\"gspb_col-id-gsbp-8f3f9ee\">\n<h3 class=\"wp-block-heading\" id=\"a-support-system-the-coordination-team\">A support system: the coordination team</h3>\n\n<p>Our Fellows have continuous support from a dedicated coordination team, creating a sense of belonging within the ELIXIR-UK initiative. This support extends to:</p>\n\n<ul class=\"wp-block-list\">\n<li><strong>Diverse communication channels</strong>: A variety of active communication channels, including Slack, emails and online/face-to-face meetings, facilitate knowledge sharing not only related to the Fellowship outputs but also support Fellows in their daily work and career growth.</li>\n\n<li><strong>Regular troubleshooting sessions:</strong>&nbsp;several monthly drop-in sessions to troubleshoot issues, address common challenges and exchange valuable insights have kept the Fellows supported and connected.&nbsp;</li>\n\n<li><strong>Community engagement:&nbsp;</strong>Monthly or bi-monthly community calls and yearly in-person retreats have given a space to discuss relevant topics with speakers that introduce valuable tools, resources and initiatives. Fellows have used this space to showcase progress, inspire others, solicit constructive feedback, and shape the Fellowship's activities.</li>\n\n<li><strong>Onboarding process and community intranet:&nbsp;</strong>documenting and ensuring all community members have the required information is crucial to our success. For instance, all Fellows attend an inaugural meeting, complete the ELIXIR Train-the-Trainer and have access to a centralised intranet with guides, templates and resources.&nbsp;</li>\n</ul>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_col-id-gsbp-8033496\" id=\"gspb_col-id-gsbp-8033496\">\n<blockquote class=\"wp-block-quote\">\n<p><em>“The organisation, dedication and enthusiasm of staff has been exceptional and inspirational.”</em></p>\n</blockquote>\n\n<blockquote class=\"wp-block-quote\">\n<p><em>“I loved the supportive and positive environment.”</em></p>\n</blockquote>\n\n<blockquote class=\"wp-block-quote\">\n<p class=\"has-medium-font-size\"><em>“The Train the Trainer course at the start has been incredibly useful. This was my first time attending a course of such a kind, and it will reshape how I teach. Thank you.”</em></p>\n</blockquote>\n</div>\n </div></div>\n\n<div style=\"height:37px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<div class=\"wp-block-greenshift-blocks-row gspb_row gspb_row-id-gsbp-b92de06 gspb_row--gutter-60\" id=\"gspb_row-id-gsbp-b92de06\"><div class=\"gspb_row__content\"> \n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--8 gspb_col-id-gsbp-0e44436\" id=\"gspb_col-id-gsbp-0e44436\">\n<h3 class=\"wp-block-heading\" id=\"compensation-and-recognition\">Compensation and recognition</h3>\n\n<p>Recognising and compensating the contributions of our Fellows and Mentors is a central pillar of this initiative. Fellows receive an honorarium for the time invested in the activities within this Fellowship.&nbsp;</p>\n\n<p>While financial compensation is not the primary motivation for our Fellows, we strongly believe in professionalising data stewardship as an essential component of research. This goes beyond being an afterthought or an additional burden on researchers’ daily responsibilities and into an enticing career path that supports their work.&nbsp;</p>\n\n<h3 class=\"wp-block-heading\" id=\"a-badge-of-recognition-as-elixir-uk-fellows\">A badge of recognition as ELIXIR-UK Fellows</h3>\n\n<p>While we welcome professionals who work with data in the life sciences at any career stage, a panel of experts scrutinises applications.</p>\n\n<p>All candidates must not only demonstrate a strong understanding of data management in their fields but also have excellent communication and teamwork skills. Only some can pass this thorough selection process, not only guaranteeing excellence but also providing our Fellows with a badge of recognition for their skills and experience.&nbsp;</p>\n\n<p>Several Fellows have attested to the amplified impact of their voices in advocating for data management best practices in their organisations after becoming ELIXIR-UK Fellows. After being selected, they had a stronger voice in meetings, a motto we have adopted in our outreach: “Trust me, I’m an ELIXIR-UK Fellow.”</p>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--4 gspb_col-id-gsbp-e06fc40\" id=\"gspb_col-id-gsbp-e06fc40\">\n<blockquote class=\"wp-block-quote\">\n<p><em>“As a Fellow, I gained influencing power at my institute for RDM. It gave me more authority. I’m no longer a single voice saying we should care about RDM. Instead, I have the ELIXIR-UK community behind me. Don’t underestimate that value!”</em></p>\n</blockquote>\n</div>\n </div></div>\n</div>\n\n<div style=\"height:50px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<div class=\"wp-block-greenshift-blocks-container alignfull gspb_container gspb_container-gsbp-920efbf\" id=\"gspb_container-id-gsbp-920efbf\">\n<h2 class=\"wp-block-heading\" id=\"the-community-s-operational-essentials\"><strong><strong>What our Fellows say about their experience</strong></strong></h2>\n\n<div class=\"wp-block-greenshift-blocks-row gspb_row gspb_row-id-gsbp-9804da0\" id=\"gspb_row-id-gsbp-9804da0\"><div class=\"gspb_row__content\"> \n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--6 gspb_col-id-gsbp-2167bed\" id=\"gspb_col-id-gsbp-2167bed\">\n<blockquote class=\"wp-block-quote\">\n<p>\"<em>I obtained funding in partnership with my university in collaboration with ELIXIR-UK as a Fellow</em>.\"</p>\n</blockquote>\n\n<div style=\"height:6px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<blockquote class=\"wp-block-quote\">\n<p>\"<em><em>Discovering and having access to ELIXIR resources was very useful.</em></em>\"</p>\n</blockquote>\n\n<div style=\"height:10px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<blockquote class=\"wp-block-quote\">\n<p>\"<em><em><em>Attending the Bioinformatics Education Summit sponsored by the Fellowship opened my eyes to a whole load of new themes, topics and ideas.</em></em></em>\"</p>\n</blockquote>\n\n<div style=\"height:10px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<blockquote class=\"wp-block-quote\">\n<p>\"<em><em><em><em>Discovering and having access to ELIXIR resources was very useful.</em></em></em></em>\"</p>\n</blockquote>\n\n<div style=\"height:10px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<blockquote class=\"wp-block-quote\">\n<p>\"<em><em><em><em><em>I loved the supportive and positive environment.</em></em></em></em></em>\"</p>\n</blockquote>\n\n<div style=\"height:10px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<blockquote class=\"wp-block-quote\">\n<p>\"<em><em><em><em><em><em>The Fellowship brings cohorts from different disciplines, fostering interesting conversations and offering a great learning experience.</em></em></em></em></em></em>\"</p>\n</blockquote>\n\n<div style=\"height:10px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<blockquote class=\"wp-block-quote\">\n<p>\"<em><em><em><em><em><em><em>Discovering and having access to ELIXIR resources was very useful.</em></em></em></em></em></em></em>\"</p>\n</blockquote>\n\n<div style=\"height:10px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<blockquote class=\"wp-block-quote\">\n<p>\"<em><em><em><em><em><em><em><em>I obtained funding in partnership with my university in collaboration with ELIXIR-UK as a Fellow</em></em></em></em></em></em></em></em>.\"</p>\n</blockquote>\n\n<div style=\"height:10px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<blockquote class=\"wp-block-quote\">\n<p><em>\"I appreciate having a community of practice that I belong to.</em>\"</p>\n</blockquote>\n\n<div style=\"height:10px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<blockquote class=\"wp-block-quote\">\n<p>\"<em><em>The organisation, dedication and enthusiasm of staff has been exceptional and inspirational.</em></em>\"</p>\n</blockquote>\n\n<div style=\"height:10px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<blockquote class=\"wp-block-quote\">\n<p>\"<em><em><em>As a Fellow, I gained influencing power at my institute for RDM. It gave me more authority. I'm no longer a single voice saying we should care about RDM. Instead, I have the ELIXIR-UK community behind me. Don't underestimate that value!</em></em></em>\"</p>\n</blockquote>\n\n<div style=\"height:10px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n<blockquote class=\"wp-block-quote\">\n<p>\"<em><em><em><em>I was glad to have flexibility. There was a unique openness to Fellows, other ideas and input.</em></em></em></em>\"</p>\n</blockquote>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-row-column gspb_row__col--6 gspb_col-id-gsbp-e949656\" id=\"gspb_col-id-gsbp-e949656\">\n<div class=\"wp-block-greenshift-blocks-image gspb_image gspb_image-id-gsbp-909adfc\" id=\"gspb_image-id-gsbp-909adfc\"><img src=\"https://elixiruknode.org/wp-content/uploads/2024/03/radar-chart.svg\" data-src=\"\" alt=\"\" loading=\"lazy\" width=\"800px\" height=\"497\"/></div>\n\n<p class=\"has-text-align-center\">Reasons to apply (orange) vs the benefits current Fellows have experienced (blue).</p>\n</div>\n </div></div>\n</div>\n\n<div class=\"wp-block-greenshift-blocks-container alignfull gspb_container gspb_container-gsbp-2312c2d\" id=\"gspb_container-id-gsbp-2312c2d\">\n<h2 class=\"wp-block-heading\" id=\"funding\">Funding</h2>\n\n<p>This Fellowship was funded as part of the&nbsp;<a href=\"https://www.ukri.org/news/initiatives-boost-health-and-bioscience-skills-and-industry/\" target=\"_blank\" rel=\"noreferrer noopener\">UKRI Innovation Scholars: Data Science Training in Health and Bioscience call (DaSH).</a>&nbsp;(MR/V038966/1)</p>\n\n<figure class=\"wp-block-image size-full is-resized\"><img src=\"https://elixiruknode.org/wp-content/uploads/2024/03/UK_Research_and_Innovation_logo.svg\" alt=\"\" class=\"wp-image-20855\" style=\"width:145px;height:auto\"/></figure>\n</div>",
+  "tags": [
+   "ELIXIR-UK",
+   "Fellowship",
+   "Training"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "elixir-uk-dash"
+   ],
+   "news": [
+    "fellows-mentors-and-coordinators-meet-to-celebrate-the-3-year-hallmark-of-the-elixir-uk-fellowship",
+    "15-new-fellows-dash-project",
+    "dash-fellows-attend-the-bioinformatics-education-summit",
+    "elixir-uk-dash-fellow-launches-new-fair-data-management-training",
+    "training-fellowship-dash",
+    "elixir-uk-fellows-showcase-their-work-at-nerc-digital-gathering-2023",
+    "meet-our-new-fair-data-stewardship-training-fellows",
+    "elixir-uk-dash-fellows-new-mentors",
+    "watch-elixir-uk-fair-data-stewardship-training-fellowship-launch-webinar",
+    "elixir-uk-all-hands-2023-unveils-collaborative-and-promising-plans",
+    "elixir-uk-announces-new-fair-data-stewards-training-project",
+    "elixir-uk-at-the-elixir-all-hands-2023",
+    "elixir-uk-at-the-ssi-collaborations-workshop-2023",
+    "introducing-fair-pointers",
+    "bioinformatics-projects-learning-pathway-for-students",
+    "customising-data-stewardship-wizard-for-an-institute",
+    "bioinformatics-skills-gap-europe",
+    "embedding-my-elixir-uk-material-in-university-teaching",
+    "edij-and-decolonisation-in-data-management"
+   ],
+   "members": [
+    "university-of-warwick",
+    "university-of-york"
+   ],
+   "events": [
+    "exploring-diverse-data-science-roles-and-their-skills",
+    "data-management-medicinal-chemistry"
+   ]
+  }
+ },
+ {
+  "slug": "domestic-animals-genome-and-phenome-focus-group",
+  "name": "Domestic Animals Genome and Phenome Community",
+  "website": "",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/11/demestic-animals-community-icon.png",
+  "summary": "It supports genotype-to-phenotype analysis for farmed and companion animal species. Connecting researchers and data scientists across species and countries is needed to accelerate genotype-to-phenotyp",
+  "body": "<p>It supports genotype-to-phenotype analysis for farmed and companion animal species. Connecting researchers and data scientists across species and countries is needed to accelerate genotype-to-phenotype research in domestic animals and develop a coordinated, open, and standardised data life cycle.</p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "https://elixir-europe.org/communities/domestic-animals-genome-phenome",
+  "related": {}
+ },
+ {
+  "slug": "equity-diversity-and-inclusion-focus-group",
+  "name": "Equity, Diversity and Inclusion Focus Group",
+  "website": "http://elixir-europe.org/focus-groups/equity-diversity-and-inclusion",
+  "logo": "",
+  "summary": "A diverse community does not automatically provide equal opportunities for everyone to participate, contribute or progress. Previous initiatives, including ELEAD and ELIXIR-STEERS, have generated insi",
+  "body": "<p>A diverse community does not automatically provide equal opportunities for everyone to participate, contribute or progress. Previous initiatives, including ELEAD and ELIXIR-STEERS, have generated insights and examples of good practice, but there is currently no network-wide structure to coordinate, sustain and monitor equity, diversity and inclusion across ELIXIR.</p>\n\n<p>The Equity, Diversity and Inclusion Focus Group brings together expertise from across ELIXIR to coordinate existing efforts and support implementation of the ELIXIR Equal Opportunity Strategy. Initial activities include a baseline assessment of EDI-related practices, needs and priorities across ELIXIR Nodes, guidance for inclusive and accessible events and for newcomer integration, and a practical toolkit of EDI resources for use across ELIXIR.</p>",
+  "tags": [
+   "ELIXIR Europe",
+   "Focus Group",
+   "Participating"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "federated-human-data-community",
+  "name": "Federated Human Data Community",
+  "website": "https://elixir-europe.org/communities/human-data",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-community-federated-human.svg",
+  "summary": "Developing long-term strategies for managing and accessing sensitive human data.",
+  "body": "<p class=\"has-medium-font-size\">Developing long-term strategies for managing and accessing sensitive human data.</p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "increasing-interoperability-protein-resources",
+    "data-validation-2018",
+    "2022-fhd"
+   ],
+   "members": [
+    "quadram-institute",
+    "earlham-institute"
+   ]
+  }
+ },
+ {
+  "slug": "food-and-nutrition-community",
+  "name": "Food and Nutrition Community",
+  "website": "https://elixir-europe.org/communities/food-nutrition",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-community-food-nutrition.svg",
+  "summary": "Exploring the effect of food choices on human health.",
+  "body": "<p class=\"has-medium-font-size\">Exploring the effect of food choices on human health.</p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "2022-food-nutrition"
+   ],
+   "news": [
+    "maria-traka-uk-leadership-food-nutrition-community"
+   ],
+   "members": [
+    "earlham-institute",
+    "quadram-institute"
+   ]
+  }
+ },
+ {
+  "slug": "galaxy-community",
+  "name": "Galaxy Community",
+  "website": "https://elixir-europe.org/communities/galaxy",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-community-galaxy_1.svg",
+  "summary": "Facilitating data import into Galaxy instances, helping develop and share Galaxy tools and workflows and increasing the provision of Galaxy training.",
+  "body": "<p class=\"has-medium-font-size\">Facilitating data import into Galaxy instances, helping develop and share Galaxy tools and workflows and increasing the provision of Galaxy training.</p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe",
+   "Leading"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "expanding-galaxy",
+    "strengthen-data-management-galaxy",
+    "cwl-2018",
+    "data-validation-2018",
+    "elixir-integration-user-perspective",
+    "2024-technology-tools"
+   ],
+   "news": [
+    "galaxy-cog-uk-covid-19",
+    "galaxy-supports-exporting-structured-data-like-ro-crate",
+    "elixir-uk-dash-fellow-launches-new-fair-data-management-training",
+    "elixir-open-collaborative-infrastructure-to-tackle-public-health-emergencies",
+    "elixir-uk-fosters-collaboration-at-our-second-hackathon",
+    "elixir-uk-2020-highlights",
+    "elixir-steers-launches-uk-node-bolsters-green-strategies-workflows-and-training",
+    "2024-galaxy-community-conference",
+    "bioinformatics-projects-learning-pathway-for-students"
+   ],
+   "services": [
+    "galaxy"
+   ],
+   "members": [
+    "earlham-institute"
+   ]
+  }
+ },
+ {
+  "slug": "human-copy-number-variation-community",
+  "name": "Human Copy Number Variation Community",
+  "website": "https://elixir-europe.org/communities/hcnv",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-community-hcnv.svg",
+  "summary": "Facilitating detection, annotation and interpretation of human copy number variations.",
+  "body": "<p class=\"has-medium-font-size\">Facilitating detection, annotation and interpretation of human copy number variations.</p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe",
+   "Leading"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "2019-hcnv",
+    "beacon-and-beyond",
+    "reference-hcnv-datasets"
+   ],
+   "members": [
+    "university-of-bradford",
+    "university-of-cambridge",
+    "university-of-leicester"
+   ]
+  }
+ },
+ {
+  "slug": "impact-focus-group",
+  "name": "Impact Focus Group",
+  "website": "https://elixir-europe.org/focus-groups/impact",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-focus-group-impact.svg",
+  "summary": "Empowering ELIXIR members to evaluate and communicate their performance and impact supports their long-term sustainability.",
+  "body": "<p>Empowering ELIXIR members to evaluate and communicate their performance and impact supports their long-term sustainability.</p>",
+  "tags": [
+   "ELIXIR Europe",
+   "Focus Group"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "members": [
+    "earlham-institute",
+    "university-of-manchester",
+    "university-oxford",
+    "university-of-cambridge"
+   ],
+   "events": [
+    "driven-by-impact-online-workshop"
+   ]
+  }
+ },
+ {
+  "slug": "innovation-industry-focus-group",
+  "name": "Innovation & Industry Focus Group",
+  "website": "https://elixir-europe.org/focus-groups/innovation-and-industry",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-focus-group-industry.svg",
+  "summary": "Internal group to learn about the engagement of external stakeholders and exchange experiences on local industry and innovation programmes.",
+  "body": "<p class=\"has-medium-font-size\">Internal group to learn about the engagement of external stakeholders and exchange experiences on local industry and innovation programmes. </p>",
+  "tags": [
+   "ELIXIR Europe",
+   "Focus Group"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "members": [
+    "earlham-institute",
+    "university-oxford",
+    "university-of-liverpool",
+    "university-of-bradford",
+    "newcastle-university"
+   ]
+  }
+ },
+ {
+  "slug": "interoperability-platform",
+  "name": "Interoperability Platform",
+  "website": "https://elixir-europe.org/platforms/interoperability",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/icon-platform-interoperability.svg",
+  "summary": "Develops and encourages the adoption of standards to describe life science data.",
+  "body": "<p>Develops and encourages the adoption of standards to describe life science data. </p>",
+  "tags": [
+   "ELIXIR Europe",
+   "Platform"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "2022-eip2",
+    "exploiting-bioschemas-markup-support-elixir-communities",
+    "bioschemas",
+    "mapping-biocuration",
+    "bioschemas-community-adoption",
+    "cwl-2018",
+    "fairness-core-resources",
+    "increasing-interoperability-protein-resources",
+    "data-validation-2018",
+    "fair-service-architecture",
+    "capacity-building",
+    "alignment-of-the-interoperability-platform-fair-service-architecture-framework-with-the-data-platform-communities-and-elixir-projects",
+    "2024-technology-interoperability"
+   ],
+   "services": [
+    "fair-cookbook",
+    "fairdom-seek",
+    "fairsharing",
+    "rdmkit"
+   ],
+   "members": [
+    "university-oxford",
+    "university-of-manchester"
+   ]
+  }
+ },
+ {
+  "slug": "intrinsically-disordered-proteins-community",
+  "name": "Intrinsically Disordered Proteins Community",
+  "website": "https://elixir-europe.org/communities/intrinsically-disordered-proteins",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-community-idp_1.svg",
+  "summary": "Developing standards, tools and resources to help identify and characterise IDPs.",
+  "body": "<p class=\"has-medium-font-size\">Developing standards, tools and resources to help identify and characterise IDPs.</p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "metabolomics-community",
+  "name": "Metabolomics Community",
+  "website": "https://elixir-europe.org/communities/metabolomics",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-community-metabolomics.svg",
+  "summary": "Providing the resources, analysis tools and infrastructure to help metabolite identification.",
+  "body": "<p class=\"has-medium-font-size\">Providing the resources, analysis tools and infrastructure to help metabolite identification.</p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "data-validation-2018",
+    "elixir-integration-user-perspective",
+    "fluxomics-workflows"
+   ],
+   "members": [
+    "university-of-birmingham",
+    "university-oxford",
+    "university-of-cambridge"
+   ]
+  }
+ },
+ {
+  "slug": "microbial-biotechnology-community",
+  "name": "Microbial Biotechnology Community",
+  "website": "https://elixir-europe.org/communities/microbial-biotechnology",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-community-microbial.svg",
+  "summary": "Helping develop tailor-made microbes and biological systems.",
+  "body": "<p><span style=\"font-size: 16px; white-space-collapse: collapse;\">Helping develop tailor-made microbes and biological systems.</span></p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe",
+   "Leading"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "microbial-biotechnology-community"
+   ],
+   "members": [
+    "newcastle-university",
+    "university-of-manchester",
+    "cardiff-university",
+    "earlham-institute"
+   ]
+  }
+ },
+ {
+  "slug": "microbiome-community",
+  "name": "Microbiome Community",
+  "website": "https://elixir-europe.org/communities/microbiome",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/04/icon-community-microbiome.svg",
+  "summary": "Promoting standards for microbiome-derived sequence analysis and multi-omics integration, understanding the gaps in training, methods and reference databases, and efficiently scaling bioinformatics in",
+  "body": "<p>Promoting standards for microbiome-derived sequence analysis and multi-omics integration, understanding the gaps in training, methods and reference databases, and efficiently scaling bioinformatics infrastructures and resources for microbiome research across all biomes.&nbsp;</p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "pathogen-data-focus-group",
+  "name": "Pathogen Data Focus Group",
+  "website": "https://elixir-europe.org/focus-groups/pathogen-data",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/04/icon-focus-group-pathogen.svg",
+  "summary": "Establishing the basis for a distributed and interoperable network of regional and national pathogen data hubs. Goals Through a joint effort, the Focus Group will work towards: Establishing consensus ",
+  "body": "<p>Establishing the basis for a distributed and interoperable network of regional and national pathogen data hubs.</p>\n\n<h2 class=\"wp-block-heading\" id=\"goals\">Goals</h2>\n\n<p>Through a joint effort, the Focus Group will work towards:</p>\n\n<ul class=\"wp-block-list\">\n<li>Establishing consensus and promoting the use and reuse of data, metadata and analysis standards</li>\n\n<li>Promoting FAIR data sharing and equity</li>\n\n<li>Proposing benchmark datasets and quality assessments</li>\n\n<li>Fostering capacity building for pandemic preparedness through training, maturity models and tools</li>\n\n<li>Liaising with global pathogen epidemiology initiatives (e.g. PHA4GE, WHO, ECDC)</li>\n</ul>\n\n<p>The Focus Group will invite experts and stakeholders to join in this concerted, expert-driven effort towards sustaining and ensuring high-quality data for global surveillance and research.</p>",
+  "tags": [
+   "ELIXIR Europe",
+   "Focus Group"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "plant-sciences-community",
+  "name": "Plant Sciences Community",
+  "website": "https://elixir-europe.org/communities/plant-sciences",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-community-plants.svg",
+  "summary": "Facilitating genotype-phenotype analysis for crop and tree species.",
+  "body": "<p>Facilitating genotype-phenotype analysis for crop and tree species. </p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "data-validation-2018",
+    "elixir-integration-user-perspective",
+    "increasing-plant-data-findability",
+    "e-pan-enhancing-pan-genome-analysis-in-plants"
+   ],
+   "members": [
+    "earlham-institute",
+    "rothamsted-research",
+    "university-oxford",
+    "university-of-manchester"
+   ]
+  }
+ },
+ {
+  "slug": "proteomics-community",
+  "name": "Proteomics Community",
+  "website": "https://elixir-europe.org/communities/proteomics",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-community-proteomics.svg",
+  "summary": "Developing and maintaining sustainable proteomics tools and data resources, and making the resources FAIR – Findable, Accessible, Interoperable and Reusable.",
+  "body": "<p>Developing and maintaining sustainable proteomics tools and data resources, and making the resources FAIR – Findable, Accessible, Interoperable and Reusable.</p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "rare-diseases-community",
+  "name": "Rare Diseases Community",
+  "website": "https://elixir-europe.org/communities/rare-diseases",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-community-rare-diseases.svg",
+  "summary": "Creating a federated infrastructure to discover, access and analyse different rare disease repositories across Europe.",
+  "body": "<p>Creating a federated infrastructure to discover, access and analyse different rare disease repositories across Europe. </p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "rdm-community",
+  "name": "RDM Community",
+  "website": "https://elixir-europe.org/communities/research-data-management",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-community-RDM.svg",
+  "summary": "Coordinating best practices and overview of ELIXIR resources in RDM in close collaboration with all other Communities and Platforms.",
+  "body": "<p>Coordinating best practices and overview of ELIXIR resources in RDM in close collaboration with all other Communities and Platforms. </p>\n\n<p></p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe",
+   "Leading"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "datarex"
+   ],
+   "news": [
+    "a-day-in-the-life-of-a-ucl-research-data-steward",
+    "new-resources-for-sustainable-rdm-services"
+   ],
+   "services": [
+    "rdmkit",
+    "fair-cookbook",
+    "fairsharing"
+   ],
+   "members": [
+    "earlham-institute",
+    "university-of-cambridge",
+    "university-of-manchester"
+   ]
+  }
+ },
+ {
+  "slug": "rna-data-focus-group",
+  "name": "RNA Data Focus Group",
+  "website": "https://elixir-europe.org/focus-groups/rna-data",
+  "logo": "",
+  "summary": "Long-read sequencing and methods capable of detecting RNA modifications are transforming how RNA data are generated, processed and interpreted. However, the pace of technological innovation has outstr",
+  "body": "<p>Long-read sequencing and methods capable of detecting RNA modifications are transforming how RNA data are generated, processed and interpreted. However, the pace of technological innovation has outstripped the development of shared standards, benchmarks and best practices.</p>\n\n<p>The RNA Data Focus Group brings together experts from across ELIXIR to address these challenges. It aims to develop common standards for new-generation RNA sequencing data, establish continuous benchmarking activities and track emerging technologies through coordinated ‘technology watch’ efforts. The group develops benchmarking projects for long-read transcriptomics, building on activities launched at BioHackathon Europe 2025 in Berlin, and meets every fourth Thursday of the month.</p>\n\n<p>Two things to check on the source page: the heading and menu say “RNA Data Focus Group” but the background calls it the “RNA Data Standards and Benchmarking Focus Group” – I’ve used the shorter name, as that’s what appears in navigation. The page also writes “Single-cell Omics”, whereas the Communities list uses “Single-Cell Omics”.</p>",
+  "tags": [
+   "ELIXIR Europe",
+   "Focus Group",
+   "Leading"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "single-cell-omics-community",
+  "name": "Single-Cell Omics Community",
+  "website": "https://elixir-europe.org/communities/single-cell-omics",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/04/icon-community-single-cell.svg",
+  "summary": "Identifying the main challenges in single-cell and spatial omics research and coordinating international efforts.",
+  "body": "<p>Identifying the main challenges in single-cell and spatial omics research and coordinating international efforts.</p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "systems-biology-community",
+  "name": "Systems Biology Community",
+  "website": "https://elixir-europe.org/communities/systems-biology",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/04/icon-community-systems-biology.svg",
+  "summary": "Modelling the dynamics of interactions and processes to understand the functionality of interactions between the multiple components of living systems.",
+  "body": "<p>Modelling the dynamics of interactions and processes to understand the functionality of interactions between the multiple components of living systems. </p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {}
+ },
+ {
+  "slug": "tools-platform",
+  "name": "Tools Platform",
+  "website": "https://elixir-europe.org/platforms/tools",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/icon-platform-tools.svg",
+  "summary": "Helping communities find, register and benchmark software tools that allow researchers to access, analyse and integrate biological data and drive scientific discovery across the life sciences.",
+  "body": "<p>Helping communities find, register and benchmark software tools that allow researchers to access, analyse and integrate biological data and drive scientific discovery across the life sciences.</p>",
+  "tags": [
+   "ELIXIR Europe",
+   "Platform"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "making-container-services-integratable",
+    "2022-etp1",
+    "tools-platform-ecosystem",
+    "metrics-discovery",
+    "cwl-2018",
+    "data-validation-2018",
+    "elixir-integration-user-perspective",
+    "2023-mlstandards",
+    "2024-technology-tools"
+   ]
+  }
+ },
+ {
+  "slug": "toxicology-community",
+  "name": "Toxicology Community",
+  "website": "https://elixir-europe.org/communities/toxicology",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/04/icon-community-toxicology.svg",
+  "summary": "Supporting the integration of standards, tools and resources to support toxicology research projects and risk governance at the national and international levels.",
+  "body": "<p>Supporting the integration of standards, tools and resources to support toxicology research projects and risk governance at the national and international levels.</p>",
+  "tags": [
+   "Community",
+   "ELIXIR Europe"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "news": [
+    "toxicology-fair-training-workshop-birmingham-2025"
+   ]
+  }
+ },
+ {
+  "slug": "training-platform",
+  "name": "Training Platform",
+  "website": "https://elixir-europe.org/platforms/training",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/icon-platform-training.svg",
+  "summary": "Helping scientists and developers find the training they need and provide it. ELIXIR-UK plays a crucial role in training in the UK and across ELIXIR.",
+  "body": "<p class=\"has-medium-font-size\">Helping scientists and developers find the training they need and provide it.&nbsp;ELIXIR-UK plays a crucial role in training&nbsp;in the UK and across ELIXIR.</p>\n\n<p></p>",
+  "tags": [
+   "ELIXIR Europe",
+   "Platform",
+   "Training"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "",
+  "related": {
+   "projects": [
+    "2022-trp4",
+    "training-capacity-building",
+    "training-toolkit",
+    "2022-trp1",
+    "training-technical-infrastructure-tess",
+    "2022-tess",
+    "mapping-biocuration",
+    "2022-trp3",
+    "cwl-2018",
+    "fairness-core-resources",
+    "learning-paths-2018",
+    "elixir-integration-user-perspective",
+    "gap-analysis-training-materials-development-and-training-delivery"
+   ],
+   "news": [
+    "toxicology-fair-training-workshop-birmingham-2025",
+    "bioinformatics-skills-gap-europe"
+   ],
+   "services": [
+    "tess"
+   ],
+   "members": [
+    "university-of-manchester",
+    "university-of-cambridge",
+    "university-of-bradford"
+   ]
+  }
+ },
+ {
+  "slug": "uk-human-data-community",
+  "name": "UK Human Data and Tech Club",
+  "website": "",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-uk-uk-human-community.svg",
+  "summary": "Connecting UK human data research infrastructure Launched in 2023, the Human Data and Tech Club connects the UK human data research infrastructure and technology communities with ELIXIR and other Euro",
+  "body": "<p class=\"has-large-font-size\">Connecting UK human data research infrastructure</p>\n\n<p>Launched in 2023, the <strong>Human Data and Tech Club</strong> connects the UK human data research infrastructure and technology communities with ELIXIR and other European initiatives. It enables shared solutions, open science and impactful collaboration in health and human data research.</p>\n\n<p>This community, jointly convened by ELIXIR-UK and HDR UK, provides a space for connection and exchange on human and health data research infrastructure and technology in the UK and remains <strong>open to all</strong>.</p>\n\n<p>It brings together <strong>ELIXIR-UK</strong>’s experience in life science data infrastructure with perspectives from <strong>HDR UK</strong> and <strong>DARE UK</strong>’s health and human data research community and technical innovation.</p>\n\n<h3 class=\"wp-block-heading\" id=\"what-to-expect\">What to expect</h3>\n\n<div class=\"wp-block-greenshift-blocks-accordion gs-accordion gspb_accordion-id-gsbp-73e4238 togglelogic\" id=\"gspb_accordion-id-gsbp-73e4238\" itemscope itemtype=\"\">\n<div class=\"wp-block-greenshift-blocks-accordionitem gs-accordion-item gspb_accordionitem-gsbp-ea53094 gsclose\" id=\"gspb_accordionitem-gsbp-ea53094\" itemscope><div class=\"gs-accordion-item__title\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\" aria-controls=\"gspb-accordion-item-content-gsbp-ea53094\"><h4 class=\"gs-accordion-item__heading\">Discover tools, services and infrastructure</h4><span class=\"iconfortoggle\"><span class=\"gs-iconbefore\"></span><span class=\"gs-iconafter\"></span></span></div><div class=\"gs-accordion-item__content\" itemscope id=\"gspb-accordion-item-content-gsbp-ea53094\" aria-hidden=\"true\"><div class=\"gs-accordion-item__text\">\n<p>Learn about UK and European human data tools, platforms and services that support secure, FAIR and responsible research — including resources developed through ELIXIR, HDR UK and related initiatives.</p>\n</div></div></div>\n\n<div class=\"wp-block-greenshift-blocks-accordionitem gs-accordion-item gspb_accordionitem-gsbp-7e2de8f gsclose\" id=\"gspb_accordionitem-gsbp-7e2de8f\" itemscope><div class=\"gs-accordion-item__title\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\" aria-controls=\"gspb-accordion-item-content-gsbp-7e2de8f\"><h4 class=\"gs-accordion-item__heading\">Connect UK work to European initiatives and beyond</h4><span class=\"iconfortoggle\"><span class=\"gs-iconbefore\"></span><span class=\"gs-iconafter\"></span></span></div><div class=\"gs-accordion-item__content\" itemscope id=\"gspb-accordion-item-content-gsbp-7e2de8f\" aria-hidden=\"true\"><div class=\"gs-accordion-item__text\">\n<p>Hear about ongoing European human data activities and infrastructure through ELIXIR, and explore how UK teams can engage, contribute or align with work happening beyond the UK.</p>\n</div></div></div>\n\n<div class=\"wp-block-greenshift-blocks-accordionitem gs-accordion-item gspb_accordionitem-gsbp-be6eda2 gsclose\" id=\"gspb_accordionitem-gsbp-be6eda2\" itemscope><div class=\"gs-accordion-item__title\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\" aria-controls=\"gspb-accordion-item-content-gsbp-be6eda2\"><h4 class=\"gs-accordion-item__heading\">Share practice and build connections</h4><span class=\"iconfortoggle\"><span class=\"gs-iconbefore\"></span><span class=\"gs-iconafter\"></span></span></div><div class=\"gs-accordion-item__content\" itemscope id=\"gspb-accordion-item-content-gsbp-be6eda2\" aria-hidden=\"true\"><div class=\"gs-accordion-item__text\">\n<p>Meet others working with human data across research, infrastructure and technology roles. Exchange ideas, compare approaches and discuss shared challenges in a trusted, informal setting.</p>\n</div></div></div>\n\n<div class=\"wp-block-greenshift-blocks-accordionitem gs-accordion-item gspb_accordionitem-gsbp-b5c5fb9 gsclose\" id=\"gspb_accordionitem-gsbp-b5c5fb9\" itemscope><div class=\"gs-accordion-item__title\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\" aria-controls=\"gspb-accordion-item-content-gsbp-b5c5fb9\"><h4 class=\"gs-accordion-item__heading\">Influence open and interoperable development</h4><span class=\"iconfortoggle\"><span class=\"gs-iconbefore\"></span><span class=\"gs-iconafter\"></span></span></div><div class=\"gs-accordion-item__content\" itemscope id=\"gspb-accordion-item-content-gsbp-b5c5fb9\" aria-hidden=\"true\"><div class=\"gs-accordion-item__text\">\n<p>Provide input into human data technology development, helping to shape open practices, standards and interoperable solutions that support the wider research ecosystem.</p>\n</div></div></div>\n\n<div class=\"wp-block-greenshift-blocks-accordionitem gs-accordion-item gspb_accordionitem-gsbp-d93601b gsclose\" id=\"gspb_accordionitem-gsbp-d93601b\" itemscope><div class=\"gs-accordion-item__title\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\" aria-controls=\"gspb-accordion-item-content-gsbp-d93601b\"><h4 class=\"gs-accordion-item__heading\">Contribute to projects and funding opportunities</h4><span class=\"iconfortoggle\"><span class=\"gs-iconbefore\"></span><span class=\"gs-iconafter\"></span></span></div><div class=\"gs-accordion-item__content\" itemscope id=\"gspb-accordion-item-content-gsbp-d93601b\" aria-hidden=\"true\"><div class=\"gs-accordion-item__text\">\n<p>Identify opportunities to contribute to HDR UK, ELIXIR and European ongoing projects and new grant applications in the context of this community – including chances to shape ideas early and connect with potential collaborators.</p>\n</div></div></div>\n</div>\n\n<h3 class=\"wp-block-heading\" id=\"who-is-this-for\">Who is this for</h3>\n\n<p>This community is for anyone interested in human data in the life sciences at all career stages, whether within ELIXIR-UK or outside. This includes, but is not limited to:</p>\n\n<ul class=\"wp-block-list\">\n<li>Technical staff (e.g. data stewards, data custodians, bioinformaticians, software engineers)</li>\n\n<li>Methodologists (e.g. statisticians, epidemiologists)</li>\n\n<li>Students of human data subjects in the life sciences</li>\n\n<li>Researchers</li>\n\n<li>Trainers and educators</li>\n\n<li>Health professionals (e.g. clinicians, nurses, allied health professionals)</li>\n\n<li>Research support teams</li>\n</ul>",
+  "tags": [
+   "Club",
+   "ELIXIR-UK"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "https://subscribepage.io/bt5F3q",
+  "related": {
+   "news": [
+    "checking-the-paperwork-safe-people-registry",
+    "uk-human-and-health-data-communities-merge-hdr-uk",
+    "connecting-health-data-across-europe-a-report"
+   ],
+   "members": [
+    "university-of-nottingham",
+    "university-of-manchester"
+   ],
+   "events": [
+    "exploring-wes-and-weskit-implementation",
+    "bbsrc-and-mrc-funders-perspectives",
+    "ga4gh-task-execution-service-tes-standard-within-tres",
+    "kick-off-overview-of-elixir-human-data-communities",
+    "dome-recommendations-for-machine-learning",
+    "discover-the-human-data-elixir-europe-programme",
+    "three-stories-many-lessons",
+    "transforming-clinical-text-into-research-ready-data",
+    "uk-hdc-summer-drop-in-august-2025",
+    "human-data-community-2026-priorities-priorities",
+    "showcase-feedback-session-hdr-gateway-safe-people-registry-cohort-discovery",
+    "from-data-silos-to-a-federated-cancer-data-network",
+    "federation-for-a-sustainable-health-data-ecosystem",
+    "ahm-lyon-debrief-health-data-takes-the-stage",
+    "sensitive-data-research-satre-and-sacro",
+    "elixir-uk-health-data-workshop",
+    "platforms-for-genetic-scores-pgs-catalog-and-omicspred",
+    "building-phenomics-infrastructure-around-community-needs"
+   ]
+  }
+ },
+ {
+  "slug": "uk-rdm-club",
+  "name": "UK RDM Club",
+  "website": "",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-uk-rdm-club_1.svg",
+  "summary": "Launched in October 2020, this club focuses on ELIXIR-UK activities that help people manage their life science research data. Who is this for We welcome participation from data stewards, support staff",
+  "body": "<p>Launched in October 2020, this club focuses on ELIXIR-UK activities that help people manage their life science research data.</p>\n\n<h3 class=\"wp-block-heading\" id=\"who-is-this-for\">Who is this for</h3>\n\n<p>We welcome participation from data stewards, support staff and researchers interested in Research Data Management (RDM) in the life sciences.</p>\n\n<h3 class=\"wp-block-heading\" id=\"what-to-expect\">What to expect</h3>\n\n<p>We meet over Zoom on the first Tuesday of every month (excluding July, August and January).&nbsp; These regular meetings focus on sharing experiences and signposting new projects, resources, communities and training. This club also forms contact points for a growing pan-European network of data expertise within ELIXIR.</p>\n\n<h3 class=\"wp-block-heading\" id=\"how-to-get-involved\">How to get involved</h3>\n\n<p>If you wish to be involved in the group, please sign up using our <em>Join in</em> button.&nbsp; You will start receiving all our calendar invites and relevant information.&nbsp; <strong>We’re open to everyone</strong>.</p>\n\n<p></p>",
+  "tags": [
+   "Club",
+   "ELIXIR-UK"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "https://subscribepage.io/brLTGB",
+  "related": {
+   "projects": [
+    "elixir-uk-dash",
+    "elixir-converge",
+    "fair-in-action-bridge"
+   ],
+   "services": [
+    "rdmkit",
+    "fair-cookbook"
+   ],
+   "members": [
+    "cardiff-university",
+    "university-of-manchester"
+   ],
+   "events": [
+    "elevenses-and-data-horror-stories",
+    "the-elixir-research-data-management-kit-rdmkit",
+    "discovering-biofair",
+    "fairsharing-and-ostrail",
+    "federated-discovery-of-datasets-via-meta",
+    "exploring-diverse-data-science-roles-and-their-skills",
+    "euro-bioimagings-guide-to-fair-bioimage-data",
+    "fair-data-accelerator-pilot-addressing-social-and-cultural-barriers-to-data-sharing",
+    "elevenses-and-data-love-stories",
+    "research-data-stewardship-at-ucl",
+    "data-management-plan-mandates-postgraduate",
+    "showcasing-example-data-management-plans-with-data-stewardship-wizard",
+    "casdar-opening-up-careers-in-data-stewardship",
+    "elevenses-and-data-horror-stories-2",
+    "research-data-stewardship-at-sheffield-and-across-the-n8",
+    "ukri-data-policy",
+    "elevenses-and-data-love-stories-2",
+    "open-and-sustainable-ai",
+    "discover-the-rdm-club-biofair-pathfinder-project",
+    "introducing-ro-crates",
+    "fair-in-action-bridge-contentathon-2",
+    "fair-in-action-bridge-contentathon-1",
+    "fair-in-action-bridge-contentathon-3",
+    "airbds-ai-readiness-bioscience-data",
+    "when-is-an-ai-output-ready-trustworthy-ai",
+    "fair-assessment-at-scale-fad",
+    "data-horror-stories-what-core-facilities-see-when-fair-goes-wrong",
+    "more-than-a-team-can-read-ai"
+   ],
+   "news": [
+    "a-day-in-the-life-of-a-ucl-research-data-steward"
+   ]
+  }
+ },
+ {
+  "slug": "uk-training-club",
+  "name": "UK Training Club",
+  "website": "",
+  "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/icon-uk-training-club_1.svg",
+  "summary": "Launched in October 2020, the ELIXIR-UK Training Club aims to support training in ELIXIR-UK member organisations. The Group actively searches for funding opportunities and promotes diversity and inclu",
+  "body": "<p>Launched in October 2020, the ELIXIR-UK Training Club aims to support training in ELIXIR-UK member organisations.</p>\n\n<p>The Group actively searches for funding opportunities and promotes diversity and inclusion of training activities, ensuring that all UK member organisations have training support.</p>\n\n<p>It holds regular meetings focusing on performing/appraising training work.</p>\n\n<p>The current audience, although not exclusively, is the life science researcher, and the output from the group should be useful for early career researchers. This will broaden as the group grows into supporting participants engaged in infrastructure and tool development.</p>\n\n<h4 class=\"wp-block-heading\" id=\"how-to-get-involvedif-you-wish-to-be-involved-in-the-group-please-sign-up-using-our-join-in-button-you-will-start-receiving-all-our-calendar-invites-and-relevant-information-we-re-open-to-everyone\"><strong>How to get involved</strong></h4>\n\n<p>If you wish to be involved in the group, please sign up using our <em>Join in</em> button. You will start receiving all our calendar invites and relevant information.  <strong>We’re open to everyone</strong>.</p>",
+  "tags": [
+   "Club",
+   "ELIXIR-UK",
+   "Training"
+  ],
+  "status": "",
+  "start": null,
+  "end": null,
+  "joinLink": "https://subscribepage.io/qVge83",
+  "related": {
+   "news": [
+    "bioinformatics-skills-gap-europe"
+   ],
+   "members": [
+    "university-of-cambridge",
+    "university-of-bradford"
+   ],
+   "events": [
+    "elixir-training-lesson-template",
+    "enhancing-biomedical-research-with-bioconductor-training",
+    "teaching-with-galaxy-and-gtn",
+    "galaxy-training-network-and-accessibility",
+    "elixir-goblet-ttt-programme-and-courses",
+    "time-over-motivation",
+    "make-like-a-snake",
+    "designing-effective-surveys-for-training-evaluation",
+    "ismb-eccb-unpacked",
+    "formative-assessment-with-mcqs",
+    "dr-strangelove-learning-outcomes",
+    "co-creating-a-proposal-for-an-elixir-staff-exchange",
+    "orwellian-writing",
+    "galaxy-training-academy-large-scale-online-training",
+    "textured-classroom",
+    "ahm-lyon-debrief-training-across-the-programme",
+    "workshop-are-your-powerpoints-legal",
+    "lessons-learnt-from-delivering-training-for-isambard-ai",
+    "automating-fair-training-metadata-pipelines-upcoming-bits-project-launch"
+   ]
+  }
+ }
+]

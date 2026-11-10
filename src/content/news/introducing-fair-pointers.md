@@ -4,6 +4,9 @@ date: 2023-05-18
 standfirst: "The ELIXIR-UK DaSH Fellowship aims to embed Research Data Management (RDM) know-how into UK universities and institutes, the Fellows are creating training and delivering local training as part of this. A new training cou"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2023/05/cooperation-2023-11-27-05-00-28-utc-2.webp"
+related:
+  activities: ["fellowship"]
+  projects: ["elixir-uk-dash"]
 ---
 
 <p>The <a href="https://elixiruknode.org/activities/elixir-dash-fellowship/">ELIXIR-UK DaSH Fellowship</a> aims to embed Research Data Management (RDM) know-how into UK universities and institutes, the Fellows are creating training and delivering local training as part of this.&nbsp;</p>

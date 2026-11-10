@@ -4,6 +4,8 @@ date: 2026-02-11
 standfirst: "An ELEAD Impact case study"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2026/02/banner-gender-balance.webp"
+related:
+  members: ["earlham-institute", "university-oxford", "university-of-manchester", "hdr-uk"]
 ---
 
 <p>A new case study from ELIXIR’s leadership and diversity mentoring programme, <a href="https://elixir-europe.org/how-we-work/scientific-programme/people/elead2">ELEAD</a>, shows early evidence that the initiative is supporting women’s progression into leadership roles and contributing to culture change across the ELIXIR infrastructure. The <strong>impact work for ELEAD</strong>, including the assessment of the pilot outcomes, is being led by ELIXIR-UK as part of the second edition of the programme.</p>

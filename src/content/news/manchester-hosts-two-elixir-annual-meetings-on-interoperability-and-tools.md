@@ -4,6 +4,8 @@ date: 2024-12-18
 standfirst: "They highlighted the value of showcasing success stories, improving outreach, and engaging communities to ensure the adoption of resources and approaches."
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/12/photo-2024-all-hands-uk.jpg"
+related:
+  members: ["earlham-institute", "university-of-manchester", "university-oxford"]
 ---
 
 <p>In November 2024, Manchester played host to two key groups of the wider ELIXIR Europe  – the <a href="https://elixiruknode.org/activities/interoperability-platform/" data-type="activity" data-id="19885">Interoperability</a> and <a href="https://elixiruknode.org/activities/tools-platform/" data-type="activity" data-id="19882">Tools</a> Platforms – bringing together experts to strengthen connections, align efforts, and plan for the future of FAIR-enabled life science resources. </p>

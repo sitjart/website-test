@@ -7,6 +7,8 @@ startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-people.webp"
+related:
+  activities: ["uk-rdm-club", "fellowship"]
 ---
 
 <p><span style="box-sizing: border-box; margin: 0px; padding: 0px;">We welcome <a href="https://elixiruknode.org/people/emma-karoune/" target="_blank" rel="noopener">Emma Karoune</a>, the Alan Turing Institute, to this month's <a href="https://elixiruknode.org/activities/uk-rdm-club/" data-type="activity" data-id="18993">RDM Club</a> meeting.</span></p>

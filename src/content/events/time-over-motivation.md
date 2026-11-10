@@ -5,7 +5,11 @@ type: "Community Call"
 online: true
 startTime: "14:00"
 endTime: "15:00"
+recording: "https://youtu.be/MJcRf6x3kk8"
 image: "https://elixiruknode.org/wp-content/uploads/2025/01/banner-education-training.webp"
+related:
+  activities: ["uk-training-club"]
+  members: ["university-of-liverpool"]
 ---
 
 <p class="has-large-font-size">Comparison of the engagement and completion of synchronous and asynchronous online courses for adult learners</p>

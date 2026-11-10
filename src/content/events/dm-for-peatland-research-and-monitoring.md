@@ -8,6 +8,10 @@ startTime: "11:00"
 endTime: "13:00"
 registration: "https://bradford-ac-uk.zoom.us/meeting/register/tZYkcuGppjksHNMfeAEfY7Ut1pPPczA7nLMx"
 image: "https://elixiruknode.org/wp-content/uploads/2024/05/banner-peatland-landscape-scaled.webp"
+related:
+  collaborations: ["university-of-leeds"]
+  members: ["university-of-bradford"]
+  projects: ["elixir-uk-dash"]
 ---
 
 <h2>What will you learn?</h2>

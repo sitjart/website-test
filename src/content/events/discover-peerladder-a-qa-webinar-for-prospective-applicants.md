@@ -8,7 +8,10 @@ startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
 registration: "https://events.teams.microsoft.com/event/d387342c-8e0e-44eb-94e2-9354ff94deaa@e652efd4-5dac-41b6-a23d-764634c36cea"
+recording: "https://youtu.be/SOhDwBrZ3nY"
 image: "https://elixiruknode.org/wp-content/uploads/2026/03/illustration-isometrics-career-ladder.png"
+related:
+  members: ["university-of-manchester", "earlham-institute", "open-life-science"]
 ---
 
 <p>Join us online to learn about the PeerLadder peer-mentoring programme, who it's for, how to apply, and what the experience involves. Bring your questions – this session is designed to help you decide if it's right for you.</p>

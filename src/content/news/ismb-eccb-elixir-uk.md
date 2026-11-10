@@ -4,6 +4,10 @@ date: 2025-08-14
 standfirst: "A standout presence at the world’s largest bioinformatics forum, with 25+ ELIXIR-UK related talks and posters and a collaborative UK booth trail"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2025/08/photo-2025-ismb-eccb-2-2.jpg"
+related:
+  collaborations: ["biofair", "aibio-uk"]
+  members: ["earlham-institute", "hdr-uk", "university-of-manchester"]
+  services: ["fair-cookbook", "fairsharing", "cafe-variome", "cath", "copo", "fairdom-seek", "iuphar-bps", "knetminer", "phi-base", "psipred", "rdmkit", "tess", "variant-validator", "workflowhub", "bioschemas", "ro-crate", "jalview", "veupathdb", "drasp", "missense3d", "phyre2"]
 ---
 
 <p>From 20-24 July 2025, the international bioinformatics and computational biology community gathered in Liverpool for the biannual ISMB/ECCB – and ELIXIR-UK was there with a visible and collaborative presence.</p>

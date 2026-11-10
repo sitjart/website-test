@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import StoryGrid from '../StoryGrid.astro';
 import { longDate, todayUK } from '../../lib/format';
 import { url } from '../../lib/url';
+import { tagSlug } from '../../lib/graph';
 
 interface Props { heading: string; label: string; count: number; background?: string }
 const { heading, label, count, background } = Astro.props;
@@ -17,6 +18,7 @@ const items = events.map((e) => ({
   href: url(`/events/${e.id}/`),
   title: e.data.title,
   tag: e.data.type,
+  tagHref: url(`/events/type/${tagSlug(e.data.type)}/`),
   meta: longDate(e.data.start),
   image: e.data.image,
 }));

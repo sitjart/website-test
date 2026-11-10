@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import StoryGrid from '../StoryGrid.astro';
 import { longDate } from '../../lib/format';
 import { url } from '../../lib/url';
+import { tagSlug } from '../../lib/graph';
 
 interface Props { heading: string; label: string; count: number; background?: string }
 const { heading, label, count, background } = Astro.props;
@@ -15,6 +16,7 @@ const items = news.map((n) => ({
   href: url(`/news/${n.id}/`),
   title: n.data.title,
   tag: n.data.category,
+  tagHref: url(`/news/category/${tagSlug(n.data.category)}/`),
   meta: longDate(n.data.date),
   image: n.data.image,
 }));

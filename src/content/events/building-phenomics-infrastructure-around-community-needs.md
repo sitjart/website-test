@@ -7,6 +7,8 @@ end: 2026-11-18
 startTime: "11:00"
 endTime: "12:00"
 image: "https://elixiruknode.org/wp-content/uploads/2023/04/stream-of-binary-matrix-code-numbers-on-the-screen-2023-11-27-05-34-02-utc-scaled.webp"
+related:
+  activities: ["uk-human-data-community"]
 ---
 
 <p class="has-large-font-size">Requirements for FAIR metadata, repositories and discovery</p>

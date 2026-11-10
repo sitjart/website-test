@@ -4,6 +4,8 @@ date: 2023-09-21
 standfirst: "On 15 September 2023, the ELIXIR-UK Fellowship reached a significant milestone, celebrating three years of extraordinary accomplishments at a unique retreat. The event, which united 20 dedicated participants, including F"
 category: "News"
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/2023-13-01-fellows-retreat-photo-08.webp"
+related:
+  activities: ["fellowship"]
 ---
 
 <p>On 15 September 2023, the <a href="https://fellowship.elixiruknode.org">ELIXIR-UK Fellowship</a> reached a significant milestone, celebrating three years of extraordinary accomplishments at a unique retreat. The event, which united 20 dedicated participants, including Fellows, Mentors, and the coordination team, reflected on the journey so far and was a platform to unveil exciting plans for the future. During this retreat, participants actively collaborated to map out the next steps for the Fellows in ELIXIR-UK and tackled challenges head-on, collectively searching for solutions.</p>
