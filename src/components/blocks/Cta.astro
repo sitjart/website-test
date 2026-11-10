@@ -1,0 +1,26 @@
+---
+import { url } from '../../lib/url';
+interface Props { heading: string; text?: string; button: { label: string; href: string }; background?: string }
+const { heading, text, button, background = 'navy' } = Astro.props;
+---
+<section class:list={['section', `section--${background}`, 'cta']}>
+  <div class="container cta__inner" data-reveal="fade-right">
+    <div>
+      <h2>{heading}</h2>
+      {text && <p>{text}</p>}
+    </div>
+    <a class="btn" href={url(button.href)}>{button.label}</a>
+  </div>
+</section>
+
+<style>
+  .cta__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 3rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cta h2 { margin-bottom: 0.4rem; }
+  .cta p { margin: 0; max-width: 40rem; }
+</style>

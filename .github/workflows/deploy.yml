@@ -1,0 +1,49 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 3 * * *'      # nightly rebuild: picks up Baserow changes and moves past events
+  repository_dispatch:
+    types: [baserow-update]   # Baserow webhook can trigger a rebuild
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          # People are fetched from Baserow during the build and never committed.
+          # Leave these unset to build with the invented sample people.
+          BASEROW_TOKEN: ${{ secrets.BASEROW_TOKEN }}
+          BASEROW_PEOPLE_TABLE: ${{ vars.BASEROW_PEOPLE_TABLE }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

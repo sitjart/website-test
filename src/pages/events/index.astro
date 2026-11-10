@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { todayUK } from '../../lib/format';
+import { url } from '../../lib/url';
+
+const today = todayUK();
+const all = await getCollection('events');
+const upcoming = all.filter((e) => (e.data.end ?? e.data.start) >= today).sort((a, b) => a.data.start.getTime() - b.data.start.getTime());
+const past = all.filter((e) => (e.data.end ?? e.data.start) < today).sort((a, b) => b.data.start.getTime() - a.data.start.getTime());
+
+const day = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', timeZone: 'UTC' });
+const monthYear = (d: Date) => d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const groups = [
+  { title: 'Upcoming events', list: upcoming },
+  { title: 'Past events', list: past },
+];
+---
+<BaseLayout title="Events">
+  <PageHeader title="Events" />
+  {groups.map((g) => g.list.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <h2>{g.title}</h2>
+        <ul class="event-list">
+          {g.list.map((e) => (
+            <li data-reveal="fade-up">
+              <a class="event" href={url(`/events/${e.id}/`)}>
+                <span class="event__date">
+                  <span class="event__day">{day(e.data.start)}</span>
+                  <span class="event__month">{monthYear(e.data.start)}</span>
+                </span>
+                <span>
+                  <span class="event__type">{e.data.type}{e.data.online ? ' · Online' : e.data.locality ? ` · ${e.data.locality}` : ''}</span>
+                  <span class="event__title">{e.data.title}</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  ))}
+</BaseLayout>
+
+<style>
+  .event-list { list-style: none; padding: 0; margin: 0; }
+  .event {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  /* Date style taken from the live site's custom CSS */
+  .event__day { display: block; font-size: 3rem; font-weight: 700; line-height: 1; letter-spacing: -0.02em; color: var(--navy); }
+  .event__month { display: block; font-size: 1.125rem; color: var(--navy); }
+  .event__type { display: block; font-size: 13px; font-weight: 700; color: var(--orange); margin-bottom: 0.3rem; }
+  .event__title { display: block; font-size: 1.3rem; font-weight: 700; color: var(--navy); transition: color 0.2s var(--ease); }
+  .event:hover .event__title { color: var(--blue); }
+  @media (max-width: 600px) { .event { grid-template-columns: 1fr; gap: 0.5rem; } }
+</style>

@@ -1,0 +1,80 @@
+---
+import { url } from '../../lib/url';
+interface Props {
+  heading?: string;
+  overlap?: boolean;
+  background?: string;
+  reveal?: string;
+  items: { title: string; text?: string; href?: string }[];
+}
+const { heading, overlap = false, background = 'page', reveal = 'fade-up', items } = Astro.props;
+---
+<section class:list={['cards', `section--${background}`, { 'cards--overlap': overlap, section: !overlap }]}>
+  <div class="container">
+    {heading && <h2>{heading}</h2>}
+    <ul class="cards__grid" style={`--cols: ${Math.min(items.length, 4)}`}>
+      {items.map((item, i) => (
+        <li class="card" data-reveal={reveal === 'none' ? undefined : reveal} style={`--dur: 0.7s; --delay: ${i * 100}ms`}>
+          {item.href ? (
+            <a class="card__link" href={url(item.href)}>
+              <h2 class="card__title">{item.title}</h2>
+              {item.text && <p>{item.text}</p>}
+            </a>
+          ) : (
+            <div class="card__link">
+              <h2 class="card__title">{item.title}</h2>
+              {item.text && <p>{item.text}</p>}
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .cards--overlap {
+    position: relative;
+    z-index: 2;
+    margin-top: -60px;
+    padding-bottom: 5rem;
+    background: transparent;
+  }
+  .cards__grid {
+    display: grid;
+    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  /* Card style from the live site: #e1e8ed, 10px radius, soft long shadow */
+  .card {
+    background: var(--border);
+    border-radius: 10px;
+    box-shadow: 0 32px 48px rgb(225 232 237 / 0.56);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 36px 56px rgb(2 52 82 / 0.12);
+  }
+  .card__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 328px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    color: var(--text);
+  }
+  .card__link:hover { color: var(--text); }
+  .card__title { color: var(--navy); margin-bottom: 1rem; }
+  .card p { margin: 0; }
+
+  @media (max-width: 860px) {
+    .cards__grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .card__link { min-height: 0; }
+  }
+</style>

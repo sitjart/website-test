@@ -1,0 +1,20 @@
+---
+// Renders a page's list of sections, in order, with the matching block component.
+import Hero from './blocks/Hero.astro';
+import Cards from './blocks/Cards.astro';
+import LatestNews from './blocks/LatestNews.astro';
+import UpcomingEvents from './blocks/UpcomingEvents.astro';
+import Stat from './blocks/Stat.astro';
+import Text from './blocks/Text.astro';
+import Cta from './blocks/Cta.astro';
+
+const blocks = { hero: Hero, cards: Cards, latestNews: LatestNews, upcomingEvents: UpcomingEvents, stat: Stat, text: Text, cta: Cta };
+
+interface Props { sections: { type: keyof typeof blocks; [key: string]: unknown }[] }
+const { sections } = Astro.props;
+---
+{sections.map((s) => {
+  const { type, ...props } = s;
+  const Block = blocks[type];
+  return <Block {...(props as any)} />;
+})}

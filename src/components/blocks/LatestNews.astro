@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import StoryGrid from '../StoryGrid.astro';
+import { longDate } from '../../lib/format';
+import { url } from '../../lib/url';
+
+interface Props { heading: string; label: string; count: number; background?: string }
+const { heading, label, count, background } = Astro.props;
+
+const news = (await getCollection('news'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, count);
+
+const items = news.map((n) => ({
+  href: url(`/news/${n.id}/`),
+  title: n.data.title,
+  tag: n.data.category,
+  meta: longDate(n.data.date),
+  image: n.data.image,
+}));
+---
+<StoryGrid {heading} {label} {items} {background} allHref={url('/news/')} allLabel="All news" />

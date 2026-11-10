@@ -1,0 +1,362 @@
+[
+  {
+    "slug": "biomedical-atlas-centre",
+    "name": "Biomedical Atlas Centre",
+    "website": "https://www.biomedatlas.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-biomedical-atlas-centre@1000x.png",
+    "description": "",
+    "status": "Roadmapped"
+  },
+  {
+    "slug": "bioschemas",
+    "name": "Bioschemas",
+    "website": "https://bioschemas.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-bioschemas@1000x.png",
+    "description": "",
+    "status": "Contributing"
+  },
+  {
+    "slug": "birmingham-metabolomics-training-centre",
+    "name": "Birmingham Metabolomics Training Centre",
+    "website": "https://www.birmingham.ac.uk/facilities/metabolomics-training-centre/index.aspx",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-univeristy-of-birmingham.svg",
+    "description": "The Birmingham Metabolomics Training Centre provides training to the metabolomics community in both analytical and computational methods via face-to-face and online workshops and from introductory to advanced levels.",
+    "status": "Selected"
+  },
+  {
+    "slug": "brepertoire",
+    "name": "BRepertoire",
+    "website": "http://mabra.biomed.kcl.ac.uk/BRepertoire_6/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-brepertoire@1000x.png",
+    "description": "A web server for exploring antibody repertoire data. It facilitates repertoire data parsing and format transcription, computes various physicochemical properties for your sequences, offers “data-massaging” / preparation functions, supports clonotype clustering and offers a set of analysis and plotting functions to help you examine your data set.",
+    "status": "Roadmapped"
+  },
+  {
+    "slug": "cafe-variome",
+    "name": "Café Variome",
+    "website": "https://www.cafevariome.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-cafe-variome@1000x.png",
+    "description": "Café Variome is a flexible web-based, data discovery tool that can be quickly installed by any biomedical data owner to enable the “existence” rather than the “substance” of the data to be discovered.",
+    "status": "Selected"
+  },
+  {
+    "slug": "cambridge-bioinformatics-training",
+    "name": "Cambridge Bioinformatics Training Programme",
+    "website": "https://bioinfotraining.bio.cam.ac.uk/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-unvieristy-of-cambridge.svg",
+    "description": "The Cambridge Bioinformatics Training Facility runs highly successful, well-attended bioinformatics, biostatistics and data science training programmes, which are respected by others within and outside the University of Cambridge. It provides a broad range of mostly postgraduate, hands-on training courses focused on data science, bioinformatics and computational biology. Additionally, the Bioinformatics Training Facility is involved in running several undergraduate courses. The Facility continues to manage the Bioinformatics undergraduate Minor Subject as part of the NST Part II Biological and Biomedical Science. This Subject is open to both Natural Science and Medical students and has received extremely positive feedback every year since its inception in 2016. The Bioinformatics Training Facility activities are open to all members of academic institutions, research institutes, public and government bodies and industry partners.",
+    "status": "Selected"
+  },
+  {
+    "slug": "cath",
+    "name": "CATH",
+    "website": "http://www.cathdb.info/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-cath@1000x.png",
+    "description": "CATH is a classification of protein structures downloaded from the Protein Data Bank. It groups protein domains into superfamilies when there is sufficient evidence they have diverged from a common ancestor. CATH has participated in several European projects and Networks of Excellence to provide data, tools, and interoperability for structural and functional annotation of genome sequences. It also participated in the NIH-funded structural genomics (PSI) initiative, providing information on fold libraries, predicted structures and functions to facilitate target selection for structure determination.",
+    "status": "Selected"
+  },
+  {
+    "slug": "cwl",
+    "name": "Common Workflow Language (CWL)",
+    "website": "https://www.commonwl.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-common-wrokflow-language-cwl@1000x.png",
+    "description": "",
+    "status": "Contributing"
+  },
+  {
+    "slug": "copo",
+    "name": "COPO",
+    "website": "https://copo-project.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-copo@1000x.png",
+    "description": "COPO is a portal for scientists to describe, store and retrieve data easily, using community standards and public repositories that enable the open sharing of results. Notably, within both the Darwin Tree of Life (DTOL) and the Aquatic Symbiosis Genomics Project (ASG) communities, COPO supports both data managers and individual researchers. COPO has been involved in the Sample Working Groups of DToL, ASG, and most recently ERGA, together with ENA, to provide an easy route for metadata collection and validation according to the specifications agreed.",
+    "status": "Selected"
+  },
+  {
+    "slug": "cyverse-uk",
+    "name": "Cyverse-UK",
+    "website": "https://cyverseuk.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-cyverse@1000x.png",
+    "description": "CyVerse UK (previously known as iPlant) was born as a collaborative effort between CyVerse and a small number of UK universities and institutions to build on the CyVerse experience and provide the same services to UK users. UK users have a geographical advantage in using UK-based resources and can benefit from UK-based assistance. CyVerse provides scientists with a powerful platform to handle huge datasets and complex analyses, thus enabling data-driven discovery. Our extensible platforms provide data storage, bioinformatics tools, visualisation, interactive analyses, cloud services, APIs, etc. CyVerse was created in 2008 by the National Science Foundation and now supports almost 100,000 researchers in 169 countries. CyVerse has appeared in more than 1,500 peer-reviewed publications, trained almost 40K researchers and instructors, and supports $255M in additional research funding by NSF. CyVerse is a dynamic virtual organisation led by the University of Arizona in partnership with the Texas Advanced Computing Center and Cold Spring Harbor Laboratory, fulfilling a broad mission to enable data-driven, collaborative research.",
+    "status": "Roadmapped"
+  },
+  {
+    "slug": "drasp",
+    "name": "Dundee Resource for Sequence Analysis and Structure Prediction",
+    "website": "http://www.compbio.dundee.ac.uk/drsasp.html",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-dundee.svg",
+    "description": "DRASP: Dundee Resource for Sequence Analysis and Structure Prediction. DRSASP’s flagship services are the JPred4 web server for protein secondary structure and solvent accessibility prediction and the JABAWS 2.2 webserver for multiple sequence alignment, disorder prediction, amino acid conservation calculations, and specificity‐determining site prediction. DRSASP resources are available through conventional web interfaces and APIs but are also integrated into the Jalview sequence analysis workbench, which enables the composition of multitool interactive workflows.",
+    "status": "Selected"
+  },
+  {
+    "slug": "edam",
+    "name": "EDAM",
+    "website": "https://edamontology.org/page",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-edam@1000x.png",
+    "description": "",
+    "status": "Contributing"
+  },
+  {
+    "slug": "ensembl",
+    "name": "ENSEMBL farmed and domestic animals",
+    "website": "https://www.ensembl.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-ensembl@1000x.png",
+    "description": "",
+    "status": "Selected"
+  },
+  {
+    "slug": "enterobase",
+    "name": "EnteroBase",
+    "website": "https://enterobase.warwick.ac.uk/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2026/08/logo-service-enterobase.svg",
+    "description": "",
+    "status": "Selected"
+  },
+  {
+    "slug": "fair-cookbook",
+    "name": "FAIR Cookbook",
+    "website": "https://faircookbook.elixir-europe.org",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-faircookbook@1000x.png",
+    "description": "The FAIR principles behind the Cookbook The FAIR principles, which ensure data is Findable, Accessible, Interoperable, and Reusable with minimal human intervention, have de facto become a global norm for good data stewardship and a prerequisite for reproducibility in the public and private sectors. To address the need for specific and practical guidance that helps users to make and keep data FAIR in the Life Sciences, data managers professionals from ELIXIR and pharma have built an online resource named the FAIR Cookbook. The resource guides researchers and data stewards in their FAIRification journey, providing hands-on and technical step-by-step examples to follow; and provides policymakers and trainers with practical examples to recommend in their guidance and use in their educational material. FAIR Cookbooks’ offer The FAIR Cookbook’s content (“recipes”) is organised by FAIR elements, audience type, reading time, and difficulty level. Recipes help users to learn: how to FAIRify datasets, the levels and indicators of FAIRness, the maturity model, the technologies, the tools and the standards available, as well as the skills required, and the challenges, to achieve and improve FAIRness. Recipes are also progressively cross-referenced to other relevant ELIXIR resources in the FAIR ecosystem, such as FAIRsharing (for standards), WorkflowHub (for workflows), as well as the RDMkit (for the research data management cycle), as well as the Pistoia Alliance’s FAIR Toolkit. Watch the webinar to ELIXIR FAIR Cookbook webinar that attracted over 400 registrants. The contributors behind the resource The content is community-contributed and goes through a rigorous editorial process. The content of the FAIR Cookbook is FAIR itself: content is discoverable in search indexes (via Sitemap.xml and JSON-LD; markup of the recipes with Schema.org and Bioschemas); recipes are citable via w3id.org unique persistent identifiers and are a credit to authors via ORCID, and attribution is given via CreDiT ontology. All content has a CC BY 4.0 license. The resource is built on open source community practices, using jupyter-book, following the practice used by The Alan Turing Institute’s “The Turing Way Book” and Github as the underlying technical infrastructure. The FAIR Cookbook is already a core, named element in the ELIXIR Interoperability Platform, and recommended by the Guidance of the (IMI), and now also by its successor programme, the Innovative Health Initiative (IHI). We welcome contributions! If you want to participate, join and learn how to contribute or contact us at fairplus-cookbook@elixir-europe.org .",
+    "status": "Selected"
+  },
+  {
+    "slug": "fairdom-seek",
+    "name": "FAIRDOM-SEEK",
+    "website": "https://seek4science.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-fairdom-seek@1000x.png",
+    "description": "FAIRDOM-SEEK is a sophisticated web-based cataloguing and commons platform to build “Thematic Hubs” for organising, managing and sharing the research outcomes of projects and collections of projects. It is explicitly designed as a Hybrid infrastructure to handle heterogeneous scientific research datasets, models and simulations, lab procedures, computational workflows, samples and all manner of research outcomes, stored in different and independent repositories yet preserving associations between them, along with information about the projects, people and organisations themselves. It enables projects to make their results FAIR (Findable, Accessible, Interoperable, Reusable). The FAIRDOM-SEEK platform is used by seven ELIXIR Nodes (UK, BE, DE, NO, NL, SI, FR) as well as many other organisations in the USA, South Africa, and Australia. Over 140+ independent project Hubs using the SEEK have been established, including Leipzig Health Atlas , Liver Systems Medicine , CESGO research sharing platform , and IBISBAHub for the EU IBISBA Industrial Biotechnology Research Infrastructure. The FAIRDOM-SEEK is managed by a FAIRDOM consortium of ELIXIR Nodes (UK, BE, DE, NO, NL) and Stellenbosch University, SA. ELIXIR Germany hosts the public Hub FAIRDOMHub .",
+    "status": "Selected"
+  },
+  {
+    "slug": "fairsharing",
+    "name": "FAIRsharing",
+    "website": "https://fairsharing.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-fairsharing@1000x.png",
+    "description": "A curated, informative and educational resource on data and metadata standards, inter-related to databases and data policies. FAIRsharing guides consumers to discover, select and use these resources with confidence, and producers to make their resources more discoverable, more widely adopted and cited FAIRsharing is an ELIXIR Recommended Interoperability Resource and an intrinsic registry of the EOSC and the ELIXIR RDM know-how ecosystem (linked to the RDMkit and FAIR Cookbook ). International standing and cross-domain relevance FAIRsharing is already a resource of international standing and cross-domain relevance , which goes beyond the ELIXIR community. It is a de facto resource of EOSC, recommended by the Horizon Europe Programme among others; it is adopted by RDA, as well as by funders, publishers, libraries, and other organizations in the RDM and scholarly ecosystem. FAIRsharing is the major registry for datasets and standards for the EOSC-Life Digital Biology infrastructure and the basis of EOSC integration with openAIRE piloted within the EOSC-Enhance project. Its content powers a growing number of FAIR-enabling systems, including DSW, DMP tools and FAIR evaluation services. A full list of activities and collaboration is available. In EOSC-Life, FAIRsharing is the registry of resources across all ESFRIs in the Life Sciences. In the new BY-COVID project, FAIRsharing will be a Data Discovery Service, via a collaboration with OpenAIRE , a key EOSC player. FAIRsharing is also supported by the University of Oxford’s institutional Bodleian Libraries, which provides DOIs minting and access to ORCID API, where FAIRsharing is now a trusted organization. Recently, it has contributed to the COVID-19 Rapid Peer Review Initiative with major publishers and Wellcome’s RoRI to strengthen data policies of the journals and publishers and make results of COVID-19 articles available for scrutiny and reproducibility. FAIRsharing has: Become a de facto service of the EOSC ecosystem, recommended by all EOSC reports Is used by all stakeholders in the research data management and scholarly ecosystem Is part of International Reproducibility Networks (RNs), via the UKRN.",
+    "status": "Selected"
+  },
+  {
+    "slug": "flybase",
+    "name": "FlyBase",
+    "website": "https://flybase.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-flybase@1000x.png",
+    "description": "FlyBase is a model organism database for the fruit fly, Drosophila melanogaster. It provides comprehensive genetic, genomic, and functional information through manual curation of the literature and integration of selected datasets.",
+    "status": "Selected"
+  },
+  {
+    "slug": "galaxy",
+    "name": "Galaxy",
+    "website": "https://usegalaxy.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2025/01/logo-galaxy.svg",
+    "description": "",
+    "status": "Contributing"
+  },
+  {
+    "slug": "gtn",
+    "name": "Galaxy Training Network (GTN)",
+    "website": "https://training.galaxyproject.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/12/logo-galaxy-gtn.svg",
+    "description": "",
+    "status": "Contributing"
+  },
+  {
+    "slug": "gwas-central",
+    "name": "GWAS Central",
+    "website": "https://www.gwascentral.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-gwas-central@1000x.png",
+    "description": "The GWAS Central resource provides a toolkit for integrative access and visualisation of summary-level genome-wide association study data gathered from various public sources and submitted by GWAS authors while ensuring safe open access to prevent research participant identification.",
+    "status": "Selected"
+  },
+  {
+    "slug": "health-informatics-centre-hic",
+    "name": "Health Informatics Centre (HIC)",
+    "website": "https://www.dundee.ac.uk/hic",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-dundee.svg",
+    "description": "Health Informatics Centre (HIC) supports high impact research through the collection and management of population based data.",
+    "status": "Roadmapped"
+  },
+  {
+    "slug": "hgnc",
+    "name": "HGNC",
+    "website": "https://www.genenames.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-hgnc-hugo@1000x.png",
+    "description": "The HUGO Gene Nomenclature Committee (HGNC) is the only worldwide authority that assigns standardised nomenclature to human genes and is one of the longest-running life science standardisation projects. The HGNC resource is a freely available and fully searchable repository of HGNC-approved gene symbols and names, as well as alternative names that have been used in the literature. The public website, www.genenames.org, displays all approved human gene nomenclature within Symbol Reports that contain data curated by HGNC nomenclature advisors with links to related genomic, proteomic, comparative and clinical information. In addition, this service provides over 1,700 manually curated human gene groups with links to key biomedical resources and relevant publications. Data can be downloaded in various formats, including a REST service, download files and a custom downloads tool. Other tools include the Multi-symbol checker tool and the HCOP orthology predictions tool, which aggregates orthology predictions from a range of high-quality resources. Links are provided to the HGNC’s sister resource, the Vertebrate Gene Nomenclature Committee (VGNC), a repository of approved gene nomenclature for selected vertebrate species: currently chimp, rhesus macaque, dog, cat, cattle, horse and pig.",
+    "status": "Selected"
+  },
+  {
+    "slug": "intermine",
+    "name": "InterMine",
+    "website": "http://intermine.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-intermine@1000x.png",
+    "description": "InterMine is a software system that you can install on your own servers to make data available on the web. It integrates heterogeneous data sources, making it easy to query and analyse data. InterMine impact In contrast to the currently listed ELIXIR Services, the InterMine project’s impact is through providing infrastructure that allows other resources to present their data via web services and web interfaces. There are over thirty public installations based on InterMine around the world, and essentially all the major plant and animal model organism databases use it, as well as a growing number of non-model organism databases. These databases serve multiple diverse worldwide user communities numbering in the 10,000s. Recent work funded by WP1 of EOSC-Life has supported a collaboration with PomBase to create a corresponding InterMine instance, PombeMine, for the fission yeast community.",
+    "status": "Selected"
+  },
+  {
+    "slug": "isa",
+    "name": "ISA tools and commons",
+    "website": "https://isa-tools.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-isatools@1000x.png",
+    "description": "Open source metadata model and authoring tools to describe, share, and publish life science, environmental and biomedical experiments using community-defined reporting standards. This FAIR-enabling framework is embedded in other data systems, such as institute-based (e.g. USA NASA GeneLab Data Repository ), global repositories (e.g. EMBL-EBI MetaboLight s), and other annotation software (e.g. InterMine and FAIRDOM-SEEK ) Operating successfully since 2007, the open-source ISA metadata tracking framework facilitates the standards-compliant collection, curation, management, publication and reuse of an increasingly diverse set of life science, environmental and biomedical experiments that employ one or a combination of technologies. ISA is used by ELIXIR Plant Sciences, Metabolomics, and Toxicology Communities. ISA partners with UK, France, EBI, Belgium, and Slovenia Nodes, which have co-developed components and are doing work around ISA parsers and validation tools in the context of data validation programs.",
+    "status": "Selected"
+  },
+  {
+    "slug": "iuphar-bps",
+    "name": "IUPHAR/BPS guide to pharmacology",
+    "website": "https://www.guidetopharmacology.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-iupharbps@1000x.png",
+    "description": "The IUPHAR/BPS Guide to PHARMACOLOGY is an expert-curated resource of ligand-activity-target relationships, the majority of which come from high-quality pharmacological and medicinal chemistry literature. It is a freely available, searchable database of pharmacological information that includes quantitative data on drug targets and the prescription medicines and experimental drugs that act on them.",
+    "status": "Selected"
+  },
+  {
+    "slug": "jalview",
+    "name": "Jalview",
+    "website": "https://www.jalview.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-jalview@1000x.png",
+    "description": "Jalview is a free program for multiple sequence alignment editing, visualisation and analysis. It allows viewing and editing of sequence alignments, their analysis with phylogenetic trees and Principal Components Analysis (PCA) plots and exploration of molecular structures and annotation. Jalview also allows the integration of variant data from genome sequencing together with interactive analysis of DNA, RNA and protein sequences, phylogenetics and three-dimensional structures of macromolecules",
+    "status": "Selected"
+  },
+  {
+    "slug": "knetminer",
+    "name": "KnetMiner",
+    "website": "https://knetminer.com/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-knetminer@1000x.png",
+    "description": "KnetMiner is a discovery platform that helps scientists search large volumes of scientific literature and Life Science data to unveil links between the genetic and biological properties of complex, polygenic traits and diseases. It allows users to effectively integrate, search, visualise and share biological knowledge in an accessible, transparent, yet concise format that can be easily interrogated to generate new insights.",
+    "status": "Selected"
+  },
+  {
+    "slug": "lipid-maps",
+    "name": "LIPID MAPS",
+    "website": "https://www.lipidmaps.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-lipid-maps@1000x.png",
+    "description": "",
+    "status": "Selected"
+  },
+  {
+    "slug": "missense3d",
+    "name": "Missense3D",
+    "website": "http://missense3d.bc.ic.ac.uk/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-missense-3d@1000x.png",
+    "description": "The Missense3D portal hosts resources developed to characterise and prioritise missense variants (amino acid substitutions) using protein three-dimensional structural information from models or experimental coordinates.",
+    "status": "Selected"
+  },
+  {
+    "slug": "neof",
+    "name": "NERC Environmental Omics Facility",
+    "website": "https://neof.org.uk/training/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-neof@1000x.png",
+    "description": "NERC Environmental Omics Facility (NEOF) provides year-round bespoke training to researchers who undertake the laboratory and/or analytical components of their project under their supervision at the Visitor Facility (VF) located in the Molecular Ecology Laboratory at the University of Sheffield. They support PhD students, research fellows, PDRAs and research technicians who are working within the NERC remit. But cannot support Masters or undergraduate students. NEOF provides training courses to support a range of capabilities, including, for example, genome assembly, metabarcoding, population genomics and RNA sequencing. They aim to support the training that is in most demand from the research community.",
+    "status": "Selected"
+  },
+  {
+    "slug": "nextflow",
+    "name": "Nextflow",
+    "website": "https://www.nextflow.io/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2025/01/logo-nextflow.svg",
+    "description": "",
+    "status": "Contributing"
+  },
+  {
+    "slug": "phi-base",
+    "name": "PHI-base",
+    "website": "http://www.phi-base.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-phi-base@1000x.png",
+    "description": "From mutant genes to phenotypes! The mission of PHI-base is to provide expertly curated molecular and biological information on genes proven to affect the outcome of pathogen-host interactions. Information is also given on the target sites of some anti-infective chemistries. PHI-base is a web-accessible database that catalogues experimentally verified pathogenicity, virulence and effector genes from fungal, Oomycete and bacterial pathogens, which infect animal, plant, fungal and insect hosts. PHI-base is therefore an invaluable resource in the discovery of genes in medically and agronomically important pathogens, which may be potential targets for chemical intervention. In collaboration with the FRAC team, PHI-base also includes antifungal compounds and their target genes. Each entry in PHI-base is curated by domain experts and is supported by strong experimental evidence (for example, gene disruption and gene complementation experiments), as well as literature references in which the original experiments are described. Each gene in PHI-base is presented with its nucleotide and deduced amino acid sequence, as well as a detailed description of the predicted protein’s function during the host infection process. To facilitate data interoperability, we have annotated genes using controlled vocabularies and links to external sources (Uniprot, Gene Ontology terms, EC Numbers, NCBI taxonomy, EMBL, PubMed and FRAC).",
+    "status": "Selected"
+  },
+  {
+    "slug": "phyre2",
+    "name": "Phyre2",
+    "website": "http://www.sbg.bio.ic.ac.uk/~phyre2",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-phyre2@1000x.png",
+    "description": "A server to predict protein structure from sequences with facilities for variant analysis and batch processing.",
+    "status": "Selected"
+  },
+  {
+    "slug": "pombase",
+    "name": "PomBase",
+    "website": "https://www.pombase.org",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-pombase@1000x.png",
+    "description": "PomBase is a comprehensive database for the model organism fission yeast (Schizosaccharomyces pombe), providing structural and functional annotation, literature curation, genomic sequence and features, and access to large-scale data sets ( PMID:35100366 ). PomBase actively engages authors to participate in community curation to build Findable, Accessible, Interoperable and Reusable (FAIR)-shared biological knowledge from small-scale publications ( PMID:32353878 ) . PomBase is also a major contributor to the GO consortium and is a member of the RNACentral consortium.",
+    "status": "Selected"
+  },
+  {
+    "slug": "psipred",
+    "name": "PSIPRED",
+    "website": "http://bioinf.cs.ucl.ac.uk/psipred",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-psipred@1000x.png",
+    "description": "The PSIPRED Workbench is a structural bioinformatics service that offers a wide range of predictive methods to the bioscience community.",
+    "status": "Selected"
+  },
+  {
+    "slug": "rdmkit",
+    "name": "RDMkit",
+    "website": "https://rdmkit.elixir-europe.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-rdmkit@1000x.png",
+    "description": "The RDMkit is a web-based guide containing good data management practices designed to guide life scientists in their efforts to better manage their research data following the FAIR Principles. Developed and managed by people who work every day with life science data, the RDMkit has guidelines, information and pointers to help you with problems throughout the life cycle of data. Information on the RDMkit is organised into various sections (e.g. Data life cycle, Your role, Your Domain, Your tasks ), which are interconnected but can be browsed independently. Each section contains a description of the topic, including considerations and possible solutions, as well as a table of relevant tools and resources linked to entries in the ELIXIR registries ( bio.tools , FAIRsharing , TeSS ). The tools and resources mentioned in each section are also presented as a searchable table in a separate section called “All tools and resources”. RDMkit also features Tool Assemblies, illustrating examples of combining tools to address data management tasks across several stages of the RDM life cycle. The RDMkit’s underlying technical infrastructure has been established using Github, and comprehensive community contributions and editorial processes have been put in place. All content goes through a rigorous editorial process before it is made available on the website, with regular updates being carried out. Full credit is given to the contributors and acknowledged at the bottom of the page they contributed. Read our news story about the RDMKit going live Read the ELIXIR Hub Announcement The RDMKit is a community-driven effort, and as such, it welcomes contributions, and in particular, contributions to resources for new disciplines which will increase the reach of the project. Contributors will be acknowledged on the website.",
+    "status": "Selected"
+  },
+  {
+    "slug": "ro-crate",
+    "name": "RO-Crate",
+    "website": "https://www.researchobject.org/ro-crate/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2025/01/logo-ro-crate.svg",
+    "description": "",
+    "status": "Contributing"
+  },
+  {
+    "slug": "signalink",
+    "name": "SignaLink",
+    "website": "http://signalink.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-signal-link@1000x.png",
+    "description": "SignaLink is an integrated resource to analyse signalling pathway cross-talks, transcription factors, miRNAs and regulatory enzymes.",
+    "status": "Roadmapped"
+  },
+  {
+    "slug": "snakemake",
+    "name": "Snakemake",
+    "website": "https://snakemake.github.io/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2025/01/logo-snakemake.svg",
+    "description": "",
+    "status": "Contributing"
+  },
+  {
+    "slug": "tess",
+    "name": "TeSS",
+    "website": "https://tess.elixir-europe.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-tess@1000x.png",
+    "description": "TeSS: ELIXIR Training Platform flagship portal/registry The TeSS is ELIXIR’s training platform, providing a one-stop shop for trainers and trainees to discover online information and content, including training materials, events and interactive tutorials. The TeSS is the only ELIXIR-UK Node original service, developed by the founding Node award and since funded through the European Commission and ELIXIR Commissioned Services. The TeSS is now available as a Docker image and new instances include: Australia BioCommons ESFRI ExPaNDS/PaNOSC photon & neutron community EGI.eu Training Catalogue (based on ELIXIR TeSS)",
+    "status": "Selected"
+  },
+  {
+    "slug": "carpentries",
+    "name": "The Carpentries",
+    "website": "https://carpentries.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-carpentries@1000x.png",
+    "description": "",
+    "status": "Contributing"
+  },
+  {
+    "slug": "variant-validator",
+    "name": "Variant Validator",
+    "website": "https://www.variantvalidator.org/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-variant-validator@1000x.png",
+    "description": "Accurate validation, mapping and formatting of sequence variant descriptions",
+    "status": "Selected"
+  },
+  {
+    "slug": "veupathdb",
+    "name": "VEuPathDB",
+    "website": "https://veupathdb.org/veupathdb/app",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-vuepathdb@1000x.png",
+    "description": "VEuPathDB provides access to diverse genomic and other large-scale datasets related to eukaryotic pathogens and invertebrate disease vectors.",
+    "status": "Selected"
+  },
+  {
+    "slug": "workflowhub",
+    "name": "WorkflowHub",
+    "website": "https://workflowhub.eu/",
+    "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/logo-service-workflowhub@1000x.png",
+    "description": "WorkflowHub is a new registry for describing, sharing and publishing scientific computational workflows. It is an ELIXIR Tools Platform service and part of the ELIXIR Tools ecosystem. The registry has been developed to respect the ecosystem of Workflow management tools, repositories and execution environments, using GA4GH APIs and co-developing a metadata framework for FAIR workflows based on ELIXIR metadata standards: CWL , Bioschemas and RO-Crate . The WorkflowHub Club has become a centre of European and Australian activity around FAIR Computational Workflows. ELIXIR-UK leads the development in partnership with ELIXIR-BE and significant contributions from ELIXIR-DE, ES,FR, BBMRI-IT, Bioexcel CoE and the Australian BioCommons. WorkflowHub has been adopted by the ESFRIs: IBISBA, EuroBioImaging, INSTRUCT, DISSCo, the Australian BioCommons, and the BioExcel EU CoE.",
+    "status": "Selected"
+  }
+]

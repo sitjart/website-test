@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.env
+
+# WordPress exports contain personal data – never commit
+*.WordPress.*.xml
+wordpress-export*.xml

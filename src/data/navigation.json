@@ -1,0 +1,20 @@
+[
+  { "label": "What we do", "href": "/what-we-do/", "children": [
+    { "label": "Communities of practice", "href": "/activities/" },
+    { "label": "Training", "href": "/training/" },
+    { "label": "Research data management", "href": "/area/research-data-management/" },
+    { "label": "Services", "href": "/services/" },
+    { "label": "Fellowship", "href": "/activities/fellowship/" },
+    { "label": "Projects", "href": "/projects/" }
+  ]},
+  { "label": "Who we are", "href": "/about/", "children": [
+    { "label": "About us", "href": "/about/" },
+    { "label": "Projects", "href": "/projects/" },
+    { "label": "People", "href": "/people/" },
+    { "label": "Members", "href": "/members/" },
+    { "label": "Collaborations", "href": "/collaborations/" }
+  ]},
+  { "label": "News & stories", "href": "/news/" },
+  { "label": "Events", "href": "/events/" },
+  { "label": "Join in", "href": "/join-in/" }
+]

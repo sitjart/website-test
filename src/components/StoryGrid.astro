@@ -1,0 +1,126 @@
+---
+// Shared layout for "What's new" and "Coming up": heading on the left,
+// a featured card plus two narrow cards on the right (as on the live home page).
+interface Item {
+  href: string;
+  title: string;
+  tag: string;
+  meta: string;
+  image?: string;
+}
+interface Props {
+  heading: string;
+  label: string;
+  items: Item[];
+  background?: string;
+  allHref?: string;
+  allLabel?: string;
+}
+const { heading, label, items, background = 'grey', allHref, allLabel } = Astro.props;
+---
+<section class:list={['section', `section--${background}`, 'stories']}>
+  <div class="container stories__inner">
+    <div class="stories__head" data-reveal="fade-right" style="--dur: 0.7s">
+      <h2>{heading}</h2>
+      {allHref && <a class="stories__all" href={allHref}>{allLabel} →</a>}
+    </div>
+    <div class="stories__body">
+      <p class="stories__label">{label}</p>
+      <ul class="stories__grid">
+        {items.map((item, i) => (
+          <li class:list={['story', { 'story--featured': i === 0 }]} data-reveal="fade-up" style={`--dur: 0.7s; --delay: ${i * 120}ms`}>
+            <a href={item.href}>
+              <div class="story__media">
+                {item.image ? <img src={item.image} alt="" loading="lazy" /> : <span class="story__placeholder" />}
+              </div>
+              <span class="story__tag">{item.tag}</span>
+              <h3 class="story__title">{item.title}</h3>
+              <p class="story__meta">{item.meta}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .stories__inner {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2.5rem;
+  }
+  .stories__head h2 { margin-bottom: 1rem; }
+  .stories__all { font-size: 15px; }
+  .stories__label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+  .stories__grid {
+    display: grid;
+    grid-template-columns: 2.3fr 1fr 1fr;
+    gap: 1.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .story a { display: block; color: var(--navy); }
+  .story__media {
+    position: relative;
+    aspect-ratio: 306 / 210;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--blue);
+  }
+  .story:not(.story--featured) .story__media { aspect-ratio: 133 / 210; }
+  .story__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.05);
+    mix-blend-mode: multiply;
+    transition: transform 0.5s var(--ease), filter 0.5s var(--ease);
+  }
+  /* Blue duotone that clears on hover, as on the live cards */
+  .story__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--blue);
+    mix-blend-mode: screen;
+    opacity: 0.35;
+    transition: opacity 0.4s var(--ease);
+  }
+  .story a:hover .story__media img { transform: scale(1.05); filter: none; mix-blend-mode: normal; }
+  .story a:hover .story__media::after { opacity: 0; }
+  .story__placeholder { display: block; width: 100%; height: 100%; }
+  .story__tag {
+    display: inline-block;
+    margin: -14px 0 0 0;
+    position: relative;
+    padding: 0.15rem 0.6rem;
+    font-size: 13px;
+    color: var(--white);
+    background: var(--orange);
+    border-radius: 3px;
+  }
+  .story__title {
+    margin: 0.9rem 0 0.75rem;
+    font-size: 1.05rem;
+    transition: color 0.2s var(--ease);
+  }
+  .story--featured .story__title { font-size: 1.6rem; }
+  .story a:hover .story__title { color: var(--blue); }
+  .story__meta { font-size: 13px; color: var(--text); margin: 0; }
+
+  @media (max-width: 960px) {
+    .stories__inner { grid-template-columns: 1fr; gap: 0.5rem; }
+    .stories__grid { grid-template-columns: 1fr 1fr; }
+    .story--featured { grid-column: 1 / -1; }
+    .story:not(.story--featured) .story__media { aspect-ratio: 4 / 3; }
+  }
+</style>

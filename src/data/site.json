@@ -1,0 +1,12 @@
+{
+  "name": "ELIXIR-UK",
+  "tagline": "People. AI-readiness. Sustainable infrastructures",
+  "description": "ELIXIR-UK is the UK node of ELIXIR, Europe's infrastructure for life-science data.",
+  "copyright": "ELIXIR-UK on behalf of Earlham Institute",
+  "social": [
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/company/5352072" },
+    { "label": "YouTube", "href": "https://www.youtube.com/channel/UCxl4pDmAuSnz4EFCV-oZKUQ" },
+    { "label": "Bluesky", "href": "https://bsky.app/profile/elixiruknode.org" },
+    { "label": "Slack", "href": "https://elixir-uknode.slack.com/" }
+  ]
+}

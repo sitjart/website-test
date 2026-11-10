@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+
+export async function getStaticPaths() {
+  const people = await getCollection('people');
+  return people.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const p = entry.data;
+
+// Bioschemas / schema.org Person markup: makes each profile part of the public knowledge graph
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: p.name,
+  jobTitle: p.role,
+  affiliation: { '@type': 'Organization', name: p.institution },
+  ...(p.orcid ? { identifier: p.orcid, sameAs: [p.orcid] } : {}),
+  memberOf: { '@type': 'Organization', name: 'ELIXIR-UK' },
+};
+---
+<BaseLayout title={p.name} {jsonLd}>
+  <PageHeader title={p.name} eyebrow={p.role} intro={p.institution} />
+  <section class="section">
+    <div class="container" style="max-width: 760px" data-reveal="fade-up">
+      <p>{p.bio}</p>
+    </div>
+  </section>
+</BaseLayout>

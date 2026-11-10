@@ -1,0 +1,126 @@
+---
+import allServices from '../../data/services.json';
+import members from '../../data/members.json';
+import { url } from '../../lib/url';
+
+interface Props {
+  text: string;
+  value: string;
+  label: string;
+  button: { label: string; href: string };
+  image?: string;
+  logos?: 'services' | 'members';
+  background?: string;
+}
+const { text, value, label, button, image, logos, background = 'page' } = Astro.props;
+
+// Endorsed ("Selected") services only; Contributing and Roadmapped are left out of the count
+const services = allServices.filter((s) => s.status === 'Selected');
+
+// "services" / "members" count the records, so the number never goes stale
+const counts: Record<string, number> = { services: services.length, members: members.length };
+const shown = counts[value] ?? value;
+const logoList = logos === 'services' ? services : logos === 'members' ? members : [];
+const strip = logoList.filter((l) => l.logo);
+---
+<section class:list={['section', `section--${background}`, 'stat']}>
+  <div class:list={['container', 'stat__inner', { 'stat__inner--logos': strip.length }]}>
+    <div class="stat__copy" data-reveal="fade-right" style="--dur: 0.8s">
+      <p class="stat__text">{text}</p>
+      <p class="stat__number">{shown}</p>
+      <p class="stat__label">{label}</p>
+      <a class="btn" href={url(button.href)}>{button.label}</a>
+    </div>
+
+    {image && (
+      <div class="stat__image" data-reveal="fade-up-blur" style="--dur: 0.8s">
+        <img src={image} alt="" loading="lazy" />
+      </div>
+    )}
+
+    {strip.length > 0 && (
+      <div class="stat__logos" data-reveal="fade-up" style="--dur: 0.8s">
+        {[0, 1].map((row) => (
+          <div class:list={['marquee', { 'marquee--reverse': row === 1 }]} aria-hidden={row === 1 ? 'true' : undefined}>
+            <ul class="marquee__track">
+              {[...strip, ...strip].map((l, i) => (
+                <li aria-hidden={i >= strip.length ? 'true' : undefined}>
+                  <a href={l.website || undefined} tabindex={i >= strip.length || row === 1 ? -1 : undefined} title={l.name}>
+                    <img src={l.logo} alt={l.name} loading="lazy" width="100" height="100" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .stat__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .stat__inner--logos { grid-template-columns: 1fr 1.4fr; }
+  .stat__text {
+    font-size: 1.5rem;
+    line-height: 1.35;
+    color: var(--navy);
+    max-width: 26rem;
+  }
+  .stat__number {
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--navy);
+    margin: 1.5rem 0 0.25rem;
+  }
+  .stat__label { margin-bottom: 1.75rem; }
+  .stat .btn { border-radius: 5px; }
+  .stat__image img { max-height: 420px; margin-inline: auto; }
+
+  /* Continuous logo strip – replaces the Swiper carousel on the live site */
+  .stat__logos { display: grid; gap: 1.25rem; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+  .marquee__track {
+    display: flex;
+    gap: 1.25rem;
+    width: max-content;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    animation: marquee 60s linear infinite;
+  }
+  .marquee--reverse .marquee__track { animation-direction: reverse; }
+  .stat__logos:hover .marquee__track { animation-play-state: paused; }
+  .marquee__track li {
+    flex: none;
+    width: 110px;
+    height: 110px;
+    padding: 0.6rem;
+    background: var(--white);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+  }
+  .marquee__track img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.8;
+    transition: filter 0.3s var(--ease), opacity 0.3s var(--ease), transform 0.3s var(--ease);
+  }
+  .marquee__track a:hover img { filter: none; opacity: 1; transform: scale(1.08); }
+
+  @keyframes marquee { to { transform: translateX(calc(-50% - 0.625rem)); } }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__track { animation: none; flex-wrap: wrap; width: auto; }
+  }
+  @media (max-width: 860px) {
+    .stat__inner, .stat__inner--logos { grid-template-columns: 1fr; }
+  }
+</style>

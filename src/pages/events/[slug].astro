@@ -1,0 +1,53 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { longDate } from '../../lib/format';
+
+export async function getStaticPaths() {
+  const events = await getCollection('events');
+  return events.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const e = entry.data;
+const when = e.end && e.end.getTime() !== e.start.getTime() ? `${longDate(e.start)} – ${longDate(e.end)}` : longDate(e.start);
+const time = e.startTime ? `${e.startTime}${e.endTime ? `–${e.endTime}` : ''} UK time` : undefined;
+const where = e.online ? 'Online' : [e.venue, e.locality].filter(Boolean).join(', ');
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: e.title,
+  startDate: e.start.toISOString().slice(0, 10),
+  endDate: (e.end ?? e.start).toISOString().slice(0, 10),
+  eventAttendanceMode: `https://schema.org/${e.online ? 'OnlineEventAttendanceMode' : 'OfflineEventAttendanceMode'}`,
+  location: e.online ? { '@type': 'VirtualLocation', url: e.registration } : { '@type': 'Place', name: e.venue, address: e.locality },
+  image: e.image,
+  organizer: { '@type': 'Organization', name: 'ELIXIR-UK' },
+};
+---
+<BaseLayout title={e.title} {jsonLd}>
+  <PageHeader title={e.title} eyebrow={e.type} />
+  <section class="section">
+    <div class="container event-layout">
+      <div class="prose"><Content /></div>
+      <aside class="event-facts" data-reveal="fade-left">
+        <dl>
+          <dt>When</dt><dd>{when}{time && <><br />{time}</>}</dd>
+          {where && <><dt>Where</dt><dd>{where}</dd></>}
+        </dl>
+        {e.registration && <a class="btn" href={e.registration}>Register</a>}
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .event-layout { display: grid; grid-template-columns: 1fr 320px; gap: 3rem; align-items: start; }
+  .prose { max-width: 760px; font-size: 1.05rem; }
+  .event-facts { background: var(--grey-light); border-radius: 10px; padding: 1.75rem; position: sticky; top: 100px; }
+  .event-facts dt { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--orange); }
+  .event-facts dd { margin: 0.2rem 0 1.2rem; color: var(--navy); }
+  @media (max-width: 860px) { .event-layout { grid-template-columns: 1fr; } .event-facts { position: static; } }
+</style>

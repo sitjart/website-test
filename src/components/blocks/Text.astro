@@ -1,0 +1,15 @@
+---
+interface Props { heading?: string; body: string; background?: string }
+const { heading, body, background = 'page' } = Astro.props;
+const paragraphs = body.split(/\n{2,}/);
+---
+<section class:list={['section', `section--${background}`]}>
+  <div class="container text-block" data-reveal="fade-up">
+    {heading && <h2>{heading}</h2>}
+    {paragraphs.map((p) => <p>{p}</p>)}
+  </div>
+</section>
+
+<style>
+  .text-block { max-width: 760px; font-size: 1.1rem; }
+</style>

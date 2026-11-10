@@ -1,0 +1,65 @@
+---
+import { url } from '../../lib/url';
+interface Props {
+  heading: string;
+  text?: string;
+  video?: string;
+  image?: string;
+  buttons?: { label: string; href: string }[];
+}
+const { heading, text, video, image, buttons = [] } = Astro.props;
+---
+<section class="hero">
+  {video ? (
+    <video class="hero__media" autoplay muted loop playsinline poster={image} aria-hidden="true">
+      <source src={video} type="video/webm" />
+    </video>
+  ) : image ? (
+    <img class="hero__media" src={image} alt="" />
+  ) : null}
+  <span class="hero__overlay" aria-hidden="true"></span>
+  <div class="container hero__content">
+    <h1 data-reveal="fade-up" style="--dur: 0.9s">{heading}</h1>
+    {text && <p class="hero__text" data-reveal="fade-up" style="--delay: 150ms">{text}</p>}
+    {buttons.length > 0 && (
+      <div class="hero__buttons" data-reveal="fade-up" style="--delay: 300ms">
+        {buttons.map((b) => <a class="btn" href={url(b.href)}>{b.label}</a>)}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 503px;
+    padding-block: 140px 160px;
+    color: var(--white);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero__media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+  }
+  /* Navy cover overlay, as on the live WordPress cover block */
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--navy);
+    opacity: 0.7;
+    z-index: -1;
+  }
+  .hero h1 { color: var(--white); margin: 0; }
+  .hero__text { font-size: 1.25rem; max-width: 42rem; margin-top: 1rem; }
+  .hero__buttons { display: flex; gap: 1rem; margin-top: 1.5rem; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero video { display: none; }
+  }
+</style>

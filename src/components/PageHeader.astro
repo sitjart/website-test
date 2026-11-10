@@ -1,0 +1,22 @@
+---
+// Title band for inner pages
+interface Props { title: string; eyebrow?: string; intro?: string }
+const { title, eyebrow, intro } = Astro.props;
+---
+<header class="page-header">
+  <div class="container" data-reveal="fade-up">
+    {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+    <h1>{title}</h1>
+    {intro && <p class="page-header__intro">{intro}</p>}
+  </div>
+</header>
+
+<style>
+  .page-header {
+    background: var(--navy);
+    color: var(--white);
+    padding-block: 4rem 4.5rem;
+  }
+  .page-header h1 { color: var(--white); margin: 0; max-width: 48rem; }
+  .page-header__intro { font-size: 1.2rem; max-width: 46rem; margin: 1rem 0 0; opacity: 0.9; }
+</style>

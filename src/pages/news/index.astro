@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { longDate } from '../../lib/format';
+import { url } from '../../lib/url';
+
+const news = (await getCollection('news')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+<BaseLayout title="News & stories">
+  <PageHeader title="News & stories" />
+  <section class="section">
+    <ul class="container news-list">
+      {news.map((n) => (
+        <li class="news-item" data-reveal="fade-up">
+          <a href={url(`/news/${n.id}/`)}>
+            <div class="news-item__media">{n.data.image && <img src={n.data.image} alt="" loading="lazy" />}</div>
+            <div>
+              <span class="news-item__meta">{n.data.category} · {longDate(n.data.date)}</span>
+              <h2 class="news-item__title">{n.data.title}</h2>
+              <p>{n.data.standfirst}</p>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .news-list { list-style: none; padding: 0; display: grid; gap: 2rem; }
+  .news-item a {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    color: var(--text);
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .news-item__media { aspect-ratio: 3 / 2; border-radius: 6px; overflow: hidden; background: var(--border); }
+  .news-item__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+  .news-item a:hover img { transform: scale(1.05); }
+  .news-item__meta { font-size: 13px; color: var(--orange); font-weight: 700; }
+  .news-item__title { font-size: 1.4rem; margin: 0.4rem 0 0.6rem; transition: color 0.2s var(--ease); }
+  .news-item a:hover .news-item__title { color: var(--blue); }
+  @media (max-width: 700px) { .news-item a { grid-template-columns: 1fr; gap: 1rem; } }
+</style>

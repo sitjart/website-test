@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import StoryGrid from '../StoryGrid.astro';
+import { longDate, todayUK } from '../../lib/format';
+import { url } from '../../lib/url';
+
+interface Props { heading: string; label: string; count: number; background?: string }
+const { heading, label, count, background } = Astro.props;
+
+const today = todayUK();
+const events = (await getCollection('events'))
+  .filter((e) => (e.data.end ?? e.data.start) >= today)
+  .sort((a, b) => a.data.start.getTime() - b.data.start.getTime())
+  .slice(0, count);
+
+const items = events.map((e) => ({
+  href: url(`/events/${e.id}/`),
+  title: e.data.title,
+  tag: e.data.type,
+  meta: longDate(e.data.start),
+  image: e.data.image,
+}));
+---
+{items.length > 0 && <StoryGrid {heading} {label} {items} {background} allHref={url('/events/')} allLabel="All events" />}

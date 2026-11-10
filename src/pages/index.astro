@@ -1,0 +1,19 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sections from '../components/Sections.astro';
+
+const page = await getEntry('pages', 'home');
+if (!page) throw new Error('Missing src/content/pages/home.md');
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'ELIXIR-UK',
+  url: 'https://elixiruknode.org',
+  parentOrganization: { '@type': 'Organization', name: 'ELIXIR', url: 'https://elixir-europe.org' },
+};
+---
+<BaseLayout description={page.data.description} overlayHeader {jsonLd}>
+  <Sections sections={page.data.sections} />
+</BaseLayout>

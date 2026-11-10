@@ -1,0 +1,32 @@
+---
+import site from '../data/site.json';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>Copyright © {year} | {site.copyright}</p>
+    <ul class="site-footer__social">
+      {site.social.map((s) => <li><a href={s.href} rel="noopener">{s.label}</a></li>)}
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--navy);
+    color: rgb(255 255 255 / 0.85);
+    font-size: 15px;
+  }
+  .site-footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 2rem;
+  }
+  .site-footer p { margin: 0; }
+  .site-footer__social { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+  .site-footer a { color: var(--white); }
+  .site-footer a:hover { color: var(--orange); }
+</style>
