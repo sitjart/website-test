@@ -1,7 +1,7 @@
 [
   { "label": "What we do", "href": "/what-we-do/", "children": [
     { "label": "Communities of practice", "href": "/activities/" },
-    { "label": "Training", "href": "/training/" },
+    { "label": "Training", "href": "/area/training/" },
     { "label": "Research data management", "href": "/area/research-data-management/" },
     { "label": "Services", "href": "/services/" },
     { "label": "Fellowship", "href": "/activities/fellowship/" },
