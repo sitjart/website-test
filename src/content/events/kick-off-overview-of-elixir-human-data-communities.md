@@ -3,6 +3,7 @@ title: "Kick off & overview of ELIXIR Human Data Communities"
 start: 2023-12-01
 type: "Community Call"
 online: true
+wpId: 23017
 startTime: "14:00"
 endTime: "15:00"
 venue: "online"

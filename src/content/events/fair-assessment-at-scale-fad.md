@@ -3,6 +3,7 @@ title: "FAIR assessment at scale: an introduction to bulk FAIR assessment for re
 start: 2026-09-08
 type: "Community Call"
 online: false
+wpId: 25330
 end: 2026-09-08
 recording: "https://youtu.be/mC509vYTIhw"
 slides: "https://drive.google.com/file/d/1yG7jOTq6__AhsxuB4pv9_tQRnBuflw71/view?usp=drive_link"

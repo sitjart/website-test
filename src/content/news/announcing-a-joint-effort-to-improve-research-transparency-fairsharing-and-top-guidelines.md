@@ -3,6 +3,7 @@ title: "Announcing a joint effort to improve research transparency: FAIRSharing 
 date: 2019-09-19
 standfirst: "FAIRsharing (an ELIXIR-UK Resource) and the Center for Open Science aim to advance and enable open and FAIR research and are happy to announce an effort to jointly achieve their shared goals. FAIRsharing and the Transpar"
 category: "News"
+wpId: 19559
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-meeting.webp"
 related:
   members: ["university-oxford"]

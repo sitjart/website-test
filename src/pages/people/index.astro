@@ -2,21 +2,22 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHeader from '../../components/PageHeader.astro';
+import Avatar from '../../components/Avatar.astro';
 import { url } from '../../lib/url';
 
-const people = (await getCollection('people')).sort((a, b) => a.data.name.localeCompare(b.data.name));
+const people = (await getCollection('people')).sort((a, b) => a.data.name.split(' ').at(-1)!.localeCompare(b.data.name.split(' ').at(-1)!));
 ---
 <BaseLayout title="People">
-  <PageHeader title="People" intro="Mock-up: these are invented sample profiles. Real profiles will come from Baserow, for people who have given consent." />
+  <PageHeader title="People" intro="The people behind ELIXIR-UK. Profiles appear only with consent." />
   <section class="section">
     <ul class="container people-grid">
-      {people.map((p, i) => (
-        <li data-reveal="fade-up" style={`--delay: ${(i % 4) * 80}ms`}>
-          <a class="person" href={url(`/people/${p.id}/`)}>
-            <span class="person__initials" aria-hidden="true">{p.data.name.split(' ').map((w) => w[0]).join('').slice(0, 2)}</span>
+      {people.map((p) => (
+        <li>
+          <a class="person lift" href={url(`/people/${p.id}/`)}>
+            <Avatar src={p.data.photo} name={p.data.name} size={110} ring="var(--white)" />
             <span class="person__name">{p.data.name}</span>
-            <span class="person__role">{p.data.role}</span>
-            <span class="person__inst">{p.data.institution}</span>
+            {p.data.role && <span class="person__role">{p.data.role}</span>}
+            {p.data.institution && <span class="person__inst">{p.data.institution}</span>}
           </a>
         </li>
       ))}
@@ -25,11 +26,11 @@ const people = (await getCollection('people')).sort((a, b) => a.data.name.locale
 </BaseLayout>
 
 <style>
-  .people-grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 2rem; }
-  .person { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 2rem 1.5rem; background: var(--white); border-radius: 10px; color: var(--text); box-shadow: 0 20px 40px rgb(225 232 237 / 0.7); transition: transform 0.3s var(--ease); }
-  .person:hover { transform: translateY(-6px); color: var(--text); }
-  .person__initials { display: grid; place-items: center; width: 96px; height: 96px; border-radius: 50%; background: var(--navy); color: var(--white); font-size: 1.6rem; font-weight: 700; margin-bottom: 1rem; }
+  .people-grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1.5rem; }
+  .person { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; padding: 1.75rem 1.25rem; background: var(--white); border-radius: 10px; color: var(--text); box-shadow: 0 20px 40px rgb(225 232 237 / 0.7); }
+  .person:hover { color: var(--text); }
+  .person :global(.avatar) { margin-bottom: 0.75rem; }
   .person__name { font-weight: 700; color: var(--navy); font-size: 1.1rem; }
-  .person__role { font-size: 15px; }
+  .person__role { font-size: 14px; }
   .person__inst { font-size: 14px; color: var(--blue); }
 </style>

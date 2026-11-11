@@ -3,6 +3,7 @@ title: "AIRBDS: Quantifying AI-readiness in bioscience data"
 start: 2026-06-02
 type: "Community Call"
 online: false
+wpId: 25152
 end: 2026-06-02
 image: "https://elixiruknode.org/wp-content/uploads/2025/12/banner_circuit-board-and-ai-micro-processor-artificial-i.webp"
 related:

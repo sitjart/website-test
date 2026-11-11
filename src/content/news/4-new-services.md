@@ -3,6 +3,7 @@ title: "ELIXIR-UK announces 4 new Services"
 date: 2023-02-23
 standfirst: "Following the 2022 call for new services, we are pleased to announce four new ELIXIR-UK services. These were selected by our panel to ensure high service quality and match UK priorities as identified by its funders. The"
 category: "News"
+wpId: 19630
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-four-shapes.webp"
 related:
   members: ["university-of-manchester"]

@@ -3,6 +3,7 @@ title: "Federated discovery of datasets via meta"
 start: 2024-04-09
 type: "Community Call"
 online: true
+wpId: 22961
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

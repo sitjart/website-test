@@ -3,6 +3,7 @@ title: "ELIXIR-UK 2020 highlights"
 date: 2020-12-21
 standfirst: "As 2020 draws to a close it is time to look back on all the achievements of ELIXIR-UK and its members, and the progress we made this year. It has been a strange time, with the COVID-19 pandemic changing the way many of u"
 category: "News"
+wpId: 19574
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-stars.webp"
 related:
   activities: ["galaxy-community"]

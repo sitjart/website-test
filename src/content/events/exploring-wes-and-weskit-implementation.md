@@ -3,6 +3,7 @@ title: "Exploring WES and WESkit Implementation"
 start: 2024-10-07
 type: "Community Call"
 online: true
+wpId: 22734
 end: 2024-10-07
 startTime: "11:00"
 endTime: "12:00"

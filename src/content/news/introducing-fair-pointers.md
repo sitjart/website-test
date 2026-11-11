@@ -3,6 +3,7 @@ title: "Introducing FAIR Pointers, a course to embed FAIR data into the life sci
 date: 2023-05-18
 standfirst: "The ELIXIR-UK DaSH Fellowship aims to embed Research Data Management (RDM) know-how into UK universities and institutes, the Fellows are creating training and delivering local training as part of this. A new training cou"
 category: "News"
+wpId: 19652
 image: "https://elixiruknode.org/wp-content/uploads/2023/05/cooperation-2023-11-27-05-00-28-utc-2.webp"
 related:
   activities: ["fellowship"]

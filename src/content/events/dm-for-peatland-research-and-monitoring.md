@@ -3,6 +3,7 @@ title: "Introduction to data management for peatland research and monitoring"
 start: 2024-06-06
 type: "Workshop"
 online: true
+wpId: 22456
 end: 2024-06-06
 startTime: "11:00"
 endTime: "13:00"

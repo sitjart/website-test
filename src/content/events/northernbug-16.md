@@ -3,6 +3,7 @@ title: "NorthernBUG 16"
 start: 2026-07-24
 type: "Meeting"
 online: false
+wpId: 25244
 end: 2026-07-24
 venue: "Norcroft Centre, University of Bradford"
 locality: "Bradford"

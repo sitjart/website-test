@@ -3,6 +3,7 @@ title: "Introduction to cBioPortal"
 start: 2024-03-21
 type: "Short course"
 online: true
+wpId: 21684
 end: 2024-03-21
 startTime: "12:30"
 endTime: "14:00"

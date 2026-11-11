@@ -3,6 +3,7 @@ title: "Exploring diverse data science roles and their skills"
 start: 2024-05-07
 type: "Community Call"
 online: true
+wpId: 22962
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

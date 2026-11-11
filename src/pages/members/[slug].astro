@@ -1,10 +1,155 @@
 ---
-import DirectoryRecord from '../../components/DirectoryRecord.astro';
-import { DIRECTORY } from '../../lib/graph';
+// Member organisation – option 4: navy banner with circle logo, people first, then stacked sections
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Avatar from '../../components/Avatar.astro';
+import RemoteImage from '../../components/RemoteImage.astro';
+import { DIRECTORY, linksFor } from '../../lib/graph';
+import { longDate } from '../../lib/format';
+import { url } from '../../lib/url';
 
 export function getStaticPaths() {
-  return DIRECTORY['members'].records.map((record) => ({ params: { slug: record.slug }, props: { record } }));
+  return DIRECTORY.members.records.map((record) => ({ params: { slug: record.slug }, props: { record } }));
 }
-const { record } = Astro.props;
+const { record: r } = Astro.props;
+const links = await linksFor('members', r.slug);
+const people = (await getCollection('people')).filter((p) => p.data.institutionSlug === r.slug || links.people?.some((n) => n.slug === p.id));
+const allNews = await getCollection('news');
+const news = (links.news ?? []).slice(0, 3).map((n) => allNews.find((x) => x.id === n.slug)!).filter(Boolean);
+const svc = (links.services ?? []).map((n) => DIRECTORY.services.records.find((s) => s.slug === n.slug)!).filter(Boolean);
+const since = r.start ? r.start.slice(0, 4) : null;
+const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name: r.name, url: r.website || undefined, logo: r.logo || undefined, memberOf: { '@type': 'Organization', name: 'ELIXIR-UK' } };
+const PEOPLE_LIMIT = 10;
 ---
-<DirectoryRecord kind="members" {record} />
+<BaseLayout title={r.name} description={r.summary || `${r.name}, an ELIXIR-UK member organisation`} {jsonLd}>
+  <section class="banner m-banner">
+    <div class="container m-banner__grid">
+      <Avatar src={r.logo} name={r.name} size={200} logo ring="var(--ink)" eager />
+      <div>
+        <a class="crumb" href={url('/members/')}>← All members</a>
+        <p class="eyebrow-sm m-banner__eyebrow">Member organisation{since && ` · since ${since}`}</p>
+        <h1 class="display m-banner__title">{r.name}<span class="stop">.</span></h1>
+        {r.summary && <p class="m-banner__about">{r.summary}</p>}
+        <div class="m-banner__actions">
+          {r.website && <a class="btn" href={r.website} rel="noopener">Visit website</a>}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container m-main">
+    {people.length > 0 && (
+      <section class="m-sec m-sec--first">
+        <div class="m-sec__head"><h2>People<span class="stop">.</span> <span class="m-count">{people.length}</span></h2></div>
+        <div class="m-people">
+          {people.slice(0, PEOPLE_LIMIT).map((p) => (
+            <a class="m-person lift" href={url(`/people/${p.id}/`)}>
+              <Avatar src={p.data.photo} name={p.data.name} size={96} ring="var(--grey-light)" />
+              <span class="m-person__name">{p.data.name}</span>
+              {p.data.role && <span class="m-person__role">{p.data.role}</span>}
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {svc.length > 0 && (
+      <section class="m-sec">
+        <div class="m-sec__head"><h2>Services<span class="stop">.</span> <span class="m-count">{svc.length}</span></h2><a href={url('/services/')}>All services →</a></div>
+        <div class="m-logos">
+          {svc.map((s) => (
+            <a class="m-logo lift" href={url(`/services/${s.slug}/`)}>
+              <span class="m-logo__img">{s.logo ? <RemoteImage src={s.logo} width={200} alt="" /> : null}</span>
+              <span class="m-logo__name">{s.name}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {!!links.activities?.length && (
+      <section class="m-sec">
+        <div class="m-sec__head"><h2>Communities<span class="stop">.</span> <span class="m-count">{links.activities.length}</span></h2></div>
+        <div class="m-chips">{links.activities.map((n) => <a href={url(`/activities/${n.slug}/`)}>{n.name}</a>)}</div>
+      </section>
+    )}
+
+    {!!links.projects?.length && (
+      <section class="m-sec">
+        <div class="m-sec__head"><h2>Projects<span class="stop">.</span> <span class="m-count">{links.projects.length}</span></h2></div>
+        <ul class="m-list">
+          {links.projects.map((n, i) => (
+            <li hidden={i >= 6 ? true : undefined} data-extra={i >= 6 ? '' : undefined}><a href={url(`/projects/${n.slug}/`)}>{n.label && <span class="m-list__meta">{n.label}</span>}<span class="m-list__title">{n.name}</span></a></li>
+          ))}
+        </ul>
+        {links.projects.length > 6 && <button type="button" class="m-more" data-more>Show all {links.projects.length} projects</button>}
+      </section>
+    )}
+
+    {news.length > 0 && (
+      <section class="m-sec">
+        <div class="m-sec__head"><h2>In the news<span class="stop">.</span> <span class="m-count">{links.news!.length}</span></h2></div>
+        <div class="m-news">
+          {news.map((n) => (
+            <a class="tile m-news__tile" href={url(`/news/${n.id}/`)}>
+              {n.data.image ? <RemoteImage class="ph-img" src={n.data.image} width={500} /> : <span class="ph-img" style="background:#5b7f9a"></span>}
+              <span class="ph-slide"></span>
+              <span class="scrim"><span class="m-news__date">{longDate(n.data.date)}</span><span class="m-news__title">{n.data.title}</span></span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </main>
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-more]').forEach((b) => b.addEventListener('click', () => {
+    b.previousElementSibling?.querySelectorAll<HTMLElement>('[data-extra]').forEach((li) => (li.hidden = false));
+    b.remove();
+  }));
+</script>
+
+<style>
+  .m-banner { padding: 40px 0 64px; }
+  .m-banner__grid { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; align-items: center; }
+  .m-banner__eyebrow { color: #ffb37a; margin: 14px 0 8px; }
+  .m-banner__title { font-size: clamp(2.4rem, 5vw, 3.75rem); margin: 0; }
+  .m-banner__about { margin: 14px 0 0; max-width: 40rem; font-size: 19px; font-weight: 300; color: #c3d3de; }
+  .m-banner__actions { display: flex; gap: 10px; margin-top: 22px; }
+  .m-main { padding-bottom: 96px; }
+  .m-sec { padding: 56px 0; border-top: 1px solid var(--border); }
+  .m-sec--first { border-top: 0; }
+  .m-sec__head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+  .m-sec__head h2 { margin: 0; font-size: clamp(1.8rem, 3vw, 2.25rem); font-weight: 900; letter-spacing: -0.02em; }
+  .m-sec__head a { font-weight: 700; }
+  .m-count { font-size: 20px; font-weight: 400; color: var(--muted); }
+  .m-people { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
+  .m-person { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 22px 14px; border-radius: 10px; background: var(--grey-light); color: var(--navy); text-align: center; }
+  .m-person:hover { color: var(--navy); }
+  .m-person__name { font-weight: 700; line-height: 1.25; margin-top: 4px; }
+  .m-person__role { font-size: 14px; color: var(--text); line-height: 1.4; }
+  .m-logos { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .m-logo { display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 10px; border: 1px solid var(--border); background: var(--white); color: var(--navy); }
+  .m-logo__img { height: 64px; display: grid; place-items: center; }
+  .m-logo__img :global(img) { max-height: 64px; max-width: 100%; object-fit: contain; }
+  .m-logo__name { font-weight: 700; font-size: 15px; line-height: 1.3; }
+  .m-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .m-chips a { padding: 10px 16px; border-radius: 3px; background: var(--grey-light); color: var(--navy); font-weight: 700; }
+  .m-chips a:hover { background: var(--navy); color: var(--white); }
+  .m-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+  .m-list li[hidden] { display: none; }
+  .m-list a { display: flex; flex-direction: column; gap: 2px; padding: 14px 0; border-bottom: 1px solid var(--border); color: var(--text); }
+  .m-list__meta { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange-text); }
+  .m-list__title { font-size: 18px; font-weight: 700; line-height: 1.3; color: var(--navy); }
+  .m-more { margin-top: 16px; font: inherit; font-weight: 700; color: var(--blue); background: none; border: 0; padding: 0; cursor: pointer; }
+  .m-news { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .m-news__tile { aspect-ratio: 4 / 3; border-radius: 10px; background: var(--navy); }
+  .m-news__date { font-size: 13px; color: #ffb37a; }
+  .m-news__title { font-size: 18px; font-weight: 700; line-height: 1.2; }
+  @media (max-width: 760px) {
+    .m-banner__grid { grid-template-columns: 1fr; }
+    .m-banner__grid :global(.avatar) { width: 120px !important; }
+    .m-list, .m-news { grid-template-columns: 1fr; }
+  }
+</style>

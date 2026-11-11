@@ -1,5 +1,6 @@
 [
  {
+  "wpId": 21443,
   "slug": "aibio-uk",
   "name": "AIBIO-UK",
   "website": "https://aibio.ac.uk/",
@@ -23,6 +24,7 @@
   }
  },
  {
+  "wpId": 24540,
   "slug": "barcelona-supercomputing-center",
   "name": "Barcelona Supercomputing Center",
   "website": "https://www.bsc.es/",
@@ -37,6 +39,7 @@
   "related": {}
  },
  {
+  "wpId": 22923,
   "slug": "biofair",
   "name": "BioFAIR",
   "website": "https://biofair.uk/",
@@ -66,6 +69,7 @@
   }
  },
  {
+  "wpId": 18689,
   "slug": "cold-spring-harbor-laboratory",
   "name": "Cold Spring Harbor Laboratory",
   "website": "https://www.cshl.edu/",
@@ -80,6 +84,7 @@
   "related": {}
  },
  {
+  "wpId": 23585,
   "slug": "czech-technical-university-in-prague",
   "name": "Czech Technical University in Prague",
   "website": "",
@@ -98,6 +103,7 @@
   }
  },
  {
+  "wpId": 18679,
   "slug": "embl",
   "name": "EMBL-EBI",
   "website": "https://www.ebi.ac.uk",
@@ -116,6 +122,7 @@
   }
  },
  {
+  "wpId": 22938,
   "slug": "euro-bioimaging-uk-node",
   "name": "Euro-BioImaging UK Node",
   "website": "",
@@ -138,6 +145,7 @@
   }
  },
  {
+  "wpId": 18683,
   "slug": "open-targets",
   "name": "Open Targets",
   "website": "https://www.opentargets.org/",
@@ -152,6 +160,7 @@
   "related": {}
  },
  {
+  "wpId": 18675,
   "slug": "oxford-brookes-university",
   "name": "Oxford Brookes University",
   "website": "",
@@ -173,6 +182,7 @@
   }
  },
  {
+  "wpId": 22919,
   "slug": "phenomuk",
   "name": "PhenomUK",
   "website": "",
@@ -194,6 +204,7 @@
   }
  },
  {
+  "wpId": 18686,
   "slug": "royal-botanic-gardens",
   "name": "Royal Botanic Gardens",
   "website": "https://www.kew.org/",
@@ -208,6 +219,7 @@
   "related": {}
  },
  {
+  "wpId": 18665,
   "slug": "software-sustainability-institute-ssi",
   "name": "Software Sustainability Institute (SSI)",
   "website": "https://www.software.ac.uk",
@@ -228,6 +240,7 @@
   }
  },
  {
+  "wpId": 18677,
   "slug": "the-alan-turing-institute",
   "name": "The Alan Turing Institute",
   "website": "https://www.turing.ac.uk",
@@ -249,6 +262,7 @@
   }
  },
  {
+  "wpId": 18596,
   "slug": "ukhsa",
   "name": "UKHSA",
   "website": "",
@@ -263,6 +277,7 @@
   "related": {}
  },
  {
+  "wpId": 18669,
   "slug": "ukrn",
   "name": "UKRN",
   "website": "https://www.ukrn.org",
@@ -277,6 +292,7 @@
   "related": {}
  },
  {
+  "wpId": 18673,
   "slug": "university-of-leeds",
   "name": "University of Leeds",
   "website": "",
@@ -295,6 +311,7 @@
   }
  },
  {
+  "wpId": 24035,
   "slug": "university-of-limerick",
   "name": "University of Limerick",
   "website": "",
@@ -313,6 +330,7 @@
   }
  },
  {
+  "wpId": 24034,
   "slug": "university-of-padova",
   "name": "University of Padova",
   "website": "",
@@ -331,6 +349,7 @@
   }
  },
  {
+  "wpId": 18671,
   "slug": "university-of-sheffield",
   "name": "University of Sheffield",
   "website": "https://www.sheffield.ac.uk",
@@ -349,6 +368,7 @@
   }
  },
  {
+  "wpId": 24952,
   "slug": "vib",
   "name": "VIB",
   "website": "https://vib.be",

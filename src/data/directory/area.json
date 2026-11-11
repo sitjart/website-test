@@ -1,5 +1,6 @@
 [
  {
+  "wpId": 23349,
   "slug": "computational-workflows",
   "name": "Computational workflows",
   "website": "",
@@ -23,6 +24,7 @@
   }
  },
  {
+  "wpId": 23704,
   "slug": "research-data-management",
   "name": "Research Data Management",
   "website": "",
@@ -41,6 +43,7 @@
   }
  },
  {
+  "wpId": 23227,
   "slug": "training",
   "name": "Upskill the life sciences community",
   "website": "",

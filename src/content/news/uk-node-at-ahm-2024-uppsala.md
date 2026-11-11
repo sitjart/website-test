@@ -3,6 +3,7 @@ title: "UK Node's collaborative presence at 2024 ELIXIR All Hands"
 date: 2024-07-02
 standfirst: "UK Node members spread across the meeting, leading or presenting in more than half of the workshops and mini-symposia"
 category: "News"
+wpId: 22510
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/img_1912-2-3.webp"
 related:
   members: ["earlham-institute", "university-of-cambridge", "university-oxford", "cardiff-university", "university-of-manchester", "hdr-uk", "open-life-science", "imperial-college-london", "university-of-bradford", "university-of-nottingham", "university-of-edinburgh", "the-open-university"]

@@ -3,6 +3,7 @@ title: "Platforms for genetic scores: PGS Catalog and OmicsPred"
 start: 2026-10-21
 type: "Community Call"
 online: false
+wpId: 25377
 end: 2026-10-21
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-digital-societ-human-data-1.webp"
 related:

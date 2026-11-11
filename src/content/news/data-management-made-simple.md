@@ -3,6 +3,7 @@ title: "Latest Nature article: Data management made simple"
 date: 2018-03-15
 standfirst: "Keeping your research data freely available is crucial for open science — and your funding could depend on it. By Quirin Schiermeier When Marjorie Etique learnt that she had to create a data-management plan for her next"
 category: "News"
+wpId: 19542
 image: "https://elixiruknode.org/wp-content/uploads/2018/03/banner-logic-connections.webp"
 ---
 

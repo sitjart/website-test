@@ -3,6 +3,7 @@ title: "CaSDaR – Opening up careers in data stewardship"
 start: 2025-09-02
 type: "Community Call"
 online: true
+wpId: 23859
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

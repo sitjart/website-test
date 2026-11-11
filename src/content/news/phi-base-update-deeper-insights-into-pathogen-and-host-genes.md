@@ -3,6 +3,7 @@ title: "PHI-base update: deeper insights into pathogen and host genes"
 date: 2025-03-11
 standfirst: "Advancing pathogen-host interaction research with enhanced data integration and accessibility"
 category: "News"
+wpId: 23478
 image: "https://elixiruknode.org/wp-content/uploads/2025/03/banner-vessels-microscope.webp"
 related:
   members: ["rothamsted-research"]

@@ -3,6 +3,7 @@ title: "Strengthening career pathways for Data Stewards through CaSDaR"
 date: 2025-10-14
 standfirst: "ELIXIR-UK members engage at the launch of the Careers and Skills for Data-driven Research Network"
 category: "News"
+wpId: 24174
 image: "https://elixiruknode.org/wp-content/uploads/2025/10/2025-09_casdar-launch-2.webp"
 related:
   collaborations: ["the-alan-turing-institute"]

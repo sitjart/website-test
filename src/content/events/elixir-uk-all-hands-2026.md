@@ -3,6 +3,7 @@ title: "ELIXIR-UK All Hands 2026"
 start: 2026-11-25
 type: "Conference"
 online: false
+wpId: 24583
 end: 2026-11-26
 venue: "Bluecoat"
 locality: "Liverpool"

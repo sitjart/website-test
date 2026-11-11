@@ -3,6 +3,7 @@ title: "Co-creating a proposal for an ELIXIR Staff Exchange"
 start: 2025-11-24
 type: "Community Call"
 online: true
+wpId: 24312
 startTime: "14:00"
 endTime: "15:00"
 venue: "online"

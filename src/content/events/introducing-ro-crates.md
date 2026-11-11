@@ -3,6 +3,7 @@ title: "Introducing RO-Crate: A better way to package research data"
 start: 2026-05-05
 type: "Community Call"
 online: false
+wpId: 24954
 end: 2026-05-05
 startTime: "11:00"
 endTime: "12:00"

@@ -3,6 +3,7 @@ title: "2023 ELIXIR-UK All Hands"
 start: 2023-11-07
 type: "Conference"
 online: false
+wpId: 19757
 end: 2023-11-08
 startTime: "09:00"
 endTime: "17:00"

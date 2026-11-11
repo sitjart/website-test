@@ -3,6 +3,7 @@ title: "Standardising and safeguarding sensitive-data research: SATRE and SACRO"
 start: 2026-07-21
 type: "Community Call"
 online: false
+wpId: 25169
 end: 2026-07-21
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-digital-societ-human-data-1.webp"
 related:

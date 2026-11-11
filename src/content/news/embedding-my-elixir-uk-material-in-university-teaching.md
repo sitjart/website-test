@@ -3,6 +3,7 @@ title: "Nothing but benefits: embedding my ELIXIR-UK material in university teac
 date: 2026-01-12
 standfirst: "A FAIRy tale by Andrew Mason – a personal story about reusing FAIR training at University of York."
 category: "Blog"
+wpId: 24347
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/2023-13-01-fellows-retreat-photo-18.webp"
 related:
   activities: ["fellowship"]

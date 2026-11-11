@@ -3,6 +3,7 @@ title: "BioFAIR's new £4M Methods Commons builds on foundations ELIXIR-UK helpe
 date: 2026-07-07
 standfirst: "BioFAIR has committed £4 million to a national Methods Commons for FAIR workflows, led by Carole Goble and partly built on ELIXIR-UK foundations."
 category: "News"
+wpId: 25171
 image: "https://elixiruknode.org/wp-content/uploads/2026/07/photo-biofair-showcase-1.jpg"
 related:
   members: ["university-of-manchester", "earlham-institute"]

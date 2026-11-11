@@ -3,6 +3,7 @@ title: "2018 ELIXIR UK All Hands"
 start: 2018-11-28
 type: "Conference"
 online: false
+wpId: 19741
 end: 2018-11-29
 startTime: "09:00"
 endTime: "17:30"

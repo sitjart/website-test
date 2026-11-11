@@ -3,6 +3,7 @@ title: "FAIR-in-action Bridge: How to approach FAIRification (Contentathon #2)"
 start: 2026-05-28
 type: "Hackathon"
 online: false
+wpId: 25071
 end: 2026-05-28
 registration: "https://forms.clickup.com/20526645/f/kjdhn-17852/WRBL9B39JQEWP02HAP"
 image: "https://elixiruknode.org/wp-content/uploads/2025/10/banner-isometrics-data.svg"

@@ -3,6 +3,7 @@ title: "Data and research governance – it’s a complex issue"
 date: 2025-01-18
 standfirst: "A FAIRytale by Liz Merrifield – a personal story about good data governance and data controllership from someone who understands the researcher’s perspectives and frustrations. My name is Liz Merrifield, and I have been"
 category: "Blog"
+wpId: 23410
 image: "https://elixiruknode.org/wp-content/uploads/2025/01/banner-data-protection.jpg"
 related:
   members: ["cardiff-university"]

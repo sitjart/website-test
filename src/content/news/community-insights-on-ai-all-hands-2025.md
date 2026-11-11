@@ -3,6 +3,7 @@ title: "Community insights on AI: reflections from the ELIXIR-UK All Hands 2025"
 date: 2025-12-08
 standfirst: "A summary of panel discussions and World Café conversations exploring how AI is shaping research, skills and infrastructure across the UK"
 category: "Articles"
+wpId: 24337
 image: "https://elixiruknode.org/wp-content/uploads/2025/12/banner_circuit-board-and-ai-micro-processor-artificial-i.webp"
 related:
   collaborations: ["university-of-padova", "university-of-limerick"]

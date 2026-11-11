@@ -3,6 +3,7 @@ title: "ELIXIR-UK at the ELIXIR All Hands 2023 in Dublin"
 date: 2023-06-12
 standfirst: "5-8 June 2023 saw almost 30 delegates from ELIXIR-UK head to Dublin for ELIXIR’s annual All Hands meeting (with more joining sessions remotely). Three of those were Fellows from our ELIXIR-UK DaSH Fellowship , and we wer"
 category: "News"
+wpId: 19692
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/elieixr-all-hands-dublin-2023.webp"
 related:
   activities: ["fellowship"]

@@ -3,6 +3,7 @@ title: "From data silos to a federated cancer data network "
 start: 2026-03-18
 type: "Community Call"
 online: true
+wpId: 24494
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

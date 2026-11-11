@@ -3,6 +3,7 @@ title: "Making clinical datasets FAIR"
 start: 2024-05-17
 type: "Short course"
 online: true
+wpId: 21866
 end: 2024-05-17
 startTime: "12:00"
 endTime: "14:00"

@@ -3,6 +3,7 @@ title: "ELIXIR Innovation and SME Forum promotes discoverability of biomedical d
 date: 2018-02-07
 standfirst: "The challenge of enabling optimal use and reuse of public research data, tools and training materials is a complex one and involves multiple stakeholders: consumers and users of data in academia and industry, operators o"
 category: "News"
+wpId: 19536
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-microphone.webp"
 ---
 

@@ -3,6 +3,7 @@ title: "First Joint Hackathon of HDR UK & ELIXIR-UK"
 start: 2025-02-12
 type: "Hackathon"
 online: false
+wpId: 22554
 end: 2025-02-14
 venue: "Jubilee Hotel and Conferences"
 locality: "Nottingham"

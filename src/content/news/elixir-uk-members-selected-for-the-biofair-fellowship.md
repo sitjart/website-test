@@ -3,6 +3,7 @@ title: "ELIXIR-UK members selected for the BioFAIR Fellowship"
 date: 2025-12-03
 standfirst: "5 members of the ELIXIR-UK community have been selected for the inaugural national Fellowship supporting FAIR data and workflow practices across the UK. Their involvement reflects ELIXIR-UK’s growing role in strengthening reproducibility, interoperability and capability within UK life sciences."
 category: "News"
+wpId: 24331
 image: "https://elixiruknode.org/wp-content/uploads/2025/12/banner-leader-fellow-people-1.webp"
 related:
   collaborations: ["biofair"]

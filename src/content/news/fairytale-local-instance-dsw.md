@@ -3,6 +3,7 @@ title: "From Zero to DMP: implementing a localised instance of Data Stewardship 
 date: 2025-06-27
 standfirst: "A FAIRytale by Mo Aboshokor – a personal story about good data governance and data controllership from someone who understands the researcher’s perspectives and frustrations."
 category: "Blog"
+wpId: 23651
 image: "https://elixiruknode.org/wp-content/uploads/2025/06/banner-plann-notebook.jpg"
 related:
   members: ["cardiff-university"]

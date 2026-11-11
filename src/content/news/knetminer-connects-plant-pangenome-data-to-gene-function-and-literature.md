@@ -3,6 +3,7 @@ title: "KnetMiner connects plant pangenome data to gene function and literature"
 date: 2026-09-23
 standfirst: "The KnetMiner team at Rothamsted has linked plant pangenome data from PLAZA to gene function, pathways and literature, letting researchers query both in one search"
 category: "News"
+wpId: 25392
 image: "https://elixiruknode.org/wp-content/uploads/2026/09/abstract-knetminer-connections.webp"
 related:
   collaborations: ["vib"]

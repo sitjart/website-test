@@ -3,6 +3,7 @@ title: "Closing the bioinformatics skills gap in Europe"
 date: 2025-09-10
 standfirst: "ELIXIR-UK Training Coordinator Krzysztof Poterlowicz explains how national programmes, FAIR practices, and international collaboration are helping close Europe’s bioinformatics skills gap."
 category: "News"
+wpId: 24001
 image: "https://elixiruknode.org/wp-content/uploads/2025/09/banner-krzys-interview-ict-health.webp"
 related:
   activities: ["fellowship", "training-platform", "uk-training-club"]

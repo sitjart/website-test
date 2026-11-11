@@ -3,6 +3,7 @@ title: "OECD workshop advances global dialogue on access to research software, w
 date: 2025-09-10
 standfirst: "At the OECD workshop on Access to Research Software: Opportunities and Challenges (8 September 2025), ELIXIR-UK leaders helped shape global policy discussions. Carole Goble chaired the panel on infrastructure sustainability, while Susanna Sansone joined the standards panel, highlighting FAIR4RS and the importance of interoperable, trustworthy software for open science."
 category: "News"
+wpId: 23996
 image: "https://elixiruknode.org/wp-content/uploads/2025/09/banner-global-puzzle.webp"
 related:
   members: ["university-of-manchester", "university-oxford"]

@@ -3,6 +3,7 @@ title: "Intermediate Software Development"
 start: 2024-05-20
 type: "Workshop"
 online: false
+wpId: 21682
 end: 2024-05-24
 venue: "University of Bradford"
 locality: "Bradford"

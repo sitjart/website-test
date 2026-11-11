@@ -3,6 +3,7 @@ title: "Three stories, many lessons"
 start: 2025-05-28
 type: "Community Call"
 online: true
+wpId: 23557
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

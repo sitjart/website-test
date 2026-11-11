@@ -3,6 +3,7 @@ title: "Dr Strangelove or: How I learned to stop worrying and love the Learning 
 start: 2025-10-27
 type: "Community Call"
 online: true
+wpId: 24184
 startTime: "14:00"
 endTime: "15:00"
 venue: "Online"

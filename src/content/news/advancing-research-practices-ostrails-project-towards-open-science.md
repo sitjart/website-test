@@ -3,6 +3,7 @@ title: "Advancing research practices: OSTrails project towards open science"
 date: 2024-04-03
 standfirst: "The Oxford e-Research Centre's Data Readiness Group, an essential member of the ELIXIR-UK Node, is driving significant progress in open science and FAIR (Findable, Accessible, Interoperable and Reusable) data as it takes"
 category: "News"
+wpId: 21686
 image: "https://elixiruknode.org/wp-content/uploads/2024/04/banner-tracks-trails.webp"
 related:
   members: ["university-oxford"]

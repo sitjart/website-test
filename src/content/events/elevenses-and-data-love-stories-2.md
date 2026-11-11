@@ -3,6 +3,7 @@ title: "Elevenses and data love stories"
 start: 2026-02-03
 type: "Community Call"
 online: true
+wpId: 24390
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

@@ -1,5 +1,6 @@
 [
  {
+  "wpId": 20176,
   "slug": "biomedical-atlas-centre",
   "name": "Biomedical Atlas Centre",
   "website": "https://www.biomedatlas.org/",
@@ -22,6 +23,7 @@
   }
  },
  {
+  "wpId": 23369,
   "slug": "bioschemas",
   "name": "Bioschemas",
   "website": "https://bioschemas.org/",
@@ -47,6 +49,7 @@
   }
  },
  {
+  "wpId": 18700,
   "slug": "birmingham-metabolomics-training-centre",
   "name": "Birmingham Metabolomics Training Centre",
   "website": "https://www.birmingham.ac.uk/facilities/metabolomics-training-centre/index.aspx",
@@ -68,6 +71,7 @@
   }
  },
  {
+  "wpId": 18851,
   "slug": "brepertoire",
   "name": "BRepertoire",
   "website": "http://mabra.biomed.kcl.ac.uk/BRepertoire_6/",
@@ -92,6 +96,7 @@
   }
  },
  {
+  "wpId": 18702,
   "slug": "cafe-variome",
   "name": "Café Variome",
   "website": "https://www.cafevariome.org/",
@@ -120,6 +125,7 @@
   }
  },
  {
+  "wpId": 18703,
   "slug": "cambridge-bioinformatics-training",
   "name": "Cambridge Bioinformatics Training Programme",
   "website": "https://bioinfotraining.bio.cam.ac.uk/",
@@ -141,6 +147,7 @@
   }
  },
  {
+  "wpId": 18704,
   "slug": "cath",
   "name": "CATH",
   "website": "http://www.cathdb.info/",
@@ -174,6 +181,7 @@
   }
  },
  {
+  "wpId": 23362,
   "slug": "cwl",
   "name": "Common Workflow Language (CWL)",
   "website": "https://www.commonwl.org/",
@@ -190,6 +198,7 @@
   "related": {}
  },
  {
+  "wpId": 18705,
   "slug": "copo",
   "name": "COPO",
   "website": "https://copo-project.org/",
@@ -219,6 +228,7 @@
   }
  },
  {
+  "wpId": 18712,
   "slug": "cyverse-uk",
   "name": "Cyverse-UK",
   "website": "https://cyverseuk.org/",
@@ -242,6 +252,7 @@
   }
  },
  {
+  "wpId": 18713,
   "slug": "drasp",
   "name": "Dundee Resource for Sequence Analysis and Structure Prediction",
   "website": "http://www.compbio.dundee.ac.uk/drsasp.html",
@@ -265,6 +276,7 @@
   }
  },
  {
+  "wpId": 23367,
   "slug": "edam",
   "name": "EDAM",
   "website": "https://edamontology.org/page",
@@ -281,6 +293,7 @@
   "related": {}
  },
  {
+  "wpId": 18715,
   "slug": "ensembl",
   "name": "ENSEMBL farmed and domestic animals",
   "website": "https://www.ensembl.org/",
@@ -301,6 +314,7 @@
   }
  },
  {
+  "wpId": 25337,
   "slug": "enterobase",
   "name": "EnteroBase",
   "website": "https://enterobase.warwick.ac.uk/",
@@ -324,6 +338,7 @@
   }
  },
  {
+  "wpId": 18747,
   "slug": "fair-cookbook",
   "name": "FAIR Cookbook",
   "website": "https://faircookbook.elixir-europe.org",
@@ -368,6 +383,7 @@
   }
  },
  {
+  "wpId": 18716,
   "slug": "fairdom-seek",
   "name": "FAIRDOM-SEEK",
   "website": "https://seek4science.org/",
@@ -401,6 +417,7 @@
   }
  },
  {
+  "wpId": 18720,
   "slug": "fairsharing",
   "name": "FAIRsharing",
   "website": "https://fairsharing.org/",
@@ -453,6 +470,7 @@
   }
  },
  {
+  "wpId": 18721,
   "slug": "flybase",
   "name": "FlyBase",
   "website": "https://flybase.org/",
@@ -477,6 +495,7 @@
   }
  },
  {
+  "wpId": 23350,
   "slug": "galaxy",
   "name": "Galaxy",
   "website": "https://usegalaxy.org/",
@@ -504,6 +523,7 @@
   }
  },
  {
+  "wpId": 23183,
   "slug": "gtn",
   "name": "Galaxy Training Network (GTN)",
   "website": "https://training.galaxyproject.org/",
@@ -528,6 +548,7 @@
   }
  },
  {
+  "wpId": 18722,
   "slug": "gwas-central",
   "name": "GWAS Central",
   "website": "https://www.gwascentral.org/",
@@ -554,6 +575,7 @@
   }
  },
  {
+  "wpId": 18723,
   "slug": "health-informatics-centre-hic",
   "name": "Health Informatics Centre (HIC)",
   "website": "https://www.dundee.ac.uk/hic",
@@ -577,6 +599,7 @@
   }
  },
  {
+  "wpId": 18724,
   "slug": "hgnc",
   "name": "HGNC",
   "website": "https://www.genenames.org/",
@@ -602,6 +625,7 @@
   }
  },
  {
+  "wpId": 18726,
   "slug": "intermine",
   "name": "InterMine",
   "website": "http://intermine.org/",
@@ -630,6 +654,7 @@
   }
  },
  {
+  "wpId": 18727,
   "slug": "isa",
   "name": "ISA tools and commons",
   "website": "https://isa-tools.org/",
@@ -655,6 +680,7 @@
   }
  },
  {
+  "wpId": 18728,
   "slug": "iuphar-bps",
   "name": "IUPHAR/BPS guide to pharmacology",
   "website": "https://www.guidetopharmacology.org/",
@@ -680,6 +706,7 @@
   }
  },
  {
+  "wpId": 18729,
   "slug": "jalview",
   "name": "Jalview",
   "website": "https://www.jalview.org/",
@@ -705,6 +732,7 @@
   }
  },
  {
+  "wpId": 18730,
   "slug": "knetminer",
   "name": "KnetMiner",
   "website": "https://knetminer.com/",
@@ -734,6 +762,7 @@
   }
  },
  {
+  "wpId": 18732,
   "slug": "lipid-maps",
   "name": "LIPID MAPS",
   "website": "https://www.lipidmaps.org/",
@@ -768,6 +797,7 @@
   }
  },
  {
+  "wpId": 18750,
   "slug": "missense3d",
   "name": "Missense3D",
   "website": "http://missense3d.bc.ic.ac.uk/",
@@ -793,6 +823,7 @@
   }
  },
  {
+  "wpId": 18735,
   "slug": "neof",
   "name": "NERC Environmental Omics Facility",
   "website": "https://neof.org.uk/training/",
@@ -817,6 +848,7 @@
   }
  },
  {
+  "wpId": 23354,
   "slug": "nextflow",
   "name": "Nextflow",
   "website": "https://www.nextflow.io/",
@@ -837,6 +869,7 @@
   }
  },
  {
+  "wpId": 18736,
   "slug": "phi-base",
   "name": "PHI-base",
   "website": "http://www.phi-base.org/",
@@ -861,6 +894,7 @@
   }
  },
  {
+  "wpId": 18737,
   "slug": "phyre2",
   "name": "Phyre2",
   "website": "http://www.sbg.bio.ic.ac.uk/~phyre2",
@@ -884,6 +918,7 @@
   }
  },
  {
+  "wpId": 18738,
   "slug": "pombase",
   "name": "PomBase",
   "website": "https://www.pombase.org",
@@ -914,6 +949,7 @@
   }
  },
  {
+  "wpId": 18739,
   "slug": "psipred",
   "name": "PSIPRED",
   "website": "http://bioinf.cs.ucl.ac.uk/psipred",
@@ -934,6 +970,7 @@
   }
  },
  {
+  "wpId": 18748,
   "slug": "rdmkit",
   "name": "RDMkit",
   "website": "https://rdmkit.elixir-europe.org/",
@@ -987,6 +1024,7 @@
   }
  },
  {
+  "wpId": 23364,
   "slug": "ro-crate",
   "name": "RO-Crate",
   "website": "https://www.researchobject.org/ro-crate/",
@@ -1010,6 +1048,7 @@
   }
  },
  {
+  "wpId": 18740,
   "slug": "signalink",
   "name": "SignaLink",
   "website": "http://signalink.org/",
@@ -1030,6 +1069,7 @@
   }
  },
  {
+  "wpId": 23352,
   "slug": "snakemake",
   "name": "Snakemake",
   "website": "https://snakemake.github.io/",
@@ -1050,6 +1090,7 @@
   }
  },
  {
+  "wpId": 18741,
   "slug": "tess",
   "name": "TeSS",
   "website": "https://tess.elixir-europe.org/",
@@ -1096,6 +1137,7 @@
   }
  },
  {
+  "wpId": 23185,
   "slug": "carpentries",
   "name": "The Carpentries",
   "website": "https://carpentries.org/",
@@ -1112,6 +1154,7 @@
   "related": {}
  },
  {
+  "wpId": 18743,
   "slug": "variant-validator",
   "name": "Variant Validator",
   "website": "https://www.variantvalidator.org/",
@@ -1137,6 +1180,7 @@
   }
  },
  {
+  "wpId": 18744,
   "slug": "veupathdb",
   "name": "VEuPathDB",
   "website": "https://veupathdb.org/veupathdb/app",
@@ -1164,6 +1208,7 @@
   }
  },
  {
+  "wpId": 18745,
   "slug": "workflowhub",
   "name": "WorkflowHub",
   "website": "https://workflowhub.eu/",

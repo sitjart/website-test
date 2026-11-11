@@ -3,6 +3,7 @@ title: "University of York joins ELIXIR-UK"
 date: 2026-04-08
 standfirst: "Building on an already strong practice of data stewardship and open research"
 category: "News"
+wpId: 24578
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/photo-uoy_biology-york-may-2017_alex-holland.jpg"
 related:
   members: ["university-of-york"]

@@ -3,6 +3,7 @@ title: "When is an AI output ready? Trustworthy AI in the biosciences"
 start: 2026-07-07
 type: "Community Call"
 online: false
+wpId: 25157
 end: 2026-07-07
 recording: "https://youtu.be/CedrRLCE6h0"
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-silicon-semiconductor-wafer-with-integrated.webp"

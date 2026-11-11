@@ -1,7 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { fetchRows, selectValue, slugify } from './lib/baserow';
+import { loadPeople } from './lib/people';
 
 // ---------------------------------------------------------------------------
 // Page sections: the building blocks a page is made of, in order.
@@ -95,6 +95,7 @@ const news = defineCollection({
     date: z.coerce.date(),
     standfirst: z.string(),
     category: z.string().default('News'),
+    wpId: z.number().optional(),
     image: z.string().optional(),
     related,
   }),
@@ -110,6 +111,7 @@ const events = defineCollection({
     endTime: z.string().optional(),
     type: z.string(),
     online: z.boolean().default(false),
+    wpId: z.number().optional(),
     venue: z.string().optional(),
     locality: z.string().optional(),
     registration: z.string().optional(),
@@ -121,42 +123,23 @@ const events = defineCollection({
 });
 
 // ---------------------------------------------------------------------------
-// People: always from Baserow at build time, never stored in the repo.
-// Only rows with consent given are published. The mock-up uses invented people.
+// People: fetched at build time (see src/lib/people.ts), never stored in the repo.
 // ---------------------------------------------------------------------------
 const people = defineCollection({
-  loader: async () => {
-    const rows = await fetchRows(process.env.BASEROW_PEOPLE_TABLE, 'people.json');
-    return rows
-      .filter((r) => selectValue(r['Website status']) === 'Consent given')
-      .map((r) => {
-        const name = `${r['First name']} ${r['Last name']}`;
-        const list = (v: unknown) => (Array.isArray(v) ? v.map((x) => (typeof x === 'object' && x && 'value' in x ? String(x.value) : String(x))) : []);
-        return {
-          id: slugify(name),
-          name,
-          role: String(r['Job title'] ?? ''),
-          institution: String(r['Institution'] ?? ''),
-          bio: String(r['Bio'] ?? ''),
-          orcid: (r['ORCID'] as string) || undefined,
-          website: (r['Website'] as string) || undefined,
-          linkedin: (r['LinkedIn'] as string) || undefined,
-          photo: (r['Photo URL'] as string) || undefined,
-          governance: list(r['Governance roles']),
-          related: (r['Related'] as Record<string, string[]>) ?? {},
-        };
-      });
-  },
+  loader: async () => (await loadPeople()).map((p) => ({ ...p })),
   schema: z.object({
     name: z.string(),
     role: z.string(),
     institution: z.string(),
+    institutionSlug: z.string().optional(),
     bio: z.string(),
     orcid: z.string().optional(),
     website: z.string().optional(),
     linkedin: z.string().optional(),
     photo: z.string().optional(),
     governance: z.array(z.string()).default([]),
+    status: z.string().default(''),
+    tags: z.array(z.string()).default([]),
     related: z.record(z.string(), z.array(z.string())).default({}),
   }),
 });

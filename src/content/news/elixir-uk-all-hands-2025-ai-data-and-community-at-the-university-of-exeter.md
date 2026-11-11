@@ -3,6 +3,7 @@ title: "ELIXIR-UK All Hands 2025: AI, data and community at the University of Ex
 date: 2025-11-12
 standfirst: "Two days of ideas, collaboration and honest conversations about data, AI and the future data-driven life sciences research."
 category: "News"
+wpId: 24283
 image: "https://elixiruknode.org/wp-content/uploads/2025/11/2025-elixir-uk-all-hands-03.webp"
 ---
 

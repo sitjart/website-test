@@ -57,7 +57,7 @@ const current = Astro.url.pathname;
     position: sticky;
     top: 0;
     z-index: 50;
-    background: var(--navy);
+    background: var(--ink);
     transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease);
   }
   .site-header--overlay {
@@ -67,7 +67,7 @@ const current = Astro.url.pathname;
   }
   .site-header--overlay.is-stuck,
   .site-header.nav-open {
-    background: var(--navy);
+    background: var(--ink);
     box-shadow: 0 6px 24px rgb(2 52 82 / 0.25);
   }
   .site-header__inner {
@@ -94,8 +94,8 @@ const current = Astro.url.pathname;
     gap: 0.4rem;
     padding: 0.75rem 1.1rem;
     font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0.04em;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--white);
   }

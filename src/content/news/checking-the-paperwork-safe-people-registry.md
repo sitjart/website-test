@@ -3,6 +3,7 @@ title: "Checking the paperwork: identifying trusted people for sensitive data ac
 date: 2026-02-03
 standfirst: "HDR UK technology soft launch: Safe People Registry"
 category: "Articles"
+wpId: 24430
 image: "https://elixiruknode.org/wp-content/uploads/2026/02/banner_safe-registry-soft-launch-1.webp"
 related:
   activities: ["uk-human-data-community"]

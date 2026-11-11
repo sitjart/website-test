@@ -3,6 +3,7 @@ title: "Bioinformatics in the UK Track at ISMB / ECCB 2025"
 start: 2025-07-21
 type: "Conference"
 online: false
+wpId: 23453
 startTime: "11:20"
 endTime: "20:00"
 venue: "ACC Liverpool"

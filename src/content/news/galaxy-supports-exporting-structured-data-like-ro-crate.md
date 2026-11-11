@@ -3,6 +3,7 @@ title: "Galaxy now supports exporting structured data like RO-Crate"
 date: 2023-04-28
 standfirst: "Galaxy is an open-source FAIR data analysis platform that enables researchers to use tools from various domains, manage data, run code in interactive environments and more. The majority of the available Galaxy servers ar"
 category: "News"
+wpId: 19645
 image: "https://elixiruknode.org/wp-content/uploads/2023/04/stream-of-binary-matrix-code-numbers-on-the-screen-2023-11-27-05-34-02-utc-scaled.webp"
 related:
   activities: ["galaxy-community"]

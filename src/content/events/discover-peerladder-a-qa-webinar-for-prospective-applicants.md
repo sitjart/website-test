@@ -3,6 +3,7 @@ title: "Discover PeerLadder – a Q&A webinar for prospective applicants"
 start: 2026-04-16
 type: "Webinar"
 online: false
+wpId: 24529
 end: 2026-04-16
 startTime: "11:00"
 endTime: "12:00"

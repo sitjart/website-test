@@ -3,6 +3,7 @@ title: "UK contributes to the 2024 ELIXIR RDM Community meeting"
 date: 2024-12-18
 standfirst: "In December 2024, ELIXIR-UK members participated in a key meeting of the wider ELIXIR Europe RDM community , held in Luxembourg, thanks to colleagues from the Luxembourg National Data Service. The intensive week brought"
 category: "News"
+wpId: 23136
 image: "https://elixiruknode.org/wp-content/uploads/2024/12/photo-2024-rdm-community-luxembourg-2.jpg"
 related:
   members: ["earlham-institute", "university-of-manchester"]

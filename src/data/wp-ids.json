@@ -1,0 +1,1702 @@
+{
+"18992": [
+"activities",
+"uk-training-club"
+],
+"18993": [
+"activities",
+"uk-rdm-club"
+],
+"18994": [
+"activities",
+"uk-human-data-community"
+],
+"19881": [
+"activities",
+"data-platform"
+],
+"19882": [
+"activities",
+"tools-platform"
+],
+"19883": [
+"activities",
+"training-platform"
+],
+"19884": [
+"activities",
+"compute-platform"
+],
+"19885": [
+"activities",
+"interoperability-platform"
+],
+"20820": [
+"activities",
+"fellowship"
+],
+"20901": [
+"activities",
+"3d-bioinfo-community"
+],
+"20902": [
+"activities",
+"galaxy-community"
+],
+"20903": [
+"activities",
+"intrinsically-disordered-proteins-community"
+],
+"20920": [
+"activities",
+"microbial-biotechnology-community"
+],
+"20921": [
+"activities",
+"food-and-nutrition-community"
+],
+"20923": [
+"activities",
+"metabolomics-community"
+],
+"20924": [
+"activities",
+"plant-sciences-community"
+],
+"20925": [
+"activities",
+"rdm-community"
+],
+"20927": [
+"activities",
+"federated-human-data-community"
+],
+"20928": [
+"activities",
+"human-copy-number-variation-community"
+],
+"20944": [
+"activities",
+"biodiversity-community"
+],
+"20948": [
+"activities",
+"impact-focus-group"
+],
+"20949": [
+"activities",
+"innovation-industry-focus-group"
+],
+"22097": [
+"activities",
+"single-cell-omics-community"
+],
+"22098": [
+"activities",
+"systems-biology-community"
+],
+"22101": [
+"activities",
+"proteomics-community"
+],
+"22103": [
+"activities",
+"rare-diseases-community"
+],
+"22105": [
+"activities",
+"toxicology-community"
+],
+"22107": [
+"activities",
+"cancer-data-focus-group"
+],
+"22111": [
+"activities",
+"machine-learning-focus-group"
+],
+"22112": [
+"activities",
+"pathogen-data-focus-group"
+],
+"22116": [
+"activities",
+"microbiome-community"
+],
+"23054": [
+"activities",
+"domestic-animals-genome-and-phenome-focus-group"
+],
+"25356": [
+"activities",
+"bioinfocoreleaders"
+],
+"25457": [
+"activities",
+"credit-recognition-and-usage-focus-group"
+],
+"25458": [
+"activities",
+"equity-diversity-and-inclusion-focus-group"
+],
+"25461": [
+"activities",
+"rna-data-focus-group"
+],
+"18596": [
+"collaborations",
+"ukhsa"
+],
+"18665": [
+"collaborations",
+"software-sustainability-institute-ssi"
+],
+"18669": [
+"collaborations",
+"ukrn"
+],
+"18671": [
+"collaborations",
+"university-of-sheffield"
+],
+"18673": [
+"collaborations",
+"university-of-leeds"
+],
+"18675": [
+"collaborations",
+"oxford-brookes-university"
+],
+"18677": [
+"collaborations",
+"the-alan-turing-institute"
+],
+"18679": [
+"collaborations",
+"embl"
+],
+"18683": [
+"collaborations",
+"open-targets"
+],
+"18686": [
+"collaborations",
+"royal-botanic-gardens"
+],
+"18689": [
+"collaborations",
+"cold-spring-harbor-laboratory"
+],
+"21443": [
+"collaborations",
+"aibio-uk"
+],
+"22919": [
+"collaborations",
+"phenomuk"
+],
+"22923": [
+"collaborations",
+"biofair"
+],
+"22938": [
+"collaborations",
+"euro-bioimaging-uk-node"
+],
+"23585": [
+"collaborations",
+"czech-technical-university-in-prague"
+],
+"24034": [
+"collaborations",
+"university-of-padova"
+],
+"24035": [
+"collaborations",
+"university-of-limerick"
+],
+"24540": [
+"collaborations",
+"barcelona-supercomputing-center"
+],
+"24952": [
+"collaborations",
+"vib"
+],
+"19741": [
+"events",
+"2018-elixir-uk-all-hands"
+],
+"19757": [
+"events",
+"2023-elixir-uk-all-hands"
+],
+"19759": [
+"events",
+"elixir-uk-health-data-workshop"
+],
+"21682": [
+"events",
+"intermediate-software-development"
+],
+"21684": [
+"events",
+"introduction-to-cbioportal"
+],
+"21685": [
+"events",
+"data-management-medicinal-chemistry"
+],
+"21687": [
+"events",
+"rembi-short-course"
+],
+"21866": [
+"events",
+"making-clinical-datasets-fair"
+],
+"22456": [
+"events",
+"dm-for-peatland-research-and-monitoring"
+],
+"22460": [
+"events",
+"fairsharing-enabling-fair"
+],
+"22474": [
+"events",
+"fair-single-cell-analysis"
+],
+"22554": [
+"events",
+"2025-hdr-uk-elixir-uk-hackathon"
+],
+"22734": [
+"events",
+"exploring-wes-and-weskit-implementation"
+],
+"22754": [
+"events",
+"elixir-uk-all-hands-2024"
+],
+"22766": [
+"events",
+"elixir-training-lesson-template"
+],
+"22835": [
+"events",
+"enhancing-biomedical-research-with-bioconductor-training"
+],
+"22841": [
+"events",
+"teaching-with-galaxy-and-gtn"
+],
+"22846": [
+"events",
+"elevenses-and-data-horror-stories"
+],
+"22868": [
+"events",
+"galaxy-training-network-and-accessibility"
+],
+"22953": [
+"events",
+"the-elixir-research-data-management-kit-rdmkit"
+],
+"22957": [
+"events",
+"discovering-biofair"
+],
+"22960": [
+"events",
+"fairsharing-and-ostrail"
+],
+"22961": [
+"events",
+"federated-discovery-of-datasets-via-meta"
+],
+"22962": [
+"events",
+"exploring-diverse-data-science-roles-and-their-skills"
+],
+"22963": [
+"events",
+"euro-bioimagings-guide-to-fair-bioimage-data"
+],
+"22964": [
+"events",
+"elixir-goblet-ttt-programme-and-courses"
+],
+"23012": [
+"events",
+"bbsrc-and-mrc-funders-perspectives"
+],
+"23013": [
+"events",
+"ga4gh-task-execution-service-tes-standard-within-tres"
+],
+"23017": [
+"events",
+"kick-off-overview-of-elixir-human-data-communities"
+],
+"23020": [
+"events",
+"dome-recommendations-for-machine-learning"
+],
+"23066": [
+"events",
+"fair-data-accelerator-pilot-addressing-social-and-cultural-barriers-to-data-sharing"
+],
+"23114": [
+"events",
+"discover-the-human-data-elixir-europe-programme"
+],
+"23379": [
+"events",
+"time-over-motivation"
+],
+"23400": [
+"events",
+"elevenses-and-data-love-stories"
+],
+"23441": [
+"events",
+"make-like-a-snake"
+],
+"23446": [
+"events",
+"research-data-stewardship-at-ucl"
+],
+"23453": [
+"events",
+"bioinformatics-in-the-uk-ismb-eccb-2025"
+],
+"23527": [
+"events",
+"designing-effective-surveys-for-training-evaluation"
+],
+"23550": [
+"events",
+"data-management-plan-mandates-postgraduate"
+],
+"23557": [
+"events",
+"three-stories-many-lessons"
+],
+"23633": [
+"events",
+"showcasing-example-data-management-plans-with-data-stewardship-wizard"
+],
+"23638": [
+"events",
+"driven-by-impact-online-workshop"
+],
+"23736": [
+"events",
+"elixir-uk-all-hands-2025"
+],
+"23759": [
+"events",
+"ismb-eccb-unpacked"
+],
+"23761": [
+"events",
+"transforming-clinical-text-into-research-ready-data"
+],
+"23811": [
+"events",
+"uk-hdc-summer-drop-in-august-2025"
+],
+"23859": [
+"events",
+"casdar-opening-up-careers-in-data-stewardship"
+],
+"24047": [
+"events",
+"elevenses-and-data-horror-stories-2"
+],
+"24053": [
+"events",
+"formative-assessment-with-mcqs"
+],
+"24184": [
+"events",
+"dr-strangelove-learning-outcomes"
+],
+"24278": [
+"events",
+"research-data-stewardship-at-sheffield-and-across-the-n8"
+],
+"24312": [
+"events",
+"co-creating-a-proposal-for-an-elixir-staff-exchange"
+],
+"24314": [
+"events",
+"ukri-data-policy"
+],
+"24387": [
+"events",
+"human-data-community-2026-priorities-priorities"
+],
+"24390": [
+"events",
+"elevenses-and-data-love-stories-2"
+],
+"24393": [
+"events",
+"orwellian-writing"
+],
+"24455": [
+"events",
+"showcase-feedback-session-hdr-gateway-safe-people-registry-cohort-discovery"
+],
+"24467": [
+"events",
+"open-and-sustainable-ai"
+],
+"24494": [
+"events",
+"from-data-silos-to-a-federated-cancer-data-network"
+],
+"24497": [
+"events",
+"galaxy-training-academy-large-scale-online-training"
+],
+"24529": [
+"events",
+"discover-peerladder-a-qa-webinar-for-prospective-applicants"
+],
+"24535": [
+"events",
+"federation-for-a-sustainable-health-data-ecosystem"
+],
+"24537": [
+"events",
+"discover-the-rdm-club-biofair-pathfinder-project"
+],
+"24583": [
+"events",
+"elixir-uk-all-hands-2026"
+],
+"24942": [
+"events",
+"textured-classroom"
+],
+"24954": [
+"events",
+"introducing-ro-crates"
+],
+"25070": [
+"events",
+"fair-in-action-bridge-contentathon-1"
+],
+"25071": [
+"events",
+"fair-in-action-bridge-contentathon-2"
+],
+"25073": [
+"events",
+"fair-in-action-bridge-contentathon-3"
+],
+"25119": [
+"events",
+"ahm-lyon-debrief-health-data-takes-the-stage"
+],
+"25152": [
+"events",
+"airbds-ai-readiness-bioscience-data"
+],
+"25156": [
+"events",
+"ahm-lyon-debrief-training-across-the-programme"
+],
+"25157": [
+"events",
+"when-is-an-ai-output-ready-trustworthy-ai"
+],
+"25169": [
+"events",
+"sensitive-data-research-satre-and-sacro"
+],
+"25244": [
+"events",
+"northernbug-16"
+],
+"25330": [
+"events",
+"fair-assessment-at-scale-fad"
+],
+"25373": [
+"events",
+"workshop-are-your-powerpoints-legal"
+],
+"25377": [
+"events",
+"platforms-for-genetic-scores-pgs-catalog-and-omicspred"
+],
+"18556": [
+"members",
+"rothamsted-research"
+],
+"18557": [
+"members",
+"hdr-uk"
+],
+"18558": [
+"members",
+"university-of-edinburgh"
+],
+"18560": [
+"members",
+"open-life-science"
+],
+"18561": [
+"members",
+"the-open-university"
+],
+"18562": [
+"members",
+"university-of-exeter"
+],
+"18563": [
+"members",
+"university-of-birmingham"
+],
+"18564": [
+"members",
+"university-of-dundee"
+],
+"18565": [
+"members",
+"heriot-watt-university"
+],
+"18566": [
+"members",
+"imperial-college-london"
+],
+"18567": [
+"members",
+"kings-college-london"
+],
+"18568": [
+"members",
+"newcastle-university"
+],
+"18569": [
+"members",
+"quadram-institute"
+],
+"25415": [
+"events",
+"data-horror-stories-what-core-facilities-see-when-fair-goes-wrong"
+],
+"25441": [
+"events",
+"lessons-learnt-from-delivering-training-for-isambard-ai"
+],
+"25519": [
+"events",
+"more-than-a-team-can-read-ai"
+],
+"25521": [
+"events",
+"automating-fair-training-metadata-pipelines-upcoming-bits-project-launch"
+],
+"25524": [
+"events",
+"bioinfocoreleaders-uk-building-our-community-and-shaping-our-next-steps"
+],
+"25535": [
+"events",
+"building-phenomics-infrastructure-around-community-needs"
+],
+"18570": [
+"members",
+"university-of-liverpool"
+],
+"18571": [
+"members",
+"university-college-london"
+],
+"18572": [
+"members",
+"ukceh"
+],
+"18573": [
+"members",
+"university-of-east-anglia"
+],
+"18574": [
+"members",
+"university-of-manchester"
+],
+"18575": [
+"members",
+"earlham-institute"
+],
+"18576": [
+"members",
+"cardiff-university"
+],
+"18577": [
+"members",
+"university-of-nottingham"
+],
+"18578": [
+"members",
+"university-of-bradford"
+],
+"18579": [
+"members",
+"university-of-cambridge"
+],
+"18580": [
+"members",
+"university-of-leicester"
+],
+"18581": [
+"members",
+"university-oxford"
+],
+"18582": [
+"members",
+"swansea-university"
+],
+"18583": [
+"members",
+"qmul"
+],
+"18599": [
+"members",
+"university-of-york"
+],
+"18667": [
+"members",
+"university-of-warwick"
+],
+"18690": [
+"members",
+"university-of-southampton"
+],
+"18692": [
+"members",
+"the-pirbright-institute"
+],
+"25317": [
+"members",
+"queens-university-belfast"
+],
+"19533": [
+"news",
+"life-sciences-data-needs-to-be-fair"
+],
+"19536": [
+"news",
+"elixir-innovation-and-sme-forum-promotes-discoverability-of-biomedical-data"
+],
+"19539": [
+"news",
+"the-pistoia-alliance-tackles-poorly-designed-scientific-software-with-launch-of-user-experience-for-life-sciences-toolkit"
+],
+"19542": [
+"news",
+"data-management-made-simple"
+],
+"19544": [
+"news",
+"the-pistoia-alliance-tackles-poorly-designed-scientific-software-with-launch-of-user-experience-for-life-sciences-toolkit-2"
+],
+"19547": [
+"news",
+"elixir-teams-up-with-the-carpentries-to-boost-its-training-programme"
+],
+"19550": [
+"news",
+"software-sustainability-institute-to-improve-research-software-practices-with-6-5-million-ukri-funding"
+],
+"19553": [
+"news",
+"fairsharing-mapping-the-landscape-of-scientific-data-standards-repositories-and-policies"
+],
+"19555": [
+"news",
+"professor-christine-orengo-has-been-elected-as-fellow-of-the-royal-society"
+],
+"19557": [
+"news",
+"connecting-public-bioinformatics-infrastructure-with-industry"
+],
+"19559": [
+"news",
+"announcing-a-joint-effort-to-improve-research-transparency-fairsharing-and-top-guidelines"
+],
+"19561": [
+"news",
+"elixir-open-collaborative-infrastructure-to-tackle-public-health-emergencies"
+],
+"19563": [
+"news",
+"hacking-the-pandemic"
+],
+"19566": [
+"news",
+"scholarly-publishers-are-working-together-to-maximize-efficiency-during-covid-19-pandemic"
+],
+"19568": [
+"news",
+"the-first-uk-conference-of-bioinformatics-and-computational-biology"
+],
+"19570": [
+"news",
+"pombase-and-intermine-secure-funding-for-pombemine"
+],
+"19572": [
+"news",
+"elixir-uk-all-hands-2020"
+],
+"19574": [
+"news",
+"elixir-uk-2020-highlights"
+],
+"19576": [
+"news",
+"fairsharing-plays-vital-role-in-data-deposition-mandate-for-covid-19-rapid-review-publishers"
+],
+"19578": [
+"news",
+"the-university-of-east-anglia-joins-elixir-uk"
+],
+"19580": [
+"news",
+"elixir-uk-announces-new-fair-data-stewards-training-project"
+],
+"19584": [
+"news",
+"elixir-converge-releases-rdmkit-to-simplify-research-data-management"
+],
+"19586": [
+"news",
+"elixir-uk-fosters-collaboration-at-our-second-hackathon"
+],
+"19588": [
+"news",
+"galaxy-cog-uk-covid-19"
+],
+"19595": [
+"news",
+"watch-elixir-uk-fair-data-stewardship-training-fellowship-launch-webinar"
+],
+"19597": [
+"news",
+"towards-better-findability-bioschemas-meets-schema-org"
+],
+"19599": [
+"news",
+"the-quadram-institute-joins-elixir-uk"
+],
+"19601": [
+"news",
+"elixir-uk-alumni-teresa-attwood-wins-the-2021-iscb-outstanding-contributions-award"
+],
+"19606": [
+"news",
+"meet-our-new-fair-data-stewardship-training-fellows"
+],
+"19608": [
+"news",
+"elixir-uk-announces-seven-new-services"
+],
+"19610": [
+"news",
+"elixir-uk-all-hands-and-conference-of-bioinformatics-and-computational-biology-2021"
+],
+"19612": [
+"news",
+"kings-college-london-joins-elixir-uk"
+],
+"19615": [
+"news",
+"training-fellowship-dash"
+],
+"19617": [
+"news",
+"uk-research-and-innovation-has-awarded-an-initial-6-3-million-funding-to-support-the-development-of-biofair"
+],
+"19619": [
+"news",
+"the-university-of-exter-joins-elixir-uk"
+],
+"19621": [
+"news",
+"15-new-fellows-dash-project"
+],
+"19628": [
+"news",
+"introducing-tre-fx"
+],
+"19630": [
+"news",
+"4-new-services"
+],
+"19632": [
+"news",
+"elixir-uk-dash-fellows-new-mentors"
+],
+"19634": [
+"news",
+"ukri-dri-congress"
+],
+"19636": [
+"news",
+"a-new-research-development-course"
+],
+"19638": [
+"news",
+"fairsharing-launch-a-new-educational-infographics-database"
+],
+"19640": [
+"news",
+"elixir-eosc-strategy"
+],
+"19643": [
+"news",
+"open-life-science-joins-elixir-uk"
+],
+"19645": [
+"news",
+"galaxy-supports-exporting-structured-data-like-ro-crate"
+],
+"19647": [
+"news",
+"elixir-uk-at-the-ssi-collaborations-workshop-2023"
+],
+"19650": [
+"news",
+"house-of-commons-report-includes-elixir-uk-evidence"
+],
+"19652": [
+"news",
+"introducing-fair-pointers"
+],
+"19655": [
+"news",
+"dash-fellows-attend-the-bioinformatics-education-summit"
+],
+"19658": [
+"news",
+"ukri-announce-34-million-in-funding-for-biofair"
+],
+"19663": [
+"news",
+"elixir-uk-dash-fellow-launches-new-fair-data-management-training"
+],
+"19665": [
+"news",
+"elixir-uk-fellows-showcase-their-work-at-nerc-digital-gathering-2023"
+],
+"19667": [
+"news",
+"hdr-uk-becomes-elixir-uks-25th-member"
+],
+"19669": [
+"news",
+"fellows-mentors-and-coordinators-meet-to-celebrate-the-3-year-hallmark-of-the-elixir-uk-fellowship"
+],
+"19682": [
+"news",
+"elixir-uk-all-hands-2023-unveils-collaborative-and-promising-plans"
+],
+"19687": [
+"news",
+"elixir-uk-welcomes-pirbright"
+],
+"19692": [
+"news",
+"elixir-uk-at-the-elixir-all-hands-2023"
+],
+"19695": [
+"news",
+"elixir-recognises-3-uk-services-for-enabling-data-interoperability"
+],
+"19698": [
+"news",
+"gbc-selects-3-elixir-uk-services"
+],
+"19700": [
+"news",
+"4-uk-services-cdrs"
+],
+"19702": [
+"news",
+"elixir-uk-and-biofair-featuring-at-the-festival-of-genomics-2024"
+],
+"19704": [
+"news",
+"elixir-steers-launches-uk-node-bolsters-green-strategies-workflows-and-training"
+],
+"19706": [
+"news",
+"swansea-joins"
+],
+"21683": [
+"news",
+"eosc-entrust-launch"
+],
+"21686": [
+"news",
+"advancing-research-practices-ostrails-project-towards-open-science"
+],
+"21802": [
+"news",
+"top-6-data-attributes-for-policymakers"
+],
+"22489": [
+"news",
+"qmul-joins-elixir-uk"
+],
+"22497": [
+"news",
+"workflowhub-nf-core-workflow-accessibility"
+],
+"22510": [
+"news",
+"uk-node-at-ahm-2024-uppsala"
+],
+"22555": [
+"news",
+"biofair-ukri-investment"
+],
+"22714": [
+"news",
+"2024-galaxy-community-conference"
+],
+"22731": [
+"news",
+"efpia-playbook-fair-cookbook"
+],
+"22988": [
+"news",
+"supporting-uk-led-projects-at-biohackathon-europe-2024"
+],
+"23004": [
+"news",
+"health-ri-exchange-offers-insights-into-shaping-a-national-biocommons"
+],
+"23068": [
+"news",
+"elixir-uk-all-hands-2024-a-celebration-of-collaboration-and-innovation"
+],
+"23099": [
+"news",
+"elixir-uk-at-the-eosc-symposium-2024-advancing-fair-data-and-interoperability"
+],
+"23118": [
+"news",
+"appointment-of-tony-burdett-as-director-of-biofair"
+],
+"23128": [
+"news",
+"manchester-hosts-two-elixir-annual-meetings-on-interoperability-and-tools"
+],
+"23133": [
+"news",
+"2024-rda-plenary"
+],
+"23136": [
+"news",
+"uk-contributes-to-the-2024-elixir-rdm-community-meeting"
+],
+"23141": [
+"news",
+"joining-up-the-research-data-management-dots"
+],
+"23155": [
+"news",
+"adapting-elixir-training-at-manchester"
+],
+"23410": [
+"news",
+"data-and-research-governance-its-a-complex-issue"
+],
+"23422": [
+"news",
+"innovation-in-action-first-hackathon"
+],
+"23466": [
+"news",
+"celebrating-international-womens-day"
+],
+"24524": [
+"news",
+"edij-and-decolonisation-in-data-management"
+],
+"23478": [
+"news",
+"phi-base-update-deeper-insights-into-pathogen-and-host-genes"
+],
+"23484": [
+"news",
+"bioinformatics-projects-learning-pathway-for-students"
+],
+"23545": [
+"news",
+"maria-traka-uk-leadership-food-nutrition-community"
+],
+"23553": [
+"news",
+"advancing-fair-data-in-toxicology"
+],
+"23587": [
+"news",
+"elixir-uk-awarded-bbsrc-funding"
+],
+"23592": [
+"news",
+"2025-all-hands-greece"
+],
+"23622": [
+"news",
+"supporting-strategy-data-stewardship"
+],
+"23651": [
+"news",
+"fairytale-local-instance-dsw"
+],
+"23677": [
+"news",
+"customising-data-stewardship-wizard-for-an-institute"
+],
+"23715": [
+"news",
+"a-day-in-the-life-of-a-ucl-research-data-steward"
+],
+"23753": [
+"news",
+"fair-workflows-bees-2025"
+],
+"23766": [
+"news",
+"toxicology-fair-training-workshop-birmingham-2025"
+],
+"23806": [
+"news",
+"workflowhub-presentation-carole-goble"
+],
+"23862": [
+"news",
+"pistoia-sustainable-collaboration"
+],
+"23866": [
+"news",
+"ismb-eccb-elixir-uk"
+],
+"23993": [
+"news",
+"dmp-templates-and-examples"
+],
+"23996": [
+"news",
+"oecd-research-software-access"
+],
+"23997": [
+"news",
+"elixir-uk-rdm-infrastructure-cordi-base4nfdi-2025"
+],
+"24001": [
+"news",
+"bioinformatics-skills-gap-europe"
+],
+"24174": [
+"news",
+"strengthening-career-pathways-for-data-stewards-through-casdar"
+],
+"24266": [
+"news",
+"health-data-research-gateway-joins-elixir-uk-services"
+],
+"24279": [
+"news",
+"eosc-life-sciences-connect-node"
+],
+"24283": [
+"news",
+"elixir-uk-all-hands-2025-ai-data-and-community-at-the-university-of-exeter"
+],
+"24316": [
+"news",
+"carole-goble-discussions-in-the-german-research-infrastructure-landscape"
+],
+"24323": [
+"news",
+"biohackathon-europe-2025"
+],
+"24331": [
+"news",
+"elixir-uk-members-selected-for-the-biofair-fellowship"
+],
+"24337": [
+"news",
+"community-insights-on-ai-all-hands-2025"
+],
+"24347": [
+"news",
+"embedding-my-elixir-uk-material-in-university-teaching"
+],
+"24348": [
+"news",
+"university-of-warwick-joins"
+],
+"24430": [
+"news",
+"checking-the-paperwork-safe-people-registry"
+],
+"24452": [
+"news",
+"national-discussions-on-training-for-digital-research-professionals"
+],
+"24458": [
+"news",
+"discourse-peerladder-funding"
+],
+"24461": [
+"news",
+"measuring-progress-on-gender-balance-in-elixir-leadership"
+],
+"24471": [
+"news",
+"uk-human-and-health-data-communities-merge-hdr-uk"
+],
+"24501": [
+"news",
+"new-resources-for-sustainable-rdm-services"
+],
+"24578": [
+"news",
+"university-of-york-joins-elixir-uk"
+],
+"24945": [
+"news",
+"university-of-southampton-joins-elixir-uk"
+],
+"24967": [
+"news",
+"scaling-biocuration-with-ai"
+],
+"25159": [
+"news",
+"fair-in-action-bridge-building-the-practical-tools-rdm-professionals-need"
+],
+"25171": [
+"news",
+"biofairs-new-4m-methods-commons-builds-on-foundations-elixir-uk-helped-lay"
+],
+"18693": [
+"projects",
+"integrating-the-toxicology-community-into-elixir"
+],
+"18752": [
+"projects",
+"datarex"
+],
+"18757": [
+"projects",
+"systems-biology-for-elixir-sybel"
+],
+"18761": [
+"projects",
+"2023-scone"
+],
+"18762": [
+"projects",
+"2023-mlstandards"
+],
+"18765": [
+"projects",
+"2022-trp4"
+],
+"18767": [
+"projects",
+"2022-trp3"
+],
+"18768": [
+"projects",
+"2022-trp1"
+],
+"18769": [
+"projects",
+"2022-tess"
+],
+"18770": [
+"projects",
+"2022-rd-services"
+],
+"25320": [
+"news",
+"queens-university-belfast-joins-elixir-uk"
+],
+"25333": [
+"news",
+"enterobase-joins-elixir-uk-services"
+],
+"25362": [
+"news",
+"a-short-story-of-the-bioinfocoreleaders-club"
+],
+"25392": [
+"news",
+"knetminer-connects-plant-pangenome-data-to-gene-function-and-literature"
+],
+"25395": [
+"news",
+"connecting-health-data-across-europe-a-report"
+],
+"25430": [
+"news",
+"bioinfocoreleaders-club-consolidated-after-warwick-meeting"
+],
+"25506": [
+"news",
+"three-fairification-frameworks-in-one-room-elixir-uk-at-eccb2026"
+],
+"18771": [
+"projects",
+"2022-lipid-pathways"
+],
+"18772": [
+"projects",
+"2022-human-gen-phen"
+],
+"18773": [
+"projects",
+"2022-fhd"
+],
+"18774": [
+"projects",
+"2022-etp1"
+],
+"18775": [
+"projects",
+"2022-eip2"
+],
+"18776": [
+"projects",
+"2022-edp2"
+],
+"18778": [
+"projects",
+"2022-ecp2"
+],
+"18779": [
+"projects",
+"2022-beacon-infrastructure"
+],
+"18780": [
+"projects",
+"elixir-beacon-implementation-study-disseminating-the-beacon-and-elixir-beacon-network-ebn"
+],
+"18781": [
+"projects",
+"2022-apicuron"
+],
+"18782": [
+"projects",
+"increasing-plant-data-findability"
+],
+"18788": [
+"projects",
+"impact-evaluation"
+],
+"18790": [
+"projects",
+"reference-hcnv-datasets"
+],
+"18791": [
+"projects",
+"strengthen-data-management-galaxy"
+],
+"18792": [
+"projects",
+"making-container-services-integratable"
+],
+"18793": [
+"projects",
+"building-pdbe-kb-chart"
+],
+"18794": [
+"projects",
+"beacon-and-beyond"
+],
+"18795": [
+"projects",
+"microbial-biotechnology-community"
+],
+"18796": [
+"projects",
+"3d-bioinfo-community"
+],
+"18798": [
+"projects",
+"capacity-building"
+],
+"18800": [
+"projects",
+"training-technical-infrastructure-tess"
+],
+"18801": [
+"projects",
+"training-toolkit"
+],
+"18803": [
+"projects",
+"fluxomics-workflows"
+],
+"18804": [
+"projects",
+"2019-hcnv"
+],
+"18805": [
+"projects",
+"expanding-galaxy"
+],
+"18806": [
+"projects",
+"federated-human-data"
+],
+"18807": [
+"projects",
+"training-capacity-building"
+],
+"18808": [
+"projects",
+"interoperability-purpose"
+],
+"18809": [
+"projects",
+"fair-service-architecture"
+],
+"18810": [
+"projects",
+"container-orchestration"
+],
+"18811": [
+"projects",
+"exploiting-bioschemas-markup-support-elixir-communities"
+],
+"18812": [
+"projects",
+"data-validation-2018"
+],
+"18813": [
+"projects",
+"increasing-interoperability-protein-resources"
+],
+"18814": [
+"projects",
+"learning-paths-2018"
+],
+"18815": [
+"projects",
+"fairness-core-resources"
+],
+"18816": [
+"projects",
+"cwl-2018"
+],
+"18817": [
+"projects",
+"bioschemas-community-adoption"
+],
+"18818": [
+"projects",
+"mapping-biocuration"
+],
+"18819": [
+"projects",
+"elixir-integration-user-perspective"
+],
+"18821": [
+"projects",
+"bioschemas"
+],
+"18696": [
+"projects",
+"by-covid"
+],
+"18717": [
+"projects",
+"agroserv"
+],
+"18718": [
+"projects",
+"elixir-converge"
+],
+"18719": [
+"projects",
+"eosc-life"
+],
+"18822": [
+"projects",
+"metrics-discovery"
+],
+"18823": [
+"projects",
+"2022-food-nutrition"
+],
+"18826": [
+"projects",
+"tools-platform-ecosystem"
+],
+"18827": [
+"projects",
+"biodiversity-network"
+],
+"18828": [
+"projects",
+"elixir-uk-dash"
+],
+"18844": [
+"projects",
+"ejprd"
+],
+"18845": [
+"projects",
+"fairplus"
+],
+"18849": [
+"projects",
+"biodt"
+],
+"18850": [
+"projects",
+"fair-impact"
+],
+"21007": [
+"projects",
+"alignment-of-the-interoperability-platform-fair-service-architecture-framework-with-the-data-platform-communities-and-elixir-projects"
+],
+"21008": [
+"projects",
+"gap-analysis-training-materials-development-and-training-delivery"
+],
+"22181": [
+"projects",
+"2024-technology-compute"
+],
+"22184": [
+"projects",
+"2024-technology-data"
+],
+"22185": [
+"projects",
+"2024-technology-tools"
+],
+"22187": [
+"projects",
+"2024-technology-interoperability"
+],
+"25067": [
+"projects",
+"fair-in-action-bridge"
+],
+"18700": [
+"services",
+"birmingham-metabolomics-training-centre"
+],
+"18702": [
+"services",
+"cafe-variome"
+],
+"18703": [
+"services",
+"cambridge-bioinformatics-training"
+],
+"18704": [
+"services",
+"cath"
+],
+"18705": [
+"services",
+"copo"
+],
+"18712": [
+"services",
+"cyverse-uk"
+],
+"18713": [
+"services",
+"drasp"
+],
+"18715": [
+"services",
+"ensembl"
+],
+"18716": [
+"services",
+"fairdom-seek"
+],
+"18720": [
+"services",
+"fairsharing"
+],
+"18721": [
+"services",
+"flybase"
+],
+"18722": [
+"services",
+"gwas-central"
+],
+"18723": [
+"services",
+"health-informatics-centre-hic"
+],
+"18724": [
+"services",
+"hgnc"
+],
+"18727": [
+"services",
+"isa"
+],
+"18728": [
+"services",
+"iuphar-bps"
+],
+"25096": [
+"projects",
+"e-pan-enhancing-pan-genome-analysis-in-plants"
+],
+"25166": [
+"projects",
+"biofair-methods-commons"
+],
+"18726": [
+"services",
+"intermine"
+],
+"18729": [
+"services",
+"jalview"
+],
+"18730": [
+"services",
+"knetminer"
+],
+"18732": [
+"services",
+"lipid-maps"
+],
+"18735": [
+"services",
+"neof"
+],
+"18736": [
+"services",
+"phi-base"
+],
+"18737": [
+"services",
+"phyre2"
+],
+"18738": [
+"services",
+"pombase"
+],
+"18739": [
+"services",
+"psipred"
+],
+"18740": [
+"services",
+"signalink"
+],
+"18741": [
+"services",
+"tess"
+],
+"18743": [
+"services",
+"variant-validator"
+],
+"18744": [
+"services",
+"veupathdb"
+],
+"18745": [
+"services",
+"workflowhub"
+],
+"18747": [
+"services",
+"fair-cookbook"
+],
+"18748": [
+"services",
+"rdmkit"
+],
+"18750": [
+"services",
+"missense3d"
+],
+"18851": [
+"services",
+"brepertoire"
+],
+"20176": [
+"services",
+"biomedical-atlas-centre"
+],
+"23183": [
+"services",
+"gtn"
+],
+"23185": [
+"services",
+"carpentries"
+],
+"23227": [
+"area",
+"training"
+],
+"23349": [
+"area",
+"computational-workflows"
+],
+"23350": [
+"services",
+"galaxy"
+],
+"23352": [
+"services",
+"snakemake"
+],
+"23354": [
+"services",
+"nextflow"
+],
+"23362": [
+"services",
+"cwl"
+],
+"23364": [
+"services",
+"ro-crate"
+],
+"23367": [
+"services",
+"edam"
+],
+"23369": [
+"services",
+"bioschemas"
+],
+"23704": [
+"area",
+"research-data-management"
+],
+"25337": [
+"services",
+"enterobase"
+]
+}

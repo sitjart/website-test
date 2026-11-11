@@ -3,6 +3,7 @@ title: "Textured classroom: Introducing friction to promote learning"
 start: 2026-04-27
 type: "Community Call"
 online: true
+wpId: 24942
 startTime: "14:00"
 endTime: "15:00"
 venue: "Online"

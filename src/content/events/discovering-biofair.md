@@ -3,6 +3,7 @@ title: "Discovering BioFAIR"
 start: 2024-02-06
 type: "Community Call"
 online: true
+wpId: 22957
 startTime: "11:00"
 endTime: "12:00"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-creating-connections.webp"

@@ -3,6 +3,7 @@ title: "ELIXIR-UK Fellow launches Galaxy FAIR Training"
 date: 2023-06-22
 standfirst: "Katarzyna Kamieniecka, a member of the ELIXIR-UK Fellowship Programme, has just launched a new series of Galaxy Training Materials. She is aiming to improve FAIR data management in the life sciences with lessons designed"
 category: "News"
+wpId: 19663
 image: "https://elixiruknode.org/wp-content/uploads/2023/04/top-view-online-training-written-on-sticky-note-on-2023-11-27-05-37-15-utc-scaled.webp"
 related:
   activities: ["fellowship", "galaxy-community"]

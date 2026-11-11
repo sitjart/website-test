@@ -3,6 +3,7 @@ title: "How FAIRsharing helps you enable FAIR: focus on standards, repositories 
 start: 2024-06-27
 type: "Short course"
 online: true
+wpId: 22460
 end: 2024-06-27
 startTime: "12:00"
 endTime: "13:30"

@@ -3,6 +3,7 @@ title: "Life sciences data needs to be FAIR"
 date: 2018-02-02
 standfirst: "By Justin Clark-Casey, Research Software Engineer, Department of Genetics, University of Cambridge InterMine is an open-source life sciences data integration platform created at the University of Cambridge in the UK. It"
 category: "News"
+wpId: 19533
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-people.webp"
 ---
 

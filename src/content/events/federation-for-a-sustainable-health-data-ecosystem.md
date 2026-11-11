@@ -3,6 +3,7 @@ title: "Federation for a sustainable health data ecosystem"
 start: 2026-04-15
 type: "Community Call"
 online: false
+wpId: 24535
 end: 2026-04-15
 startTime: "11:00"
 endTime: "12:00"

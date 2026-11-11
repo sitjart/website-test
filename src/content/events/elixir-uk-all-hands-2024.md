@@ -3,6 +3,7 @@ title: "ELIXIR-UK All Hands 2024"
 start: 2024-11-19
 type: "Conference"
 online: false
+wpId: 22754
 end: 2024-11-20
 venue: "Principality Stadium"
 locality: "Cardiff "

@@ -3,6 +3,7 @@ title: "University of Warwick joins ELIXIR-UK to strengthen UK bioinformatics su
 date: 2025-12-08
 standfirst: "The University of Warwick has joined ELIXIR-UK, strengthening national bioinformatics and digital health support. Warwick contributes extensive training expertise, a growing Bioinformatics Clinic model, and international resources."
 category: "News"
+wpId: 24348
 image: "https://elixiruknode.org/wp-content/uploads/2025/12/photo-warwick-only.webp"
 related:
   members: ["university-of-warwick"]

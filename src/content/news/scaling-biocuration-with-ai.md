@@ -3,6 +3,7 @@ title: "Scaling biocuration with AI while keeping expert judgement at the centre
 date: 2026-04-28
 standfirst: "ELIXIR-UK member Valerie Wood co-authors new paper on human-in-the-loop AI for biocuration"
 category: "News"
+wpId: 24967
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-silicon-semiconductor-wafer-with-integrated.webp"
 related:
   members: ["university-of-cambridge"]

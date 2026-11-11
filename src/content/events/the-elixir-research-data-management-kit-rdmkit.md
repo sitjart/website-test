@@ -3,6 +3,7 @@ title: "The ELIXIR Research Data Management Kit (RDMkit)"
 start: 2024-01-09
 type: "Community Call"
 online: true
+wpId: 22953
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

@@ -7,3 +7,13 @@ export const todayUK = () => {
   const s = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/London' });
   return new Date(`${s}T00:00:00Z`);
 };
+
+/** First full sentence(s) of a summary, never cut mid-word. */
+export function firstSentence(s = '', max = 220): string {
+  const m = s.match(/^.{20,}?[.!?](?=\s|$)/);
+  if (m && m[0].length <= max) return m[0];
+  if (s.length <= max) return s;
+  return s.slice(0, s.lastIndexOf(' ', max)) + '…';
+}
+/** Orange full stop, unless the title already ends in punctuation. */
+export const needsStop = (t: string) => !/[.!?…]$/.test(t.trim());

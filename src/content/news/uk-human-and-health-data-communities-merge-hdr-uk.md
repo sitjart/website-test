@@ -3,6 +3,7 @@ title: "Turning up the signal for the UK Human and Health Data Communities"
 date: 2026-02-24
 standfirst: "HDR UK joins forces with ELIXIR-UK to amplify voices and exchange knowledge"
 category: "News"
+wpId: 24471
 image: "https://elixiruknode.org/wp-content/uploads/2026/02/banner-community-becomes-club.jpg"
 related:
   activities: ["uk-human-data-community"]

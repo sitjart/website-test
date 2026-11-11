@@ -122,6 +122,7 @@ def main(src: str):
             f'date: {text(i, "wp:post_date")[:10]}',
             f'standfirst: {yaml_str(strip_tags(standfirst))}',
             f'category: {yaml_str((cats(i, "category") or ["News"])[0])}',
+            f'wpId: {text(i, "wp:post_id")}',
         ]
         if attachments.get(m.get('_thumbnail_id', '')):
             fm.append(f'image: {yaml_str(attachments[m["_thumbnail_id"]])}')
@@ -137,6 +138,7 @@ def main(src: str):
             f'start: {wp_date(m.get("event_start_date"))}',
             f'type: {yaml_str((cats(i, "type-of-event") or ["Event"])[0])}',
             f'online: {"true" if m.get("event_format") == "OnlineEventAttendanceMode" else "false"}',
+            f'wpId: {text(i, "wp:post_id")}',
         ]
         if wp_date(m.get('event_end_date')):
             fm.append(f'end: {wp_date(m.get("event_end_date"))}')
@@ -178,6 +180,7 @@ def main(src: str):
         logo = (attachments.get(m.get('logo', '')) or attachments.get(m.get('organisation_logo', ''))
                 or attachments.get(m.get('_thumbnail_id', '')) or '')
         rec = {
+            'wpId': int(text(i, 'wp:post_id')),
             'slug': text(i, 'wp:post_name'),
             'name': html.unescape(text(i, 'title')),
             'website': m.get('website') or m.get('project_website') or m.get('organisation_website') or '',
@@ -200,6 +203,9 @@ def main(src: str):
         recs = sorted((record(i) for i in of_type(wp_type)), key=lambda r: r['name'].lower())
         (data_dir / f'{name}.json').write_text(json.dumps(recs, indent=1, ensure_ascii=False) + '\n', encoding='utf8')
         counts[name] = len(recs)
+
+    # WordPress post ID -> [kind, slug], used to resolve people's relationships at build time
+    (ROOT / 'src/data/wp-ids.json').write_text(json.dumps({k: list(v) for k, v in by_id.items()}, indent=0) + '\n', encoding='utf8')
 
     print(f'news: {len(of_type("post"))}, events: {len(of_type("event"))}, pages: {page_count}, ' +
           ', '.join(f'{k}: {v}' for k, v in counts.items()))

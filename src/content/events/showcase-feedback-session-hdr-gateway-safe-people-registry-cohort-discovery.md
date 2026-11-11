@@ -3,6 +3,7 @@ title: "Showcase & feedback session: HDR Gateway, Safe People Registry & Cohort 
 start: 2026-02-18
 type: "Community Call"
 online: true
+wpId: 24455
 startTime: "11:00"
 endTime: "12:00"
 venue: "online"

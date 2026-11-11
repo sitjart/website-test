@@ -1,7 +1,8 @@
 ---
+// People profile – option 6: centred card, then smart tabs with each type's entries
 import { getCollection } from 'astro:content';
-import ProfileLayout from '../../layouts/ProfileLayout.astro';
-import ProfileSide from '../../components/ProfileSide.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Avatar from '../../components/Avatar.astro';
 import SmartTabs from '../../components/SmartTabs.astro';
 import { url } from '../../lib/url';
 
@@ -11,35 +12,62 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const p = entry.data;
-
 const links = [
-  ...(p.orcid ? [{ label: 'ORCID', href: p.orcid }] : []),
-  ...(p.website ? [{ label: 'Website', href: p.website }] : []),
+  ...(p.orcid ? [{ label: 'ORCID', href: p.orcid.startsWith('http') ? p.orcid : `https://orcid.org/${p.orcid}` }] : []),
   ...(p.linkedin ? [{ label: 'LinkedIn', href: p.linkedin }] : []),
+  ...(p.website ? [{ label: 'Website', href: p.website }] : []),
 ];
-
-// Bioschemas / schema.org Person markup: makes each profile part of the public knowledge graph
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: p.name,
-  jobTitle: p.role,
-  affiliation: { '@type': 'Organization', name: p.institution },
-  ...(p.orcid ? { identifier: p.orcid, sameAs: [p.orcid] } : {}),
+  jobTitle: p.role || undefined,
+  affiliation: p.institution ? { '@type': 'Organization', name: p.institution } : undefined,
+  sameAs: links.map((l) => l.href),
   memberOf: { '@type': 'Organization', name: 'ELIXIR-UK' },
 };
 ---
-<ProfileLayout title={p.name} description={`${p.role}, ${p.institution}`} {jsonLd}>
-  <Fragment slot="side">
-    <ProfileSide name={p.name} subtitle={`${p.role}${p.institution ? `, ${p.institution}` : ''}`} image={p.photo} round
-      pills={{ heading: 'Governance roles', items: p.governance }} {links} />
-    <a class="side-back" href={url('/people/')}>← All people</a>
-  </Fragment>
-  <SmartTabs kind="people" slug={entry.id} hasBio={Boolean(p.bio)}>
-    <div class="prose"><p>{p.bio}</p></div>
-  </SmartTabs>
-</ProfileLayout>
+<BaseLayout title={p.name} description={[p.role, p.institution].filter(Boolean).join(', ')} {jsonLd}>
+  <div class="banner" style="height:120px"></div>
+  <section class="card-wrap">
+    <div class="card" data-reveal="fade-up">
+      <Avatar src={p.photo} name={p.name} size={180} eager />
+      <div class="card__body">
+        <h1 class="display card__name">{p.name}<span class="stop">.</span></h1>
+        {(p.role || p.institution) && (
+          <p class="card__role">
+            {p.role}{p.role && p.institution && ', '}
+            {p.institutionSlug ? <a href={url(`/members/${p.institutionSlug}/`)}>{p.institution}</a> : p.institution}
+          </p>
+        )}
+        {(p.governance.length > 0 || p.tags.length > 0) && (
+          <div class="card__pills">{[...p.governance, ...p.tags].map((g) => <span class="pill">{g}</span>)}</div>
+        )}
+        {links.length > 0 && <div class="card__links">{links.map((l) => <a class="btn btn--line" href={l.href} rel="noopener">{l.label}</a>)}</div>}
+      </div>
+    </div>
+    <p class="card__back"><a href={url('/people/')}>← All people</a></p>
+  </section>
+  <main class="profile-main">
+    <SmartTabs kind="people" slug={entry.id} hasBio={Boolean(p.bio)}>
+      <div class="prose"><p>{p.bio}</p></div>
+    </SmartTabs>
+  </main>
+</BaseLayout>
 
 <style>
-  .side-back { font-size: 14px; align-self: flex-start; }
+  .card-wrap { background: var(--grey-light); padding: 0 24px 48px; }
+  .card { max-width: 900px; margin: -120px auto 0; padding: 40px 48px 36px; border-radius: 10px; background: var(--white); box-shadow: 0 24px 48px rgb(2 52 82 / 0.12); display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 36px; align-items: center; position: relative; }
+  .card__name { font-size: clamp(2rem, 4vw, 2.75rem); margin: 0; color: var(--navy); }
+  .card__role { margin: 8px 0 0; font-size: 19px; }
+  .card__role a { font-weight: 700; }
+  .card__pills, .card__links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .card__links { gap: 8px; }
+  .card__links .btn { font-size: 14px; padding: 0.55em 1.1em; }
+  .card__back { max-width: 900px; margin: 14px auto 0; font-size: 14px; }
+  .profile-main { max-width: 900px; margin: 0 auto; padding: 48px 24px 96px; }
+  @media (max-width: 700px) {
+    .card { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 32px 24px; }
+    .card__pills, .card__links { justify-content: center; }
+  }
 </style>

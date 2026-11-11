@@ -3,6 +3,7 @@ title: "ELIXIR-UK Health Data Workshop"
 start: 2021-06-21
 type: "Workshop"
 online: false
+wpId: 19759
 end: 2021-06-21
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-training-online.webp"
 related:

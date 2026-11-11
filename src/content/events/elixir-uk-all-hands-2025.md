@@ -3,6 +3,7 @@ title: "ELIXIR-UK All Hands 2025"
 start: 2025-10-23
 type: "Conference"
 online: false
+wpId: 23736
 end: 2025-10-24
 venue: "Sandy Park Conference & Banqueting Centre"
 locality: "Exeter"

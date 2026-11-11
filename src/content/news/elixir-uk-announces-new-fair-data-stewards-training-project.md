@@ -3,6 +3,7 @@ title: "ELIXIR-UK announces new FAIR data stewardship training project"
 date: 2021-03-04
 standfirst: "ELIXIR-UK have successfully secured funding for a new data steward training project as part of the UKRI Innovation Scholars: Data Science Training in Health and Bioscience call. This project is being led by the Universit"
 category: "News"
+wpId: 19580
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-lights-2.webp"
 related:
   activities: ["fellowship"]

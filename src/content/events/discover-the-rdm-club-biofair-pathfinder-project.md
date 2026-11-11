@@ -3,6 +3,7 @@ title: "Discover the RDM Club BioFAIR Pathfinder Project"
 start: 2026-04-14
 type: "Community Call"
 online: true
+wpId: 24537
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

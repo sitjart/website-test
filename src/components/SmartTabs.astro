@@ -3,7 +3,7 @@
 // empty tabs are dropped, and the tab bar only appears when there is more than one tab.
 // Without JavaScript, all panels show one after another.
 import { linksFor, LABELS, TAB_ORDER, type Kind } from '../lib/graph';
-import { longDate } from '../lib/format';
+import { longDate, firstSentence } from '../lib/format';
 import { url } from '../lib/url';
 
 interface Props { kind: Kind; slug: string; bioLabel?: string; hasBio?: boolean }
@@ -14,6 +14,9 @@ const panels = [
   ...TAB_ORDER.filter((k) => groups[k]?.length).map((k) => ({ id: k, label: LABELS[k] })),
 ];
 const uid = `tabs-${kind}-${slug}`;
+const LIMIT = 6;
+const dotColour: Record<string, string> = { news: '#047eaa', events: '#f47d21', projects: '#023452', services: '#8fb3c9', activities: '#6e9fb8', members: '#023452', people: '#f47d21', collaborations: '#8fb3c9', area: '#047eaa' };
+const when = (n: { date?: Date; label?: string }) => n.date ? n.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }) : '';
 ---
 {panels.length > 0 && (
   <div class="smart-tabs" data-smart-tabs>
@@ -21,30 +24,29 @@ const uid = `tabs-${kind}-${slug}`;
       <nav class="smart-tabs-nav" role="tablist">
         {panels.map((p, i) => (
           <button type="button" role="tab" class:list={['smart-tab-btn', { active: i === 0 }]} id={`${uid}-tab-${p.id}`}
-            aria-controls={`${uid}-${p.id}`} aria-selected={i === 0 ? 'true' : 'false'} data-tab={p.id}>{p.label}</button>
+            aria-controls={`${uid}-${p.id}`} aria-selected={i === 0 ? 'true' : 'false'} data-tab={p.id}>{p.label}{p.id !== 'bio' && <span class="smart-tab-count">{groups[p.id as Kind]!.length}</span>}</button>
         ))}
       </nav>
     )}
     {panels.map((p, i) => (
       <div class:list={['tab-panel', { active: i === 0 }]} id={`${uid}-${p.id}`} role="tabpanel" aria-labelledby={`${uid}-tab-${p.id}`} data-panel={p.id}>
         {p.id === 'bio' ? <slot /> : (
-          <ul class="tab-list">
-            {groups[p.id as Kind]!.map((n) => (
-              <li class="tab-item">
+          <>
+          <ol class="tab-list">
+            {groups[p.id as Kind]!.map((n, j) => (
+              <li class="tab-item" hidden={j >= LIMIT ? true : undefined} data-extra={j >= LIMIT ? '' : undefined}>
+                <span class="tab-item__when">{when(n)}</span>
+                <span class="tab-item__dot" aria-hidden="true" style={`--dot:${dotColour[n.kind] ?? '#047eaa'}`}></span>
                 <a href={url(`/${n.kind}/${n.slug}/`)}>
-                  {(n.date || n.label) && (
-                    <span class="tab-item__meta">
-                      {n.date && longDate(n.date)}
-                      {n.date && n.label && <span class="tab-item__sep">|</span>}
-                      {n.label}
-                    </span>
-                  )}
+                  {n.label && <span class="tab-item__meta">{n.label}</span>}
                   <span class="tab-item__title">{n.name}</span>
-                  {n.summary && <span class="tab-item__summary">{n.summary}</span>}
+                  {n.summary && <span class="tab-item__summary">{firstSentence(n.summary)}</span>}
                 </a>
               </li>
             ))}
-          </ul>
+          </ol>
+          {groups[p.id as Kind]!.length > LIMIT && <button type="button" class="tab-more" data-more>Show all {groups[p.id as Kind]!.length}</button>}
+          </>
         )}
       </div>
     ))}
@@ -52,6 +54,10 @@ const uid = `tabs-${kind}-${slug}`;
 )}
 
 <script>
+  document.querySelectorAll<HTMLButtonElement>('[data-more]').forEach((b) => b.addEventListener('click', () => {
+    b.previousElementSibling?.querySelectorAll<HTMLElement>('[data-extra]').forEach((li) => (li.hidden = false));
+    b.remove();
+  }));
   document.querySelectorAll<HTMLElement>('[data-smart-tabs]').forEach((box) => {
     const buttons = box.querySelectorAll<HTMLButtonElement>('.smart-tab-btn');
     if (!buttons.length) return;
@@ -107,19 +113,26 @@ const uid = `tabs-${kind}-${slug}`;
   .smart-tabs.is-enhanced .tab-panel.active { display: block; animation: tab-in 0.25s var(--ease); }
   @keyframes tab-in { from { opacity: 0; transform: translateY(6px); } }
 
+  .smart-tab-count { margin-left: 6px; opacity: 0.6; font-weight: 400; }
   .tab-list { list-style: none; margin: 0; padding: 0; }
-  .tab-item a {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    padding: 1.1rem 0;
-    border-bottom: 1px solid var(--border);
-    color: var(--text);
-  }
-  .tab-item__meta { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--navy); }
-  .tab-item__sep { margin: 0 0.6rem; color: var(--border); }
-  .tab-item__title { font-size: 1.2rem; line-height: 1.35; font-weight: 700; color: var(--navy); transition: color 0.2s var(--ease); }
+  .tab-item { display: grid; grid-template-columns: 110px 24px minmax(0, 1fr); gap: 0 20px; }
+  .tab-item[hidden] { display: none; }
+  .tab-item__when { font-size: 14px; font-weight: 700; color: var(--navy); text-align: right; padding-top: 2px; }
+  .tab-item__dot { position: relative; display: flex; justify-content: center; }
+  .tab-item__dot::before { content: ''; position: absolute; top: 0; bottom: 0; width: 2px; background: var(--border); }
+  .tab-item__dot::after { content: ''; position: relative; margin-top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--dot); border: 3px solid var(--white); box-shadow: 0 0 0 1px var(--dot); }
+  .tab-item a { display: flex; flex-direction: column; gap: 2px; padding-bottom: 26px; color: var(--text); }
+  .tab-item__meta { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange-text); }
+  .tab-item__title { font-size: 1.2rem; line-height: 1.3; font-weight: 700; color: var(--navy); transition: color 0.2s var(--ease); }
   .tab-item a:hover .tab-item__title { color: var(--blue); }
-  .tab-item__summary { font-size: 0.85rem; line-height: 1.5; }
+  .tab-item__summary { font-size: 0.9rem; line-height: 1.5; }
+  .tab-more { margin: 8px 0 0 154px; font: inherit; font-weight: 700; color: var(--blue); background: none; border: 0; cursor: pointer; padding: 0; }
+  @media (max-width: 600px) {
+    .tab-item { grid-template-columns: 16px minmax(0, 1fr); gap: 0 14px; }
+    .tab-item__when { grid-column: 2; text-align: left; padding: 0; }
+    .tab-item__dot { grid-row: 1 / span 2; grid-column: 1; }
+    .tab-item a { grid-column: 2; }
+    .tab-more { margin-left: 30px; }
+  }
   @media (prefers-reduced-motion: reduce) { .smart-tabs.is-enhanced .tab-panel.active { animation: none; } }
 </style>

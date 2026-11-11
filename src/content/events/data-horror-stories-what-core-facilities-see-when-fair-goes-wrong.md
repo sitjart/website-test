@@ -3,6 +3,7 @@ title: "Data Horror Stories: what core facilities see when FAIR goes wrong"
 start: 2026-10-06
 type: "Community Call"
 online: false
+wpId: 25415
 end: 2026-10-06
 image: "https://elixiruknode.org/wp-content/uploads/2026/09/banner-spooky-halloween-night-with-tombstone-and-moon.webp"
 related:

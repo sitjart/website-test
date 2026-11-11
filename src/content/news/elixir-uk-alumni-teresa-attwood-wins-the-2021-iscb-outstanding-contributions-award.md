@@ -3,6 +3,7 @@ title: "ELIXIR-UK Alumni Teresa Attwood wins the 2021 ISCB Outstanding Contribut
 date: 2021-08-02
 standfirst: "Teresa Attwood has been awarded the 2021 Outstanding Contributions to ISCB Award. This award recognizes an ISCB member for outstanding service contributions toward the betterment of ISCB through exemplary leadership, edu"
 category: "News"
+wpId: 19601
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-award-winner.webp"
 related:
   members: ["university-of-manchester"]

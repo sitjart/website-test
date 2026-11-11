@@ -1,5 +1,6 @@
 [
  {
+  "wpId": 20901,
   "slug": "3d-bioinfo-community",
   "name": "3D BioInfo Community",
   "website": "https://elixir-europe.org/communities/3d-bioinfo",
@@ -33,6 +34,7 @@
   }
  },
  {
+  "wpId": 22111,
   "slug": "machine-learning-focus-group",
   "name": "AI Ecosystem Focus Group",
   "website": "https://elixir-europe.org/focus-groups/ai-ecosystem",
@@ -51,6 +53,7 @@
   "related": {}
  },
  {
+  "wpId": 20944,
   "slug": "biodiversity-community",
   "name": "Biodiversity Community",
   "website": "https://elixir-europe.org/communities/biodiversity",
@@ -77,6 +80,7 @@
   }
  },
  {
+  "wpId": 25356,
   "slug": "bioinfocoreleaders",
   "name": "BioinfoCoreLeaders Club",
   "website": "",
@@ -104,6 +108,7 @@
   }
  },
  {
+  "wpId": 22107,
   "slug": "cancer-data-focus-group",
   "name": "Cancer Data Community",
   "website": "https://elixir-europe.org/focus-groups/cancer-data",
@@ -122,6 +127,7 @@
   "related": {}
  },
  {
+  "wpId": 19884,
   "slug": "compute-platform",
   "name": "Compute Platform",
   "website": "https://elixir-europe.org/platforms/compute",
@@ -147,6 +153,7 @@
   }
  },
  {
+  "wpId": 25457,
   "slug": "credit-recognition-and-usage-focus-group",
   "name": "Credit, Recognition and Usage Focus Group",
   "website": "https://elixir-europe.org/focus-groups/credit-recognition-usage",
@@ -164,6 +171,7 @@
   "related": {}
  },
  {
+  "wpId": 19881,
   "slug": "data-platform",
   "name": "Data Platform",
   "website": "https://elixir-europe.org/platforms/data",
@@ -194,6 +202,7 @@
   }
  },
  {
+  "wpId": 20820,
   "slug": "fellowship",
   "name": "Data Stewardship Training Fellowship",
   "website": "https://fellowship.elixiruknode.org/",
@@ -245,6 +254,7 @@
   }
  },
  {
+  "wpId": 23054,
   "slug": "domestic-animals-genome-and-phenome-focus-group",
   "name": "Domestic Animals Genome and Phenome Community",
   "website": "",
@@ -262,6 +272,7 @@
   "related": {}
  },
  {
+  "wpId": 25458,
   "slug": "equity-diversity-and-inclusion-focus-group",
   "name": "Equity, Diversity and Inclusion Focus Group",
   "website": "http://elixir-europe.org/focus-groups/equity-diversity-and-inclusion",
@@ -280,6 +291,7 @@
   "related": {}
  },
  {
+  "wpId": 20927,
   "slug": "federated-human-data-community",
   "name": "Federated Human Data Community",
   "website": "https://elixir-europe.org/communities/human-data",
@@ -307,6 +319,7 @@
   }
  },
  {
+  "wpId": 20921,
   "slug": "food-and-nutrition-community",
   "name": "Food and Nutrition Community",
   "website": "https://elixir-europe.org/communities/food-nutrition",
@@ -335,6 +348,7 @@
   }
  },
  {
+  "wpId": 20902,
   "slug": "galaxy-community",
   "name": "Galaxy Community",
   "website": "https://elixir-europe.org/communities/galaxy",
@@ -379,6 +393,7 @@
   }
  },
  {
+  "wpId": 20928,
   "slug": "human-copy-number-variation-community",
   "name": "Human Copy Number Variation Community",
   "website": "https://elixir-europe.org/communities/hcnv",
@@ -408,6 +423,7 @@
   }
  },
  {
+  "wpId": 20948,
   "slug": "impact-focus-group",
   "name": "Impact Focus Group",
   "website": "https://elixir-europe.org/focus-groups/impact",
@@ -435,6 +451,7 @@
   }
  },
  {
+  "wpId": 20949,
   "slug": "innovation-industry-focus-group",
   "name": "Innovation & Industry Focus Group",
   "website": "https://elixir-europe.org/focus-groups/innovation-and-industry",
@@ -460,6 +477,7 @@
   }
  },
  {
+  "wpId": 19885,
   "slug": "interoperability-platform",
   "name": "Interoperability Platform",
   "website": "https://elixir-europe.org/platforms/interoperability",
@@ -503,6 +521,7 @@
   }
  },
  {
+  "wpId": 20903,
   "slug": "intrinsically-disordered-proteins-community",
   "name": "Intrinsically Disordered Proteins Community",
   "website": "https://elixir-europe.org/communities/intrinsically-disordered-proteins",
@@ -520,6 +539,7 @@
   "related": {}
  },
  {
+  "wpId": 20923,
   "slug": "metabolomics-community",
   "name": "Metabolomics Community",
   "website": "https://elixir-europe.org/communities/metabolomics",
@@ -548,6 +568,7 @@
   }
  },
  {
+  "wpId": 20920,
   "slug": "microbial-biotechnology-community",
   "name": "Microbial Biotechnology Community",
   "website": "https://elixir-europe.org/communities/microbial-biotechnology",
@@ -576,6 +597,7 @@
   }
  },
  {
+  "wpId": 22116,
   "slug": "microbiome-community",
   "name": "Microbiome Community",
   "website": "https://elixir-europe.org/communities/microbiome",
@@ -593,6 +615,7 @@
   "related": {}
  },
  {
+  "wpId": 22112,
   "slug": "pathogen-data-focus-group",
   "name": "Pathogen Data Focus Group",
   "website": "https://elixir-europe.org/focus-groups/pathogen-data",
@@ -610,6 +633,7 @@
   "related": {}
  },
  {
+  "wpId": 20924,
   "slug": "plant-sciences-community",
   "name": "Plant Sciences Community",
   "website": "https://elixir-europe.org/communities/plant-sciences",
@@ -640,6 +664,7 @@
   }
  },
  {
+  "wpId": 22101,
   "slug": "proteomics-community",
   "name": "Proteomics Community",
   "website": "https://elixir-europe.org/communities/proteomics",
@@ -657,6 +682,7 @@
   "related": {}
  },
  {
+  "wpId": 22103,
   "slug": "rare-diseases-community",
   "name": "Rare Diseases Community",
   "website": "https://elixir-europe.org/communities/rare-diseases",
@@ -674,6 +700,7 @@
   "related": {}
  },
  {
+  "wpId": 20925,
   "slug": "rdm-community",
   "name": "RDM Community",
   "website": "https://elixir-europe.org/communities/research-data-management",
@@ -710,6 +737,7 @@
   }
  },
  {
+  "wpId": 25461,
   "slug": "rna-data-focus-group",
   "name": "RNA Data Focus Group",
   "website": "https://elixir-europe.org/focus-groups/rna-data",
@@ -728,6 +756,7 @@
   "related": {}
  },
  {
+  "wpId": 22097,
   "slug": "single-cell-omics-community",
   "name": "Single-Cell Omics Community",
   "website": "https://elixir-europe.org/communities/single-cell-omics",
@@ -745,6 +774,7 @@
   "related": {}
  },
  {
+  "wpId": 22098,
   "slug": "systems-biology-community",
   "name": "Systems Biology Community",
   "website": "https://elixir-europe.org/communities/systems-biology",
@@ -762,6 +792,7 @@
   "related": {}
  },
  {
+  "wpId": 19882,
   "slug": "tools-platform",
   "name": "Tools Platform",
   "website": "https://elixir-europe.org/platforms/tools",
@@ -791,6 +822,7 @@
   }
  },
  {
+  "wpId": 22105,
   "slug": "toxicology-community",
   "name": "Toxicology Community",
   "website": "https://elixir-europe.org/communities/toxicology",
@@ -812,6 +844,7 @@
   }
  },
  {
+  "wpId": 19883,
   "slug": "training-platform",
   "name": "Training Platform",
   "website": "https://elixir-europe.org/platforms/training",
@@ -858,6 +891,7 @@
   }
  },
  {
+  "wpId": 18994,
   "slug": "uk-human-data-community",
   "name": "UK Human Data and Tech Club",
   "website": "",
@@ -905,6 +939,7 @@
   }
  },
  {
+  "wpId": 18993,
   "slug": "uk-rdm-club",
   "name": "UK RDM Club",
   "website": "",
@@ -969,6 +1004,7 @@
   }
  },
  {
+  "wpId": 18992,
   "slug": "uk-training-club",
   "name": "UK Training Club",
   "website": "",

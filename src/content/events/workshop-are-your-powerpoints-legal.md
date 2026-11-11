@@ -3,6 +3,7 @@ title: "Workshop: Are your PowerPoints legal?"
 start: 2026-09-29
 type: "Community Call"
 online: false
+wpId: 25373
 end: 2026-09-29
 image: "https://elixiruknode.org/wp-content/uploads/2026/09/qtq80-jfc6yd.jpeg"
 related:

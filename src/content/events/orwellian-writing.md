@@ -3,6 +3,7 @@ title: "Orwellian writing: Training and the English language"
 start: 2026-01-26
 type: "Community Call"
 online: true
+wpId: 24393
 startTime: "14:00"
 endTime: "15:00"
 venue: "online"

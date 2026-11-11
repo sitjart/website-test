@@ -3,6 +3,7 @@ title: "ELIXIR-UK All Hands 2020"
 date: 2020-12-14
 standfirst: "This year the ELIXIR-UK All Hands meeting looked a little different to usual, as it went virtual for the first time. Held on the 10 th and the 11 th of December, the first online meeting saw record attendance with over 7"
 category: "News"
+wpId: 19572
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-all-hands.webp"
 ---
 

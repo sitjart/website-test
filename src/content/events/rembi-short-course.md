@@ -3,6 +3,7 @@ title: "REMBI – Recommended Metadata for Biological Images"
 start: 2024-04-25
 type: "Short course"
 online: true
+wpId: 21687
 end: 2024-04-25
 startTime: "12:00"
 endTime: "13:00"

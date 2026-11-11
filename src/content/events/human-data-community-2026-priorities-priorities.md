@@ -3,6 +3,7 @@ title: "Human Data Community – 2026 priorities, partnerships and funding"
 start: 2026-01-21
 type: "Community Call"
 online: true
+wpId: 24387
 startTime: "11:30"
 endTime: "12:30"
 venue: "Online"

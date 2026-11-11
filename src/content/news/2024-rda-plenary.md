@@ -3,6 +3,7 @@ title: "ELIXIR-UK members at the 2024 RDA Plenary"
 date: 2024-12-18
 standfirst: "LIXIR-UK members actively participated at the 2024 Research Data Alliance (RDA) Plenary, engaging in critical discussions on global research data infrastructure. The event, known for bringing together international stake"
 category: "News"
+wpId: 23133
 image: "https://elixiruknode.org/wp-content/uploads/2024/12/photo-2024-all-hands-uk-42.jpg"
 related:
   members: ["university-oxford"]

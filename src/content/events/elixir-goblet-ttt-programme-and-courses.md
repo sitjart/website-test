@@ -3,6 +3,7 @@ title: "The ELIXIR-GOBLET Train-the-Trainer: programme and courses"
 start: 2024-11-25
 type: "Community Call"
 online: true
+wpId: 22964
 startTime: "14:00"
 endTime: "15:00"
 venue: "Online"

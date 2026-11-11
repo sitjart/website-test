@@ -3,6 +3,7 @@ title: "PomBase and InterMine secure funding for PombeMine"
 date: 2020-12-03
 standfirst: "Two of our ELIXIR-UK services, PomBase and InterMine, have received funding for a new collaboration to create a cloud version of the FAIR model organism database PomBase, by using the InterMine platform on the European O"
 category: "News"
+wpId: 19570
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-cloud.webp"
 related:
   services: ["intermine", "pombase"]

@@ -3,6 +3,7 @@ title: "More than a team can read: AI as infrastructure for large-scale data"
 start: 2026-11-03
 type: "Community Call"
 online: false
+wpId: 25519
 end: 2026-11-03
 image: "https://elixiruknode.org/wp-content/uploads/2026/10/photo-futuristic-technology-abstract-tunnel0-ai.webp"
 related:

@@ -3,6 +3,7 @@ title: "ELIXIR EOSC Strategy"
 date: 2023-04-24
 standfirst: "‘The ambition of the European Open Science Cloud (EOSC) is to develop a “Web of FAIR Data and services” for science in Europe. EOSC will be a multi-disciplinary environment where researchers can publish, find and re-use"
 category: "News"
+wpId: 19640
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-tube-internet-abstract.webp"
 related:
   members: ["university-oxford"]

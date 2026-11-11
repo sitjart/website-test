@@ -3,6 +3,7 @@ title: "Health-RI exchange offers insights into shaping a national BioCommons"
 date: 2024-11-21
 standfirst: "In October 2024, ELIXIR-UK and its conceived initiative – BioFAIR – engaged in a knowledge exchange with the Netherlands' Health-RI (ELIXIR-NL) to refine governance and operational strategies for national research data i"
 category: "News"
+wpId: 23004
 image: "https://elixiruknode.org/wp-content/uploads/2024/11/img_5093.jpg"
 related:
   collaborations: ["biofair"]

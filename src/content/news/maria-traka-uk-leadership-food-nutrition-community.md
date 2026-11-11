@@ -3,6 +3,7 @@ title: "Maria Traka brings UK leadership to ELIXIR Food & Nutrition Community"
 date: 2025-04-15
 standfirst: "Maria Traka’s appointment strengthens UK efforts in FAIR data, interoperability, and nutrition science."
 category: "News"
+wpId: 23545
 image: "https://elixiruknode.org/wp-content/uploads/2025/04/photo-maria-traka-lab.jpg"
 related:
   activities: ["food-and-nutrition-community"]

@@ -3,6 +3,7 @@ title: "Open and sustainable AI – models and datasets as key assets"
 start: 2026-03-03
 type: "Community Call"
 online: true
+wpId: 24467
 startTime: "11:00"
 endTime: "12:00"
 venue: "online"

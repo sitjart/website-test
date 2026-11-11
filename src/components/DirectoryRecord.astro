@@ -1,7 +1,7 @@
 ---
-// Page for one record (a service, member, project ...), in the profile layout with smart tabs
-import ProfileLayout from '../layouts/ProfileLayout.astro';
-import ProfileSide from './ProfileSide.astro';
+// Services, projects, collaborators and thematic areas: navy banner with circle logo, then smart tabs
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Avatar from './Avatar.astro';
 import SmartTabs from './SmartTabs.astro';
 import { DIRECTORY, tagSlug, type DirectoryRecord } from '../lib/graph';
 import { url } from '../lib/url';
@@ -9,41 +9,50 @@ import { url } from '../lib/url';
 interface Props { kind: keyof typeof DIRECTORY; record: DirectoryRecord }
 const { kind, record: r } = Astro.props;
 const { singular, title: plural } = DIRECTORY[kind];
-
 const year = (d: string | null) => (d ? d.slice(0, 4) : null);
 const facts = [
-  ...(r.tags.length ? [{ label: 'Type', value: r.tags.join(', '), href: url(`/${kind}/#${tagSlug(r.tags[0])}`) }] : []),
-  ...(kind === 'projects' && r.start ? [{ label: 'Duration', value: `${year(r.start)}${r.end ? `–${year(r.end)}` : ''}` }] : []),
-  ...(kind === 'members' && r.start ? [{ label: 'Member since', value: year(r.start)! }] : []),
-  ...(kind === 'services' && r.start ? [{ label: 'Endorsed since', value: year(r.start)! }] : []),
-];
-const links = [
-  ...(r.website ? [{ label: 'Website', href: r.website }] : []),
-  ...(r.joinLink ? [{ label: 'Join this community', href: r.joinLink }] : []),
-];
+  kind === 'projects' && r.start ? `${year(r.start)}${r.end ? `–${year(r.end)}` : ''}` : null,
+  kind === 'services' && r.start ? `Endorsed since ${year(r.start)}` : null,
+].filter(Boolean);
 
 const schemaType = { services: 'SoftwareApplication', members: 'Organization', collaborations: 'Organization', projects: 'ResearchProject', activities: 'Project', area: 'Thing' }[kind];
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': schemaType,
-  name: r.name,
-  url: r.website || undefined,
-  logo: r.logo || undefined,
-  description: r.summary || undefined,
-};
+const jsonLd = { '@context': 'https://schema.org', '@type': schemaType, name: r.name, url: r.website || undefined, logo: r.logo || undefined, description: r.summary || undefined };
 ---
-<ProfileLayout title={r.name} description={r.summary} {jsonLd}>
-  <Fragment slot="side">
-    <ProfileSide name={r.name} subtitle={singular} image={r.logo} {facts} {links} />
-    <a class="side-back" href={url(`/${kind}/`)}>← All {plural.toLowerCase()}</a>
-  </Fragment>
-  <SmartTabs {kind} slug={r.slug} hasBio={Boolean(r.body || r.summary)} bioLabel="About">
-    {r.body ? <div class="prose" set:html={r.body} /> : <p>{r.summary}</p>}
-  </SmartTabs>
-  {!r.body && !r.summary && <p class="empty">No description yet.</p>}
-</ProfileLayout>
+<BaseLayout title={r.name} description={r.summary} {jsonLd}>
+  <section class="banner rec-banner">
+    <div class="container rec-banner__grid">
+      <Avatar src={r.logo} name={r.name} size={200} logo ring="var(--ink)" eager />
+      <div>
+        <a class="crumb" href={url(`/${kind}/`)}>← All {plural.toLowerCase()}</a>
+        <p class="eyebrow-sm rec-banner__eyebrow">{singular}{facts.length > 0 && <> · {facts.join(' · ')}</>}</p>
+        <h1 class="display rec-banner__title">{r.name}<span class="stop">.</span></h1>
+        {r.tags.length > 0 && (
+          <div class="rec-banner__tags">{r.tags.map((t) => <a class="tag" href={url(`/${kind}/#${tagSlug(t)}`)}>{t}</a>)}</div>
+        )}
+        <div class="rec-banner__actions">
+          {r.website && <a class="btn" href={r.website} rel="noopener">Visit website</a>}
+          {r.joinLink && <a class="btn btn--ghost" href={r.joinLink} rel="noopener">Join in</a>}
+        </div>
+      </div>
+    </div>
+  </section>
+  <main class="rec-main">
+    <SmartTabs {kind} slug={r.slug} hasBio={Boolean(r.body || r.summary)} bioLabel="About">
+      {r.body ? <div class="prose wp-body" set:html={r.body} /> : <p>{r.summary}</p>}
+    </SmartTabs>
+    {!r.body && !r.summary && <p class="empty">No description yet.</p>}
+  </main>
+</BaseLayout>
 
 <style>
-  .side-back { font-size: 14px; align-self: flex-start; }
+  .rec-banner { padding: 40px 0 64px; }
+  .rec-banner__grid { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; align-items: center; }
+  .rec-banner__eyebrow { color: #ffb37a; margin: 14px 0 8px; }
+  .rec-banner__title { font-size: clamp(2.4rem, 5vw, 3.75rem); margin: 0; }
+  .rec-banner__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .rec-banner__actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+  .rec-main { max-width: 1000px; margin: 0 auto; padding: 56px 24px 96px; }
   .empty { font-style: italic; }
+  .wp-body :global(img) { border-radius: 8px; }
+  @media (max-width: 700px) { .rec-banner__grid { grid-template-columns: 1fr; } .rec-banner__grid :global(.avatar) { width: 120px !important; } }
 </style>

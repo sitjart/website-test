@@ -3,6 +3,7 @@ title: "ELIXIR-UK members co-host toxicology workshop on FAIR training materials
 date: 2025-07-28
 standfirst: "Aligning national priorities on FAIR data and skills development while strengthening European collaboration"
 category: "News"
+wpId: 23766
 image: "https://elixiruknode.org/wp-content/uploads/2025/07/photo-2025-toxicology-community-fair-training.webp"
 related:
   activities: ["toxicology-community", "training-platform"]

@@ -3,6 +3,7 @@ title: "Summer drop-in session with the Human Data Community"
 start: 2025-08-20
 type: "Community Call"
 online: true
+wpId: 23811
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

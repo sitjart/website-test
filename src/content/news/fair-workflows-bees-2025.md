@@ -3,6 +3,7 @@ title: "FAIR workflows for biodiversity – Carole Goble at BEeS 2025"
 date: 2025-07-07
 standfirst: "On June 30 2025, Professor Carole Goble , Head of Node of ELIXIR-UK, was invited to deliver a keynote at the LifeWatch Biodiversity and Ecosystem eScience (BEeS) Conference 2025 , hosted by the Hellenic Centre for Marine"
 category: "News"
+wpId: 23753
 image: "https://elixiruknode.org/wp-content/uploads/2025/07/photo-bees-2025.webp"
 related:
   members: ["university-of-manchester"]

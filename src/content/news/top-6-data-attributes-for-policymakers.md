@@ -3,6 +3,7 @@ title: "Top 6 data attributes for policymakers"
 date: 2024-04-16
 standfirst: "Since 2016, when the FAIR Principles (Findable, Accessible, Interoperable, and Reusable) were first published to address data reusability, the concept has gone a long way towards becoming a well-established foundation fo"
 category: "Articles"
+wpId: 21802
 image: "https://elixiruknode.org/wp-content/uploads/2024/04/banner-connecting-dots-neural-networks.webp"
 related:
   members: ["university-oxford"]

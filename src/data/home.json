@@ -1,0 +1,11 @@
+{
+  "intro": "ELIXIR-UK is the UK Node of ELIXIR, Europe’s infrastructure for bioscience research data objects. We bring together research organisations across the UK and the people who make those objects FAIR.",
+  "video": "https://elixiruknode.org/wp-content/uploads/2024/01/hero-intro-video.webm",
+  "mission": [
+    { "title": "People", "text": "[Draft] Communities of practice, fellowships, training and careers for data professionals.", "href": "/people/" },
+    { "title": "Services", "text": "[Draft] Endorsed open-access services and the support behind them.", "href": "/services/" },
+    { "title": "AI-readiness", "text": "[Draft] FAIR, well-described research data objects that AI and machine learning can use.", "href": "/what-we-do/", "highlight": true },
+    { "title": "Sustainable infrastructures", "text": "[Draft] Long-term funding, membership and shared capacity across UK research organisations.", "href": "/members/" }
+  ],
+  "thematic": ["research-data-management", "computational-workflows", "training"]
+}

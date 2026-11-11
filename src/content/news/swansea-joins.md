@@ -3,6 +3,7 @@ title: "ELIXIR UK announces its newest member: Swansea University"
 date: 2024-02-13
 standfirst: "ELIXIR-UK welcomes Swansea University as its newest member, strengthening collaborative efforts in biological data management. The UK Node proudly welcomes Swansea University into its network, further expanding its reach"
 category: "News"
+wpId: 19706
 related:
   members: ["swansea-university"]
 ---

@@ -3,6 +3,7 @@ title: "Lessons Learnt from Delivering Training for Isambard-AI "
 start: 2026-10-28
 type: "Community Call"
 online: false
+wpId: 25441
 end: 2026-10-28
 startTime: "14:00"
 endTime: "15:00"

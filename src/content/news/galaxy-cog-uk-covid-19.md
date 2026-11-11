@@ -3,6 +3,7 @@ title: "Galaxy Europe monitor COG-UK COVID-19 genomic data"
 date: 2021-04-23
 standfirst: "Galaxy Europe has started to monitor COG-UK data. COG-UK is the COVID-19 Genomics UK Consortium, which was set up in 2020 in response to the Coronavirus pandemic. The consortium sequences SARS-CoV-2 genomes, providing vi"
 category: "News"
+wpId: 19588
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-workflow.webp"
 related:
   activities: ["galaxy-community"]

@@ -1,0 +1,10 @@
+---
+// Circle photo (or logo) with the orange dot on its edge; initials when there is no image
+import RemoteImage from './RemoteImage.astro';
+interface Props { src?: string; name: string; size: number; logo?: boolean; ring?: string; eager?: boolean }
+const { src, name, size, logo = false, ring = 'var(--white)', eager = false } = Astro.props;
+const initials = name.replace(/\(.*?\)/g, '').split(/\s+/).filter(Boolean).map((w) => w[0]).join('').slice(0, 2).toUpperCase();
+---
+<span class:list={['avatar', { 'avatar--logo': logo }]} style={`width:${size}px; --ring:${ring}; font-size:${Math.round(size / 6)}px`}>
+  {src ? <RemoteImage src={src} width={size * 2} alt={logo ? `${name} logo` : ''} loading={eager ? 'eager' : 'lazy'} /> : <span class="avatar__fill" aria-hidden="true">{initials}</span>}
+</span>

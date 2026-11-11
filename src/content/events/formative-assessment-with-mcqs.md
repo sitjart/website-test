@@ -3,6 +3,7 @@ title: "Formative assessment with MCQs and community updates"
 start: 2025-09-29
 type: "Community Call"
 online: true
+wpId: 24053
 startTime: "14:00"
 endTime: "15:00"
 recording: "https://youtu.be/QcC-h6mYGJY"

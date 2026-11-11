@@ -1,5 +1,6 @@
 [
  {
+  "wpId": 22181,
   "slug": "2024-technology-compute",
   "name": "2024 Technology Commissioned Services Compute",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/technology",
@@ -24,6 +25,7 @@
   }
  },
  {
+  "wpId": 22184,
   "slug": "2024-technology-data",
   "name": "2024 Technology Commissioned Services Data",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/technology",
@@ -49,6 +51,7 @@
   }
  },
  {
+  "wpId": 22187,
   "slug": "2024-technology-interoperability",
   "name": "2024 Technology Commissioned Services Interoperability",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/technology",
@@ -81,6 +84,7 @@
   }
  },
  {
+  "wpId": 22185,
   "slug": "2024-technology-tools",
   "name": "2024 Technology Commissioned Services Tools",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/technology",
@@ -110,6 +114,7 @@
   }
  },
  {
+  "wpId": 18796,
   "slug": "3d-bioinfo-community",
   "name": "3D-BioInfo Community implementation study",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/3d-bioinfo-community",
@@ -137,6 +142,7 @@
   }
  },
  {
+  "wpId": 18762,
   "slug": "2023-mlstandards",
   "name": "A framework to standardize Machine Learning in life sciences",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2023-MLstandards",
@@ -163,6 +169,7 @@
   }
  },
  {
+  "wpId": 18717,
   "slug": "agroserv",
   "name": "AgroServ",
   "website": "https://agroserv.eu/",
@@ -192,6 +199,7 @@
   }
  },
  {
+  "wpId": 21007,
   "slug": "alignment-of-the-interoperability-platform-fair-service-architecture-framework-with-the-data-platform-communities-and-elixir-projects",
   "name": "Alignment of the Interoperability Platform FAIR Service Architecture Framework with the Data Platform, Communities, and ELIXIR Projects",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-eip1",
@@ -216,6 +224,7 @@
   }
  },
  {
+  "wpId": 18775,
   "slug": "2022-eip2",
   "name": "An ELIXIR Interoperability Platform Knowledge Hub",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-eip2",
@@ -245,6 +254,7 @@
   }
  },
  {
+  "wpId": 18781,
   "slug": "2022-apicuron",
   "name": "APICURON integration with curation databases",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-apicuron",
@@ -269,6 +279,7 @@
   }
  },
  {
+  "wpId": 18794,
   "slug": "beacon-and-beyond",
   "name": "Beacon and beyond — Implementation-driven standards and protocols for CNV discovery and data exchange",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/beacon-and-beyond",
@@ -294,6 +305,7 @@
   }
  },
  {
+  "wpId": 18827,
   "slug": "biodiversity-network",
   "name": "Biodiversity networks for ELIXIR",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/biodiversity-network",
@@ -326,6 +338,7 @@
   }
  },
  {
+  "wpId": 18849,
   "slug": "biodt",
   "name": "BioDT",
   "website": "https://biodt.eu/",
@@ -349,6 +362,7 @@
   }
  },
  {
+  "wpId": 25166,
   "slug": "biofair-methods-commons",
   "name": "BioFAIR Methods Commons",
   "website": "https://biofair.uk/methods-commons/",
@@ -377,6 +391,7 @@
   }
  },
  {
+  "wpId": 18821,
   "slug": "bioschemas",
   "name": "Bioschemas",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/bioschemas",
@@ -405,6 +420,7 @@
   }
  },
  {
+  "wpId": 18817,
   "slug": "bioschemas-community-adoption",
   "name": "Bioschemas: community adoption and training",
   "website": "https://elixir-europe.org/about-us/commissioned-services/bioschemas-community-adoption",
@@ -433,6 +449,7 @@
   }
  },
  {
+  "wpId": 18793,
   "slug": "building-pdbe-kb-chart",
   "name": "Building on PDBe-KB to chart and characterize the conformational landscape of native proteins",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/building-pdbe-kb-chart",
@@ -458,6 +475,7 @@
   }
  },
  {
+  "wpId": 18696,
   "slug": "by-covid",
   "name": "BY-COVID",
   "website": "https://by-covid.org/",
@@ -486,6 +504,7 @@
   }
  },
  {
+  "wpId": 18798,
   "slug": "capacity-building",
   "name": "Capacity building",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/capacity-building",
@@ -511,6 +530,7 @@
   }
  },
  {
+  "wpId": 18767,
   "slug": "2022-trp3",
   "name": "Consolidating quality and impact of the TeSS training resources",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-trp3",
@@ -538,6 +558,7 @@
   }
  },
  {
+  "wpId": 18810,
   "slug": "container-orchestration",
   "name": "Container orchestration",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/container-orchestration",
@@ -562,6 +583,7 @@
   }
  },
  {
+  "wpId": 18771,
   "slug": "2022-lipid-pathways",
   "name": "Curation of Lipid Pathways by domain experts to generate open access biology resources",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-lipid-pathways",
@@ -589,6 +611,7 @@
   }
  },
  {
+  "wpId": 18776,
   "slug": "2022-edp2",
   "name": "Data integration",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-edp2",
@@ -613,6 +636,7 @@
   }
  },
  {
+  "wpId": 18812,
   "slug": "data-validation-2018",
   "name": "Data validation",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/data-validation-2018",
@@ -642,6 +666,7 @@
   }
  },
  {
+  "wpId": 18752,
   "slug": "datarex",
   "name": "DATAREX – Data Management for Research in ELIXIR",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/datarex",
@@ -679,6 +704,7 @@
   }
  },
  {
+  "wpId": 18814,
   "slug": "learning-paths-2018",
   "name": "Developing learning paths for users of ELIXIR services",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/learning-paths-2018",
@@ -703,6 +729,7 @@
   }
  },
  {
+  "wpId": 25096,
   "slug": "e-pan-enhancing-pan-genome-analysis-in-plants",
   "name": "E-PAN: Enhancing pan-genome analysis in plants",
   "website": "https://elixir-europe.org/how-we-work/scientific-programme/science/bfsp/e-pan",
@@ -733,6 +760,7 @@
   }
  },
  {
+  "wpId": 18780,
   "slug": "elixir-beacon-implementation-study-disseminating-the-beacon-and-elixir-beacon-network-ebn",
   "name": "ELIXIR Beacon Implementation Study: disseminating the Beacon and ELIXIR Beacon Network (EBN)",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-beacon",
@@ -754,6 +782,7 @@
   }
  },
  {
+  "wpId": 18779,
   "slug": "2022-beacon-infrastructure",
   "name": "ELIXIR Beacon infrastructure service plan",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-beacon-infrastructure",
@@ -775,6 +804,7 @@
   }
  },
  {
+  "wpId": 18806,
   "slug": "federated-human-data",
   "name": "ELIXIR Federated Human Data",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/federated-human-data",
@@ -795,6 +825,7 @@
   }
  },
  {
+  "wpId": 18778,
   "slug": "2022-ecp2",
   "name": "ELIXIR hybrid cloud",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-ecp2",
@@ -819,6 +850,7 @@
   }
  },
  {
+  "wpId": 18819,
   "slug": "elixir-integration-user-perspective",
   "name": "ELIXIR integration from a user perspective",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/elixir-integration-user-perspective",
@@ -851,6 +883,7 @@
   }
  },
  {
+  "wpId": 18770,
   "slug": "2022-rd-services",
   "name": "ELIXIR Rare Disease Community services and international collaborations",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-rd-services",
@@ -872,6 +905,7 @@
   }
  },
  {
+  "wpId": 18718,
   "slug": "elixir-converge",
   "name": "ELIXIR-CONVERGE",
   "website": "https://elixir-europe.org/about-us/how-funded/eu-projects/converge",
@@ -907,6 +941,7 @@
   }
  },
  {
+  "wpId": 18828,
   "slug": "elixir-uk-dash",
   "name": "ELIXIR-UK DaSH",
   "website": "https://fellowship.elixiruknode.org/",
@@ -969,6 +1004,7 @@
   }
  },
  {
+  "wpId": 18816,
   "slug": "cwl-2018",
   "name": "Enabling the reuse, extension, scaling, and reproducibility of scientific workflows",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/cwl-2018",
@@ -997,6 +1033,7 @@
   }
  },
  {
+  "wpId": 18719,
   "slug": "eosc-life",
   "name": "EOSC-life",
   "website": "http://www.eosc-life.eu/",
@@ -1028,6 +1065,7 @@
   }
  },
  {
+  "wpId": 18844,
   "slug": "ejprd",
   "name": "European Joint Programme on Rare Diseases",
   "website": "http://www.ejprarediseases.org/",
@@ -1053,6 +1091,7 @@
   }
  },
  {
+  "wpId": 18805,
   "slug": "expanding-galaxy",
   "name": "Expanding the Galaxy: meeting (the needs of) ELIXIR Communities",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/expanding-galaxy",
@@ -1079,6 +1118,7 @@
   }
  },
  {
+  "wpId": 18811,
   "slug": "exploiting-bioschemas-markup-support-elixir-communities",
   "name": "Exploiting Bioschemas markup to support ELIXIR Communities",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/exploiting-bioschemas-markup-support-elixir-communities",
@@ -1108,6 +1148,7 @@
   }
  },
  {
+  "wpId": 18809,
   "slug": "fair-service-architecture",
   "name": "FAIR service architecture",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/fair-service-architecture",
@@ -1132,6 +1173,7 @@
   }
  },
  {
+  "wpId": 18850,
   "slug": "fair-impact",
   "name": "FAIR-IMPACT",
   "website": "http://fair-impact.eu/",
@@ -1152,6 +1194,7 @@
   }
  },
  {
+  "wpId": 25067,
   "slug": "fair-in-action-bridge",
   "name": "FAIR-in-action bridge",
   "website": "https://biofair.uk/pathfinder-projects/",
@@ -1191,6 +1234,7 @@
   }
  },
  {
+  "wpId": 18815,
   "slug": "fairness-core-resources",
   "name": "FAIRness of the current ELIXIR core resources: Application (and test) of newly available FAIR metrics, and identification of steps to increase interoperability",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/fairness-core-resources",
@@ -1219,6 +1263,7 @@
   }
  },
  {
+  "wpId": 18845,
   "slug": "fairplus",
   "name": "FAIRplus",
   "website": "https://fairplus-project.eu/",
@@ -1245,6 +1290,7 @@
   }
  },
  {
+  "wpId": 18804,
   "slug": "2019-hcnv",
   "name": "First hCNV Community implementation study",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2019-hcnv",
@@ -1269,6 +1315,7 @@
   }
  },
  {
+  "wpId": 18823,
   "slug": "2022-food-nutrition",
   "name": "Food and nutrition: microbiome - diet - health",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-food-nutrition",
@@ -1293,6 +1340,7 @@
   }
  },
  {
+  "wpId": 21008,
   "slug": "gap-analysis-training-materials-development-and-training-delivery",
   "name": "Gap analysis, training materials development and training delivery",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-trp2",
@@ -1317,6 +1365,7 @@
   }
  },
  {
+  "wpId": 18788,
   "slug": "impact-evaluation",
   "name": "Impact evaluation at Node-level – getting it done",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/impact-evaluation",
@@ -1339,6 +1388,7 @@
   }
  },
  {
+  "wpId": 18813,
   "slug": "increasing-interoperability-protein-resources",
   "name": "Increasing interoperability between ELIXIR protein structure and sequence resources and expanding these resources with 3D-Models of CATH domains, built by SWISS-MODEL",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/increasing-interoperability-protein-resources",
@@ -1365,6 +1415,7 @@
   }
  },
  {
+  "wpId": 18782,
   "slug": "increasing-plant-data-findability",
   "name": "Increasing plant data findability and reuse beyond ELIXIR",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/increasing-plant-data-findability",
@@ -1399,6 +1450,7 @@
   }
  },
  {
+  "wpId": 18693,
   "slug": "integrating-the-toxicology-community-into-elixir",
   "name": "Integrating the Toxicology Community into ELIXIR",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/integrating-toxicology-community",
@@ -1431,6 +1483,7 @@
   }
  },
  {
+  "wpId": 18808,
   "slug": "interoperability-purpose",
   "name": "Interoperability with a purpose",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/interoperability-purpose",
@@ -1452,6 +1505,7 @@
   }
  },
  {
+  "wpId": 18792,
   "slug": "making-container-services-integratable",
   "name": "Making container services integratable, sustainable and widely adopted",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/making-container-services-integratable",
@@ -1477,6 +1531,7 @@
   }
  },
  {
+  "wpId": 18818,
   "slug": "mapping-biocuration",
   "name": "Mapping the landscape of biocuration in ELIXIR: Practice, capability and training requirements",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/mapping-biocuration",
@@ -1507,6 +1562,7 @@
   }
  },
  {
+  "wpId": 18822,
   "slug": "metrics-discovery",
   "name": "Metrics discovery and implementation in life sciences",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/metrics-discovery",
@@ -1531,6 +1587,7 @@
   }
  },
  {
+  "wpId": 18795,
   "slug": "microbial-biotechnology-community",
   "name": "Microbial Biotechnology Community implementation study",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/microbial-biotechnology-community",
@@ -1556,6 +1613,7 @@
   }
  },
  {
+  "wpId": 18774,
   "slug": "2022-etp1",
   "name": "Packaging, containerisation and deployment",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-etp1",
@@ -1580,6 +1638,7 @@
   }
  },
  {
+  "wpId": 18790,
   "slug": "reference-hcnv-datasets",
   "name": "Reference hCNV datasets, use-case workflows and benchmarking",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/reference-hcnv-datasets",
@@ -1604,6 +1663,7 @@
   }
  },
  {
+  "wpId": 18772,
   "slug": "2022-human-gen-phen",
   "name": "Scalable extraction of human genetic and phenotypic data from peer-reviewed literature",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-human-gen-phen",
@@ -1631,6 +1691,7 @@
   }
  },
  {
+  "wpId": 18761,
   "slug": "2023-scone",
   "name": "Single-Cell Omics Network for ELIXIR (SCONE)",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2023-SCONE",
@@ -1652,6 +1713,7 @@
   }
  },
  {
+  "wpId": 18803,
   "slug": "fluxomics-workflows",
   "name": "Standardising the fluxomics workflows",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/fluxomics-workflows",
@@ -1677,6 +1739,7 @@
   }
  },
  {
+  "wpId": 18791,
   "slug": "strengthen-data-management-galaxy",
   "name": "Strengthen data management in Galaxy",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/strengthen-data-management-galaxy",
@@ -1702,6 +1765,7 @@
   }
  },
  {
+  "wpId": 18757,
   "slug": "systems-biology-for-elixir-sybel",
   "name": "Systems Biology for ELIXIR (SYBEL)",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2023-sybel",
@@ -1724,6 +1788,7 @@
   }
  },
  {
+  "wpId": 18769,
   "slug": "2022-tess",
   "name": "TeSS – The ELIXIR training portal",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-tess",
@@ -1752,6 +1817,7 @@
   }
  },
  {
+  "wpId": 18773,
   "slug": "2022-fhd",
   "name": "The Federated EGA framework: supporting sensitive data management across the ELIXIR Nodes",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-fhd",
@@ -1776,6 +1842,7 @@
   }
  },
  {
+  "wpId": 18826,
   "slug": "tools-platform-ecosystem",
   "name": "Tools Platform Ecosystem",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/tools-platform-ecosystem",
@@ -1800,6 +1867,7 @@
   }
  },
  {
+  "wpId": 18765,
   "slug": "2022-trp4",
   "name": "Training capacity building",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-trp4",
@@ -1827,6 +1895,7 @@
   }
  },
  {
+  "wpId": 18807,
   "slug": "training-capacity-building",
   "name": "Training capacity building",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/training-capacity-building",
@@ -1853,6 +1922,7 @@
   }
  },
  {
+  "wpId": 18800,
   "slug": "training-technical-infrastructure-tess",
   "name": "Training technical infrastructure – TeSS",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/tess",
@@ -1880,6 +1950,7 @@
   }
  },
  {
+  "wpId": 18768,
   "slug": "2022-trp1",
   "name": "Training toolkit",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-trp1",
@@ -1904,6 +1975,7 @@
   }
  },
  {
+  "wpId": 18801,
   "slug": "training-toolkit",
   "name": "Training toolkit",
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/training-toolkit",

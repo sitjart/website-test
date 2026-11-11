@@ -3,6 +3,7 @@ title: "FAIR-in-action Bridge: How to communicate and advocate FAIR (Contentatho
 start: 2026-07-01
 type: "Hackathon"
 online: false
+wpId: 25073
 end: 2026-07-01
 registration: "https://forms.clickup.com/20526645/f/kjdhn-17852/WRBL9B39JQEWP02HAP"
 image: "https://elixiruknode.org/wp-content/uploads/2024/04/illustration-isometrics-mechanisms-like-extending-hand-join.svg"

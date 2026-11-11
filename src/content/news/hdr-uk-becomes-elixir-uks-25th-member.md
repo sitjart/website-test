@@ -3,6 +3,7 @@ title: "HDR UK becomes ELIXIR-UK's 25th Member"
 date: 2023-09-20
 standfirst: "ELIXIR-UK are excited to announce that Health Data Research UK (HDR UK) is the newest member of ELIXIR-UK, bringing us to 25 members. HDR UK is the National Institute for Health Data Science whose mission is to unite the"
 category: "News"
+wpId: 19667
 image: "https://elixiruknode.org/wp-content/uploads/2023/09/stethoscope-on-graph-paper-finance-account-stat-2023-11-27-05-20-48-utc-2.webp"
 related:
   members: ["hdr-uk"]

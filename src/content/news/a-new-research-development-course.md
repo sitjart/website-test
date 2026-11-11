@@ -3,6 +3,7 @@ title: "A new research software skills course will be piloted"
 date: 2023-03-20
 standfirst: "The University of Manchester and the Software Sustainability Institute (SSI) are piloting a new course on intermediate research software skills for Earth, atmospheric and oceanic sciences at a workshop from 27 to 31 Marc"
 category: "News"
+wpId: 19636
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-code.webp"
 related:
   collaborations: ["software-sustainability-institute-ssi"]

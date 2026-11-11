@@ -3,6 +3,7 @@ title: "ELIXIR Training Lesson template"
 start: 2024-06-03
 type: "Community Call"
 online: true
+wpId: 22766
 end: 2024-06-03
 startTime: "14:00"
 endTime: "15:00"

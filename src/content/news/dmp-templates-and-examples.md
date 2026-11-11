@@ -3,6 +3,7 @@ title: "ELIXIR-UK expands Data Management Planning support with templates and pr
 date: 2025-10-01
 standfirst: "ELIXIR-UK has released a suite of practical, machine-actionable DMP templates and citable examples from UK projects, supporting researchers, data stewards, and managers in building efficient, funder-compliant Data Management Plans."
 category: "News"
+wpId: 23993
 image: "https://elixiruknode.org/wp-content/uploads/2025/09/illustration-isometrics-data-life-cycle-dmp.svg"
 ---
 

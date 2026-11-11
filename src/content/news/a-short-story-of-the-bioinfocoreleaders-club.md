@@ -3,6 +3,7 @@ title: "A short story of the BioinfoCoreLeaders Club"
 date: 2026-09-08
 standfirst: "Seventeen organisations sent someone to Liverpool in May to talk about problems they had each assumed were local. They were not. Eva Caamaño and Xènia Pérez Sitjà on how a set of informal conversations became a national community."
 category: "Blog"
+wpId: 25362
 image: "https://elixiruknode.org/wp-content/uploads/2026/09/bioinfoconnecteventgroupshot19201280resized-4.webp"
 related:
   members: ["university-of-liverpool"]

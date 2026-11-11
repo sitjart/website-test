@@ -3,6 +3,7 @@ title: "BioinfoCoreLeaders UK: Building our community and shaping our next steps
 start: 2026-11-12
 type: "Community Call"
 online: false
+wpId: 25524
 end: 2026-11-12
 startTime: "11:00"
 endTime: "12:00"

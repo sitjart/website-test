@@ -3,6 +3,7 @@ title: "EDIJ and Decolonisation in Data Management"
 date: 2024-11-21
 standfirst: "An in-depth article to understand the concept of decolonisation and EDIJ considerations in the field of data management."
 category: "Articles"
+wpId: 24524
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-different-faces.jpg"
 related:
   activities: ["fellowship"]

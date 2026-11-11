@@ -3,6 +3,7 @@ title: "ELIXIR-UK All Hands 2024: A Celebration of Collaboration and Innovation"
 date: 2024-11-28
 standfirst: "With representation from the Welsh Government, BBSRC, and MRC as funders, ELIXIR-UK All Hands 2024 reaffirmed the network’s central role in shaping the future of life sciences research infrastructure in the UK."
 category: "News"
+wpId: 23068
 image: "https://elixiruknode.org/wp-content/uploads/2024/11/photo-2024-all-hands-uk-17-scaled.jpg"
 related:
   collaborations: ["euro-bioimaging-uk-node", "aibio-uk", "phenomuk", "biofair"]

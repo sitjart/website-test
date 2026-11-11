@@ -3,6 +3,7 @@ title: " FAIRsharing and OSTrails"
 start: 2024-03-05
 type: "Community Call"
 online: true
+wpId: 22960
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

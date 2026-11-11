@@ -3,6 +3,7 @@ title: "AHM Lyon debrief: training across the programme"
 start: 2026-06-29
 type: "Community Call"
 online: false
+wpId: 25156
 end: 2026-06-29
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-training-keyboard.webp"
 related:

@@ -3,6 +3,7 @@ title: "ELIXIR-UK DaSH Fellows attend the Bioinformatics Education Summit"
 date: 2023-06-14
 standfirst: "The Bioinformatics Education Summit is created and hosted by Wellcome Connecting Science , based at the Wellcome Genome Campus in the UK. The goal of this working meeting was to promote the advancement of training and ed"
 category: "News"
+wpId: 19655
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/BioEduSum23.webp"
 related:
   activities: ["fellowship"]

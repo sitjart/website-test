@@ -3,6 +3,7 @@ title: "From large-scale training to BYOD – extending Galaxy training in pract
 start: 2026-03-23
 type: "Community Call"
 online: true
+wpId: 24497
 startTime: "14:00"
 endTime: "15:00"
 venue: "Online"

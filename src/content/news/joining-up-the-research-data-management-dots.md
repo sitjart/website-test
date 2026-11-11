@@ -3,6 +3,7 @@ title: "Joining up the research data management dots with FAIRsharing"
 date: 2024-12-23
 standfirst: "How improving connectivity among ELIXIR tools enables FAIR across the research data life cycle"
 category: "Blog"
+wpId: 23141
 image: "https://elixiruknode.org/wp-content/uploads/2024/04/banner-connecting-dots-neural-networks.webp"
 related:
   collaborations: ["czech-technical-university-in-prague"]

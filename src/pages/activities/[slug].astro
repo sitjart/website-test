@@ -1,10 +1,176 @@
 ---
-import DirectoryRecord from '../../components/DirectoryRecord.astro';
-import { DIRECTORY } from '../../lib/graph';
+// Community page – option 2: light hero with people, next-call strip, existing copy, recordings, join
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Avatar from '../../components/Avatar.astro';
+import RemoteImage from '../../components/RemoteImage.astro';
+import { DIRECTORY, linksFor } from '../../lib/graph';
+import { longDate, todayUK, firstSentence, needsStop } from '../../lib/format';
+import { url } from '../../lib/url';
 
 export function getStaticPaths() {
-  return DIRECTORY['activities'].records.map((record) => ({ params: { slug: record.slug }, props: { record } }));
+  return DIRECTORY.activities.records.map((record) => ({ params: { slug: record.slug }, props: { record } }));
 }
-const { record } = Astro.props;
+const { record: r } = Astro.props;
+const links = await linksFor('activities', r.slug);
+const allEvents = await getCollection('events');
+const allNews = await getCollection('news');
+const allPeople = await getCollection('people');
+const today = todayUK();
+const events = (links.events ?? []).map((n) => allEvents.find((e) => e.id === n.slug)!).filter(Boolean);
+const next = events.filter((e) => (e.data.end ?? e.data.start) >= today).sort((a, b) => a.data.start.getTime() - b.data.start.getTime())[0];
+const past = events.filter((e) => (e.data.end ?? e.data.start) < today).sort((a, b) => b.data.start.getTime() - a.data.start.getTime());
+const people = (links.people ?? []).map((n) => allPeople.find((p) => p.id === n.slug)!).filter(Boolean);
+const faces = people.filter((p) => p.data.photo).slice(0, 12);
+const news = (links.news ?? []).slice(0, 3).map((n) => allNews.find((x) => x.id === n.slug)!).filter(Boolean);
+const kind = r.tags.find((t) => ['Club', 'Community', 'Focus Group', 'Platform', 'Fellowship'].includes(t)) ?? 'Community';
+const isClub = kind === 'Club';
+const sizes = [120, 84, 96, 72, 110, 80, 64, 100, 88, 76, 92, 68];
+const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name: r.name, description: r.summary || undefined, parentOrganization: { '@type': 'Organization', name: 'ELIXIR-UK' } };
 ---
-<DirectoryRecord kind="activities" {record} />
+<BaseLayout title={r.name} description={r.summary} {jsonLd}>
+  <section class="c-hero">
+    <div class="container c-hero__grid">
+      <div>
+        <p class="c-crumb"><a href={url('/activities/')}>Communities</a> / {kind}</p>
+        <p class="eyebrow-sm">{r.tags.filter((t) => t !== 'ELIXIR-UK').join(' · ') || 'Community'}</p>
+        <h1 class="display c-hero__title">{r.name}{needsStop(r.name) && <span class="stop">.</span>}</h1>
+        {r.summary && <p class="c-hero__lead">{firstSentence(r.summary)}</p>}
+        <div class="c-hero__actions">
+          {r.joinLink && <a class="btn" href={r.joinLink} rel="noopener">{isClub ? 'Join the Club' : 'Join in'}</a>}
+          {events.length > 0 && <span class="c-hero__meta">{events.length} {isClub ? 'Community Calls' : 'events'}</span>}
+        </div>
+      </div>
+      {faces.length > 0 ? (
+        <div class="c-faces" aria-label="Some of the people involved">
+          {faces.map((p, i) => <a href={url(`/people/${p.id}/`)} title={p.data.name}><Avatar src={p.data.photo} name={p.data.name} size={sizes[i % sizes.length]} ring="var(--grey-light)" /></a>)}
+        </div>
+      ) : r.logo ? (
+        <div class="c-logo"><Avatar src={r.logo} name={r.name} size={240} logo ring="var(--grey-light)" /></div>
+      ) : null}
+    </div>
+  </section>
+
+  {next && (
+    <a class="c-next" href={url(`/events/${next.id}/`)}>
+      <span class="container c-next__inner">
+        <span class="c-next__label">Next {isClub ? 'call' : 'event'}</span>
+        <strong>{longDate(next.data.start)}</strong>
+        <span class="c-next__title">{next.data.title}</span>
+        <span class="c-next__go">{next.data.type === 'Community Call' ? 'Join in' : 'Register'} →</span>
+      </span>
+    </a>
+  )}
+
+  <section class="container c-body">
+    <div class="prose wp-body" set:html={r.body || `<p>${r.summary}</p>`} />
+    <aside class="c-side">
+      {people.length > 0 && (
+        <div class="c-box">
+          <p class="c-box__title">People involved</p>
+          {people.slice(0, 6).map((p) => (
+            <a class="c-person" href={url(`/people/${p.id}/`)}>
+              <Avatar src={p.data.photo} name={p.data.name} size={48} ring="var(--grey-light)" />
+              <span><strong>{p.data.name}</strong>{p.data.institution && <span>{p.data.institution}</span>}</span>
+            </a>
+          ))}
+          {people.length > 6 && <p class="c-box__more">and {people.length - 6} more</p>}
+        </div>
+      )}
+      {links.projects?.length ? (
+        <div class="c-box">
+          <p class="c-box__title">Projects</p>
+          {links.projects.slice(0, 5).map((n) => <a class="c-link" href={url(`/projects/${n.slug}/`)}>{n.name}</a>)}
+        </div>
+      ) : null}
+    </aside>
+  </section>
+
+  {past.length > 0 && (
+    <section class="banner c-past">
+      <div class="container">
+        <div class="c-past__head">
+          <h2 class="section-title" style="color:#fff">Catch up<span class="stop">.</span></h2>
+          <span>{past.length} past {isClub ? 'calls' : 'events'}</span>
+        </div>
+        <div class="c-past__grid">
+          {past.slice(0, 6).map((e) => (
+            <a class="tile c-past__tile" href={url(`/events/${e.id}/`)}>
+              {e.data.image ? <RemoteImage class="ph-img" src={e.data.image} width={500} /> : <span class="ph-img" style="background:#5b7f9a"></span>}
+              <span class="ph-slide"></span>
+              {e.data.recording && <span class="c-play" aria-label="Recording available">▶</span>}
+              <span class="scrim"><span class="c-past__date">{longDate(e.data.start)}{e.data.recording && ' · Recording'}</span><span class="c-past__title">{e.data.title}</span></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {news.length > 0 && (
+    <section class="container c-news">
+      <h2 class="section-title">Stories<span class="stop">.</span></h2>
+      <ul>{news.map((n) => <li><a href={url(`/news/${n.id}/`)}><span>{longDate(n.data.date)}</span><strong>{n.data.title}</strong></a></li>)}</ul>
+    </section>
+  )}
+
+  {r.joinLink && (
+    <section class="container c-join">
+      <div>
+        <h2 class="section-title">Be part of it<span class="stop">.</span></h2>
+        <p>{isClub ? 'Free. You’ll get invitations to every Community Call and news from the community.' : 'Find out how to take part.'}</p>
+      </div>
+      <a class="btn c-join__btn" href={r.joinLink} rel="noopener">{isClub ? 'Join the Club' : 'Join in'}</a>
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .c-hero { background: var(--grey-light); overflow: hidden; }
+  .c-hero__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; align-items: center; padding-block: 64px 72px; }
+  .c-crumb { font-size: 14px; margin: 0 0 20px; color: var(--muted); }
+  .c-hero__title { font-size: clamp(2.4rem, 5vw, 3.75rem); margin: 8px 0 0; color: var(--navy); }
+  .c-hero__lead { margin: 20px 0 26px; max-width: 36rem; font-size: 1.25rem; color: #34495a; }
+  .c-hero__actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .c-hero__meta { font-size: 15px; color: #34495a; }
+  .c-faces { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 520px; margin-left: auto; }
+  .c-faces a { margin: -4px; transition: transform 0.25s var(--ease); }
+  .c-faces a:hover { transform: scale(1.06); z-index: 1; }
+  .c-logo { display: grid; place-items: center; }
+  .c-next { display: block; background: var(--navy); color: var(--white); }
+  .c-next:hover { color: var(--white); background: var(--ink); }
+  .c-next__inner { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; padding-block: 18px; }
+  .c-next__label { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #ffb37a; }
+  .c-next__title { flex: 1 1 320px; }
+  .c-next__go { font-weight: 700; color: #ffb37a; }
+  .c-body { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 64px; padding-block: 80px; }
+  .c-body .prose { max-width: 760px; }
+  .wp-body :global(h2) { font-size: 1.8rem; }
+  .c-side { display: flex; flex-direction: column; gap: 20px; }
+  .c-box { padding: 24px; border-radius: 10px; background: var(--grey-light); }
+  .c-box__title { margin: 0 0 12px; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); }
+  .c-person { display: flex; align-items: center; gap: 12px; padding: 8px 0; color: var(--navy); }
+  .c-person span span { display: block; font-size: 14px; color: var(--text); }
+  .c-box__more { margin: 8px 0 0; font-size: 14px; }
+  .c-link { display: block; padding: 8px 0; border-bottom: 1px solid var(--border); font-weight: 700; color: var(--navy); }
+  .c-past { padding-block: 96px; }
+  .c-past__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
+  .c-past__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .c-past__tile { aspect-ratio: 16 / 10; border-radius: 10px; background: var(--navy); }
+  .c-play { position: absolute; right: 16px; top: 16px; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--white); color: var(--navy); }
+  .c-past__date { font-size: 13px; color: #ffb37a; }
+  .c-past__title { font-size: 19px; font-weight: 700; line-height: 1.2; }
+  .c-news { padding-block: 80px 0; }
+  .c-news ul { list-style: none; padding: 0; margin: 24px 0 0; }
+  .c-news a { display: flex; flex-direction: column; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .c-news a span { font-size: 13px; color: var(--orange-text); font-weight: 700; }
+  .c-news a strong { color: var(--navy); font-size: 1.15rem; }
+  .c-join { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: center; padding-block: 88px; }
+  .c-join p { margin: 12px 0 0; }
+  .c-join__btn { font-size: 19px; padding: 0.9em 1.8em; }
+  @media (max-width: 900px) {
+    .c-hero__grid, .c-body, .c-join { grid-template-columns: 1fr; }
+    .c-faces { margin: 0 auto; }
+    .c-past__grid { grid-template-columns: 1fr; }
+  }
+</style>

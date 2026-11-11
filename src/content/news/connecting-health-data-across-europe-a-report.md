@@ -3,6 +3,7 @@ title: "Connecting health data across Europe: A report from two health data work
 date: 2026-09-16
 standfirst: "Two ELIXIR All Hands 2026 workshops covering 19 Nodes and two Observer countries. The main barriers to health data progress are not technical. Six areas for collaboration and four recommendations, including a coordinated ELIXIR response to the European Health Data Space."
 category: "Articles"
+wpId: 25395
 image: "https://elixiruknode.org/wp-content/uploads/2026/09/photo-all-hands-2026-lyon-1.webp"
 related:
   activities: ["uk-human-data-community"]

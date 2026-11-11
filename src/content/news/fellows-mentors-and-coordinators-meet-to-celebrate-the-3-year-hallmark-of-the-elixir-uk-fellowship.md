@@ -3,6 +3,7 @@ title: "Fellows, Mentors and coordinators meet to celebrate the 3-year hallmark 
 date: 2023-09-21
 standfirst: "On 15 September 2023, the ELIXIR-UK Fellowship reached a significant milestone, celebrating three years of extraordinary accomplishments at a unique retreat. The event, which united 20 dedicated participants, including F"
 category: "News"
+wpId: 19669
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/2023-13-01-fellows-retreat-photo-08.webp"
 related:
   activities: ["fellowship"]

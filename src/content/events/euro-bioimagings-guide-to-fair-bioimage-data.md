@@ -3,6 +3,7 @@ title: "EuroBioImaging's Guide to FAIR BioImage Data"
 start: 2024-07-01
 type: "Community Call"
 online: true
+wpId: 22963
 startTime: "11:00"
 endTime: "12:00"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-microbes-2.webp"

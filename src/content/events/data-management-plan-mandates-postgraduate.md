@@ -3,6 +3,7 @@ title: "Data Management Plan mandates for postgraduate researchers in UK HEIs"
 start: 2025-06-03
 type: "Community Call"
 online: true
+wpId: 23550
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

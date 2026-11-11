@@ -3,6 +3,7 @@ title: "Elevenses and data horror stories"
 start: 2024-10-01
 type: "Community Call"
 online: true
+wpId: 22846
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

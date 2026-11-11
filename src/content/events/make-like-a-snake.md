@@ -3,6 +3,7 @@ title: "Make like a Snake! A learning path for reproducible and shareable analys
 start: 2025-02-24
 type: "Community Call"
 online: true
+wpId: 23441
 startTime: "14:00"
 endTime: "15:00"
 recording: "https://youtu.be/voEeTgAoJ1c"

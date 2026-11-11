@@ -3,6 +3,7 @@ title: "Elevenses and data horror stories"
 start: 2025-10-07
 type: "Community Call"
 online: true
+wpId: 24047
 startTime: "11:00"
 endTime: "12:00"
 image: "https://elixiruknode.org/wp-content/uploads/2025/09/banner-halloween.webp"

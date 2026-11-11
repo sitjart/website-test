@@ -3,6 +3,7 @@ title: "New resources for sustainable RDM services"
 date: 2026-03-24
 standfirst: "UK members collaborate on ELIXIR's first internally funded RDM Community outputs."
 category: "News"
+wpId: 24501
 image: "https://elixiruknode.org/wp-content/uploads/2026/03/2025-09_rdm-community-ghent-6.webp"
 related:
   activities: ["rdm-community"]

@@ -3,6 +3,7 @@ title: "AHM Lyon debrief: health data takes the stage"
 start: 2026-06-24
 type: "Community Call"
 online: false
+wpId: 25119
 end: 2026-06-24
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-workshop-collaboration.webp"
 related:

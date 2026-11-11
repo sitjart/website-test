@@ -3,6 +3,7 @@ title: "Automating FAIR training metadata pipelines - upcoming BITS project laun
 start: 2026-11-24
 type: "Community Call"
 online: false
+wpId: 25521
 end: 2026-11-24
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-futuristic-lines.webp"
 related:

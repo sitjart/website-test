@@ -3,6 +3,7 @@ title: "FAIRsharing has launched a new Educational infographics database"
 date: 2023-04-18
 standfirst: "FAIRsharing is a manually curated, informative resource on data and metadata standards, inter-related databases and data policies. FAIRsharing is an ELIXIR Recommended Interoperability Resource and an intrinsic registry"
 category: "News"
+wpId: 19638
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-blackboard-shapes.webp"
 related:
   members: ["university-oxford"]

@@ -3,6 +3,7 @@ title: "Building phenomics infrastructure around community needs"
 start: 2026-11-18
 type: "Community Call"
 online: false
+wpId: 25535
 end: 2026-11-18
 startTime: "11:00"
 endTime: "12:00"
