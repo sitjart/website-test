@@ -69,6 +69,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': schemaType, name: r.
       <aside class="glance" aria-label="At a glance">
         <p class="glance__h">At a glance</p>
         {facts.length > 0 && <dl class="glance__facts">{facts.map((f) => <div><dt>{f.k}</dt><dd>{f.v}</dd></div>)}</dl>}
+        {kind === 'services' && <a class="glance__what" href={url('/services/#about-services')}>What being an ELIXIR-UK service means</a>}
         {recognitions.length > 0 && (
           <div class="glance__block">
             <p class="glance__sub">Recognised as</p>
@@ -118,6 +119,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': schemaType, name: r.
   .glance__facts { margin: 0; display: grid; gap: var(--s3); }
   .glance__facts dt { font-size: var(--fs-xs); color: var(--muted); }
   .glance__facts dd { margin: 0; font-weight: 700; color: var(--navy); }
+  .glance__what { display: block; margin-top: var(--s4); font-size: var(--fs-sm); font-weight: 700; color: var(--blue-dark); text-decoration: underline; text-underline-offset: 3px; }
   .glance__block { margin-top: var(--s5); padding-top: var(--s4); border-top: 1px solid var(--border); }
   .glance__sub { margin: 0 0 var(--s3); font-size: var(--fs-xs); font-weight: 700; color: var(--orange-text); }
   .glance__labels { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s3); }

@@ -10,7 +10,7 @@ import { slugify } from '../../lib/baserow';
 import { url } from '../../lib/url';
 
 const people = (await getCollection('people')).filter(isCurrent).sort((a, b) => a.data.name.split(' ').at(-1)!.localeCompare(b.data.name.split(' ').at(-1)!, 'en-GB'));
-const ORDER = ['Heads of Node', 'Coordination office', 'Management Committee', 'Steering Committee', 'Scientific Development Group', 'Scientific and Industry Advisory Board', 'DaSH Coordinator', 'DaSH Fellow', 'DaSH Mentor'];
+const ORDER = ['Heads of Node', 'Coordination office', 'Management Committee', 'Steering Committee', 'Scientific Development Group', 'Scientific and Industry Advisory Board'];
 const groups = ORDER.map((g) => ({ g, n: people.filter((p) => [...p.data.governance, ...p.data.tags].includes(g)).length })).filter((x) => x.n);
 ---
 <BaseLayout title="People" description="The people behind ELIXIR-UK.">

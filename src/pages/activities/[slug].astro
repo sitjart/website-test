@@ -39,7 +39,7 @@ const isClub = kind === 'Club';
 const kindLabel = ({ Club: 'ELIXIR-UK Club', Community: 'ELIXIR Community', 'Focus Group': 'ELIXIR Focus Group', Platform: 'ELIXIR Platform', Fellowship: 'ELIXIR-UK Fellowship' } as Record<string, string>)[kind];
 const lead = r.tags.includes('Leading');
 const body = await cleanHtml(r.body || `<p>${r.summary}</p>`);
-const fellows = isFellowship ? (await getCollection('people')).filter(isCurrent).filter((p) => p.data.tags.some((t) => t.startsWith('DaSH')) || others.includes(p)) : [];
+const fellows = isFellowship ? others : [];
 const OTHERS_SHOWN = 12;
 const fmt = (e: (typeof events)[number]) => (e.data.format === 'in-person' ? e.data.locality || 'In person' : e.data.format === 'hybrid' ? 'Hybrid' : 'Online');
 const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name: r.name, description: r.excerpt || r.summary || undefined, logo: r.logo || undefined, parentOrganization: { '@type': 'Organization', name: 'ELIXIR-UK' } };
@@ -76,10 +76,10 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name
 
   {isFellowship && fellows.length > 0 && (
     <section class="container f-people">
-      <div class="section-head"><h2 class="section-title">Fellows and mentors<span class="stop">.</span></h2></div>
+      <div class="section-head"><h2 class="section-title">People in the Fellowship<span class="stop">.</span></h2></div>
       <ul class="f-grid">
         {[...leads, ...fellows.filter((p) => !leads.includes(p))].map((p) => (
-          <li><PersonLine p={p} size={72} badge={leads.includes(p) ? 'Lead' : p.data.tags.find((t) => t.startsWith('DaSH'))} /></li>
+          <li><PersonLine p={p} size={72} badge={leads.includes(p) ? 'Lead' : undefined} /></li>
         ))}
       </ul>
     </section>

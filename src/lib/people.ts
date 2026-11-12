@@ -19,6 +19,7 @@ export interface Person {
   role: string;
   institution: string;
   institutionSlug?: string;
+  institutionKind?: 'members' | 'collaborations';
   bio: string;
   orcid?: string;
   website?: string;
@@ -33,6 +34,8 @@ export interface Person {
 const WP = process.env.WP_URL ?? 'https://elixiruknode.org';
 const ids = wpIds as Record<string, [string, string]>;
 const memberBySlug = new Map((members as { slug: string; name: string }[]).map((m) => [m.slug, m.name]));
+import collaborators from '../data/directory/collaborations.json';
+const collabBySlug = new Map((collaborators as { slug: string; name: string }[]).map((m) => [m.slug, m.name]));
 
 // Taxonomy term slugs as they appear in WordPress class names -> display names
 const TERMS: Record<string, string> = {
@@ -83,6 +86,7 @@ async function fromWordPress(): Promise<Person[]> {
         }
       }
       const memberSlug = related.members?.[0];
+      const collabSlug = related.collaborations?.[0];
       const classes: string[] = r.class_list ?? [];
       const terms = classes.map((c) => TERMS[c]).filter(Boolean);
       const media = r._embedded?.['wp:featuredmedia']?.[0];
@@ -95,8 +99,9 @@ async function fromWordPress(): Promise<Person[]> {
         leads: leads.filter((a) => !(removedLeads[a] ?? []).includes(r.slug)),
         email: acf.email || undefined,
         role: stripTags(acf.uk_node_role ?? ''),
-        institution: memberSlug ? memberBySlug.get(memberSlug) ?? '' : '',
-        institutionSlug: memberSlug,
+        institution: memberSlug ? memberBySlug.get(memberSlug) ?? '' : collabSlug ? collabBySlug.get(collabSlug) ?? '' : '',
+        institutionSlug: memberSlug ?? collabSlug,
+        institutionKind: memberSlug ? 'members' : collabSlug ? 'collaborations' : undefined,
         bio: stripTags(acf.people_description || r.content?.rendered || ''),
         orcid: acf.orcid_id || undefined,
         website: acf.website || undefined,
@@ -104,7 +109,7 @@ async function fromWordPress(): Promise<Person[]> {
         photo: media?.media_details?.sizes?.medium?.source_url ?? media?.source_url ?? undefined,
         governance: ((r['governance-role'] ?? []) as number[]).map((id) => govT.get(id)).filter(Boolean) as string[],
         status: (((r['people-status'] ?? []) as number[]).map((id) => statusT.get(id)).filter(Boolean)[0] as string) ?? terms.find((t) => ['Current member', 'Alumni', 'Collaborator'].includes(t)) ?? '',
-        tags: (((r['people-tag'] ?? []) as number[]).map((id) => tagT.get(id)).filter(Boolean) as string[]).concat(terms.filter((t) => t.startsWith('DaSH'))).filter((t, i, a) => a.indexOf(t) === i),
+        tags: [], // DaSH Fellow/Mentor/Coordinator tags are no longer used on the site
         related,
       });
     }
@@ -156,5 +161,7 @@ export async function loadPeople(): Promise<Person[]> {
   return fromBaserowOrSample();
 }
 
-/** Alumni and collaborators keep their profile page but are not listed anywhere else. */
-export const isCurrent = (p: { data: { status: string } }) => !['Alumni', 'Collaborator'].includes(p.data.status);
+/** Who appears in lists: not alumni; collaborators only if they hold a governance role (e.g. SIAB).
+ *  Everyone keeps their own profile page. */
+export const isCurrent = (p: { data: { status: string; governance: string[] } }) =>
+  p.data.status !== 'Alumni' && (p.data.status !== 'Collaborator' || p.data.governance.length > 0);

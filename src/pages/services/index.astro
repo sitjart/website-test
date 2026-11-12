@@ -15,9 +15,29 @@ const rec = (r: DirectoryRecord) => labels.recognitions.filter((x) => r.tags.inc
 const selected = groups.find((g) => g.tag === 'Selected')?.items.length ?? 0;
 ---
 <BaseLayout title="Services" description="Open-access services for the life sciences community, endorsed by ELIXIR-UK.">
-  <PageHeader title="Services" intro="Services selected by the UK Node amplify their reach and improve their opportunities for long-term sustainability." illustration="illustration-isometrics-mechanisms-working.svg" count={{ n: selected, label: 'selected services' }} />
+  <PageHeader title="Services" intro="Open-access services for the life sciences community, endorsed by ELIXIR-UK." illustration="illustration-isometrics-mechanisms-working.svg" count={{ n: selected, label: 'selected services' }} />
 
-  <section class="section">
+  <section class="section about-svc" id="about-services" aria-labelledby="about-h">
+    <div class="container about-svc__grid">
+      <div>
+        <h2 class="section-title" id="about-h">Supporting open-access services for the life sciences community<span class="stop">.</span></h2>
+        <p class="lead">Services selected by the UK Node amplify their reach and improve their opportunities for long-term sustainability.</p>
+        <p>ELIXIR-UK services benefit from exposure to a wide range of potential users and collaborators across Europe and globally.</p>
+        <p>Although Node Service status does not confer additional funding, it indicates the value placed on the service by ELIXIR. Furthermore, those offering Node Services can apply for ELIXIR Europe funding through their projects called Implementation Studies and for UK Node funding for participation in ELIXIR.</p>
+        <p class="about-svc__key">The most significant benefit is the raised profile throughout ELIXIR.</p>
+      </div>
+      <div class="selected-how">
+        <h3>How do services get selected?</h3>
+        <ol>
+          <li>An annual, open and transparent process to conform to a set of criteria designed to ensure high service quality and match UK priorities as identified by its funders.</li>
+          <li>Project commitments made to ELIXIR.</li>
+        </ol>
+        <a class="more-link" href={url('/call-for-services/')}>Selection criteria, process and benefits</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--grey">
     <div class="container svc">
       <div class="svc__main">
         <div class="filters" role="group" aria-label="Filter by recognition">
@@ -56,7 +76,7 @@ const selected = groups.find((g) => g.tag === 'Selected')?.items.length ?? 0;
         <div class="cfs">
           <p class="eyebrow-sm">Call for services</p>
           <p class="cfs__title">Do you have a service that could help the life science community deal with current data challenges?</p>
-          <p>Find out about the selection criteria, process and benefits.</p>
+          <p>Visit our call for services page to learn more about the selection criteria, process and benefits.</p>
           <a class="btn" href={url('/call-for-services/')}>Become an endorsed service</a>
         </div>
         <div class="explain">
@@ -64,10 +84,6 @@ const selected = groups.find((g) => g.tag === 'Selected')?.items.length ?? 0;
           {labels.statuses.map((s) => (
             <details class="acc"><summary>{s.title}</summary><div class="acc__body"><p>{s.text}</p>{s.draft && <span class="draft">Draft wording</span>}</div></details>
           ))}
-          <details class="acc"><summary>How are services selected?</summary><div class="acc__body">
-            <p>Through an annual, open and transparent process with published criteria, designed to ensure high service quality and match UK priorities as identified by our funders – and through project commitments made to ELIXIR.</p>
-            <p>Node Service status brings no extra funding, but signals the value ELIXIR places on a service and opens ELIXIR funding routes such as Implementation Studies.</p>
-          </div></details>
         </div>
       </aside>
     </div>
@@ -99,6 +115,14 @@ const selected = groups.find((g) => g.tag === 'Selected')?.items.length ?? 0;
   .label-explain { margin-bottom: var(--s6); padding: var(--s5); border-left: 4px solid var(--orange); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; background: #fff6ef; }
   .label-explain__h { margin: 0 0 var(--s2); font-weight: 700; font-size: 1.15rem; color: var(--navy); }
   .label-explain p:last-child { margin: 0; max-width: 62ch; }
+  .about-svc__grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+  .about-svc .section-title { font-size: clamp(1.9rem, 1.3rem + 2vw, 2.8rem); margin-bottom: var(--s5); }
+  .about-svc__key { font-weight: 700; color: var(--navy); }
+  .selected-how { padding: var(--s6); border-radius: var(--radius-lg); background: var(--grey-light); border-left: 4px solid var(--orange); }
+  .selected-how h3 { margin: 0 0 var(--s4); }
+  .selected-how ol { margin: 0 0 var(--s5); padding-left: 1.3em; display: grid; gap: var(--s3); }
+  .selected-how li::marker { color: var(--orange-text); font-weight: 900; }
+  @media (max-width: 900px) { .about-svc__grid { grid-template-columns: 1fr; } }
   .svc { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 4vw, 64px); align-items: start; }
   .jump { display: flex; flex-wrap: wrap; gap: var(--s2); margin-bottom: var(--s7); }
   .jump a { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 var(--s4); border-radius: 999px; background: var(--grey-light); color: var(--navy); font-size: var(--fs-sm); font-weight: 700; }

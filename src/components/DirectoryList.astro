@@ -104,7 +104,12 @@ const statusOrder = ['Selected', 'Contributing', 'Roadmapped'];
 
       {kind === 'members' && (
         <div class="members">
-          <aside class="members__map"><UkMap theme="light" filter /><p class="members__hint">Select a city to show only its members.</p></aside>
+          <aside class="members__map"><UkMap theme="light" filter /><p class="members__hint">Select a city to show only its members.</p>
+            <div class="join-box">
+              <p class="join-box__h">Is your organisation interested in joining ELIXIR-UK?</p>
+              <a class="btn" href={url('/new-members/')}>Apply to become a member</a>
+            </div>
+          </aside>
           <div>
           <p class="members__filter" hidden data-member-filter><span></span> <button type="button" class="linkish" data-member-clear>Show all members</button></p>
           <ul class="members__list">
@@ -257,6 +262,8 @@ const statusOrder = ['Selected', 'Contributing', 'Roadmapped'];
   .members { display: grid; grid-template-columns: minmax(240px, 0.75fr) minmax(0, 2fr); gap: clamp(24px, 4vw, 64px); align-items: start; }
   .members__map { position: sticky; top: 100px; }
   .members__filter { display: flex; align-items: center; gap: var(--s3); margin: 0 0 var(--s4); padding: var(--s3) var(--s4); border-radius: 8px; background: var(--grey-light); font-weight: 700; color: var(--navy); }
+  .join-box { margin-top: var(--s6); padding: var(--s5); border-radius: var(--radius-lg); background: var(--ink); }
+  .join-box__h { margin: 0 0 var(--s4); font-size: 1.15rem; font-weight: 700; line-height: 1.3; color: var(--white); }
   .members__hint { font-size: var(--fs-xs); color: var(--muted); text-align: center; }
   .members__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(45%, 200px), 1fr)); gap: var(--s4); }
   .members__list li { display: flex; }

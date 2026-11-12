@@ -151,6 +151,7 @@ const people = defineCollection({
     email: z.string().optional(),
     institution: z.string(),
     institutionSlug: z.string().optional(),
+    institutionKind: z.enum(['members', 'collaborations']).optional(),
     bio: z.string(),
     orcid: z.string().optional(),
     website: z.string().optional(),

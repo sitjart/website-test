@@ -17,7 +17,8 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const p = entry.data;
-const org = p.institutionSlug ? DIRECTORY.members.records.find((m) => m.slug === p.institutionSlug) : undefined;
+const orgKind = p.institutionKind ?? 'members';
+const org = p.institutionSlug ? DIRECTORY[orgKind].records.find((m) => m.slug === p.institutionSlug) : undefined;
 const leads = p.leads.map((s) => DIRECTORY.activities.records.find((a) => a.slug === s)!).filter(Boolean);
 const links = [
   ...(p.orcid ? [{ label: 'ORCID', href: p.orcid.startsWith('http') ? p.orcid : `https://orcid.org/${p.orcid}`, icon: 'orcid' }] : []),
@@ -44,7 +45,7 @@ const jsonLd = {
       <h1 class="pf-name">{p.name}<span class="stop">.</span></h1>
       {p.role && <p class="pf-role">{p.role}</p>}
       {org && (
-        <a class="pf-org" href={url(`/members/${org.slug}/`)}>
+        <a class="pf-org" href={url(`/${orgKind}/${org.slug}/`)}>
           {org.logo && <span class="pf-org__logo"><RemoteImage src={org.logo} width={200} alt="" /></span>}
           <span>{org.name}</span>
         </a>
@@ -53,10 +54,10 @@ const jsonLd = {
       {links.length > 0 && (
         <ul class="pf-links">{links.map((l) => <li><a href={l.href} rel="noopener"><span class="pf-ico" aria-hidden="true">{l.icon === 'orcid' ? 'iD' : l.icon === 'in' ? 'in' : '↗'}</span>{l.label}</a></li>)}</ul>
       )}
-      {(p.governance.length > 0 || p.tags.length > 0) && (
+      {p.governance.length > 0 && (
         <div class="pf-block">
           <p class="pf-sub">In ELIXIR-UK</p>
-          <ul class="pf-pills">{[...p.governance, ...p.tags].map((g) => <li>{g}</li>)}</ul>
+          <ul class="pf-pills">{p.governance.map((g) => <li>{g}</li>)}</ul>
         </div>
       )}
       {leads.length > 0 && (

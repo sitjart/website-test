@@ -8,7 +8,8 @@ import corrections from '../data/corrections.json';
 const removed = corrections.removeLeads as Record<string, string[]>;
 
 export async function involved(kind: Kind, r: DirectoryRecord) {
-  const people = (await getCollection('people')).filter(isCurrent);
+  // A collaborating organisation always lists its own people; elsewhere only current people are listed
+  const people = (await getCollection('people')).filter((p) => (kind === 'collaborations' ? p.data.status !== 'Alumni' : isCurrent(p)));
   const links = await linksFor(kind, r.slug);
   const linked = new Set((links.people ?? []).map((n) => n.slug));
   const isLead = (p: CollectionEntry<'people'>) => !(removed[r.slug] ?? []).includes(p.id) && (
