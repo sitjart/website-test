@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Text" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #023452;
-        fill-rule: evenodd;
-        stroke-width: 0px;
-      }
-    </style>
-  </defs>
-  <path id="path4141" class="cls-1" d="M57.03,113.36l18.03-23.87,18.7,14.52,41.57-47.75,21.7,19.53-59.6,67.95-40.4-30.38Z"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="m57.03 113.36 18.03-23.87 18.7 14.52 41.57-47.75 21.7 19.53-59.6 67.95z" style="fill:#023452;fill-rule:evenodd;stroke-width:0"/></svg>

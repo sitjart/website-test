@@ -7,14 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Download SVGs
+      - name: Download assets
         run: |
           mkdir -p public/assets/wp
           while read -r u; do
             f="public/assets/wp/$(basename "$u")"
             curl -fsSL --retry 2 -A "Mozilla/5.0" "$u" -o "$f" || echo "failed $u"
-          done < tools/wp-svg-list.txt
+          done < tools/wp-asset-list.txt
           ls public/assets/wp | wc -l
+          npx -y svgo@3 -q -f public/assets/wp --multipass || true
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"

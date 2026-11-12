@@ -1,0 +1,162 @@
+{
+ "cardiff-university": {
+  "city": "Cardiff",
+  "lat": 51.487,
+  "lon": -3.179
+ },
+ "earlham-institute": {
+  "city": "Norwich",
+  "lat": 52.622,
+  "lon": 1.222
+ },
+ "hdr-uk": {
+  "city": "London",
+  "lat": 51.524,
+  "lon": -0.134
+ },
+ "heriot-watt-university": {
+  "city": "Edinburgh",
+  "lat": 55.91,
+  "lon": -3.32
+ },
+ "imperial-college-london": {
+  "city": "London",
+  "lat": 51.498,
+  "lon": -0.177
+ },
+ "kings-college-london": {
+  "city": "London",
+  "lat": 51.511,
+  "lon": -0.116
+ },
+ "newcastle-university": {
+  "city": "Newcastle",
+  "lat": 54.98,
+  "lon": -1.615
+ },
+ "open-life-science": {
+  "city": "London",
+  "lat": 51.52,
+  "lon": -0.1
+ },
+ "quadram-institute": {
+  "city": "Norwich",
+  "lat": 52.623,
+  "lon": 1.219
+ },
+ "qmul": {
+  "city": "London",
+  "lat": 51.524,
+  "lon": -0.04
+ },
+ "queens-university-belfast": {
+  "city": "Belfast",
+  "lat": 54.584,
+  "lon": -5.934
+ },
+ "rothamsted-research": {
+  "city": "Harpenden",
+  "lat": 51.809,
+  "lon": -0.356
+ },
+ "swansea-university": {
+  "city": "Swansea",
+  "lat": 51.61,
+  "lon": -3.979
+ },
+ "the-open-university": {
+  "city": "Milton Keynes",
+  "lat": 52.025,
+  "lon": -0.709
+ },
+ "the-pirbright-institute": {
+  "city": "Pirbright",
+  "lat": 51.288,
+  "lon": -0.645
+ },
+ "ukceh": {
+  "city": "Wallingford",
+  "lat": 51.602,
+  "lon": -1.112
+ },
+ "university-college-london": {
+  "city": "London",
+  "lat": 51.525,
+  "lon": -0.134
+ },
+ "university-of-birmingham": {
+  "city": "Birmingham",
+  "lat": 52.45,
+  "lon": -1.93
+ },
+ "university-of-bradford": {
+  "city": "Bradford",
+  "lat": 53.792,
+  "lon": -1.765
+ },
+ "university-of-cambridge": {
+  "city": "Cambridge",
+  "lat": 52.204,
+  "lon": 0.116
+ },
+ "university-of-dundee": {
+  "city": "Dundee",
+  "lat": 56.458,
+  "lon": -2.982
+ },
+ "university-of-east-anglia": {
+  "city": "Norwich",
+  "lat": 52.622,
+  "lon": 1.241
+ },
+ "university-of-edinburgh": {
+  "city": "Edinburgh",
+  "lat": 55.944,
+  "lon": -3.189
+ },
+ "university-of-exeter": {
+  "city": "Exeter",
+  "lat": 50.736,
+  "lon": -3.534
+ },
+ "university-of-leicester": {
+  "city": "Leicester",
+  "lat": 52.621,
+  "lon": -1.124
+ },
+ "university-of-liverpool": {
+  "city": "Liverpool",
+  "lat": 53.406,
+  "lon": -2.966
+ },
+ "university-of-manchester": {
+  "city": "Manchester",
+  "lat": 53.467,
+  "lon": -2.234
+ },
+ "university-of-nottingham": {
+  "city": "Nottingham",
+  "lat": 52.938,
+  "lon": -1.195
+ },
+ "university-oxford": {
+  "city": "Oxford",
+  "lat": 51.754,
+  "lon": -1.254
+ },
+ "university-of-southampton": {
+  "city": "Southampton",
+  "lat": 50.935,
+  "lon": -1.396
+ },
+ "university-of-warwick": {
+  "city": "Coventry",
+  "lat": 52.379,
+  "lon": -1.561
+ },
+ "university-of-york": {
+  "city": "York",
+  "lat": 53.946,
+  "lon": -1.052
+ }
+}
