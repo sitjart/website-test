@@ -34,7 +34,7 @@ const groups = ORDER.map((g) => ({ g, n: people.filter((p) => [...p.data.governa
           <li data-q={`${p.data.name} ${p.data.role} ${p.data.institution}`.toLowerCase()} data-g={[...p.data.governance, ...p.data.tags].map(slugify).join(' ')}>
             <a class="person" href={url(`/people/${p.id}/`)}>
               <Avatar src={p.data.photo} name={p.data.name} size={136} />
-              {p.data.honorific && <span class="person__hon">{p.data.honorific}</span>}
+              <span class="person__hon" aria-hidden={p.data.honorific ? undefined : 'true'}>{p.data.honorific}</span>
               <span class="person__name">{p.data.name}</span>
               {p.data.role && <span class="person__role">{p.data.role}</span>}
               {p.data.institution && <span class="person__inst">{p.data.institution}</span>}
@@ -94,7 +94,7 @@ const groups = ORDER.map((g) => ({ g, n: people.filter((p) => [...p.data.governa
   .person :global(.avatar > img), .person :global(.avatar__fill) { transition: box-shadow 0.3s var(--ease); }
   .person:hover :global(.avatar) { transform: translateY(-4px); }
   .person:hover :global(.avatar > img), .person:hover :global(.avatar__fill) { box-shadow: 0 0 0 4px var(--white), 0 0 0 6px var(--orange); }
-  .person__hon { font-size: var(--fs-xs); color: var(--muted); }
+  .person__hon { display: block; min-height: 1.4em; line-height: 1.4; font-size: var(--fs-xs); color: var(--muted); }
   .person__name { font-size: 1.1rem; font-weight: 700; line-height: 1.25; color: var(--navy); }
   .person:hover .person__name { color: var(--orange-text); }
   .person__role { font-size: var(--fs-sm); line-height: 1.4; margin-top: 2px; }
