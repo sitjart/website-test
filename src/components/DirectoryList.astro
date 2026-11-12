@@ -1,109 +1,267 @@
 ---
-// Listing page for a directory (services, members, projects ...), with tag filters
+// Listing pages for the directory. One layout per kind, so each reads the way its records do:
+// services and collaborators as logo cards, members beside the map, communities grouped by type with their icons,
+// projects as a scannable list, thematic areas as illustrated cards.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from './PageHeader.astro';
 import RemoteImage from './RemoteImage.astro';
-import { DIRECTORY, tagSlug } from '../lib/graph';
+import UkMap from './UkMap.astro';
+import { DIRECTORY, tagSlug, type DirectoryRecord } from '../lib/graph';
+import { localAsset, asset } from '../lib/assets';
+import { firstSentence } from '../lib/format';
+import locations from '../data/member-locations.json';
+import home from '../data/home.json';
 import { url } from '../lib/url';
 
 interface Props { kind: keyof typeof DIRECTORY }
 const { kind } = Astro.props;
-const { title, records, intro } = DIRECTORY[kind];
-const tags = [...new Set(records.flatMap((r) => r.tags))].sort();
+const { title, records: all, intro } = DIRECTORY[kind];
+const records = [...all].sort((a, b) => a.name.localeCompare(b.name, 'en-GB'));
+const href = (r: DirectoryRecord) => url(`/${kind}/${r.slug}/`);
+const year = (s: string | null) => (s ? s.slice(0, 4) : '');
+
+const HEAD: Record<string, { intro?: string; illustration?: string; countLabel: string }> = {
+  services: { intro, illustration: 'illustration-isometrics-mechanisms-working.svg', countLabel: 'services in the catalogue' },
+  members: { intro, countLabel: 'member organisations' },
+  projects: { intro: 'Projects ELIXIR-UK and its members lead or take part in, across ELIXIR, Europe and the UK.', illustration: 'illustration-isometrics-construction-robots.svg', countLabel: 'projects' },
+  activities: { intro: 'Clubs run by ELIXIR-UK, and the ELIXIR Communities, Focus Groups and Platforms the UK takes part in.', illustration: 'illustration-isometrics-team-rowing.svg', countLabel: 'communities and groups' },
+  collaborations: { intro: 'Organisations ELIXIR-UK works with beyond its membership.', illustration: 'illustration-isometrics-mechanisms-like-extending-hand-join.svg', countLabel: 'collaborators' },
+  area: { intro: 'Hubs that gather the communities, services, projects and people working on a theme.', countLabel: 'thematic areas' },
+};
+const head = HEAD[kind];
+
+// Filters: facet tags, most used first; tags on every record are dropped as they filter nothing
+const counts = new Map<string, number>();
+records.forEach((r) => r.tags.forEach((t) => counts.set(t, (counts.get(t) ?? 0) + 1)));
+const tags = [...counts.entries()].filter(([, n]) => n < records.length).sort((a, b) => b[1] - a[1]).map(([t]) => t);
+const showFilters = ['services', 'projects'].includes(kind) && tags.length > 1;
+
+// Communities grouped by type
+const GROUPS = [
+  { key: 'Club', title: 'ELIXIR-UK Clubs', text: 'Run by ELIXIR-UK, open to everyone working in UK life sciences.' },
+  { key: 'Fellowship', title: 'Fellowship', text: '' },
+  { key: 'Community', title: 'ELIXIR Communities', text: 'Europe-wide communities of practice in which UK members take part, and often lead.' },
+  { key: 'Focus Group', title: 'Focus Groups', text: 'Time-limited groups working on a specific question.' },
+  { key: 'Platform', title: 'ELIXIR Platforms', text: 'The five technical Platforms that underpin ELIXIR’s services.' },
+];
+const grouped = kind === 'activities'
+  ? GROUPS.map((g) => ({ ...g, items: records.filter((r) => r.tags.includes(g.key) && (g.key !== 'Community' || !r.tags.includes('Club'))) })).filter((g) => g.items.length)
+  : [];
+const locs = locations as Record<string, { city: string }>;
+const areaArt = (home.areaIllustrations ?? {}) as Record<string, string>;
+const statusOrder = ['Selected', 'Contributing', 'Roadmapped'];
 ---
-<BaseLayout {title}>
-  <PageHeader {title} {intro} />
+<BaseLayout {title} description={head.intro}>
+  <PageHeader {title} intro={head.intro} illustration={head.illustration} count={{ n: records.length, label: head.countLabel }} />
+
   <section class="section">
     <div class="container">
-      {tags.length > 1 && (
-        <div class="filters" role="group" aria-label="Filter">
-          <button type="button" class="chip is-active" data-filter="">All ({records.length})</button>
-          {tags.map((t) => (
-            <button type="button" class="chip" data-filter={tagSlug(t)}>
-              {t} ({records.filter((r) => r.tags.includes(t)).length})
-            </button>
-          ))}
+      {showFilters && (
+        <div class="filters" role="group" aria-label={`Filter ${title.toLowerCase()}`}>
+          <button type="button" class="chip is-active" data-filter="" aria-pressed="true">All <span>{records.length}</span></button>
+          {tags.map((t) => <button type="button" class="chip" data-filter={tagSlug(t)} aria-pressed="false">{t} <span>{counts.get(t)}</span></button>)}
         </div>
       )}
-      <ul class="dir-grid">
-        {records.map((r) => (
-          <li class="dir-card" data-tags={r.tags.map(tagSlug).join(' ')}>
-            <a href={url(`/${kind}/${r.slug}/`)}>
-              <span class="dir-card__logo">
-                {r.logo ? <RemoteImage src={r.logo} width={240} alt="" /> : <span class="dir-card__initial">{r.name[0]}</span>}
-              </span>
-              <span class="dir-card__name">{r.name}</span>
-              {r.tags.length > 0 && <span class="dir-card__tags">{r.tags.join(' · ')}</span>}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <p class="filters__empty" hidden>Nothing matches this filter.</p>
+      {showFilters && <p class="filters__status" aria-live="polite"></p>}
+
+      {kind === 'services' && (
+        <ul class="cards cards--logo">
+          {records.sort((a, b) => statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status) || a.name.localeCompare(b.name)).map((r) => (
+            <li class="dir-item" data-tags={r.tags.map(tagSlug).join(' ')}>
+              <a class="card lcard" href={href(r)}>
+                <span class="lcard__logo">{r.logo ? <RemoteImage src={r.logo} width={320} alt="" /> : <b>{r.name[0]}</b>}</span>
+                <span class="lcard__body">
+                  <span class="card__title">{r.name}</span>
+                  {r.summary && <span class="lcard__sum">{firstSentence(r.summary, 120)}</span>}
+                  <span class="lcard__meta">
+                    {r.status && <span class:list={['status', `status--${tagSlug(r.status)}`]}>{r.status}</span>}
+                    {r.tags.filter((t) => t !== r.status && /ELIXIR|Coalition/.test(t)).slice(0, 1).map((t) => <span class="lcard__badge">{t.replace('ELIXIR ', '')}</span>)}
+                  </span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {kind === 'collaborations' && (
+        <ul class="cards cards--logo">
+          {records.map((r) => (
+            <li><a class="card lcard" href={href(r)}>
+              <span class="lcard__logo">{r.logo ? <RemoteImage src={r.logo} width={320} alt="" /> : <b>{r.name[0]}</b>}</span>
+              <span class="lcard__body"><span class="card__title">{r.name}</span>{r.summary && <span class="lcard__sum">{firstSentence(r.summary, 110)}</span>}</span>
+            </a></li>
+          ))}
+        </ul>
+      )}
+
+      {kind === 'members' && (
+        <div class="members">
+          <aside class="members__map"><UkMap theme="light" /><p class="members__hint">Select a city to see its members.</p></aside>
+          <ul class="members__list">
+            {records.map((r) => (
+              <li><a class="card mcard" href={href(r)}>
+                <span class="mcard__logo">{r.logo ? <RemoteImage src={r.logo} width={280} alt="" /> : <b>{r.name[0]}</b>}</span>
+                <span class="card__title">{r.name}</span>
+                <span class="mcard__meta">{locs[r.slug]?.city}{r.start && ` · since ${year(r.start)}`}</span>
+              </a></li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {kind === 'activities' && grouped.map((g) => (
+        <section class="group" aria-labelledby={`g-${tagSlug(g.key)}`}>
+          <header class="group__head">
+            <h2 id={`g-${tagSlug(g.key)}`}>{g.title} <span>{g.items.length}</span></h2>
+            {g.text && <p>{g.text}</p>}
+          </header>
+          <ul class="cards cards--icon">
+            {g.items.map((r) => (
+              <li><a class="card icard" href={href(r)}>
+                <span class="icon-disc">{r.logo ? <img src={localAsset(r.logo)} alt="" loading="lazy" /> : <b>{r.name[0]}</b>}</span>
+                <span class="icard__body">
+                  <span class="card__title">{r.name}</span>
+                  {r.summary && <span class="icard__sum">{firstSentence(r.summary, 110)}</span>}
+                  {r.tags.includes('Leading') && <span class="lead-badge">UK co-leads</span>}
+                </span>
+              </a></li>
+            ))}
+          </ul>
+        </section>
+      ))}
+
+      {kind === 'projects' && (
+        <ul class="plist">
+          {records.sort((a, b) => (b.start ?? '').localeCompare(a.start ?? '')).map((r) => (
+            <li class="dir-item" data-tags={r.tags.map(tagSlug).join(' ')}>
+              <a href={href(r)} class="plist__row">
+                <span class="plist__years">{year(r.start)}{r.end && year(r.end) !== year(r.start) ? `–${year(r.end)}` : r.start ? '–' : ''}</span>
+                <span class="plist__main">
+                  <span class="plist__name">{r.name}</span>
+                  {r.summary && <span class="plist__sum">{firstSentence(r.summary, 160)}</span>}
+                </span>
+                <span class="plist__tags">{r.tags.slice(0, 2).map((t) => <span>{t}</span>)}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {kind === 'area' && (
+        <ul class="cards cards--area">
+          {records.map((r) => (
+            <li><a class="card acard" href={href(r)}>
+              <span class="acard__art">{areaArt[r.slug] ? <img src={asset(areaArt[r.slug])} alt="" loading="lazy" /> : r.logo ? <img src={localAsset(r.logo)} alt="" /> : null}</span>
+              <span class="acard__body"><span class="card__title">{r.name}</span>{r.summary && <span class="lcard__sum">{firstSentence(r.summary, 140)}</span>}</span>
+            </a></li>
+          ))}
+        </ul>
+      )}
+
+      <p class="filters__empty" hidden>Nothing matches this filter. <button type="button" class="linkish" data-filter="">Show all</button></p>
     </div>
   </section>
 </BaseLayout>
 
 <script>
-  // Tag filter: show only cards carrying the chosen tag; the choice is kept in the URL (#tag)
+  // Tag filter: show only items carrying the chosen tag; the choice is kept in the URL (#tag)
   const chips = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
-  const cards = document.querySelectorAll<HTMLElement>('.dir-card');
+  const items = document.querySelectorAll<HTMLElement>('.dir-item');
   const empty = document.querySelector<HTMLElement>('.filters__empty');
+  const status = document.querySelector<HTMLElement>('.filters__status');
   const apply = (tag: string) => {
     let shown = 0;
-    cards.forEach((c) => {
+    items.forEach((c) => {
       const ok = !tag || (c.dataset.tags ?? '').split(' ').includes(tag);
       c.hidden = !ok;
       if (ok) shown++;
     });
-    chips.forEach((ch) => ch.classList.toggle('is-active', ch.dataset.filter === tag));
-    if (empty) empty.hidden = shown > 0;
+    chips.forEach((ch) => { const on = ch.dataset.filter === tag; ch.classList.toggle('is-active', on); ch.setAttribute('aria-pressed', String(on)); });
+    if (empty) empty.hidden = shown > 0 || !items.length;
+    if (status) status.textContent = tag ? `Showing ${shown} of ${items.length}` : '';
   };
   chips.forEach((ch) => ch.addEventListener('click', () => {
     const tag = ch.dataset.filter ?? '';
     history.replaceState(null, '', tag ? `#${tag}` : location.pathname);
     apply(tag);
   }));
-  apply(location.hash.slice(1));
+  if (items.length) apply(decodeURIComponent(location.hash.slice(1)));
 </script>
 
 <style>
-  .filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
-  .chip {
-    font: inherit;
-    font-size: 14px;
-    padding: 0.4rem 0.9rem;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background: var(--white);
-    color: var(--navy);
-    cursor: pointer;
-    transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+  .filters { display: flex; flex-wrap: wrap; gap: var(--s2); margin-bottom: var(--s3); }
+  .chip { font: inherit; font-size: var(--fs-sm); min-height: 40px; padding: 0 var(--s4); border: 1px solid var(--border); border-radius: 999px; background: var(--white); color: var(--navy); cursor: pointer; transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease); }
+  .chip span { color: var(--muted); margin-left: 2px; font-size: var(--fs-xs); }
+  .chip:hover { border-color: var(--navy); }
+  .chip.is-active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+  .chip.is-active span { color: #9fbcd0; }
+  .filters__status { min-height: 1.5em; margin: 0 0 var(--s5); font-size: var(--fs-sm); color: var(--muted); }
+  .filters__empty { padding: var(--s7) 0; text-align: center; }
+  .linkish { font: inherit; background: none; border: 0; color: var(--blue); font-weight: 700; cursor: pointer; }
+
+  .cards { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s4); }
+  .cards > li { display: flex; }
+  .cards > li > .card { flex: 1; }
+  .cards--logo { grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); }
+  .lcard { padding: 0; overflow: hidden; }
+  .lcard__logo { display: flex; align-items: center; justify-content: center; height: 140px; padding: var(--s5) var(--s6); border-bottom: 1px solid var(--border); }
+  .lcard__logo :global(img) { max-width: 100%; max-height: 92px; width: auto; height: auto; object-fit: contain; }
+  .lcard__logo b, .mcard__logo b { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--navy); color: var(--white); font-size: 1.6rem; }
+  .lcard__body { display: flex; flex-direction: column; gap: var(--s2); padding: var(--s5); flex: 1; }
+  .lcard__sum { font-size: var(--fs-sm); line-height: 1.5; color: var(--text); }
+  .lcard__meta { display: flex; flex-wrap: wrap; gap: var(--s2); margin-top: auto; padding-top: var(--s2); }
+  .status, .lcard__badge { font-size: var(--fs-xs); font-weight: 700; padding: 2px 8px; border-radius: 3px; }
+  .status--selected { background: #e2f3ea; color: #1e6b45; }
+  .status--contributing { background: #e3f1f7; color: var(--blue-dark); }
+  .status--roadmapped { background: #fdeee2; color: #8f4006; }
+  .lcard__badge { background: var(--grey-light); color: var(--navy); font-weight: 400; }
+
+  .members { display: grid; grid-template-columns: minmax(240px, 0.75fr) minmax(0, 2fr); gap: clamp(24px, 4vw, 64px); align-items: start; }
+  .members__map { position: sticky; top: 100px; }
+  .members__hint { font-size: var(--fs-xs); color: var(--muted); text-align: center; }
+  .members__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(45%, 200px), 1fr)); gap: var(--s4); }
+  .members__list li { display: flex; }
+  .mcard { flex: 1; gap: var(--s2); }
+  .mcard__logo { display: flex; align-items: center; justify-content: center; height: 96px; margin-bottom: var(--s3); }
+  .mcard__logo :global(img) { max-width: 100%; max-height: 96px; width: auto; height: auto; object-fit: contain; }
+  .mcard__meta { font-size: var(--fs-xs); color: var(--muted); }
+
+  .group + .group { margin-top: var(--s8); }
+  .group__head { display: flex; align-items: baseline; gap: var(--s5); flex-wrap: wrap; margin-bottom: var(--s5); padding-bottom: var(--s4); border-bottom: 1px solid var(--border); }
+  .group__head h2 { margin: 0; font-size: var(--fs-h3); }
+  .group__head h2 span { color: var(--orange-text); font-weight: 400; margin-left: 4px; }
+  .group__head p { margin: 0; color: var(--muted); font-size: var(--fs-sm); }
+  .cards--icon { grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); }
+  .icard { flex-direction: row; align-items: flex-start; gap: var(--s4); }
+  .icard .icon-disc { width: 64px; background: var(--grey-light); border: 0; }
+  .icard .icon-disc b { color: var(--navy); font-size: 1.4rem; }
+  .icard__body { display: flex; flex-direction: column; gap: var(--s1); min-width: 0; }
+  .icard__sum { font-size: var(--fs-sm); line-height: 1.5; }
+  .lead-badge { align-self: flex-start; margin-top: var(--s2); font-size: var(--fs-xs); font-weight: 700; padding: 2px 8px; border-radius: 3px; background: #fdeee2; color: #8f4006; }
+
+  .plist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+  .plist__row { display: grid; grid-template-columns: 110px minmax(0, 1fr) 220px; gap: var(--s5); align-items: start; padding: var(--s5) var(--s3); border-bottom: 1px solid var(--border); color: var(--text); transition: background 0.2s var(--ease); }
+  .plist__row:hover { background: var(--grey-light); color: var(--text); }
+  .plist__years { font-size: var(--fs-sm); font-weight: 700; color: var(--orange-text); font-variant-numeric: tabular-nums; padding-top: 2px; }
+  .plist__main { display: flex; flex-direction: column; gap: var(--s1); }
+  .plist__name { font-weight: 700; color: var(--navy); font-size: 1.1rem; line-height: 1.3; }
+  .plist__row:hover .plist__name { color: var(--orange-text); }
+  .plist__sum { font-size: var(--fs-sm); line-height: 1.5; }
+  .plist__tags { display: flex; flex-wrap: wrap; gap: var(--s2); justify-content: flex-end; }
+  .plist__tags span { font-size: var(--fs-xs); padding: 2px 8px; border-radius: 3px; background: var(--grey-light); color: var(--navy); }
+
+  .cards--area { grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); }
+  .acard { padding: 0; overflow: hidden; }
+  .acard__art { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; padding: var(--s6); background: var(--grey-light); }
+  .acard__art img { max-width: 100%; max-height: 180px; object-fit: contain; }
+  .acard__body { display: flex; flex-direction: column; gap: var(--s2); padding: var(--s5); }
+  .acard .card__title { font-size: 1.3rem; }
+
+  @media (max-width: 900px) {
+    .members { grid-template-columns: 1fr; }
+    .members__map { position: static; max-width: 280px; margin-inline: auto; }
+    .plist__row { grid-template-columns: 80px minmax(0, 1fr); }
+    .plist__tags { grid-column: 2; justify-content: flex-start; }
   }
-  .chip:hover { border-color: var(--orange); }
-  .chip.is-active { background: var(--orange); border-color: var(--orange); color: var(--white); }
-  .dir-grid {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
-  }
-  .dir-card a {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 1.5rem;
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: 0 20px 40px rgb(225 232 237 / 0.7);
-    color: var(--text);
-    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
-  }
-  .dir-card a:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgb(2 52 82 / 0.12); color: var(--text); }
-  .dir-card__logo { display: grid; place-items: center; height: 110px; margin-bottom: 1rem; }
-  .dir-card__logo :global(img) { max-height: 100%; max-width: 100%; object-fit: contain; }
-  .dir-card__initial { display: grid; place-items: center; width: 80px; height: 80px; border-radius: 50%; background: var(--navy); color: var(--white); font-size: 2rem; font-weight: 700; }
-  .dir-card__name { font-weight: 700; color: var(--navy); line-height: 1.3; }
-  .dir-card__tags { font-size: 13px; color: var(--orange); margin-top: 0.4rem; }
 </style>

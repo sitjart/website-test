@@ -1,36 +1,48 @@
 ---
+// Home – written for members and funders first: who we are, what the Node delivers, the evidence.
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import UkMap from '../components/UkMap.astro';
+import HeroShapes from '../components/HeroShapes.astro';
 import RemoteImage from '../components/RemoteImage.astro';
+import GrowthChart from '../components/charts/GrowthChart.astro';
+import BarChart from '../components/charts/BarChart.astro';
 import home from '../data/home.json';
 import { DIRECTORY, linksFor } from '../lib/graph';
-import { longDate, todayUK } from '../lib/format';
+import { nodeStats } from '../lib/stats';
+import { asset, localAsset } from '../lib/assets';
+import { longDate, todayUK, firstSentence } from '../lib/format';
 import { url } from '../lib/url';
 
-const memberCount = DIRECTORY.members.records.length;
+const stats = await nodeStats();
 const services = DIRECTORY.services.records.filter((s) => s.status === 'Selected');
-
-const news = (await getCollection('news')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
+const allNews = (await getCollection('news')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const news = allNews.slice(0, 3);
 const today = todayUK();
 const upcoming = (await getCollection('events'))
   .filter((e) => (e.data.end ?? e.data.start) >= today)
   .sort((a, b) => a.data.start.getTime() - b.data.start.getTime())
-  .slice(0, 3);
-const allNews = await getCollection('news');
+  .slice(0, 4);
 
-// Thematic areas: picture = the area's own image, else the newest linked story's image
+const LABEL: Record<string, string> = { services: 'services', projects: 'projects', activities: 'communities', events: 'events', people: 'people', members: 'members' };
 const areas = await Promise.all(
   home.thematic.map(async (slug) => {
     const r = DIRECTORY.area.records.find((a) => a.slug === slug)!;
     const links = await linksFor('area', slug);
-    const story = links.news?.map((n) => allNews.find((x) => x.id === n.slug)).find((n) => n?.data.image);
-    const counts = Object.entries(links).filter(([k]) => k !== 'news').map(([k, v]) => `${v!.length} ${k}`).slice(0, 2).join(' · ');
-    return { ...r, image: r.logo || story?.data.image, counts };
+    const counts = (['services', 'projects', 'activities', 'events'] as const)
+      .filter((k) => links[k]?.length)
+      .map((k) => ({ n: links[k]!.length, label: LABEL[k] }))
+      .slice(0, 3);
+    return { ...r, illustration: (home.areaIllustrations as Record<string, string>)[slug], counts };
   }),
 );
+
+// Where the UK leads: Clubs plus the ELIXIR Communities and groups ELIXIR-UK leads
+const leads = DIRECTORY.activities.records.filter((a) => a.tags.includes('Leading') || a.tags.includes('Club'));
+const thisYear = new Date().getFullYear();
+const evBars = stats.events.map((e) => ({ label: String(e.year), value: e.count, note: e.year === thisYear ? 'so far this year' : undefined }));
 const day = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', timeZone: 'UTC' });
-const month = (d: Date) => d.toLocaleDateString('en-GB', { month: 'long', timeZone: 'UTC' });
+const month = (d: Date) => d.toLocaleDateString('en-GB', { month: 'short', timeZone: 'UTC' });
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -38,41 +50,148 @@ const jsonLd = {
   name: 'ELIXIR-UK',
   url: 'https://elixiruknode.org',
   parentOrganization: { '@type': 'Organization', name: 'ELIXIR', url: 'https://elixir-europe.org' },
+  member: DIRECTORY.members.records.map((m) => ({ '@type': 'Organization', name: m.name })),
 };
 ---
 <BaseLayout description={home.intro} {jsonLd}>
+  <!-- 1. Who we are -->
   <section class="banner hero">
+    <div class="hero__stage">
+    <HeroShapes />
     <div class="container hero__grid">
-      <div>
-        <h1 class="display hero__title">ELIXIR-UK</h1>
+      <div class="hero__copy">
+        <p class="eyebrow-sm hero__eyebrow">{home.heroEyebrow}</p>
+        <h1 class="display hero__title">ELIXIR-UK<span class="stop">.</span></h1>
         <p class="hero__intro">{home.intro}</p>
         <div class="hero__actions">
-          <a class="btn" href={url('/join-in/')}>Get involved</a>
-          <a class="btn btn--ghost" href={home.video}>Watch our story ▸</a>
+          <a class="btn" href={url('/new-members/')}>Become a member</a>
+          <a class="btn btn--ghost" href={home.video}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 8.5v7l6-3.5z" fill="currentColor"/></svg>
+            Watch our story
+          </a>
         </div>
       </div>
-      <figure class="hero__map">
-        <UkMap />
-        <figcaption><span class="display">{memberCount}</span><span>member organisations<br />across the UK</span></figcaption>
-      </figure>
+    </div>
+    </div>
+    <div class="container hero__facts-wrap">
+      <dl class="hero__facts">
+        <div><dt>Member organisations</dt><dd>{stats.members}</dd></div>
+        <div><dt>Endorsed services</dt><dd>{stats.services}</dd></div>
+        <div><dt>Communities and groups</dt><dd>{stats.communities}</dd></div>
+        <div><dt>Projects</dt><dd>{stats.projects}</dd></div>
+      </dl>
     </div>
   </section>
 
-  <section class="container mission" aria-label="Our mission">
-    {home.mission.map((m, i) => (
-      <a class:list={['mission__tile', 'lift', { 'is-highlight': m.highlight }]} href={url(m.href)} data-reveal="fade-up" style={`--delay:${i * 80}ms`}>
-        <span class="eyebrow-sm">Our mission</span>
-        <span class="mission__title">{m.title}<span class="stop">.</span></span>
-        <span class="mission__text">{m.text}</span>
-      </a>
-    ))}
+  <!-- 2. Mission -->
+  <section class="section mission-wrap" aria-labelledby="mission-h">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" id="mission-h">Our mission<span class="stop">.</span></h2>
+          <p>Four pillars hold the Node together.</p>
+        </div>
+      </div>
+      <div class="mission">
+        {home.mission.map((m, i) => (
+          <a class:list={['mission__card', { 'is-highlight': m.highlight }]} href={url(m.href)} data-reveal="fade-up" style={`--delay:${i * 70}ms`}>
+            <span class="mission__art"><img src={asset(m.illustration)} alt="" loading="lazy" decoding="async" /></span>
+            <span class="mission__body">
+              <span class="mission__title">{m.title}<span class="stop">.</span></span>
+              <span class="mission__text">{m.text}</span>
+              {m.draft && <span class="draft">Draft wording</span>}
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
   </section>
 
-  <section class="section section--grey">
+  <!-- 3. Evidence -->
+  <section class="banner numbers" aria-labelledby="numbers-h">
     <div class="container">
-      <div class="head-row">
-        <h2 class="section-title">What’s new<span class="stop">.</span></h2>
-        <a href={url('/news/')}>All news &amp; stories →</a>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" id="numbers-h">The Node in numbers<span class="stop">.</span></h2>
+          <p class="numbers__sub">Counted from the records behind this site, updated on every build.</p>
+        </div>
+      </div>
+      <div class="numbers__top">
+      <div class="numbers__map"><UkMap /><p class="numbers__hint">Select a dot to see the members in that city.</p></div>
+      <ul class="kpis">
+        <li><a href={url('/members/')}><strong>{stats.members}</strong><span>member organisations</span></a></li>
+        <li><a href={url('/services/')}><strong>{stats.services}</strong><span>endorsed services</span></a></li>
+        <li><a href={url('/activities/')}><strong>{stats.communities}</strong><span>communities and groups, {stats.leading} UK-led</span></a></li>
+        <li><a href={url('/projects/')}><strong>{stats.projects}</strong><span>projects</span></a></li>
+        <li><a href={url('/people/')}><strong>{stats.people}</strong><span>people with a profile</span></a></li>
+        <li><a href={url('/events/')}><strong>{stats.events.reduce((a, e) => a + e.count, 0)}</strong><span>events since {stats.events[0]?.year}</span></a></li>
+      </ul>
+      </div>
+      <div class="charts">
+        <div class="chart-card">
+          <h3>Member organisations since {stats.firstYear}</h3>
+          <p>From {stats.founding} founding members to {stats.members} today.</p>
+          <GrowthChart data={stats.growth} title="Member organisations by year" />
+        </div>
+        <div class="chart-card">
+          <h3>Events and Community Calls</h3>
+          <p>Listed on the site, per year.</p>
+          <BarChart data={evBars} title="Events per year" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Thematic areas -->
+  <section class="section" aria-labelledby="areas-h">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" id="areas-h">Thematic areas<span class="stop">.</span></h2>
+          <p>Each area gathers the communities, services, projects and people working on it.</p>
+        </div>
+        <a class="more-link" href={url('/area/')}>All thematic areas</a>
+      </div>
+      <div class="areas">
+        {areas.map((a, i) => (
+          <a class="area" href={url(`/area/${a.slug}/`)} data-reveal="fade-up" style={`--delay:${i * 80}ms`}>
+            <span class="area__art">{a.illustration && <img src={asset(a.illustration)} alt="" loading="lazy" decoding="async" />}</span>
+            <span class="area__title">{a.name}</span>
+            {a.counts.length > 0 && <span class="area__counts">{a.counts.map((c) => <span><b>{c.n}</b> {c.label}</span>)}</span>}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Where the UK leads -->
+  <section class="section section--grey" aria-labelledby="leads-h">
+    <div class="container leads">
+      <div class="leads__intro">
+        <h2 class="section-title" id="leads-h">Where the UK leads<span class="stop">.</span></h2>
+        <p>ELIXIR-UK runs its own Clubs and co-leads {leads.filter((l) => !l.tags.includes('Club')).length} ELIXIR Communities and groups across Europe.</p>
+        <a class="more-link" href={url('/activities/')}>All communities</a>
+      </div>
+      <ul class="leads__grid">
+        {leads.map((l) => (
+          <li>
+            <a href={url(`/activities/${l.slug}/`)}>
+              <span class="icon-disc">{l.logo ? <img src={localAsset(l.logo)} alt="" loading="lazy" /> : <b>{l.name[0]}</b>}</span>
+              <span class="leads__name">{l.name}</span>
+              <span class="leads__kind">{l.tags.includes('Club') ? 'ELIXIR-UK Club' : 'ELIXIR Community'}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. What's new -->
+  <section class="section" aria-labelledby="news-h">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title" id="news-h">What’s new<span class="stop">.</span></h2>
+        <a class="more-link" href={url('/news/')}>All news and stories</a>
       </div>
       <div class="news-tiles">
         {news.map((n, i) => i === 0 ? (
@@ -80,56 +199,42 @@ const jsonLd = {
             {n.data.image && <RemoteImage class="ph-img" src={n.data.image} width={900} />}
             <span class="ph-slide"></span>
             <span class="scrim">
-              <span class="tag">{n.data.category} · {longDate(n.data.date)}</span>
+              <span class="news-tile__meta">{n.data.category} · {longDate(n.data.date)}</span>
               <span class="news-tile__title news-tile__title--big">{n.data.title}</span>
             </span>
           </a>
         ) : (
-          <a class:list={['news-tile', 'lift', i === 1 ? 'news-tile--navy' : 'news-tile--blue']} href={url(`/news/${n.id}/`)}>
-            <span class="tag" style={i === 2 ? 'background: var(--navy)' : ''}>{n.data.category} · {longDate(n.data.date)}</span>
+          <a class:list={['news-tile', i === 1 ? 'news-tile--navy' : 'news-tile--blue']} href={url(`/news/${n.id}/`)}>
+            <span class="news-tile__meta">{n.data.category} · {longDate(n.data.date)}</span>
             <span class="news-tile__title">{n.data.title}</span>
-            <span class="news-tile__more">Read →</span>
+            {n.data.standfirst && <span class="news-tile__sum">{firstSentence(n.data.standfirst, 140)}</span>}
+            <span class="news-tile__more">Read the story</span>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section section--white">
-    <div class="container split">
-      <div>
-        <h2 class="section-title">Thematic areas<span class="stop">.</span></h2>
-        <p>Each area brings together the communities, services, projects, people and news working on it.</p>
-        <a href={url('/area/')}>All thematic areas →</a>
-      </div>
-      <div class="area-tiles">
-        {areas.map((a) => (
-          <a class="tile area-tile" href={url(`/area/${a.slug}/`)}>
-            {a.image ? <RemoteImage class="ph-img" src={a.image} width={500} /> : <span class="ph-img" style="background:#5b7f9a"></span>}
-            <span class="ph-slide"></span>
-            <span class="scrim"><span class="area-tile__title">{a.name}</span>{a.counts && <span class="area-tile__meta">{a.counts}</span>}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
+  <!-- 7. Coming up -->
   {upcoming.length > 0 && (
-    <section class="banner coming">
-      <svg class="coming__mark" aria-hidden="true" viewBox="56 0 120 126"><path fill="#f47d21" d="M160.79,0C155.54,0,151.29,4.25,151.29,9.5c0,1.57.39,3.11,1.1,4.5-.9.5-3.1,1.6-6.2,3.2-1.63-3.56-5.84-5.13-9.4-3.5-3.56,1.63-5.13,5.84-3.5,9.4h0c.1.3.3.5.4.8-1.6.9-3.2,1.8-4.9,2.7-1.46-2.7-4.83-3.71-7.53-2.25-2.7,1.46-3.71,4.83-2.25,7.53.06.11.12.21.18.32-1.7,1-3.5,2.1-5.3,3.2-1.65-1.47-4.18-1.31-5.65.34-.02.02-.04.04-.05.06-.64.76-.99,1.71-1,2.7,0,.4.1.7.1,1-6.72,4.29-13.17,9-19.3,14.1-6.4-14.3-15.9-30.1-29-42.9h0c-1.5-1.5-2.8-.8-1,1l.1.1c11.2,12,19.9,29.4,25.9,45.3-22.7,19.4-47.7,56.9-20.29,68.7,4,1.7,5.8-1.6,4.1-2.6-.3-.2-12.5-6.8-4.8-27h19.5c1.05,0,1.9-.85,1.9-1.9s-.85-1.9-1.9-1.9h-17.91c1.2-2.5,2.5-4.9,3.9-7.2h14c1.03-.1,1.81-.97,1.8-2-.07-.96-.84-1.73-1.8-1.8h-11.6c1.5-2.2,3.1-4.5,4.9-6.8h6.7c1.03-.1,1.81-.97,1.8-2-.07-.96-.84-1.73-1.8-1.8h-3.7c2.1-2.6,4.5-5.3,7.1-8.1l.1-.1c5.1,14.9,7.6,27.6,7.1,31.9-.11,1.54-1.02,2.9-2.39,3.6-1,.5-1.4,1.8.2,2.2,4.8,1.4,7.8-3.3,8.3-7.2s-2.1-18-9-34.8c6.03-5.89,12.48-11.33,19.29-16.3.59.39,1.29.6,2,.6,2.23,0,4.05-1.77,4.1-4,.02-.27-.02-.54-.1-.8,1.8-1.3,3.6-2.5,5.4-3.7,2.38,1.93,5.87,1.57,7.8-.8,1.09-1.38,1.5-3.18,1.1-4.9,1.8-1.1,3.5-2.2,5.2-3.1,2.53,2.93,6.95,3.25,9.87.72,2.18-1.88,2.98-4.91,2.03-7.62,3-1.7,5.2-2.9,6.3-3.5,2.92,4.36,8.82,5.52,13.18,2.6,4.36-2.92,5.52-8.82,2.6-13.18-.03-.04-.05-.08-.08-.12C167.02,1.58,164,.01,160.79,0Z"/></svg>
-      <div class="container split">
+    <section class="banner coming" aria-labelledby="coming-h">
+      <img class="coming__art" src={asset('illustration-isometrics-mechanisms-like-extending-hand-join.svg')} alt="" loading="lazy" />
+      <div class="container coming__grid">
         <div>
-          <h2 class="section-title" style="color:#fff">Coming up<span class="stop">.</span></h2>
+          <h2 class="section-title" id="coming-h">Coming up<span class="stop">.</span></h2>
           <p>Community Calls, workshops and the All Hands meeting.</p>
-          <a href={url('/events/')} style="color:#ffb37a">All events →</a>
+          <a class="more-link" href={url('/events/')}>All events</a>
         </div>
         <ol class="coming__list">
           {upcoming.map((e) => (
             <li>
               <a href={url(`/events/${e.id}/`)}>
-                <span class="coming__date"><span class="display">{day(e.data.start)}</span><span>{month(e.data.start)}</span></span>
-                <span class="coming__title">{e.data.title}</span>
-                <span class="tag" style={e.data.type === 'Community Call' ? '' : 'background: var(--blue)'}>{e.data.type}</span>
+                <span class="coming__date"><b>{day(e.data.start)}</b><span>{month(e.data.start)}</span></span>
+                <span class="coming__body">
+                  <span class="coming__type">{e.data.type}{e.data.online ? ' · Online' : ''}</span>
+                  <span class="coming__title">{e.data.title}</span>
+                </span>
+                <span class="coming__go" aria-hidden="true">→</span>
               </a>
             </li>
           ))}
@@ -138,92 +243,175 @@ const jsonLd = {
     </section>
   )}
 
-  <section class="services-band">
-    <div class="container split split--wide">
+  <!-- 8. Services -->
+  <section class="section services-band" aria-labelledby="svc-h">
+    <div class="container services-band__grid">
       <div>
-        <p class="eyebrow-sm" style="color:#ffb37a">Open-access services</p>
-        <p class="display services-band__num">{services.length}<span class="stop">.</span></p>
-        <p class="services-band__text">services endorsed by ELIXIR-UK for the life sciences community.</p>
+        <p class="eyebrow-sm">Open-access services</p>
+        <h2 class="section-title" id="svc-h"><span class="services-band__num">{services.length}</span> services, endorsed<span class="stop">.</span></h2>
+        <p>Selected by ELIXIR-UK for quality, use and sustainability, and free for the life sciences community.</p>
         <a class="btn" href={url('/services/')}>Discover our services</a>
       </div>
-      <div class="services-band__logos" aria-label="Endorsed services">
+      <ul class="services-band__logos" aria-label="Endorsed services">
         {services.filter((s) => s.logo).slice(0, 15).map((s) => (
-          <a href={url(`/services/${s.slug}/`)} title={s.name} class="lift"><RemoteImage src={s.logo} width={160} alt={s.name} /></a>
+          <li><a href={url(`/services/${s.slug}/`)} title={s.name}><RemoteImage src={s.logo} width={200} alt={s.name} /></a></li>
         ))}
-      </div>
+      </ul>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .hero { padding: 40px 0 180px; }
-  .hero__grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 48px; align-items: center; }
-  .hero__title { font-size: clamp(3.5rem, 8vw, 6.5rem); margin: 0; }
-  .hero__intro { margin: 32px 0 36px; max-width: 34rem; font-size: 1.3rem; font-weight: 300; color: #c3d3de; }
-  .hero__actions { display: flex; gap: 12px; flex-wrap: wrap; }
-  .hero__map { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
-  .hero__map :global(svg) { max-width: 340px; }
-  .hero__map figcaption { display: flex; align-items: baseline; gap: 12px; color: #c3d3de; font-size: 15px; }
-  .hero__map figcaption .display { font-size: 56px; color: var(--white); }
+  /* Hero */
+  .hero { min-height: min(88vh, 780px); display: flex; flex-direction: column; padding: 0; }
+  .hero__stage { position: relative; flex: 1; display: flex; align-items: center; padding-block: clamp(56px, 7vw, 96px); isolation: isolate; }
+  .hero__stage > .container { width: min(100% - 2 * var(--gutter), var(--container)); }
+  .hero__grid { position: relative; }
+  .hero__copy { max-width: min(640px, 52%); padding: var(--s5) 0; }
+  @media (max-width: 900px) { .hero__copy { max-width: none; } }
+  .hero__eyebrow { color: var(--orange-soft); }
+  .hero__title { font-size: clamp(3rem, 1.8rem + 6vw, 7rem); margin: 0; }
+  .hero__intro { margin: var(--s5) 0 var(--s6); max-width: 34rem; font-size: var(--fs-lead); line-height: 1.55; color: var(--on-dark); }
+  .hero__actions { display: flex; gap: var(--s3); flex-wrap: wrap; }
+  .hero__facts-wrap { margin-top: auto; }
+  .hero__facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; border-top: 1px solid rgb(255 255 255 / 0.14); }
+  .hero__facts div { display: flex; flex-direction: column-reverse; gap: 4px; padding: var(--s5) var(--s5) var(--s6) 0; }
+  .hero__facts div + div { padding-left: var(--s5); border-left: 1px solid rgb(255 255 255 / 0.14); }
+  .hero__facts dt { font-size: var(--fs-sm); color: #9fbcd0; }
+  .hero__facts dd { margin: 0; font-size: clamp(2rem, 1.4rem + 2vw, 3.25rem); font-weight: 900; line-height: 1; color: var(--white); letter-spacing: -0.02em; }
+  .numbers__top { display: grid; grid-template-columns: minmax(220px, 0.7fr) minmax(0, 2fr); gap: clamp(32px, 5vw, 80px); align-items: center; margin-bottom: var(--s7); }
+  .numbers__map { max-width: 320px; }
+  .numbers__hint { margin: var(--s3) 0 0; text-align: center; font-size: var(--fs-xs); color: #8fa9bc; }
 
-  .mission { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: -120px; position: relative; z-index: 2; padding-bottom: 96px; }
-  .mission__tile { display: flex; flex-direction: column; gap: 8px; padding: 26px 28px; border-radius: 10px; background: var(--white); color: var(--text); box-shadow: 0 32px 48px rgb(0 0 0 / 0.22); }
-  .mission__tile:hover { color: var(--text); }
-  .mission__title { font-size: 21px; font-weight: 700; line-height: 1.2; color: var(--navy); }
-  .mission__text { font-size: 15px; line-height: 1.5; }
-  .mission__tile.is-highlight { background: var(--orange); color: var(--white); }
-  .mission__tile.is-highlight .eyebrow-sm, .mission__tile.is-highlight .mission__title { color: var(--white); }
-  .mission__tile.is-highlight .stop { color: var(--navy); }
+  /* Mission */
+  .mission { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s4); }
+  .mission__card { display: flex; flex-direction: column; border-radius: var(--radius-lg); background: var(--white); border: 1px solid var(--border); overflow: hidden; color: var(--text); transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease); }
+  .mission__card:hover { color: var(--text); transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+  .mission__art { display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 3; background: var(--grey-light); padding: var(--s5); }
+  .mission__art img { max-width: 100%; max-height: 180px; object-fit: contain; transition: transform 0.4s var(--ease); }
+  .mission__card:hover .mission__art img { transform: scale(1.05); }
+  .mission__body { display: flex; flex-direction: column; gap: var(--s2); padding: var(--s5); flex: 1; }
+  .mission__title { font-size: 1.3rem; font-weight: 700; line-height: 1.2; color: var(--navy); }
+  .mission__text { font-size: var(--fs-sm); line-height: 1.5; }
+  .mission .draft { align-self: flex-start; margin-top: auto; }
+  .mission__card.is-highlight { border-color: var(--orange); }
+  .mission__card.is-highlight .mission__art { background: #fff1e6; }
 
-  .head-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 40px; flex-wrap: wrap; }
-  .head-row a { font-weight: 700; }
-  .news-tiles { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-auto-rows: 440px; gap: 16px; }
-  .news-tile { display: flex; flex-direction: column; justify-content: space-between; gap: 16px; padding: 32px; border-radius: 10px; color: var(--white); }
+  /* Numbers */
+  .numbers { padding-block: var(--section-pad); }
+  .numbers__sub { color: #9fbcd0; }
+  .kpis { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .kpis li { border-top: 1px solid rgb(255 255 255 / 0.12); }
+  .kpis li:nth-child(3n+1) { border-left: 0 !important; }
+  .kpis li:nth-child(3n+1) a { padding-left: 0 !important; }
+  .kpis li + li { border-left: 1px solid rgb(255 255 255 / 0.12); }
+  .kpis a { display: flex; flex-direction: column; gap: var(--s2); padding: var(--s5) var(--s5) var(--s5) 0; color: var(--on-dark); }
+  .kpis li + li a { padding-left: var(--s5); }
+  .kpis strong { font-size: clamp(2.5rem, 1.6rem + 3vw, 4.25rem); font-weight: 900; line-height: 0.95; color: var(--white); letter-spacing: -0.03em; transition: color 0.2s; }
+  .kpis span { font-size: var(--fs-sm); line-height: 1.35; }
+  .kpis a:hover strong { color: var(--orange); }
+  .charts { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: var(--s4); }
+  .chart-card { padding: var(--s6); border-radius: var(--radius-lg); background: rgb(255 255 255 / 0.04); border: 1px solid rgb(255 255 255 / 0.08); }
+  .chart-card h3 { color: var(--white); font-size: 1.15rem; margin: 0 0 var(--s1); }
+  .chart-card p { font-size: var(--fs-sm); color: #9fbcd0; margin: 0 0 var(--s5); }
+
+  /* Areas */
+  .areas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s5); }
+  .area { display: flex; flex-direction: column; gap: var(--s3); color: var(--text); }
+  .area:hover { color: var(--text); }
+  .area__art { display: flex; align-items: center; justify-content: center; aspect-ratio: 5 / 4; padding: var(--s6); border-radius: var(--radius-lg); background: var(--grey-light); overflow: hidden; transition: background 0.3s var(--ease); }
+  .area__art img { max-width: 100%; max-height: 220px; object-fit: contain; transition: transform 0.5s var(--ease); }
+  .area:hover .area__art { background: #e7eef3; }
+  .area:hover .area__art img { transform: scale(1.06); }
+  .area__title { margin-top: var(--s2); font-size: 1.4rem; font-weight: 700; line-height: 1.2; color: var(--navy); }
+  .area:hover .area__title { color: var(--orange-text); }
+  .area__counts { display: flex; gap: var(--s4); flex-wrap: wrap; font-size: var(--fs-sm); color: var(--muted); }
+  .area__counts b { color: var(--navy); }
+
+  /* Leads */
+  .leads { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+  .leads__intro p { margin: var(--s4) 0 var(--s5); }
+  .leads__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s3); }
+  .leads__grid a { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--s2); height: 100%; padding: var(--s5) var(--s3); border-radius: var(--radius-lg); background: var(--white); color: var(--text); transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease); }
+  .leads__grid a:hover { color: var(--text); transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+  .leads__grid .icon-disc { width: 72px; border: 0; background: var(--grey-light); }
+  .leads__grid .icon-disc b { font-size: 1.6rem; color: var(--navy); }
+  .leads__name { font-weight: 700; color: var(--navy); line-height: 1.25; font-size: var(--fs-sm); }
+  .leads__kind { font-size: var(--fs-xs); color: var(--muted); }
+
+  /* News */
+  .news-tiles { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-auto-rows: minmax(400px, auto); gap: var(--s4); }
+  .news-tile { display: flex; flex-direction: column; gap: var(--s3); padding: var(--s6); border-radius: var(--radius-lg); color: var(--white); transition: transform 0.3s var(--ease); }
   .news-tile:hover { color: var(--white); }
+  .news-tile:not(.tile):hover { transform: translateY(-4px); }
   .news-tile--photo { padding: 0; background: var(--blue); }
+  .news-tile--photo .scrim { padding: var(--s6); gap: var(--s3); }
   .news-tile--navy { background: var(--navy); }
-  .news-tile--blue { background: var(--blue); }
-  .news-tile .tag { align-self: flex-start; }
-  .news-tile__title { font-size: 23px; font-weight: 700; line-height: 1.22; }
-  .news-tile__title--big { font-size: 30px; }
-  .news-tile__more { font-weight: 700; color: #ffb37a; }
-  .news-tile--blue .news-tile__more { color: var(--white); }
-  .news-tile--photo .scrim { padding: 32px; gap: 12px; }
+  .news-tile--blue { background: var(--blue-dark); }
+  .news-tile__meta { font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.04em; color: var(--orange-soft); }
+  .news-tile--blue .news-tile__meta { color: var(--white); opacity: 0.85; }
+  .news-tile__title { font-size: 1.4rem; font-weight: 700; line-height: 1.22; }
+  .news-tile__title--big { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); max-width: 30ch; }
+  .news-tile__sum { font-size: var(--fs-sm); line-height: 1.5; opacity: 0.85; }
+  .news-tile__more { margin-top: auto; font-weight: 700; font-size: var(--fs-sm); }
+  .news-tile__more::after { content: ' →'; }
 
-  .split { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 64px; align-items: start; }
-  .split--wide { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); align-items: center; }
-  .split p { margin: 16px 0 24px; }
-  .split a { font-weight: 700; }
-  .area-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-  .area-tile { aspect-ratio: 3 / 4; border-radius: 10px; background: var(--navy); }
-  .area-tile__title { font-size: 23px; font-weight: 700; line-height: 1.15; }
-  .area-tile__meta { font-size: 14px; }
+  /* Coming up */
+  .coming { padding-block: var(--section-pad); }
+  .coming__art { position: absolute; right: -60px; bottom: -40px; width: 460px; opacity: 0.12; filter: invert(1) grayscale(1); pointer-events: none; }
+  .coming__grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+  .coming__grid > div p { margin: var(--s4) 0 var(--s5); }
+  .coming__list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgb(255 255 255 / 0.14); }
+  .coming__list a { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; gap: var(--s5); align-items: center; padding: var(--s5) 0; border-bottom: 1px solid rgb(255 255 255 / 0.14); color: var(--white); }
+  .coming__date { display: flex; flex-direction: column; align-items: center; justify-content: center; aspect-ratio: 1; border-radius: var(--radius-lg); background: rgb(255 255 255 / 0.06); line-height: 1; }
+  .coming__date b { font-size: 1.9rem; font-weight: 900; }
+  .coming__date span { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: #9fbcd0; margin-top: 4px; }
+  .coming__body { display: flex; flex-direction: column; gap: 4px; }
+  .coming__type { font-size: var(--fs-xs); font-weight: 700; color: var(--orange-soft); }
+  .coming__title { font-size: 1.2rem; font-weight: 700; line-height: 1.3; }
+  .coming__go { font-size: 1.3rem; color: var(--orange); transition: transform 0.2s var(--ease); }
+  .coming__list a:hover .coming__title { color: var(--orange-soft); }
+  .coming__list a:hover .coming__go { transform: translateX(4px); }
 
-  .coming { padding-block: 112px; }
-  .coming__mark { position: absolute; right: -120px; top: -40px; width: 560px; opacity: 0.16; }
-  .coming__list { list-style: none; margin: 0; padding: 0; border-top: 1px solid #1f4762; }
-  .coming__list a { display: grid; grid-template-columns: 110px minmax(0, 1fr) auto; gap: 28px; align-items: center; padding: 26px 0; border-bottom: 1px solid #1f4762; color: var(--white); }
-  .coming__date { line-height: 1; }
-  .coming__date .display { display: block; font-size: 56px; }
-  .coming__date span:last-child { font-size: 15px; color: #c3d3de; }
-  .coming__title { font-size: 23px; font-weight: 700; line-height: 1.3; }
-  .coming__list a:hover .coming__title { color: #ffb37a; }
+  /* Services */
+  .services-band { background: var(--grey-light); }
+  .services-band__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+  .services-band__grid > div p:not(.eyebrow-sm) { margin: var(--s4) 0 var(--s5); max-width: 30rem; }
+  .services-band__num { color: var(--orange-text); }
+  .services-band__logos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--s3); }
+  .services-band__logos a { display: flex; align-items: center; justify-content: center; aspect-ratio: 1; padding: var(--s4); border-radius: var(--radius-lg); background: var(--white); transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease); }
+  .services-band__logos a:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+  .services-band__logos :global(img) { max-width: 100%; max-height: 72px; width: auto; height: auto; object-fit: contain; }
 
-  .services-band { background: var(--navy); color: #c3d3de; padding-block: 96px; }
-  .services-band__num { font-size: 120px; color: var(--white); margin: 0; line-height: 0.9; }
-  .services-band__text { font-size: 21px; }
-  .services-band__logos { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
-  .services-band__logos a { display: grid; place-items: center; aspect-ratio: 1; padding: 14px; border-radius: 10px; background: var(--white); }
-  .services-band__logos :global(img) { max-width: 100%; max-height: 100%; object-fit: contain; }
-
-  @media (max-width: 960px) {
-    .hero__grid, .split, .split--wide { grid-template-columns: 1fr; }
+  @media (max-width: 1080px) {
     .mission { grid-template-columns: 1fr 1fr; }
-    .news-tiles { grid-template-columns: 1fr; grid-auto-rows: 320px; }
-    .area-tiles { grid-template-columns: 1fr 1fr; }
-    .coming__list a { grid-template-columns: 80px minmax(0, 1fr); }
-    .coming__list .tag { display: none; }
+    .numbers__top { grid-template-columns: 1fr; }
+    .numbers__map { margin-inline: auto; width: min(100%, 280px); }
+    .charts { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 900px) {
+    .leads, .coming__grid, .services-band__grid { grid-template-columns: 1fr; }
+    .hero__stage { flex-direction: column; align-items: stretch; padding-bottom: 0; }
+    .hero__facts { grid-template-columns: 1fr 1fr; }
+    .hero__facts div { padding: var(--s4) 0 var(--s5) !important; border-left: 0 !important; border-top: 1px solid rgb(255 255 255 / 0.14); }
+    .hero__facts div:nth-child(even) { padding-left: var(--s4) !important; border-left: 1px solid rgb(255 255 255 / 0.14) !important; }
+    .hero__facts { border-top: 0; }
+    .news-tiles { grid-template-columns: 1fr; grid-auto-rows: auto; }
+    .news-tile--photo { min-height: 360px; }
+    .areas { grid-template-columns: 1fr; }
+    .area__art { aspect-ratio: 16 / 9; }
+    .services-band__logos { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+  @media (max-width: 600px) {
+    .leads__grid { grid-template-columns: 1fr 1fr; }
+    .mission { grid-template-columns: 1fr; }
+    .mission__card { flex-direction: row; }
+    .mission__art { width: 120px; aspect-ratio: 1; padding: var(--s3); flex: none; }
+    .kpis { grid-template-columns: 1fr 1fr; }
+    .kpis li { border-left: 0 !important; border-bottom: 1px solid rgb(255 255 255 / 0.12); }
+    .kpis li a { padding-left: 0 !important; }
+    .coming__list a { grid-template-columns: 56px minmax(0, 1fr); }
+    .coming__go { display: none; }
     .services-band__logos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   }
-  @media (max-width: 560px) { .mission, .area-tiles { grid-template-columns: 1fr; } }
 </style>

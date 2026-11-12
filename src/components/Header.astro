@@ -5,6 +5,9 @@ import { url } from '../lib/url';
 interface Props { overlay?: boolean }
 const { overlay = false } = Astro.props;
 const current = Astro.url.pathname;
+// A top-level item is "current" when the page sits anywhere in its section
+const inSection = (item: { href: string; children?: { href: string }[] }) =>
+  [item.href, ...(item.children ?? []).map((c) => c.href)].some((h) => h !== '/' && current.startsWith(url(h)));
 ---
 <header class:list={['site-header', { 'site-header--overlay': overlay }]} data-header>
   <div class="container site-header__inner">
@@ -20,14 +23,14 @@ const current = Astro.url.pathname;
     <nav id="primary-nav" class="site-nav" aria-label="Main">
       <ul>
         {nav.map((item) => (
-          <li class:list={{ 'has-children': item.children }}>
+          <li class:list={{ 'has-children': item.children, 'is-cta': (item as { cta?: boolean }).cta, 'is-section': inSection(item) }}>
             <a href={url(item.href)} aria-current={current === url(item.href) ? 'page' : undefined}>
               {item.label}
               {item.children && <svg class="chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" /></svg>}
             </a>
             {item.children && (
               <ul class="site-nav__sub">
-                {item.children.map((c) => <li><a href={url(c.href)}>{c.label}</a></li>)}
+                {item.children.map((c) => <li><a href={url(c.href)} aria-current={current === url(c.href) ? 'page' : undefined}>{c.label}</a></li>)}
               </ul>
             )}
           </li>
@@ -49,6 +52,9 @@ const current = Astro.url.pathname;
     const open = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!open));
     header?.classList.toggle('nav-open', !open);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && header?.classList.contains('nav-open')) { toggle?.click(); toggle?.focus(); }
   });
 </script>
 
@@ -94,13 +100,21 @@ const current = Astro.url.pathname;
     gap: 0.4rem;
     padding: 0.75rem 1.1rem;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--white);
   }
-  .site-nav > ul > li > a:hover,
-  .site-nav a[aria-current='page'] { color: var(--orange); }
+  .site-nav > ul { align-items: center; }
+  .site-nav > ul > li > a { position: relative; min-height: 44px; }
+  .site-nav > ul > li > a::after { content: ''; position: absolute; left: 1.1rem; right: 1.1rem; bottom: 4px; height: 2px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform 0.25s var(--ease); }
+  .site-nav > ul > li > a:hover { color: var(--orange-soft); }
+  .site-nav > ul > li.is-section > a::after, .site-nav > ul > li > a:hover::after { transform: scaleX(1); }
+  .site-nav > ul > li.is-cta { margin-left: 0.75rem; }
+  .site-nav > ul > li.is-cta > a { background: var(--orange); color: var(--on-orange); border-radius: var(--radius); padding: 0.6rem 1.2rem; }
+  .site-nav > ul > li.is-cta > a::after { display: none; }
+  .site-nav > ul > li.is-cta > a:hover { background: var(--white); color: var(--navy); }
+  .site-nav__sub a[aria-current='page'] { color: var(--orange-text); font-weight: 700; }
   .chevron { width: 9px; height: 6px; }
 
   .site-nav__sub {
@@ -167,7 +181,10 @@ const current = Astro.url.pathname;
       transition: max-height 0.35s var(--ease);
     }
     .nav-open .site-nav { max-height: 80vh; overflow-y: auto; }
-    .site-nav > ul { flex-direction: column; padding: 0.5rem 1.25rem 1.5rem; }
+    .site-nav > ul { flex-direction: column; align-items: stretch; padding: 0.5rem 1.25rem 1.5rem; }
+    .site-nav > ul > li > a::after { display: none; }
+    .site-nav > ul > li.is-cta { margin: 0.75rem 0 0; }
+    .site-nav > ul > li.is-cta > a { justify-content: center; }
     .site-nav__sub {
       position: static;
       opacity: 1;

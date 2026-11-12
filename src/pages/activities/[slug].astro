@@ -7,6 +7,7 @@ import RemoteImage from '../../components/RemoteImage.astro';
 import { DIRECTORY, linksFor } from '../../lib/graph';
 import { longDate, todayUK, firstSentence, needsStop } from '../../lib/format';
 import { url } from '../../lib/url';
+import { cleanHtml } from '../../lib/html';
 
 export function getStaticPaths() {
   return DIRECTORY.activities.records.map((record) => ({ params: { slug: record.slug }, props: { record } }));
@@ -63,7 +64,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name
   )}
 
   <section class="container c-body">
-    <div class="prose wp-body" set:html={r.body || `<p>${r.summary}</p>`} />
+    <div class="prose wp-body" set:html={await cleanHtml(r.body || `<p>${r.summary}</p>`)} />
     <aside class="c-side">
       {people.length > 0 && (
         <div class="c-box">
@@ -129,6 +130,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name
   .c-hero { background: var(--grey-light); overflow: hidden; }
   .c-hero__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; align-items: center; padding-block: 64px 72px; }
   .c-crumb { font-size: 14px; margin: 0 0 20px; color: var(--muted); }
+  .c-crumb a { color: var(--blue-dark); }
   .c-hero__title { font-size: clamp(2.4rem, 5vw, 3.75rem); margin: 8px 0 0; color: var(--navy); }
   .c-hero__lead { margin: 20px 0 26px; max-width: 36rem; font-size: 1.25rem; color: #34495a; }
   .c-hero__actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }

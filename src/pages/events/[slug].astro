@@ -1,4 +1,5 @@
 ---
+import { cleanHtml } from '../../lib/html';
 // Event page – B2: navy header over the event image, date card inside the header
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -14,7 +15,8 @@ export async function getStaticPaths() {
   return events.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+await render(entry);
+const html = await cleanHtml(entry.rendered?.html ?? '');
 const e = entry.data;
 const today = todayUK();
 const isPast = (e.end ?? e.start) < today;
@@ -92,7 +94,7 @@ const jsonLd = {
 
   <section class="container ev-body">
     <div>
-      <div class="prose"><Content /></div>
+      <div class="prose" set:html={html} />
       <dl class="ev-facts">
         <div><dt>Date</dt><dd>{when}</dd></div>
         {time && <div><dt>Time</dt><dd>{time}</dd></div>}
@@ -145,7 +147,7 @@ const jsonLd = {
   .ev-tags { display: flex; gap: 8px; flex-wrap: wrap; }
   .ev-title { font-size: clamp(2.2rem, 4.6vw, 3.6rem); margin: 18px 0 0; color: var(--white); }
   .ev-card { background: var(--white); color: var(--text); border-radius: 12px; padding: 28px; display: grid; grid-template-columns: auto 1fr; gap: 20px 22px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); }
-  .ev-card__date { display: grid; place-items: center; width: 84px; height: 92px; border-radius: 10px; background: var(--orange); color: var(--white); }
+  .ev-card__date { display: grid; place-items: center; width: 84px; height: 92px; border-radius: 10px; background: var(--orange); color: var(--on-orange); }
   .ev-card__date span { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
   .ev-card__date strong { font-size: 40px; font-weight: 900; line-height: 1; }
   .ev-card__body p { margin: 0 0 4px; font-size: 15px; }

@@ -1,10 +1,14 @@
 ---
+import { cleanHtml } from '../lib/html';
 // Services, projects, collaborators and thematic areas: navy banner with circle logo, then smart tabs
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Avatar from './Avatar.astro';
 import SmartTabs from './SmartTabs.astro';
 import { DIRECTORY, tagSlug, type DirectoryRecord } from '../lib/graph';
 import { url } from '../lib/url';
+import { asset } from '../lib/assets';
+import { needsStop } from '../lib/format';
+import home from '../data/home.json';
 
 interface Props { kind: keyof typeof DIRECTORY; record: DirectoryRecord }
 const { kind, record: r } = Astro.props;
@@ -15,17 +19,18 @@ const facts = [
   kind === 'services' && r.start ? `Endorsed since ${year(r.start)}` : null,
 ].filter(Boolean);
 
+const art = kind === 'area' ? (home.areaIllustrations as Record<string, string>)[r.slug] : undefined;
 const schemaType = { services: 'SoftwareApplication', members: 'Organization', collaborations: 'Organization', projects: 'ResearchProject', activities: 'Project', area: 'Thing' }[kind];
 const jsonLd = { '@context': 'https://schema.org', '@type': schemaType, name: r.name, url: r.website || undefined, logo: r.logo || undefined, description: r.summary || undefined };
 ---
 <BaseLayout title={r.name} description={r.summary} {jsonLd}>
   <section class="banner rec-banner">
-    <div class="container rec-banner__grid">
-      <Avatar src={r.logo} name={r.name} size={200} logo ring="var(--ink)" eager />
+    <div class:list={['container', 'rec-banner__grid', { 'rec-banner__grid--art': art }]}>
+      {!art && <Avatar src={r.logo} name={r.name} size={200} logo ring="var(--ink)" eager />}
       <div>
-        <a class="crumb" href={url(`/${kind}/`)}>← All {plural.toLowerCase()}</a>
+        <p class="crumb"><a href={url(`/${kind}/`)}>{plural}</a></p>
         <p class="eyebrow-sm rec-banner__eyebrow">{singular}{facts.length > 0 && <> · {facts.join(' · ')}</>}</p>
-        <h1 class="display rec-banner__title">{r.name}<span class="stop">.</span></h1>
+        <h1 class="display rec-banner__title">{r.name}{needsStop(r.name) && <span class="stop">.</span>}</h1>
         {r.tags.length > 0 && (
           <div class="rec-banner__tags">{r.tags.map((t) => <a class="tag" href={url(`/${kind}/#${tagSlug(t)}`)}>{t}</a>)}</div>
         )}
@@ -34,25 +39,29 @@ const jsonLd = { '@context': 'https://schema.org', '@type': schemaType, name: r.
           {r.joinLink && <a class="btn btn--ghost" href={r.joinLink} rel="noopener">Join in</a>}
         </div>
       </div>
+      {art && <img class="rec-banner__art" src={asset(art)} alt="" />}
     </div>
   </section>
-  <main class="rec-main">
+  <div class="rec-main">
     <SmartTabs {kind} slug={r.slug} hasBio={Boolean(r.body || r.summary)} bioLabel="About">
-      {r.body ? <div class="prose wp-body" set:html={r.body} /> : <p>{r.summary}</p>}
+      {r.body ? <div class="prose wp-body" set:html={await cleanHtml(r.body)} /> : <p>{r.summary}</p>}
     </SmartTabs>
     {!r.body && !r.summary && <p class="empty">No description yet.</p>}
-  </main>
+  </div>
 </BaseLayout>
 
 <style>
-  .rec-banner { padding: 40px 0 64px; }
+  .rec-banner { padding: clamp(40px, 5vw, 64px) 0 clamp(48px, 6vw, 80px); }
+  .rec-banner__grid--art { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) !important; }
+  .rec-banner__art { width: 100%; max-height: 280px; object-fit: contain; filter: invert(1) hue-rotate(180deg) brightness(1.1); mix-blend-mode: screen; opacity: 0.9; }
   .rec-banner__grid { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; align-items: center; }
-  .rec-banner__eyebrow { color: #ffb37a; margin: 14px 0 8px; }
+  .rec-banner__eyebrow { color: var(--orange-soft); margin: 0 0 var(--s2); }
+  .rec-banner .crumb { margin-bottom: var(--s4); }
   .rec-banner__title { font-size: clamp(2.4rem, 5vw, 3.75rem); margin: 0; }
   .rec-banner__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
   .rec-banner__actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
-  .rec-main { max-width: 1000px; margin: 0 auto; padding: 56px 24px 96px; }
+  .rec-main { width: min(100% - 2 * var(--gutter), 1000px); margin: 0 auto; padding-block: var(--s8) var(--s9); }
   .empty { font-style: italic; }
   .wp-body :global(img) { border-radius: 8px; }
-  @media (max-width: 700px) { .rec-banner__grid { grid-template-columns: 1fr; } .rec-banner__grid :global(.avatar) { width: 120px !important; } }
+  @media (max-width: 700px) { .rec-banner__grid, .rec-banner__grid--art { grid-template-columns: 1fr !important; } .rec-banner__art { display: none; } .rec-banner__grid :global(.avatar) { width: 120px !important; } }
 </style>

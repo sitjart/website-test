@@ -48,11 +48,11 @@ const jsonLd = {
     </div>
     <p class="card__back"><a href={url('/people/')}>← All people</a></p>
   </section>
-  <main class="profile-main">
+  <div class="profile-main">
     <SmartTabs kind="people" slug={entry.id} hasBio={Boolean(p.bio)}>
       <div class="prose"><p>{p.bio}</p></div>
     </SmartTabs>
-  </main>
+  </div>
 </BaseLayout>
 
 <style>

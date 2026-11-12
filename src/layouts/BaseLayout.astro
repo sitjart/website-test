@@ -30,7 +30,7 @@ const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.tag
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>
-    <a class="visually-hidden" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">Skip to content</a>
     <Header overlay={overlayHeader} />
     <main id="main">
       <slot />

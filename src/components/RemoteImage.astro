@@ -3,6 +3,7 @@
 // so visitors download a small file instead of the full-size original.
 // If the image can't be fetched during the build it falls back to the original URL.
 import { getImage } from 'astro:assets';
+import { localAsset } from '../lib/assets';
 
 interface Props {
   src: string;
@@ -14,14 +15,15 @@ interface Props {
 }
 const { src, alt = '', width, class: className, loading = 'lazy' } = Astro.props;
 
-let out = { src, attributes: {} as Record<string, unknown> };
 const isSvg = /\.svg(\?|$)/i.test(src);
+// SVGs: serve the repo copy when there is one. Photos: optimise from the original, local copy as fallback.
+let out = { src: isSvg ? localAsset(src)! : src, attributes: {} as Record<string, unknown> };
 if (!isSvg) {
   try {
     const img = await getImage({ src, inferSize: true, width, format: 'webp', quality: 78 });
     out = { src: img.src, attributes: img.attributes };
   } catch {
-    // keep the original URL
+    out.src = localAsset(src)!;
   }
 }
 ---

@@ -1,4 +1,5 @@
 ---
+import { cleanHtml } from '../../lib/html';
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHeader from '../../components/PageHeader.astro';
@@ -13,7 +14,8 @@ export async function getStaticPaths() {
   return news.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+await render(entry);
+const html = await cleanHtml(entry.rendered?.html ?? '');
 const n = entry.data;
 
 const jsonLd = {
@@ -35,7 +37,7 @@ const jsonLd = {
         <time datetime={n.date.toISOString().slice(0, 10)}>{longDate(n.date)}</time>
       </p>
       {n.image && <figure class="article__lead"><RemoteImage src={n.image} width={1200} loading="eager" /></figure>}
-      <div class="prose"><Content /></div>
+      <div class="prose" set:html={html} />
       <div class="article__related">
         <SmartTabs kind="news" slug={entry.id} />
       </div>

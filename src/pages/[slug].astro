@@ -1,26 +1,57 @@
 ---
 // Content pages imported from WordPress (About, What we do, Join in ...).
-// A page can also be built from sections, like the home page.
+// Long pages get an "On this page" list built from their headings.
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import Sections from '../components/Sections.astro';
+import { cleanHtml } from '../lib/html';
+import { slugify } from '../lib/baserow';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages');
   return pages.filter((p) => p.id !== 'home').map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+await render(entry);
 const hasSections = entry.data.sections.length > 0;
+
+const ART: Record<string, string> = {
+  about: 'illustration-isometrics-mechanisms-like-extending-hand-join.svg',
+  'what-we-do': 'illustration-isometrics-mechanisms-working.svg',
+  'join-in': 'illustration-isometrics-team-rowing.svg',
+  'new-members': 'illustration-isometrics-construction-robots.svg',
+  'data-management-planning-in-life-sciences-research': 'illustration-isometrics-data-life-cycle-dmp.svg',
+  'recognition-badges': 'illustration-isometrics-training-copy-2.svg',
+  'call-for-services': 'illustration-isometrics-big-data-cloud.svg',
+  'how-our-communities-of-practice-work': 'illustration-isometrics-team-rowing.svg',
+};
+
+// Headings → ids + table of contents
+const toc: { id: string; text: string }[] = [];
+let html = await cleanHtml(entry.rendered?.html ?? '');
+html = html.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/g, (_m, attrs: string, inner: string) => {
+  const text = inner.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').trim();
+  if (!text) return _m;
+  const id = (attrs.match(/id="([^"]+)"/)?.[1]) ?? slugify(text);
+  toc.push({ id, text });
+  return `<h2${attrs.replace(/\sid="[^"]*"/, '')} id="${id}">${inner}</h2>`;
+});
+const legal = ['privacy-policy', 'terms-of-use'].includes(entry.id);
 ---
 <BaseLayout title={entry.data.title} description={entry.data.description}>
   {hasSections ? <Sections sections={entry.data.sections} /> : (
     <>
-      <PageHeader title={entry.data.title} />
+      <PageHeader title={entry.data.title} intro={entry.data.description} illustration={ART[entry.id]} size={legal ? 'md' : 'lg'} />
       <section class="section">
-        <div class="container wp-content">
-          <Content />
+        <div class:list={['container', 'page', { 'page--toc': toc.length >= 3 }]}>
+          {toc.length >= 3 && (
+            <nav class="toc" aria-label="On this page">
+              <p class="eyebrow-sm">On this page</p>
+              <ol>{toc.map((t) => <li><a href={`#${t.id}`}>{t.text}</a></li>)}</ol>
+            </nav>
+          )}
+          <div class="prose wp-content" set:html={html} />
         </div>
       </section>
     </>
@@ -28,17 +59,36 @@ const hasSections = entry.data.sections.length > 0;
 </BaseLayout>
 
 <style>
-  /* Basic styling for WordPress block markup until each page is rebuilt from sections */
-  .wp-content { max-width: 980px; font-size: 1.05rem; }
-  .wp-content :global(img) { border-radius: 8px; }
-  .wp-content :global(.wp-block-buttons) { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0; }
-  .wp-content :global(.wp-block-button__link) {
-    display: inline-block; padding: 0.7em 1.5em; background: var(--orange); color: var(--white); border-radius: 5px;
-  }
+  .page--toc { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+  .toc { position: sticky; top: 100px; font-size: var(--fs-sm); }
+  .toc ol { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--border); }
+  .toc a { display: block; padding: 6px 0 6px var(--s4); margin-left: -2px; border-left: 2px solid transparent; color: var(--muted); line-height: 1.35; }
+  .toc a:hover, .toc a.is-current { color: var(--navy); border-left-color: var(--orange); }
+  .wp-content { max-width: 72ch; }
+  .wp-content :global(h2) { scroll-margin-top: 100px; }
+  .wp-content :global(.wp-stat) { display: block; font-size: clamp(2.5rem, 2rem + 2vw, 3.5rem); font-weight: 900; line-height: 1; color: var(--navy); letter-spacing: -0.03em; }
+  .wp-content :global(.wp-block-buttons) { display: flex; flex-wrap: wrap; gap: var(--s3); margin: var(--s5) 0; }
+  .wp-content :global(.wp-block-button__link) { display: inline-flex; align-items: center; min-height: 48px; padding: 0 1.5em; background: var(--orange); color: var(--on-orange); border-radius: var(--radius); font-weight: 700; text-decoration: none; }
   .wp-content :global(.wp-block-button__link:hover) { background: var(--blue); color: var(--white); }
-  .wp-content :global(hr), .wp-content :global(.wp-block-separator) { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
-  .wp-content :global(.gspb_row), .wp-content :global(.wp-block-columns) { display: flex; flex-wrap: wrap; gap: 2rem; }
-  .wp-content :global(.gspb_row > *), .wp-content :global(.wp-block-column) { flex: 1 1 260px; }
-  .wp-content :global(h2) { margin-top: 2.5rem; }
-  .wp-content :global(ul) { padding-left: 1.2rem; }
+  .wp-content :global(hr), .wp-content :global(.wp-block-separator) { border: 0; border-top: 1px solid var(--border); margin: var(--s7) 0; }
+  .wp-content :global(.gspb_row), .wp-content :global(.wp-block-columns) { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--s5); margin-block: var(--s5); }
+  .wp-content :global(.gspb_row:has(.wp-stat) .gspb_container) { position: relative; padding: var(--s5); border-radius: var(--radius-lg); background: var(--grey-light); }
+  .wp-content :global(.gspb_row:has(.wp-stat) p) { margin: var(--s2) 0 0; text-align: left !important; font-size: var(--fs-sm); }
+  .wp-content :global(.gspb-containerlink) { position: absolute; inset: 0; z-index: 1; }
+  .wp-content :global(.gspb_container) { position: relative; }
+  @media (max-width: 900px) {
+    .page--toc { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
 </style>
+
+<script>
+  // Highlight the section in view in "On this page"
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('.toc a')];
+  if (links.length && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (e.isIntersecting) links.forEach((l) => l.classList.toggle('is-current', l.hash === `#${e.target.id}`));
+    }), { rootMargin: '0px 0px -70% 0px' });
+    links.forEach((l) => { const h = document.getElementById(l.hash.slice(1)); if (h) io.observe(h); });
+  }
+</script>

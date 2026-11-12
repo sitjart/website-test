@@ -2,10 +2,45 @@
   "intro": "ELIXIR-UK is the UK Node of ELIXIR, Europe’s infrastructure for bioscience research data objects. We bring together research organisations across the UK and the people who make those objects FAIR.",
   "video": "https://elixiruknode.org/wp-content/uploads/2024/01/hero-intro-video.webm",
   "mission": [
-    { "title": "People", "text": "[Draft] Communities of practice, fellowships, training and careers for data professionals.", "href": "/people/" },
-    { "title": "Services", "text": "[Draft] Endorsed open-access services and the support behind them.", "href": "/services/" },
-    { "title": "AI-readiness", "text": "[Draft] FAIR, well-described research data objects that AI and machine learning can use.", "href": "/what-we-do/", "highlight": true },
-    { "title": "Sustainable infrastructures", "text": "[Draft] Long-term funding, membership and shared capacity across UK research organisations.", "href": "/members/" }
+    {
+      "title": "People",
+      "text": "Communities of practice, fellowships, training and careers for data professionals.",
+      "href": "/people/",
+      "illustration": "illustration-isometrics-team-rowing.svg",
+      "draft": true
+    },
+    {
+      "title": "Services",
+      "text": "Endorsed open-access services and the support behind them.",
+      "href": "/services/",
+      "illustration": "illustration-isometrics-mechanisms-working.svg",
+      "draft": true
+    },
+    {
+      "title": "AI-readiness",
+      "text": "FAIR, well-described research data objects that AI and machine learning can use.",
+      "href": "/what-we-do/",
+      "highlight": true,
+      "illustration": "illustration-isometrics-ai.svg",
+      "draft": true
+    },
+    {
+      "title": "Sustainable infrastructures",
+      "text": "Long-term funding, membership and shared capacity across UK research organisations.",
+      "href": "/members/",
+      "illustration": "illustration-isometrics-big-data-cloud.svg",
+      "draft": true
+    }
   ],
-  "thematic": ["research-data-management", "computational-workflows", "training"]
+  "thematic": [
+    "research-data-management",
+    "computational-workflows",
+    "training"
+  ],
+  "areaIllustrations": {
+    "research-data-management": "illustration-isometrics-data-life-cycle-dmp.svg",
+    "computational-workflows": "illustration-isometrics-programming-working.svg",
+    "training": "illustration-isometrics-training.svg"
+  },
+  "heroEyebrow": "The UK Node of ELIXIR"
 }

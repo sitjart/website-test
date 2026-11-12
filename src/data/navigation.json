@@ -1,20 +1,19 @@
 [
-  { "label": "What we do", "href": "/what-we-do/", "children": [
-    { "label": "Communities of practice", "href": "/activities/" },
-    { "label": "Training", "href": "/area/training/" },
-    { "label": "Research data management", "href": "/area/research-data-management/" },
-    { "label": "Services", "href": "/services/" },
-    { "label": "Fellowship", "href": "/activities/fellowship/" },
-    { "label": "Projects", "href": "/projects/" }
-  ]},
   { "label": "Who we are", "href": "/about/", "children": [
-    { "label": "About us", "href": "/about/" },
-    { "label": "Projects", "href": "/projects/" },
+    { "label": "About ELIXIR-UK", "href": "/about/" },
     { "label": "People", "href": "/people/" },
-    { "label": "Members", "href": "/members/" },
-    { "label": "Collaborations", "href": "/collaborations/" }
+    { "label": "Collaborations", "href": "/collaborations/" },
+    { "label": "Become a member", "href": "/new-members/" }
+  ]},
+  { "label": "Members", "href": "/members/" },
+  { "label": "What we do", "href": "/what-we-do/", "children": [
+    { "label": "Services", "href": "/services/" },
+    { "label": "Communities of practice", "href": "/activities/" },
+    { "label": "Projects", "href": "/projects/" },
+    { "label": "Fellowship", "href": "/activities/fellowship/" },
+    { "label": "Thematic areas", "href": "/area/" }
   ]},
   { "label": "News & stories", "href": "/news/" },
   { "label": "Events", "href": "/events/" },
-  { "label": "Join in", "href": "/join-in/" }
+  { "label": "Join in", "href": "/join-in/", "cta": true }
 ]

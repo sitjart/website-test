@@ -7,6 +7,6 @@ import NewsList from '../../components/NewsList.astro';
 const items = await getCollection('news');
 ---
 <BaseLayout title="News & stories">
-  <PageHeader title="News & stories" />
+  <PageHeader title="News & stories" intro="What ELIXIR-UK, its members and communities have been doing." illustration="banner-isometrics-data.svg" />
   <NewsList {items} />
 </BaseLayout>

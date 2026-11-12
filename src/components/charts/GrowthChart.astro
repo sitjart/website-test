@@ -1,0 +1,69 @@
+---
+// Step-area chart of cumulative members by year. Single series: no legend, the heading names it.
+interface Props { data: { year: number; total: number; joined: string[] }[]; theme?: 'dark' | 'light'; title: string }
+const { data, theme = 'dark', title } = Astro.props;
+const W = 560, H = 240, padL = 8, padR = 40, padT = 28, padB = 30;
+const max = Math.max(...data.map((d) => d.total));
+const yMax = Math.ceil(max / 10) * 10;
+const step = (W - padL - padR) / data.length;
+const x = (i: number) => padL + i * step;
+const y = (v: number) => padT + (H - padT - padB) * (1 - v / yMax);
+let line = `M${x(0)},${y(data[0].total)}`;
+data.forEach((d, i) => { line += ` H${x(i + 1)}`; if (data[i + 1]) line += ` V${y(data[i + 1].total)}`; });
+const area = `${line} V${y(0)} H${x(0)} Z`;
+const ticks = [0, yMax / 2, yMax];
+const last = data.at(-1)!;
+---
+<figure class:list={['gchart', `gchart--${theme}`]}>
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title}: from ${data[0].total} in ${data[0].year} to ${last.total} in ${last.year}`}>
+    {ticks.map((t) => <line class="grid" x1={padL} x2={W - padR} y1={y(t)} y2={y(t)} />)}
+    {ticks.map((t) => <text class="axis" x={W - padR + 8} y={y(t) + 4}>{t}</text>)}
+    <path class="area" d={area} />
+    <path class="line" d={line} />
+    {data.map((d, i) => (
+      <g class="col" tabindex="0" aria-label={`${d.year}: ${d.total} members${d.joined.length ? `, ${d.joined.length} joined` : ''}`}>
+        <rect x={x(i)} y={padT - 20} width={step} height={H - padB - padT + 20} class="hit" />
+        <text class="axis" x={x(i) + step / 2} y={H - 8} text-anchor="middle">{i === 0 || i === data.length - 1 || d.year % 2 === 0 ? `’${String(d.year).slice(2)}` : ''}</text>
+        {d.joined.length > 0 && <circle cx={x(i) + 3} cy={y(d.total)} r="5" class="mark" />}
+        <foreignObject x={Math.min(x(i), W - 200)} y={Math.max(y(d.total) - 74, 0)} width="190" height="66" class="tip">
+          <div><strong>{d.year}</strong> · {d.total} members<br /><span>{d.joined.length ? `+${d.joined.length} joined` : 'no new members'}</span></div>
+        </foreignObject>
+      </g>
+    ))}
+    <text class="end" x={x(data.length) - 4} y={y(last.total) - 10} text-anchor="end">{last.total}</text>
+  </svg>
+  <details class="gchart__table"><summary>Show as table</summary>
+    <table><thead><tr><th>Year</th><th>Members</th><th>Joined</th></tr></thead>
+      <tbody>{data.map((d) => <tr><td>{d.year}</td><td>{d.total}</td><td>{d.joined.join(', ') || '–'}</td></tr>)}</tbody></table>
+  </details>
+</figure>
+<style>
+  .gchart { margin: 0; }
+  svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .grid { stroke-width: 1; }
+  .axis { font: 400 12px var(--font); }
+  .line { fill: none; stroke: var(--orange); stroke-width: 2.5; stroke-linejoin: round; }
+  .area { fill: var(--blue); opacity: 0.35; }
+  .mark { fill: var(--orange); stroke-width: 2; }
+  .end { font: 900 22px var(--font); }
+  .hit { fill: transparent; }
+  .tip { pointer-events: none; opacity: 0; transition: opacity 0.15s; overflow: visible; }
+  .tip div { display: inline-block; padding: 7px 10px; border-radius: 6px; font: 400 13px/1.35 var(--font); background: var(--white); color: var(--text); box-shadow: 0 6px 20px rgb(0 0 0 / 0.2); }
+  .tip strong { color: var(--navy); }
+  .tip span { color: var(--muted); }
+  .col:hover .tip, .col:focus-visible .tip { opacity: 1; }
+  .col:hover .hit, .col:focus-visible .hit { fill: rgb(127 127 127 / 0.08); }
+  .col { outline: none; }
+  .gchart--dark .grid { stroke: rgb(255 255 255 / 0.1); }
+  .gchart--dark .axis { fill: #8fa9bc; }
+  .gchart--dark .end { fill: var(--white); }
+  .gchart--dark .mark { stroke: var(--ink); }
+  .gchart--light .grid { stroke: var(--border); }
+  .gchart--light .axis { fill: var(--muted); }
+  .gchart--light .end { fill: var(--navy); }
+  .gchart--light .mark { stroke: var(--white); }
+  .gchart__table { margin-top: 12px; font-size: 14px; }
+  .gchart__table summary { cursor: pointer; color: inherit; opacity: 0.8; }
+  .gchart__table table { margin-top: 8px; border-collapse: collapse; width: 100%; }
+  .gchart__table th, .gchart__table td { text-align: left; padding: 4px 8px; border-bottom: 1px solid rgb(127 127 127 / 0.25); vertical-align: top; }
+</style>

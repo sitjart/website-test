@@ -7,6 +7,9 @@ import RemoteImage from '../../components/RemoteImage.astro';
 import { DIRECTORY, linksFor } from '../../lib/graph';
 import { longDate } from '../../lib/format';
 import { url } from '../../lib/url';
+import UkMap from '../../components/UkMap.astro';
+import locations from '../../data/member-locations.json';
+import { needsStop } from '../../lib/format';
 
 export function getStaticPaths() {
   return DIRECTORY.members.records.map((record) => ({ params: { slug: record.slug }, props: { record } }));
@@ -20,24 +23,26 @@ const svc = (links.services ?? []).map((n) => DIRECTORY.services.records.find((s
 const since = r.start ? r.start.slice(0, 4) : null;
 const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name: r.name, url: r.website || undefined, logo: r.logo || undefined, memberOf: { '@type': 'Organization', name: 'ELIXIR-UK' } };
 const PEOPLE_LIMIT = 10;
+const city = (locations as Record<string, { city: string }>)[r.slug]?.city;
 ---
 <BaseLayout title={r.name} description={r.summary || `${r.name}, an ELIXIR-UK member organisation`} {jsonLd}>
   <section class="banner m-banner">
     <div class="container m-banner__grid">
       <Avatar src={r.logo} name={r.name} size={200} logo ring="var(--ink)" eager />
       <div>
-        <a class="crumb" href={url('/members/')}>← All members</a>
-        <p class="eyebrow-sm m-banner__eyebrow">Member organisation{since && ` · since ${since}`}</p>
-        <h1 class="display m-banner__title">{r.name}<span class="stop">.</span></h1>
+        <p class="crumb"><a href={url('/members/')}>Members</a></p>
+        <p class="eyebrow-sm m-banner__eyebrow">Member organisation{city && ` · ${city}`}{since && ` · since ${since}`}</p>
+        <h1 class="display m-banner__title">{r.name}{needsStop(r.name) && <span class="stop">.</span>}</h1>
         {r.summary && <p class="m-banner__about">{r.summary}</p>}
         <div class="m-banner__actions">
           {r.website && <a class="btn" href={r.website} rel="noopener">Visit website</a>}
         </div>
       </div>
+      {city && <div class="m-banner__map"><UkMap highlight={r.slug} interactive={false} label={`${r.name} is in ${city}`} /></div>}
     </div>
   </section>
 
-  <main class="container m-main">
+  <div class="container m-main">
     {people.length > 0 && (
       <section class="m-sec m-sec--first">
         <div class="m-sec__head"><h2>People<span class="stop">.</span> <span class="m-count">{people.length}</span></h2></div>
@@ -100,7 +105,7 @@ const PEOPLE_LIMIT = 10;
         </div>
       </section>
     )}
-  </main>
+  </div>
 </BaseLayout>
 
 <script>
@@ -112,10 +117,12 @@ const PEOPLE_LIMIT = 10;
 
 <style>
   .m-banner { padding: 40px 0 64px; }
-  .m-banner__grid { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; align-items: center; }
-  .m-banner__eyebrow { color: #ffb37a; margin: 14px 0 8px; }
+  .m-banner__grid { display: grid; grid-template-columns: 200px minmax(0, 1fr) 150px; gap: clamp(24px, 4vw, 48px); align-items: center; }
+  .m-banner__map { width: 150px; }
+  .m-banner__eyebrow { color: var(--orange-soft); margin: 0 0 var(--s2); }
+  .m-banner .crumb { margin-bottom: var(--s4); }
   .m-banner__title { font-size: clamp(2.4rem, 5vw, 3.75rem); margin: 0; }
-  .m-banner__about { margin: 14px 0 0; max-width: 40rem; font-size: 19px; font-weight: 300; color: #c3d3de; }
+  .m-banner__about { margin: 14px 0 0; max-width: 40rem; font-size: var(--fs-lead); color: var(--on-dark); }
   .m-banner__actions { display: flex; gap: 10px; margin-top: 22px; }
   .m-main { padding-bottom: 96px; }
   .m-sec { padding: 56px 0; border-top: 1px solid var(--border); }
@@ -149,6 +156,7 @@ const PEOPLE_LIMIT = 10;
   .m-news__title { font-size: 18px; font-weight: 700; line-height: 1.2; }
   @media (max-width: 760px) {
     .m-banner__grid { grid-template-columns: 1fr; }
+    .m-banner__map { display: none; }
     .m-banner__grid :global(.avatar) { width: 120px !important; }
     .m-list, .m-news { grid-template-columns: 1fr; }
   }

@@ -1,48 +1,103 @@
 ---
+// News & stories: newest story as a feature, then a card grid with type filters and progressive "Show more".
 import type { CollectionEntry } from 'astro:content';
 import RemoteImage from './RemoteImage.astro';
-import { longDate } from '../lib/format';
+import { longDate, firstSentence } from '../lib/format';
 import { url } from '../lib/url';
 import { tagSlug } from '../lib/graph';
 
-interface Props { items: CollectionEntry<'news'>[] }
+interface Props { items: CollectionEntry<'news'>[]; feature?: boolean }
+const { feature = true } = Astro.props;
 const items = [...Astro.props.items].sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const [first, ...rest] = feature ? items : [undefined, ...items];
+const list = feature ? rest : items;
+const cats = [...new Set(items.map((n) => n.data.category))].map((c) => ({ c, n: items.filter((x) => x.data.category === c).length })).sort((a, b) => b.n - a.n);
+const PAGE = 18;
 ---
 <section class="section">
-  <ul class="container news-list">
-    {items.map((n) => (
-      <li class="news-item">
-        <a class="news-item__media" href={url(`/news/${n.id}/`)} tabindex="-1" aria-hidden="true">
-          {n.data.image && <RemoteImage src={n.data.image} width={480} />}
-        </a>
-        <div>
-          <span class="news-item__meta">
-            <a class="tag" href={url(`/news/category/${tagSlug(n.data.category)}/`)}>{n.data.category}</a>
-            {longDate(n.data.date)}
-          </span>
-          <h2 class="news-item__title"><a href={url(`/news/${n.id}/`)}>{n.data.title}</a></h2>
-          <p>{n.data.standfirst}</p>
-        </div>
-      </li>
-    ))}
-  </ul>
+  <div class="container">
+    {first && (
+      <a class="feature" href={url(`/news/${first.id}/`)}>
+        <span class="feature__media tile">{first.data.image ? <RemoteImage class="ph-img" src={first.data.image} width={1000} loading="eager" /> : null}<span class="ph-slide"></span></span>
+        <span class="feature__body">
+          <span class="card__meta">Latest · {first.data.category} · {longDate(first.data.date)}</span>
+          <span class="feature__title">{first.data.title}</span>
+          {first.data.standfirst && <span class="feature__sum">{first.data.standfirst}</span>}
+          <span class="more-link">Read the story</span>
+        </span>
+      </a>
+    )}
+    {cats.length > 1 && (
+      <div class="filters" role="group" aria-label="Filter by type">
+        <button type="button" class="chip is-active" data-cat="" aria-pressed="true">All <span>{list.length}</span></button>
+        {cats.map(({ c }) => <button type="button" class="chip" data-cat={tagSlug(c)} aria-pressed="false">{c} <span>{list.filter((x) => x.data.category === c).length}</span></button>)}
+      </div>
+    )}
+    <ul class="ngrid" data-page={PAGE}>
+      {list.map((n, i) => (
+        <li data-cat={tagSlug(n.data.category)} hidden={i >= PAGE}>
+          <a class="ncard" href={url(`/news/${n.id}/`)}>
+            <span class="ncard__media">{n.data.image ? <RemoteImage src={n.data.image} width={560} /> : <span class="ncard__ph" aria-hidden="true"></span>}</span>
+            <span class="card__meta">{n.data.category} · {longDate(n.data.date)}</span>
+            <span class="ncard__title">{n.data.title}</span>
+            {n.data.standfirst && <span class="ncard__sum">{firstSentence(n.data.standfirst, 150)}</span>}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <div class="more"><button type="button" class="btn btn--line" data-more>Show more stories</button></div>
+  </div>
 </section>
 
-<style>
-  .news-list { list-style: none; padding: 0; display: grid; gap: 2rem; }
-  .news-item {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border);
+<script>
+  const grid = document.querySelector<HTMLElement>('.ngrid');
+  const more = document.querySelector<HTMLButtonElement>('[data-more]');
+  const chips = document.querySelectorAll<HTMLButtonElement>('[data-cat]');
+  if (grid && more) {
+    const page = Number(grid.dataset.page);
+    const all = [...grid.querySelectorAll<HTMLElement>('li')];
+    let cat = '', limit = page;
+    const render = () => {
+      const match = all.filter((li) => !cat || li.dataset.cat === cat);
+      all.forEach((li) => (li.hidden = true));
+      match.slice(0, limit).forEach((li) => (li.hidden = false));
+      more.hidden = match.length <= limit;
+      more.textContent = `Show more stories (${match.length - limit} more)`;
+    };
+    more.addEventListener('click', () => { const firstNew = limit; limit += page; render(); all.filter((li) => !li.hidden)[firstNew]?.querySelector('a')?.focus(); });
+    chips.forEach((ch) => ch.addEventListener('click', () => {
+      cat = ch.dataset.cat ?? ''; limit = page;
+      chips.forEach((c) => { const on = c === ch; c.classList.toggle('is-active', on); c.setAttribute('aria-pressed', String(on)); });
+      render();
+    }));
+    render();
   }
-  .news-item__media { display: block; aspect-ratio: 3 / 2; border-radius: 6px; overflow: hidden; background: var(--border); }
-  .news-item__media :global(img) { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
-  .news-item__media:hover :global(img) { transform: scale(1.05); }
-  .news-item__meta { display: flex; align-items: center; gap: 0.75rem; font-size: 13px; color: var(--text); }
-  .news-item__title { font-size: 1.4rem; margin: 0.5rem 0 0.6rem; }
-  .news-item__title a { color: var(--navy); }
-  .news-item__title a:hover { color: var(--blue); }
-  @media (max-width: 700px) { .news-item { grid-template-columns: 1fr; gap: 1rem; } }
+</script>
+
+<style>
+  .feature { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: center; margin-bottom: var(--s8); color: var(--text); }
+  .feature:hover { color: var(--text); }
+  .feature__media { aspect-ratio: 16 / 10; border-radius: var(--radius-lg); background: var(--navy); }
+  .feature__body { display: flex; flex-direction: column; gap: var(--s3); }
+  .feature__title { font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem); font-weight: 900; line-height: 1.12; letter-spacing: -0.02em; color: var(--navy); text-wrap: balance; }
+  .feature:hover .feature__title { color: var(--orange-text); }
+  .feature__sum { font-size: var(--fs-lead); line-height: 1.5; }
+  .filters { display: flex; flex-wrap: wrap; gap: var(--s2); margin-bottom: var(--s6); padding-top: var(--s6); border-top: 1px solid var(--border); }
+  .chip { font: inherit; font-size: var(--fs-sm); min-height: 40px; padding: 0 var(--s4); border: 1px solid var(--border); border-radius: 999px; background: var(--white); color: var(--navy); cursor: pointer; }
+  .chip span { color: var(--muted); font-size: var(--fs-xs); }
+  .chip:hover { border-color: var(--navy); }
+  .chip.is-active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+  .chip.is-active span { color: #9fbcd0; }
+  .ngrid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: var(--s7) var(--s5); }
+  .ncard { display: flex; flex-direction: column; gap: var(--s2); color: var(--text); }
+  .ncard:hover { color: var(--text); }
+  .ncard__media { display: block; aspect-ratio: 16 / 10; border-radius: var(--radius-lg); overflow: hidden; background: var(--grey-light); margin-bottom: var(--s2); }
+  .ncard__media :global(img) { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+  .ncard:hover .ncard__media :global(img) { transform: scale(1.04); }
+  .ncard__ph { display: block; width: 100%; height: 100%; background: linear-gradient(135deg, var(--navy), var(--blue)); }
+  .ncard__title { font-size: 1.2rem; font-weight: 700; line-height: 1.3; color: var(--navy); text-wrap: balance; }
+  .ncard:hover .ncard__title { color: var(--orange-text); }
+  .ncard__sum { font-size: var(--fs-sm); line-height: 1.5; }
+  .more { display: flex; justify-content: center; margin-top: var(--s7); }
+  @media (max-width: 800px) { .feature { grid-template-columns: 1fr; } }
 </style>

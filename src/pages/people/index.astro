@@ -5,32 +5,71 @@ import PageHeader from '../../components/PageHeader.astro';
 import Avatar from '../../components/Avatar.astro';
 import { url } from '../../lib/url';
 
-const people = (await getCollection('people')).sort((a, b) => a.data.name.split(' ').at(-1)!.localeCompare(b.data.name.split(' ').at(-1)!));
+const people = (await getCollection('people')).sort((a, b) => a.data.name.split(' ').at(-1)!.localeCompare(b.data.name.split(' ').at(-1)!, 'en-GB'));
+const leads = people.filter((p) => p.data.governance.length > 0);
 ---
-<BaseLayout title="People">
-  <PageHeader title="People" intro="The people behind ELIXIR-UK. Profiles appear only with consent." />
+<BaseLayout title="People" description="The people behind ELIXIR-UK.">
+  <PageHeader title="People" intro="The people behind ELIXIR-UK. Profiles appear only with consent." illustration="illustration-isometrics-team-rowing.svg" count={{ n: people.length, label: 'people with a profile' }} />
   <section class="section">
-    <ul class="container people-grid">
-      {people.map((p) => (
-        <li>
-          <a class="person lift" href={url(`/people/${p.id}/`)}>
-            <Avatar src={p.data.photo} name={p.data.name} size={110} ring="var(--white)" />
-            <span class="person__name">{p.data.name}</span>
-            {p.data.role && <span class="person__role">{p.data.role}</span>}
-            {p.data.institution && <span class="person__inst">{p.data.institution}</span>}
-          </a>
-        </li>
-      ))}
-    </ul>
+    <div class="container">
+      <div class="search">
+        <label for="q" class="visually-hidden">Search people</label>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="Search by name, role or organisation" autocomplete="off" />
+        <p class="search__status" aria-live="polite"></p>
+      </div>
+      {leads.length > 0 && (
+        <section class="group" data-group>
+          <h2 class="group__h">Leadership and governance</h2>
+          <ul class="people-grid">{leads.map((p) => <li data-q={`${p.data.name} ${p.data.role} ${p.data.institution}`.toLowerCase()}><a class="card person" href={url(`/people/${p.id}/`)}><Avatar src={p.data.photo} name={p.data.name} size={96} /><span class="card__title">{p.data.name}</span><span class="person__role">{p.data.governance.join(' · ')}</span>{p.data.institution && <span class="person__inst">{p.data.institution}</span>}</a></li>)}</ul>
+        </section>
+      )}
+      <section class="group" data-group>
+        <h2 class="group__h">{leads.length ? 'Everyone' : 'All people'}</h2>
+        <ul class="people-grid">
+          {people.map((p) => (
+            <li data-q={`${p.data.name} ${p.data.role} ${p.data.institution}`.toLowerCase()}>
+              <a class="card person" href={url(`/people/${p.id}/`)}>
+                <Avatar src={p.data.photo} name={p.data.name} size={96} />
+                <span class="card__title">{p.data.name}</span>
+                {p.data.role && <span class="person__role">{p.data.role}</span>}
+                {p.data.institution && <span class="person__inst">{p.data.institution}</span>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
   </section>
 </BaseLayout>
 
+<script>
+  const q = document.querySelector<HTMLInputElement>('#q');
+  const status = document.querySelector<HTMLElement>('.search__status');
+  q?.addEventListener('input', () => {
+    const v = q.value.trim().toLowerCase();
+    let n = 0;
+    document.querySelectorAll<HTMLElement>('[data-group]').forEach((g, gi) => {
+      let shown = 0;
+      g.querySelectorAll<HTMLElement>('li').forEach((li) => { const ok = !v || (li.dataset.q ?? '').includes(v); li.hidden = !ok; if (ok) { shown++; if (gi === document.querySelectorAll('[data-group]').length - 1) n++; } });
+      g.hidden = shown === 0 || (!!v && gi < document.querySelectorAll('[data-group]').length - 1);
+    });
+    if (status) status.textContent = v ? `${n} ${n === 1 ? 'person' : 'people'} found` : '';
+  });
+</script>
+
 <style>
-  .people-grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1.5rem; }
-  .person { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; padding: 1.75rem 1.25rem; background: var(--white); border-radius: 10px; color: var(--text); box-shadow: 0 20px 40px rgb(225 232 237 / 0.7); }
-  .person:hover { color: var(--text); }
-  .person :global(.avatar) { margin-bottom: 0.75rem; }
-  .person__name { font-weight: 700; color: var(--navy); font-size: 1.1rem; }
-  .person__role { font-size: 14px; }
-  .person__inst { font-size: 14px; color: var(--blue); }
+  .search { position: relative; max-width: 560px; margin-bottom: var(--s7); }
+  .search svg { position: absolute; left: 16px; top: 14px; width: 22px; height: 22px; color: var(--muted); }
+  .search input { width: 100%; min-height: 52px; padding: 0 var(--s4) 0 48px; font: inherit; border: 1px solid #cbd6de; border-radius: var(--radius); background: var(--white); color: var(--text); }
+  .search input:focus-visible { outline: 3px solid var(--orange); outline-offset: 1px; border-color: var(--navy); }
+  .search__status { margin: var(--s2) 0 0; min-height: 1.4em; font-size: var(--fs-sm); color: var(--muted); }
+  .group + .group { margin-top: var(--s8); }
+  .group__h { font-size: var(--fs-h3); padding-bottom: var(--s3); margin-bottom: var(--s5); border-bottom: 1px solid var(--border); }
+  .people-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); gap: var(--s4); }
+  .people-grid li { display: flex; }
+  .person { flex: 1; align-items: center; text-align: center; gap: var(--s1); padding: var(--s6) var(--s4); }
+  .person :global(.avatar) { margin-bottom: var(--s3); }
+  .person__role { font-size: var(--fs-sm); line-height: 1.4; }
+  .person__inst { font-size: var(--fs-xs); color: var(--muted); }
 </style>

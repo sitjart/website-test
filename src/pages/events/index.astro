@@ -7,6 +7,6 @@ import EventList from '../../components/EventList.astro';
 const items = await getCollection('events');
 ---
 <BaseLayout title="Events">
-  <PageHeader title="Events" />
+  <PageHeader title="Events" intro="Community Calls, workshops, conferences and the All Hands meeting." illustration="illustration-isometrics-training-copy-2.svg" />
   <EventList {items} />
 </BaseLayout>
