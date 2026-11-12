@@ -9,7 +9,6 @@ const { p, size = 56, ring = 'var(--white)', badge } = Astro.props;
 <a class="pl" href={url(`/people/${p.id}/`)}>
   <Avatar src={p.data.photo} name={p.data.name} size={size} ring={ring} />
   <span class="pl__text">
-    {p.data.honorific && <span class="pl__hon">{p.data.honorific}</span>}
     <span class="pl__name">{p.data.name}</span>
     {(p.data.institution || p.data.role) && <span class="pl__sub">{p.data.institution || p.data.role}</span>}
     {badge && <span class="pl__badge">{badge}</span>}

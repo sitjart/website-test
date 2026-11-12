@@ -24,9 +24,25 @@ const different = [
   { t: 'Shared leadership', d: 'early voices and established leaders work side by side.' },
   { t: 'Real influence', d: 'contributions at every level shape decisions and influence policy consultations.' },
 ];
-// Hub and Nodes diagram: hub in the centre, Nodes around it, the UK lit
-const NODES = 22;
-const ring = Array.from({ length: NODES }, (_, i) => { const a = (i / NODES) * Math.PI * 2 - Math.PI / 2; return { x: 150 + 112 * Math.cos(a), y: 150 + 112 * Math.sin(a), uk: i === 3 }; });
+// Distributed ELIXIR diagram: Nodes placed loosely, each linked to its nearest neighbours (a mesh, not spokes);
+// the Hub coordinates (faint dashed links); ELIXIR-UK highlighted with its own member organisations around it.
+let seed = 11;
+const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+const nodes: { x: number; y: number; uk?: boolean }[] = [];
+for (let gy = 0; gy < 5; gy++) for (let gx = 0; gx < 5; gx++) {
+  if ((gx === 2 && gy === 2) || rnd() < 0.12) continue;
+  nodes.push({ x: 40 + gx * 55 + (rnd() - 0.5) * 30, y: 40 + gy * 55 + (rnd() - 0.5) * 30 });
+}
+const hub = { x: 150, y: 150 };
+const uk = nodes.reduce((best, n) => (Math.hypot(n.x - 70, n.y - 85) < Math.hypot(best.x - 70, best.y - 85) ? n : best), nodes[0]);
+uk.uk = true;
+const mesh = new Set<string>();
+nodes.forEach((n, i) => {
+  nodes.map((m, j) => ({ j, d: Math.hypot(n.x - m.x, n.y - m.y) })).filter((o) => o.j !== i).sort((p, q) => p.d - q.d).slice(0, 3)
+    .forEach(({ j }) => mesh.add(i < j ? `${i}-${j}` : `${j}-${i}`));
+});
+const links = [...mesh].map((k) => k.split('-').map(Number)).map(([i, j]) => [nodes[i], nodes[j]]);
+const ukMembers = Array.from({ length: 10 }, (_, i) => { const a = (i / 10) * Math.PI * 2; const r = 26 + (i % 2) * 6; return { x: uk.x + r * Math.cos(a), y: uk.y + r * Math.sin(a) }; });
 ---
 <BaseLayout title="Who we are" description="ELIXIR-UK is the United Kingdom’s national Node of ELIXIR.">
   <PageHeader title="Who we are" intro="ELIXIR-UK is the United Kingdom’s national Node of ELIXIR, the European infrastructure for bioscience data. We are a distributed research infrastructure and a collaborative network, bringing together leading UK research-performing organisations and the people behind them." illustration="illustration-isometrics-mechanisms-like-extending-hand-join.svg" />
@@ -73,15 +89,22 @@ const ring = Array.from({ length: NODES }, (_, i) => { const a = (i / NODES) * M
 
   <section class="section section--grey">
     <div class="container hub">
-      <figure class="hub__fig" aria-label="The ELIXIR Hub at the centre, with national Nodes around it; ELIXIR-UK highlighted">
+      <figure class="hub__fig" aria-label="ELIXIR as a distributed network: national Nodes linked to each other, the Hub coordinating, and ELIXIR-UK linking its member organisations">
         <svg viewBox="0 0 300 300" role="img" aria-hidden="true">
-          {ring.map((n) => <line x1="150" y1="150" x2={n.x} y2={n.y} class:list={['hub__spoke', { uk: n.uk }]} />)}
-          <circle cx="150" cy="150" r="112" class="hub__orbit" />
-          {ring.map((n) => <circle cx={n.x} cy={n.y} r={n.uk ? 14 : 7} class:list={['hub__node', { uk: n.uk }]} />)}
-          {ring.filter((n) => n.uk).map((n) => <text x={n.x + 20} y={n.y + 5} class="hub__uk">ELIXIR-UK</text>)}
-          <circle cx="150" cy="150" r="34" class="hub__hub" />
-          <text x="150" y="147" class="hub__hubt">ELIXIR</text><text x="150" y="162" class="hub__hubt">Hub</text>
+          {nodes.map((n) => <line x1={hub.x} y1={hub.y} x2={n.x} y2={n.y} class="d-coord" />)}
+          {links.map(([n, m]) => <line x1={n.x} y1={n.y} x2={m.x} y2={m.y} class="d-mesh" />)}
+          {ukMembers.map((m) => <line x1={uk.x} y1={uk.y} x2={m.x} y2={m.y} class="d-uk-link" />)}
+          {ukMembers.map((m) => <circle cx={m.x} cy={m.y} r="3.2" class="d-uk-member" />)}
+          {nodes.map((n) => <circle cx={n.x} cy={n.y} r={n.uk ? 11 : 7} class:list={['d-node', { uk: n.uk }]} />)}
+          <circle cx={hub.x} cy={hub.y} r="15" class="d-hub" />
+          <text x={hub.x} y={hub.y + 30} class="d-label">ELIXIR Hub</text>
+          <text x={uk.x} y={uk.y - 42} class="d-label d-label--uk">ELIXIR-UK</text>
         </svg>
+        <ul class="d-key">
+          <li><span class="k-node"></span>National Nodes, working directly with each other</li>
+          <li><span class="k-hub"></span>The Hub, coordinating across Europe</li>
+          <li><span class="k-uk"></span>ELIXIR-UK and its member organisations</li>
+        </ul>
       </figure>
       <div>
         <h2 class="section-title">Us, the UK Node, inside the larger ELIXIR consortium<span class="stop">.</span></h2>
@@ -151,22 +174,28 @@ const ring = Array.from({ length: NODES }, (_, i) => { const a = (i / NODES) * M
   .hub { display: grid; grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.4fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
   .hub__fig { margin: 0; }
   .hub__fig svg { width: 100%; max-width: 380px; display: block; margin-inline: auto; overflow: visible; }
-  .hub__spoke { stroke: #c6d6e2; stroke-width: 1; }
-  .hub__spoke.uk { stroke: var(--orange); stroke-width: 2.5; }
-  .hub__orbit { fill: none; stroke: #c6d6e2; stroke-dasharray: 2 4; }
-  .hub__node { fill: var(--blue); stroke: var(--grey-light); stroke-width: 3; }
-  .hub__node.uk { fill: var(--orange); }
-  .hub__uk { font: 900 13px var(--font); fill: var(--navy); }
-  .hub__hub { fill: var(--navy); }
-  .hub__hubt { font: 700 11px var(--font); fill: var(--white); text-anchor: middle; }
+  .d-coord { stroke: #c6d6e2; stroke-width: 0.8; stroke-dasharray: 2 3; }
+  .d-mesh { stroke: #7fa6bf; stroke-width: 1.4; }
+  .d-uk-link { stroke: var(--orange); stroke-width: 1; opacity: 0.7; }
+  .d-uk-member { fill: var(--orange); stroke: var(--grey-light); stroke-width: 1.5; }
+  .d-node { fill: var(--blue); stroke: var(--grey-light); stroke-width: 2.5; }
+  .d-node.uk { fill: var(--orange); }
+  .d-hub { fill: var(--navy); stroke: var(--grey-light); stroke-width: 3; }
+  .d-label { font: 700 11px var(--font); fill: var(--navy); text-anchor: middle; }
+  .d-label--uk { font-weight: 900; fill: var(--orange-text); }
+  .d-key { list-style: none; margin: var(--s4) 0 0; padding: 0; display: grid; gap: 6px; font-size: var(--fs-xs); color: var(--text); }
+  .d-key li { display: flex; align-items: center; gap: var(--s2); }
+  .d-key span { flex: none; width: 12px; height: 12px; border-radius: 50%; }
+  .k-node { background: var(--blue); }
+  .k-hub { background: var(--navy); }
+  .k-uk { background: var(--orange); }
   .hub .section-title { font-size: clamp(1.8rem, 1.3rem + 1.8vw, 2.6rem); margin-bottom: var(--s5); }
   .hub__list { padding-left: 1.2em; }
   .hub__list li { margin-bottom: var(--s2); }
   .hub__list li::marker { color: var(--orange); }
-  .figs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--border); }
-  .figs li + li { border-left: 1px solid var(--border); }
-  .figs a { display: flex; flex-direction: column; gap: var(--s2); padding: var(--s5); color: var(--text); }
-  .figs li:first-child a { padding-left: 0; }
+  .figs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s6) var(--s5); }
+  @media (max-width: 1000px) { .figs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .figs a { display: flex; flex-direction: column; gap: var(--s2); padding-top: var(--s4); border-top: 3px solid var(--orange); color: var(--text); }
   .figs b { font-size: clamp(2.6rem, 1.8rem + 3vw, 4.2rem); font-weight: 900; line-height: 1; letter-spacing: -0.03em; color: var(--navy); }
   .figs a:hover b { color: var(--orange-text); }
   .figs span { font-size: var(--fs-sm); line-height: 1.4; }
@@ -179,8 +208,5 @@ const ring = Array.from({ length: NODES }, (_, i) => { const a = (i / NODES) * M
   @media (max-width: 900px) {
     .split, .hub { grid-template-columns: 1fr; }
     .three { grid-template-columns: 1fr; }
-    .figs { grid-template-columns: 1fr 1fr; }
-    .figs li:nth-child(3) { border-left: 0; }
-    .figs li:nth-child(3) a { padding-left: 0; }
   }
 </style>

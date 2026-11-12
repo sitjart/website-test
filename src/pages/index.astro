@@ -5,8 +5,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import UkMap from '../components/UkMap.astro';
 import HeroOrbit from '../components/HeroOrbit.astro';
 import RemoteImage from '../components/RemoteImage.astro';
-import GrowthChart from '../components/charts/GrowthChart.astro';
-import BarChart from '../components/charts/BarChart.astro';
 import home from '../data/home.json';
 import { DIRECTORY, linksFor } from '../lib/graph';
 import { nodeStats } from '../lib/stats';
@@ -41,8 +39,6 @@ const areas = await Promise.all(
 
 // Where the UK leads: Clubs plus the ELIXIR Communities and groups ELIXIR-UK leads
 const leads = DIRECTORY.activities.records.filter((a) => a.tags.includes('Leading') || a.tags.includes('Club'));
-const thisYear = new Date().getFullYear();
-const evBars = stats.events.map((e) => ({ label: String(e.year), value: e.count, note: e.year === thisYear ? 'so far this year' : undefined }));
 const day = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', timeZone: 'UTC' });
 const month = (d: Date) => d.toLocaleDateString('en-GB', { month: 'short', timeZone: 'UTC' });
 
@@ -128,18 +124,6 @@ const jsonLd = {
         <li><a href={url('/projects/')}><strong>{stats.projects}</strong><span>projects</span></a></li>
         <li><a href={url('/events/')}><strong>{stats.events.reduce((a, e) => a + e.count, 0)}</strong><span>events since {stats.events[0]?.year}</span></a></li>
       </ul>
-      </div>
-      <div class="charts">
-        <div class="chart-card">
-          <h3>Member organisations since {stats.firstYear}</h3>
-          <p>From {stats.founding} founding members to {stats.members} today.</p>
-          <GrowthChart data={stats.growth} title="Member organisations by year" />
-        </div>
-        <div class="chart-card">
-          <h3>Events and Community Calls</h3>
-          <p>Listed on the site, per year.</p>
-          <BarChart data={evBars} title="Events per year" />
-        </div>
       </div>
     </div>
   </section>
@@ -301,12 +285,11 @@ const jsonLd = {
   .hero__intro { margin: var(--s5) 0 var(--s6); max-width: 34rem; font-size: var(--fs-lead); line-height: 1.55; color: var(--on-dark); }
   .hero__actions { display: flex; gap: var(--s3); flex-wrap: wrap; }
   .hero__facts-wrap { margin-top: auto; }
-  .hero__facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; border-top: 1px solid rgb(255 255 255 / 0.14); }
-  .hero__facts div { display: flex; flex-direction: column-reverse; gap: 4px; padding: var(--s5) var(--s5) var(--s6) 0; }
-  .hero__facts div + div { padding-left: var(--s5); border-left: 1px solid rgb(255 255 255 / 0.14); }
+  .hero__facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--s5); margin: 0; padding-block: var(--s5) var(--s6); }
+  .hero__facts div { display: flex; flex-direction: column-reverse; gap: 4px; padding-top: var(--s3); border-top: 2px solid var(--orange); }
   .hero__facts dt { font-size: var(--fs-sm); color: #9fbcd0; }
   .hero__facts dd { margin: 0; font-size: clamp(2rem, 1.4rem + 2vw, 3.25rem); font-weight: 900; line-height: 1; color: var(--white); letter-spacing: -0.02em; }
-  .numbers__top { display: grid; grid-template-columns: minmax(220px, 0.7fr) minmax(0, 2fr); gap: clamp(32px, 5vw, 80px); align-items: center; margin-bottom: var(--s7); }
+  .numbers__top { display: grid; grid-template-columns: minmax(220px, 0.7fr) minmax(0, 2fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
   .numbers__map { max-width: 320px; }
   .numbers__hint { margin: var(--s3) 0 0; text-align: center; font-size: var(--fs-xs); color: #8fa9bc; }
 
@@ -327,20 +310,11 @@ const jsonLd = {
   /* Numbers */
   .numbers { padding-block: var(--section-pad); }
   .numbers__sub { color: #9fbcd0; }
-  .kpis { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .kpis li { border-top: 1px solid rgb(255 255 255 / 0.12); }
-  .kpis li:nth-child(3n+1) { border-left: 0 !important; }
-  .kpis li:nth-child(3n+1) a { padding-left: 0 !important; }
-  .kpis li + li { border-left: 1px solid rgb(255 255 255 / 0.12); }
-  .kpis a { display: flex; flex-direction: column; gap: var(--s2); padding: var(--s5) var(--s5) var(--s5) 0; color: var(--on-dark); }
-  .kpis li + li a { padding-left: var(--s5); }
+  .kpis { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: var(--s5); }
+  .kpis a { display: flex; flex-direction: column; gap: var(--s2); padding-top: var(--s4); border-top: 2px solid var(--orange); color: var(--on-dark); }
   .kpis strong { font-size: clamp(2.5rem, 1.6rem + 3vw, 4.25rem); font-weight: 900; line-height: 0.95; color: var(--white); letter-spacing: -0.03em; transition: color 0.2s; }
   .kpis span { font-size: var(--fs-sm); line-height: 1.35; }
   .kpis a:hover strong { color: var(--orange); }
-  .charts { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: var(--s4); }
-  .chart-card { padding: var(--s6); border-radius: var(--radius-lg); background: rgb(255 255 255 / 0.04); border: 1px solid rgb(255 255 255 / 0.08); }
-  .chart-card h3 { color: var(--white); font-size: 1.15rem; margin: 0 0 var(--s1); }
-  .chart-card p { font-size: var(--fs-sm); color: #9fbcd0; margin: 0 0 var(--s5); }
 
   /* Areas */
   .areas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s5); }
@@ -414,16 +388,11 @@ const jsonLd = {
     .mission { grid-template-columns: 1fr 1fr; }
     .numbers__top { grid-template-columns: 1fr; }
     .numbers__map { margin-inline: auto; width: min(100%, 280px); }
-    .charts { grid-template-columns: 1fr; }
   }
   @media (max-width: 900px) {
     .leads, .coming__grid, .services-band__grid { grid-template-columns: 1fr; }
     .hero__stage { flex-direction: column; align-items: stretch; padding-bottom: 0; overflow: hidden; }
     .hero__orbit { order: 2; position: relative; right: auto; top: auto; transform: none; width: 120%; margin: var(--s6) -10% -30%; }
-    .hero__facts { grid-template-columns: 1fr 1fr; }
-    .hero__facts div { padding: var(--s4) 0 var(--s5) !important; border-left: 0 !important; border-top: 1px solid rgb(255 255 255 / 0.14); }
-    .hero__facts div:nth-child(even) { padding-left: var(--s4) !important; border-left: 1px solid rgb(255 255 255 / 0.14) !important; }
-    .hero__facts { border-top: 0; }
     .news-tiles { grid-template-columns: 1fr; grid-auto-rows: auto; }
     .news-tile--photo { min-height: 360px; }
     .areas { grid-template-columns: 1fr; }
@@ -435,9 +404,6 @@ const jsonLd = {
     .mission { grid-template-columns: 1fr; }
     .mission__card { flex-direction: row; }
     .mission__art { width: 120px; aspect-ratio: 1; padding: var(--s3); flex: none; }
-    .kpis { grid-template-columns: 1fr 1fr; }
-    .kpis li { border-left: 0 !important; border-bottom: 1px solid rgb(255 255 255 / 0.12); }
-    .kpis li a { padding-left: 0 !important; }
     .coming__list a { grid-template-columns: 56px minmax(0, 1fr); }
     .coming__go { display: none; }
     .services-band__logos { grid-template-columns: repeat(3, minmax(0, 1fr)); }

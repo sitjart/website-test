@@ -27,7 +27,6 @@ const f = (d: Date, o: Intl.DateTimeFormatOptions) => d.toLocaleDateString('en-G
           <span class="rc__body">
             {style === 'story' && <span class="rc__meta">{c.meta} · {c.date && longDate(c.date)}</span>}
             {(style === 'event' || style === 'project' || style === 'icon') && c.meta && <span class="rc__meta">{c.meta}</span>}
-            {style === 'person' && c.honorific && <span class="rc__hon">{c.honorific}</span>}
             <span class="rc__title">{c.title}</span>
             {style === 'person' && c.meta && <span class="rc__sub">{c.meta}</span>}
             {(style === 'story' || style === 'project') && c.text && <span class="rc__text">{firstSentence(c.text, 140)}</span>}

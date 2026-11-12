@@ -8,6 +8,7 @@ import members from '../data/directory/members.json';
 import { fetchRows, selectValue, slugify } from './baserow';
 import corrections from '../data/corrections.json';
 const removedLeads = corrections.removeLeads as Record<string, string[]>;
+const removedGov = (corrections as { removeGovernance?: Record<string, string[]> }).removeGovernance ?? {};
 
 export interface Person {
   id: string;
@@ -107,7 +108,7 @@ async function fromWordPress(): Promise<Person[]> {
         website: acf.website || undefined,
         linkedin: acf.linkedin_account || undefined,
         photo: media?.media_details?.sizes?.medium?.source_url ?? media?.source_url ?? undefined,
-        governance: ((r['governance-role'] ?? []) as number[]).map((id) => govT.get(id)).filter(Boolean) as string[],
+        governance: (((r['governance-role'] ?? []) as number[]).map((id) => govT.get(id)).filter(Boolean) as string[]).filter((g) => !(removedGov[g] ?? []).includes(r.slug)),
         status: (((r['people-status'] ?? []) as number[]).map((id) => statusT.get(id)).filter(Boolean)[0] as string) ?? terms.find((t) => ['Current member', 'Alumni', 'Collaborator'].includes(t)) ?? '',
         tags: [], // DaSH Fellow/Mentor/Coordinator tags are no longer used on the site
         related,

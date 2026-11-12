@@ -80,7 +80,6 @@ const city = (locations as Record<string, { city: string }>)[r.slug]?.city;
             <li><a class="m-rep__card" href={url(`/people/${p.id}/`)}>
               <Avatar src={p.data.photo} name={p.data.name} size={112} ring="var(--white)" />
               <span>
-                {p.data.honorific && <span class="m-person__hon">{p.data.honorific}</span>}
                 <span class="m-rep__name">{p.data.name}</span>
                 {p.data.role && <span class="m-person__role">{p.data.role}</span>}
                 <span class="more-link">View profile</span>
@@ -97,7 +96,6 @@ const city = (locations as Record<string, { city: string }>)[r.slug]?.city;
           {crew.slice(0, PEOPLE_LIMIT).map((p) => (
             <a class="m-person lift" href={url(`/people/${p.id}/`)}>
               <Avatar src={p.data.photo} name={p.data.name} size={96} ring="var(--grey-light)" />
-              <span class="m-person__hon" aria-hidden={p.data.honorific ? undefined : 'true'}>{p.data.honorific}</span>
               <span class="m-person__name">{p.data.name}</span>
               {p.data.role && <span class="m-person__role">{p.data.role}</span>}
             </a>
