@@ -240,3 +240,4 @@ a.card:hover { color: var(--text); transform: translateY(-3px); box-shadow: var(
 .wp-counter b { font-size: clamp(2rem, 1.6rem + 1.5vw, 2.8rem); font-weight: 900; line-height: 1; color: var(--navy); letter-spacing: -0.02em; }
 .wp-counter span { font-size: var(--fs-sm); }
 :is(.wp-block-group, .gspb_container, div):has(> .wp-counter) { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--s3); margin-block: var(--s5); }
+.crumb a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: rgb(127 127 127 / 0.5); }
