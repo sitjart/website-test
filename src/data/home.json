@@ -1,6 +1,5 @@
 {
   "intro": "ELIXIR-UK is the UK Node of ELIXIR, Europe’s infrastructure for bioscience research data objects. We bring together research organisations across the UK and the people who make those objects FAIR.",
-  "video": "https://elixiruknode.org/wp-content/uploads/2024/01/hero-intro-video.webm",
   "mission": [
     {
       "title": "People",
@@ -42,5 +41,6 @@
     "computational-workflows": "illustration-isometrics-programming-working.svg",
     "training": "illustration-isometrics-training.svg"
   },
-  "heroEyebrow": "The UK Node of ELIXIR"
+  "heroEyebrow": "The UK Node of ELIXIR",
+  "storyVideo": ""
 }

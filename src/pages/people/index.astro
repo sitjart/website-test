@@ -32,10 +32,10 @@ const groups = ORDER.map((g) => ({ g, n: people.filter((p) => [...p.data.governa
       <ul class="people-grid">
         {people.map((p) => (
           <li data-q={`${p.data.name} ${p.data.role} ${p.data.institution}`.toLowerCase()} data-g={[...p.data.governance, ...p.data.tags].map(slugify).join(' ')}>
-            <a class="card person" href={url(`/people/${p.id}/`)}>
-              <Avatar src={p.data.photo} name={p.data.name} size={96} />
+            <a class="person" href={url(`/people/${p.id}/`)}>
+              <Avatar src={p.data.photo} name={p.data.name} size={136} />
               {p.data.honorific && <span class="person__hon">{p.data.honorific}</span>}
-              <span class="card__title">{p.data.name}</span>
+              <span class="person__name">{p.data.name}</span>
               {p.data.role && <span class="person__role">{p.data.role}</span>}
               {p.data.institution && <span class="person__inst">{p.data.institution}</span>}
               {p.data.governance.length > 0 && <span class="person__gov">{p.data.governance.join(' · ')}</span>}
@@ -86,12 +86,18 @@ const groups = ORDER.map((g) => ({ g, n: people.filter((p) => [...p.data.governa
   .chip.is-active { background: var(--navy); border-color: var(--navy); color: var(--white); }
   .chip.is-active span { color: #9fbcd0; }
   .status { min-height: 1.4em; margin: var(--s3) 0 0; font-size: var(--fs-sm); color: var(--muted); }
-  .people-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: var(--s4); }
+  .people-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr)); gap: var(--s7) var(--s5); }
   .people-grid li { display: flex; }
-  .person { flex: 1; align-items: center; text-align: center; gap: 2px; padding: var(--s6) var(--s4); }
-  .person :global(.avatar) { margin-bottom: var(--s3); }
+  .person { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2px; color: var(--text); }
+  .person:hover { color: var(--text); }
+  .person :global(.avatar) { margin-bottom: var(--s4); transition: transform 0.3s var(--ease); }
+  .person :global(.avatar > img), .person :global(.avatar__fill) { transition: box-shadow 0.3s var(--ease); }
+  .person:hover :global(.avatar) { transform: translateY(-4px); }
+  .person:hover :global(.avatar > img), .person:hover :global(.avatar__fill) { box-shadow: 0 0 0 4px var(--white), 0 0 0 6px var(--orange); }
   .person__hon { font-size: var(--fs-xs); color: var(--muted); }
-  .person__role { font-size: var(--fs-sm); line-height: 1.4; }
+  .person__name { font-size: 1.1rem; font-weight: 700; line-height: 1.25; color: var(--navy); }
+  .person:hover .person__name { color: var(--orange-text); }
+  .person__role { font-size: var(--fs-sm); line-height: 1.4; margin-top: 2px; }
   .person__inst { font-size: var(--fs-xs); color: var(--muted); }
   .person__gov { margin-top: var(--s2); font-size: var(--fs-xs); font-weight: 700; color: var(--orange-text); }
 </style>

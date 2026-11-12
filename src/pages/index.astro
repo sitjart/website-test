@@ -15,6 +15,8 @@ import { longDate, todayUK, firstSentence } from '../lib/format';
 import { url } from '../lib/url';
 
 const stats = await nodeStats();
+// YouTube id from home.json storyVideo (any youtu.be / youtube.com link)
+const ytId = (home.storyVideo ?? '').match(/(?:youtu\.be\/|v=|embed\/)([A-Za-z0-9_-]{11})/)?.[1];
 const services = DIRECTORY.services.records.filter((s) => s.status === 'Selected');
 const allNews = (await getCollection('news')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 const news = allNews.slice(0, 3);
@@ -64,10 +66,12 @@ const jsonLd = {
         <p class="hero__intro">{home.intro}</p>
         <div class="hero__actions">
           <a class="btn" href={url('/new-members/')}>Become a member</a>
-          <a class="btn btn--ghost" href={home.video}>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 8.5v7l6-3.5z" fill="currentColor"/></svg>
-            Watch our story
-          </a>
+          {ytId && (
+            <button type="button" class="btn btn--ghost" data-video={ytId} aria-haspopup="dialog">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 8.5v7l6-3.5z" fill="currentColor"/></svg>
+              Watch our story
+            </button>
+          )}
         </div>
       </div>
     </div>
@@ -256,9 +260,34 @@ const jsonLd = {
       </ul>
     </div>
   </section>
+  {ytId && (
+    <dialog class="video-dialog" id="story-video" aria-label="Our story">
+      <button type="button" class="video-dialog__close" data-close aria-label="Close video">×</button>
+      <div class="video-dialog__frame"></div>
+    </dialog>
+  )}
 </BaseLayout>
 
+<script>
+  // "Watch our story": YouTube (with sound) in a dialog; the player loads only when opened
+  const dlg = document.getElementById('story-video') as HTMLDialogElement | null;
+  document.querySelectorAll<HTMLButtonElement>('[data-video]').forEach((b) => b.addEventListener('click', () => {
+    if (!dlg) return;
+    dlg.querySelector('.video-dialog__frame')!.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.video}?autoplay=1&rel=0" title="ELIXIR-UK – our story" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    dlg.showModal();
+  }));
+  const close = () => { if (!dlg) return; dlg.close(); dlg.querySelector('.video-dialog__frame')!.innerHTML = ''; };
+  dlg?.querySelector('[data-close]')?.addEventListener('click', close);
+  dlg?.addEventListener('click', (e) => { if (e.target === dlg) close(); });
+  dlg?.addEventListener('cancel', () => setTimeout(close));
+</script>
+
 <style>
+  .video-dialog { width: min(92vw, 1100px); padding: 0; border: 0; border-radius: var(--radius-lg); background: #000; overflow: visible; }
+  .video-dialog::backdrop { background: rgb(1 29 49 / 0.85); }
+  .video-dialog__frame { aspect-ratio: 16 / 9; }
+  .video-dialog__frame :global(iframe) { width: 100%; height: 100%; border: 0; border-radius: var(--radius-lg); display: block; }
+  .video-dialog__close { position: absolute; top: -48px; right: 0; width: 44px; height: 44px; border: 0; border-radius: 50%; background: var(--white); color: var(--navy); font-size: 28px; line-height: 1; cursor: pointer; }
   /* Hero */
   .hero { min-height: min(88vh, 780px); display: flex; flex-direction: column; padding: 0; }
   .hero__stage { position: relative; flex: 1; display: flex; align-items: center; padding-block: clamp(56px, 7vw, 96px); isolation: isolate; overflow: hidden; }
