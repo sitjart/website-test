@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="a" viewBox="0 0 1000 700">
+  <path d="M408.32,487.07c-.51.05-1.01.15-1.52.23,5.94-7.51,1.7-19.7-7.59-21.04-.34-2.88-1.95-5.55-4.56-7.07-3.87-2.27-8.3-1.26-11.58,1.49-.55.47-1.03.94-1.49,1.51-1.36,1.79-1.54,2.01-.55.66-.1.11-.19.23-.29.34-.54.61-1.16,1.42-1.59,2.17-.88,1.52-1.16,3.36-.81,4.97-1.74.5-3.47,1.1-5.22,1.86-6.03,2.62-11.87,5.67-17.76,8.61-4.77,2.37-9.77,5.51-15.02,6.68-5.21,1.16-10.51-.27-15.54-1.76-10.77-3.18-20.31-8.9-29.93-14.57-9.84-5.8-18.39-14.11-28.53-19.29-2.77-1.41-6.96.98-5.72,4.4,4.21,11.56,14.23,21.18,23.1,29.33,9.95,9.15,21.96,16.66,33.72,23.27,14.01,7.87,28.47,9.68,43.54,3.62,4.18-1.68,8.33-3.41,12.49-5.15.23.09.48.13.77.08,6.94-1.27,13.59-2.92,20.37-4.87,5.95-1.72,12.32-3.16,17.14-7.13,3.17-2.61.65-8.74-3.46-8.35Z" style="fill:#ccd6dc;"></path>
+  <polygon points="738.64 215.7 738.64 615.32 642.19 671.27 642.19 271.65 738.64 215.7" style="fill:#ccd6dc;"></polygon>
+  <polygon points="545.84 104.38 561.08 209.05 547.46 216.95 547.46 576.59 512.91 596.62 449.38 160.32 545.84 104.38" style="fill:#ccd6dc;"></polygon>
+  <polygon points="379.16 238.2 392.81 346.05 355.76 367.54 375.25 235.95 379.16 238.2" style="fill:#011a29;"></polygon>
+  <polygon points="343.49 435.75 387.39 461.1 332.9 492.7 343.49 435.75" style="fill:#011a29;"></polygon>
+  <polyline points="289.55 263.08 320.77 84.68 449.38 160.32 512.91 596.62 419.84 542.89 409.26 473.71 387.39 461.1 343.49 435.75 332.9 492.7 257.24 447.62 283.05 300.17 289.55 263.09" style="fill:none; stroke:#023452; stroke-linecap:round; stroke-linejoin:round; stroke-width:5.5px;"></polyline>
+  <polygon points="355.76 367.54 398.66 392.32 392.81 346.05 379.16 238.2 375.25 235.95 355.76 367.54" style="fill:none; stroke:#023452; stroke-linecap:round; stroke-linejoin:round; stroke-width:5.5px;"></polygon>
+  <polygon points="642.19 671.27 547.46 616.57 547.46 576.59 547.46 216.95 642.19 271.65 642.19 671.27" style="fill:none; stroke:#023452; stroke-linecap:round; stroke-linejoin:round; stroke-width:5.5px;"></polygon>
+  <polyline points="320.77 84.68 417.23 28.73 545.84 104.38 561.08 209.05" style="fill:none; stroke:#023452; stroke-linecap:round; stroke-linejoin:round; stroke-width:5.5px;"></polyline>
+  <line x1="642.19" y1="271.65" x2="738.64" y2="215.7" style="fill:none; stroke:#023452; stroke-linecap:round; stroke-linejoin:round; stroke-width:5.5px;"></line>
+  <polyline points="620.56 174.55 643.91 161.01 705.67 196.67 738.64 215.7 738.64 615.32" style="fill:none; stroke:#023452; stroke-linecap:round; stroke-linejoin:round; stroke-width:5.5px;"></polyline>
+  <polyline points="547.46 216.95 561.08 209.05 620.56 174.56" style="fill:none; stroke:#023452; stroke-linecap:round; stroke-linejoin:round; stroke-width:5.5px;"></polyline>
+  <line x1="449.38" y1="160.32" x2="545.84" y2="104.38" style="fill:none; stroke:#023452; stroke-linecap:round; stroke-linejoin:round; stroke-width:5.5px;"></line>
+  <line x1="512.91" y1="596.62" x2="547.46" y2="576.59" style="fill:none; stroke:#023452; stroke-linecap:round; stroke-linejoin:round; stroke-width:5.5px;"></line>
+  <line x1="332.9" y1="492.7" x2="387.39" y2="461.1" style="fill:none; stroke:#023452; stroke-linecap:round; stroke-linejoin:round; stroke-width:5.5px;"></line>
+  <line x1="355.76" y1="367.54" x2="392.81" y2="346.05" style="fill:none; stroke:#023452; stroke-linecap:round; stroke-linejoin:round; stroke-width:5.5px;"></line>
+  <line x1="738.64" y1="615.32" x2="642.19" y2="671.27" style="fill:none; stroke:#023452; stroke-linecap:round; stroke-linejoin:round; stroke-width:5.5px;"></line>
+  <circle cx="642.19" cy="140.77" r="55.93" style="fill:#f47d20;"></circle>
+  <path d="M684.31,180.87c8.18-7.92,11.75-19.02,12.63-21.86,0,0,2.57-8.47,2.57-17.02,0-31.66-25.67-57.31-57.32-57.31s-57.32,25.65-57.32,57.31c0,4.64.56,9.14,1.6,13.45h0c.78,4.74,2.67,11.91,7.84,18.63,11.94,15.53,32.17,21.92,45.01,22.7,12.95.78,31.92-3.24,44.99-15.89Z" style="fill:none; stroke:#023452; stroke-linecap:round; stroke-linejoin:round; stroke-width:5.5px;"></path>
+</svg>
