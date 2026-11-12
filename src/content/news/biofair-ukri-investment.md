@@ -2,6 +2,7 @@
 title: "Green light for £34M investment in BioFAIR – conceived by ELIXIR-UK"
 date: 2024-07-10
 standfirst: "With UKRI’s £34m investment approved, BioFAIR is poised to revolutionise UK life science research by transforming how we facilitate research data management. Supported by UK Research and Innovation’s (UKRI) Infrastructur"
+excerpt: ""
 category: "News"
 wpId: 22555
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-dna-shape-bridge.webp"

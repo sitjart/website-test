@@ -56,6 +56,23 @@ def wp_date(v: str):
     return v[:10] or None
 
 
+def fmt(m):
+    """Event attendance mode: WordPress stored it two ways (schema.org names and short names)."""
+    v = (m.get('event_format') or '').lower()
+    if 'mixed' in v or 'hybrid' in v:
+        return 'hybrid'
+    if 'online' in v:
+        return 'online'
+    if 'offline' in v or 'person' in v:
+        return 'in-person'
+    return 'online'
+
+
+def person_ids(value):
+    """WordPress post IDs from an ACF relationship field. IDs only – no personal data."""
+    return [int(x) for x in re.findall(r's:\d+:"(\d+)"', value or '')]
+
+
 def main(src: str):
     items = ET.parse(src).getroot().find('channel').findall('item')
     attachments = {text(i, 'wp:post_id'): text(i, 'wp:attachment_url')
@@ -121,6 +138,7 @@ def main(src: str):
             f'title: {yaml_str(html.unescape(text(i, "title")))}',
             f'date: {text(i, "wp:post_date")[:10]}',
             f'standfirst: {yaml_str(strip_tags(standfirst))}',
+            f'excerpt: {yaml_str(strip_tags(text(i, "excerpt:encoded")))}',
             f'category: {yaml_str((cats(i, "category") or ["News"])[0])}',
             f'wpId: {text(i, "wp:post_id")}',
         ]
@@ -137,9 +155,23 @@ def main(src: str):
             f'title: {yaml_str(html.unescape(text(i, "title")))}',
             f'start: {wp_date(m.get("event_start_date"))}',
             f'type: {yaml_str((cats(i, "type-of-event") or ["Event"])[0])}',
-            f'online: {"true" if m.get("event_format") == "OnlineEventAttendanceMode" else "false"}',
+            f'online: {"true" if fmt(m) == "online" else "false"}',
+            f'format: {fmt(m)}',
             f'wpId: {text(i, "wp:post_id")}',
         ]
+        if text(i, 'excerpt:encoded').strip():
+            fm.append(f'standfirst: {yaml_str(strip_tags(text(i, "excerpt:encoded")))}')
+        cost = (m.get('event_cost') or '').strip()
+        fm.append(f'cost: {cost if cost.replace(".", "").isdigit() else 0}')
+        fm.append(f'currency: {yaml_str(m.get("event_currency") or "GBP")}')
+        status = 'cancelled' if m.get('event_cancelled') in ('1', 'true') or 'Cancelled' in m.get('event_status', '') else 'rescheduled' if 'Rescheduled' in m.get('event_status', '') else 'scheduled'
+        fm.append(f'status: {status}')
+        for key, field in (('event_street', 'street'), ('post_code', 'postcode'), ('event_country', 'country'), ('programme_link', 'programme')):
+            if m.get(key, '').strip():
+                fm.append(f'{field}: {yaml_str(m[key].strip())}')
+        speakers = re.findall(r's:\d+:"(\d+)"', m.get('event_node_speakers', ''))
+        if speakers:
+            fm.append(f'speakerIds: {json.dumps([int(x) for x in speakers])}')
         if wp_date(m.get('event_end_date')):
             fm.append(f'end: {wp_date(m.get("event_end_date"))}')
         for key, field in (('event_start_time', 'startTime'), ('event_end_time', 'endTime'),
@@ -185,13 +217,16 @@ def main(src: str):
             'name': html.unescape(text(i, 'title')),
             'website': m.get('website') or m.get('project_website') or m.get('organisation_website') or '',
             'logo': logo,
-            'summary': strip_tags(m.get('description', '')) or strip_tags(body)[:200],
+            'summary': strip_tags(text(i, 'excerpt:encoded')) or strip_tags(m.get('description', '')) or strip_tags(body)[:200],
+            'excerpt': strip_tags(text(i, 'excerpt:encoded')),
             'body': body,
             'tags': tags,
             'status': (cats(i, 'status-of-service') or [''])[0],
             'start': wp_date(m.get('start_date') or m.get('year_membership_started') or m.get('year_service_selected')),
             'end': wp_date(m.get('end_date')),
             'joinLink': m.get('activity_join_in', ''),
+            'leadIds': person_ids(m.get('activity_leads')),
+            'peopleIds': person_ids(m.get('activity_related_people') or m.get('project_related_people') or m.get('service_related_people') or m.get('member_related_people')),
             'related': related(i),
         }
         return rec

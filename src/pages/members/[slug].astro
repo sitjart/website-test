@@ -8,6 +8,8 @@ import { DIRECTORY, linksFor } from '../../lib/graph';
 import { longDate } from '../../lib/format';
 import { url } from '../../lib/url';
 import UkMap from '../../components/UkMap.astro';
+import RelatedCards from '../../components/RelatedCards.astro';
+import { cardsFor } from '../../lib/lookup';
 import locations from '../../data/member-locations.json';
 import { needsStop } from '../../lib/format';
 
@@ -23,6 +25,8 @@ const svc = (links.services ?? []).map((n) => DIRECTORY.services.records.find((s
 const since = r.start ? r.start.slice(0, 4) : null;
 const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name: r.name, url: r.website || undefined, logo: r.logo || undefined, memberOf: { '@type': 'Organization', name: 'ELIXIR-UK' } };
 const PEOPLE_LIMIT = 10;
+const svcCards = await cardsFor('services', svc.map((x) => x.slug));
+const actCards = await cardsFor('activities', (links.activities ?? []).map((n) => n.slug));
 const city = (locations as Record<string, { city: string }>)[r.slug]?.city;
 ---
 <BaseLayout title={r.name} description={r.summary || `${r.name}, an ELIXIR-UK member organisation`} {jsonLd}>
@@ -50,6 +54,7 @@ const city = (locations as Record<string, { city: string }>)[r.slug]?.city;
           {people.slice(0, PEOPLE_LIMIT).map((p) => (
             <a class="m-person lift" href={url(`/people/${p.id}/`)}>
               <Avatar src={p.data.photo} name={p.data.name} size={96} ring="var(--grey-light)" />
+              {p.data.honorific && <span class="m-person__hon">{p.data.honorific}</span>}
               <span class="m-person__name">{p.data.name}</span>
               {p.data.role && <span class="m-person__role">{p.data.role}</span>}
             </a>
@@ -61,21 +66,14 @@ const city = (locations as Record<string, { city: string }>)[r.slug]?.city;
     {svc.length > 0 && (
       <section class="m-sec">
         <div class="m-sec__head"><h2>Services<span class="stop">.</span> <span class="m-count">{svc.length}</span></h2><a href={url('/services/')}>All services →</a></div>
-        <div class="m-logos">
-          {svc.map((s) => (
-            <a class="m-logo lift" href={url(`/services/${s.slug}/`)}>
-              <span class="m-logo__img">{s.logo ? <RemoteImage src={s.logo} width={200} alt="" /> : null}</span>
-              <span class="m-logo__name">{s.name}</span>
-            </a>
-          ))}
-        </div>
+        <RelatedCards cards={svcCards} limit={12} />
       </section>
     )}
 
     {!!links.activities?.length && (
       <section class="m-sec">
         <div class="m-sec__head"><h2>Communities<span class="stop">.</span> <span class="m-count">{links.activities.length}</span></h2></div>
-        <div class="m-chips">{links.activities.map((n) => <a href={url(`/activities/${n.slug}/`)}>{n.name}</a>)}</div>
+        <RelatedCards cards={actCards} limit={12} />
       </section>
     )}
 
@@ -116,6 +114,7 @@ const city = (locations as Record<string, { city: string }>)[r.slug]?.city;
 </script>
 
 <style>
+  .m-person__hon { font-size: 11px; letter-spacing: 0.04em; color: var(--muted); margin-top: 6px; }
   .m-banner { padding: 40px 0 64px; }
   .m-banner__grid { display: grid; grid-template-columns: 200px minmax(0, 1fr) 150px; gap: clamp(24px, 4vw, 48px); align-items: center; }
   .m-banner__map { width: 150px; }

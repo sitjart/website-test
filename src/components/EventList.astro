@@ -12,7 +12,7 @@ const past = Astro.props.items.filter((e) => (e.data.end ?? e.data.start) < toda
 const years = [...new Set(past.map((e) => e.data.start.getUTCFullYear()))];
 const types = [...new Set(past.map((e) => e.data.type))].map((t) => ({ t, n: past.filter((e) => e.data.type === t).length })).sort((a, b) => b.n - a.n);
 const f = (d: Date, o: Intl.DateTimeFormatOptions) => d.toLocaleDateString('en-GB', { ...o, timeZone: 'UTC' });
-const where = (e: CollectionEntry<'events'>) => (e.data.online ? 'Online' : e.data.locality || 'In person');
+const where = (e: CollectionEntry<'events'>) => (e.data.format === 'online' ? 'Online' : e.data.format === 'hybrid' ? `Hybrid${e.data.locality ? ` · ${e.data.locality}` : ''}` : e.data.locality || 'In person');
 ---
 {upcoming.length > 0 && (
   <section class="section">
@@ -49,9 +49,11 @@ const where = (e: CollectionEntry<'events'>) => (e.data.online ? 'Online' : e.da
           <ul class="past">
             {past.filter((e) => e.data.start.getUTCFullYear() === y).map((e) => (
               <li data-type={tagSlug(e.data.type)}><a href={url(`/events/${e.id}/`)}>
-                <span class="past__date">{f(e.data.start, { day: 'numeric', month: 'short' })}</span>
-                <span class="past__title">{e.data.title}</span>
-                <span class="past__type">{e.data.type}</span>
+                <span class="past__date"><b>{f(e.data.start, { day: 'numeric' })}</b>{f(e.data.start, { month: 'short' })}</span>
+                <span class="past__main">
+                  <span class="past__title">{e.data.title}</span>
+                  <span class="past__meta">{e.data.type} · {where(e)}</span>
+                </span>
                 <span class="past__extra">{e.data.recording && <span class="rec">▶ Recording</span>}{e.data.slides && <span class="rec">Slides</span>}</span>
               </a></li>
             ))}
@@ -87,19 +89,23 @@ const where = (e: CollectionEntry<'events'>) => (e.data.online ? 'Online' : e.da
   .chip span { color: var(--muted); font-size: var(--fs-xs); }
   .chip.is-active { background: var(--navy); border-color: var(--navy); color: var(--white); }
   .chip.is-active span { color: #9fbcd0; }
-  .year { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: var(--s5); padding-block: var(--s5); border-top: 1px solid var(--border); }
-  .year__h { margin: 0; font-size: 2rem; font-weight: 900; color: var(--navy); line-height: 1; }
-  .past { list-style: none; margin: 0; padding: 0; }
-  .past a { display: grid; grid-template-columns: 70px minmax(0, 1fr) 150px 140px; gap: var(--s4); align-items: baseline; padding: var(--s3) var(--s2); border-radius: 6px; color: var(--text); }
-  .past a:hover { background: var(--white); color: var(--text); }
-  .past__date { font-size: var(--fs-sm); font-weight: 700; color: var(--orange-text); font-variant-numeric: tabular-nums; }
-  .past__title { font-weight: 700; color: var(--navy); line-height: 1.35; }
-  .past__type { font-size: var(--fs-xs); color: var(--muted); }
-  .past__extra { display: flex; gap: 6px; justify-content: flex-end; }
-  .rec { font-size: var(--fs-xs); font-weight: 700; padding: 1px 7px; border-radius: 3px; background: #e3f1f7; color: var(--blue-dark); white-space: nowrap; }
+  .year { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: var(--s5); padding-block: var(--s6); border-top: 1px solid #d5dee5; }
+  .year__h { margin: 0; font-size: 2rem; font-weight: 900; color: var(--navy); line-height: 1; position: sticky; top: 100px; align-self: start; }
+  .past { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }
+  .past a { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: var(--s4); align-items: center; padding: var(--s3) var(--s4); border-radius: 10px; background: var(--white); color: var(--text); transition: box-shadow 0.2s var(--ease); }
+  .past a:hover { color: var(--text); box-shadow: var(--shadow-hover); }
+  .past__date { display: flex; flex-direction: column; align-items: center; line-height: 1.1; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  .past__date b { font-size: 1.4rem; font-weight: 900; color: var(--navy); letter-spacing: 0; }
+  .past__main { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .past__title { font-weight: 700; color: var(--navy); line-height: 1.3; }
+  a:hover .past__title { color: var(--orange-text); }
+  .past__meta { font-size: var(--fs-xs); color: var(--muted); }
+  .past__extra { display: flex; gap: 6px; }
+  .rec { font-size: var(--fs-xs); font-weight: 700; padding: 2px 8px; border-radius: 3px; background: #e3f1f7; color: var(--blue-dark); white-space: nowrap; }
   @media (max-width: 800px) {
     .year { grid-template-columns: 1fr; }
-    .past a { grid-template-columns: 64px minmax(0, 1fr); }
-    .past__type, .past__extra { grid-column: 2; justify-content: flex-start; }
+    .year__h { position: static; }
+    .past a { grid-template-columns: 48px minmax(0, 1fr); }
+    .past__extra { grid-column: 2; }
   }
 </style>

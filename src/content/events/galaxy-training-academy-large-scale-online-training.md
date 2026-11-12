@@ -3,7 +3,14 @@ title: "From large-scale training to BYOD – extending Galaxy training in pract
 start: 2026-03-23
 type: "Community Call"
 online: true
+format: online
 wpId: 24497
+standfirst: "Explore how Galaxy training scales from global online events to hands-on BYOD approaches, supporting researchers from tutorials to analysing their own data."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [24308]
 startTime: "14:00"
 endTime: "15:00"
 venue: "Online"

@@ -3,7 +3,13 @@ title: "Elevenses and data love stories"
 start: 2025-02-04
 type: "Community Call"
 online: true
+format: online
 wpId: 23400
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18649, 23404, 23401]
 startTime: "11:00"
 endTime: "12:00"
 recording: "https://youtu.be/NIwDsWKpztA"

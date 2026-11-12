@@ -2,6 +2,7 @@
 title: "Celebrating International Women's Day"
 date: 2025-03-08
 standfirst: "Empowering gender balance in science: stories from our community"
+excerpt: ""
 category: "Blog"
 wpId: 23466
 image: "https://elixiruknode.org/wp-content/uploads/2025/03/banner-women.webp"

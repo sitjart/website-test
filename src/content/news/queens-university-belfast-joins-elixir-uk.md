@@ -2,6 +2,7 @@
 title: "Queen's University Belfast joins ELIXIR-UK"
 date: 2026-07-28
 standfirst: "Bringing biodata, imaging and high-performance computing expertise, and extends the Node into Northern Ireland."
+excerpt: "Queen's University Belfast has joined ELIXIR-UK, extending the Node into Northern Ireland and bringing biodata, imaging and high-performance computing expertise across 11 academic units."
 category: "News"
 wpId: 25320
 image: "https://elixiruknode.org/wp-content/uploads/2026/07/photo-qub-entrance-1.webp"

@@ -1,67 +1,135 @@
 ---
-import { cleanHtml } from '../lib/html';
-// Services, projects, collaborators and thematic areas: navy banner with circle logo, then smart tabs
+// Single service, project, collaborator or thematic area.
+// Banner with a readable logo panel (wordmarks don't fit circles), the excerpt and actions;
+// then the description beside an "At a glance" panel; then related records as cards.
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Avatar from './Avatar.astro';
+import RemoteImage from './RemoteImage.astro';
+import PersonLine from './PersonLine.astro';
 import SmartTabs from './SmartTabs.astro';
-import { DIRECTORY, tagSlug, type DirectoryRecord } from '../lib/graph';
-import { url } from '../lib/url';
+import { DIRECTORY, linksFor, type DirectoryRecord } from '../lib/graph';
+import { involved } from '../lib/involved';
+import { cleanHtml } from '../lib/html';
 import { asset } from '../lib/assets';
-import { needsStop } from '../lib/format';
+import { needsStop, firstSentence } from '../lib/format';
+import labels from '../data/service-labels.json';
 import home from '../data/home.json';
+import { url } from '../lib/url';
 
 interface Props { kind: keyof typeof DIRECTORY; record: DirectoryRecord }
 const { kind, record: r } = Astro.props;
 const { singular, title: plural } = DIRECTORY[kind];
 const year = (d: string | null) => (d ? d.slice(0, 4) : null);
-const facts = [
-  kind === 'projects' && r.start ? `${year(r.start)}${r.end ? `–${year(r.end)}` : ''}` : null,
-  kind === 'services' && r.start ? `Endorsed since ${year(r.start)}` : null,
-].filter(Boolean);
-
 const art = kind === 'area' ? (home.areaIllustrations as Record<string, string>)[r.slug] : undefined;
+const links = await linksFor(kind, r.slug);
+const hosts = (links.members ?? []).map((n) => DIRECTORY.members.records.find((m) => m.slug === n.slug)!).filter(Boolean);
+const { leads, others } = await involved(kind, r);
+const status = labels.statuses.find((s) => s.tag === r.status);
+const recognitions = labels.recognitions.filter((x) => r.tags.includes(x.tag));
+const projectType = kind === 'projects' ? r.tags.filter((t) => t !== 'Leading') : [];
+const facts: { k: string; v: string }[] = [
+  ...(kind === 'services' && status ? [{ k: 'Status', v: status.title.replace(' services', '') }] : []),
+  ...(kind === 'services' && r.start ? [{ k: 'Endorsed since', v: year(r.start)! }] : []),
+  ...(kind === 'projects' && r.start ? [{ k: 'Dates', v: `${year(r.start)}${r.end && year(r.end) !== year(r.start) ? `–${year(r.end)}` : ''}` }] : []),
+  ...(kind === 'projects' && projectType.length ? [{ k: 'Type', v: projectType.join(' · ') }] : []),
+  ...(r.tags.includes('Leading') ? [{ k: 'Role', v: 'Led or coordinated by ELIXIR-UK' }] : []),
+];
+const body = r.body ? await cleanHtml(r.body) : '';
 const schemaType = { services: 'SoftwareApplication', members: 'Organization', collaborations: 'Organization', projects: 'ResearchProject', activities: 'Project', area: 'Thing' }[kind];
-const jsonLd = { '@context': 'https://schema.org', '@type': schemaType, name: r.name, url: r.website || undefined, logo: r.logo || undefined, description: r.summary || undefined };
+const jsonLd = { '@context': 'https://schema.org', '@type': schemaType, name: r.name, url: r.website || undefined, logo: r.logo || undefined, description: r.excerpt || r.summary || undefined };
 ---
-<BaseLayout title={r.name} description={r.summary} {jsonLd}>
-  <section class="banner rec-banner">
-    <div class:list={['container', 'rec-banner__grid', { 'rec-banner__grid--art': art }]}>
-      {!art && <Avatar src={r.logo} name={r.name} size={200} logo ring="var(--ink)" eager />}
+<BaseLayout title={r.name} description={r.excerpt || firstSentence(r.summary)} {jsonLd}>
+  <section class="banner rec-hero">
+    <div class:list={['container', 'rec-hero__grid', { 'has-art': art }]}>
       <div>
-        <p class="crumb"><a href={url(`/${kind}/`)}>{plural}</a></p>
-        <p class="eyebrow-sm rec-banner__eyebrow">{singular}{facts.length > 0 && <> · {facts.join(' · ')}</>}</p>
-        <h1 class="display rec-banner__title">{r.name}{needsStop(r.name) && <span class="stop">.</span>}</h1>
-        {r.tags.length > 0 && (
-          <div class="rec-banner__tags">{r.tags.map((t) => <a class="tag" href={url(`/${kind}/#${tagSlug(t)}`)}>{t}</a>)}</div>
+        <p class="crumb"><a href={url(`/${kind}/`)}>{plural}</a><span>{singular}</span></p>
+        <p class="eyebrow-sm rec-hero__eyebrow">{singular}{status && ` · ${status.title.replace(' services', '')}`}</p>
+        <h1 class="display rec-hero__title">{r.name}{needsStop(r.name) && <span class="stop">.</span>}</h1>
+        {(r.excerpt || (r.summary && !body)) && <p class="rec-hero__lead">{r.excerpt || firstSentence(r.summary, 240)}</p>}
+        {recognitions.length > 0 && (
+          <ul class="rec-hero__badges">{recognitions.map((x) => <li><a href={x.href} rel="noopener" title={x.text}>{x.short}</a></li>)}</ul>
         )}
-        <div class="rec-banner__actions">
+        <div class="rec-hero__actions">
           {r.website && <a class="btn" href={r.website} rel="noopener">Visit website</a>}
           {r.joinLink && <a class="btn btn--ghost" href={r.joinLink} rel="noopener">Join in</a>}
         </div>
       </div>
-      {art && <img class="rec-banner__art" src={asset(art)} alt="" />}
+      {art ? <img class="rec-hero__art" src={asset(art)} alt="" /> : r.logo && (
+        <div class="rec-hero__logo"><RemoteImage src={r.logo} width={520} alt={`${r.name} logo`} loading="eager" /></div>
+      )}
     </div>
   </section>
-  <div class="rec-main">
-    <SmartTabs {kind} slug={r.slug} hasBio={Boolean(r.body || r.summary)} bioLabel="About">
-      {r.body ? <div class="prose wp-body" set:html={await cleanHtml(r.body)} /> : <p>{r.summary}</p>}
-    </SmartTabs>
-    {!r.body && !r.summary && <p class="empty">No description yet.</p>}
+
+  <div class="container rec-body">
+    <div class="rec-main">
+      <h2 class="rec-h">About</h2>
+      {body ? <div class="prose" set:html={body} /> : <p>{r.summary || 'No description yet.'}</p>}
+    </div>
+    {(facts.length > 0 || hosts.length > 0 || leads.length > 0 || others.length > 0 || recognitions.length > 0) && (
+      <aside class="glance" aria-label="At a glance">
+        <p class="glance__h">At a glance</p>
+        {facts.length > 0 && <dl class="glance__facts">{facts.map((f) => <div><dt>{f.k}</dt><dd>{f.v}</dd></div>)}</dl>}
+        {recognitions.length > 0 && (
+          <div class="glance__block">
+            <p class="glance__sub">Recognised as</p>
+            {recognitions.map((x) => <details class="acc"><summary>{x.short}</summary><div class="acc__body"><p>{x.text}</p><a href={x.href} rel="noopener">Read more</a></div></details>)}
+          </div>
+        )}
+        {hosts.length > 0 && (
+          <div class="glance__block">
+            <p class="glance__sub">{kind === 'services' ? 'Run by' : 'Members involved'}</p>
+            <ul class="glance__logos">{hosts.map((m) => <li><a href={url(`/members/${m.slug}/`)} title={m.name}>{m.logo ? <RemoteImage src={m.logo} width={240} alt={m.name} /> : m.name}</a></li>)}</ul>
+          </div>
+        )}
+        {leads.length > 0 && (
+          <div class="glance__block"><p class="glance__sub">{leads.length === 1 ? 'Lead' : 'Leads'}</p><ul class="glance__people">{leads.map((p) => <li><PersonLine p={p} size={44} ring="var(--grey-light)" /></li>)}</ul></div>
+        )}
+        {others.length > 0 && (
+          <div class="glance__block"><p class="glance__sub">People involved</p><ul class="glance__people">{others.map((p) => <li><PersonLine p={p} size={40} ring="var(--grey-light)" /></li>)}</ul></div>
+        )}
+      </aside>
+    )}
   </div>
+
+  <section class="container rec-related">
+    <SmartTabs {kind} slug={r.slug} skip={['people', ...(hosts.length ? ['members' as const] : [])]} heading="Related" />
+  </section>
 </BaseLayout>
 
 <style>
-  .rec-banner { padding: clamp(40px, 5vw, 64px) 0 clamp(48px, 6vw, 80px); }
-  .rec-banner__grid--art { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) !important; }
-  .rec-banner__art { width: 100%; max-height: 280px; object-fit: contain; filter: invert(1) hue-rotate(180deg) brightness(1.1); mix-blend-mode: screen; opacity: 0.9; }
-  .rec-banner__grid { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; align-items: center; }
-  .rec-banner__eyebrow { color: var(--orange-soft); margin: 0 0 var(--s2); }
-  .rec-banner .crumb { margin-bottom: var(--s4); }
-  .rec-banner__title { font-size: clamp(2.4rem, 5vw, 3.75rem); margin: 0; }
-  .rec-banner__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
-  .rec-banner__actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
-  .rec-main { width: min(100% - 2 * var(--gutter), 1000px); margin: 0 auto; padding-block: var(--s8) var(--s9); }
-  .empty { font-style: italic; }
-  .wp-body :global(img) { border-radius: 8px; }
-  @media (max-width: 700px) { .rec-banner__grid, .rec-banner__grid--art { grid-template-columns: 1fr !important; } .rec-banner__art { display: none; } .rec-banner__grid :global(.avatar) { width: 120px !important; } }
+  .rec-hero { padding-block: clamp(48px, 6vw, 80px); }
+  .rec-hero__grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(240px, 0.8fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+  .rec-hero__eyebrow { color: var(--orange-soft); }
+  .rec-hero__title { font-size: clamp(2.2rem, 1.5rem + 2.8vw, 3.75rem); margin: 0; }
+  .rec-hero__lead { margin: var(--s5) 0 0; max-width: 42rem; font-size: var(--fs-lead); line-height: 1.55; color: var(--on-dark); }
+  .rec-hero__badges { list-style: none; display: flex; flex-wrap: wrap; gap: var(--s2); margin: var(--s5) 0 0; padding: 0; }
+  .rec-hero__badges a { display: inline-flex; align-items: center; min-height: 30px; padding: 0 var(--s3); border-radius: 999px; border: 1px solid rgb(255 255 255 / 0.3); color: var(--white); font-size: var(--fs-xs); font-weight: 700; }
+  .rec-hero__badges a:hover { background: var(--white); color: var(--navy); }
+  .rec-hero__actions { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s6); }
+  .rec-hero__actions:empty { display: none; }
+  .rec-hero__logo { display: flex; align-items: center; justify-content: center; aspect-ratio: 3 / 2; padding: var(--s6); border-radius: var(--radius-lg); background: var(--white); box-shadow: 0 24px 60px rgb(0 0 0 / 0.3); }
+  .rec-hero__logo :global(img) { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+  .rec-hero__art { width: 100%; max-height: 280px; object-fit: contain; filter: invert(1) hue-rotate(180deg) brightness(1.1); mix-blend-mode: screen; opacity: 0.9; }
+  .rec-body { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 5vw, 80px); padding-block: var(--s8); align-items: start; }
+  .rec-body:not(:has(.glance)) { grid-template-columns: minmax(0, 1fr); }
+  .rec-h { font-size: var(--fs-h3); margin: 0 0 var(--s4); }
+  .glance { position: sticky; top: 100px; padding: var(--s5); border-radius: var(--radius-lg); background: var(--grey-light); }
+  .glance__h { margin: 0 0 var(--s4); font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); }
+  .glance__facts { margin: 0; display: grid; gap: var(--s3); }
+  .glance__facts dt { font-size: var(--fs-xs); color: var(--muted); }
+  .glance__facts dd { margin: 0; font-weight: 700; color: var(--navy); }
+  .glance__block { margin-top: var(--s5); padding-top: var(--s4); border-top: 1px solid var(--border); }
+  .glance__sub { margin: 0 0 var(--s3); font-size: var(--fs-xs); font-weight: 700; color: var(--orange-text); }
+  .glance .acc > summary { font-size: var(--fs-sm); padding-block: var(--s2); }
+  .glance .acc__body { font-size: var(--fs-sm); }
+  .glance__logos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s2); }
+  .glance__logos a { display: flex; align-items: center; justify-content: center; height: 72px; padding: var(--s3); border-radius: 8px; background: var(--white); font-size: var(--fs-xs); font-weight: 700; color: var(--navy); text-align: center; }
+  .glance__logos :global(img) { max-width: 100%; max-height: 48px; width: auto; height: auto; object-fit: contain; }
+  .glance__people { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+  .rec-related { padding-top: var(--s4); }
+  @media (max-width: 900px) {
+    .rec-hero__grid, .rec-body { grid-template-columns: 1fr !important; }
+    .rec-hero__logo { max-width: 320px; order: -1; }
+    .rec-hero__art { display: none; }
+    .glance { position: static; }
+  }
 </style>

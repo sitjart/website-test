@@ -2,6 +2,7 @@
 title: "The latest Nature Biotechnology publication about FAIRsharing"
 date: 2019-04-04
 standfirst: "FAIRsharing presents its community approach to mapping and tracking the development of data standards and policies across scientific fields. In an article published today in Nature Biotechnology, the team behind FAIRshar"
+excerpt: ""
 category: "News"
 wpId: 19553
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-workshop-collaboration.webp"

@@ -3,7 +3,12 @@ title: " GA4GH Task Execution Service (TES) standard within TREs"
 start: 2024-04-11
 type: "Community Call"
 online: true
+format: online
 wpId: 23013
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "14:00"
 endTime: "14:00"
 registration: "https://elixiruknode.org/activities/uk-human-data-community/"

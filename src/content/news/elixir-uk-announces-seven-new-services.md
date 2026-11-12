@@ -2,6 +2,7 @@
 title: "ELIXIR-UK announces seven new services"
 date: 2021-09-27
 standfirst: "Following the 2021 call for new services, we are pleased to announce seven new ELIXIR-UK services. These were selected by our panel to ensure high service quality and match UK priorities as identified by its funders. The"
+excerpt: ""
 category: "News"
 wpId: 19608
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-connection-close-up.webp"

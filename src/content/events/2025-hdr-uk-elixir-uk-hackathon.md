@@ -3,7 +3,14 @@ title: "First Joint Hackathon of HDR UK & ELIXIR-UK"
 start: 2025-02-12
 type: "Hackathon"
 online: false
+format: in-person
 wpId: 22554
+cost: 0
+currency: "GBP"
+status: scheduled
+street: "Triumph Road, Jubilee Conference Centre"
+postcode: "NG7 2TU"
+country: "UK"
 end: 2025-02-14
 venue: "Jubilee Hotel and Conferences"
 locality: "Nottingham"

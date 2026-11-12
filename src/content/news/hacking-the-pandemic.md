@@ -2,6 +2,7 @@
 title: "Hacking the pandemic"
 date: 2020-04-17
 standfirst: "Over 500 scientists, software developers and clinicians joined forces in the COVID-19 virtual Biohackathon to develop new tools for working with the COVID-19 data. The outcomes of the event improved the accessibility of"
+excerpt: ""
 category: "News"
 wpId: 19563
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-covid-19-close-up.webp"

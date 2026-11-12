@@ -3,7 +3,13 @@ title: "Introduction to data management for peatland research and monitoring"
 start: 2024-06-06
 type: "Workshop"
 online: true
+format: online
 wpId: 22456
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18603, 18656]
 end: 2024-06-06
 startTime: "11:00"
 endTime: "13:00"

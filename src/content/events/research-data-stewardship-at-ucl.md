@@ -3,7 +3,12 @@ title: "Research Data Stewardship at UCL"
 start: 2025-03-04
 type: "Community Call"
 online: true
+format: online
 wpId: 23446
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

@@ -2,6 +2,7 @@
 title: "Nothing but benefits: embedding my ELIXIR-UK material in university teaching"
 date: 2026-01-12
 standfirst: "A FAIRy tale by Andrew Mason – a personal story about reusing FAIR training at University of York."
+excerpt: "As an ELIXIR-UK Fellow, Andrew Mason developed a suite of teaching materials that now underpin modules, workshops and research training at the University of York. By adapting videos and resources for diverse learners, he has strengthened data skills across the department and expanded engagement with ELIXIR-UK’s training resources."
 category: "Blog"
 wpId: 24347
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/2023-13-01-fellows-retreat-photo-18.webp"

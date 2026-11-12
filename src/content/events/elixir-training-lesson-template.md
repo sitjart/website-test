@@ -3,7 +3,12 @@ title: "ELIXIR Training Lesson template"
 start: 2024-06-03
 type: "Community Call"
 online: true
+format: online
 wpId: 22766
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 end: 2024-06-03
 startTime: "14:00"
 endTime: "15:00"

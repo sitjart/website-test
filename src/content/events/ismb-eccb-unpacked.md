@@ -3,7 +3,13 @@ title: "ISMB/ECCB Unpacked: Conference debrief and digest"
 start: 2025-07-28
 type: "Community Call"
 online: true
+format: online
 wpId: 23759
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18756]
 startTime: "14:00"
 endTime: "15:00"
 venue: "UK"

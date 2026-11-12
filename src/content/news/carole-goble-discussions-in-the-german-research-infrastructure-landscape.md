@@ -2,6 +2,7 @@
 title: "ELIXIR-UK’s Head of Node contributes to key discussions in the German research infrastructure landscape"
 date: 2025-11-26
 standfirst: "Professor Carole Goble represented ELIXIR-UK at two major meetings in the German research-infrastructure landscape, contributing her expertise on data workflows, AI-enabling infrastructures and the future of interoperable research systems."
+excerpt: "Professor Carole Goble represented ELIXIR-UK at two major meetings in the German research-infrastructure landscape, contributing her expertise on data workflows, AI-enabling infrastructures and the future of interoperable research systems."
 category: "News"
 wpId: 24316
 image: "https://elixiruknode.org/wp-content/uploads/2025/11/2025-photo-falling-walls-germany-1.webp"

@@ -2,6 +2,7 @@
 title: "EDIJ and Decolonisation in Data Management"
 date: 2024-11-21
 standfirst: "An in-depth article to understand the concept of decolonisation and EDIJ considerations in the field of data management."
+excerpt: "Data management shapes not just how research is conducted, but who benefits from it – and who might be harmed. This article guides researchers through embedding EDIJ and decolonisation principles at every stage of the data cycle, from planning and collection to sharing and reuse. Drawing on the CARE principles and real-world examples from NTD research, ecology, and disability studies, it offers a practical starting point for more ethical, inclusive data management."
 category: "Articles"
 wpId: 24524
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-different-faces.jpg"

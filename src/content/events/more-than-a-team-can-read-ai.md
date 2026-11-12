@@ -2,8 +2,13 @@
 title: "More than a team can read: AI as infrastructure for large-scale data"
 start: 2026-11-03
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 25519
+standfirst: "When data outgrows what a human team can process, AI can turn unstructured text into structured, computable knowledge. Research Software Engineer Yunze (Patrick) Wang shares how his team built that infrastructure – from schema-based extraction to knowledge graphs and machine-readable rules – and what it cost along the way."
+cost: 0
+currency: "GBP"
+status: scheduled
 end: 2026-11-03
 image: "https://elixiruknode.org/wp-content/uploads/2026/10/photo-futuristic-technology-abstract-tunnel0-ai.webp"
 related:

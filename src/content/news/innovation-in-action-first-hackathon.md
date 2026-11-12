@@ -2,6 +2,7 @@
 title: "Innovation in action: Behind the scenes at the first HDR UK & ELIXIR-UK Joint Hackathon"
 date: 2025-02-19
 standfirst: "Organising the first Joint Hackathon at the intersection of health data and life sciences"
+excerpt: ""
 category: "News"
 wpId: 23422
 image: "https://elixiruknode.org/wp-content/uploads/2025/02/hackathon_group-photo.webp"

@@ -3,7 +3,14 @@ title: "Textured classroom: Introducing friction to promote learning"
 start: 2026-04-27
 type: "Community Call"
 online: true
+format: online
 wpId: 24942
+standfirst: "Exploring friction in learning – when obstacles promote deeper understanding – through presentation and discussion with Matthew Gemmell."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [23634]
 startTime: "14:00"
 endTime: "15:00"
 venue: "Online"

@@ -2,6 +2,7 @@
 title: "UK Research and Innovation have awarded £34 million in funding for BioFAIR"
 date: 2023-06-19
 standfirst: "ELIXIR-UK has conceived BioFAIR , a new digital research infrastructure that enables the data and processing resources of ELIXIR and other partners to be delivered to researchers across the UK. A national BioCommons will"
+excerpt: ""
 category: "News"
 wpId: 19658
 image: "https://elixiruknode.org/wp-content/uploads/2021/06/data-center-with-multiple-rows-of-fully-operationa-2023-11-27-05-01-58-utc.webp"

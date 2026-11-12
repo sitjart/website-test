@@ -2,6 +2,7 @@
 title: "Championing diversity and collaboration at the 2024 Galaxy Community Conference"
 date: 2024-09-03
 standfirst: "In June 2024, members of the ELIXIR-UK community, including key contributors like Wendi Bacon and Nicola Soranzo , participated in the 2024 Galaxy Community Conference (GCC2024) , the flagship annual event about the use"
+excerpt: ""
 category: "News"
 wpId: 22714
 image: "https://elixiruknode.org/wp-content/uploads/2024/09/picture-2024-galaxy-conference-2.webp"

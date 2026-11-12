@@ -2,8 +2,14 @@
 title: "FAIR-in-action Bridge: How to communicate and advocate FAIR (Contentathon #3)"
 start: 2026-07-01
 type: "Hackathon"
-online: false
+online: true
+format: online
 wpId: 25073
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+programme: "https://docs.google.com/document/d/1jiTMGtxPMU_JHEe_32_ty2drT72Ip4InP0TgEAuAlgo/edit?tab=t.8u9k94fr7rt6"
 end: 2026-07-01
 registration: "https://forms.clickup.com/20526645/f/kjdhn-17852/WRBL9B39JQEWP02HAP"
 image: "https://elixiruknode.org/wp-content/uploads/2024/04/illustration-isometrics-mechanisms-like-extending-hand-join.svg"

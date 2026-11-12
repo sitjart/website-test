@@ -2,6 +2,7 @@
 title: "ELIXIR-UK at the EOSC Symposium 2024: advancing FAIR data and interoperability"
 date: 2024-11-28
 standfirst: "In October 2024, Carole Goble and Nick Juty from ELIXIR-UK ( University of Manchester ) represented our community at the EOSC Symposium, a flagship event driving the European Open Science Cloud (EOSC) initiative . Their"
+excerpt: ""
 category: "News"
 wpId: 23099
 image: "https://elixiruknode.org/wp-content/uploads/2024/11/photo-esoc-symposium-2024.webp"

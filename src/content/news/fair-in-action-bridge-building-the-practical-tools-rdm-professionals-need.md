@@ -2,6 +2,7 @@
 title: "FAIR-in-action Bridge: building the practical tools RDM professionals need"
 date: 2026-06-04
 standfirst: "Turning established FAIR resources into facilitator-ready materials for UK research organisations."
+excerpt: "FAIR-in-action Bridge is co-creating two FAIR playbooks and rolling them out across six UK research organisations to turn FAIR guidance into everyday practice."
 category: "News"
 wpId: 25159
 image: "https://elixiruknode.org/wp-content/uploads/2025/06/banner-plann-notebook.jpg"

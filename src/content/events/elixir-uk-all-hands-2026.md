@@ -3,7 +3,16 @@ title: "ELIXIR-UK All Hands 2026"
 start: 2026-11-25
 type: "Conference"
 online: false
+format: in-person
 wpId: 24583
+standfirst: "Join the ELIXIR-UK community for our 2026 All Hands Meeting – our flagship annual event for life sciences research data management, open science, and infrastructure collaboration. Programme and registration details to follow."
+cost: 0
+currency: "GBP"
+status: scheduled
+street: "School Lane"
+postcode: "L1 3BX"
+country: "UK"
+speakerIds: [22889, 18640]
 end: 2026-11-26
 venue: "Bluecoat"
 locality: "Liverpool"

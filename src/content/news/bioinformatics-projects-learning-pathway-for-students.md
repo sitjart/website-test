@@ -2,6 +2,7 @@
 title: "Bioinformatics Projects Learning Pathway for Students"
 date: 2025-03-10
 standfirst: "New insights from public data!"
+excerpt: ""
 category: "Blog"
 wpId: 23484
 image: "https://elixiruknode.org/wp-content/uploads/2018/03/banner-logic-connections.webp"

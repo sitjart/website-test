@@ -2,6 +2,7 @@
 title: "EnteroBase joins ELIXIR-UK Services"
 date: 2026-09-23
 standfirst: "EnteroBase joins ELIXIR-UK Services to strengthen European bacterial pathogen genomics"
+excerpt: "EnteroBase, selected as ELIXIR-UK serive, a free, publicly accessible web platform for bacterial pathogen genomics, providing more than 1.8 million uniformly assembled and annotated genomes."
 category: "News"
 wpId: 25333
 image: "https://elixiruknode.org/wp-content/uploads/2026/08/logo-service-enterobase.svg"

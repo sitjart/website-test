@@ -3,23 +3,27 @@
 // empty tabs are dropped, and the tab bar only appears when there is more than one tab.
 // Without JavaScript, all panels show one after another.
 import { linksFor, LABELS, TAB_ORDER, type Kind } from '../lib/graph';
-import { longDate, firstSentence } from '../lib/format';
+import RelatedCards from './RelatedCards.astro';
+import { cardsFor } from '../lib/lookup';
 import { url } from '../lib/url';
 
-interface Props { kind: Kind; slug: string; bioLabel?: string; hasBio?: boolean }
-const { kind, slug, bioLabel = 'Bio', hasBio = false } = Astro.props;
+interface Props { kind: Kind; slug: string; bioLabel?: string; hasBio?: boolean; skip?: Kind[]; heading?: string }
+const { kind, slug, bioLabel = 'Bio', hasBio = false, skip = [], heading } = Astro.props;
 const groups = await linksFor(kind, slug);
+skip.forEach((k) => delete groups[k]);
 const panels = [
   ...(hasBio ? [{ id: 'bio', label: bioLabel }] : []),
   ...TAB_ORDER.filter((k) => groups[k]?.length).map((k) => ({ id: k, label: LABELS[k] })),
 ];
 const uid = `tabs-${kind}-${slug}`;
 const LIMIT = 6;
+const cards = Object.fromEntries(await Promise.all(TAB_ORDER.filter((k) => groups[k]?.length).map(async (k) => [k, await cardsFor(k, groups[k]!.map((n) => n.slug))])));
 const dotColour: Record<string, string> = { news: '#047eaa', events: '#f47d21', projects: '#023452', services: '#8fb3c9', activities: '#6e9fb8', members: '#023452', people: '#f47d21', collaborations: '#8fb3c9', area: '#047eaa' };
 const when = (n: { date?: Date; label?: string }) => n.date ? n.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }) : '';
 ---
 {panels.length > 0 && (
   <div class="smart-tabs" data-smart-tabs>
+    {heading && <h2 class="section-title smart-tabs__h">{heading}<span class="stop">.</span></h2>}
     {panels.length > 1 && (
       <nav class="smart-tabs-nav" role="tablist">
         {panels.map((p, i) => (
@@ -30,24 +34,7 @@ const when = (n: { date?: Date; label?: string }) => n.date ? n.date.toLocaleDat
     )}
     {panels.map((p, i) => (
       <div class:list={['tab-panel', { active: i === 0 }]} id={`${uid}-${p.id}`} role="tabpanel" aria-labelledby={`${uid}-tab-${p.id}`} data-panel={p.id}>
-        {p.id === 'bio' ? <slot /> : (
-          <>
-          <ol class="tab-list">
-            {groups[p.id as Kind]!.map((n, j) => (
-              <li class="tab-item" hidden={j >= LIMIT ? true : undefined} data-extra={j >= LIMIT ? '' : undefined}>
-                <span class="tab-item__when">{when(n)}</span>
-                <span class="tab-item__dot" aria-hidden="true" style={`--dot:${dotColour[n.kind] ?? '#047eaa'}`}></span>
-                <a href={url(`/${n.kind}/${n.slug}/`)}>
-                  {n.label && <span class="tab-item__meta">{n.label}</span>}
-                  <span class="tab-item__title">{n.name}</span>
-                  {n.summary && <span class="tab-item__summary">{firstSentence(n.summary)}</span>}
-                </a>
-              </li>
-            ))}
-          </ol>
-          {groups[p.id as Kind]!.length > LIMIT && <button type="button" class="tab-more" data-more>Show all {groups[p.id as Kind]!.length}</button>}
-          </>
-        )}
+        {p.id === 'bio' ? <slot /> : <RelatedCards cards={cards[p.id]} limit={LIMIT} />}
       </div>
     ))}
   </div>
@@ -85,6 +72,7 @@ const when = (n: { date?: Date; label?: string }) => n.date ? n.date.toLocaleDat
 </script>
 
 <style>
+  .smart-tabs__h { margin-bottom: var(--s5); }
   /* Tab styles taken from the live site's custom CSS (.smart-tabs-nav / .smart-tab-btn) */
   .smart-tabs-nav {
     display: flex;

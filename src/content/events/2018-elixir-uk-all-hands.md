@@ -3,7 +3,14 @@ title: "2018 ELIXIR UK All Hands"
 start: 2018-11-28
 type: "Conference"
 online: false
+format: in-person
 wpId: 19741
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+programme: "https://www.earlham.ac.uk/events/elixir-uk-all-hands-2018#Programme-2"
+speakerIds: [18640]
 end: 2018-11-29
 startTime: "09:00"
 endTime: "17:30"

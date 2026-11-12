@@ -2,6 +2,7 @@
 title: "Pistoia Alliance tackles poorly designed scientific software with launch of user experience for life sciences toolkit"
 date: 2018-02-14
 standfirst: "The Pistoia Alliance , a global, not-for-profit alliance that works to lower barriers to innovation in life sciences R&D has today announced the launch of the User Experience (UX) for Life Sciences (LS) Toolkit , to help"
+excerpt: ""
 category: "News"
 wpId: 19539
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-hands-united.webp"

@@ -3,7 +3,14 @@ title: "Discover the RDM Club BioFAIR Pathfinder Project"
 start: 2026-04-14
 type: "Community Call"
 online: true
+format: online
 wpId: 24537
+standfirst: "The RDM Club community call introduces the BioFAIR Pathfinder project and the new opportunities it brings for FAIR implementation, training, and advocacy at institutional level."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18733, 18755, 18649]
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

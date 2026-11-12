@@ -3,7 +3,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import UkMap from '../components/UkMap.astro';
-import HeroShapes from '../components/HeroShapes.astro';
+import HeroOrbit from '../components/HeroOrbit.astro';
 import RemoteImage from '../components/RemoteImage.astro';
 import GrowthChart from '../components/charts/GrowthChart.astro';
 import BarChart from '../components/charts/BarChart.astro';
@@ -57,7 +57,7 @@ const jsonLd = {
   <!-- 1. Who we are -->
   <section class="banner hero">
     <div class="hero__stage">
-    <HeroShapes />
+    <div class="hero__orbit"><HeroOrbit /></div>
     <div class="container hero__grid">
       <div class="hero__copy">
         <p class="eyebrow-sm hero__eyebrow">{home.heroEyebrow}</p>
@@ -264,10 +264,11 @@ const jsonLd = {
 <style>
   /* Hero */
   .hero { min-height: min(88vh, 780px); display: flex; flex-direction: column; padding: 0; }
-  .hero__stage { position: relative; flex: 1; display: flex; align-items: center; padding-block: clamp(56px, 7vw, 96px); isolation: isolate; }
+  .hero__stage { position: relative; flex: 1; display: flex; align-items: center; padding-block: clamp(56px, 7vw, 96px); isolation: isolate; overflow: hidden; }
   .hero__stage > .container { width: min(100% - 2 * var(--gutter), var(--container)); }
   .hero__grid { position: relative; }
-  .hero__copy { max-width: min(640px, 52%); padding: var(--s5) 0; }
+  .hero__copy { max-width: min(600px, 50%); padding: var(--s5) 0; position: relative; z-index: 1; }
+  .hero__orbit { position: absolute; right: max(-6vw, -120px); top: 50%; width: min(64vw, 820px); transform: translateY(-50%); }
   @media (max-width: 900px) { .hero__copy { max-width: none; } }
   .hero__eyebrow { color: var(--orange-soft); }
   .hero__title { font-size: clamp(3rem, 1.8rem + 6vw, 7rem); margin: 0; }
@@ -391,7 +392,8 @@ const jsonLd = {
   }
   @media (max-width: 900px) {
     .leads, .coming__grid, .services-band__grid { grid-template-columns: 1fr; }
-    .hero__stage { flex-direction: column; align-items: stretch; padding-bottom: 0; }
+    .hero__stage { flex-direction: column; align-items: stretch; padding-bottom: 0; overflow: hidden; }
+    .hero__orbit { order: 2; position: relative; right: auto; top: auto; transform: none; width: 120%; margin: var(--s6) -10% -30%; }
     .hero__facts { grid-template-columns: 1fr 1fr; }
     .hero__facts div { padding: var(--s4) 0 var(--s5) !important; border-left: 0 !important; border-top: 1px solid rgb(255 255 255 / 0.14); }
     .hero__facts div:nth-child(even) { padding-left: var(--s4) !important; border-left: 1px solid rgb(255 255 255 / 0.14) !important; }

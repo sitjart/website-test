@@ -6,12 +6,22 @@
   "website": "https://www.cardiff.ac.uk",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-cardiff-university.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2019-01-01",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18733,
+   18627,
+   18760,
+   23401,
+   23579,
+   23581
+  ],
   "related": {
    "services": [
     "lipid-maps"
@@ -52,12 +62,26 @@
   "website": "https://www.earlham.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-earlham-institute.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18608,
+   18641,
+   18644,
+   18708,
+   18710,
+   18711,
+   18755,
+   18786,
+   22948,
+   25462
+  ],
   "related": {
    "services": [
     "copo",
@@ -123,12 +147,19 @@
   "website": "https://www.hdruk.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-hdr-uk.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2023-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18985,
+   24267,
+   18624
+  ],
   "related": {
    "news": [
     "hdr-uk-becomes-elixir-uks-25th-member",
@@ -161,12 +192,18 @@
   "website": "https://www.hw.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-hariot-watt-university.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18777,
+   18981
+  ],
   "related": {
    "services": [
     "fair-cookbook",
@@ -190,12 +227,19 @@
   "website": "https://www.imperial.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-imperial-college-london.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18612,
+   18797,
+   22190
+  ],
   "related": {
    "services": [
     "phyre2",
@@ -217,12 +261,18 @@
   "website": "https://www.kcl.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-kings-college-london.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2021-01-04",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18978,
+   25360
+  ],
   "related": {
    "services": [
     "brepertoire"
@@ -239,12 +289,17 @@
   "website": "https://www.ncl.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-newcastle-university.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18609
+  ],
   "related": {
    "services": [
     "rdmkit",
@@ -266,12 +321,18 @@
   "website": "https://openlifesci.org/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-ols.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2022-01-03",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18617,
+   18653
+  ],
   "related": {
    "news": [
     "open-life-science-joins-elixir-uk",
@@ -292,12 +353,20 @@
   "website": "https://www.quadram.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-quadram-institute.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2021-01-04",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18611,
+   18824,
+   18825,
+   24306
+  ],
   "related": {
    "news": [
     "the-quadram-institute-joins-elixir-uk",
@@ -321,12 +390,18 @@
   "website": "https://www.qmul.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-queen-mary-university-of-london.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2024-03-01",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18590,
+   18987
+  ],
   "related": {
    "events": [
     "making-clinical-datasets-fair"
@@ -343,12 +418,23 @@
   "website": "https://www.qub.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2026/07/logo-queens-university-belfast-qub.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2026-07-28",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   25309,
+   25303,
+   25305,
+   25307,
+   25312,
+   25314,
+   25304
+  ],
   "related": {
    "news": [
     "queens-university-belfast-joins-elixir-uk"
@@ -362,12 +448,23 @@
   "website": "https://www.rothamsted.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-rothamsted-research.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18731,
+   18783,
+   18632,
+   18613,
+   24960,
+   25097,
+   25098
+  ],
   "related": {
    "services": [
     "phi-base",
@@ -399,12 +496,18 @@
   "website": "https://www.swansea.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-swansea-university.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2024-02-12",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18989,
+   23008
+  ],
   "related": {
    "news": [
     "swansea-joins"
@@ -418,12 +521,19 @@
   "website": "https://www.open.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-open-university.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2022-01-03",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   24370,
+   24308,
+   22475
+  ],
   "related": {
    "services": [
     "gtn",
@@ -450,12 +560,17 @@
   "website": "https://www.pirbright.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-pirbright-instiute.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2023-12-11",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18871
+  ],
   "related": {
    "news": [
     "elixir-uk-welcomes-pirbright"
@@ -469,12 +584,17 @@
   "website": "https://www.ceh.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-uk-ceh.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18622
+  ],
   "related": {
    "events": [
     "elevenses-and-data-horror-stories-2"
@@ -491,12 +611,22 @@
   "website": "http://www.ucl.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-ucl.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18586,
+   18604,
+   18633,
+   22169,
+   18637,
+   23404
+  ],
   "related": {
    "services": [
     "cath",
@@ -529,12 +659,19 @@
   "website": "https://www.birmingham.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-univeristy-of-birmingham.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18610,
+   18694,
+   18602
+  ],
   "related": {
    "services": [
     "birmingham-metabolomics-training-centre"
@@ -558,12 +695,20 @@
   "website": "https://www.bradford.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-bradford.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2019-01-01",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18756,
+   18619,
+   18621,
+   18656
+  ],
   "related": {
    "services": [
     "gtn"
@@ -604,12 +749,21 @@
   "website": "https://www.cam.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-unvieristy-of-cambridge.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18635,
+   18643,
+   18802,
+   20940,
+   20998
+  ],
   "related": {
    "services": [
     "cambridge-bioinformatics-training",
@@ -655,12 +809,18 @@
   "website": "https://www.dundee.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-dundee.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18605,
+   18639
+  ],
   "related": {
    "services": [
     "drasp",
@@ -680,12 +840,18 @@
   "website": "https://www.uea.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-east-anglia.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2020-01-06",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18636,
+   18789
+  ],
   "related": {
    "news": [
     "the-university-of-east-anglia-joins-elixir-uk"
@@ -699,12 +865,22 @@
   "website": "https://www.ed.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-edinburgh.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18614,
+   18647,
+   21711,
+   23442,
+   23574,
+   23576
+  ],
   "related": {
    "services": [
     "lipid-maps",
@@ -728,12 +904,19 @@
   "website": "https://www.exeter.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-exeter.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2022-01-03",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18626,
+   23769,
+   23773
+  ],
   "related": {
    "news": [
     "the-university-of-exter-joins-elixir-uk",
@@ -752,12 +935,17 @@
   "website": "https://le.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-leicester.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2019-01-01",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18615
+  ],
   "related": {
    "services": [
     "cafe-variome",
@@ -783,12 +971,21 @@
   "website": "https://www.liverpool.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-liverpool.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18623,
+   22889,
+   23634,
+   24538,
+   25357
+  ],
   "related": {
    "services": [
     "neof",
@@ -826,12 +1023,28 @@
   "website": "https://www.manchester.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-the-university-of-manchester.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-02-06",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18742,
+   18663,
+   18734,
+   18799,
+   18584,
+   18640,
+   18649,
+   18618,
+   18746,
+   22991,
+   22350,
+   24956
+  ],
   "related": {
    "services": [
     "tess",
@@ -930,12 +1143,20 @@
   "website": "https://www.nottingham.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-nottingham.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18652,
+   22920,
+   18630,
+   18638
+  ],
   "related": {
    "activities": [
     "uk-human-data-community"
@@ -964,12 +1185,19 @@
   "website": "https://www.ox.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-university-of-oxford.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2017-01-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18616,
+   18620,
+   18662
+  ],
   "related": {
    "services": [
     "fairsharing",
@@ -1027,12 +1255,20 @@
   "website": "https://www.southampton.ac.uk",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-university-of-southampton.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2026-02-02",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18651,
+   24934,
+   24937,
+   24940
+  ],
   "related": {
    "news": [
     "supporting-uk-led-projects-at-biohackathon-europe-2024",
@@ -1054,12 +1290,19 @@
   "website": "https://warwick.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-university-of-warwick.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2025-06-01",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   24362,
+   18658,
+   25446
+  ],
   "related": {
    "events": [
     "rembi-short-course"
@@ -1084,12 +1327,22 @@
   "website": "https://www.york.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-university-of-york.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": "2026-04-01",
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18642,
+   18645,
+   18587,
+   24669,
+   24932,
+   25361
+  ],
   "related": {
    "events": [
     "introduction-to-cbioportal"

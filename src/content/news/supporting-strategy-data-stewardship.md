@@ -2,6 +2,7 @@
 title: "Interoperability,  data stewardship and skills at the ELITma course"
 date: 2025-06-17
 standfirst: "UK Node contributes to shaping cross-community strategy and resources to support and professionalise digital research roles"
+excerpt: ""
 category: "News"
 wpId: 23622
 image: "https://elixiruknode.org/wp-content/uploads/2025/06/photo-2025-elitma-tartu-estonia.jpg"

@@ -3,7 +3,13 @@ title: "From data silos to a federated cancer data network "
 start: 2026-03-18
 type: "Community Call"
 online: true
+format: online
 wpId: 24494
+standfirst: "An overview of federated cancer data initiatives in Ireland, including national cancer data nodes, alignment with the European Health Data Space and participation in international standards such as OHDSI OMOP, HL7’s European common cancer model and the GDI minimal data model."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

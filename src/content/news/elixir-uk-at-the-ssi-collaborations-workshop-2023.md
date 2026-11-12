@@ -2,6 +2,7 @@
 title: "ELIXIR-UK at the SSI Collaborations Workshop 2023"
 date: 2023-05-05
 standfirst: "From the 2nd to the 4th of May, the Software Sustainability Institute (SSI) ran its Collaborations Workshop for 2023 . This year's event had the theme ‘ Sustainable Career Development for those in the research software c"
+excerpt: ""
 category: "News"
 wpId: 19647
 image: "https://elixiruknode.org/wp-content/uploads/2023/05/xeniacollabw23.webp"

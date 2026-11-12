@@ -2,6 +2,7 @@
 title: "ELIXIR teams up with The Carpentries to boost its training programme"
 date: 2018-08-20
 standfirst: "ELIXIR and The Carpentries initiative, a merged organization of Software Carpentry and Data Carpentry, have agreed to extend their collaboration in organising and delivering training in ELIXIR Nodes. As part of the colla"
+excerpt: ""
 category: "News"
 wpId: 19547
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-training-keyboard.webp"

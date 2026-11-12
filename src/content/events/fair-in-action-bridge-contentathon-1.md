@@ -2,8 +2,13 @@
 title: "FAIR-in-action Bridge: Scoping the Playbooks (Contentathon #1)"
 start: 2026-05-12
 type: "Hackathon"
-online: false
+online: true
+format: online
 wpId: 25070
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 end: 2026-05-12
 registration: "https://forms.clickup.com/20526645/f/kjdhn-17852/WRBL9B39JQEWP02HAP"
 image: "https://elixiruknode.org/wp-content/uploads/2025/06/banner-background-geometric.webp"

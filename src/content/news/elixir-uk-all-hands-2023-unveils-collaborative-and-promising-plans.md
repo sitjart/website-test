@@ -2,6 +2,7 @@
 title: "ELIXIR UK All-Hands 2023 unveils collaborative and promising plans"
 date: 2023-11-20
 standfirst: "On 7-8 November 2023, ELIXIR-UK convened nearly 50 members of the UK Node community at The Norwich City Football Ground for its annual All Hands meeting. Centered around the theme of fostering collaboration, active engag"
+excerpt: ""
 category: "News"
 wpId: 19682
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/all-hands-2023-group.webp"

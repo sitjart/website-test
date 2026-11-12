@@ -2,6 +2,7 @@
 title: "ELIXIR-UK showcases RDM expertise at CoRDI 2025 and Base4NFDI User Conference"
 date: 2025-09-10
 standfirst: "Carole Goble represented ELIXIR-UK at CoRDI 2025 and Base4NFDI, highlighting sustainable, FAIR-aligned research data infrastructure and RDM expertise."
+excerpt: "Carole Goble represented ELIXIR-UK at CoRDI 2025 and Base4NFDI, highlighting sustainable, FAIR-aligned research data infrastructure and RDM expertise."
 category: "News"
 wpId: 23997
 image: "https://elixiruknode.org/wp-content/uploads/2025/09/photo-nfdi-user-conference.jpg"

@@ -2,6 +2,7 @@
 title: "Carole Goble presents WorkflowHub at global Workflow Community Talks"
 date: 2025-07-29
 standfirst: "Carole Goble joined Johan Gustafsson for a Workflow Community Talk to showcase WorkflowHub, supporting FAIR sharing and reuse of over 1,200 registered computational workflows worldwide."
+excerpt: "Carole Goble joined Johan Gustafsson for a Workflow Community Talk to showcase WorkflowHub, supporting FAIR sharing and reuse of over 1,200 registered computational workflows worldwide."
 category: "News"
 wpId: 23806
 image: "https://elixiruknode.org/wp-content/uploads/2025/07/banner-workflow-hub-presentation-2025.png"

@@ -2,6 +2,7 @@
 title: "Manchester hosts two ELIXIR annual meetings on Interoperability and Tools"
 date: 2024-12-18
 standfirst: "They highlighted the value of showcasing success stories, improving outreach, and engaging communities to ensure the adoption of resources and approaches."
+excerpt: ""
 category: "News"
 wpId: 23128
 image: "https://elixiruknode.org/wp-content/uploads/2024/12/photo-2024-all-hands-uk.jpg"

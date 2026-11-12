@@ -2,8 +2,15 @@
 title: "Discover PeerLadder – a Q&A webinar for prospective applicants"
 start: 2026-04-16
 type: "Webinar"
-online: false
+online: true
+format: online
 wpId: 24529
+standfirst: "Join us on Wednesday 16 April 2026 for a free virtual webinar about PeerLadder — a new peer-mentoring and leadership development programme for digital Research Technical Professionals (dRTPs) from underrepresented backgrounds. Hear from the team, get a walkthrough of the application process, and bring your questions. Applications close 27 April 2026."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18663, 18755]
 end: 2026-04-16
 startTime: "11:00"
 endTime: "12:00"

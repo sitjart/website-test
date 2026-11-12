@@ -2,8 +2,13 @@
 title: "Lessons Learnt from Delivering Training for Isambard-AI "
 start: 2026-10-28
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 25441
+standfirst: "This workshop explores the practical challenges and successes of delivering AI and supercomputing training at scale, sharing insights on workshop planning, managing diverse audiences, overcoming technical barriers, and expanding training provision to new user communities."
+cost: 0
+currency: "GBP"
+status: scheduled
 end: 2026-10-28
 startTime: "14:00"
 endTime: "15:00"

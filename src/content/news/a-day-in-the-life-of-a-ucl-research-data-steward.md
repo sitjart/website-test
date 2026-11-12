@@ -2,6 +2,7 @@
 title: "A day in the life  of a UCL Research Data Steward"
 date: 2025-07-01
 standfirst: "A FAIRytale by Nick Owen – a personal story about data stewardship role in modern academia"
+excerpt: "Nick Owen shares his journey into data stewardship at UCL, highlighting how the role supports researchers through better data practices."
 category: "Blog"
 wpId: 23715
 image: "https://elixiruknode.org/wp-content/uploads/2025/02/banner-library-books.webp"

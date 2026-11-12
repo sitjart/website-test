@@ -3,7 +3,13 @@ title: "REMBI – Recommended Metadata for Biological Images"
 start: 2024-04-25
 type: "Short course"
 online: true
+format: online
 wpId: 21687
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18658, 21711, 18656]
 end: 2024-04-25
 startTime: "12:00"
 endTime: "13:00"

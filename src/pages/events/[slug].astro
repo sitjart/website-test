@@ -5,6 +5,7 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RemoteImage from '../../components/RemoteImage.astro';
 import Avatar from '../../components/Avatar.astro';
+import PersonLine from '../../components/PersonLine.astro';
 import SmartTabs from '../../components/SmartTabs.astro';
 import { longDate, todayUK, firstSentence, needsStop } from '../../lib/format';
 import { DIRECTORY, tagSlug, linksFor } from '../../lib/graph';
@@ -23,7 +24,23 @@ const isPast = (e.end ?? e.start) < today;
 const multi = e.end && e.end.getTime() !== e.start.getTime();
 const when = multi ? `${longDate(e.start)} – ${longDate(e.end!)}` : longDate(e.start);
 const time = e.startTime ? `${e.startTime}${e.endTime ? `–${e.endTime}` : ''} UK time` : undefined;
-const where = e.online ? 'Online' : [e.venue, e.locality].filter(Boolean).join(', ') || undefined;
+const FORMAT = { online: 'Online', 'in-person': 'In person', hybrid: 'Hybrid – in person and online' } as const;
+const formatLabel = FORMAT[e.format];
+const place = [e.venue, e.street, e.locality, e.postcode].filter(Boolean).join(', ');
+// Online events have no "where"; in-person and hybrid events show the venue
+const where = e.format === 'online' ? undefined : place || undefined;
+const cost = e.cost > 0 ? new Intl.NumberFormat('en-GB', { style: 'currency', currency: e.currency, maximumFractionDigits: 0 }).format(e.cost) : 'Free';
+const cancelled = e.status === 'cancelled';
+// ISO date-time in UK time, with the right offset for GMT/BST
+const iso = (d: Date, t?: string) => {
+  if (!t) return d.toISOString().slice(0, 10);
+  const probe = new Date(`${d.toISOString().slice(0, 10)}T${t}:00Z`);
+  const london = new Date(probe.toLocaleString('en-US', { timeZone: 'Europe/London' }));
+  const utc = new Date(probe.toLocaleString('en-US', { timeZone: 'UTC' }));
+  const off = Math.round((london.getTime() - utc.getTime()) / 3600000);
+  return `${d.toISOString().slice(0, 10)}T${t}:00+0${off}:00`;
+};
+const speakers = (await getCollection('people')).filter((p) => p.data.wpId && e.speakerIds.includes(p.data.wpId));
 const isCall = e.type === 'Community Call';
 const cta = isCall ? 'Join in' : 'Register';
 const day = e.start.toLocaleDateString('en-GB', { day: 'numeric', timeZone: 'Europe/London' });
@@ -48,42 +65,54 @@ const calDates = e.startTime
   : `${ymd(e.start)}/${ymd(new Date((e.end ?? e.start).getTime() + 86400000))}`;
 const calUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(e.title)}&dates=${calDates}&ctz=Europe/London${where ? `&location=${encodeURIComponent(where)}` : ''}`;
 
+const virtual = { '@type': 'VirtualLocation', url: e.registration ?? `https://elixiruknode.org/events/${entry.id}/` };
+const physical = { '@type': 'Place', name: e.venue || e.locality, address: { '@type': 'PostalAddress', streetAddress: e.street, addressLocality: e.locality, postalCode: e.postcode, addressCountry: e.country || 'GB' } };
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Event',
   name: e.title,
-  startDate: e.start.toISOString().slice(0, 10),
-  endDate: (e.end ?? e.start).toISOString().slice(0, 10),
-  eventAttendanceMode: `https://schema.org/${e.online ? 'OnlineEventAttendanceMode' : 'OfflineEventAttendanceMode'}`,
-  location: e.online ? { '@type': 'VirtualLocation', url: e.registration } : { '@type': 'Place', name: e.venue, address: e.locality },
-  organizer: { '@type': 'Organization', name: 'ELIXIR-UK' },
+  description: e.standfirst || html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 300),
+  image: e.image ? [e.image] : undefined,
+  startDate: iso(e.start, e.startTime),
+  endDate: iso(e.end ?? e.start, e.endTime ?? e.startTime),
+  eventStatus: `https://schema.org/${cancelled ? 'EventCancelled' : e.status === 'rescheduled' ? 'EventRescheduled' : 'EventScheduled'}`,
+  eventAttendanceMode: `https://schema.org/${e.format === 'online' ? 'OnlineEventAttendanceMode' : e.format === 'hybrid' ? 'MixedEventAttendanceMode' : 'OfflineEventAttendanceMode'}`,
+  location: e.format === 'online' ? virtual : e.format === 'hybrid' ? [physical, virtual] : physical,
+  offers: { '@type': 'Offer', price: e.cost, priceCurrency: e.currency, url: e.registration, availability: `https://schema.org/${isPast || cancelled ? 'SoldOut' : 'InStock'}`, validFrom: undefined },
+  organizer: { '@type': 'Organization', name: 'ELIXIR-UK', url: 'https://elixiruknode.org' },
+  performer: speakers.length ? speakers.map((p) => ({ '@type': 'Person', name: p.data.name })) : undefined,
 };
 ---
-<BaseLayout title={e.title} {jsonLd}>
+<BaseLayout title={e.title} description={e.standfirst} {jsonLd}>
   <section class="ev-hero">
     {e.image && <RemoteImage class="ev-hero__img" src={e.image} width={1600} loading="eager" />}
     <div class="ev-hero__shade"></div>
     <div class="container ev-hero__grid">
       <div>
-        <p class="ev-crumb"><a href={url('/events/')}>Events</a> / <a href={url(`/events/type/${tagSlug(e.type)}/`)}>{e.type}</a></p>
+        <p class="crumb"><a href={url('/events/')}>Events</a><a href={url(`/events/type/${tagSlug(e.type)}/`)}>{e.type}</a></p>
         <div class="ev-tags">
           <a class="pill" href={url(`/events/type/${tagSlug(e.type)}/`)}>{e.type}</a>
           {org && <a class="pill" href={url(`/activities/${org.slug}/`)}>{org.name}</a>}
-          {isPast && <span class="pill">Past event</span>}
+          <span class="pill pill--format">{formatLabel}</span>
+          {cancelled && <span class="pill pill--cancel">Cancelled</span>}
+          {isPast && !cancelled && <span class="pill">Past event</span>}
         </div>
         <h1 class="display ev-title">{e.title}{needsStop(e.title) && <span class="stop">.</span>}</h1>
+        {e.standfirst && <p class="ev-stand">{e.standfirst}</p>}
       </div>
       <div class="ev-card">
         <div class="ev-card__date"><span>{month}</span><strong>{day}</strong></div>
         <div class="ev-card__body">
           <p class="ev-card__when">{multi ? when : weekday}</p>
           {time && <p>{time}</p>}
-          <p>{e.online ? 'Online' : where ?? 'In person'}</p>
-          <p>Free</p>
+          <p>{e.format === 'online' ? 'Online' : where ? `${where}${e.format === 'hybrid' ? ' and online' : ''}` : formatLabel}</p>
+          <p>{cost}</p>
         </div>
         <div class="ev-card__actions">
-          {!isPast && e.registration && <a class="btn" href={e.registration} rel="noopener">{cta}</a>}
-          {!isPast && <a class="btn btn--line" href={calUrl} rel="noopener">Add to calendar</a>}
+          {!isPast && !cancelled && e.registration && <a class="btn" href={e.registration} rel="noopener">{cta}</a>}
+          {!isPast && !cancelled && <a class="btn btn--line" href={calUrl} rel="noopener">Add to calendar</a>}
+          {e.programme && <a class="btn btn--line" href={e.programme} rel="noopener">Programme</a>}
+          {cancelled && <p class="ev-card__note">This event has been cancelled.</p>}
           {e.recording && <a class="btn" href={e.recording} rel="noopener">Watch the recording</a>}
           {e.slides && <a class="btn btn--line" href={e.slides} rel="noopener">Slides</a>}
           {isPast && !e.recording && !e.slides && <p class="ev-card__note">This event has finished.</p>}
@@ -98,11 +127,18 @@ const jsonLd = {
       <dl class="ev-facts">
         <div><dt>Date</dt><dd>{when}</dd></div>
         {time && <div><dt>Time</dt><dd>{time}</dd></div>}
-        <div><dt>Where</dt><dd>{where ?? 'To be confirmed'}</dd></div>
-        <div><dt>Cost</dt><dd>Free</dd></div>
+        <div><dt>Format</dt><dd>{formatLabel}</dd></div>
+        {where && <div><dt>Where</dt><dd>{where}</dd></div>}
+        <div><dt>Cost</dt><dd>{cost}</dd></div>
       </dl>
     </div>
     <aside class="ev-side">
+      {speakers.length > 0 && (
+        <div class="ev-box">
+          <p class="eyebrow-sm">{speakers.length === 1 ? 'Speaker' : 'Speakers'}</p>
+          <ul class="ev-people">{speakers.map((p) => <li><PersonLine p={p} size={48} ring="var(--grey-light)" /></li>)}</ul>
+        </div>
+      )}
       {org && (
         <a class="ev-org" href={url(`/activities/${org.slug}/`)}>
           <span class="eyebrow-sm">Organised by</span>
@@ -117,7 +153,7 @@ const jsonLd = {
     </aside>
   </section>
 
-  <section class="container ev-related"><SmartTabs kind="events" slug={entry.id} /></section>
+  <section class="container ev-related"><SmartTabs kind="events" slug={entry.id} skip={['people']} heading="Related" /></section>
 
   {alsoComing.length > 0 && (
     <section class="ev-more">
@@ -142,8 +178,11 @@ const jsonLd = {
   .ev-hero :global(.ev-hero__img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }
   .ev-hero__shade { position: absolute; inset: 0; background: rgba(1, 29, 49, 0.84); }
   .ev-hero__grid { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 56px; align-items: center; padding-block: 56px 72px; }
-  .ev-crumb { font-size: 14px; margin: 0 0 18px; color: #b9c8d4; }
-  .ev-crumb a { color: #b9c8d4; }
+  .ev-stand { margin: var(--s4) 0 0; max-width: 40rem; font-size: var(--fs-lead); color: var(--on-dark); }
+  .pill--format { background: rgb(255 255 255 / 0.14); }
+  .pill--cancel { background: #b3261e; }
+  .ev-box { padding: var(--s5); border-radius: var(--radius-lg); background: var(--grey-light); margin-bottom: var(--s4); }
+  .ev-people { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
   .ev-tags { display: flex; gap: 8px; flex-wrap: wrap; }
   .ev-title { font-size: clamp(2.2rem, 4.6vw, 3.6rem); margin: 18px 0 0; color: var(--white); }
   .ev-card { background: var(--white); color: var(--text); border-radius: 12px; padding: 28px; display: grid; grid-template-columns: auto 1fr; gap: 20px 22px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); }

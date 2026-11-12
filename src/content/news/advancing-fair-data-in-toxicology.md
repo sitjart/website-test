@@ -2,6 +2,7 @@
 title: "Advancing FAIR Data in toxicology: ELIXIR-UK collaborates in international workshops"
 date: 2025-05-08
 standfirst: "ELIXIR-UK demonstrates its commitment to advancing FAIR (Findable, Accessible, Interoperable, Reusable) data practices in toxicology by participating in and organising several workshops as part of the ELIXIR Toxicology C"
+excerpt: ""
 category: "News"
 wpId: 23553
 image: "https://elixiruknode.org/wp-content/uploads/2025/05/photo-intoxicom-project-workshop-2025.webp"

@@ -2,8 +2,14 @@
 title: "When is an AI output ready? Trustworthy AI in the biosciences"
 start: 2026-07-07
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 25157
+standfirst: "A perspective paper from the AIBIO-UK RR Working Group asks when an AI output is evidenced enough to support a real experimental action, and what that means for RDM."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 end: 2026-07-07
 recording: "https://youtu.be/CedrRLCE6h0"
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-silicon-semiconductor-wafer-with-integrated.webp"

@@ -3,7 +3,16 @@ title: "ELIXIR-UK All Hands 2024"
 start: 2024-11-19
 type: "Conference"
 online: false
+format: in-person
 wpId: 22754
+standfirst: "We are excited to welcome you to the ELIXIR-UK 2024 Annual All Hands Meeting, bringing together representatives from our 28 member institutions."
+cost: 0
+currency: "GBP"
+status: scheduled
+street: "Westgate St"
+postcode: "CF10 1NS"
+country: "UK"
+speakerIds: [18755, 18733, 18663, 18632, 18657, 20940, 18624, 18640, 18641, 18871, 18617, 23773]
 end: 2024-11-20
 venue: "Principality Stadium"
 locality: "Cardiff "

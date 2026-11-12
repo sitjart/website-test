@@ -3,7 +3,13 @@ title: "Introduction to cBioPortal"
 start: 2024-03-21
 type: "Short course"
 online: true
+format: online
 wpId: 21684
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18645]
 end: 2024-03-21
 startTime: "12:30"
 endTime: "14:00"

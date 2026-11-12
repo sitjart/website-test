@@ -1,0 +1,99 @@
+---
+// Related records as cards that suit their kind: stories with pictures, events with a date block,
+// logos on white tiles big enough to read, community icons, people with their photo.
+import type { Card } from '../lib/lookup';
+import RemoteImage from './RemoteImage.astro';
+import Avatar from './Avatar.astro';
+import { localAsset } from '../lib/assets';
+import { longDate, firstSentence } from '../lib/format';
+
+interface Props { cards: Card[]; limit?: number }
+const { cards, limit = 6 } = Astro.props;
+const kind = cards[0]?.kind;
+const style = kind === 'news' ? 'story' : kind === 'events' ? 'event' : kind === 'people' ? 'person' : kind === 'activities' ? 'icon' : kind === 'projects' ? 'project' : kind === 'area' ? 'art' : 'logo';
+const f = (d: Date, o: Intl.DateTimeFormatOptions) => d.toLocaleDateString('en-GB', { ...o, timeZone: 'UTC' });
+---
+<div class="rc-wrap">
+  <ul class:list={['rc', `rc--${style}`]}>
+    {cards.map((c, i) => (
+      <li hidden={i >= limit}>
+        <a class="rc__card" href={c.href}>
+          {style === 'story' && <span class="rc__img">{c.image ? <RemoteImage src={c.image} width={480} /> : <span class="rc__ph"></span>}</span>}
+          {style === 'event' && c.date && <span class="rc__date"><span>{f(c.date, { month: 'short' })}</span><b>{f(c.date, { day: 'numeric' })}</b><span>{f(c.date, { year: 'numeric' })}</span></span>}
+          {style === 'person' && <Avatar src={c.image} name={c.title} size={72} />}
+          {style === 'icon' && <span class="icon-disc">{c.image ? <img src={localAsset(c.image)} alt="" loading="lazy" /> : <b>{c.title[0]}</b>}</span>}
+          {style === 'logo' && <span class="rc__logo">{c.image ? <RemoteImage src={c.image} width={360} alt="" /> : <b>{c.title}</b>}</span>}
+          {style === 'art' && c.image && <span class="rc__art"><img src={c.image} alt="" loading="lazy" /></span>}
+          <span class="rc__body">
+            {style === 'story' && <span class="rc__meta">{c.meta} · {c.date && longDate(c.date)}</span>}
+            {(style === 'event' || style === 'project' || style === 'icon') && c.meta && <span class="rc__meta">{c.meta}</span>}
+            {style === 'person' && c.honorific && <span class="rc__hon">{c.honorific}</span>}
+            <span class="rc__title">{c.title}</span>
+            {style === 'person' && c.meta && <span class="rc__sub">{c.meta}</span>}
+            {(style === 'story' || style === 'project') && c.text && <span class="rc__text">{firstSentence(c.text, 140)}</span>}
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+  {cards.length > limit && <button type="button" class="btn btn--line rc__more" data-rc-more>Show all {cards.length}</button>}
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-rc-more]').forEach((b) => b.addEventListener('click', () => {
+    b.closest('.rc-wrap')?.querySelectorAll<HTMLElement>('li[hidden]').forEach((li) => (li.hidden = false));
+    b.remove();
+  }));
+</script>
+
+<style>
+  .rc { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s4); }
+  .rc li { display: flex; }
+  .rc__card { flex: 1; display: flex; gap: var(--s4); padding: var(--s4); border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--white); color: var(--text); transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease), border-color 0.25s; }
+  .rc__card:hover { color: var(--text); transform: translateY(-3px); box-shadow: var(--shadow-hover); border-color: transparent; }
+  .rc__body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .rc__meta { font-size: var(--fs-xs); font-weight: 700; color: var(--orange-text); }
+  .rc__title { font-weight: 700; color: var(--navy); line-height: 1.3; }
+  .rc__card:hover .rc__title { color: var(--orange-text); }
+  .rc__text, .rc__sub { font-size: var(--fs-sm); line-height: 1.45; }
+  .rc__sub { color: var(--muted); }
+  .rc__hon { font-size: var(--fs-xs); color: var(--muted); letter-spacing: 0.04em; }
+  .rc__more { margin-top: var(--s5); }
+
+  .rc--story { grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
+  .rc--story .rc__card { flex-direction: column; padding: 0; overflow: hidden; }
+  .rc--story .rc__body { padding: var(--s4) var(--s5) var(--s5); }
+  .rc__img { display: block; aspect-ratio: 16 / 9; background: var(--grey-light); overflow: hidden; }
+  .rc__img :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .rc__ph { display: block; height: 100%; background: linear-gradient(135deg, var(--navy), var(--blue)); }
+
+  .rc--event { grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+  .rc__date { flex: none; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 64px; padding: 6px 0; border-radius: 8px; background: var(--grey-light); line-height: 1.1; color: var(--navy); }
+  .rc__date span { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  .rc__date b { font-size: 1.6rem; font-weight: 900; }
+
+  .rc--person { grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); }
+  .rc--person .rc__card { align-items: center; }
+
+  .rc--icon { grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
+  .rc--icon .rc__card { align-items: center; }
+  .rc--icon .icon-disc { width: 56px; background: var(--grey-light); border: 0; }
+  .rc--icon .icon-disc b { color: var(--navy); }
+
+  .rc--logo { grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); }
+  .rc--logo .rc__card { flex-direction: column; align-items: stretch; padding: 0; overflow: hidden; }
+  .rc__logo { display: flex; align-items: center; justify-content: center; height: 120px; padding: var(--s4) var(--s5); border-bottom: 1px solid var(--border); }
+  .rc__logo :global(img) { max-width: 100%; max-height: 80px; width: auto; height: auto; object-fit: contain; }
+  .rc__logo b { color: var(--navy); text-align: center; }
+  .rc--logo .rc__body { padding: var(--s3) var(--s4) var(--s4); }
+  .rc--logo .rc__title { font-size: var(--fs-sm); }
+
+  .rc--project { grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+  .rc--project .rc__card { padding: var(--s5); }
+
+  .rc--art { grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); }
+  .rc--art .rc__card { flex-direction: column; padding: 0; overflow: hidden; }
+  .rc__art { display: flex; align-items: center; justify-content: center; height: 150px; padding: var(--s4); background: var(--grey-light); }
+  .rc__art img { max-height: 120px; }
+  .rc--art .rc__body { padding: var(--s4); }
+</style>

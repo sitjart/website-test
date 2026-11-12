@@ -2,6 +2,7 @@
 title: "From Zero to DMP: implementing a localised instance of Data Stewardship Wizard"
 date: 2025-06-27
 standfirst: "A FAIRytale by Mo Aboshokor – a personal story about good data governance and data controllership from someone who understands the researcher’s perspectives and frustrations."
+excerpt: "How an RSE deployed and configured a local DSW instance at Cardiff University"
 category: "Blog"
 wpId: 23651
 image: "https://elixiruknode.org/wp-content/uploads/2025/06/banner-plann-notebook.jpg"

@@ -3,7 +3,12 @@ title: "FAIR Data Accelerator Pilot: addressing social and cultural barriers to 
 start: 2024-12-03
 type: "Community Call"
 online: true
+format: online
 wpId: 23066
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "11:00"
 endTime: "12:00"
 venue: "online"

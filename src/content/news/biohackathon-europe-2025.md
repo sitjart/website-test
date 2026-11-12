@@ -2,6 +2,7 @@
 title: "ELIXIR-UK contributions to BioHackathon Europe 2025"
 date: 2025-12-02
 standfirst: "Earlier this month, ELIXIR-UK contributors took part in BioHackathon Europe 2025, leading and supporting projects that advanced FAIR data, benchmarking, interoperability and sustainable workflow development across the ELIXIR ecosystem."
+excerpt: "Earlier this month, ELIXIR-UK contributors took part in BioHackathon Europe 2025, leading and supporting projects that advanced FAIR data, benchmarking, interoperability and sustainable workflow development across the ELIXIR ecosystem."
 category: "News"
 wpId: 24323
 image: "https://elixiruknode.org/wp-content/uploads/2025/12/2025_photo-biohackathon-uk-group-scaled.webp"

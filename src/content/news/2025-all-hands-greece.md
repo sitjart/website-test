@@ -2,6 +2,7 @@
 title: "Working together across ELIXIR: UK Node at the 2025 All Hands"
 date: 2025-06-17
 standfirst: "A collaborative meeting deepening connections with other Nodes and RIs"
+excerpt: ""
 category: "News"
 wpId: 23592
 image: "https://elixiruknode.org/wp-content/uploads/2025/06/photo-2025-all-hands-greece-10.jpg"

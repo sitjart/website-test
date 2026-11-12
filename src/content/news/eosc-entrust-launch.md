@@ -2,6 +2,7 @@
 title: "From fragmentation to integration: EOSC-ENTRUST launches to unite European TREs"
 date: 2024-03-05
 standfirst: "On 1 March 2024, the EU-funded EOSC-ENTRUST project launched to enhance European interoperability for sensitive data access and analysis. Led by ELIXIR and the EUDAT Collaborative Data Infrastructure (CDI) , this collabo"
+excerpt: ""
 category: "News"
 wpId: 21683
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-eu-collaboration.webp"

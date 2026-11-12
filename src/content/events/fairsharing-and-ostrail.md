@@ -3,7 +3,13 @@ title: " FAIRsharing and OSTrails"
 start: 2024-03-05
 type: "Community Call"
 online: true
+format: online
 wpId: 22960
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18620]
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

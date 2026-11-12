@@ -2,6 +2,7 @@
 title: "ELIXIR joins forces to strengthen life science capacity within the European Open Science Cloud"
 date: 2025-10-28
 standfirst: "ELIXIR, Euro-BioImaging, Instruct-ERIC and EMBL launch the EOSC Life Sciences Connect Node to strengthen FAIR and interoperable data in life sciences."
+excerpt: "ELIXIR, Euro-BioImaging, Instruct-ERIC and EMBL launch the EOSC Life Sciences Connect Node to strengthen FAIR and interoperable data in life sciences."
 category: "News"
 wpId: 24279
 image: "https://elixiruknode.org/wp-content/uploads/2025/10/banner-nodes-connect-e1793349873137.webp"

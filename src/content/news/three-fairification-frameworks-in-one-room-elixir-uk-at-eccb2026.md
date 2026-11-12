@@ -2,6 +2,7 @@
 title: "Three FAIRification frameworks in one room: ELIXIR-UK at ECCB2026"
 date: 2026-10-14
 standfirst: "ELIXIR-UK co-leads FAIRification workshops at ECCB2026"
+excerpt: "ELIXIR-UK co-led two FAIRification events at ECCB2026 in Geneva, comparing the ELIXIR, GO-FAIR and CODATA approaches side by side."
 category: "News"
 wpId: 25506
 image: "https://elixiruknode.org/wp-content/uploads/2026/09/dsc_7347_dxo.jpg"

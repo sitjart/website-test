@@ -2,6 +2,7 @@
 title: "ELIXIR-UK launches new FAIR Data Stewardship Training Fellowship – apply now"
 date: 2022-04-13
 standfirst: "As part of our new UKRI-funded project in FAIR Data Stewardship Training, ELIXIR-UK has launched a new Fellowship programme which aims to improve FAIR data management in the Life Sciences practiced by UK researchers and"
+excerpt: ""
 category: "News"
 wpId: 19615
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-circle-hands-united.webp"

@@ -3,7 +3,13 @@ title: "Open and sustainable AI – models and datasets as key assets"
 start: 2026-03-03
 type: "Community Call"
 online: true
+format: online
 wpId: 24467
+standfirst: "A practical introduction to Open and Sustainable AI – community guidelines for reusable and sustainable AI assets."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "11:00"
 endTime: "12:00"
 venue: "online"

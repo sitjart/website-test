@@ -6,12 +6,15 @@
   "website": "https://aibio.ac.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/04/logo-aibiouk.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "news": [
     "elixir-uk-all-hands-2024-a-celebration-of-collaboration-and-innovation",
@@ -30,12 +33,15 @@
   "website": "https://www.bsc.es/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2026/04/logo-bsc.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {}
  },
  {
@@ -45,12 +51,15 @@
   "website": "https://biofair.uk/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/10/logo-biofair.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "news": [
     "health-ri-exchange-offers-insights-into-shaping-a-national-biocommons",
@@ -75,12 +84,15 @@
   "website": "https://www.cshl.edu/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-cold-spring-harbor.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {}
  },
  {
@@ -90,12 +102,15 @@
   "website": "",
   "logo": "https://elixiruknode.org/wp-content/uploads/2025/06/collaborator-logo-ctu.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "news": [
     "joining-up-the-research-data-management-dots"
@@ -109,12 +124,15 @@
   "website": "https://www.ebi.ac.uk",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-embl-ebi.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "events": [
     "driven-by-impact-online-workshop"
@@ -128,12 +146,15 @@
   "website": "",
   "logo": "",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "news": [
     "elixir-uk-all-hands-2024-a-celebration-of-collaboration-and-innovation"
@@ -151,12 +172,15 @@
   "website": "https://www.opentargets.org/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-open-targets.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {}
  },
  {
@@ -166,12 +190,15 @@
   "website": "",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/member-logo-oxford-brookes-university.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "projects": [
     "fair-in-action-bridge"
@@ -188,12 +215,15 @@
   "website": "",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/10/logo-phenomuk.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "news": [
     "elixir-uk-all-hands-2024-a-celebration-of-collaboration-and-innovation"
@@ -210,12 +240,15 @@
   "website": "https://www.kew.org/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-royal-botanical-gardens.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {}
  },
  {
@@ -225,12 +258,15 @@
   "website": "https://www.software.ac.uk",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-ssi.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "news": [
     "elixir-uk-announces-new-fair-data-stewards-training-project",
@@ -246,12 +282,15 @@
   "website": "https://www.turing.ac.uk",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-alan-turing.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "events": [
     "elixir-uk-all-hands-2024"
@@ -268,12 +307,15 @@
   "website": "",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-ukhsa.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {}
  },
  {
@@ -283,12 +325,15 @@
   "website": "https://www.ukrn.org",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-ukrn.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {}
  },
  {
@@ -298,12 +343,15 @@
   "website": "",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-university-of-leeds.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "events": [
     "dm-for-peatland-research-and-monitoring"
@@ -317,12 +365,15 @@
   "website": "",
   "logo": "",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "news": [
     "community-insights-on-ai-all-hands-2025"
@@ -336,12 +387,15 @@
   "website": "",
   "logo": "",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "news": [
     "community-insights-on-ai-all-hands-2025"
@@ -355,12 +409,15 @@
   "website": "https://www.sheffield.ac.uk",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-university-sheffield.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "events": [
     "research-data-stewardship-at-sheffield-and-across-the-n8"
@@ -374,12 +431,15 @@
   "website": "https://vib.be",
   "logo": "https://elixiruknode.org/wp-content/uploads/2026/04/logo_vib_notagline.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [],
   "status": "",
   "start": null,
   "end": null,
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "news": [
     "knetminer-connects-plant-pangenome-data-to-gene-function-and-literature"

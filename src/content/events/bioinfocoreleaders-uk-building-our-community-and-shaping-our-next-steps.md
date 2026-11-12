@@ -2,8 +2,14 @@
 title: "BioinfoCoreLeaders UK: Building our community and shaping our next steps"
 start: 2026-11-12
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 25524
+standfirst: "Join bioinformatics core facility leaders and aspiring leaders from across the UK to discuss advocacy, community initiatives, working group updates, and future priorities. Connect with peers, share experiences, and help shape the future of the BioinfoCoreLeaders UK community"
+cost: 0
+currency: "GBP"
+status: scheduled
+speakerIds: [22889]
 end: 2026-11-12
 startTime: "11:00"
 endTime: "12:00"

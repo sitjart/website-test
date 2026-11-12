@@ -3,7 +3,13 @@ title: "'Driven by impact' online workshop"
 start: 2025-07-02
 type: "Workshop"
 online: true
+format: online
 wpId: 23638
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18755, 18756]
 startTime: "10:00"
 endTime: "12:30"
 venue: "UK"

@@ -3,7 +3,15 @@ title: "ELIXIR-UK All Hands 2025"
 start: 2025-10-23
 type: "Conference"
 online: false
+format: in-person
 wpId: 23736
+cost: 0
+currency: "GBP"
+status: scheduled
+street: "Sandy Park Way"
+postcode: "EX2 7NN"
+country: "UK"
+speakerIds: [18733, 18755, 22948, 18624, 18626, 23769, 18649, 18708, 24306, 18640, 22889]
 end: 2025-10-24
 venue: "Sandy Park Conference & Banqueting Centre"
 locality: "Exeter"

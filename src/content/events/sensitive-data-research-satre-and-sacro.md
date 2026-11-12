@@ -2,8 +2,14 @@
 title: "Standardising and safeguarding sensitive-data research: SATRE and SACRO"
 start: 2026-07-21
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 25169
+standfirst: "SATRE and SACRO explained – standardising how Trusted Research Environments are built and how research outputs get checked. UK Human Data and Tech Club, 21 July 2026 at 10 am"
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 end: 2026-07-21
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-digital-societ-human-data-1.webp"
 related:

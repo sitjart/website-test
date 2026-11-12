@@ -3,7 +3,13 @@ title: "Elevenses and data horror stories"
 start: 2024-10-01
 type: "Community Call"
 online: true
+format: online
 wpId: 22846
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18733, 18632, 18620, 22889]
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

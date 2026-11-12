@@ -3,7 +3,12 @@ title: "Teaching with Galaxy and the Galaxy Training Network (GTN)"
 start: 2023-12-18
 type: "Community Call"
 online: true
+format: online
 wpId: 22841
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "14:00"
 endTime: "15:00"
 venue: "Online"

@@ -3,7 +3,12 @@ title: "Discovering BioFAIR"
 start: 2024-02-06
 type: "Community Call"
 online: true
+format: online
 wpId: 22957
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "11:00"
 endTime: "12:00"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-creating-connections.webp"

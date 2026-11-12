@@ -3,7 +3,12 @@ title: "Rescheduled – Discover the human data ELIXIR Europe Programme"
 start: 2025-09-24
 type: "Community Call"
 online: true
+format: online
 wpId: 23114
+cost: 0
+currency: "GBP"
+status: rescheduled
+country: "UK"
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

@@ -2,8 +2,14 @@
 title: "Automating FAIR training metadata pipelines - upcoming BITS project launch"
 start: 2026-11-24
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 25521
+standfirst: "Phil Reed (The University of Manchester) introduces BITS, an upcoming project that will make training materials easier to discover by improving how ELIXIR TeSS gathers training metadata, in collaboration with the Bioconductor training community."
+cost: 0
+currency: "GBP"
+status: scheduled
+speakerIds: [22991]
 end: 2026-11-24
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-futuristic-lines.webp"
 related:

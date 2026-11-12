@@ -2,8 +2,14 @@
 title: "AIRBDS: Quantifying AI-readiness in bioscience data"
 start: 2026-06-02
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 25152
+standfirst: "Charlie Harrison (AIBIO-UK) introduces AIRBDS-core, a new metric for quantifying the AI-readiness of life sciences data – with an open invitation to feed in before publication."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 end: 2026-06-02
 image: "https://elixiruknode.org/wp-content/uploads/2025/12/banner_circuit-board-and-ai-micro-processor-artificial-i.webp"
 related:

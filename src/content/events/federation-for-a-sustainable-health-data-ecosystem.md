@@ -2,8 +2,14 @@
 title: "Federation for a sustainable health data ecosystem"
 start: 2026-04-15
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 24535
+standfirst: "The HDR UK Federated Analytics programme explores how federation can sustain health data research — including a live demo of federated querying using Five Safes TES."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 end: 2026-04-15
 startTime: "11:00"
 endTime: "12:00"

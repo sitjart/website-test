@@ -2,6 +2,7 @@
 title: "Fostering collaboration at the second ELIXIR-UK hackathon"
 date: 2021-04-20
 standfirst: "Last week, we ran the second ELIXIR-UK Hackathon, which saw three days of collaboration on a range of ELIXIR-UK projects and services. Overall, 18 people from over half of our member organisations attended the event. The"
+excerpt: ""
 category: "News"
 wpId: 19586
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banners-hackathon-laptops.webp"

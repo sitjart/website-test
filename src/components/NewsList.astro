@@ -22,7 +22,7 @@ const PAGE = 18;
         <span class="feature__body">
           <span class="card__meta">Latest · {first.data.category} · {longDate(first.data.date)}</span>
           <span class="feature__title">{first.data.title}</span>
-          {first.data.standfirst && <span class="feature__sum">{first.data.standfirst}</span>}
+          {(first.data.excerpt || first.data.standfirst) && <span class="feature__sum">{first.data.excerpt || first.data.standfirst}</span>}
           <span class="more-link">Read the story</span>
         </span>
       </a>
@@ -40,7 +40,7 @@ const PAGE = 18;
             <span class="ncard__media">{n.data.image ? <RemoteImage src={n.data.image} width={560} /> : <span class="ncard__ph" aria-hidden="true"></span>}</span>
             <span class="card__meta">{n.data.category} · {longDate(n.data.date)}</span>
             <span class="ncard__title">{n.data.title}</span>
-            {n.data.standfirst && <span class="ncard__sum">{firstSentence(n.data.standfirst, 150)}</span>}
+            {(n.data.excerpt || n.data.standfirst) && <span class="ncard__sum">{n.data.excerpt || firstSentence(n.data.standfirst, 150)}</span>}
           </a>
         </li>
       ))}

@@ -23,6 +23,9 @@ export interface DirectoryRecord {
   start: string | null;
   end: string | null;
   joinLink: string;
+  excerpt?: string;
+  leadIds?: number[];
+  peopleIds?: number[];
   related: Partial<Record<Kind, string[]>>;
 }
 

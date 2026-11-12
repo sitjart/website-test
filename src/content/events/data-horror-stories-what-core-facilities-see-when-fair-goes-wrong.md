@@ -2,8 +2,14 @@
 title: "Data Horror Stories: what core facilities see when FAIR goes wrong"
 start: 2026-10-06
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 25415
+standfirst: "Core facility leads from Warwick, York and Cambridge share what bad FAIR looks like from the inside, in the RDM Club's annual Halloween panel featuring BioinfoCoreLeaders Club"
+cost: 0
+currency: "GBP"
+status: scheduled
+speakerIds: [22889, 24932]
 end: 2026-10-06
 image: "https://elixiruknode.org/wp-content/uploads/2026/09/banner-spooky-halloween-night-with-tombstone-and-moon.webp"
 related:

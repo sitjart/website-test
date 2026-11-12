@@ -2,6 +2,7 @@
 title: "ELIXIR-UK members awarded DisCouRSE Flexible Funding for inclusive dRTP leadership pilot"
 date: 2026-02-11
 standfirst: "Members are awarded DisCouRSE Flexible Fund support for PeerLadder, a new peer-mentoring pilot advancing inclusive leadership for digital Research Technical Professionals across UK research-performing organisations."
+excerpt: "Members are awarded DisCouRSE Flexible Fund support for PeerLadder, a new peer-mentoring pilot advancing inclusive leadership for digital Research Technical Professionals across UK research-performing organisations."
 category: "News"
 wpId: 24458
 image: "https://elixiruknode.org/wp-content/uploads/2026/02/banner-diversity-inclusion.webp"

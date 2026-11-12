@@ -2,6 +2,7 @@
 title: "Supporting UK-led projects at BioHackathon Europe 2024"
 date: 2024-11-12
 standfirst: "Supporting 22 participants from 11 organisations at BioHackathon Europe 2024"
+excerpt: ""
 category: "News"
 wpId: 22988
 image: "https://elixiruknode.org/wp-content/uploads/2024/11/photo-biohackathon-2024-uk-team-scaled.webp"

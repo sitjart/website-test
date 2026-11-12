@@ -3,7 +3,13 @@ title: "Exploring diverse data science roles and their skills"
 start: 2024-05-07
 type: "Community Call"
 online: true
+format: online
 wpId: 22962
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18653]
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

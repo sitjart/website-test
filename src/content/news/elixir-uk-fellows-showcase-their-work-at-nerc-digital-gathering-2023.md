@@ -2,6 +2,7 @@
 title: "ELIXIR-UK Fellows showcase their work at NERC Digital Gathering 2023"
 date: 2023-08-07
 standfirst: "Fostering collaborations and upskilling the workforce: ELIXIR-UK Fellows shine. Two ELIXIR-UK Fellows, Gabriela López González from the University of Leeds and Richard Ostler from Rothamsted Research, were invited to spe"
+excerpt: ""
 category: "News"
 wpId: 19665
 image: "https://elixiruknode.org/wp-content/uploads/2023/08/aerial-view-of-a-marigold-field-india.webp"

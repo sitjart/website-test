@@ -2,6 +2,7 @@
 title: "Contributing to national discussions on training for digital research professionals"
 date: 2026-02-09
 standfirst: "ELIXIR-UK contributed to a national meeting on strengthening and coordinating training provision for digital Research Technical Professionals (dRTPs), highlighting its role in life science training and data stewardship through national and European infrastructure."
+excerpt: "ELIXIR-UK contributed to a national meeting on strengthening and coordinating training provision for digital Research Technical Professionals (dRTPs), highlighting its role in life science training and data stewardship through national and European infrastructure."
 category: "News"
 wpId: 24452
 image: "https://elixiruknode.org/wp-content/uploads/2026/02/banner-news-step-up-meeting.webp"

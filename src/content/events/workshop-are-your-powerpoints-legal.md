@@ -2,8 +2,13 @@
 title: "Workshop: Are your PowerPoints legal?"
 start: 2026-09-29
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 25373
+standfirst: "A hands-on workshop on making slide decks and posters accessible – covering common barriers in PowerPoint, Google Slides and Canva."
+cost: 0
+currency: "GBP"
+status: scheduled
 end: 2026-09-29
 image: "https://elixiruknode.org/wp-content/uploads/2026/09/qtq80-jfc6yd.jpeg"
 related:

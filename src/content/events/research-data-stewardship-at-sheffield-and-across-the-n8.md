@@ -3,7 +3,13 @@ title: "Research data stewardship at Sheffield and across the N8"
 start: 2025-11-04
 type: "Community Call"
 online: true
+format: online
 wpId: 24278
+standfirst: "Sheffield is strengthening data stewardship across its research community. This RDM Club session shares lessons from a FAIR data pilot, mapping activities, and the new N8 Data Stewards Network."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

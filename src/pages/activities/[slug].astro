@@ -1,10 +1,19 @@
 ---
-// Community page – option 2: light hero with people, next-call strip, existing copy, recordings, join
+// Community page: the group's icon, its excerpt and join link; next call; the WordPress copy
+// (accordions rebuilt); everyone involved – leads first, then members, each person once;
+// the community's events; its stories; then other related records.
+// The Fellowship uses the same page with a fellows-first layout.
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Avatar from '../../components/Avatar.astro';
+import PersonLine from '../../components/PersonLine.astro';
 import RemoteImage from '../../components/RemoteImage.astro';
+import RelatedCards from '../../components/RelatedCards.astro';
+import SmartTabs from '../../components/SmartTabs.astro';
 import { DIRECTORY, linksFor } from '../../lib/graph';
+import { involved } from '../../lib/involved';
+import { cardsFor } from '../../lib/lookup';
+import { localAsset } from '../../lib/assets';
 import { longDate, todayUK, firstSentence, needsStop } from '../../lib/format';
 import { url } from '../../lib/url';
 import { cleanHtml } from '../../lib/html';
@@ -15,164 +24,213 @@ export function getStaticPaths() {
 const { record: r } = Astro.props;
 const links = await linksFor('activities', r.slug);
 const allEvents = await getCollection('events');
-const allNews = await getCollection('news');
-const allPeople = await getCollection('people');
 const today = todayUK();
 const events = (links.events ?? []).map((n) => allEvents.find((e) => e.id === n.slug)!).filter(Boolean);
-const next = events.filter((e) => (e.data.end ?? e.data.start) >= today).sort((a, b) => a.data.start.getTime() - b.data.start.getTime())[0];
+const upcoming = events.filter((e) => (e.data.end ?? e.data.start) >= today).sort((a, b) => a.data.start.getTime() - b.data.start.getTime());
 const past = events.filter((e) => (e.data.end ?? e.data.start) < today).sort((a, b) => b.data.start.getTime() - a.data.start.getTime());
-const people = (links.people ?? []).map((n) => allPeople.find((p) => p.id === n.slug)!).filter(Boolean);
-const faces = people.filter((p) => p.data.photo).slice(0, 12);
-const news = (links.news ?? []).slice(0, 3).map((n) => allNews.find((x) => x.id === n.slug)!).filter(Boolean);
-const kind = r.tags.find((t) => ['Club', 'Community', 'Focus Group', 'Platform', 'Fellowship'].includes(t)) ?? 'Community';
+const next = upcoming[0];
+const { leads, others } = await involved('activities', r);
+const stories = await cardsFor('news', (links.news ?? []).map((n) => n.slug));
+const isFellowship = r.slug === 'fellowship';
+const kind = isFellowship ? 'Fellowship' : r.tags.find((t) => ['Club', 'Community', 'Focus Group', 'Platform'].includes(t)) ?? 'Community';
 const isClub = kind === 'Club';
-const sizes = [120, 84, 96, 72, 110, 80, 64, 100, 88, 76, 92, 68];
-const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name: r.name, description: r.summary || undefined, parentOrganization: { '@type': 'Organization', name: 'ELIXIR-UK' } };
+const kindLabel = ({ Club: 'ELIXIR-UK Club', Community: 'ELIXIR Community', 'Focus Group': 'ELIXIR Focus Group', Platform: 'ELIXIR Platform', Fellowship: 'ELIXIR-UK Fellowship' } as Record<string, string>)[kind];
+const lead = r.tags.includes('Leading');
+const body = await cleanHtml(r.body || `<p>${r.summary}</p>`);
+const fellows = isFellowship ? (await getCollection('people')).filter((p) => p.data.tags.some((t) => t.startsWith('DaSH')) || others.includes(p)) : [];
+const OTHERS_SHOWN = 12;
+const fmt = (e: (typeof events)[number]) => (e.data.format === 'in-person' ? e.data.locality || 'In person' : e.data.format === 'hybrid' ? 'Hybrid' : 'Online');
+const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name: r.name, description: r.excerpt || r.summary || undefined, logo: r.logo || undefined, parentOrganization: { '@type': 'Organization', name: 'ELIXIR-UK' } };
 ---
-<BaseLayout title={r.name} description={r.summary} {jsonLd}>
+<BaseLayout title={r.name} description={r.excerpt || firstSentence(r.summary)} {jsonLd}>
   <section class="c-hero">
     <div class="container c-hero__grid">
       <div>
-        <p class="c-crumb"><a href={url('/activities/')}>Communities</a> / {kind}</p>
-        <p class="eyebrow-sm">{r.tags.filter((t) => t !== 'ELIXIR-UK').join(' · ') || 'Community'}</p>
+        <p class="crumb"><a href={url('/activities/')}>Communities</a><span>{kindLabel}</span></p>
+        <p class="eyebrow-sm">{kindLabel}{lead && ' · UK co-leads'}</p>
         <h1 class="display c-hero__title">{r.name}{needsStop(r.name) && <span class="stop">.</span>}</h1>
-        {r.summary && <p class="c-hero__lead">{firstSentence(r.summary)}</p>}
+        {(r.excerpt || r.summary) && <p class="c-hero__lead">{r.excerpt || firstSentence(r.summary, 260)}</p>}
         <div class="c-hero__actions">
           {r.joinLink && <a class="btn" href={r.joinLink} rel="noopener">{isClub ? 'Join the Club' : 'Join in'}</a>}
-          {events.length > 0 && <span class="c-hero__meta">{events.length} {isClub ? 'Community Calls' : 'events'}</span>}
+          {r.website && !r.website.includes('elixiruknode.org') && <a class="btn btn--line" href={r.website} rel="noopener">Visit website</a>}
         </div>
       </div>
-      {faces.length > 0 ? (
-        <div class="c-faces" aria-label="Some of the people involved">
-          {faces.map((p, i) => <a href={url(`/people/${p.id}/`)} title={p.data.name}><Avatar src={p.data.photo} name={p.data.name} size={sizes[i % sizes.length]} ring="var(--grey-light)" /></a>)}
-        </div>
-      ) : r.logo ? (
-        <div class="c-logo"><Avatar src={r.logo} name={r.name} size={240} logo ring="var(--grey-light)" /></div>
-      ) : null}
+      <div class="c-hero__icon">
+        <Avatar src={r.logo ? localAsset(r.logo) : undefined} name={r.name} size={260} logo ring="var(--grey-light)" eager />
+      </div>
     </div>
   </section>
 
   {next && (
     <a class="c-next" href={url(`/events/${next.id}/`)}>
       <span class="container c-next__inner">
-        <span class="c-next__label">Next {isClub ? 'call' : 'event'}</span>
-        <strong>{longDate(next.data.start)}</strong>
+        <span class="c-next__label">Next {next.data.type === 'Community Call' ? 'call' : 'event'}</span>
+        <strong>{longDate(next.data.start)}{next.data.startTime && `, ${next.data.startTime}`}</strong>
         <span class="c-next__title">{next.data.title}</span>
         <span class="c-next__go">{next.data.type === 'Community Call' ? 'Join in' : 'Register'} →</span>
       </span>
     </a>
   )}
 
+  {isFellowship && fellows.length > 0 && (
+    <section class="container f-people">
+      <div class="section-head"><h2 class="section-title">Fellows and mentors<span class="stop">.</span></h2></div>
+      <ul class="f-grid">
+        {[...leads, ...fellows.filter((p) => !leads.includes(p))].map((p) => (
+          <li><PersonLine p={p} size={72} badge={leads.includes(p) ? 'Lead' : p.data.tags.find((t) => t.startsWith('DaSH'))} /></li>
+        ))}
+      </ul>
+    </section>
+  )}
+
   <section class="container c-body">
-    <div class="prose wp-body" set:html={await cleanHtml(r.body || `<p>${r.summary}</p>`)} />
-    <aside class="c-side">
-      {people.length > 0 && (
-        <div class="c-box">
-          <p class="c-box__title">People involved</p>
-          {people.slice(0, 6).map((p) => (
-            <a class="c-person" href={url(`/people/${p.id}/`)}>
-              <Avatar src={p.data.photo} name={p.data.name} size={48} ring="var(--grey-light)" />
-              <span><strong>{p.data.name}</strong>{p.data.institution && <span>{p.data.institution}</span>}</span>
-            </a>
-          ))}
-          {people.length > 6 && <p class="c-box__more">and {people.length - 6} more</p>}
-        </div>
-      )}
-      {links.projects?.length ? (
-        <div class="c-box">
-          <p class="c-box__title">Projects</p>
-          {links.projects.slice(0, 5).map((n) => <a class="c-link" href={url(`/projects/${n.slug}/`)}>{n.name}</a>)}
-        </div>
-      ) : null}
-    </aside>
+    <div class="prose c-copy" set:html={body} />
+    {!isFellowship && (leads.length > 0 || others.length > 0) && (
+      <aside class="c-side" aria-label="People">
+        {leads.length > 0 && (
+          <div class="c-box">
+            <p class="c-box__title">{leads.length === 1 ? 'Lead' : 'Leads'} <span>{leads.length}</span></p>
+            <ul>{leads.map((p) => <li><PersonLine p={p} ring="var(--grey-light)" /></li>)}</ul>
+          </div>
+        )}
+        {others.length > 0 && (
+          <div class="c-box">
+            <p class="c-box__title">{leads.length ? 'Also involved' : 'People involved'} <span>{others.length}</span></p>
+            <ul class="c-others">
+              {others.map((p, i) => <li hidden={i >= OTHERS_SHOWN}><PersonLine p={p} size={44} ring="var(--grey-light)" /></li>)}
+            </ul>
+            {others.length > OTHERS_SHOWN && <button type="button" class="c-more" data-more-people>Show all {others.length}</button>}
+          </div>
+        )}
+      </aside>
+    )}
   </section>
 
-  {past.length > 0 && (
-    <section class="banner c-past">
+  {events.length > 0 && (
+    <section class="section section--grey c-events" aria-labelledby="ev-h">
       <div class="container">
-        <div class="c-past__head">
-          <h2 class="section-title" style="color:#fff">Catch up<span class="stop">.</span></h2>
-          <span>{past.length} past {isClub ? 'calls' : 'events'}</span>
+        <div class="section-head">
+          <h2 class="section-title" id="ev-h">{isClub ? 'Community Calls' : 'Events'}<span class="stop">.</span></h2>
+          <a class="more-link" href={url('/events/')}>All events</a>
         </div>
-        <div class="c-past__grid">
-          {past.slice(0, 6).map((e) => (
-            <a class="tile c-past__tile" href={url(`/events/${e.id}/`)}>
-              {e.data.image ? <RemoteImage class="ph-img" src={e.data.image} width={500} /> : <span class="ph-img" style="background:#5b7f9a"></span>}
-              <span class="ph-slide"></span>
-              {e.data.recording && <span class="c-play" aria-label="Recording available">▶</span>}
-              <span class="scrim"><span class="c-past__date">{longDate(e.data.start)}{e.data.recording && ' · Recording'}</span><span class="c-past__title">{e.data.title}</span></span>
-            </a>
-          ))}
-        </div>
+        {upcoming.length > 0 && (
+          <>
+            <h3 class="c-sub">Coming up</h3>
+            <ul class="c-up">
+              {upcoming.map((e) => (
+                <li><a class="card c-upcard" href={url(`/events/${e.id}/`)}>
+                  <span class="c-date"><span>{e.data.start.toLocaleDateString('en-GB', { month: 'short', timeZone: 'UTC' })}</span><b>{e.data.start.getUTCDate()}</b></span>
+                  <span><span class="card__meta">{e.data.type} · {fmt(e)}</span><span class="card__title">{e.data.title}</span></span>
+                </a></li>
+              ))}
+            </ul>
+          </>
+        )}
+        {past.length > 0 && (
+          <>
+            <h3 class="c-sub">Catch up</h3>
+            <div class="c-past">
+              {past.slice(0, 6).map((e) => (
+                <a class="tile c-past__tile" href={url(`/events/${e.id}/`)}>
+                  {e.data.image ? <RemoteImage class="ph-img" src={e.data.image} width={500} /> : <span class="ph-img" style="background:#36607c"></span>}
+                  <span class="ph-slide"></span>
+                  {e.data.recording && <span class="c-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>}
+                  <span class="scrim"><span class="c-past__date">{longDate(e.data.start)}{e.data.recording && ' · Recording'}</span><span class="c-past__title">{e.data.title}</span></span>
+                </a>
+              ))}
+            </div>
+            {past.length > 6 && <p class="c-pastmore">{past.length - 6} more past {isClub ? 'calls' : 'events'} in <a href={url('/events/')}>the events archive</a>.</p>}
+          </>
+        )}
       </div>
     </section>
   )}
 
-  {news.length > 0 && (
-    <section class="container c-news">
-      <h2 class="section-title">Stories<span class="stop">.</span></h2>
-      <ul>{news.map((n) => <li><a href={url(`/news/${n.id}/`)}><span>{longDate(n.data.date)}</span><strong>{n.data.title}</strong></a></li>)}</ul>
+  {stories.length > 0 && (
+    <section class="section c-stories" aria-labelledby="st-h">
+      <div class="container">
+        <div class="section-head"><h2 class="section-title" id="st-h">Stories from the {isClub ? 'Club' : isFellowship ? 'Fellowship' : 'community'}<span class="stop">.</span></h2></div>
+        <RelatedCards cards={stories} limit={3} />
+      </div>
     </section>
   )}
+
+  <section class="container c-related">
+    <SmartTabs kind="activities" slug={r.slug} skip={['news', 'events', 'people']} heading="Also linked" />
+  </section>
 
   {r.joinLink && (
-    <section class="container c-join">
-      <div>
-        <h2 class="section-title">Be part of it<span class="stop">.</span></h2>
-        <p>{isClub ? 'Free. You’ll get invitations to every Community Call and news from the community.' : 'Find out how to take part.'}</p>
+    <section class="banner c-join-band">
+      <div class="container c-join">
+        <div>
+          <h2 class="section-title">Be part of it<span class="stop">.</span></h2>
+          <p>{isClub ? 'Joining is free. You’ll get invitations to every Community Call and news from the Club.' : 'Find out how to take part.'}</p>
+        </div>
+        <a class="btn c-join__btn" href={r.joinLink} rel="noopener">{isClub ? 'Join the Club' : 'Join in'}</a>
       </div>
-      <a class="btn c-join__btn" href={r.joinLink} rel="noopener">{isClub ? 'Join the Club' : 'Join in'}</a>
     </section>
   )}
 </BaseLayout>
 
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-more-people]').forEach((b) => b.addEventListener('click', () => {
+    b.previousElementSibling?.querySelectorAll<HTMLElement>('li[hidden]').forEach((li) => (li.hidden = false));
+    b.remove();
+  }));
+</script>
+
 <style>
-  .c-hero { background: var(--grey-light); overflow: hidden; }
-  .c-hero__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; align-items: center; padding-block: 64px 72px; }
-  .c-crumb { font-size: 14px; margin: 0 0 20px; color: var(--muted); }
-  .c-crumb a { color: var(--blue-dark); }
-  .c-hero__title { font-size: clamp(2.4rem, 5vw, 3.75rem); margin: 8px 0 0; color: var(--navy); }
-  .c-hero__lead { margin: 20px 0 26px; max-width: 36rem; font-size: 1.25rem; color: #34495a; }
-  .c-hero__actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-  .c-hero__meta { font-size: 15px; color: #34495a; }
-  .c-faces { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 520px; margin-left: auto; }
-  .c-faces a { margin: -4px; transition: transform 0.25s var(--ease); }
-  .c-faces a:hover { transform: scale(1.06); z-index: 1; }
-  .c-logo { display: grid; place-items: center; }
+  .c-hero { background: var(--grey-light); }
+  .c-hero__grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: center; padding-block: clamp(48px, 6vw, 80px); }
+  .c-hero__title { font-size: clamp(2.4rem, 1.6rem + 3vw, 4rem); margin: 0; color: var(--navy); }
+  .c-hero__lead { margin: var(--s5) 0 var(--s6); max-width: 40rem; font-size: var(--fs-lead); line-height: 1.55; color: #2f3e49; }
+  .c-hero__actions { display: flex; gap: var(--s3); flex-wrap: wrap; }
+  .c-hero .crumb a { color: var(--blue-dark); }
+  .c-hero__icon { justify-self: center; }
+  .c-hero__icon :global(.avatar img) { padding: 20% !important; box-shadow: 0 20px 50px rgb(2 52 82 / 0.12); }
   .c-next { display: block; background: var(--navy); color: var(--white); }
   .c-next:hover { color: var(--white); background: var(--ink); }
-  .c-next__inner { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; padding-block: 18px; }
-  .c-next__label { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #ffb37a; }
+  .c-next__inner { display: flex; align-items: center; gap: var(--s5); flex-wrap: wrap; padding-block: var(--s4); }
+  .c-next__label { font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange-soft); }
   .c-next__title { flex: 1 1 320px; }
-  .c-next__go { font-weight: 700; color: #ffb37a; }
-  .c-body { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 64px; padding-block: 80px; }
-  .c-body .prose { max-width: 760px; }
-  .wp-body :global(h2) { font-size: 1.8rem; }
-  .c-side { display: flex; flex-direction: column; gap: 20px; }
-  .c-box { padding: 24px; border-radius: 10px; background: var(--grey-light); }
-  .c-box__title { margin: 0 0 12px; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); }
-  .c-person { display: flex; align-items: center; gap: 12px; padding: 8px 0; color: var(--navy); }
-  .c-person span span { display: block; font-size: 14px; color: var(--text); }
-  .c-box__more { margin: 8px 0 0; font-size: 14px; }
-  .c-link { display: block; padding: 8px 0; border-bottom: 1px solid var(--border); font-weight: 700; color: var(--navy); }
-  .c-past { padding-block: 96px; }
-  .c-past__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
-  .c-past__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-  .c-past__tile { aspect-ratio: 16 / 10; border-radius: 10px; background: var(--navy); }
-  .c-play { position: absolute; right: 16px; top: 16px; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--white); color: var(--navy); }
-  .c-past__date { font-size: 13px; color: #ffb37a; }
-  .c-past__title { font-size: 19px; font-weight: 700; line-height: 1.2; }
-  .c-news { padding-block: 80px 0; }
-  .c-news ul { list-style: none; padding: 0; margin: 24px 0 0; }
-  .c-news a { display: flex; flex-direction: column; padding: 14px 0; border-bottom: 1px solid var(--border); }
-  .c-news a span { font-size: 13px; color: var(--orange-text); font-weight: 700; }
-  .c-news a strong { color: var(--navy); font-size: 1.15rem; }
-  .c-join { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: center; padding-block: 88px; }
-  .c-join p { margin: 12px 0 0; }
-  .c-join__btn { font-size: 19px; padding: 0.9em 1.8em; }
+  .c-next__go { font-weight: 700; color: var(--orange-soft); }
+  .c-body { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 5vw, 80px); padding-block: var(--s8); align-items: start; }
+  .c-body:not(:has(.c-side)) { grid-template-columns: minmax(0, 1fr); }
+  .c-copy { max-width: 70ch; }
+  .c-side { display: flex; flex-direction: column; gap: var(--s4); position: sticky; top: 100px; }
+  .c-box { padding: var(--s5); border-radius: var(--radius-lg); background: var(--grey-light); }
+  .c-box ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+  .c-box__title { margin: 0 0 var(--s3); font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); }
+  .c-box__title span { color: var(--orange-text); margin-left: 4px; }
+  .c-more { margin-top: var(--s3); font: inherit; font-size: var(--fs-sm); font-weight: 700; color: var(--blue-dark); background: none; border: 0; padding: 0; cursor: pointer; }
+  .f-people { padding-top: var(--s8); }
+  .f-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--s2) var(--s5); }
+  .c-sub { font-size: var(--fs-h3); margin: 0 0 var(--s4); }
+  .c-up + .c-sub, .c-sub ~ .c-sub { margin-top: var(--s7); }
+  .c-up { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: var(--s4); }
+  .c-up li { display: flex; }
+  .c-upcard { flex: 1; flex-direction: row; gap: var(--s4); align-items: center; }
+  .c-upcard > span:last-child { display: flex; flex-direction: column; gap: 4px; }
+  .c-date { flex: none; display: flex; flex-direction: column; align-items: center; width: 60px; padding: 6px 0; border-radius: 8px; background: var(--navy); color: var(--white); line-height: 1.1; }
+  .c-date span { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #9fbcd0; }
+  .c-date b { font-size: 1.6rem; font-weight: 900; }
+  .c-past { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s4); }
+  .c-past__tile { aspect-ratio: 16 / 10; border-radius: var(--radius-lg); background: var(--navy); }
+  .c-play { position: absolute; right: var(--s4); top: var(--s4); display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--white); color: var(--navy); }
+  .c-play svg { width: 20px; height: 20px; }
+  .c-past__date { font-size: var(--fs-xs); color: var(--orange-soft); font-weight: 700; }
+  .c-past__title { font-size: 1.1rem; font-weight: 700; line-height: 1.25; }
+  .c-pastmore { margin: var(--s5) 0 0; font-size: var(--fs-sm); }
+  .c-related { padding-top: var(--s6); }
+  .c-join-band { padding-block: clamp(64px, 8vw, 96px); }
+  .c-join { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s7); align-items: center; }
+  .c-join p { margin: var(--s3) 0 0; color: var(--on-dark); }
+  .c-join__btn { font-size: 1.05rem; min-height: 56px; padding: 0 2em; }
   @media (max-width: 900px) {
     .c-hero__grid, .c-body, .c-join { grid-template-columns: 1fr; }
-    .c-faces { margin: 0 auto; }
-    .c-past__grid { grid-template-columns: 1fr; }
+    .c-hero__icon { justify-self: start; order: -1; }
+    .c-hero__icon :global(.avatar) { width: 120px !important; }
+    .c-side { position: static; }
+    .c-past { grid-template-columns: 1fr; }
   }
 </style>

@@ -2,6 +2,7 @@
 title: "University of Southampton joins ELIXIR-UK to advance bioinformatics, data stewardship and open science"
 date: 2026-04-21
 standfirst: "Building on a longstanding commitment to data stewardship and open science"
+excerpt: "The University of Southampton has joined ELIXIR-UK, bringing expertise in computational glyco-bioinformatics, clinical data and data stewardship to ELIXIR-UK."
 category: "News"
 wpId: 24945
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/photo-southampton-life_sciences_building.jpg"

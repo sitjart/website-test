@@ -2,6 +2,7 @@
 title: "UK Research and Innovation has awarded an initial £6.3 million funding to support the development of BioFAIR"
 date: 2022-06-29
 standfirst: "The concept of BioFAIR was developed by ELIXIR-UK ; what started as a pilot study proposal in 2020 led to us working with Technopolis Group to carry out a full Feasibility Study in 2021, and in turn to a successful joint"
+excerpt: ""
 category: "News"
 wpId: 19617
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-futuristic-lines.webp"

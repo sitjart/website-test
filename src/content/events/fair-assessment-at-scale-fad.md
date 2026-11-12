@@ -2,8 +2,13 @@
 title: "FAIR assessment at scale: an introduction to bulk FAIR assessment for research data infrastructures"
 start: 2026-09-08
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 25330
+standfirst: "Single-record FAIR checkers do not scale to institutional collections. John Shepherdson (CESSDA ERIC) introduces bulk FAIR assessment, demonstrates the FAIR Assessment Dashboard and asks how the room is tackling repository FAIRness."
+cost: 0
+currency: "GBP"
+status: scheduled
 end: 2026-09-08
 recording: "https://youtu.be/mC509vYTIhw"
 slides: "https://drive.google.com/file/d/1yG7jOTq6__AhsxuB4pv9_tQRnBuflw71/view?usp=drive_link"

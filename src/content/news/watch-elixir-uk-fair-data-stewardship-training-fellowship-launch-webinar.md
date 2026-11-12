@@ -2,6 +2,7 @@
 title: "Watch: ELIXIR-UK FAIR Data Stewardship Training Fellowship launch webinar"
 date: 2021-07-07
 standfirst: "On Thursday, 1 July 2021, ELIXIR-UK held a launch webinar for our new FAIR Data Stewardship Training Fellowship. Given by Robert Andrews, from Cardiff University and one of the leads on this project, this webinar explain"
+excerpt: ""
 category: "News"
 wpId: 19595
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-training-online.webp"

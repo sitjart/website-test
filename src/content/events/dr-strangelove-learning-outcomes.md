@@ -3,7 +3,14 @@ title: "Dr Strangelove or: How I learned to stop worrying and love the Learning 
 start: 2025-10-27
 type: "Community Call"
 online: true
+format: online
 wpId: 24184
+standfirst: "Explore how SOLO and Bloom’s taxonomies can make learning outcomes meaningful in higher education. Join Matthew Gemmell for our next Training Club session."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [23634]
 startTime: "14:00"
 endTime: "15:00"
 venue: "Online"

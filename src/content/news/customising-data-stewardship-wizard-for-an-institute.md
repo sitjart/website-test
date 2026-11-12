@@ -2,6 +2,7 @@
 title: "Customising Data Stewardship Wizard for an Institute"
 date: 2025-06-27
 standfirst: "A FAIRytale by Richard Ostler – a personal story about good data governance and data controllership from someone who understands the researcher’s perspectives and frustrations"
+excerpt: "How a data steward tailored DSW to specific datatypes and workflows at Rothamsted Research"
 category: "Blog"
 wpId: 23677
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-working-on-schema.webp"

@@ -21,7 +21,7 @@ const leads = people.filter((p) => p.data.governance.length > 0);
       {leads.length > 0 && (
         <section class="group" data-group>
           <h2 class="group__h">Leadership and governance</h2>
-          <ul class="people-grid">{leads.map((p) => <li data-q={`${p.data.name} ${p.data.role} ${p.data.institution}`.toLowerCase()}><a class="card person" href={url(`/people/${p.id}/`)}><Avatar src={p.data.photo} name={p.data.name} size={96} /><span class="card__title">{p.data.name}</span><span class="person__role">{p.data.governance.join(' · ')}</span>{p.data.institution && <span class="person__inst">{p.data.institution}</span>}</a></li>)}</ul>
+          <ul class="people-grid">{leads.map((p) => <li data-q={`${p.data.name} ${p.data.role} ${p.data.institution}`.toLowerCase()}><a class="card person" href={url(`/people/${p.id}/`)}><Avatar src={p.data.photo} name={p.data.name} size={96} />{p.data.honorific && <span class="person__hon">{p.data.honorific}</span>}<span class="card__title">{p.data.name}</span><span class="person__role">{p.data.governance.join(' · ')}</span>{p.data.institution && <span class="person__inst">{p.data.institution}</span>}</a></li>)}</ul>
         </section>
       )}
       <section class="group" data-group>
@@ -31,6 +31,7 @@ const leads = people.filter((p) => p.data.governance.length > 0);
             <li data-q={`${p.data.name} ${p.data.role} ${p.data.institution}`.toLowerCase()}>
               <a class="card person" href={url(`/people/${p.id}/`)}>
                 <Avatar src={p.data.photo} name={p.data.name} size={96} />
+                {p.data.honorific && <span class="person__hon">{p.data.honorific}</span>}
                 <span class="card__title">{p.data.name}</span>
                 {p.data.role && <span class="person__role">{p.data.role}</span>}
                 {p.data.institution && <span class="person__inst">{p.data.institution}</span>}
@@ -70,6 +71,7 @@ const leads = people.filter((p) => p.data.governance.length > 0);
   .people-grid li { display: flex; }
   .person { flex: 1; align-items: center; text-align: center; gap: var(--s1); padding: var(--s6) var(--s4); }
   .person :global(.avatar) { margin-bottom: var(--s3); }
+  .person__hon { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
   .person__role { font-size: var(--fs-sm); line-height: 1.4; }
   .person__inst { font-size: var(--fs-xs); color: var(--muted); }
 </style>

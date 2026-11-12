@@ -2,6 +2,7 @@
 title: "Community insights on AI: reflections from the ELIXIR-UK All Hands 2025"
 date: 2025-12-08
 standfirst: "A summary of panel discussions and World Café conversations exploring how AI is shaping research, skills and infrastructure across the UK"
+excerpt: "This report summarises the discussions from the AI panel and World Café sessions at the ELIXIR-UK All Hands 2025 meeting. The conversations capture community perspectives on the opportunities, risks and needs surrounding AI in research, offering background material to inform upcoming ELIXIR-UK strategy work."
 category: "Articles"
 wpId: 24337
 image: "https://elixiruknode.org/wp-content/uploads/2025/12/banner_circuit-board-and-ai-micro-processor-artificial-i.webp"

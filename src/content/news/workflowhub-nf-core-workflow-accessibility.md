@@ -2,6 +2,7 @@
 title: "WorkflowHub and nf-core collaboration enhances workflow accessibility"
 date: 2024-06-27
 standfirst: "This development marks a major step forward in making high-quality, best-practice workflows more accessible to researchers and stakeholders in the scientific community."
+excerpt: ""
 category: "News"
 wpId: 22497
 image: "https://elixiruknode.org/wp-content/uploads/2024/06/streamline-and-organize-the-process-enhance-effic-2024-02-14-11-09-52-utc-2.webp"

@@ -3,7 +3,15 @@ title: "Bioinformatics in the UK Track at ISMB / ECCB 2025"
 start: 2025-07-21
 type: "Conference"
 online: false
+format: in-person
 wpId: 23453
+cost: 0
+currency: "GBP"
+status: scheduled
+street: "King's Dock, Port of Liverpool, Kings Dock St"
+postcode: "L3 4FP"
+country: "UK"
+speakerIds: [18640, 18641, 18985, 25097]
 startTime: "11:20"
 endTime: "20:00"
 venue: "ACC Liverpool"

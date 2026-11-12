@@ -2,6 +2,7 @@
 title: "ELIXIR-UK contributes to cross-sector collaboration strategy at joint Pistoia–EMBL–ELIXIR meeting"
 date: 2025-08-06
 standfirst: "ELIXIR-UK contributes to a joint strategy meeting with Pistoia Alliance, ELIXIR and EMBL-EBI to shape sustainable, cross-sector collaboration in the life sciences."
+excerpt: "ELIXIR-UK contributes to a joint strategy meeting with Pistoia Alliance, ELIXIR and EMBL-EBI to shape sustainable, cross-sector collaboration in the life sciences."
 category: "News"
 wpId: 23862
 image: "https://elixiruknode.org/wp-content/uploads/2025/08/photo-2025-pistoia-embl-ebi-meeting.jpg"

@@ -2,6 +2,7 @@
 title: "Software Sustainability Institute to improve research software practices with £6.5 million UKRI funding"
 date: 2019-02-28
 standfirst: "The Software Sustainability Institute , a team of software experts, from the universities of Edinburgh, Manchester, Oxford and Southampton, has been awarded £6.5 million funding, from the seven UK Research Councils that"
+excerpt: ""
 category: "News"
 wpId: 19550
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-big-bang.webp"

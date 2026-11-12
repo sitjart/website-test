@@ -3,7 +3,12 @@ title: "Transforming clinical text into research-ready data: opportunities, risk
 start: 2025-07-16
 type: "Community Call"
 online: true
+format: online
 wpId: 23761
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "11:00"
 endTime: "12:00"
 venue: "UK"

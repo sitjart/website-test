@@ -2,6 +2,7 @@
 title: "ELIXIR recognises 4 UK Services as essential for biological data preservation"
 date: 2023-12-18
 standfirst: "In December 2023, ELIXIR announced the addition of four ELIXIR-UK services as Core Data Resources (CDRs): HGNC, LIPID MAPS ® , PomBase and VEuPathDB . These four resources have been identified as crucial for life science"
+excerpt: ""
 category: "News"
 wpId: 19700
 image: "https://elixiruknode.org/wp-content/uploads/2023/12/wood-cube-building-blocks-2023-11-27-05-16-54-utc.webp"

@@ -2,6 +2,7 @@
 title: "15 new Fellows to start training in data stewardship and management"
 date: 2022-09-29
 standfirst: "15 Fellows are joining the fellowship of the ELIXIR-UK DaSH project to seed local data steward communities across the UK. Fellows will work with ELIXIR-UK to produce and deliver training in Research Data Management (RDM)"
+excerpt: ""
 category: "News"
 wpId: 19621
 image: "https://elixiruknode.org/wp-content/uploads/2024/02/banner-2022-fellows.webp"

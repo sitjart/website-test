@@ -2,6 +2,7 @@
 title: "Checking the paperwork: identifying trusted people for sensitive data access"
 date: 2026-02-03
 standfirst: "HDR UK technology soft launch: Safe People Registry"
+excerpt: "The Safe People Registry is an open-source tool developed by HDR UK to support consistent assessment to access sensitive data. ELIXIR-UK highlights its relevance through community discussion and open development."
 category: "Articles"
 wpId: 24430
 image: "https://elixiruknode.org/wp-content/uploads/2026/02/banner_safe-registry-soft-launch-1.webp"

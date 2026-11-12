@@ -32,7 +32,7 @@ const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.tag
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <Header overlay={overlayHeader} />
-    <main id="main">
+    <main id="main" class="site-main">
       <slot />
     </main>
     <Footer />
@@ -50,6 +50,22 @@ const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.tag
         );
         els.forEach((el) => io.observe(el));
       }
+      // Tabs rebuilt from WordPress content
+      document.querySelectorAll<HTMLElement>('[data-wp-tabs]').forEach((box) => {
+        const tabs = [...box.querySelectorAll<HTMLButtonElement>('[role=tab]')];
+        const show = (t: HTMLButtonElement) => tabs.forEach((b) => {
+          const on = b === t;
+          b.setAttribute('aria-selected', String(on)); b.tabIndex = on ? 0 : -1;
+          const p = document.getElementById(b.getAttribute('aria-controls')!); if (p) p.hidden = !on;
+        });
+        tabs.forEach((b, i) => {
+          b.addEventListener('click', () => show(b));
+          b.addEventListener('keydown', (e) => {
+            const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+            if (d) { const n = tabs[(i + d + tabs.length) % tabs.length]; n.focus(); show(n); }
+          });
+        });
+      });
     </script>
   </body>
 </html>

@@ -2,6 +2,7 @@
 title: "EFPIA playbook recognises FAIR Cookbook as essential for data sharing"
 date: 2024-09-03
 standfirst: "An important highlight for a service of the ELIXIR-UK Node, co-run with and recognised by the wider ELIXIR community"
+excerpt: ""
 category: "News"
 wpId: 22731
 image: "https://elixiruknode.org/wp-content/uploads/2024/09/photo-datasharing-playbook-imi-ihi-scaled.webp"

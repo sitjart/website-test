@@ -2,6 +2,7 @@
 title: "Queen Mary University of London joins ELIXIR-UK"
 date: 2024-06-25
 standfirst: "Queen Mary University of London has officially joined ELIXIR-UK. The application submitted by Queen Mary outlined a robust plan to contribute to ELIXIR-UK's mission to support life science research, focusing on interdisc"
+excerpt: ""
 category: "News"
 wpId: 22489
 image: "https://elixiruknode.org/wp-content/uploads/2024/06/charterhousesqcampus.webp"

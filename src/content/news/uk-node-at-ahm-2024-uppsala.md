@@ -2,6 +2,7 @@
 title: "UK Node's collaborative presence at 2024 ELIXIR All Hands"
 date: 2024-07-02
 standfirst: "UK Node members spread across the meeting, leading or presenting in more than half of the workshops and mini-symposia"
+excerpt: ""
 category: "News"
 wpId: 22510
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/img_1912-2-3.webp"

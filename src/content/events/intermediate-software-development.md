@@ -3,7 +3,15 @@ title: "Intermediate Software Development"
 start: 2024-05-20
 type: "Workshop"
 online: false
+format: in-person
 wpId: 21682
+cost: 50
+currency: "GBP"
+status: cancelled
+street: "Richmond Rd"
+postcode: "BD7 1DP"
+country: "UK"
+speakerIds: [18644, 18621, 18656, 18619]
 end: 2024-05-24
 venue: "University of Bradford"
 locality: "Bradford"

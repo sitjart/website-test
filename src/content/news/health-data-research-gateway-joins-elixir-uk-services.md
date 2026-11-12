@@ -2,6 +2,7 @@
 title: "Health Data Research Gateway joins ELIXIR-UK Services"
 date: 2025-10-22
 standfirst: "The Health Data Research Gateway joins ELIXIR-UK Services, linking UK health data to European research through FAIR, secure and federated access."
+excerpt: "The Health Data Research Gateway joins ELIXIR-UK Services, linking UK health data to European research through FAIR, secure and federated access."
 category: "News"
 wpId: 24266
 image: "https://elixiruknode.org/wp-content/uploads/2025/10/banner-health-data-gateway-scaled.webp"

@@ -3,7 +3,12 @@ title: "BBSRC and MRC: funders’ perspectives"
 start: 2024-06-27
 type: "Community Call"
 online: true
+format: online
 wpId: 23012
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "15:00"
 endTime: "16:00"
 registration: "https://elixiruknode.org/activities/uk-human-data-community/"

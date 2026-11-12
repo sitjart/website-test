@@ -2,6 +2,7 @@
 title: "The University of East Anglia joins ELIXIR-UK"
 date: 2021-02-08
 standfirst: "We are very pleased to announce that the University of East Anglia (UEA) has become the most recent organisation to join ELIXIR-UK, bringing our total number of member organisations to 19. You can view the full list of m"
+excerpt: ""
 category: "News"
 wpId: 19578
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-handshake.webp"

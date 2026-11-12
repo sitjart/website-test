@@ -3,7 +3,13 @@ title: "DOME recommendations for reporting machine learning–based analyses"
 start: 2024-01-24
 type: "Community Call"
 online: true
+format: online
 wpId: 23020
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18652]
 startTime: "14:00"
 endTime: "15:00"
 venue: "online"

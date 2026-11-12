@@ -1,0 +1,69 @@
+---
+// Hero art: ELIXIR-UK's own groups in orbit around the logo mark.
+// Inner ring: the five ELIXIR Platforms. Middle ring: ELIXIR-UK Clubs and the ELIXIR Communities the UK co-leads.
+// Outer ring: the other Communities and Focus Groups UK members take part in.
+// Rings turn slowly; icons stay upright. Each icon links to its page; motion pauses on hover or focus
+// and is off for people who ask for reduced motion.
+import mark from '../data/geo/logo-mark.txt?raw';
+import { DIRECTORY } from '../lib/graph';
+import { localAsset } from '../lib/assets';
+import { url } from '../lib/url';
+
+interface Props { class?: string }
+const { class: className } = Astro.props;
+const acts = DIRECTORY.activities.records.filter((a) => a.logo && /\.svg$/i.test(a.logo) && a.slug !== 'fellowship');
+const platforms = acts.filter((a) => a.tags.includes('Platform'));
+const led = acts.filter((a) => !a.tags.includes('Platform') && (a.tags.includes('Club') || a.tags.includes('Leading')));
+const others = acts.filter((a) => !platforms.includes(a) && !led.includes(a));
+const rings = [
+  { r: 26, size: 9.5, dur: 120, items: platforms, label: 'ELIXIR Platforms' },
+  { r: 39, size: 8.5, dur: 170, items: led, label: 'ELIXIR-UK Clubs and UK-led Communities' },
+  { r: 51, size: 7.5, dur: 230, items: others, label: 'ELIXIR Communities and Focus Groups' },
+];
+---
+<div class:list={['orbit', className]} data-orbit>
+  <svg class="orbit__lines" viewBox="0 0 100 100" aria-hidden="true">
+    {rings.map((ring, k) => <circle cx="50" cy="50" r={ring.r} class={`l${k}`} />)}
+    {rings.map((ring, k) => [0, 1, 2, 3, 4, 5].map((j) => {
+      const a = (j / 6) * Math.PI * 2 + k * 0.5 + 0.26;
+      return <circle class="orbit__node" cx={50 + ring.r * Math.cos(a)} cy={50 + ring.r * Math.sin(a)} r={k === 0 ? 0.7 : 0.5} />;
+    }))}
+  </svg>
+  <div class="orbit__core" aria-hidden="true">
+    <svg viewBox="56 0 120 126"><path d={mark.trim()} fill="#f47d21" /></svg>
+  </div>
+  {rings.map((ring, k) => (
+    <ul class="orbit__ring" style={`--dur:${ring.dur}s; --dir:${k % 2 ? 'reverse' : 'normal'}`} aria-label={ring.label}>
+      {ring.items.map((a, i) => {
+        const deg = (i / ring.items.length) * 360 + k * 17;
+        return (
+          <li style={`--deg:${deg}deg; --r:${ring.r}; --s:${ring.size}`}>
+            <a href={url(`/activities/${a.slug}/`)} class="orbit__item" title={a.name} aria-label={a.name}>
+              <img src={localAsset(a.logo)} alt="" loading="eager" decoding="async" />
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  ))}
+</div>
+
+<style>
+  .orbit { position: relative; aspect-ratio: 1; width: 100%; container-type: inline-size; }
+  .orbit__lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .orbit__lines circle:not(.orbit__node) { fill: none; stroke: rgb(255 255 255 / 0.12); stroke-width: 0.18; }
+  .orbit__lines .l1 { stroke-dasharray: 0.6 1.2; }
+  .orbit__node { fill: var(--orange); }
+  .orbit__core { position: absolute; left: 50%; top: 50%; width: 22%; aspect-ratio: 1; transform: translate(-50%, -50%); display: grid; place-items: center; border-radius: 50%; background: rgb(255 255 255 / 0.04); box-shadow: 0 0 0 1px rgb(255 255 255 / 0.1), 0 0 80px 10px rgb(4 126 170 / 0.25); }
+  .orbit__core svg { width: 62%; height: auto; }
+  .orbit__ring { list-style: none; margin: 0; padding: 0; position: absolute; inset: 0; animation: spin var(--dur) linear infinite; animation-direction: var(--dir); }
+  .orbit__ring li { position: absolute; left: 50%; top: 50%; width: calc(var(--s) * 1%); aspect-ratio: 1; transform: translate(-50%, -50%) rotate(var(--deg)) translateX(calc(var(--r) / var(--s) * 100%)) rotate(calc(-1 * var(--deg))); }
+  .orbit__item { display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%; background: var(--white); box-shadow: 0 6px 18px rgb(0 0 0 / 0.3); animation: spin var(--dur) linear infinite; transition: box-shadow 0.25s var(--ease), outline-color 0.2s; outline: 3px solid transparent; outline-offset: 3px; }
+  .orbit__ring[style*='normal'] .orbit__item { animation-direction: reverse; }
+  .orbit__item img { width: 64%; height: 64%; object-fit: contain; transition: transform 0.25s var(--ease); }
+  .orbit__item:hover img, .orbit__item:focus-visible img { transform: scale(1.12); }
+  .orbit__item:focus-visible, .orbit__item:hover { outline-color: var(--orange); }
+  .orbit:hover .orbit__ring, .orbit:hover .orbit__item, .orbit:focus-within .orbit__ring, .orbit:focus-within .orbit__item { animation-play-state: paused; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .orbit__ring, .orbit__item { animation: none; } }
+</style>

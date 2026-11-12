@@ -2,6 +2,7 @@
 title: "ELIXIR: Open collaborative infrastructure to tackle public health emergencies"
 date: 2020-03-16
 standfirst: "The rapid spread of the COVID-19 virus highlights the need for an open analytics environment so that the global research community can collaborate on developing effective countermeasures. 27 February, Hinxton, UK. Open-a"
+excerpt: ""
 category: "News"
 wpId: 19561
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-virus.webp"

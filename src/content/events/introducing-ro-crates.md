@@ -2,8 +2,15 @@
 title: "Introducing RO-Crate: A better way to package research data"
 start: 2026-05-05
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 24954
+standfirst: "An informal introduction to RO-Crate with Eli Chadwick from the University of Manchester. This session will explain what RO-Crate is, why they matter, and how they support research data management."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [24956]
 end: 2026-05-05
 startTime: "11:00"
 endTime: "12:00"

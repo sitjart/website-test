@@ -2,6 +2,7 @@
 title: "ELIXIR-UK welcomes Pirbright Institute, expanding the network to 26 organisations"
 date: 2023-12-11
 standfirst: "ELIXIR-UK is excited to announce Pirbright Institute as its newest member, bringing the total membership to 26 organisations. The Pirbright Institute is a BBSRC-funded organisation dedicated to the health of farmed anima"
+excerpt: ""
 category: "News"
 wpId: 19687
 image: "https://elixiruknode.org/wp-content/uploads/2023/12/pirbright-institute.webp"

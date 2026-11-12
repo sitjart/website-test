@@ -3,7 +3,13 @@ title: "Making clinical datasets FAIR"
 start: 2024-05-17
 type: "Short course"
 online: true
+format: online
 wpId: 21866
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18590, 18656]
 end: 2024-05-17
 startTime: "12:00"
 endTime: "14:00"

@@ -1,18 +1,34 @@
 ---
+// Site header with mega menu (in the spirit of turing.ac.uk and crick.ac.uk):
+// each section opens a full-width panel with an intro, grouped links and a live feature
+// (next events, latest stories, members map). Panels open on click or hover, close on Escape.
+// On small screens the menu becomes stacked accordions.
+import { getCollection } from 'astro:content';
 import nav from '../data/navigation.json';
+import UkMap from './UkMap.astro';
+import RemoteImage from './RemoteImage.astro';
+import { DIRECTORY } from '../lib/graph';
+import { longDate, todayUK } from '../lib/format';
 import { url } from '../lib/url';
 
 interface Props { overlay?: boolean }
 const { overlay = false } = Astro.props;
 const current = Astro.url.pathname;
-// A top-level item is "current" when the page sits anywhere in its section
-const inSection = (item: { href: string; children?: { href: string }[] }) =>
-  [item.href, ...(item.children ?? []).map((c) => c.href)].some((h) => h !== '/' && current.startsWith(url(h)));
+type Item = (typeof nav)[number] & { mega?: { intro: string; cta: { label: string; href: string }; columns: { heading: string; links: { label: string; href: string; desc?: string }[] }[]; feature?: string }; cta?: boolean };
+const items = nav as Item[];
+const inSection = (item: Item) =>
+  [item.href, ...(item.mega?.columns.flatMap((c) => c.links.map((l) => l.href)) ?? [])].some((h) => h !== '/' && current.startsWith(url(h)));
+
+const today = todayUK();
+const nextEvents = (await getCollection('events')).filter((e) => (e.data.end ?? e.data.start) >= today).sort((a, b) => a.data.start.getTime() - b.data.start.getTime()).slice(0, 3);
+const latest = (await getCollection('news')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
+const memberCount = DIRECTORY.members.records.length;
+const f = (d: Date, o: Intl.DateTimeFormatOptions) => d.toLocaleDateString('en-GB', { ...o, timeZone: 'UTC' });
 ---
 <header class:list={['site-header', { 'site-header--overlay': overlay }]} data-header>
   <div class="container site-header__inner">
     <a class="site-header__logo" href={url('/')}>
-      <img src={url('/images/elixir-uk-logo.svg')} alt="ELIXIR United Kingdom" width="112" height="38" />
+      <img src={url('/images/elixir-uk-logo.svg')} alt="ELIXIR United Kingdom – home" width="112" height="38" />
     </a>
 
     <button class="site-header__toggle" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
@@ -21,29 +37,82 @@ const inSection = (item: { href: string; children?: { href: string }[] }) =>
     </button>
 
     <nav id="primary-nav" class="site-nav" aria-label="Main">
-      <ul>
-        {nav.map((item) => (
-          <li class:list={{ 'has-children': item.children, 'is-cta': (item as { cta?: boolean }).cta, 'is-section': inSection(item) }}>
-            <a href={url(item.href)} aria-current={current === url(item.href) ? 'page' : undefined}>
-              {item.label}
-              {item.children && <svg class="chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" /></svg>}
-            </a>
-            {item.children && (
-              <ul class="site-nav__sub">
-                {item.children.map((c) => <li><a href={url(c.href)} aria-current={current === url(c.href) ? 'page' : undefined}>{c.label}</a></li>)}
-              </ul>
+      <ul class="site-nav__list">
+        {items.map((item, i) => (
+          <li class:list={['site-nav__item', { 'is-cta': item.cta, 'is-section': inSection(item), 'has-mega': item.mega }]}>
+            {item.mega ? (
+              <button type="button" class="site-nav__top" aria-expanded="false" aria-controls={`mega-${i}`} data-mega-btn>
+                {item.label}
+                <svg class="chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" /></svg>
+              </button>
+            ) : (
+              <a class="site-nav__top" href={url(item.href)} aria-current={current === url(item.href) ? 'page' : undefined}>{item.label}</a>
+            )}
+            {item.mega && (
+              <div class="mega" id={`mega-${i}`} data-mega>
+                <div class="container mega__grid">
+                  <div class="mega__intro">
+                    <p class="mega__title">{item.label}<span class="stop">.</span></p>
+                    <p>{item.mega.intro}</p>
+                    <a class="more-link" href={url(item.mega.cta.href)}>{item.mega.cta.label}</a>
+                  </div>
+                  {item.mega.columns.map((col) => (
+                    <div class="mega__col">
+                      <p class="mega__heading">{col.heading}</p>
+                      <ul>
+                        {col.links.map((l) => (
+                          <li><a href={url(l.href)} aria-current={current === url(l.href) ? 'page' : undefined}>
+                            <span class="mega__link">{l.label}</span>
+                            {l.desc && <span class="mega__desc">{l.desc}</span>}
+                          </a></li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                  {item.mega.feature === 'events' && (
+                    <div class="mega__feature mega__feature--wide">
+                      <p class="mega__heading">Coming up</p>
+                      <ul class="mega__events">
+                        {nextEvents.map((e) => (
+                          <li><a href={url(`/events/${e.id}/`)}>
+                            <span class="mega__date"><b>{f(e.data.start, { day: 'numeric' })}</b>{f(e.data.start, { month: 'short' })}</span>
+                            <span><span class="mega__desc">{e.data.type} · {e.data.format === 'in-person' ? 'In person' : e.data.format === 'hybrid' ? 'Hybrid' : 'Online'}</span><span class="mega__link">{e.data.title}</span></span>
+                          </a></li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {item.mega.feature === 'news' && (
+                    <div class="mega__feature mega__feature--news">
+                      {latest.map((n) => (
+                        <a class="mega__story" href={url(`/news/${n.id}/`)}>
+                          <span class="mega__img">{n.data.image && <RemoteImage src={n.data.image} width={360} />}</span>
+                          <span class="mega__desc">{n.data.category} · {longDate(n.data.date)}</span>
+                          <span class="mega__link">{n.data.title}</span>
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                  {item.mega.feature === 'members' && (
+                    <a class="mega__feature mega__map" href={url('/members/')}>
+                      <UkMap interactive={false} label="Map of ELIXIR-UK members" />
+                      <span><b>{memberCount}</b> member organisations across the UK</span>
+                    </a>
+                  )}
+                </div>
+              </div>
             )}
           </li>
         ))}
       </ul>
     </nav>
   </div>
+  <div class="mega-scrim" data-mega-scrim hidden></div>
 </header>
 
 <script>
-  // Sticky header: transparent over the hero, navy once the page scrolls (as on the live site).
-  const header = document.querySelector<HTMLElement>('[data-header]');
-  const onScroll = () => header?.classList.toggle('is-stuck', window.scrollY > 40);
+  const header = document.querySelector<HTMLElement>('[data-header]')!;
+  const onScroll = () => header.classList.toggle('is-stuck', window.scrollY > 40);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
@@ -51,150 +120,123 @@ const inSection = (item: { href: string; children?: { href: string }[] }) =>
   toggle?.addEventListener('click', () => {
     const open = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!open));
-    header?.classList.toggle('nav-open', !open);
+    header.classList.toggle('nav-open', !open);
   });
+
+  const desktop = matchMedia('(min-width: 1025px)');
+  const btns = [...header.querySelectorAll<HTMLButtonElement>('[data-mega-btn]')];
+  const scrim = header.querySelector<HTMLElement>('[data-mega-scrim]')!;
+  let closeTimer = 0;
+  const setOpen = (btn: HTMLButtonElement | null) => {
+    btns.forEach((b) => {
+      const on = b === btn;
+      b.setAttribute('aria-expanded', String(on));
+      b.closest('li')?.classList.toggle('is-open', on);
+    });
+    scrim.hidden = !btn || !desktop.matches;
+    header.classList.toggle('mega-open', !!btn);
+  };
+  btns.forEach((b) => {
+    const li = b.closest('li')!;
+    b.addEventListener('click', () => setOpen(b.getAttribute('aria-expanded') === 'true' ? null : b));
+    // Hover intent on desktop: open after a short pause, close after leaving the item and its panel
+    let openTimer = 0;
+    li.addEventListener('mouseenter', () => { if (!desktop.matches) return; clearTimeout(closeTimer); openTimer = window.setTimeout(() => setOpen(b), 120); });
+    li.addEventListener('mouseleave', () => { if (!desktop.matches) return; clearTimeout(openTimer); closeTimer = window.setTimeout(() => setOpen(null), 220); });
+  });
+  scrim.addEventListener('click', () => setOpen(null));
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && header?.classList.contains('nav-open')) { toggle?.click(); toggle?.focus(); }
+    if (e.key !== 'Escape') return;
+    const open = btns.find((b) => b.getAttribute('aria-expanded') === 'true');
+    if (open) { setOpen(null); open.focus(); }
+    else if (header.classList.contains('nav-open')) { toggle?.click(); toggle?.focus(); }
   });
+  header.addEventListener('focusout', (e) => { if (desktop.matches && !header.contains(e.relatedTarget as Node)) setOpen(null); });
 </script>
 
 <style>
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: var(--ink);
-    transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease);
-  }
-  .site-header--overlay {
-    position: fixed;
-    inset: 0 0 auto;
-    background: transparent;
-  }
-  .site-header--overlay.is-stuck,
-  .site-header.nav-open {
-    background: var(--ink);
-    box-shadow: 0 6px 24px rgb(2 52 82 / 0.25);
-  }
-  .site-header__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 90px;
-    transition: min-height 0.3s var(--ease);
-  }
-  .is-stuck .site-header__inner { min-height: 70px; }
+  .site-header { position: sticky; top: 0; z-index: 50; background: var(--ink); transition: box-shadow 0.3s var(--ease); }
+  .site-header--overlay { position: fixed; inset: 0 0 auto; background: transparent; }
+  .site-header--overlay.is-stuck, .site-header.nav-open, .site-header.mega-open { background: var(--ink); }
+  .is-stuck { box-shadow: 0 6px 24px rgb(2 52 82 / 0.25); }
+  .site-header__inner { display: flex; align-items: center; justify-content: space-between; min-height: 84px; transition: min-height 0.3s var(--ease); }
+  .is-stuck .site-header__inner { min-height: 68px; }
   .site-header__logo img { width: 112px; height: auto; }
 
-  .site-nav > ul {
-    display: flex;
-    gap: 0.25rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .site-nav li { position: relative; }
-  .site-nav > ul > li > a {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.75rem 1.1rem;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--white);
-  }
-  .site-nav > ul { align-items: center; }
-  .site-nav > ul > li > a { position: relative; min-height: 44px; }
-  .site-nav > ul > li > a::after { content: ''; position: absolute; left: 1.1rem; right: 1.1rem; bottom: 4px; height: 2px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform 0.25s var(--ease); }
-  .site-nav > ul > li > a:hover { color: var(--orange-soft); }
-  .site-nav > ul > li.is-section > a::after, .site-nav > ul > li > a:hover::after { transform: scaleX(1); }
-  .site-nav > ul > li.is-cta { margin-left: 0.75rem; }
-  .site-nav > ul > li.is-cta > a { background: var(--orange); color: var(--on-orange); border-radius: var(--radius); padding: 0.6rem 1.2rem; }
-  .site-nav > ul > li.is-cta > a::after { display: none; }
-  .site-nav > ul > li.is-cta > a:hover { background: var(--white); color: var(--navy); }
-  .site-nav__sub a[aria-current='page'] { color: var(--orange-text); font-weight: 700; }
-  .chevron { width: 9px; height: 6px; }
+  .site-nav__list { display: flex; align-items: center; gap: 2px; list-style: none; margin: 0; padding: 0; }
+  .site-nav__top { position: relative; display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 1rem; font: inherit; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); background: none; border: 0; cursor: pointer; }
+  .site-nav__top::after { content: ''; position: absolute; left: 1rem; right: 1rem; bottom: 4px; height: 2px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform 0.25s var(--ease); }
+  .site-nav__top:hover { color: var(--orange-soft); }
+  .is-section > .site-nav__top::after, .site-nav__top:hover::after, .is-open > .site-nav__top::after { transform: scaleX(1); }
+  .chevron { width: 10px; height: 6px; transition: transform 0.25s var(--ease); }
+  .is-open .chevron { transform: rotate(180deg); }
+  .is-cta { margin-left: 0.75rem; }
+  .is-cta > .site-nav__top { background: var(--orange); color: var(--on-orange); border-radius: var(--radius); padding: 0 1.2rem; }
+  .is-cta > .site-nav__top::after { display: none; }
+  .is-cta > .site-nav__top:hover { background: var(--white); color: var(--navy); }
 
-  .site-nav__sub {
-    position: absolute;
-    top: 100%;
-    left: 0.5rem;
-    min-width: 240px;
-    list-style: none;
-    margin: 0;
-    padding: 0.6rem 0;
-    background: var(--white);
-    border-radius: 6px;
-    box-shadow: 0 20px 40px rgb(2 52 82 / 0.18);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
-  }
-  .has-children:hover .site-nav__sub,
-  .has-children:focus-within .site-nav__sub {
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-  .site-nav__sub a {
-    display: block;
-    padding: 0.55rem 1.25rem;
-    font-size: 15px;
-    color: var(--navy);
-  }
-  .site-nav__sub a:hover { background: var(--grey-light); color: var(--blue); }
+  /* Mega panel */
+  .mega { position: absolute; left: 0; right: 0; top: 100%; background: var(--white); color: var(--text); border-top: 3px solid var(--orange); box-shadow: 0 30px 60px rgb(1 29 49 / 0.25); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s; }
+  .is-open > .mega { opacity: 1; visibility: visible; transform: none; }
+  .mega__grid { display: grid; grid-template-columns: minmax(220px, 1.1fr) repeat(auto-fit, minmax(180px, 1fr)); gap: var(--s7); padding-block: var(--s7) var(--s8); }
+  .mega__intro { padding-right: var(--s5); border-right: 1px solid var(--border); }
+  .mega__title { margin: 0 0 var(--s3); font-size: 2rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; color: var(--navy); }
+  .mega__intro p:not(.mega__title) { font-size: var(--fs-sm); margin-bottom: var(--s4); }
+  .mega__heading { margin: 0 0 var(--s3); font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange-text); }
+  .mega ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+  .mega__col a, .mega__events a { display: flex; flex-direction: column; gap: 2px; padding: var(--s2) var(--s3); margin-left: calc(-1 * var(--s3)); border-radius: 6px; color: var(--text); }
+  .mega__col a:hover, .mega__events a:hover { background: var(--grey-light); color: var(--text); }
+  .mega__link { font-weight: 700; color: var(--navy); line-height: 1.3; }
+  a:hover > .mega__link, a:hover .mega__link { color: var(--orange-text); }
+  .mega__desc { font-size: var(--fs-xs); color: var(--muted); line-height: 1.35; }
+  .mega__col a[aria-current='page'] .mega__link { color: var(--orange-text); }
+  .mega__feature--wide { grid-column: span 2; }
+  .mega__events a { flex-direction: row; align-items: center; gap: var(--s4); }
+  .mega__date { flex: none; display: flex; flex-direction: column; align-items: center; width: 52px; padding: 4px 0; border-radius: 6px; background: var(--navy); color: var(--white); font-size: 11px; text-transform: uppercase; line-height: 1.1; }
+  .mega__date b { font-size: 1.3rem; font-weight: 900; }
+  .mega__events a > span:last-child { display: flex; flex-direction: column; gap: 2px; }
+  .mega__feature--news { grid-column: span 3; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s5); }
+  .mega__story { display: flex; flex-direction: column; gap: 6px; color: var(--text); }
+  .mega__story:hover { color: var(--text); }
+  .mega__img { display: block; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: var(--grey-light); margin-bottom: 4px; }
+  .mega__img :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .mega__map { display: flex; align-items: center; gap: var(--s4); padding: var(--s4); border-radius: var(--radius-lg); background: var(--ink); color: #c9d7e2; font-size: var(--fs-sm); }
+  .mega__map:hover { color: var(--white); }
+  .mega__map :global(.ukmap) { width: 110px; flex: none; }
+  .mega__map b { display: block; font-size: 2.4rem; font-weight: 900; color: var(--white); line-height: 1; }
+  .mega-scrim { position: fixed; inset: 0; top: auto; height: 100vh; z-index: -1; background: rgb(1 29 49 / 0.45); }
+  .mega-scrim:not([hidden]) { top: 0; }
 
   .site-header__toggle { display: none; }
 
-  @media (max-width: 960px) {
-    .site-header__toggle {
-      display: grid;
-      place-items: center;
-      width: 44px;
-      height: 44px;
-      background: none;
-      border: 0;
-      cursor: pointer;
-    }
-    .site-header__toggle span[aria-hidden],
-    .site-header__toggle span[aria-hidden]::before,
-    .site-header__toggle span[aria-hidden]::after {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--white);
-      position: relative;
-      content: '';
-    }
+  @media (max-width: 1024px) {
+    .site-header__toggle { display: grid; place-items: center; width: 44px; height: 44px; background: none; border: 0; cursor: pointer; }
+    .site-header__toggle span[aria-hidden], .site-header__toggle span[aria-hidden]::before, .site-header__toggle span[aria-hidden]::after { display: block; width: 24px; height: 2px; background: var(--white); position: relative; content: ''; transition: transform 0.25s var(--ease); }
     .site-header__toggle span[aria-hidden]::before { position: absolute; top: -7px; }
     .site-header__toggle span[aria-hidden]::after { position: absolute; top: 7px; }
-
-    .site-nav {
-      position: absolute;
-      inset: 100% 0 auto;
-      background: var(--navy);
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s var(--ease);
-    }
-    .nav-open .site-nav { max-height: 80vh; overflow-y: auto; }
-    .site-nav > ul { flex-direction: column; align-items: stretch; padding: 0.5rem 1.25rem 1.5rem; }
-    .site-nav > ul > li > a::after { display: none; }
-    .site-nav > ul > li.is-cta { margin: 0.75rem 0 0; }
-    .site-nav > ul > li.is-cta > a { justify-content: center; }
-    .site-nav__sub {
-      position: static;
-      opacity: 1;
-      visibility: visible;
-      transform: none;
-      background: transparent;
-      box-shadow: none;
-      padding: 0 0 0.5rem 1rem;
-    }
-    .site-nav__sub a { color: rgb(255 255 255 / 0.8); padding: 0.4rem 1rem; }
-    .site-nav__sub a:hover { background: transparent; color: var(--orange); }
+    .nav-open .site-header__toggle span[aria-hidden] { background: transparent; }
+    .nav-open .site-header__toggle span[aria-hidden]::before { transform: translateY(7px) rotate(45deg); }
+    .nav-open .site-header__toggle span[aria-hidden]::after { transform: translateY(-7px) rotate(-45deg); }
+    .site-nav { position: absolute; inset: 100% 0 auto; background: var(--ink); max-height: 0; overflow: hidden; transition: max-height 0.35s var(--ease); }
+    .nav-open .site-nav { max-height: calc(100vh - 68px); overflow-y: auto; }
+    .site-nav__list { flex-direction: column; align-items: stretch; padding: var(--s2) var(--gutter) var(--s6); }
+    .site-nav__item { border-bottom: 1px solid rgb(255 255 255 / 0.1); }
+    .site-nav__top { width: 100%; justify-content: space-between; min-height: 56px; padding: 0; font-size: 14px; }
+    .site-nav__top::after { display: none; }
+    .is-cta { margin: var(--s5) 0 0; border: 0; }
+    .is-cta > .site-nav__top { justify-content: center; }
+    .mega { position: static; display: none; opacity: 1; visibility: visible; transform: none; background: transparent; box-shadow: none; border: 0; color: var(--on-dark); }
+    .is-open > .mega { display: block; }
+    .mega__grid { display: flex; flex-direction: column; gap: var(--s4); padding: 0 0 var(--s5); width: 100%; }
+    .mega__feature { display: none; }
+    .mega__intro { border: 0; padding: 0; order: 9; }
+    .mega__intro p { display: none; }
+    .mega__intro .more-link { color: var(--orange-soft); }
+    .mega__heading { color: var(--orange-soft); }
+    .mega__col a { margin-left: 0; padding: var(--s2) 0; }
+    .mega__link { color: var(--white); }
+    .mega__desc { color: #9fbcd0; }
+    .mega__col a:hover { background: none; }
+    .mega-scrim { display: none; }
   }
 </style>

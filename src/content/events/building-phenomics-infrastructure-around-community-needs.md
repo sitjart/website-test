@@ -2,8 +2,12 @@
 title: "Building phenomics infrastructure around community needs"
 start: 2026-11-18
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 25535
+cost: 0
+currency: "GBP"
+status: scheduled
 end: 2026-11-18
 startTime: "11:00"
 endTime: "12:00"

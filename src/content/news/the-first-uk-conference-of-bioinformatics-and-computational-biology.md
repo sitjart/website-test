@@ -2,6 +2,7 @@
 title: "The first UK Conference of Bioinformatics and Computational Biology"
 date: 2020-10-05
 standfirst: "Last week Earlham Institute hosted the inaugural UK Conference of Bioinformatics and Computational Biology in association with ELIXIR-UK. This was originally planned to be a physical event; however, given the current sit"
+excerpt: ""
 category: "News"
 wpId: 19568
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-online-meeting-conference.webp"

@@ -2,6 +2,7 @@
 title: "ELIXIR-STEERS launches: UK Node bolsters green strategies, workflows and training"
 date: 2024-02-08
 standfirst: "On February 1st 2024, ELIXIR initiated the EU-funded ELIXIR-STEERS project, propelling European research infrastructure forward with a substantial €4M budget. This collaborative three-year initiative aims to enhance larg"
+excerpt: ""
 category: "News"
 wpId: 19704
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-abstract-futuristic-lines.webp"

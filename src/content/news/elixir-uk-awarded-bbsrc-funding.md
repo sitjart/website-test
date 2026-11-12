@@ -2,6 +2,7 @@
 title: "ELIXIR-UK awarded BBSRC funding to deepen member engagement and support UK life sciences data community"
 date: 2025-06-17
 standfirst: "~2M grant to strengthen the national life sciences data infrastructure, enabling FAIR AI-readiness and increasing the UK’s competitiveness in research"
+excerpt: ""
 category: "News"
 wpId: 23587
 image: "https://elixiruknode.org/wp-content/uploads/2025/04/banner-tech-data-abstract.jpg"

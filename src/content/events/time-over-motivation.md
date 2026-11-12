@@ -3,7 +3,12 @@ title: "Time over motivation: Engagement in synchronous vs asynchronous courses"
 start: 2025-01-27
 type: "Community Call"
 online: true
+format: online
 wpId: 23379
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "14:00"
 endTime: "15:00"
 recording: "https://youtu.be/MJcRf6x3kk8"

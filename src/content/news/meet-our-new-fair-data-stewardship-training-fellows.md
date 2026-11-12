@@ -2,6 +2,7 @@
 title: "Meet the new FAIR Data Stewardship Training Fellows"
 date: 2021-09-16
 standfirst: "Please join us in welcoming the first nine Fellows who have been selected for the ELIXIR-UK FAIR data stewardship training Fellowship 2021! We received a number of strong applications and our Fellows have been selected f"
+excerpt: ""
 category: "News"
 wpId: 19606
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-circle-hands.webp"

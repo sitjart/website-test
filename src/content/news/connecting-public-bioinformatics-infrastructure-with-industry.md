@@ -2,6 +2,7 @@
 title: "Connecting public bioinformatics infrastructure with industry"
 date: 2019-07-30
 standfirst: "ELIXIR has published a report presenting the different ways in which ELIXIR Nodes support the industry. It features a series of success stories highlighting industry-academia collaboration across ELIXIR. The success stor"
+excerpt: ""
 category: "News"
 wpId: 19557
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-handshake.webp"

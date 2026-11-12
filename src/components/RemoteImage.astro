@@ -2,7 +2,7 @@
 // Resizes and converts remote images (still hosted on WordPress) to WebP at build time,
 // so visitors download a small file instead of the full-size original.
 // If the image can't be fetched during the build it falls back to the original URL.
-import { getImage } from 'astro:assets';
+import { getImage, inferRemoteSize } from 'astro:assets';
 import { localAsset } from '../lib/assets';
 
 interface Props {
@@ -20,7 +20,11 @@ const isSvg = /\.svg(\?|$)/i.test(src);
 let out = { src: isSvg ? localAsset(src)! : src, attributes: {} as Record<string, unknown> };
 if (!isSvg) {
   try {
-    const img = await getImage({ src, inferSize: true, width, format: 'webp', quality: 78 });
+    // Work out the height from the original's proportions: passing only a width squashed images.
+    const size = await inferRemoteSize(src);
+    const w = Math.min(width, size.width);
+    const h = Math.round((w * size.height) / size.width);
+    const img = await getImage({ src, width: w, height: h, format: 'webp', quality: 78 });
     out = { src: img.src, attributes: img.attributes };
   } catch {
     out.src = localAsset(src)!;

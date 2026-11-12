@@ -3,7 +3,13 @@ title: "Exploring WES and WESkit Implementation"
 start: 2024-10-07
 type: "Community Call"
 online: true
+format: online
 wpId: 22734
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18663, 18652]
 end: 2024-10-07
 startTime: "11:00"
 endTime: "12:00"

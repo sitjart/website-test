@@ -6,6 +6,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/technology",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/icon-platform-compute.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -15,6 +16,10 @@
   "start": "2024-01-01",
   "end": "2026-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18746
+  ],
   "related": {
    "members": [
     "university-of-manchester"
@@ -31,6 +36,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/technology",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/icon-platform-compute.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -40,6 +46,12 @@
   "start": "2024-01-01",
   "end": "2026-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   20940,
+   18620,
+   18616
+  ],
   "related": {
    "members": [
     "university-of-cambridge",
@@ -57,6 +69,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/technology",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/icon-platform-compute.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -66,6 +79,16 @@
   "start": "2024-01-01",
   "end": "2026-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18649,
+   18618,
+   18825,
+   18662,
+   18620,
+   18616,
+   22190
+  ],
   "related": {
    "members": [
     "imperial-college-london",
@@ -90,6 +113,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/technology",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/icon-platform-compute.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -99,6 +123,11 @@
   "start": "2024-01-01",
   "end": "2026-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18746,
+   18644
+  ],
   "related": {
    "members": [
     "university-of-manchester",
@@ -120,6 +149,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/3d-bioinfo-community",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2020.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -129,6 +159,13 @@
   "start": "2020-06-01",
   "end": "2022-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18633,
+   18605,
+   18797,
+   18637
+  ],
   "related": {
    "members": [
     "university-college-london",
@@ -148,6 +185,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2023-MLstandards",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2023.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -157,6 +195,12 @@
   "start": "2023-01-01",
   "end": "2024-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18652,
+   18633,
+   18760
+  ],
   "related": {
    "members": [
     "university-of-nottingham",
@@ -175,6 +219,7 @@
   "website": "https://agroserv.eu/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-project-agrserv.svg",
   "summary": "Integrated SERVices supporting a sustainable AGROecological transition (AgroServ) will facilitate a systemic and holistic approach to understanding the threats and challenges agriculture is facing tow",
+  "excerpt": "",
   "body": "<p>Integrated SERVices supporting a sustainable AGROecological transition (AgroServ) will facilitate a systemic and holistic approach to understanding the threats and challenges agriculture is facing towards the implementation of a resilient and sustainable agri-food system. The project proposes a transdisciplinary offer of services, integrating the actors of the agriculture system in the research process, of which the farmers are the first, thanks to a wide offer of living labs across Europe. It will develop a wider catalogue of integrated and customised services, providing a strong community-building and training programme for access managers and users. Results from the research performed under AgroServ will be synthesised and used in the scope of evidence-based policymaking. Data from AgroServ will be open and compliant with FAIR practices, made available to the communities in the long term, and linked with European initiatives, such as the <a href=\"https://eosc-portal.eu/about/eosc\" target=\"_blank\" rel=\"noreferrer noopener\">EOSC</a>.</p>\n\n<h3 class=\"wp-block-heading\" id=\"elixir-uk-involvement\">ELIXIR-UK involvement</h3>\n\n<ul>\n<li>WP3: consolidating integrated data management as well as analytical services<em>.</em></li>\n\n<li>WP19: provide services, namely COPO&nbsp;and&nbsp;KnetMiner.</li>\n</ul>",
   "tags": [
    "EU project"
@@ -183,6 +228,8 @@
   "start": "2022-09-01",
   "end": "2027-08-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "members": [
     "earlham-institute",
@@ -205,6 +252,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-eip1",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -214,6 +262,12 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18662,
+   18616,
+   18620
+  ],
   "related": {
    "members": [
     "university-oxford"
@@ -230,6 +284,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-eip2",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -239,6 +294,14 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18662,
+   18620,
+   18616,
+   18640,
+   18649
+  ],
   "related": {
    "members": [
     "university-oxford",
@@ -260,6 +323,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-apicuron",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -269,6 +333,10 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   20998
+  ],
   "related": {
    "members": [
     "university-of-cambridge"
@@ -285,6 +353,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/beacon-and-beyond",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2021.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -294,6 +363,12 @@
   "start": "2021-06-01",
   "end": "2023-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18652,
+   18615,
+   18756
+  ],
   "related": {
    "members": [
     "university-of-leicester",
@@ -311,6 +386,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/biodiversity-network",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2023.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -320,6 +396,13 @@
   "start": "2023-06-01",
   "end": "2025-06-06",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18640,
+   18746,
+   18662,
+   18620
+  ],
   "related": {
    "services": [
     "rdmkit",
@@ -344,6 +427,7 @@
   "website": "https://biodt.eu/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-project-biodt.png",
   "summary": "The Biodiversity Digital Twin prototype provides advanced models for simulation and prediction capabilities through practical use cases addressing critical issues related to global biodiversity dynami",
+  "excerpt": "",
   "body": "<p>The Biodiversity Digital Twin prototype provides advanced models for simulation and prediction capabilities through practical use cases addressing critical issues related to global biodiversity dynamics. <a href=\"https://biodt.eu/\" target=\"_blank\" rel=\"noreferrer noopener\">BioDT</a> exploits the <a href=\"https://www.lumi-supercomputer.eu/\" target=\"_blank\" rel=\"noreferrer noopener\">LUMI Supercomputer</a> and employs FAIR data combined with digital infrastructure, predictive modelling and AI solutions, facilitating evidence-based solutions for biodiversity protection and restoration. Funded by Horizon Europe called <a href=\"https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-infra-2021-tech-01-01\" target=\"_blank\" rel=\"noreferrer noopener\">HORIZON-INFRA-2021-TECH-01-01</a>, the project responds to key EU and international policy initiatives, including the <a href=\"https://environment.ec.europa.eu/strategy/biodiversity-strategy-2030_en\" target=\"_blank\" rel=\"noreferrer noopener\">EU Biodiversity Strategy 2030</a>, <a href=\"https://ec.europa.eu/info/strategy/priorities-2019-2024/european-green-deal_en\" target=\"_blank\" rel=\"noreferrer noopener\">EU Green Deal</a>, <a href=\"https://sdgs.un.org/goals\" target=\"_blank\" rel=\"noreferrer noopener\">UN Sustainable Development Goals</a>, and <a href=\"https://digital-strategy.ec.europa.eu/en/policies/destination-earth\" target=\"_blank\" rel=\"noreferrer noopener\">Destination Earth</a>.</p>\n\n<h3 class=\"wp-block-heading\" id=\"elixir-uk-involvement\">ELIXIR-UK involvement</h3>\n\n<p>Contribute expertise on&nbsp;<a href=\"https://workflows.community/groups/fair/\" target=\"_blank\" rel=\"noreferrer noopener\">FAIR Computational Workflows</a>,&nbsp;<a href=\"https://w3id.org/ro/crate\" target=\"_blank\" rel=\"noreferrer noopener\">RO-Crate</a>,&nbsp;<a href=\"https://esciencelab.org.uk/products/workflowhub/\">WorkflowHub</a>&nbsp;and&nbsp;<a href=\"https://fairdo.org/\" target=\"_blank\" rel=\"noreferrer noopener\">FAIR Digital Objects</a>.</p>\n\n<ul>\n<li>WP5: improving quality of data, workflows and models through the FAIR principles</li>\n\n<li>WP6: simulation, modelling and data analytics</li>\n</ul>",
   "tags": [
    "EU project"
@@ -352,6 +436,8 @@
   "start": "2022-06-01",
   "end": "2025-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "members": [
     "university-of-manchester"
@@ -367,7 +453,8 @@
   "name": "BioFAIR Methods Commons",
   "website": "https://biofair.uk/methods-commons/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/10/logo-biofair.svg",
-  "summary": "The Methods Commons (MC) aims to establish a world-leading, standards-based national infrastructure for FAIR (Findable, Accessible, Interoperable, and Reusable) workflows in the UK life sciences. Buil",
+  "summary": "The Methods Commons aims to establish a world-leading, standards-based national infrastructure for FAIR workflows in the UK life sciences.",
+  "excerpt": "The Methods Commons aims to establish a world-leading, standards-based national infrastructure for FAIR workflows in the UK life sciences.",
   "body": "<p>The Methods Commons (MC) aims to establish a world-leading, standards-based national infrastructure for FAIR (Findable, Accessible, Interoperable, and Reusable) workflows in the UK life sciences. Building on 20+ years of leadership in the global workflow ecosystem, our consortium integrates the Galaxy and Nextflow execution platforms with the WorkflowHub registry to defragment the workflow landscape. Our vision is to empower a diverse research community—from no-code biologists to expert developers—by providing a unified environment where high-quality workflows can be easily discovered, executed at scale, and shared with full provenance.&nbsp;</p>\n\n<p>We focus on five strategic pillars:</p>\n\n<ol class=\"wp-block-list\">\n<li><strong>Technical Infrastructure:</strong> Deploying scalable, cloud-based execution capabilities (Galaxy, Nextflow, JupyterLab) using AWS, with hybrid bridges to National Compute Resources.</li>\n\n<li><strong>Workflow Discovery:</strong> Establishing a centralized Hub for discovery and reuse, hosting a curated \"BioFAIR Workflow Collection\" of endorsed, canonical workflows.</li>\n\n<li><strong>Secure Collaboration:</strong> Piloting a \"Shared Project Space\" to ensure data privacy and secure management of research artifacts, foreshadowing the BioFAIR Data Commons.</li>\n\n<li><strong>Community Mobilization:</strong> Implementing a tiered \"Concierge Service\" and \"Workflow Observatory\" to provide expert support, onboarding, quality vetting, and pump-priming community participation.</li>\n\n<li><strong>Operational Excellence:</strong> Embedding FAIR practices throughout the workflow lifecycle via robust processes, governance, onboarding playbooks, and standardized APIs (RO-Crate, GA4GH), onboarding other workflow environments with integration pathways into BioFAIR’s service ecosystem.</li>\n</ol>\n\n<p>Through an agile, MVP-phased delivery co-designed with Exemplar Use Cases, Fellows and Pathway projects, the MC will transform how UK researchers access and manage computational methods, driving cultural change and enhancing the reproducibility of UK science.</p>",
   "tags": [
    "National Project"
@@ -376,6 +463,16 @@
   "start": "2026-07-01",
   "end": "2028-07-01",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18640,
+   18644,
+   18649,
+   18664,
+   18742,
+   18734,
+   18746
+  ],
   "related": {
    "members": [
     "university-of-manchester",
@@ -397,6 +494,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/bioschemas",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2017.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -406,6 +504,11 @@
   "start": "2017-01-01",
   "end": "2018-06-30",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18640,
+   18777
+  ],
   "related": {
    "members": [
     "university-of-manchester",
@@ -426,6 +529,7 @@
   "website": "https://elixir-europe.org/about-us/commissioned-services/bioschemas-community-adoption",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2018.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -435,6 +539,10 @@
   "start": "2018-06-01",
   "end": "2019-11-30",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18777
+  ],
   "related": {
    "members": [
     "heriot-watt-university"
@@ -455,6 +563,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/building-pdbe-kb-chart",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2021.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -464,6 +573,11 @@
   "start": "2021-06-01",
   "end": "2023-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18636,
+   18633
+  ],
   "related": {
    "members": [
     "university-of-east-anglia",
@@ -481,6 +595,7 @@
   "website": "https://by-covid.org/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-bycovid-logo.svg",
   "summary": "The BeYond-COVID project (BY-COVID) aims to make COVID-19 data accessible to scientists in laboratories and anyone who can use it, such as medical staff in hospitals or government officials. Pursuing ",
+  "excerpt": "",
   "body": "<p>The BeYond-COVID project (BY-COVID) aims to make COVID-19 data accessible to scientists in laboratories and anyone who can use it, such as medical staff in hospitals or government officials. Pursuing the goal of going beyond SARS-CoV-2 data, the project will serve as the groundwork to make data from other infectious diseases open and accessible to everyone. The BY-COVID project strives to simplify data access and reuse through four key ‘pillars’:</p>\n\n<ol>\n<li><strong>Mobilise data</strong>: ensuring raw sequencing data from across the world can be easily submitted to core data hubs (e.g. SARS-CoV-2 Data Hubs,&nbsp;<a href=\"https://www.ebi.ac.uk/ena/browser/home\" target=\"_blank\" rel=\"noreferrer noopener\">European Nucleotide Archive</a>&nbsp;(ENA), Federated&nbsp;<a href=\"https://ega-archive.org/\" target=\"_blank\" rel=\"noreferrer noopener\">European Genome Archive</a>&nbsp;(FEGA),&nbsp;<a href=\"https://datacatalogue.cessda.eu/\" target=\"_blank\" rel=\"noreferrer noopener\">CESSDA social science archives</a>, and&nbsp;<a href=\"https://www.bbmri-eric.eu/\" target=\"_blank\" rel=\"noreferrer noopener\">BBMRI biobank directory</a>).</li>\n\n<li><strong>Connect data</strong>: build the technical capacity to link sequence data and metadata – expanding beyond scientific and medical data to broader metadata from public health and economics, for example. Support integration to the <a href=\"https://www.covid19dataportal.org/\" target=\"_blank\" rel=\"noreferrer noopener\">COVID-19 Data Portal</a>.</li>\n\n<li><strong>Standardise data</strong>: provide recommended data management protocols to encourage Findable, Accessible, Interoperable and Reusable (FAIR) data standards and resource interoperability.</li>\n\n<li><strong>Expose and analyse data</strong>: support exposure and analysis of FAIR data on infectious diseases, such as the regular VEO reports on mutations and variation in publicly shared SARS-CoV-2 data and the open&nbsp;<a href=\"https://covid19.galaxyproject.org/\" target=\"_blank\" rel=\"noreferrer noopener\">COVID-19 Galaxy analysis platform</a>).</li>\n</ol>\n\n<p>BY-COVID is an exciting interdisciplinary project that unites life science, medical, policy, social science and public health experts across Europe. Led by ELIXIR, the project has 53 partners from 20 European countries. The BY-COVID project will run for three years and is part of the European Commission’s <a href=\"https://ec.europa.eu/info/sites/default/files/communication-hera-incubator-anticipating-threat-covid-19-variants_en.pdf\" target=\"_blank\" rel=\"noreferrer noopener\">HERA Incubator</a> plan, <em>Anticipating together the threat of COVID-19 variants</em>.</p>\n\n<h3 class=\"wp-block-heading\" id=\"elixir-uk-involvement\">ELIXIR-UK involvement</h3>\n\n<p>WP3, 4: FAIRsharing-OpenAIRE Data Discovery, RDMkit, FAIR Cookbook, RO-Crate, WorkflowHub Manchester, Oxford, Nottingham (as BBMRI-ERIC)</p>",
   "tags": [
    "EU project"
@@ -489,6 +604,8 @@
   "start": "2021-10-01",
   "end": "2024-09-30",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "members": [
     "university-of-manchester",
@@ -510,6 +627,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/capacity-building",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2019.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -519,6 +637,10 @@
   "start": "2019-06-01",
   "end": "2021-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18799
+  ],
   "related": {
    "members": [
     "university-of-cambridge",
@@ -536,6 +658,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-trp3",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -545,6 +668,10 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18643
+  ],
   "related": {
    "members": [
     "university-of-cambridge"
@@ -564,6 +691,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/container-orchestration",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2019.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -573,6 +701,11 @@
   "start": "2019-06-01",
   "end": "2021-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18734,
+   18746
+  ],
   "related": {
    "members": [
     "university-of-manchester"
@@ -589,6 +722,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-lipid-pathways",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -598,6 +732,10 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18733
+  ],
   "related": {
    "members": [
     "cardiff-university"
@@ -617,6 +755,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-edp2",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -626,6 +765,10 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18777
+  ],
   "related": {
    "members": [
     "heriot-watt-university"
@@ -642,6 +785,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/data-validation-2018",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2018.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project"
@@ -650,6 +794,11 @@
   "start": "2018-01-01",
   "end": "2018-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18616,
+   18777
+  ],
   "related": {
    "members": [
     "university-oxford",
@@ -672,6 +821,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/datarex",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2024.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -681,6 +831,18 @@
   "start": "2024-02-02",
   "end": "2025-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18755,
+   18649,
+   18733,
+   18643,
+   18618,
+   18663,
+   18620,
+   18756,
+   18662
+  ],
   "related": {
    "members": [
     "university-of-manchester",
@@ -710,6 +872,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/learning-paths-2018",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2018.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project"
@@ -718,6 +881,10 @@
   "start": "2018-01-01",
   "end": "2019-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18799
+  ],
   "related": {
    "members": [
     "university-of-manchester",
@@ -734,7 +901,8 @@
   "name": "E-PAN: Enhancing pan-genome analysis in plants",
   "website": "https://elixir-europe.org/how-we-work/scientific-programme/science/bfsp/e-pan",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2024.svg",
-  "summary": "About the project E-PAN aims to accelerate the use of pan-genome data in plant research by advancing data quality control, curation, integration and visualisation. While pan-genome sequencing and asse",
+  "summary": "E-PAN improves plant pan-genome analysis by advancing quality control, curation, integration and visualisation across key crop and model species.",
+  "excerpt": "E-PAN improves plant pan-genome analysis by advancing quality control, curation, integration and visualisation across key crop and model species.",
   "body": "<h3 class=\"wp-block-heading\" id=\"about-the-project\"><strong>About the project</strong></h3>\n\n<p>E-PAN aims to accelerate the use of pan-genome data in plant research by advancing data quality control, curation, integration and visualisation. While pan-genome sequencing and assembly are now well-established, the downstream integration and exploration of these data are held back by a lack of standards and tools.</p>\n\n<p>The project focuses on gene-based comparative analysis of plant pan-genomes – particularly Presence Absence Variation (PAV) and structural rearrangements –across a selection of species important to agriculture and plant research: barley, potato, wheat, rice, and Arabidopsis.</p>\n\n<p>E-PAN is led by ELIXIR Belgium (VIB), with partners across Germany, Portugal, Slovenia, and the UK.</p>\n\n<h3 class=\"wp-block-heading\" id=\"elixir-uk-involvement\"><strong>ELIXIR-UK involvement</strong></h3>\n\n<p>ELIXIR-UK Member, Rothamsted Research (KnetMiner spin-out) leads the project's work on connecting and sharing pan-genome information across plant platforms. This includes prototyping data formats for exchanging pan-genome analysis results between platforms such as PLAZA/FRINGE and KnetMiner (two ELIXIR-UK endorsed services), and integrating new pan-genome information into KnetMiner's knowledge graphs.</p>\n\n<p>Rothamsted also contributes to community-building activities within the ELIXIR Plant Sciences Community.</p>\n\n<h4 class=\"wp-block-heading\" id=\"why-it-matters\"><strong>Why it matters</strong></h4>\n\n<p>Standardised quality control and data exchange for pan-genomes is currently a gap in the field, with researchers independently developing their own approaches. E-PAN's outputs are expected to streamline pan-genome data submission into ELIXIR Core Data Resources such as ENA and Ensembl Genomes, and to benefit other ELIXIR Communities, including Galaxy and Biodiversity. Integration of new pan-genome data into platforms such as PLAZA and KnetMiner is expected to expand their reach across academia and industry.</p>",
   "tags": [
    "Community-led",
@@ -744,6 +912,12 @@
   "start": "2024-01-01",
   "end": "2027-01-01",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18783,
+   25097,
+   25098
+  ],
   "related": {
    "members": [
     "rothamsted-research"
@@ -766,6 +940,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-beacon",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -775,6 +950,11 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18652,
+   18615
+  ],
   "related": {
    "members": [
     "university-of-leicester"
@@ -788,6 +968,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-beacon-infrastructure",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -797,6 +978,10 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18652
+  ],
   "related": {
    "members": [
     "university-of-leicester"
@@ -810,6 +995,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/federated-human-data",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2019.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project"
@@ -818,6 +1004,10 @@
   "start": "2019-06-01",
   "end": "2021-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18652
+  ],
   "related": {
    "members": [
     "university-of-leicester"
@@ -831,6 +1021,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-ecp2",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -840,6 +1031,10 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18594
+  ],
   "related": {
    "members": [
     "earlham-institute"
@@ -856,6 +1051,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/elixir-integration-user-perspective",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2017.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -865,6 +1061,10 @@
   "start": "2017-10-01",
   "end": "2018-09-30",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18640
+  ],
   "related": {
    "members": [
     "university-of-manchester"
@@ -889,6 +1089,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-rd-services",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -898,6 +1099,10 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18756
+  ],
   "related": {
    "members": [
     "university-of-bradford"
@@ -911,6 +1116,7 @@
   "website": "https://elixir-europe.org/about-us/how-funded/eu-projects/converge",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/project-elixir-converge.svg",
   "summary": "ELIXIR-CONVERGE is a project funded by the European Commission to help standardise life science data management across Europe. To achieve this standardisation, the project will develop a Research Data",
+  "excerpt": "",
   "body": "<p>ELIXIR-CONVERGE is a project funded by the European Commission to help standardise life science data management across Europe. To achieve this standardisation, the project will develop a&nbsp;<em>Research Data Management Toolkit</em>&nbsp;for life scientists. The data management toolkit will help ensure more research data is in the public domain, which will give scientists access to more data. This will allow them to discover new insights into the challenges facing society, such as food security and health in old age, and help stimulate innovation in biomedicine and biotechnology. ELIXIR-CONVERGE will develop the national operations of the research infrastructure to drive good data management, reproducibility and reuse. With partners from 23 ELIXIR Nodes over 36 months, ELIXIR-CONVERGE takes the next step to create a European data federation where interconnected national operations allow users to extract knowledge from life science’s large, diverse and distributed datasets.</p>\n\n<h3 class=\"wp-block-heading\" id=\"uk-node-involvement\">UK Node Involvement</h3>\n\n<p>WP1, 2, 3: co-lead RDMkit and learning paths, and contribute to DM expert group: (Manchester, Cambridge with contributions from Cardiff, Birmingham, Newcastle, Dundee, Oxford, Bradford)</p>",
   "tags": [
    "EU project"
@@ -919,6 +1125,8 @@
   "start": "2020-02-06",
   "end": "2023-07-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "members": [
     "university-of-manchester",
@@ -947,6 +1155,7 @@
   "website": "https://fellowship.elixiruknode.org/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-elixir-uk-dash-logo.svg",
   "summary": "Aims and goals Creating a Fellowship of FAIR Data Steward Ambassadors to increase capacity in Research Data Management across the UK . In 2021, ELIXIR-UK was granted a UKRI award for the ELIXIR-UK DaS",
+  "excerpt": "",
   "body": "<h2 class=\"wp-block-heading\" id=\"aims-and-goals\">Aims and goals</h2>\n\n<p><strong>Creating a Fellowship of FAIR Data Steward Ambassadors to increase capacity in Research Data Management across the UK</strong>.</p>\n\n<p>In 2021, ELIXIR-UK was granted a UKRI award for the ELIXIR-UK DaSH Fellowship. The University of Bradford and Cardiff University co-lead the project with a delivery team at the Earlham Institute, the University of Manchester, and the University of Oxford. The project aims to embed Research Data Management (RDM) know-how into UK universities and institutes by producing and delivering training in FAIR data stewardship using ELIXIR-UK knowledge and resources, such as the RDMkit and the FAIR Cookbook. It focuses on building capacity and professionalising data stewardship while leveraging the local expertise within diverse UK institutions – creating a data management culture change from within the institutions.</p>\n\n<h2 class=\"wp-block-heading\" id=\"outputs\">Outputs</h2>\n\n<h3 class=\"wp-block-heading\" id=\"rdmbites\">RDMbites</h3>\n\n<p>Short informative videos (3-5 minutes) – RDMbites – to describe basic and specialised aspects of RDM.</p>\n\n<h3 class=\"wp-block-heading\" id=\"a-fellowship-of-ambassadors\">A Fellowship of Ambassadors</h3>\n\n<p>Build a community of Data Stewards with practical experience in contemporary life science data management in the UK. The project aims to recruit 20 Data Steward Fellows, who will act as RDM and FAIR ambassadors within their places of work, with a £3,000 honorarium (subject to tax).</p>\n\n<h3 class=\"wp-block-heading\" id=\"capacity-building\">Capacity Building</h3>\n\n<p>Develop and engage in delivering and designing RDM courses on-site and/or online.</p>\n\n<h2 class=\"wp-block-heading\" id=\"project-sustainability\"><strong>Project sustainability</strong></h2>\n\n<p>As part of this UKRI grant, we will investigate ways to sustain our training and the Fellowship scheme beyond the time scale of this grant (two years). This includes looking at ways to make data stewardship support, and careers, a sustainable and professional part of the life sciences. It also entails investigating ways to continue our Fellowship and training work beyond the reach of this project. ELIXIR-UK has partnered with the&nbsp;<a href=\"https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.software.ac.uk%2F&amp;data=04%7C01%7CAndrewsR9%40cardiff.ac.uk%7C67f1531aa7eb4f2822b708d9327202e6%7Cbdb74b3095684856bdbf06759778fcbc%7C1%7C0%7C637596287528318975%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=vezlAokLxlz%2FENnwJyZf9Hnj4MCtPy5UKPBXMR8bn04%3D&amp;reserved=0\">Software Sustainability Institute</a>, which has a long-running successful Fellowship, to build this ELIXIR-UK DaSH Fellowship.</p>\n\n<h2 class=\"wp-block-heading\" id=\"funding\">Funding</h2>\n\n<p>This project was funded as part of the&nbsp;<a href=\"https://www.ukri.org/news/initiatives-boost-health-and-bioscience-skills-and-industry/\" target=\"_blank\" rel=\"noreferrer noopener\">UKRI Innovation Scholars: Data Science Training in Health and Bioscience call (DaSH).</a>&nbsp;(MR/V038966/1)</p>",
   "tags": [
    "Leading",
@@ -956,6 +1165,17 @@
   "start": "2021-02-14",
   "end": "2024-06-30",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18640,
+   18755,
+   18789,
+   18756,
+   18656,
+   18733,
+   18641,
+   18662
+  ],
   "related": {
    "members": [
     "university-of-manchester",
@@ -1010,6 +1230,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/cwl-2018",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2018.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1019,6 +1240,10 @@
   "start": "2018-01-01",
   "end": "2019-06-30",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18640
+  ],
   "related": {
    "members": [
     "university-of-manchester"
@@ -1039,6 +1264,7 @@
   "website": "http://www.eosc-life.eu/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/project-eosc-life.svg",
   "summary": "EOSC-Life brings together the 13 Biological and Medical ESFRI research infrastructures (BMS RIs) to create an open, collaborative space for digital biology. It is our joint response to the challenge o",
+  "excerpt": "",
   "body": "<p>EOSC-Life brings together the 13 Biological and Medical ESFRI research infrastructures (BMS RIs) to create an open, collaborative space for digital biology. It is our joint response to the challenge of analysing and reusing the prodigious amounts of data produced by life science. Managing and integrating this data is beyond the capabilities of most individual end-users and institutes. By publishing data and tools in a Europe-wide cloud, EOSC-Life aims to bring the capabilities of big science projects to the wider research community. Federated user access (AAI) will allow transnational resource access and authorisation. EOSC-Life establishes a novel access model for the BMS RI: through EOSC, scientists would gain direct access to FAIR data and tools in a cloud environment available throughout the European Research Area.</p>\n\n<p>EOSC-Life will make BMS RIs data resources FAIR and publish them in the EOSC following guidelines and standards (e.g. EDMI). Overall, this will drive the evolution of the RI repository infrastructure for EOSC and the integration of the BMS RI repositories. EOSC-Life will implement workflows that cross disciplines and RI boundaries and address the needs of interdisciplinary science. Through open hackathons and bring-your-own-data events, we will co-create EOSC-Life with our user communities, providing a blueprint for how the EOSC supports widespread and excellent data-driven life science research. EOSC-Life will address the data policies needed for human research data under GDPR. Interoperable provenance information describes the history of samples and data to ensure reproducibility and adherence to regulatory requirements. The goal of the EOSC-Life project is to make sure that life scientists can find, access and integrate life-science data for analysis and reuse in academic and industrial research. EOSC-Life will transform European life science by providing an open, continent-scale, collaborative and interdisciplinary environment for data science.</p>\n\n<h3 class=\"wp-block-heading\" id=\"uk-node-involvement\">UK Node involvement</h3>\n\n<p>WP1, 2, 6</p>\n\n<ul>\n<li>Workflow and tools collaboratory, WorkflowHub, RO-Crate, FAIRsharing, TeSS</li>\n\n<li>FAIR datasets shared</li>\n\n<li>Cross-linked catalogues</li>\n\n<li>Open calls</li>\n\n<li>PombeMine</li>\n\n<li>European Open Science Cloud (Manchester, Cambridge, Oxford, Dundee, as EuroBiomaging)</li>\n</ul>",
   "tags": [
    "EU project"
@@ -1047,6 +1273,8 @@
   "start": "2019-03-01",
   "end": "2023-08-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "members": [
     "university-of-manchester",
@@ -1071,6 +1299,7 @@
   "website": "http://www.ejprarediseases.org/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/03/project-ejprd.svg",
   "summary": "The European Joint Programme on RD (EJP RD) has two major objectives: To improve the integration, efficacy, production and social impact of research on RD through the development, demonstration and pr",
+  "excerpt": "",
   "body": "<p>The European Joint Programme on RD (EJP RD) has two major objectives:</p>\n\n<ol>\n<li>To improve the integration, efficacy, production and social impact of research on RD through the development, demonstration and promotion of Europe/worldwide sharing of research and clinical data, materials, processes, knowledge and know-how;</li>\n\n<li>To implement and further develop an efficient model of financial support for all types of research on RD (fundamental, clinical, epidemiological, social, economic, and health service) coupled with accelerated exploitation of research results for the benefit of patients.</li>\n</ol>\n\n<p>To this end, the EJP RD actions are organized within four major Pillars assisted by the&nbsp;central coordination and transversal activities:</p>\n\n<ul>\n<li>Pillar 1: Funding of research</li>\n\n<li>Pillar 2: Coordinated access to data and resources</li>\n\n<li>Pillar 3: Capacity building</li>\n\n<li>Pillar 4: Accelerated translation of research projects and improvement outcomes of clinical studies</li>\n</ul>\n\n<h3 class=\"wp-block-heading\" id=\"uk-node-involvement\">UK Node involvement</h3>\n\n<p>Megaproject to coordinate Rare Disease cohorts, data sharing and analysis. RDMkit, TeSS and Beacons</p>",
   "tags": [
    "EU project"
@@ -1079,6 +1308,8 @@
   "start": "2019-01-01",
   "end": "2024-08-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "members": [
     "university-of-leicester",
@@ -1097,6 +1328,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/expanding-galaxy",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2019.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -1106,6 +1338,12 @@
   "start": "2019-06-01",
   "end": "2021-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18633,
+   18616,
+   18610
+  ],
   "related": {
    "members": [
     "university-oxford",
@@ -1124,6 +1362,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/exploiting-bioschemas-markup-support-elixir-communities",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2020.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1133,6 +1372,13 @@
   "start": "2020-01-01",
   "end": "2021-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18777,
+   18640,
+   18618,
+   18644
+  ],
   "related": {
    "members": [
     "heriot-watt-university",
@@ -1154,6 +1400,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/fair-service-architecture",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2019.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project"
@@ -1162,6 +1409,11 @@
   "start": "2019-06-01",
   "end": "2021-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18777,
+   18640
+  ],
   "related": {
    "members": [
     "university-of-manchester",
@@ -1179,6 +1431,7 @@
   "website": "http://fair-impact.eu/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-project-fair-impact.svg",
   "summary": "The FAIR-IMPACT project will identify and design practical solutions, guidelines and frameworks to realise an EOSC of FAIR data and services. The project gathers 28 partners from 11 countries. This pr",
+  "excerpt": "",
   "body": "<p>The FAIR-IMPACT project will identify and design practical solutions, guidelines and frameworks to realise an EOSC of FAIR data and services. The project gathers 28 partners from 11 countries. This project will support the implementation of FAIR-enabling practices, tools and services across scientific communities at a European, national, and institutional level. The FAIR-IMPACT project will work to connect knowledge across scientific communities on&nbsp;<strong>persistent identifiers</strong>,&nbsp;<strong>metadata and ontologies</strong>,&nbsp;<strong>metrics</strong>,&nbsp;<strong>certification</strong>&nbsp;and&nbsp;<strong>interoperability</strong>&nbsp;aspects via a community-led approach.</p>\n\n<h3 class=\"wp-block-heading\" id=\"target-stakeholders\">Target stakeholders</h3>\n\n<ul>\n<li>(Meta)data services providers, including Repository &amp; PID Services (DSP)</li>\n\n<li>National Level Initiatives (NLI)</li>\n\n<li>Research Communities &amp; Infrastructures (RI)</li>\n\n<li>Research Performing Organisations (RPO)</li>\n\n<li>Individuals in Science (IiS)</li>\n\n<li>Research Funding Organisations (RFO)</li>\n\n<li>Policymaking Organisations (PO)</li>\n\n<li>Publishers (PUB)</li>\n\n<li>Data Infrastructures beyond research (DI)</li>\n\n<li>EOSC Ecosystem (EE)</li>\n\n<li>FAIR Ecosystem (FE)</li>\n\n<li>Citizen Science Organisations (CSO)</li>\n\n<li>Scientific Societies &amp; Academies (SS&amp;A)</li>\n</ul>\n\n<h3 class=\"wp-block-heading\" id=\"planned-outputs\">Planned outputs</h3>\n\n<ul>\n<li>A range of&nbsp;<strong>governance, coordination and collaboration mechanisms</strong>&nbsp;are necessary for a functioning FAIR research ecosystem.</li>\n\n<li><strong>FAIR implementation action plans and workshops</strong>&nbsp;to coordinate and support the adoption of FAIR-enabling components and mechanisms at multiple levels among a diverse group of stakeholders.</li>\n\n<li>A&nbsp;<strong>persistent identifier support programme</strong>&nbsp;and guidance for the provision of PID services in EOSC, including mechanisms and components to facilitate the adoption and implementation of the EOSC PID Policy and alignment with PID practices.</li>\n\n<li>A&nbsp;<strong>semantic framework</strong>&nbsp;for the governance, creation, mapping, sharing, reuse, FAIRness assessment and interoperability of semantic artefacts for EOSC. This includes interoperable and harmonized semantic artefact catalogues, crosswalks and mappings to improve data findability and accessibility within and across disciplines.</li>\n\n<li><strong>Guidelines and prototype(s)</strong>&nbsp;support both enabling FAIR and assessing the FAIRness and trustworthiness of different types of digital objects in multiple domains.</li>\n\n<li>Components and services for&nbsp;<strong>increased legal, organizational, semantic and technical interoperability</strong>&nbsp;in EOSC within and across disciplines.</li>\n\n<li><strong>FAIR implementation stories</strong>&nbsp;provide evidence, guidance, exploitation paths and incentives for research communities and stakeholders.</li>\n</ul>\n\n<h3 class=\"wp-block-heading\" id=\"coordination-and-collaboration-mechanisms\">Coordination and Collaboration mechanisms</h3>\n\n<ul>\n<li>Technical Bridging Team</li>\n\n<li>FAIR Implementation Team</li>\n\n<li>Synchronisation Force</li>\n\n<li>EOSC FAIR Champions</li>\n\n<li>National Roadshows</li>\n</ul>\n\n<h3 class=\"wp-block-heading\" id=\"uk-node-involvment\">UK Node involvment</h3>\n\n<ul>\n<li>WP3: Persistent identifiers</li>\n\n<li>WP4: Metadata and ontologies</li>\n</ul>",
   "tags": [
    "EU project"
@@ -1187,6 +1440,8 @@
   "start": "2022-06-01",
   "end": "2025-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "members": [
     "university-of-manchester"
@@ -1199,7 +1454,8 @@
   "name": "FAIR-in-action bridge",
   "website": "https://biofair.uk/pathfinder-projects/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2025/03/logo-biofair_3.svg",
-  "summary": "Bridging the gap between FAIR guidance and everyday research practice Many UK research-performing organisations have FAIR data policies. Many have guidance documents. What's often missing is the middl",
+  "summary": "A BioFAIR Pathfinder project co-creating two practical FAIR-in-action playbooks with the ELIXIR-UK RDM Club – bridging the gap between FAIR guidance and everyday research practice across UK life sciences.",
+  "excerpt": "A BioFAIR Pathfinder project co-creating two practical FAIR-in-action playbooks with the ELIXIR-UK RDM Club – bridging the gap between FAIR guidance and everyday research practice across UK life sciences.",
   "body": "<p class=\"has-medium-font-size\"><em>Bridging the gap between FAIR guidance and everyday research practice</em></p>\n\n<p>Many UK research-performing organisations have FAIR data policies. Many have guidance documents. What's often missing is the middle layer – the practical, ready-to-use materials that let RDM professionals turn that guidance into something researchers actually engage with.</p>\n\n<p>The FAIR-in-action Bridge is a BioFAIR Pathfinder project, led by coordinators of the ELIXIR-UK RDM Club, that sets out to fill that gap.</p>\n\n<h3 class=\"wp-block-heading\" id=\"what-we-re-doing\">What we're doing</h3>\n\n<p>We're co-creating two FAIR-in-action playbooks with the RDM Club community and the wider UK community working on life sciences RDM: </p>\n\n<ul class=\"wp-block-list\">\n<li><strong>Playbook 1: How to approach FAIRification. </strong>Activities, templates and facilitator scripts that translate guidance from existing resources such as RDMkit, the FAIR Cookbook, FAIRsharing, WorkflowHub, Galaxy and the NIH FAIRification Framework into something an RDM professional can pick up, adapt and run with.</li>\n\n<li><strong>Playbook 2: How to communicate and advocate FAIR. </strong>Scripted talking points, FAIR games and advocacy materials for engaging students, researchers, PIs and decision-makers.</li>\n</ul>\n\n<p>Both playbooks will be roughly 80% ready-to-use, with placeholders for institutions to add their own policies, repositories and contacts. They'll be openly licensed and indexed in RDMkit, the FAIR Cookbook, TeSS and Zenodo.</p>\n\n<h3 class=\"wp-block-heading\" id=\"how-we-re-doing-it\">How we're doing it</h3>\n\n<p>The project runs in two phases:</p>\n\n<ul class=\"wp-block-list\">\n<li><strong>Phase 1 – Co-creation. </strong>A series of contentathons brings together RDM Club members and the wider UK communities to scope, draft and refine the playbooks. Open to all.</li>\n\n<li><strong>Phase 2 – National rollout. </strong>Six UK RPOs – three with mature RDM provision, three with emerging or specialised provision – will host one-day in-person events to test, adapt and refine the playbooks. Each event combines morning advocacy sessions for students and researchers with an afternoon FAIRification workshop led by local RDM staff with support from the project team. Open to all. </li>\n</ul>\n\n<h3 class=\"wp-block-heading\" id=\"why-the-rdm-club-was-key-to-this-project\">Why the RDM Club was key to this project</h3>\n\n<p>The <a href=\"https://elixiruknode.org/activities/uk-rdm-club/\" data-type=\"activity\" data-id=\"18993\">ELIXIR-UK RDM Club</a> connects more than 275 RDM professionals across 58+ UK research performing organisations and 29 international organisations. It's been running since 2020 with sustained monthly activity, and it's the natural home for this work – both for co-creation during the project and for sustainability afterwards. The Club will continue to host updates, adaptations, and peer learning around the playbooks long after the funding period ends.</p>\n\n<h3 class=\"wp-block-heading\" id=\"get-involved\">Get involved</h3>\n\n<ul class=\"wp-block-list\">\n<li><strong>Join a contentathon. </strong>See upcoming events below.</li>\n\n<li><strong>Host a rollout. </strong>A call for expressions of interest from UK RPOs will open next week. Watch this space.</li>\n\n<li><strong>Adopt and adapt. </strong>Once published, the playbooks are yours to use – and we'd love to hear how you got on.</li>\n\n<li><strong><a href=\"https://elixiruknode.org/activities/uk-rdm-club/\" data-type=\"activity\" data-id=\"18993\">Join the RDM Club</a>. </strong>Monthly calls, an active mailing list and a supportive peer community.</li>\n</ul>\n\n<h3 class=\"wp-block-heading\" id=\"related-events\">Related events</h3>\n\n<h3 class=\"wp-block-heading\" id=\"funded-by\">Funded by</h3>\n\n<p>BioFAIR Pathfinder Project Call 2025.</p>\n\n<h3 class=\"wp-block-heading\" id=\"contact\">Contact</h3>\n\n<p><a href=\"mailto:rdm-coordination@elixiruknode.org\">rdm-coordination@elixiruknode.org</a></p>",
   "tags": [
    "Leading",
@@ -1209,6 +1465,17 @@
   "start": "2026-05-01",
   "end": "2027-04-30",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18755,
+   18733,
+   18649,
+   18620,
+   22889,
+   18657,
+   23404,
+   18632
+  ],
   "related": {
    "members": [
     "cardiff-university",
@@ -1240,6 +1507,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/fairness-core-resources",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2018.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project"
@@ -1248,6 +1516,10 @@
   "start": "2018-06-01",
   "end": "2019-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18662
+  ],
   "related": {
    "members": [
     "university-oxford"
@@ -1269,6 +1541,7 @@
   "website": "https://fairplus-project.eu/",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/01/logo-project-fairplus.svg",
   "summary": "The FAIRplus project aims to develop tools and guidelines for making life science data FAIR (Findable, Accessible, Interoperable, Reusable). The project has 22 partners from academia and industry, and",
+  "excerpt": "",
   "body": "<p>The FAIRplus project aims to develop tools and guidelines for making life science data FAIR (Findable, Accessible, Interoperable, Reusable). The project has 22 partners from academia and industry, and runs from January 2019 to June 2022. The goals of FAIRplus are:</p>\n\n<ul>\n<li>To establish a process for selecting and prioritising IMI project databases for FAIRification.</li>\n\n<li>To develop guidelines, tools and metrics needed to make data Findable, Accessible, Interoperable and Reusable (FAIR).</li>\n\n<li>To deliver tailored training for data handlers (academia, SMEs and pharmaceuticals).</li>\n\n<li>To change and sustain the data management culture in pharma, academia and SMEs.</li>\n\n<li>To organise FAIR ‘Innovation and SME Events’ to foster an innovation ecosystem on FAIR open data to power future reuse, knowledge generation, and societal benefit.</li>\n</ul>\n\n<h3 class=\"wp-block-heading\" id=\"uk-node-involvement\">UK Node involvement</h3>\n\n<p>WP1, 2, 3</p>\n\n<ul>\n<li>FAIRification methodologies for IMI datasets and EFPIA Pharma.</li>\n\n<li>FAIR Cookbook</li>\n\n<li>Squads</li>\n\n<li>Capacity Maturity Model</li>\n\n<li>Cost-Benefit Decision Support</li>\n</ul>",
   "tags": [
    "EU project"
@@ -1277,6 +1550,8 @@
   "start": "2019-01-01",
   "end": "2022-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "members": [
     "university-oxford",
@@ -1296,6 +1571,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2019-hcnv",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2019.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -1305,6 +1581,10 @@
   "start": "2019-06-01",
   "end": "2021-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18756
+  ],
   "related": {
    "members": [
     "university-of-bradford"
@@ -1321,6 +1601,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-food-nutrition",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -1330,6 +1611,12 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18611,
+   18824,
+   18825
+  ],
   "related": {
    "members": [
     "quadram-institute"
@@ -1346,6 +1633,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-trp2",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1355,6 +1643,10 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18643
+  ],
   "related": {
    "members": [
     "university-of-cambridge"
@@ -1371,6 +1663,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/impact-evaluation",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2021.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1380,6 +1673,10 @@
   "start": "2021-06-01",
   "end": "2023-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18789
+  ],
   "related": {
    "members": [
     "earlham-institute",
@@ -1394,6 +1691,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/increasing-interoperability-protein-resources",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2018.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project"
@@ -1402,6 +1700,10 @@
   "start": "2018-06-01",
   "end": "2019-11-30",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18633
+  ],
   "related": {
    "members": [
     "university-college-london"
@@ -1421,6 +1723,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/increasing-plant-data-findability",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2021.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -1430,6 +1733,15 @@
   "start": "2021-06-01",
   "end": "2023-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18616,
+   18731,
+   18734,
+   18640,
+   18783,
+   18662
+  ],
   "related": {
    "members": [
     "university-oxford",
@@ -1456,6 +1768,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/integrating-toxicology-community",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2024.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -1465,6 +1778,14 @@
   "start": "2024-01-01",
   "end": "2025-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18694,
+   18610,
+   18662,
+   18616,
+   18695
+  ],
   "related": {
    "members": [
     "university-of-birmingham",
@@ -1489,6 +1810,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/interoperability-purpose",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2019.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1498,6 +1820,10 @@
   "start": "2019-06-01",
   "end": "2021-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18662
+  ],
   "related": {
    "members": [
     "university-oxford"
@@ -1511,6 +1837,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/making-container-services-integratable",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2021.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1520,6 +1847,11 @@
   "start": "2021-06-01",
   "end": "2023-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18742,
+   18734
+  ],
   "related": {
    "members": [
     "university-of-manchester"
@@ -1537,6 +1869,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/mapping-biocuration",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2018.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1546,6 +1879,8 @@
   "start": "2018-12-01",
   "end": "2020-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "members": [
     "university-oxford"
@@ -1568,6 +1903,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/metrics-discovery",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2015.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1577,6 +1913,8 @@
   "start": "2015-07-01",
   "end": "2017-01-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "members": [
     "earlham-institute"
@@ -1593,6 +1931,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/microbial-biotechnology-community",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2020.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -1602,6 +1941,11 @@
   "start": "2020-06-01",
   "end": "2022-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18609,
+   18640
+  ],
   "related": {
    "members": [
     "university-of-manchester",
@@ -1619,6 +1963,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-etp1",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1628,6 +1973,10 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18734
+  ],
   "related": {
    "members": [
     "university-of-manchester"
@@ -1644,6 +1993,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/reference-hcnv-datasets",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2021.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -1653,6 +2003,10 @@
   "start": "2021-06-01",
   "end": "2023-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18756
+  ],
   "related": {
    "members": [
     "university-of-bradford"
@@ -1669,6 +2023,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-human-gen-phen",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1678,6 +2033,10 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18652
+  ],
   "related": {
    "members": [
     "university-of-leicester"
@@ -1697,6 +2056,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2023-SCONE",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2023.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -1706,6 +2066,10 @@
   "start": "2023-01-01",
   "end": "2024-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18760
+  ],
   "related": {
    "members": [
     "cardiff-university"
@@ -1719,6 +2083,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/fluxomics-workflows",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2019.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -1728,6 +2093,11 @@
   "start": "2019-06-01",
   "end": "2021-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18616,
+   18777
+  ],
   "related": {
    "members": [
     "university-oxford",
@@ -1745,6 +2115,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/strengthen-data-management-galaxy",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2021.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -1754,6 +2125,11 @@
   "start": "2021-06-01",
   "end": "2023-05-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18644,
+   18756
+  ],
   "related": {
    "members": [
     "earlham-institute",
@@ -1771,6 +2147,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2023-sybel",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2023.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "Community-led",
@@ -1780,6 +2157,11 @@
   "start": "2023-01-01",
   "end": "2024-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18760,
+   18756
+  ],
   "related": {
    "members": [
     "university-of-bradford",
@@ -1794,6 +2176,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-tess",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1803,6 +2186,10 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18640
+  ],
   "related": {
    "members": [
     "university-of-manchester",
@@ -1823,6 +2210,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-fhd",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1832,6 +2220,11 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18652,
+   18615
+  ],
   "related": {
    "members": [
     "university-of-leicester"
@@ -1848,6 +2241,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/tools-platform-ecosystem",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2021.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1857,6 +2251,11 @@
   "start": "2021-06-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18734,
+   18640
+  ],
   "related": {
    "members": [
     "university-of-manchester"
@@ -1873,6 +2272,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-trp4",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1882,6 +2282,10 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18643
+  ],
   "related": {
    "members": [
     "university-of-cambridge"
@@ -1901,6 +2305,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/training-capacity-building",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2019.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project"
@@ -1909,6 +2314,10 @@
   "start": "2019-06-01",
   "end": "2021-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18662
+  ],
   "related": {
    "members": [
     "university-oxford"
@@ -1928,6 +2337,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/tess",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2019.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1937,6 +2347,8 @@
   "start": "2019-06-01",
   "end": "2021-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "members": [
     "university-of-manchester"
@@ -1956,6 +2368,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/2022-trp1",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2022.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1965,6 +2378,8 @@
   "start": "2022-01-01",
   "end": "2023-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [],
   "related": {
    "members": [
     "university-of-cambridge"
@@ -1981,6 +2396,7 @@
   "website": "https://elixir-europe.org/internal-projects/commissioned-services/training-toolkit",
   "logo": "https://elixiruknode.org/wp-content/uploads/2024/02/project-logo-commissioned-services-2019.svg",
   "summary": "",
+  "excerpt": "",
   "body": "",
   "tags": [
    "ELIXIR Project",
@@ -1990,6 +2406,10 @@
   "start": "2019-06-01",
   "end": "2021-12-31",
   "joinLink": "",
+  "leadIds": [],
+  "peopleIds": [
+   18802
+  ],
   "related": {
    "members": [
     "university-of-cambridge"

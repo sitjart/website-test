@@ -3,7 +3,12 @@ title: "The future UKRI Research Data Policy and its implications for the biosci
 start: 2025-12-02
 type: "Community Call"
 online: true
+format: online
 wpId: 24314
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

@@ -3,7 +3,14 @@ title: "2023 ELIXIR-UK All Hands"
 start: 2023-11-07
 type: "Conference"
 online: false
+format: in-person
 wpId: 19757
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+programme: "https://www.earlham.ac.uk/events/elixir-uk-all-hands-2023"
+speakerIds: [18640]
 end: 2023-11-08
 startTime: "09:00"
 endTime: "17:00"

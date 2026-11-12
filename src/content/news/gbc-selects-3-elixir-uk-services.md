@@ -2,6 +2,7 @@
 title: "GBC selects 3 ELIXIR-UK services as key biodata resources"
 date: 2023-12-18
 standfirst: "ELIXIR-UK is pleased to announce the inclusion of three UK Node services in the 2023 cohort of Global Core Biodata Resources. The recognition given to CATH , IUPHAR/BPS guide to pharmacology , LIPID MAPS ® , further ampl"
+excerpt: ""
 category: "News"
 wpId: 19698
 image: "https://elixiruknode.org/wp-content/uploads/2023/12/blank-yellow-sticky-note-on-navy-blue-table-backgr-2023-11-27-05-22-36-utc.webp"

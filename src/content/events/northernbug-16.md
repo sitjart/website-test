@@ -3,7 +3,16 @@ title: "NorthernBUG 16"
 start: 2026-07-24
 type: "Meeting"
 online: false
+format: in-person
 wpId: 25244
+standfirst: "A day of community-driven bioinformatics hosted at the University of Bradford. Free to attend, open to anyone applying computational tools to the life sciences. ELIXIR-UK funds lunch and refreshments and will run a session on ELIXIR-UK services and activities."
+cost: 0
+currency: "GBP"
+status: scheduled
+street: "Richmond Road"
+postcode: "BD7 1DP"
+country: "UK"
+speakerIds: [18621, 18756, 18755]
 end: 2026-07-24
 venue: "Norcroft Centre, University of Bradford"
 locality: "Bradford"

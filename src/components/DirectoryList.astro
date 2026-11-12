@@ -16,7 +16,7 @@ import { url } from '../lib/url';
 interface Props { kind: keyof typeof DIRECTORY }
 const { kind } = Astro.props;
 const { title, records: all, intro } = DIRECTORY[kind];
-const records = [...all].sort((a, b) => a.name.localeCompare(b.name, 'en-GB'));
+const records = [...all].filter((r) => !(kind === 'activities' && r.slug === 'fellowship')).sort((a, b) => a.name.localeCompare(b.name, 'en-GB'));
 const href = (r: DirectoryRecord) => url(`/${kind}/${r.slug}/`);
 const year = (s: string | null) => (s ? s.slice(0, 4) : '');
 
@@ -34,12 +34,19 @@ const head = HEAD[kind];
 const counts = new Map<string, number>();
 records.forEach((r) => r.tags.forEach((t) => counts.set(t, (counts.get(t) ?? 0) + 1)));
 const tags = [...counts.entries()].filter(([, n]) => n < records.length).sort((a, b) => b[1] - a[1]).map(([t]) => t);
-const showFilters = ['services', 'projects'].includes(kind) && tags.length > 1;
+const showFilters = kind === 'services' && tags.length > 1;
+// Projects in three groups: the ones ELIXIR-UK leads, ELIXIR's own projects, and EU or national projects
+const byStart = (a: DirectoryRecord, b: DirectoryRecord) => (b.start ?? '').localeCompare(a.start ?? '');
+const leading = records.filter((r) => r.tags.includes('Leading')).sort(byStart);
+const PROJECT_GROUPS = kind === 'projects' ? [
+  { id: 'leading', title: 'Led or coordinated by ELIXIR-UK', text: 'Projects ELIXIR-UK leads or coordinates.', items: leading },
+  { id: 'elixir', title: 'ELIXIR projects', text: 'Funded within ELIXIR: Platform-led, Community-led and strategic projects.', items: records.filter((r) => !leading.includes(r) && r.tags.includes('ELIXIR Project')).sort(byStart) },
+  { id: 'eu-national', title: 'EU and national projects', text: 'European and UK projects with ELIXIR-UK members as partners.', items: records.filter((r) => !leading.includes(r) && !r.tags.includes('ELIXIR Project')).sort(byStart) },
+].filter((g) => g.items.length) : [];
 
 // Communities grouped by type
 const GROUPS = [
   { key: 'Club', title: 'ELIXIR-UK Clubs', text: 'Run by ELIXIR-UK, open to everyone working in UK life sciences.' },
-  { key: 'Fellowship', title: 'Fellowship', text: '' },
   { key: 'Community', title: 'ELIXIR Communities', text: 'Europe-wide communities of practice in which UK members take part, and often lead.' },
   { key: 'Focus Group', title: 'Focus Groups', text: 'Time-limited groups working on a specific question.' },
   { key: 'Platform', title: 'ELIXIR Platforms', text: 'The five technical Platforms that underpin ELIXIR’s services.' },
@@ -72,7 +79,7 @@ const statusOrder = ['Selected', 'Contributing', 'Roadmapped'];
                 <span class="lcard__logo">{r.logo ? <RemoteImage src={r.logo} width={320} alt="" /> : <b>{r.name[0]}</b>}</span>
                 <span class="lcard__body">
                   <span class="card__title">{r.name}</span>
-                  {r.summary && <span class="lcard__sum">{firstSentence(r.summary, 120)}</span>}
+                  {(r.excerpt || r.summary) && <span class="lcard__sum">{r.excerpt || firstSentence(r.summary, 120)}</span>}
                   <span class="lcard__meta">
                     {r.status && <span class:list={['status', `status--${tagSlug(r.status)}`]}>{r.status}</span>}
                     {r.tags.filter((t) => t !== r.status && /ELIXIR|Coalition/.test(t)).slice(0, 1).map((t) => <span class="lcard__badge">{t.replace('ELIXIR ', '')}</span>)}
@@ -97,19 +104,29 @@ const statusOrder = ['Selected', 'Contributing', 'Roadmapped'];
 
       {kind === 'members' && (
         <div class="members">
-          <aside class="members__map"><UkMap theme="light" /><p class="members__hint">Select a city to see its members.</p></aside>
+          <aside class="members__map"><UkMap theme="light" filter /><p class="members__hint">Select a city to show only its members.</p></aside>
+          <div>
+          <p class="members__filter" hidden data-member-filter><span></span> <button type="button" class="linkish" data-member-clear>Show all members</button></p>
           <ul class="members__list">
             {records.map((r) => (
-              <li><a class="card mcard" href={href(r)}>
+              <li data-slug={r.slug}><a class="card mcard" href={href(r)}>
                 <span class="mcard__logo">{r.logo ? <RemoteImage src={r.logo} width={280} alt="" /> : <b>{r.name[0]}</b>}</span>
                 <span class="card__title">{r.name}</span>
                 <span class="mcard__meta">{locs[r.slug]?.city}{r.start && ` · since ${year(r.start)}`}</span>
               </a></li>
             ))}
           </ul>
+          </div>
         </div>
       )}
 
+      {kind === 'activities' && (
+        <a class="fellow-card" href={url('/activities/fellowship/')}>
+          <span class="icon-disc"><img src={asset('emblem-fellowship.svg')} alt="" /></span>
+          <span><span class="card__meta">Also from ELIXIR-UK</span><span class="card__title">The Data Stewardship Fellowship</span><span class="lcard__sum">Fellows and mentors professionalising data stewardship across UK research organisations.</span></span>
+          <span class="more-link" aria-hidden="true"></span>
+        </a>
+      )}
       {kind === 'activities' && grouped.map((g) => (
         <section class="group" aria-labelledby={`g-${tagSlug(g.key)}`}>
           <header class="group__head">
@@ -122,7 +139,7 @@ const statusOrder = ['Selected', 'Contributing', 'Roadmapped'];
                 <span class="icon-disc">{r.logo ? <img src={localAsset(r.logo)} alt="" loading="lazy" /> : <b>{r.name[0]}</b>}</span>
                 <span class="icard__body">
                   <span class="card__title">{r.name}</span>
-                  {r.summary && <span class="icard__sum">{firstSentence(r.summary, 110)}</span>}
+                  {(r.excerpt || r.summary) && <span class="icard__sum">{r.excerpt || firstSentence(r.summary, 110)}</span>}
                   {r.tags.includes('Leading') && <span class="lead-badge">UK co-leads</span>}
                 </span>
               </a></li>
@@ -132,21 +149,27 @@ const statusOrder = ['Selected', 'Contributing', 'Roadmapped'];
       ))}
 
       {kind === 'projects' && (
-        <ul class="plist">
-          {records.sort((a, b) => (b.start ?? '').localeCompare(a.start ?? '')).map((r) => (
-            <li class="dir-item" data-tags={r.tags.map(tagSlug).join(' ')}>
-              <a href={href(r)} class="plist__row">
-                <span class="plist__years">{year(r.start)}{r.end && year(r.end) !== year(r.start) ? `–${year(r.end)}` : r.start ? '–' : ''}</span>
-                <span class="plist__main">
-                  <span class="plist__name">{r.name}</span>
-                  {r.summary && <span class="plist__sum">{firstSentence(r.summary, 160)}</span>}
-                </span>
-                <span class="plist__tags">{r.tags.slice(0, 2).map((t) => <span>{t}</span>)}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
+        <nav class="jump" aria-label="Project groups">{PROJECT_GROUPS.map((g) => <a href={`#${g.id}`}>{g.title} <span>{g.items.length}</span></a>)}</nav>
       )}
+      {PROJECT_GROUPS.map((g) => (
+        <section class="group" id={g.id} aria-labelledby={`h-${g.id}`}>
+          <header class="group__head"><h2 id={`h-${g.id}`}>{g.title} <span>{g.items.length}</span></h2><p>{g.text}</p></header>
+          <ul class="plist">
+            {g.items.map((r) => (
+              <li>
+                <a href={href(r)} class="plist__row">
+                  <span class="plist__years">{year(r.start)}{r.end && year(r.end) !== year(r.start) ? `–${year(r.end)}` : ''}</span>
+                  <span class="plist__main">
+                    <span class="plist__name">{r.name}</span>
+                    {(r.excerpt || r.summary) && <span class="plist__sum">{r.excerpt || firstSentence(r.summary, 160)}</span>}
+                  </span>
+                  <span class="plist__tags">{r.tags.filter((t) => !['ELIXIR Project', 'Leading'].includes(t)).slice(0, 2).map((t) => <span>{t}</span>)}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
 
       {kind === 'area' && (
         <ul class="cards cards--area">
@@ -165,6 +188,20 @@ const statusOrder = ['Selected', 'Contributing', 'Roadmapped'];
 </BaseLayout>
 
 <script>
+  // Members map → list filter
+  const bar = document.querySelector<HTMLElement>('[data-member-filter]');
+  const cardsM = document.querySelectorAll<HTMLElement>('.members__list li');
+  document.addEventListener('ukmap:select', (ev) => {
+    const { city, slugs } = (ev as CustomEvent).detail as { city: string; slugs: string[] };
+    cardsM.forEach((li) => (li.hidden = !slugs.includes(li.dataset.slug ?? '')));
+    if (bar) { bar.hidden = false; bar.querySelector('span')!.textContent = `${slugs.length} ${slugs.length === 1 ? 'member' : 'members'} in ${city}.`; }
+  });
+  document.querySelector('[data-member-clear]')?.addEventListener('click', () => {
+    cardsM.forEach((li) => (li.hidden = false));
+    if (bar) bar.hidden = true;
+    document.querySelector('.members__map .ukmap')?.dispatchEvent(new CustomEvent('ukmap:clear'));
+  });
+
   // Tag filter: show only items carrying the chosen tag; the choice is kept in the URL (#tag)
   const chips = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
   const items = document.querySelectorAll<HTMLElement>('.dir-item');
@@ -219,6 +256,7 @@ const statusOrder = ['Selected', 'Contributing', 'Roadmapped'];
 
   .members { display: grid; grid-template-columns: minmax(240px, 0.75fr) minmax(0, 2fr); gap: clamp(24px, 4vw, 64px); align-items: start; }
   .members__map { position: sticky; top: 100px; }
+  .members__filter { display: flex; align-items: center; gap: var(--s3); margin: 0 0 var(--s4); padding: var(--s3) var(--s4); border-radius: 8px; background: var(--grey-light); font-weight: 700; color: var(--navy); }
   .members__hint { font-size: var(--fs-xs); color: var(--muted); text-align: center; }
   .members__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(45%, 200px), 1fr)); gap: var(--s4); }
   .members__list li { display: flex; }
@@ -228,6 +266,10 @@ const statusOrder = ['Selected', 'Contributing', 'Roadmapped'];
   .mcard__meta { font-size: var(--fs-xs); color: var(--muted); }
 
   .group + .group { margin-top: var(--s8); }
+  .fellow-card { display: flex; align-items: center; gap: var(--s5); padding: var(--s5); margin-bottom: var(--s8); border-radius: var(--radius-lg); background: var(--grey-light); color: var(--text); }
+  .fellow-card:hover { color: var(--text); background: #e8eef2; }
+  .fellow-card > span:nth-child(2) { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .fellow-card .icon-disc { width: 80px; border: 0; }
   .group__head { display: flex; align-items: baseline; gap: var(--s5); flex-wrap: wrap; margin-bottom: var(--s5); padding-bottom: var(--s4); border-bottom: 1px solid var(--border); }
   .group__head h2 { margin: 0; font-size: var(--fs-h3); }
   .group__head h2 span { color: var(--orange-text); font-weight: 400; margin-left: 4px; }
@@ -240,6 +282,11 @@ const statusOrder = ['Selected', 'Contributing', 'Roadmapped'];
   .icard__sum { font-size: var(--fs-sm); line-height: 1.5; }
   .lead-badge { align-self: flex-start; margin-top: var(--s2); font-size: var(--fs-xs); font-weight: 700; padding: 2px 8px; border-radius: 3px; background: #fdeee2; color: #8f4006; }
 
+  .jump { display: flex; flex-wrap: wrap; gap: var(--s2); margin-bottom: var(--s7); }
+  .jump a { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 var(--s4); border-radius: 999px; background: var(--grey-light); color: var(--navy); font-size: var(--fs-sm); font-weight: 700; }
+  .jump a span { color: var(--orange-text); }
+  .jump a:hover { background: var(--navy); color: var(--white); }
+  .group { scroll-margin-top: 100px; }
   .plist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
   .plist__row { display: grid; grid-template-columns: 110px minmax(0, 1fr) 220px; gap: var(--s5); align-items: start; padding: var(--s5) var(--s3); border-bottom: 1px solid var(--border); color: var(--text); transition: background 0.2s var(--ease); }
   .plist__row:hover { background: var(--grey-light); color: var(--text); }

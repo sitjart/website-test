@@ -2,6 +2,7 @@
 title: "ELIXIR-UK All Hands and Conference of Bioinformatics and Computational Biology 2021"
 date: 2021-10-01
 standfirst: "This year the annual ELIXIR-UK All Hands was held in partnership with the UK Conference of Bioinformatics and Computational Biology (UK CBCB), organised by the Earlham Institute. This was done to highlight the role of EL"
+excerpt: ""
 category: "News"
 wpId: 19610
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-all-hands.webp"

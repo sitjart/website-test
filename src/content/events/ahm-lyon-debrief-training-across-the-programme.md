@@ -2,8 +2,14 @@
 title: "AHM Lyon debrief: training across the programme"
 start: 2026-06-29
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 25156
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18643, 18756, 22350]
 end: 2026-06-29
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-training-keyboard.webp"
 related:

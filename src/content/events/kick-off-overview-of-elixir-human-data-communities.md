@@ -3,7 +3,12 @@ title: "Kick off & overview of ELIXIR Human Data Communities"
 start: 2023-12-01
 type: "Community Call"
 online: true
+format: online
 wpId: 23017
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "14:00"
 endTime: "15:00"
 venue: "online"

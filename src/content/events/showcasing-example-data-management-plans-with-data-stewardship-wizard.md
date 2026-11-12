@@ -3,7 +3,13 @@ title: "Showcasing example Data Management Plans with Data Stewardship Wizard"
 start: 2025-07-01
 type: "Community Call"
 online: true
+format: online
 wpId: 23633
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18733, 18620]
 startTime: "11:00"
 endTime: "12:00"
 recording: "https://youtu.be/1vUDXs9Xnv8"

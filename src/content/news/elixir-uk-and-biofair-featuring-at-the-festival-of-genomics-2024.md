@@ -2,6 +2,7 @@
 title: "ELIXIR-UK and BioFAIR featuring at the Festival of Genomics 2024"
 date: 2024-01-29
 standfirst: "At the 2024 Festival of Genomics in London, ELIXIR-UK's two Joint Heads of Node, Carole Goble and Neil Hall, attended the event putting BioFAIR and the UK Node at the centre stage. Neil and Carole showcased ELIXIR-UK's c"
+excerpt: ""
 category: "News"
 wpId: 19702
 image: "https://elixiruknode.org/wp-content/uploads/2024/01/2024-festival-genomics.webp"

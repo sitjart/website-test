@@ -3,7 +3,14 @@ title: "Formative assessment with MCQs and community updates"
 start: 2025-09-29
 type: "Community Call"
 online: true
+format: online
 wpId: 24053
+standfirst: "This ELIXIR-UK Training Club call will focus on formative assessment and the use of multiple-choice questions (MCQs) in digital training materials. We’ll also cover community updates, including All Hands meeting preparation, onboarding new trainers and future training events."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [23634]
 startTime: "14:00"
 endTime: "15:00"
 recording: "https://youtu.be/QcC-h6mYGJY"

@@ -2,6 +2,7 @@
 title: "FAIRsharing plays vital role in data deposition mandate for COVID-19 rapid review publishers"
 date: 2021-01-22
 standfirst: "The C-19 Rapid Review Initiative is led by a group of scholarly communications organisations, including the Royal Society, OASPA and the ELIXIR-UK service FAIRsharing . The initiative was launched in April 2020 to maximi"
+excerpt: ""
 category: "News"
 wpId: 19576
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-covid-19-left-side.webp"

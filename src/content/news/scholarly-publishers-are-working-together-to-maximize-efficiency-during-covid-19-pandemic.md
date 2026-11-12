@@ -2,6 +2,7 @@
 title: "Scholarly publishers are working together to maximise efficiency during COVID-19 pandemic"
 date: 2020-04-28
 standfirst: "Scholarly publishers are working together to maximize the efficiency of peer review, ensuring that key work related to COVID-19 is reviewed and published as quickly and openly as possible. The group of publishers and sch"
+excerpt: ""
 category: "News"
 wpId: 19566
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-covid-centre.webp"

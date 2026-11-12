@@ -8,8 +8,8 @@ import { DIRECTORY } from '../lib/graph';
 import { project } from '../lib/geo';
 import { url } from '../lib/url';
 
-interface Props { label?: string; class?: string; highlight?: string; theme?: 'dark' | 'light'; interactive?: boolean }
-const { label = 'Map of ELIXIR-UK member organisations across the UK', class: className, highlight, theme = 'dark', interactive = true } = Astro.props;
+interface Props { label?: string; class?: string; highlight?: string; theme?: 'dark' | 'light'; interactive?: boolean; filter?: boolean }
+const { label = 'Map of ELIXIR-UK member organisations across the UK', class: className, highlight, theme = 'dark', interactive = true, filter = false } = Astro.props;
 const members = DIRECTORY.members.records;
 type Loc = { city: string; lat: number; lon: number };
 const locs = locations as Record<string, Loc>;
@@ -26,7 +26,7 @@ const list = [...cities.entries()].sort((a, b) => a[1].y - b[1].y);
 const hiCity = highlight ? locs[highlight]?.city : undefined;
 const id = `map-${Math.random().toString(36).slice(2, 8)}`;
 ---
-<figure class:list={['ukmap', `ukmap--${theme}`, className, { 'has-hi': hiCity }]} id={id}>
+<figure class:list={['ukmap', `ukmap--${theme}`, className, { 'has-hi': hiCity }]} id={id} data-filter={filter ? '' : undefined}>
   <svg viewBox="0 0 633 1049" role={interactive ? 'group' : 'img'} aria-labelledby={`${id}-t`}>
     <title id={`${id}-t`}>{label}</title>
     <path class="ukmap__land" d={outline.trim()} />
@@ -56,7 +56,7 @@ const id = `map-${Math.random().toString(36).slice(2, 8)}`;
     <div class="ukmap__pop" role="dialog" aria-live="polite" hidden></div>
   )}
   {interactive && (
-    <template class="ukmap__data" set:html={JSON.stringify(list.map(([city, c]) => ({ city, x: c.x, y: c.y, members: c.members.map((m) => ({ name: m.name, href: url(`/members/${m.slug}/`) })) })))} />
+    <template class="ukmap__data" set:html={JSON.stringify(list.map(([city, c]) => ({ city, x: c.x, y: c.y, members: c.members.map((m) => ({ name: m.name, slug: m.slug, href: url(`/members/${m.slug}/`) })) })))} />
   )}
 </figure>
 
@@ -66,7 +66,8 @@ const id = `map-${Math.random().toString(36).slice(2, 8)}`;
     const pop = fig.querySelector<HTMLElement>('.ukmap__pop');
     const svg = fig.querySelector('svg');
     if (!tpl || !pop || !svg) return;
-    const data = JSON.parse(tpl.innerHTML) as { city: string; x: number; y: number; members: { name: string; href: string }[] }[];
+    const data = JSON.parse(tpl.innerHTML) as { city: string; x: number; y: number; members: { name: string; slug: string; href: string }[] }[];
+    const filtering = fig.hasAttribute('data-filter');
     let pinned = false;
     const show = (i: number, pin = false) => {
       const d = data[i];
@@ -89,12 +90,21 @@ const id = `map-${Math.random().toString(36).slice(2, 8)}`;
       const i = Number(a.dataset.i);
       const multi = data[i].members.length > 1;
       a.addEventListener('mouseenter', () => show(i));
-      a.addEventListener('mouseleave', () => setTimeout(() => { if (!pop.matches(':hover')) hide(); }, 120));
+      a.addEventListener('mouseleave', () => setTimeout(() => { if (!pop.matches(':hover') && !a.matches(':hover')) hide(); }, 400));
       a.addEventListener('focus', () => show(i));
       a.addEventListener('blur', () => setTimeout(() => { if (!pop.contains(document.activeElement)) { pinned = false; hide(); } }, 50));
-      if (multi) a.addEventListener('click', (e) => { e.preventDefault(); show(i, true); pop.querySelector('a')?.focus(); });
+      a.addEventListener('click', (e) => {
+        if (filtering) {
+          // On the members page a city filters the list instead of leaving the page
+          e.preventDefault();
+          fig.querySelectorAll('.ukmap__dot').forEach((d) => d.classList.toggle('is-picked', d === a));
+          fig.dispatchEvent(new CustomEvent('ukmap:select', { bubbles: true, detail: { city: data[i].city, slugs: data[i].members.map((m) => m.slug) } }));
+          show(i, true);
+        } else if (multi) { e.preventDefault(); show(i, true); pop.querySelector('a')?.focus(); }
+      });
     });
-    pop.addEventListener('mouseleave', hide);
+    pop.addEventListener('mouseleave', () => setTimeout(hide, 300));
+    fig.addEventListener('ukmap:clear', () => { fig.querySelectorAll('.ukmap__dot').forEach((d) => d.classList.remove('is-picked')); pinned = false; pop.hidden = true; });
     document.addEventListener('click', (e) => { if (!fig.contains(e.target as Node)) { pinned = false; pop.hidden = true; } });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { pinned = false; pop.hidden = true; } });
   });
@@ -119,6 +129,10 @@ const id = `map-${Math.random().toString(36).slice(2, 8)}`;
   .ukmap__dot { transform-box: fill-box; transform-origin: center; animation: pop 0.5s var(--ease) both; animation-delay: calc(var(--i) * 35ms + 250ms); }
   @keyframes pop { from { transform: scale(0); opacity: 0; } }
   @media (prefers-reduced-motion: reduce) { .ukmap__dot { animation: none; } }
+  a.ukmap__dot.is-picked .ukmap__pt { fill: var(--navy); }
+  .ukmap--dark a.ukmap__dot.is-picked .ukmap__pt { fill: var(--white); }
+  .ukmap__pop::before { content: ''; position: absolute; left: -18px; top: 0; bottom: 0; width: 18px; }
+  .ukmap__pop.is-left::before { left: auto; right: -18px; }
   .ukmap__pop { position: absolute; z-index: 5; transform: translate(18px, -50%); min-width: 200px; max-width: 280px; padding: 14px 16px; background: var(--white); color: var(--text); border-radius: 8px; box-shadow: 0 12px 32px rgb(0 0 0 / 0.25); font-size: 14px; line-height: 1.35; }
   .ukmap__pop.is-left { transform: translate(calc(-100% - 18px), -50%); }
   .ukmap__pop :global(.ukmap__city) { margin: 0 0 6px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange-text); }

@@ -1,4 +1,102 @@
 ---
-import DirectoryList from '../../components/DirectoryList.astro';
+// Services: grouped by status, with the labels explained and the call for services alongside.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import RemoteImage from '../../components/RemoteImage.astro';
+import { DIRECTORY, type DirectoryRecord } from '../../lib/graph';
+import { firstSentence } from '../../lib/format';
+import labels from '../../data/service-labels.json';
+import { url } from '../../lib/url';
+
+const all = DIRECTORY.services.records;
+const groups = labels.statuses.map((s) => ({ ...s, items: all.filter((r) => r.status === s.tag).sort((a, b) => a.name.localeCompare(b.name, 'en-GB')) })).filter((g) => g.items.length);
+const rec = (r: DirectoryRecord) => labels.recognitions.filter((x) => r.tags.includes(x.tag));
+const selected = groups.find((g) => g.tag === 'Selected')?.items.length ?? 0;
 ---
-<DirectoryList kind="services" />
+<BaseLayout title="Services" description="Open-access services for the life sciences community, endorsed by ELIXIR-UK.">
+  <PageHeader title="Services" intro="Services selected by the UK Node amplify their reach and improve their opportunities for long-term sustainability." illustration="illustration-isometrics-mechanisms-working.svg" count={{ n: selected, label: 'selected services' }} />
+
+  <section class="section">
+    <div class="container svc">
+      <div class="svc__main">
+        <nav class="jump" aria-label="Service groups">{groups.map((g) => <a href={`#${g.tag.toLowerCase()}`}>{g.title} <span>{g.items.length}</span></a>)}</nav>
+        {groups.map((g) => (
+          <section class="sgroup" id={g.tag.toLowerCase()} aria-labelledby={`h-${g.tag}`}>
+            <header class="sgroup__head">
+              <h2 id={`h-${g.tag}`}>{g.title} <span>{g.items.length}</span></h2>
+              <p>{g.text}{g.draft && <> <span class="draft">Draft wording</span></>}</p>
+            </header>
+            <ul class="scards">
+              {g.items.map((r) => (
+                <li><a class="card scard" href={url(`/services/${r.slug}/`)}>
+                  <span class="scard__logo">{r.logo ? <RemoteImage src={r.logo} width={360} alt="" /> : <b>{r.name}</b>}</span>
+                  <span class="scard__body">
+                    <span class="card__title">{r.name}</span>
+                    {(r.excerpt || r.summary) && <span class="scard__sum">{r.excerpt || firstSentence(r.summary, 130)}</span>}
+                    {rec(r).length > 0 && <span class="scard__badges">{rec(r).map((x) => <span class="badge" title={x.text}>{x.short}</span>)}</span>}
+                  </span>
+                </a></li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+
+      <aside class="svc__side">
+        <div class="cfs">
+          <p class="eyebrow-sm">Call for services</p>
+          <p class="cfs__title">Do you have a service that could help the life science community deal with current data challenges?</p>
+          <p>Find out about the selection criteria, process and benefits.</p>
+          <a class="btn" href={url('/call-for-services/')}>Become an endorsed service</a>
+        </div>
+        <div class="explain">
+          <p class="explain__h">What the labels mean</p>
+          {labels.statuses.map((s) => (
+            <details class="acc"><summary>{s.title}</summary><div class="acc__body"><p>{s.text}</p>{s.draft && <span class="draft">Draft wording</span>}</div></details>
+          ))}
+          {labels.recognitions.map((x) => (
+            <details class="acc"><summary>{x.short}</summary><div class="acc__body"><p>{x.text}</p><a href={x.href} rel="noopener">Read more</a></div></details>
+          ))}
+          <details class="acc"><summary>How are services selected?</summary><div class="acc__body">
+            <p>Through an annual, open and transparent process with published criteria, designed to ensure high service quality and match UK priorities as identified by our funders – and through project commitments made to ELIXIR.</p>
+            <p>Node Service status brings no extra funding, but signals the value ELIXIR places on a service and opens ELIXIR funding routes such as Implementation Studies.</p>
+          </div></details>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .svc { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 4vw, 64px); align-items: start; }
+  .jump { display: flex; flex-wrap: wrap; gap: var(--s2); margin-bottom: var(--s7); }
+  .jump a { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 var(--s4); border-radius: 999px; background: var(--grey-light); color: var(--navy); font-size: var(--fs-sm); font-weight: 700; }
+  .jump a span { color: var(--orange-text); }
+  .jump a:hover { background: var(--navy); color: var(--white); }
+  .sgroup { scroll-margin-top: 100px; }
+  .sgroup + .sgroup { margin-top: var(--s8); }
+  .sgroup__head { margin-bottom: var(--s5); padding-bottom: var(--s4); border-bottom: 1px solid var(--border); }
+  .sgroup__head h2 { font-size: var(--fs-h3); margin: 0 0 var(--s2); }
+  .sgroup__head h2 span { color: var(--orange-text); font-weight: 400; }
+  .sgroup__head p { margin: 0; color: var(--muted); font-size: var(--fs-sm); max-width: 60ch; }
+  .scards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: var(--s4); }
+  .scards li { display: flex; }
+  .scard { flex: 1; padding: 0; overflow: hidden; }
+  .scard__logo { display: flex; align-items: center; justify-content: center; height: 130px; padding: var(--s5); border-bottom: 1px solid var(--border); }
+  .scard__logo :global(img) { max-width: 100%; max-height: 84px; width: auto; height: auto; object-fit: contain; }
+  .scard__logo b { color: var(--navy); font-size: 1.2rem; text-align: center; }
+  .scard__body { display: flex; flex-direction: column; gap: var(--s2); padding: var(--s4) var(--s5) var(--s5); flex: 1; }
+  .scard__sum { font-size: var(--fs-sm); line-height: 1.5; }
+  .scard__badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: var(--s2); }
+  .badge { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; background: #e3f1f7; color: var(--blue-dark); }
+  .svc__side { position: sticky; top: 100px; display: flex; flex-direction: column; gap: var(--s5); }
+  .cfs { padding: var(--s6); border-radius: var(--radius-lg); background: var(--ink); color: var(--on-dark); }
+  .cfs .eyebrow-sm { color: var(--orange-soft); }
+  .cfs__title { font-size: 1.25rem; font-weight: 700; line-height: 1.3; color: var(--white); }
+  .cfs p { font-size: var(--fs-sm); }
+  .explain__h { margin: 0 0 var(--s2); font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); }
+  .explain .acc > summary { font-size: var(--fs-sm); padding-block: var(--s3); }
+  .explain .acc__body { font-size: var(--fs-sm); }
+  .explain { border-top: 1px solid var(--border); }
+  @media (max-width: 1000px) { .svc { grid-template-columns: 1fr; } .svc__side { position: static; } }
+</style>

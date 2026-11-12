@@ -3,7 +3,13 @@ title: "ELIXIR-UK Health Data Workshop"
 start: 2021-06-21
 type: "Workshop"
 online: false
+format: in-person
 wpId: 19759
+standfirst: "This workshop is the first step in forming a UK health data community which identifies with the goals of ELIXIR. This event is aimed at those working in health data within the UK, including those working in academic institutions, healthcare and life science companies."
+cost: 0
+currency: "GBP"
+status: scheduled
+speakerIds: [18652, 18789, 18616, 18618, 18640, 18756]
 end: 2021-06-21
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-training-online.webp"
 related:

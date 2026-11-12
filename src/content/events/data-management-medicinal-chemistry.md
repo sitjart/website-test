@@ -2,8 +2,14 @@
 title: "Data management in Medicinal Chemistry"
 start: 2024-04-11
 type: "Short course"
-online: false
+online: true
+format: online
 wpId: 21685
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [21711, 18656]
 end: 2024-04-11
 registration: "https://bradford-ac-uk.zoom.us/meeting/register/tZcsde-orjgiEtaABzdnAIXXiKJruIpgAB5N"
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/chemist-working-with-formulas-in-the-lab-2023-11-27-05-11-33-utc-1.webp"

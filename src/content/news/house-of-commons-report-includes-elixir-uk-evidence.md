@@ -2,6 +2,7 @@
 title: "House of Commons Reproducibility and Research Integrity report includes ELIXIR-UK evidence"
 date: 2023-05-11
 standfirst: "In 2021, ELIXIR-UK contributed to the inquiry from the Science, Innovation and Technology Committee of the House of Commons, which allowed our members to come together and provide evidence gathered from our own work on t"
+excerpt: ""
 category: "News"
 wpId: 19650
 image: "https://elixiruknode.org/wp-content/uploads/2023/05/westminster-abbey-and-big-ben-in-the-london-skylin-2023-11-27-05-28-46-utc.webp"

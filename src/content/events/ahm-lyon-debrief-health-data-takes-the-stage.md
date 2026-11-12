@@ -2,8 +2,15 @@
 title: "AHM Lyon debrief: health data takes the stage"
 start: 2026-06-24
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 25119
+standfirst: "Members of the ELIXIR-UK Human Data & Tech Club are leading two workshops at the ELIXIR All Hands Meeting in Lyon this June – on health data standards and pan-European community collaboration. Join our community call to hear what happened."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18652, 18663, 18624]
 end: 2026-06-24
 image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-workshop-collaboration.webp"
 related:

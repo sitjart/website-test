@@ -3,7 +3,12 @@ title: "Elevenses and data love stories"
 start: 2026-02-03
 type: "Community Call"
 online: true
+format: online
 wpId: 24390
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"

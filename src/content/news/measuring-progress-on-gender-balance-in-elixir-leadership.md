@@ -2,6 +2,7 @@
 title: "Measuring progress on gender balance in ELIXIR leadership"
 date: 2026-02-11
 standfirst: "An ELEAD Impact case study"
+excerpt: ""
 category: "News"
 wpId: 24461
 image: "https://elixiruknode.org/wp-content/uploads/2026/02/banner-gender-balance.webp"

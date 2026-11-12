@@ -3,7 +3,13 @@ title: "FAIR data management in single-cell analysis"
 start: 2024-06-18
 type: "Short course"
 online: true
+format: online
 wpId: 22474
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18624, 18656, 22475]
 end: 2024-06-18
 startTime: "13:00"
 endTime: "15:00"

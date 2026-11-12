@@ -2,6 +2,7 @@
 title: "ELIXIR-UK welcomes appointment of Tony Burdett as Director of BioFAIR"
 date: 2024-12-18
 standfirst: "ELIXIR-UK is proud to see the BioFAIR initiative, originally conceived within its community, take an important step forward with the appointment of Tony Burdett as its new Director. Tony Burdett brings a wealth of experi"
+excerpt: ""
 category: "News"
 wpId: 23118
 image: "https://elixiruknode.org/wp-content/uploads/2024/12/photo-tony-burdett.jpg"

@@ -3,7 +3,14 @@ title: "Co-creating a proposal for an ELIXIR Staff Exchange"
 start: 2025-11-24
 type: "Community Call"
 online: true
+format: online
 wpId: 24312
+standfirst: "ELIXIR-UK Training Club will host a community session to co-create a proposal for an ELIXIR Europe staff exchange. Participants will identify key training priorities, shortlist top topics, and shape a UK-led proposal to support knowledge exchange between Nodes. Open to trainers, RSEs, data stewards and anyone involved in training delivery across the UK."
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18755]
 startTime: "14:00"
 endTime: "15:00"
 venue: "online"

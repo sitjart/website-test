@@ -2,8 +2,13 @@
 title: "Platforms for genetic scores: PGS Catalog and OmicsPred"
 start: 2026-10-21
 type: "Community Call"
-online: false
+online: true
+format: online
 wpId: 25377
+standfirst: "This UK Human Data & Tech Club community call will introduce two platforms for genetic scores – PGS Catalog and OmicsPred – and the standards and infrastructure that keep them useful across research and clinical settings."
+cost: 0
+currency: "GBP"
+status: scheduled
 end: 2026-10-21
 image: "https://elixiruknode.org/wp-content/uploads/2026/04/banner-digital-societ-human-data-1.webp"
 related:

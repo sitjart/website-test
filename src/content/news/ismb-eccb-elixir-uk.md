@@ -2,6 +2,7 @@
 title: "ELIXIR-UK at ISMB/ECCB 2025: Sharing services, building partnerships, and growing UK impact"
 date: 2025-08-14
 standfirst: "A standout presence at the world’s largest bioinformatics forum, with 25+ ELIXIR-UK related talks and posters and a collaborative UK booth trail"
+excerpt: "ELIXIR-UK was highly visible at ISMB/ECCB 2025, with over 25 talks and posters, a UK booth trail, and co-leadership of the \"Bioinformatics in the UK\" track."
 category: "News"
 wpId: 23866
 image: "https://elixiruknode.org/wp-content/uploads/2025/08/photo-2025-ismb-eccb-2-2.jpg"

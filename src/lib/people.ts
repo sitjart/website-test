@@ -9,7 +9,10 @@ import { fetchRows, selectValue, slugify } from './baserow';
 
 export interface Person {
   id: string;
+  wpId?: number;
+  honorific: string; // Dr, Prof – shown small above the name
   name: string;
+  leads: string[];   // slugs of communities this person leads
   role: string;
   institution: string;
   institutionSlug?: string;
@@ -51,7 +54,7 @@ const stripTags = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/&nbsp
 async function fromWordPress(): Promise<Person[]> {
   const out: Person[] = [];
   for (let page = 1; page < 20; page++) {
-    const res = await fetch(`${WP}/wp-json/wp/v2/people?per_page=100&page=${page}&_embed=wp:featuredmedia&_fields=slug,title,content,acf,class_list,_links,_embedded`, {
+    const res = await fetch(`${WP}/wp-json/wp/v2/people?per_page=100&page=${page}&_embed=wp:featuredmedia&_fields=id,slug,title,content,acf,class_list,_links,_embedded`, {
       signal: AbortSignal.timeout(20000),
     });
     if (res.status === 400) break; // past the last page
@@ -70,10 +73,14 @@ async function fromWordPress(): Promise<Person[]> {
       const classes: string[] = r.class_list ?? [];
       const terms = classes.map((c) => TERMS[c]).filter(Boolean);
       const media = r._embedded?.['wp:featuredmedia']?.[0];
+      const leads = asIds(acf.people_activity_leadership).map((id) => ids[id]).filter((h) => h?.[0] === 'activities').map((h) => h![1]);
       out.push({
         id: r.slug,
-        name: stripTags(r.title?.rendered ?? ''),
-        role: stripTags(acf.title ?? ''),
+        wpId: r.id,
+        honorific: stripTags(acf.title ?? ''),
+        name: stripTags(r.title?.rendered ?? '').replace(/^(Dr|Prof|Professor)\.?\s+/i, ''),
+        leads,
+        role: stripTags(acf.uk_node_role ?? ''),
         institution: memberSlug ? memberBySlug.get(memberSlug) ?? '' : '',
         institutionSlug: memberSlug,
         bio: stripTags(acf.people_description || r.content?.rendered || ''),
@@ -101,7 +108,9 @@ async function fromBaserowOrSample(): Promise<Person[]> {
       const name = `${r['First name']} ${r['Last name']}`;
       return {
         id: slugify(name),
+        honorific: String(r['Title'] ?? ''),
         name,
+        leads: [],
         role: String(r['Job title'] ?? ''),
         institution: String(r['Institution'] ?? ''),
         bio: String(r['Bio'] ?? ''),

@@ -3,7 +3,12 @@ title: "Galaxy Training Network and accessibility"
 start: 2023-06-12
 type: "Community Call"
 online: true
+format: online
 wpId: 22868
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
 startTime: "14:00"
 endTime: "15:00"
 registration: "https://elixiruknode.org/activities/uk-training-club/"

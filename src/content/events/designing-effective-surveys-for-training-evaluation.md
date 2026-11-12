@@ -3,7 +3,13 @@ title: "Designing effective surveys for training evaluation"
 start: 2025-03-24
 type: "Community Call"
 online: true
+format: online
 wpId: 23527
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18624]
 startTime: "14:00"
 endTime: "15:00"
 venue: "Online"

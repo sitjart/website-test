@@ -3,7 +3,13 @@ title: "Three stories, many lessons"
 start: 2025-05-28
 type: "Community Call"
 online: true
+format: online
 wpId: 23557
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [22889]
 startTime: "11:00"
 endTime: "12:00"
 venue: "Online"
