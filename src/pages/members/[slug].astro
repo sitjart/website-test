@@ -1,4 +1,5 @@
 ---
+import Crumbs from '../../components/Crumbs.astro';
 // Member organisation – option 4: navy banner with circle logo, people first, then stacked sections
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -12,21 +13,41 @@ import RelatedCards from '../../components/RelatedCards.astro';
 import { cardsFor } from '../../lib/lookup';
 import locations from '../../data/member-locations.json';
 import { needsStop } from '../../lib/format';
+import { isCurrent } from '../../lib/people';
 
 export function getStaticPaths() {
   return DIRECTORY.members.records.map((record) => ({ params: { slug: record.slug }, props: { record } }));
 }
 const { record: r } = Astro.props;
 const links = await linksFor('members', r.slug);
-const people = (await getCollection('people')).filter((p) => p.data.institutionSlug === r.slug || links.people?.some((n) => n.slug === p.id));
+const people = (await getCollection('people')).filter(isCurrent).filter((p) => p.data.institutionSlug === r.slug || links.people?.some((n) => n.slug === p.id));
 const allNews = await getCollection('news');
-const news = (links.news ?? []).slice(0, 3).map((n) => allNews.find((x) => x.id === n.slug)!).filter(Boolean);
+// Stories: those about the organisation itself, plus those its people are part of
+const peopleHere = (await getCollection('people')).filter(isCurrent).filter((p) => p.data.institutionSlug === r.slug);
+const newsIds = new Set([...(links.news ?? []).map((n) => n.slug), ...peopleHere.flatMap((p) => p.data.related.news ?? [])]);
+const peopleNews = await Promise.all(peopleHere.map(async (p) => (await linksFor('people', p.id)).news ?? []));
+peopleNews.flat().forEach((n) => newsIds.add(n.slug));
+const allStories = allNews.filter((n) => newsIds.has(n.id)).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const news = allStories;
+const newsCards = await cardsFor('news', allStories.map((n) => n.id));
 const svc = (links.services ?? []).map((n) => DIRECTORY.services.records.find((s) => s.slug === n.slug)!).filter(Boolean);
 const since = r.start ? r.start.slice(0, 4) : null;
 const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name: r.name, url: r.website || undefined, logo: r.logo || undefined, memberOf: { '@type': 'Organization', name: 'ELIXIR-UK' } };
 const PEOPLE_LIMIT = 10;
+// The member's representative(s) on the ELIXIR-UK Steering Committee
+const reps = people.filter((p) => p.data.governance.includes('Steering Committee'));
+const crew = people.filter((p) => !reps.includes(p));
+const evCards = await cardsFor('events', (links.events ?? []).map((n) => n.slug));
 const svcCards = await cardsFor('services', svc.map((x) => x.slug));
-const actCards = await cardsFor('activities', (links.activities ?? []).map((n) => n.slug));
+// Communities: the ones this organisation's people take part in or lead (not the organisation-level tag)
+const actCount = new Map<string, number>();
+for (const p of peopleHere) {
+  const mine = new Set([...(p.data.related.activities ?? []), ...p.data.leads, ...((await linksFor('people', p.id)).activities ?? []).map((n) => n.slug)]);
+  DIRECTORY.activities.records.filter((a) => p.data.wpId && [...(a.peopleIds ?? []), ...(a.leadIds ?? [])].includes(p.data.wpId)).forEach((a) => mine.add(a.slug));
+  mine.forEach((slug) => actCount.set(slug, (actCount.get(slug) ?? 0) + 1));
+}
+const actCards = (await cardsFor('activities', [...actCount.keys()])).sort((a, b) => (actCount.get(b.slug)! - actCount.get(a.slug)!) || a.title.localeCompare(b.title));
+actCards.forEach((c) => (c.meta = `${actCount.get(c.slug)} ${actCount.get(c.slug) === 1 ? 'person' : 'people'} from ${r.name}`));
 const city = (locations as Record<string, { city: string }>)[r.slug]?.city;
 ---
 <BaseLayout title={r.name} description={r.summary || `${r.name}, an ELIXIR-UK member organisation`} {jsonLd}>
@@ -34,7 +55,7 @@ const city = (locations as Record<string, { city: string }>)[r.slug]?.city;
     <div class="container m-banner__grid">
       <Avatar src={r.logo} name={r.name} size={200} logo ring="var(--ink)" eager />
       <div>
-        <p class="crumb"><a href={url('/members/')}>Members</a></p>
+        <Crumbs dark items={[{ label: 'Members', href: '/members/' }, { label: r.name }]} />
         <p class="eyebrow-sm m-banner__eyebrow">Member organisation{city && ` · ${city}`}{since && ` · since ${since}`}</p>
         <h1 class="display m-banner__title">{r.name}{needsStop(r.name) && <span class="stop">.</span>}</h1>
         {r.summary && <p class="m-banner__about">{r.summary}</p>}
@@ -47,11 +68,33 @@ const city = (locations as Record<string, { city: string }>)[r.slug]?.city;
   </section>
 
   <div class="container m-main">
-    {people.length > 0 && (
+    {reps.length > 0 && (
+      <section class="m-rep" aria-labelledby="rep-h">
+        <div class="m-rep__text">
+          <h2 id="rep-h" class="m-rep__h">{reps.length > 1 ? 'Steering Committee representatives' : 'Steering Committee representative'}</h2>
+          <p>Every member organisation has a seat on the ELIXIR-UK Steering Committee, which oversees the Node’s direction. {reps.length > 1 ? 'These are' : 'This is'} {r.name}’s {reps.length > 1 ? 'representatives' : 'representative'} – the first person to talk to about ELIXIR-UK at {r.name}.</p>
+          <p class="m-rep__contact">Not sure how to reach them? <a href={url('/contact-us/')}>Contact the Node office</a>.</p>
+        </div>
+        <ul class="m-rep__people">
+          {reps.map((p) => (
+            <li><a class="m-rep__card" href={url(`/people/${p.id}/`)}>
+              <Avatar src={p.data.photo} name={p.data.name} size={112} ring="var(--white)" />
+              <span>
+                {p.data.honorific && <span class="m-person__hon">{p.data.honorific}</span>}
+                <span class="m-rep__name">{p.data.name}</span>
+                {p.data.role && <span class="m-person__role">{p.data.role}</span>}
+                <span class="more-link">View profile</span>
+              </span>
+            </a></li>
+          ))}
+        </ul>
+      </section>
+    )}
+    {crew.length > 0 && (
       <section class="m-sec m-sec--first">
-        <div class="m-sec__head"><h2>People<span class="stop">.</span> <span class="m-count">{people.length}</span></h2></div>
+        <div class="m-sec__head"><h2>{reps.length ? 'Also involved' : 'People'}<span class="stop">.</span> <span class="m-count">{crew.length}</span></h2></div>
         <div class="m-people">
-          {people.slice(0, PEOPLE_LIMIT).map((p) => (
+          {crew.slice(0, PEOPLE_LIMIT).map((p) => (
             <a class="m-person lift" href={url(`/people/${p.id}/`)}>
               <Avatar src={p.data.photo} name={p.data.name} size={96} ring="var(--grey-light)" />
               {p.data.honorific && <span class="m-person__hon">{p.data.honorific}</span>}
@@ -70,9 +113,9 @@ const city = (locations as Record<string, { city: string }>)[r.slug]?.city;
       </section>
     )}
 
-    {!!links.activities?.length && (
+    {actCards.length > 0 && (
       <section class="m-sec">
-        <div class="m-sec__head"><h2>Communities<span class="stop">.</span> <span class="m-count">{links.activities.length}</span></h2></div>
+        <div class="m-sec__head"><h2>Communities our people are in<span class="stop">.</span> <span class="m-count">{actCards.length}</span></h2></div>
         <RelatedCards cards={actCards} limit={12} />
       </section>
     )}
@@ -89,18 +132,17 @@ const city = (locations as Record<string, { city: string }>)[r.slug]?.city;
       </section>
     )}
 
+    {evCards.length > 0 && (
+      <section class="m-sec">
+        <div class="m-sec__head"><h2>Events<span class="stop">.</span> <span class="m-count">{evCards.length}</span></h2><a href={url('/events/')}>All events →</a></div>
+        <RelatedCards cards={evCards} limit={6} />
+      </section>
+    )}
+
     {news.length > 0 && (
       <section class="m-sec">
-        <div class="m-sec__head"><h2>In the news<span class="stop">.</span> <span class="m-count">{links.news!.length}</span></h2></div>
-        <div class="m-news">
-          {news.map((n) => (
-            <a class="tile m-news__tile" href={url(`/news/${n.id}/`)}>
-              {n.data.image ? <RemoteImage class="ph-img" src={n.data.image} width={500} /> : <span class="ph-img" style="background:#5b7f9a"></span>}
-              <span class="ph-slide"></span>
-              <span class="scrim"><span class="m-news__date">{longDate(n.data.date)}</span><span class="m-news__title">{n.data.title}</span></span>
-            </a>
-          ))}
-        </div>
+        <div class="m-sec__head"><h2>In the news<span class="stop">.</span> <span class="m-count">{allStories.length}</span></h2></div>
+        <RelatedCards cards={newsCards} limit={6} />
       </section>
     )}
   </div>
@@ -115,6 +157,17 @@ const city = (locations as Record<string, { city: string }>)[r.slug]?.city;
 
 <style>
   .m-person__hon { font-size: 11px; letter-spacing: 0.04em; color: var(--muted); margin-top: 6px; }
+  .m-rep { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: var(--s7); align-items: center; margin-top: var(--s8); padding: var(--s7); border-radius: var(--radius-lg); background: #fff6ef; border-left: 5px solid var(--orange); }
+  .m-rep__h { font-size: var(--fs-h3); margin: 0 0 var(--s3); }
+  .m-rep__text p { margin: 0 0 var(--s3); }
+  .m-rep__contact { font-size: var(--fs-sm); }
+  .m-rep__people { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s3); }
+  .m-rep__card { display: flex; align-items: center; gap: var(--s5); padding: var(--s4); border-radius: var(--radius-lg); background: var(--white); color: var(--text); box-shadow: var(--shadow); }
+  .m-rep__card:hover { color: var(--text); box-shadow: var(--shadow-hover); }
+  .m-rep__card > span { display: flex; flex-direction: column; gap: 2px; }
+  .m-rep__name { font-size: 1.35rem; font-weight: 900; color: var(--navy); line-height: 1.15; }
+  .m-rep__card .more-link { margin-top: var(--s2); }
+  @media (max-width: 860px) { .m-rep { grid-template-columns: 1fr; padding: var(--s5); } }
   .m-banner { padding: 40px 0 64px; }
   .m-banner__grid { display: grid; grid-template-columns: 200px minmax(0, 1fr) 150px; gap: clamp(24px, 4vw, 48px); align-items: center; }
   .m-banner__map { width: 150px; }
@@ -146,7 +199,7 @@ const city = (locations as Record<string, { city: string }>)[r.slug]?.city;
   .m-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
   .m-list li[hidden] { display: none; }
   .m-list a { display: flex; flex-direction: column; gap: 2px; padding: 14px 0; border-bottom: 1px solid var(--border); color: var(--text); }
-  .m-list__meta { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange-text); }
+  .m-list__meta { font-size: var(--fs-sm); font-weight: 700; letter-spacing: 0;  color: var(--orange-text); }
   .m-list__title { font-size: 18px; font-weight: 700; line-height: 1.3; color: var(--navy); }
   .m-more { margin-top: 16px; font: inherit; font-weight: 700; color: var(--blue); background: none; border: 0; padding: 0; cursor: pointer; }
   .m-news { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }

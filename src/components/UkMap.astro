@@ -135,7 +135,7 @@ const id = `map-${Math.random().toString(36).slice(2, 8)}`;
   .ukmap__pop.is-left::before { left: auto; right: -18px; }
   .ukmap__pop { position: absolute; z-index: 5; transform: translate(18px, -50%); min-width: 200px; max-width: 280px; padding: 14px 16px; background: var(--white); color: var(--text); border-radius: 8px; box-shadow: 0 12px 32px rgb(0 0 0 / 0.25); font-size: 14px; line-height: 1.35; }
   .ukmap__pop.is-left { transform: translate(calc(-100% - 18px), -50%); }
-  .ukmap__pop :global(.ukmap__city) { margin: 0 0 6px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange-text); }
+  .ukmap__pop :global(.ukmap__city) { margin: 0 0 6px; font-size: var(--fs-sm); font-weight: 700; letter-spacing: 0;  color: var(--orange-text); }
   .ukmap__pop :global(ul) { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
   .ukmap__pop :global(a) { font-weight: 700; color: var(--navy); }
   .ukmap__pop :global(a:hover) { color: var(--orange-text); }

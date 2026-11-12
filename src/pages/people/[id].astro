@@ -1,4 +1,5 @@
 ---
+import Crumbs from '../../components/Crumbs.astro';
 // People profile: sidebar layout (as on the WordPress site) – photo, honorific above the name,
 // role, organisation, roles in ELIXIR-UK and links on the left; bio and related items on the right.
 import { getCollection } from 'astro:content';
@@ -35,7 +36,7 @@ const jsonLd = {
 };
 ---
 <BaseLayout title={`${p.honorific ? p.honorific + ' ' : ''}${p.name}`} description={[p.role, p.institution].filter(Boolean).join(', ')} {jsonLd}>
-  <div class="banner pf-band"><div class="container"><p class="crumb"><a href={url('/people/')}>People</a><span>{p.name}</span></p></div></div>
+  <div class="banner pf-band"><div class="container"><Crumbs dark items={[{ label: 'People', href: '/people/' }, { label: p.name }]} /></div></div>
   <div class="container pf">
     <aside class="pf-side">
       <div class="pf-photo"><Avatar src={p.photo} name={p.name} size={220} ring="var(--white)" eager /></div>
@@ -70,11 +71,9 @@ const jsonLd = {
       )}
     </aside>
     <div class="pf-main">
-      {p.bio ? (
-        <section class="pf-bio"><h2 class="pf-h">About</h2><div class="prose"><p>{p.bio}</p></div></section>
-      ) : null}
-      <SmartTabs kind="people" slug={entry.id} heading={p.bio ? 'Involved in' : undefined} />
-      {!p.bio && <p class="pf-empty">This profile has no biography yet.</p>}
+      <SmartTabs kind="people" slug={entry.id} hasBio={Boolean(p.bio)} bioLabel="Biography" skip={['members']}>
+        <div class="prose pf-bio"><p>{p.bio}</p></div>
+      </SmartTabs>
     </div>
   </div>
 </BaseLayout>
@@ -86,7 +85,7 @@ const jsonLd = {
   .pf-side { position: sticky; top: 100px; padding: var(--s6); border-radius: var(--radius-lg); background: var(--white); box-shadow: var(--shadow); }
   .pf-photo { display: flex; justify-content: center; margin-bottom: var(--s5); }
   .pf-photo :global(.avatar) { width: 200px !important; }
-  .pf-hon { margin: 0; font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .pf-hon { margin: 0; font-size: var(--fs-sm); font-weight: 700; letter-spacing: 0;  color: var(--muted); }
   .pf-name { margin: 2px 0 var(--s2); font-size: clamp(1.8rem, 1.4rem + 1.2vw, 2.3rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; }
   .pf-role { margin: 0 0 var(--s4); font-size: var(--fs-sm); line-height: 1.45; }
   .pf-org { display: flex; align-items: center; gap: var(--s3); padding: var(--s3); border-radius: 8px; background: var(--grey-light); color: var(--navy); font-weight: 700; font-size: var(--fs-sm); line-height: 1.3; }
@@ -98,7 +97,7 @@ const jsonLd = {
   .pf-links a:hover { border-color: var(--navy); }
   .pf-ico { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--navy); color: var(--white); font-size: 10px; font-weight: 900; }
   .pf-block { margin-top: var(--s5); padding-top: var(--s4); border-top: 1px solid var(--border); }
-  .pf-sub { margin: 0 0 var(--s3); font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange-text); }
+  .pf-sub { margin: 0 0 var(--s3); font-size: var(--fs-sm); font-weight: 700; letter-spacing: 0;  color: var(--orange-text); }
   .pf-pills { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
   .pf-pills li { font-size: var(--fs-xs); font-weight: 700; padding: 3px 9px; border-radius: 3px; background: var(--navy); color: var(--white); }
   .pf-leads { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }
@@ -106,8 +105,7 @@ const jsonLd = {
   .pf-leads .icon-disc { width: 40px; background: var(--grey-light); border: 0; }
   .pf-main { padding-top: 130px; min-width: 0; }
   .pf-h { font-size: var(--fs-h3); margin: 0 0 var(--s4); }
-  .pf-bio { margin-bottom: var(--s8); }
-  .pf-bio .prose { font-size: 1.1rem; }
+  .pf-bio { font-size: 1.1rem; }
   .pf-empty { color: var(--muted); }
   @media (max-width: 860px) {
     .pf { grid-template-columns: 1fr; margin-top: -100px; }

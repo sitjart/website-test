@@ -1,4 +1,5 @@
 ---
+import Crumbs from './Crumbs.astro';
 // Single service, project, collaborator or thematic area.
 // Banner with a readable logo panel (wordmarks don't fit circles), the excerpt and actions;
 // then the description beside an "At a glance" panel; then related records as cards.
@@ -6,7 +7,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import RemoteImage from './RemoteImage.astro';
 import PersonLine from './PersonLine.astro';
 import SmartTabs from './SmartTabs.astro';
-import { DIRECTORY, linksFor, type DirectoryRecord } from '../lib/graph';
+import { DIRECTORY, linksFor, tagSlug, type DirectoryRecord } from '../lib/graph';
 import { involved } from '../lib/involved';
 import { cleanHtml } from '../lib/html';
 import { asset } from '../lib/assets';
@@ -41,12 +42,12 @@ const jsonLd = { '@context': 'https://schema.org', '@type': schemaType, name: r.
   <section class="banner rec-hero">
     <div class:list={['container', 'rec-hero__grid', { 'has-art': art }]}>
       <div>
-        <p class="crumb"><a href={url(`/${kind}/`)}>{plural}</a><span>{singular}</span></p>
+        <Crumbs dark items={[{ label: plural, href: `/${kind}/` }, { label: r.name }]} />
         <p class="eyebrow-sm rec-hero__eyebrow">{singular}{status && ` · ${status.title.replace(' services', '')}`}</p>
         <h1 class="display rec-hero__title">{r.name}{needsStop(r.name) && <span class="stop">.</span>}</h1>
         {(r.excerpt || (r.summary && !body)) && <p class="rec-hero__lead">{r.excerpt || firstSentence(r.summary, 240)}</p>}
         {recognitions.length > 0 && (
-          <ul class="rec-hero__badges">{recognitions.map((x) => <li><a href={x.href} rel="noopener" title={x.text}>{x.short}</a></li>)}</ul>
+          <ul class="rec-hero__badges">{recognitions.map((x) => <li><a href={url(`/services/#${tagSlug(x.tag)}`)} title={x.text}>{x.short}</a></li>)}</ul>
         )}
         <div class="rec-hero__actions">
           {r.website && <a class="btn" href={r.website} rel="noopener">Visit website</a>}
@@ -71,7 +72,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': schemaType, name: r.
         {recognitions.length > 0 && (
           <div class="glance__block">
             <p class="glance__sub">Recognised as</p>
-            {recognitions.map((x) => <details class="acc"><summary>{x.short}</summary><div class="acc__body"><p>{x.text}</p><a href={x.href} rel="noopener">Read more</a></div></details>)}
+            <ul class="glance__labels">{recognitions.map((x) => <li><a href={url(`/services/#${tagSlug(x.tag)}`)}>{x.short}</a><span>{x.text}</span></li>)}</ul>
           </div>
         )}
         {hosts.length > 0 && (
@@ -91,7 +92,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': schemaType, name: r.
   </div>
 
   <section class="container rec-related">
-    <SmartTabs {kind} slug={r.slug} skip={['people', ...(hosts.length ? ['members' as const] : [])]} heading="Related" />
+    <SmartTabs {kind} slug={r.slug} display={r.display} skip={['people', ...(hosts.length ? ['members' as const] : [])]} heading="Related" />
   </section>
 </BaseLayout>
 
@@ -106,24 +107,25 @@ const jsonLd = { '@context': 'https://schema.org', '@type': schemaType, name: r.
   .rec-hero__badges a:hover { background: var(--white); color: var(--navy); }
   .rec-hero__actions { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s6); }
   .rec-hero__actions:empty { display: none; }
-  .rec-hero__logo { display: flex; align-items: center; justify-content: center; aspect-ratio: 3 / 2; padding: var(--s6); border-radius: var(--radius-lg); background: var(--white); box-shadow: 0 24px 60px rgb(0 0 0 / 0.3); }
+  .rec-hero__logo { display: flex; align-items: center; justify-content: center; aspect-ratio: 3 / 2; padding: var(--s5); border-radius: var(--radius-lg); background: var(--white); box-shadow: 0 24px 60px rgb(0 0 0 / 0.3); }
   .rec-hero__logo :global(img) { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
   .rec-hero__art { width: 100%; max-height: 280px; object-fit: contain; filter: invert(1) hue-rotate(180deg) brightness(1.1); mix-blend-mode: screen; opacity: 0.9; }
   .rec-body { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 5vw, 80px); padding-block: var(--s8); align-items: start; }
   .rec-body:not(:has(.glance)) { grid-template-columns: minmax(0, 1fr); }
   .rec-h { font-size: var(--fs-h3); margin: 0 0 var(--s4); }
   .glance { position: sticky; top: 100px; padding: var(--s5); border-radius: var(--radius-lg); background: var(--grey-light); }
-  .glance__h { margin: 0 0 var(--s4); font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); }
+  .glance__h { margin: 0 0 var(--s4); font-size: var(--fs-sm); font-weight: 700; letter-spacing: 0;  color: var(--navy); }
   .glance__facts { margin: 0; display: grid; gap: var(--s3); }
   .glance__facts dt { font-size: var(--fs-xs); color: var(--muted); }
   .glance__facts dd { margin: 0; font-weight: 700; color: var(--navy); }
   .glance__block { margin-top: var(--s5); padding-top: var(--s4); border-top: 1px solid var(--border); }
   .glance__sub { margin: 0 0 var(--s3); font-size: var(--fs-xs); font-weight: 700; color: var(--orange-text); }
-  .glance .acc > summary { font-size: var(--fs-sm); padding-block: var(--s2); }
-  .glance .acc__body { font-size: var(--fs-sm); }
+  .glance__labels { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s3); }
+  .glance__labels li { display: flex; flex-direction: column; gap: 2px; font-size: var(--fs-xs); line-height: 1.45; }
+  .glance__labels a { font-size: var(--fs-sm); font-weight: 700; color: var(--navy); }
   .glance__logos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s2); }
   .glance__logos a { display: flex; align-items: center; justify-content: center; height: 72px; padding: var(--s3); border-radius: 8px; background: var(--white); font-size: var(--fs-xs); font-weight: 700; color: var(--navy); text-align: center; }
-  .glance__logos :global(img) { max-width: 100%; max-height: 48px; width: auto; height: auto; object-fit: contain; }
+  .glance__logos :global(img) { max-width: 100%; max-height: 56px; width: auto; height: auto; object-fit: contain; }
   .glance__people { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
   .rec-related { padding-top: var(--s4); }
   @media (max-width: 900px) {

@@ -8,6 +8,7 @@ import nav from '../data/navigation.json';
 import UkMap from './UkMap.astro';
 import RemoteImage from './RemoteImage.astro';
 import { DIRECTORY } from '../lib/graph';
+import { localAsset } from '../lib/assets';
 import { longDate, todayUK } from '../lib/format';
 import { url } from '../lib/url';
 
@@ -23,6 +24,7 @@ const today = todayUK();
 const nextEvents = (await getCollection('events')).filter((e) => (e.data.end ?? e.data.start) >= today).sort((a, b) => a.data.start.getTime() - b.data.start.getTime()).slice(0, 3);
 const latest = (await getCollection('news')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
 const memberCount = DIRECTORY.members.records.length;
+const clubs = DIRECTORY.activities.records.filter((a) => a.tags.includes('Club'));
 const f = (d: Date, o: Intl.DateTimeFormatOptions) => d.toLocaleDateString('en-GB', { ...o, timeZone: 'UTC' });
 ---
 <header class:list={['site-header', { 'site-header--overlay': overlay }]} data-header>
@@ -31,6 +33,9 @@ const f = (d: Date, o: Intl.DateTimeFormatOptions) => d.toLocaleDateString('en-G
       <img src={url('/images/elixir-uk-logo.svg')} alt="ELIXIR United Kingdom – home" width="112" height="38" />
     </a>
 
+    <a class="site-header__search" href={url('/search/')} aria-label="Search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </a>
     <button class="site-header__toggle" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
       <span class="visually-hidden">Menu</span>
       <span aria-hidden="true"></span>
@@ -40,8 +45,11 @@ const f = (d: Date, o: Intl.DateTimeFormatOptions) => d.toLocaleDateString('en-G
       <ul class="site-nav__list">
         {items.map((item, i) => (
           <li class:list={['site-nav__item', { 'is-cta': item.cta, 'is-section': inSection(item), 'has-mega': item.mega }]}>
+            {item.mega && item.mega.columns.length === 0 && (
+              <a class="site-nav__top site-nav__mobile-link" href={url(item.href)}>{item.label}</a>
+            )}
             {item.mega ? (
-              <button type="button" class="site-nav__top" aria-expanded="false" aria-controls={`mega-${i}`} data-mega-btn>
+              <button type="button" class:list={['site-nav__top', { 'site-nav__desktop-only': item.mega.columns.length === 0 }]} aria-expanded="false" aria-controls={`mega-${i}`} data-mega-btn>
                 {item.label}
                 <svg class="chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" /></svg>
               </button>
@@ -91,6 +99,17 @@ const f = (d: Date, o: Intl.DateTimeFormatOptions) => d.toLocaleDateString('en-G
                           <span class="mega__link">{n.data.title}</span>
                         </a>
                       ))}
+                    </div>
+                  )}
+                  {item.mega.feature === 'clubs' && (
+                    <div class="mega__feature mega__clubs">
+                      <p class="mega__heading">ELIXIR-UK Clubs</p>
+                      <ul>{clubs.map((c) => (
+                        <li><a href={url(`/activities/${c.slug}/`)}>
+                          <span class="icon-disc">{c.logo ? <img src={localAsset(c.logo)} alt="" /> : <b>{c.name[0]}</b>}</span>
+                          <span class="mega__link">{c.name}</span>
+                        </a></li>
+                      ))}</ul>
                     </div>
                   )}
                   {item.mega.feature === 'members' && (
@@ -182,7 +201,7 @@ const f = (d: Date, o: Intl.DateTimeFormatOptions) => d.toLocaleDateString('en-G
   .mega__intro { padding-right: var(--s5); border-right: 1px solid var(--border); }
   .mega__title { margin: 0 0 var(--s3); font-size: 2rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; color: var(--navy); }
   .mega__intro p:not(.mega__title) { font-size: var(--fs-sm); margin-bottom: var(--s4); }
-  .mega__heading { margin: 0 0 var(--s3); font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange-text); }
+  .mega__heading { margin: 0 0 var(--s3); font-size: var(--fs-sm); font-weight: 700; letter-spacing: 0;  color: var(--orange-text); }
   .mega ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
   .mega__col a, .mega__events a { display: flex; flex-direction: column; gap: 2px; padding: var(--s2) var(--s3); margin-left: calc(-1 * var(--s3)); border-radius: 6px; color: var(--text); }
   .mega__col a:hover, .mega__events a:hover { background: var(--grey-light); color: var(--text); }
@@ -191,6 +210,13 @@ const f = (d: Date, o: Intl.DateTimeFormatOptions) => d.toLocaleDateString('en-G
   .mega__desc { font-size: var(--fs-xs); color: var(--muted); line-height: 1.35; }
   .mega__col a[aria-current='page'] .mega__link { color: var(--orange-text); }
   .mega__feature--wide { grid-column: span 2; }
+  .mega__clubs { padding: var(--s4); margin: calc(-1 * var(--s4)); border-radius: var(--radius-lg); background: var(--grey-light); }
+  .mega__clubs ul { gap: var(--s1); }
+  .mega__clubs a { display: flex; align-items: center; gap: var(--s3); padding: 6px; border-radius: 8px; }
+  .mega__clubs a:hover { background: var(--white); }
+  .mega__clubs .icon-disc { width: 40px; border: 0; }
+  .mega__clubs .mega__link { font-size: var(--fs-sm); }
+  .site-nav__mobile-link { display: none !important; }
   .mega__events a { flex-direction: row; align-items: center; gap: var(--s4); }
   .mega__date { flex: none; display: flex; flex-direction: column; align-items: center; width: 52px; padding: 4px 0; border-radius: 6px; background: var(--navy); color: var(--white); font-size: 11px; text-transform: uppercase; line-height: 1.1; }
   .mega__date b { font-size: 1.3rem; font-weight: 900; }
@@ -208,6 +234,11 @@ const f = (d: Date, o: Intl.DateTimeFormatOptions) => d.toLocaleDateString('en-G
   .mega-scrim:not([hidden]) { top: 0; }
 
   .site-header__toggle { display: none; }
+  .site-header__inner { gap: var(--s2); }
+  .site-nav { margin-left: auto; }
+  .site-header__search { order: 3; display: grid; place-items: center; width: 44px; height: 44px; margin-left: var(--s2); border-radius: 50%; color: var(--white); }
+  .site-header__search:hover { background: rgb(255 255 255 / 0.1); color: var(--orange-soft); }
+  .site-header__search svg { width: 20px; height: 20px; }
 
   @media (max-width: 1024px) {
     .site-header__toggle { display: grid; place-items: center; width: 44px; height: 44px; background: none; border: 0; cursor: pointer; }
@@ -218,7 +249,9 @@ const f = (d: Date, o: Intl.DateTimeFormatOptions) => d.toLocaleDateString('en-G
     .nav-open .site-header__toggle span[aria-hidden]::before { transform: translateY(7px) rotate(45deg); }
     .nav-open .site-header__toggle span[aria-hidden]::after { transform: translateY(-7px) rotate(-45deg); }
     .site-nav { position: absolute; inset: 100% 0 auto; background: var(--ink); max-height: 0; overflow: hidden; transition: max-height 0.35s var(--ease); }
-    .nav-open .site-nav { max-height: calc(100vh - 68px); overflow-y: auto; }
+    .nav-open .site-nav { max-height: calc(100dvh - 68px); height: calc(100dvh - 68px); overflow-y: auto; }
+    .site-header__toggle { order: 4; }
+    .site-header__search { margin-left: auto; }
     .site-nav__list { flex-direction: column; align-items: stretch; padding: var(--s2) var(--gutter) var(--s6); }
     .site-nav__item { border-bottom: 1px solid rgb(255 255 255 / 0.1); }
     .site-nav__top { width: 100%; justify-content: space-between; min-height: 56px; padding: 0; font-size: 14px; }
@@ -238,5 +271,7 @@ const f = (d: Date, o: Intl.DateTimeFormatOptions) => d.toLocaleDateString('en-G
     .mega__desc { color: #9fbcd0; }
     .mega__col a:hover { background: none; }
     .mega-scrim { display: none; }
+    .site-nav__mobile-link { display: flex !important; }
+    .site-nav__desktop-only, .site-nav__desktop-only + .mega { display: none !important; }
   }
 </style>

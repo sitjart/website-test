@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { DIRECTORY, type Kind } from './graph';
 import home from '../data/home.json';
 import { url } from './url';
+import { isCurrent } from './people';
 
 export interface Card {
   kind: Kind; slug: string; href: string; title: string;
@@ -17,7 +18,7 @@ async function all() {
   const put = (c: Card) => m.set(`${c.kind}/${c.slug}`, c);
   (await getCollection('news')).forEach((n) => put({ kind: 'news', slug: n.id, href: url(`/news/${n.id}/`), title: n.data.title, image: n.data.image, imageKind: n.data.image ? 'photo' : 'none', date: n.data.date, meta: n.data.category, text: n.data.excerpt || n.data.standfirst }));
   (await getCollection('events')).forEach((e) => put({ kind: 'events', slug: e.id, href: url(`/events/${e.id}/`), title: e.data.title, imageKind: 'none', date: e.data.start, meta: `${e.data.type} · ${e.data.format === 'in-person' ? e.data.locality || 'In person' : e.data.format === 'hybrid' ? 'Hybrid' : 'Online'}` }));
-  (await getCollection('people')).forEach((p) => put({ kind: 'people', slug: p.id, href: url(`/people/${p.id}/`), title: p.data.name, honorific: p.data.honorific, image: p.data.photo, imageKind: 'avatar', meta: p.data.role || p.data.institution }));
+  (await getCollection('people')).filter(isCurrent).forEach((p) => put({ kind: 'people', slug: p.id, href: url(`/people/${p.id}/`), title: p.data.name, honorific: p.data.honorific, image: p.data.photo, imageKind: 'avatar', meta: p.data.role || p.data.institution }));
   const art = home.areaIllustrations as Record<string, string>;
   for (const [k, v] of Object.entries(DIRECTORY)) {
     v.records.forEach((r) => put({

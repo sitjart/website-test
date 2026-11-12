@@ -32,7 +32,7 @@ const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.tag
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <Header overlay={overlayHeader} />
-    <main id="main" class="site-main">
+    <main id="main" class="site-main" data-pagefind-body>
       <slot />
     </main>
     <Footer />

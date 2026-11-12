@@ -60,7 +60,6 @@ const jsonLd = {
     <div class="hero__orbit"><HeroOrbit /></div>
     <div class="container hero__grid">
       <div class="hero__copy">
-        <p class="eyebrow-sm hero__eyebrow">{home.heroEyebrow}</p>
         <h1 class="display hero__title">ELIXIR-UK<span class="stop">.</span></h1>
         <p class="hero__intro">{home.intro}</p>
         <div class="hero__actions">
@@ -123,7 +122,6 @@ const jsonLd = {
         <li><a href={url('/services/')}><strong>{stats.services}</strong><span>endorsed services</span></a></li>
         <li><a href={url('/activities/')}><strong>{stats.communities}</strong><span>communities and groups, {stats.leading} UK-led</span></a></li>
         <li><a href={url('/projects/')}><strong>{stats.projects}</strong><span>projects</span></a></li>
-        <li><a href={url('/people/')}><strong>{stats.people}</strong><span>people with a profile</span></a></li>
         <li><a href={url('/events/')}><strong>{stats.events.reduce((a, e) => a + e.count, 0)}</strong><span>events since {stats.events[0]?.year}</span></a></li>
       </ul>
       </div>
@@ -247,7 +245,6 @@ const jsonLd = {
   <section class="section services-band" aria-labelledby="svc-h">
     <div class="container services-band__grid">
       <div>
-        <p class="eyebrow-sm">Open-access services</p>
         <h2 class="section-title" id="svc-h"><span class="services-band__num">{services.length}</span> services, endorsed<span class="stop">.</span></h2>
         <p>Selected by ELIXIR-UK for quality, use and sustainability, and free for the life sciences community.</p>
         <a class="btn" href={url('/services/')}>Discover our services</a>
@@ -380,9 +377,9 @@ const jsonLd = {
   .services-band__grid > div p:not(.eyebrow-sm) { margin: var(--s4) 0 var(--s5); max-width: 30rem; }
   .services-band__num { color: var(--orange-text); }
   .services-band__logos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--s3); }
-  .services-band__logos a { display: flex; align-items: center; justify-content: center; aspect-ratio: 1; padding: var(--s4); border-radius: var(--radius-lg); background: var(--white); transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease); }
+  .services-band__logos a { display: flex; align-items: center; justify-content: center; aspect-ratio: 1; padding: var(--s3); border-radius: var(--radius-lg); background: var(--white); transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease); }
   .services-band__logos a:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
-  .services-band__logos :global(img) { max-width: 100%; max-height: 72px; width: auto; height: auto; object-fit: contain; }
+  .services-band__logos :global(img) { max-width: 100%; max-height: 84px; width: auto; height: auto; object-fit: contain; }
 
   @media (max-width: 1080px) {
     .mission { grid-template-columns: 1fr 1fr; }

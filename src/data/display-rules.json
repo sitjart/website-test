@@ -1,0 +1,12 @@
+{
+  "_about": "Which linked records each kind of page SHOWS. Links always stay two-way in the data: hiding a kind here only stops it being displayed on that page – the other page still lists this one. Example: an event linked to the University of Liverpool appears on Liverpool's page, but Liverpool is not listed on the event. Per record, add display.hide (e.g. [\"members\"] or [\"members/university-of-liverpool\"]) or display.show (e.g. [\"members/university-of-liverpool\"]) to override.",
+  "events": { "hide": ["members", "collaborations", "area"] },
+  "news": { "hide": [] },
+  "activities": { "hide": [] },
+  "services": { "hide": [] },
+  "projects": { "hide": [] },
+  "members": { "hide": [] },
+  "people": { "hide": [] },
+  "collaborations": { "hide": [] },
+  "area": { "hide": [] }
+}

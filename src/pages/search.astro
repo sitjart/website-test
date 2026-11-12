@@ -1,0 +1,52 @@
+---
+// Site search, powered by Pagefind: the index is built from the finished pages at build time
+// and searched in the browser – no server, nothing to maintain.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { url } from '../lib/url';
+const base = url('/pagefind/');
+---
+<BaseLayout title="Search" description="Search the ELIXIR-UK website.">
+  <PageHeader title="Search" size="md" />
+  <section class="section">
+    <div class="container search-wrap">
+      <div id="search" data-base={base}></div>
+      <noscript><p>Search needs JavaScript. You can browse <a href={url('/news/')}>news</a>, <a href={url('/events/')}>events</a>, <a href={url('/services/')}>services</a> and <a href={url('/people/')}>people</a> instead.</p></noscript>
+    </div>
+  </section>
+  <link rel="stylesheet" href={`${base}pagefind-ui.css`} />
+</BaseLayout>
+
+<script>
+  const el = document.getElementById('search')!;
+  const base = el.dataset.base!;
+  const s = document.createElement('script');
+  s.src = `${base}pagefind-ui.js`;
+  s.onload = () => {
+    // @ts-ignore – provided by pagefind-ui.js
+    const ui = new PagefindUI({ element: '#search', showSubResults: true, showImages: false, resetStyles: false, translations: { placeholder: 'Search people, services, communities, news and events' } });
+    const q = new URLSearchParams(location.search).get('q');
+    if (q) ui.triggerSearch(q);
+    (el.querySelector('input') as HTMLInputElement | null)?.focus();
+  };
+  document.head.appendChild(s);
+</script>
+
+<style>
+  .search-wrap { max-width: 860px; min-height: 40vh; }
+  .search-wrap :global(.pagefind-ui) {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: var(--navy);
+    --pagefind-ui-text: var(--text);
+    --pagefind-ui-background: var(--white);
+    --pagefind-ui-border: #cbd6de;
+    --pagefind-ui-tag: var(--grey-light);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 4px;
+    --pagefind-ui-font: var(--font);
+  }
+  .search-wrap :global(.pagefind-ui__search-input) { font-weight: 400; }
+  .search-wrap :global(.pagefind-ui__result-link) { color: var(--navy); font-weight: 700; }
+  .search-wrap :global(.pagefind-ui__result-link:hover) { color: var(--orange-text); }
+  .search-wrap :global(mark) { background: #ffe3cc; color: inherit; }
+</style>

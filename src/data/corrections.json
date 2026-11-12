@@ -1,0 +1,7 @@
+{
+  "_about": "Corrections applied on top of the WordPress/Baserow data at build time, until the source is fixed. Remove an entry once the source data is right.",
+  "removeLeads": {
+    "uk-human-data-community": ["xenia-perez-sitja"],
+    "uk-training-club": ["xenia-perez-sitja"]
+  }
+}

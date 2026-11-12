@@ -1,0 +1,25 @@
+---
+// Breadcrumbs: Home › Section › This page. The last item is the current page.
+import { url } from '../lib/url';
+interface Props { items: { label: string; href?: string }[]; dark?: boolean }
+const { items, dark = false } = Astro.props;
+const all = [{ label: 'Home', href: '/' }, ...items];
+---
+<nav class:list={['crumbs', { 'crumbs--dark': dark }]} aria-label="Breadcrumb">
+  <ol>
+    {all.map((c, i) => (
+      <li>{i < all.length - 1 && c.href ? <a href={url(c.href)}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</li>
+    ))}
+  </ol>
+</nav>
+<style>
+  .crumbs { margin: 0 0 var(--s5); font-size: var(--fs-sm); }
+  .crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; }
+  .crumbs li { display: inline-flex; align-items: center; color: var(--muted); }
+  .crumbs li + li::before { content: '›'; margin: 0 0.55em; opacity: 0.6; }
+  .crumbs a { color: var(--blue-dark); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: rgb(127 127 127 / 0.45); }
+  .crumbs span[aria-current] { max-width: 40ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .crumbs--dark li { color: #9fbcd0; }
+  .crumbs--dark a { color: #c9d7e2; }
+  .crumbs--dark a:hover { color: var(--white); }
+</style>

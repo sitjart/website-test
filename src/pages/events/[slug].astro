@@ -1,4 +1,5 @@
 ---
+import Crumbs from '../../components/Crumbs.astro';
 import { cleanHtml } from '../../lib/html';
 // Event page – B2: navy header over the event image, date card inside the header
 import { getCollection, render } from 'astro:content';
@@ -8,7 +9,7 @@ import Avatar from '../../components/Avatar.astro';
 import PersonLine from '../../components/PersonLine.astro';
 import SmartTabs from '../../components/SmartTabs.astro';
 import { longDate, todayUK, firstSentence, needsStop } from '../../lib/format';
-import { DIRECTORY, tagSlug, linksFor } from '../../lib/graph';
+import { DIRECTORY, tagSlug, linksFor, shownLinks } from '../../lib/graph';
 import { url } from '../../lib/url';
 
 export async function getStaticPaths() {
@@ -47,7 +48,7 @@ const day = e.start.toLocaleDateString('en-GB', { day: 'numeric', timeZone: 'Eur
 const month = e.start.toLocaleDateString('en-GB', { month: 'short', timeZone: 'Europe/London' });
 const weekday = e.start.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/London' });
 
-const links = await linksFor('events', entry.id);
+const links = await shownLinks('events', entry.id, e.display);
 const orgNode = links.activities?.[0];
 const org = orgNode ? DIRECTORY.activities.records.find((r) => r.slug === orgNode.slug) : undefined;
 
@@ -89,7 +90,7 @@ const jsonLd = {
     <div class="ev-hero__shade"></div>
     <div class="container ev-hero__grid">
       <div>
-        <p class="crumb"><a href={url('/events/')}>Events</a><a href={url(`/events/type/${tagSlug(e.type)}/`)}>{e.type}</a></p>
+        <Crumbs dark items={[{ label: 'Events', href: '/events/' }, { label: e.title }]} />
         <div class="ev-tags">
           <a class="pill" href={url(`/events/type/${tagSlug(e.type)}/`)}>{e.type}</a>
           {org && <a class="pill" href={url(`/activities/${org.slug}/`)}>{org.name}</a>}
@@ -153,7 +154,7 @@ const jsonLd = {
     </aside>
   </section>
 
-  <section class="container ev-related"><SmartTabs kind="events" slug={entry.id} skip={['people']} heading="Related" /></section>
+  <section class="container ev-related"><SmartTabs kind="events" slug={entry.id} display={e.display} skip={['people']} heading="Related" /></section>
 
   {alsoComing.length > 0 && (
     <section class="ev-more">
@@ -196,7 +197,7 @@ const jsonLd = {
   .ev-card__note { margin: 0; font-size: 15px; color: var(--muted); }
   .ev-body { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 64px; padding-block: 72px 32px; }
   .ev-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; margin: 40px 0 0; padding: 24px 0; border-block: 1px solid var(--border); }
-  .ev-facts dt { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange-text); }
+  .ev-facts dt { font-size: var(--fs-sm); font-weight: 700; letter-spacing: 0;  color: var(--orange-text); }
   .ev-facts dd { margin: 4px 0 0; color: var(--navy); font-weight: 600; }
   .ev-org { display: grid; gap: 12px; padding: 28px; border-radius: 10px; background: var(--grey-light); color: var(--text); }
   .ev-org:hover { color: var(--text); background: #e8eef2; }

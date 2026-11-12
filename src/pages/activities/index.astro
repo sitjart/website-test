@@ -1,4 +1,155 @@
 ---
-import DirectoryList from '../../components/DirectoryList.astro';
+// Communities of practice – the WordPress page structure and copy:
+// UK Clubs (national level), then ELIXIR Platforms, Communities and Focus Groups (European level)
+// with the "Not sure which to join?" explainer; the Fellowship at the foot.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { DIRECTORY, type DirectoryRecord } from '../../lib/graph';
+import { localAsset, asset } from '../../lib/assets';
+import { firstSentence } from '../../lib/format';
+import { url } from '../../lib/url';
+
+const all = DIRECTORY.activities.records.filter((r) => r.slug !== 'fellowship').sort((a, b) => a.name.localeCompare(b.name, 'en-GB'));
+const clubs = all.filter((r) => r.tags.includes('Club'));
+const europe = all.filter((r) => !clubs.includes(r));
+const typeOf = (r: DirectoryRecord) => r.tags.find((t) => ['Platform', 'Community', 'Focus Group'].includes(t)) ?? 'Community';
+const TYPES = [
+  { key: 'Platform', label: 'Platforms', text: 'overarching areas, such as data, tools or training, that span the work of many Communities.' },
+  { key: 'Community', label: 'Communities', text: 'established groups focused on a specific life science domain.' },
+  { key: 'Focus Group', label: 'Focus Groups', text: 'newer groups working on a specific topic for a set period, after which they either become a Community or close.' },
+];
+const text = (r: DirectoryRecord) => r.excerpt || firstSentence(r.summary, 160);
 ---
-<DirectoryList kind="activities" />
+<BaseLayout title="Communities of practice" description="ELIXIR-UK Clubs and the ELIXIR Platforms, Communities and Focus Groups UK members take part in.">
+  <PageHeader title="Our communities of practice" illustration="illustration-isometrics-team-rowing.svg" count={{ n: all.length, label: 'Clubs, Communities, Platforms and Focus Groups' }} />
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2 class="section-title">At national level<span class="stop">.</span></h2></div>
+      <ul class="clubs">
+        {clubs.map((r) => (
+          <li><a class="card club" href={url(`/activities/${r.slug}/`)}>
+            <span class="icon-disc">{r.logo ? <img src={localAsset(r.logo)} alt="" /> : <b>{r.name[0]}</b>}</span>
+            <span class="card__title club__name">{r.name}</span>
+            <span class="club__text">{text(r)}</span>
+            <span class="more-link" aria-hidden="true">Find out more</span>
+          </a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--grey">
+    <div class="container">
+      <div class="eu-intro">
+        <div>
+          <h2 class="section-title">At European level<span class="stop">.</span></h2>
+          <p class="lead">Activities within the wider ELIXIR Europe help coordinate the work of all its members and bring together experts across Europe, in or outside ELIXIR, to develop standards, services and training within specific life science domains. The UK Node co-leads several Communities, Platforms and ELIXIR Focus Groups, and our members are actively represented in all.</p>
+        </div>
+        <aside class="which">
+          <p class="which__h">Not sure which to join?</p>
+          <dl>
+            <div><dt>UK clubs</dt><dd>our UK-based groups, open to anyone. Everything else below is Europe-wide.</dd></div>
+            {TYPES.map((t) => <div><dt>{t.label}</dt><dd>{t.text}</dd></div>)}
+          </dl>
+          <p class="which__foot">If you’re interested in participating in any of these, but don’t know where to start, <a href={url('/contact-us/')}>contact us</a>.</p>
+        </aside>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter by type">
+        <button type="button" class="chip is-active" data-type="" aria-pressed="true">Show all <span>{europe.length}</span></button>
+        {TYPES.map((t) => <button type="button" class="chip" data-type={t.key} aria-pressed="false">{t.label} <span>{europe.filter((r) => typeOf(r) === t.key).length}</span></button>)}
+      </div>
+      <ul class="eu">
+        {europe.map((r) => (
+          <li data-type={typeOf(r)}><a class="card eucard" href={url(`/activities/${r.slug}/`)}>
+            <span class="icon-disc">{r.logo ? <img src={localAsset(r.logo)} alt="" loading="lazy" /> : <b>{r.name[0]}</b>}</span>
+            <span class="eucard__body">
+              <span class="eucard__type">{typeOf(r)}{r.tags.includes('Leading') && <span class="lead-badge">UK co-leads</span>}</span>
+              <span class="card__title">{r.name}</span>
+              <span class="eucard__text">{text(r)}</span>
+            </span>
+          </a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container ctas">
+      <a class="cta-box" href={url('/how-our-communities-of-practice-work/')}>
+        <span class="cta-box__h">Clubs, Platforms, Communities or Focus Groups?</span>
+        <span>Find out how they differ and which one is right for you.</span>
+        <span class="more-link">How our communities of practice work</span>
+      </a>
+      <a class="cta-box cta-box--dark" href={url('/contact-us/')}>
+        <span class="cta-box__h">New to ELIXIR Europe?</span>
+        <span>Contact us and we’ll pair you with a UK member already involved.</span>
+        <span class="more-link">Contact us</span>
+      </a>
+    </div>
+    <div class="container">
+      <a class="fellow-card" href={url('/activities/fellowship/')}>
+        <span class="icon-disc"><img src={asset('emblem-fellowship.svg')} alt="" /></span>
+        <span><span class="card__meta">Also from ELIXIR-UK</span><span class="card__title">The Data Stewardship Fellowship</span><span class="eucard__text">Fellows and mentors professionalising data stewardship across UK research organisations.</span></span>
+        <span class="more-link" aria-hidden="true"></span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const chips = document.querySelectorAll<HTMLButtonElement>('[data-type]:is(button)');
+  const items = document.querySelectorAll<HTMLElement>('.eu li');
+  chips.forEach((c) => c.addEventListener('click', () => {
+    const t = c.dataset.type ?? '';
+    items.forEach((li) => (li.hidden = !!t && li.dataset.type !== t));
+    chips.forEach((x) => { const on = x === c; x.classList.toggle('is-active', on); x.setAttribute('aria-pressed', String(on)); });
+  }));
+</script>
+
+<style>
+  .clubs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: var(--s4); }
+  .clubs li { display: flex; }
+  .club { flex: 1; gap: var(--s3); padding: var(--s6) var(--s5); }
+  .club .icon-disc { width: 84px; background: var(--grey-light); border: 0; }
+  .club__name { font-size: 1.25rem; }
+  .club__text { font-size: var(--fs-sm); line-height: 1.5; flex: 1; }
+  .eu-intro { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; margin-bottom: var(--s7); }
+  .eu-intro .lead { margin-top: var(--s4); }
+  .which { padding: var(--s6); border-radius: var(--radius-lg); background: var(--white); border-left: 4px solid var(--orange); }
+  .which__h { margin: 0 0 var(--s4); font-size: 1.25rem; font-weight: 700; color: var(--navy); }
+  .which dl { margin: 0; display: grid; gap: var(--s3); }
+  .which dt { font-weight: 700; color: var(--navy); display: inline; }
+  .which dt::after { content: ' – '; font-weight: 400; color: var(--muted); }
+  .which dd { display: inline; margin: 0; font-size: var(--fs-sm); }
+  .which__foot { margin: var(--s4) 0 0; padding-top: var(--s4); border-top: 1px solid var(--border); font-size: var(--fs-sm); }
+  .filters { display: flex; flex-wrap: wrap; gap: var(--s2); margin-bottom: var(--s5); }
+  .chip { font: inherit; font-size: var(--fs-sm); min-height: 40px; padding: 0 var(--s4); border: 1px solid #cbd6de; border-radius: 999px; background: var(--white); color: var(--navy); cursor: pointer; }
+  .chip span { color: var(--muted); font-size: var(--fs-xs); }
+  .chip.is-active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+  .chip.is-active span { color: #9fbcd0; }
+  .eu { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: var(--s4); }
+  .eu li { display: flex; }
+  .eucard { flex: 1; flex-direction: row; gap: var(--s4); align-items: flex-start; }
+  .eucard .icon-disc { width: 60px; background: var(--grey-light); border: 0; }
+  .eucard .icon-disc b, .club .icon-disc b { color: var(--navy); font-size: 1.4rem; }
+  .eucard__body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .eucard__type { display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap; font-size: var(--fs-xs); font-weight: 700; color: var(--orange-text); }
+  .eucard__text { font-size: var(--fs-sm); line-height: 1.5; }
+  .lead-badge { font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 3px; background: #fdeee2; color: #8f4006; }
+  .ctas { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); margin-bottom: var(--s6); }
+  .cta-box { display: flex; flex-direction: column; gap: var(--s2); padding: var(--s6); border-radius: var(--radius-lg); background: var(--grey-light); color: var(--text); }
+  .cta-box:hover { color: var(--text); background: #e8eef2; }
+  .cta-box__h { font-size: 1.35rem; font-weight: 900; line-height: 1.2; color: var(--navy); }
+  .cta-box .more-link { margin-top: var(--s3); color: var(--blue-dark); }
+  .cta-box--dark { background: var(--ink); color: var(--on-dark); }
+  .cta-box--dark:hover { background: var(--navy); color: var(--on-dark); }
+  .cta-box--dark .cta-box__h { color: var(--white); }
+  .cta-box--dark .more-link { color: var(--orange-soft); }
+  .fellow-card { display: flex; align-items: center; gap: var(--s5); padding: var(--s5); border-radius: var(--radius-lg); border: 1px solid var(--border); color: var(--text); }
+  .fellow-card:hover { color: var(--text); box-shadow: var(--shadow-hover); }
+  .fellow-card > span:nth-child(2) { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .fellow-card .icon-disc { width: 80px; border: 0; background: var(--grey-light); }
+  @media (max-width: 900px) { .eu-intro, .ctas { grid-template-columns: 1fr; } }
+</style>

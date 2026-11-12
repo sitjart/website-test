@@ -26,6 +26,7 @@ export interface DirectoryRecord {
   excerpt?: string;
   leadIds?: number[];
   peopleIds?: number[];
+  display?: { hide?: string[]; show?: string[] };
   related: Partial<Record<Kind, string[]>>;
 }
 
@@ -104,4 +105,27 @@ export async function linksFor(kind: Kind, slug: string) {
     list!.sort((a, b) => (b.date && a.date ? b.date.getTime() - a.date.getTime() : a.name.localeCompare(b.name)));
   }
   return groups;
+}
+
+// ---------------------------------------------------------------------------
+// Display rules: which links a page shows (src/data/display-rules.json).
+// Links stay two-way; this only decides whether this page lists them.
+// ---------------------------------------------------------------------------
+import rules from '../data/display-rules.json';
+export type Display = { hide?: string[]; show?: string[] };
+export async function shownLinks(kind: Kind, slug: string, display?: Display) {
+  const groups = await linksFor(kind, slug);
+  const hiddenKinds = new Set([...((rules as Record<string, { hide?: string[] }>)[kind]?.hide ?? []), ...(display?.hide ?? []).filter((h) => !h.includes('/'))]);
+  const hiddenOnes = new Set((display?.hide ?? []).filter((h) => h.includes('/')));
+  const forced = new Set(display?.show ?? []);
+  const out: typeof groups = {};
+  for (const [k, list] of Object.entries(groups) as [Kind, Node[]][]) {
+    const keep = list.filter((n) => {
+      const id = `${n.kind}/${n.slug}`;
+      if (forced.has(id) || forced.has(n.kind)) return true;
+      return !hiddenKinds.has(k) && !hiddenOnes.has(id);
+    });
+    if (keep.length) out[k] = keep;
+  }
+  return out;
 }

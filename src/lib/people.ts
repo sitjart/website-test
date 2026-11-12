@@ -6,6 +6,8 @@
 import wpIds from '../data/wp-ids.json';
 import members from '../data/directory/members.json';
 import { fetchRows, selectValue, slugify } from './baserow';
+import corrections from '../data/corrections.json';
+const removedLeads = corrections.removeLeads as Record<string, string[]>;
 
 export interface Person {
   id: string;
@@ -13,6 +15,7 @@ export interface Person {
   honorific: string; // Dr, Prof – shown small above the name
   name: string;
   leads: string[];   // slugs of communities this person leads
+  email?: string;    // only shown for Club co-leads, as a contact
   role: string;
   institution: string;
   institutionSlug?: string;
@@ -51,10 +54,20 @@ const asIds = (v: unknown): string[] =>
 
 const stripTags = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&#8217;/g, '’').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 
+// Governance roles, statuses and tags are WordPress taxonomies: fetch their names once.
+const NAME_FIX: Record<string, string> = { 'Management Cmte': 'Management Committee', 'Steering Cmte': 'Steering Committee' };
+async function terms(tax: string): Promise<Map<number, string>> {
+  const res = await fetch(`${WP}/wp-json/wp/v2/${tax}?per_page=100&_fields=id,name`, { signal: AbortSignal.timeout(20000) });
+  if (!res.ok) return new Map();
+  const list = (await res.json()) as { id: number; name: string }[];
+  return new Map(list.map((t) => [t.id, NAME_FIX[t.name] ?? t.name.replace(/&amp;/g, '&')]));
+}
+
 async function fromWordPress(): Promise<Person[]> {
   const out: Person[] = [];
+  const [govT, statusT, tagT] = await Promise.all([terms('governance-role'), terms('people-status'), terms('people-tag')]);
   for (let page = 1; page < 20; page++) {
-    const res = await fetch(`${WP}/wp-json/wp/v2/people?per_page=100&page=${page}&_embed=wp:featuredmedia&_fields=id,slug,title,content,acf,class_list,_links,_embedded`, {
+    const res = await fetch(`${WP}/wp-json/wp/v2/people?per_page=100&page=${page}&_embed=wp:featuredmedia&_fields=id,slug,title,content,acf,class_list,governance-role,people-status,people-tag,_links,_embedded`, {
       signal: AbortSignal.timeout(20000),
     });
     if (res.status === 400) break; // past the last page
@@ -79,7 +92,8 @@ async function fromWordPress(): Promise<Person[]> {
         wpId: r.id,
         honorific: stripTags(acf.title ?? ''),
         name: stripTags(r.title?.rendered ?? '').replace(/^(Dr|Prof|Professor)\.?\s+/i, ''),
-        leads,
+        leads: leads.filter((a) => !(removedLeads[a] ?? []).includes(r.slug)),
+        email: acf.email || undefined,
         role: stripTags(acf.uk_node_role ?? ''),
         institution: memberSlug ? memberBySlug.get(memberSlug) ?? '' : '',
         institutionSlug: memberSlug,
@@ -88,9 +102,9 @@ async function fromWordPress(): Promise<Person[]> {
         website: acf.website || undefined,
         linkedin: acf.linkedin_account || undefined,
         photo: media?.media_details?.sizes?.medium?.source_url ?? media?.source_url ?? undefined,
-        governance: terms.filter((t) => classes.some((c) => c.startsWith('governance-role') && TERMS[c] === t)),
-        status: terms.find((t) => ['Current member', 'Alumni', 'Collaborator'].includes(t)) ?? '',
-        tags: terms.filter((t) => t.startsWith('DaSH')),
+        governance: ((r['governance-role'] ?? []) as number[]).map((id) => govT.get(id)).filter(Boolean) as string[],
+        status: (((r['people-status'] ?? []) as number[]).map((id) => statusT.get(id)).filter(Boolean)[0] as string) ?? terms.find((t) => ['Current member', 'Alumni', 'Collaborator'].includes(t)) ?? '',
+        tags: (((r['people-tag'] ?? []) as number[]).map((id) => tagT.get(id)).filter(Boolean) as string[]).concat(terms.filter((t) => t.startsWith('DaSH'))).filter((t, i, a) => a.indexOf(t) === i),
         related,
       });
     }
@@ -141,3 +155,6 @@ export async function loadPeople(): Promise<Person[]> {
   }
   return fromBaserowOrSample();
 }
+
+/** Alumni and collaborators keep their profile page but are not listed anywhere else. */
+export const isCurrent = (p: { data: { status: string } }) => !['Alumni', 'Collaborator'].includes(p.data.status);

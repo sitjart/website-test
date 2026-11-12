@@ -1,13 +1,44 @@
 {
   "statuses": [
-    { "tag": "Selected", "title": "Selected services", "text": "Chosen through ELIXIR-UK’s annual, open and transparent selection process, against criteria that ensure high service quality and match UK priorities.", "draft": false },
-    { "tag": "Contributing", "title": "Contributing services", "text": "Services contributing to ELIXIR through project commitments made by ELIXIR-UK members.", "draft": true },
-    { "tag": "Roadmapped", "title": "Roadmapped services", "text": "Services on the Node’s roadmap, working towards selection.", "draft": true }
+    {
+      "tag": "Selected",
+      "title": "Selected services",
+      "text": "Chosen through ELIXIR-UK’s annual, open and transparent selection process, against criteria that ensure high service quality and match UK priorities.",
+      "draft": false
+    },
+    {
+      "tag": "Contributing",
+      "title": "Contributing services",
+      "text": "Services contributing to ELIXIR through project commitments made by ELIXIR-UK members.",
+      "draft": true
+    },
+    {
+      "tag": "Roadmapped",
+      "title": "Roadmapped services",
+      "text": "Services on the Node’s roadmap, working towards selection.",
+      "draft": true
+    }
   ],
   "recognitions": [
-    { "tag": "ELIXIR Core Data Resource", "short": "Core Data Resource", "text": "One of the European data resources ELIXIR considers of fundamental importance to the wider life-science community and to the long-term preservation of biological data.", "href": "https://elixir-europe.org/platforms/data/core-data-resources" },
-    { "tag": "ELIXIR Deposition Database", "short": "Deposition Database", "text": "A repository ELIXIR recommends for depositing life-science experimental data.", "href": "https://elixir-europe.org/platforms/data" },
-    { "tag": "ELIXIR Recommended Interoperability Resource", "short": "Recommended Interoperability Resource", "text": "A tool, registry or standard selected by external reviewers for ELIXIR’s Interoperability Platform because it helps make research FAIR – for example by linking data resources or exposing their metadata.", "href": "https://elixir-europe.org/services/tag/Recommended%20Interoperability%20Resources" },
-    { "tag": "Global Biodata Coalition Resource", "short": "Global Core Biodata Resource", "text": "Recognised by the Global Biodata Coalition as a biodata resource of fundamental importance to the biological and life sciences community worldwide and to the long-term preservation of biological data.", "href": "https://globalbiodata.org/what-we-do/global-core-biodata-resources/" }
+    {
+      "tag": "ELIXIR Core Data Resource",
+      "short": "Core Data Resource",
+      "text": "One of the European data resources ELIXIR considers of fundamental importance to the wider life-science community and to the long-term preservation of biological data."
+    },
+    {
+      "tag": "ELIXIR Deposition Database",
+      "short": "Deposition Database",
+      "text": "A repository ELIXIR recommends for depositing life-science experimental data."
+    },
+    {
+      "tag": "ELIXIR Recommended Interoperability Resource",
+      "short": "Recommended Interoperability Resource",
+      "text": "A tool, registry or standard selected by external reviewers for ELIXIR’s Interoperability Platform because it helps make research FAIR – for example by linking data resources or exposing their metadata."
+    },
+    {
+      "tag": "Global Biodata Coalition Resource",
+      "short": "Global Core Biodata Resource",
+      "text": "Recognised by the Global Biodata Coalition as a biodata resource of fundamental importance to the biological and life sciences community worldwide and to the long-term preservation of biological data."
+    }
   ]
 }

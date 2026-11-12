@@ -17,8 +17,11 @@ const { src, alt = '', width, class: className, loading = 'lazy' } = Astro.props
 
 const isSvg = /\.svg(\?|$)/i.test(src);
 // SVGs: serve the repo copy when there is one. Photos: optimise from the original, local copy as fallback.
-let out = { src: isSvg ? localAsset(src)! : src, attributes: {} as Record<string, unknown> };
-if (!isSvg) {
+const local = localAsset(src)!;
+const hasLocal = local !== src;
+// Files copied into the repo (logos, icons – already trimmed and sized) are served as they are.
+let out = { src: isSvg || hasLocal ? local : src, attributes: {} as Record<string, unknown> };
+if (!isSvg && !hasLocal) {
   try {
     // Work out the height from the original's proportions: passing only a width squashed images.
     const size = await inferRemoteSize(src);

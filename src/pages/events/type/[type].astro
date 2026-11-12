@@ -13,6 +13,6 @@ export async function getStaticPaths() {
 const { name, items } = Astro.props;
 ---
 <BaseLayout title={name}>
-  <PageHeader title={name} eyebrow="Events" />
+  <PageHeader title={name} crumb={{ label: "Events", href: "/events/" }} />
   <EventList {items} />
 </BaseLayout>

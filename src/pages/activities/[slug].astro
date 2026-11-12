@@ -1,4 +1,5 @@
 ---
+import Crumbs from '../../components/Crumbs.astro';
 // Community page: the group's icon, its excerpt and join link; next call; the WordPress copy
 // (accordions rebuilt); everyone involved – leads first, then members, each person once;
 // the community's events; its stories; then other related records.
@@ -17,6 +18,7 @@ import { localAsset } from '../../lib/assets';
 import { longDate, todayUK, firstSentence, needsStop } from '../../lib/format';
 import { url } from '../../lib/url';
 import { cleanHtml } from '../../lib/html';
+import { isCurrent } from '../../lib/people';
 
 export function getStaticPaths() {
   return DIRECTORY.activities.records.map((record) => ({ params: { slug: record.slug }, props: { record } }));
@@ -37,7 +39,7 @@ const isClub = kind === 'Club';
 const kindLabel = ({ Club: 'ELIXIR-UK Club', Community: 'ELIXIR Community', 'Focus Group': 'ELIXIR Focus Group', Platform: 'ELIXIR Platform', Fellowship: 'ELIXIR-UK Fellowship' } as Record<string, string>)[kind];
 const lead = r.tags.includes('Leading');
 const body = await cleanHtml(r.body || `<p>${r.summary}</p>`);
-const fellows = isFellowship ? (await getCollection('people')).filter((p) => p.data.tags.some((t) => t.startsWith('DaSH')) || others.includes(p)) : [];
+const fellows = isFellowship ? (await getCollection('people')).filter(isCurrent).filter((p) => p.data.tags.some((t) => t.startsWith('DaSH')) || others.includes(p)) : [];
 const OTHERS_SHOWN = 12;
 const fmt = (e: (typeof events)[number]) => (e.data.format === 'in-person' ? e.data.locality || 'In person' : e.data.format === 'hybrid' ? 'Hybrid' : 'Online');
 const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name: r.name, description: r.excerpt || r.summary || undefined, logo: r.logo || undefined, parentOrganization: { '@type': 'Organization', name: 'ELIXIR-UK' } };
@@ -46,7 +48,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name
   <section class="c-hero">
     <div class="container c-hero__grid">
       <div>
-        <p class="crumb"><a href={url('/activities/')}>Communities</a><span>{kindLabel}</span></p>
+        <Crumbs items={[{ label: 'Communities of practice', href: '/activities/' }, { label: r.name }]} />
         <p class="eyebrow-sm">{kindLabel}{lead && ' · UK co-leads'}</p>
         <h1 class="display c-hero__title">{r.name}{needsStop(r.name) && <span class="stop">.</span>}</h1>
         {(r.excerpt || r.summary) && <p class="c-hero__lead">{r.excerpt || firstSentence(r.summary, 260)}</p>}
@@ -90,7 +92,12 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name
         {leads.length > 0 && (
           <div class="c-box">
             <p class="c-box__title">{leads.length === 1 ? 'Lead' : 'Leads'} <span>{leads.length}</span></p>
-            <ul>{leads.map((p) => <li><PersonLine p={p} ring="var(--grey-light)" /></li>)}</ul>
+            <ul>{leads.map((p) => (
+              <li>
+                <PersonLine p={p} ring="var(--grey-light)" />
+                {isClub && p.data.email && <a class="c-mail" href={`mailto:${p.data.email}`}>{p.data.email}</a>}
+              </li>
+            ))}</ul>
           </div>
         )}
         {others.length > 0 && (
@@ -106,46 +113,6 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name
     )}
   </section>
 
-  {events.length > 0 && (
-    <section class="section section--grey c-events" aria-labelledby="ev-h">
-      <div class="container">
-        <div class="section-head">
-          <h2 class="section-title" id="ev-h">{isClub ? 'Community Calls' : 'Events'}<span class="stop">.</span></h2>
-          <a class="more-link" href={url('/events/')}>All events</a>
-        </div>
-        {upcoming.length > 0 && (
-          <>
-            <h3 class="c-sub">Coming up</h3>
-            <ul class="c-up">
-              {upcoming.map((e) => (
-                <li><a class="card c-upcard" href={url(`/events/${e.id}/`)}>
-                  <span class="c-date"><span>{e.data.start.toLocaleDateString('en-GB', { month: 'short', timeZone: 'UTC' })}</span><b>{e.data.start.getUTCDate()}</b></span>
-                  <span><span class="card__meta">{e.data.type} · {fmt(e)}</span><span class="card__title">{e.data.title}</span></span>
-                </a></li>
-              ))}
-            </ul>
-          </>
-        )}
-        {past.length > 0 && (
-          <>
-            <h3 class="c-sub">Catch up</h3>
-            <div class="c-past">
-              {past.slice(0, 6).map((e) => (
-                <a class="tile c-past__tile" href={url(`/events/${e.id}/`)}>
-                  {e.data.image ? <RemoteImage class="ph-img" src={e.data.image} width={500} /> : <span class="ph-img" style="background:#36607c"></span>}
-                  <span class="ph-slide"></span>
-                  {e.data.recording && <span class="c-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>}
-                  <span class="scrim"><span class="c-past__date">{longDate(e.data.start)}{e.data.recording && ' · Recording'}</span><span class="c-past__title">{e.data.title}</span></span>
-                </a>
-              ))}
-            </div>
-            {past.length > 6 && <p class="c-pastmore">{past.length - 6} more past {isClub ? 'calls' : 'events'} in <a href={url('/events/')}>the events archive</a>.</p>}
-          </>
-        )}
-      </div>
-    </section>
-  )}
-
   {stories.length > 0 && (
     <section class="section c-stories" aria-labelledby="st-h">
       <div class="container">
@@ -156,8 +123,33 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name
   )}
 
   <section class="container c-related">
-    <SmartTabs kind="activities" slug={r.slug} skip={['news', 'events', 'people']} heading="Also linked" />
+    <SmartTabs kind="activities" slug={r.slug} display={r.display} skip={['news', 'events', 'people']} heading="Also linked" />
   </section>
+
+  {events.length > 0 && (
+    <section class="container c-evs" aria-labelledby="ev-h">
+      <div class="section-head"><h2 class="section-title" id="ev-h">{isClub ? 'Community Calls' : 'Events'}<span class="stop">.</span></h2><a class="more-link" href={url('/events/')}>All events</a></div>
+      <div class="c-evs__cols">
+        <div>
+          <h3 class="c-sub">Coming up</h3>
+          {upcoming.length ? (
+            <ul class="evlist">{upcoming.map((e) => (
+              <li><a href={url(`/events/${e.id}/`)}><span class="evlist__date">{e.data.start.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}</span><span class="evlist__title">{e.data.title}</span><span class="evlist__meta">{fmt(e)}{e.data.startTime && ` · ${e.data.startTime}`}</span></a></li>
+            ))}</ul>
+          ) : <p class="c-none">Nothing scheduled yet{r.joinLink ? ' – join to hear about the next one.' : '.'}</p>}
+        </div>
+        {past.length > 0 && (
+          <div>
+            <h3 class="c-sub">Past</h3>
+            <ul class="evlist">{past.map((e, i) => (
+              <li hidden={i >= 8}><a href={url(`/events/${e.id}/`)}><span class="evlist__date">{e.data.start.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}</span><span class="evlist__title">{e.data.title}</span>{e.data.recording && <span class="evlist__rec">▶ Recording</span>}</a></li>
+            ))}</ul>
+            {past.length > 8 && <button type="button" class="c-more" data-more-people>Show all {past.length}</button>}
+          </div>
+        )}
+      </div>
+    </section>
+  )}
 
   {r.joinLink && (
     <section class="banner c-join-band">
@@ -174,7 +166,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name
 
 <script>
   document.querySelectorAll<HTMLButtonElement>('[data-more-people]').forEach((b) => b.addEventListener('click', () => {
-    b.previousElementSibling?.querySelectorAll<HTMLElement>('li[hidden]').forEach((li) => (li.hidden = false));
+    (b.previousElementSibling ?? b.parentElement)?.querySelectorAll<HTMLElement>('li[hidden]').forEach((li) => (li.hidden = false));
     b.remove();
   }));
 </script>
@@ -191,7 +183,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name
   .c-next { display: block; background: var(--navy); color: var(--white); }
   .c-next:hover { color: var(--white); background: var(--ink); }
   .c-next__inner { display: flex; align-items: center; gap: var(--s5); flex-wrap: wrap; padding-block: var(--s4); }
-  .c-next__label { font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange-soft); }
+  .c-next__label { font-size: var(--fs-sm); font-weight: 700; letter-spacing: 0;  color: var(--orange-soft); }
   .c-next__title { flex: 1 1 320px; }
   .c-next__go { font-weight: 700; color: var(--orange-soft); }
   .c-body { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 5vw, 80px); padding-block: var(--s8); align-items: start; }
@@ -200,8 +192,9 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name
   .c-side { display: flex; flex-direction: column; gap: var(--s4); position: sticky; top: 100px; }
   .c-box { padding: var(--s5); border-radius: var(--radius-lg); background: var(--grey-light); }
   .c-box ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
-  .c-box__title { margin: 0 0 var(--s3); font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); }
+  .c-box__title { margin: 0 0 var(--s3); font-size: var(--fs-sm); font-weight: 700; letter-spacing: 0;  color: var(--navy); }
   .c-box__title span { color: var(--orange-text); margin-left: 4px; }
+  .c-mail { display: block; margin: -2px 0 var(--s2) 68px; font-size: var(--fs-xs); font-weight: 700; color: var(--blue-dark); word-break: break-all; }
   .c-more { margin-top: var(--s3); font: inherit; font-size: var(--fs-sm); font-weight: 700; color: var(--blue-dark); background: none; border: 0; padding: 0; cursor: pointer; }
   .f-people { padding-top: var(--s8); }
   .f-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--s2) var(--s5); }
@@ -222,6 +215,17 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name
   .c-past__title { font-size: 1.1rem; font-weight: 700; line-height: 1.25; }
   .c-pastmore { margin: var(--s5) 0 0; font-size: var(--fs-sm); }
   .c-related { padding-top: var(--s6); }
+  .c-evs { padding-block: var(--s8) var(--section-pad); }
+  .c-evs__cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s7); }
+  .evlist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+  .evlist a { display: grid; grid-template-columns: 110px minmax(0, 1fr) auto; gap: var(--s3); align-items: baseline; padding: var(--s3) 0; border-bottom: 1px solid var(--border); color: var(--text); }
+  .evlist a:hover .evlist__title { color: var(--orange-text); }
+  .evlist__date { font-size: var(--fs-sm); font-weight: 700; color: var(--orange-text); font-variant-numeric: tabular-nums; }
+  .evlist__title { font-weight: 700; color: var(--navy); line-height: 1.3; }
+  .evlist__meta, .evlist__rec { font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
+  .evlist__rec { color: var(--blue-dark); font-weight: 700; }
+  .c-none { color: var(--muted); }
+  @media (max-width: 800px) { .c-evs__cols { grid-template-columns: 1fr; } .evlist a { grid-template-columns: 1fr; gap: 2px; } }
   .c-join-band { padding-block: clamp(64px, 8vw, 96px); }
   .c-join { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s7); align-items: center; }
   .c-join p { margin: var(--s3) 0 0; color: var(--on-dark); }

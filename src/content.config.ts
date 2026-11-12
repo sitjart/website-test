@@ -84,6 +84,8 @@ const pages = defineCollection({
 });
 
 const related = z.record(z.string(), z.array(z.string())).optional();
+// Per-record override of src/data/display-rules.json, e.g. hide: ["members/university-of-liverpool"]
+const display = z.object({ hide: z.array(z.string()).optional(), show: z.array(z.string()).optional() }).optional();
 
 // ---------------------------------------------------------------------------
 // Editorial content imported from WordPress (decision on news vs Baserow pending)
@@ -99,6 +101,7 @@ const news = defineCollection({
     wpId: z.number().optional(),
     image: z.string().optional(),
     related,
+    display,
   }),
 });
 
@@ -122,6 +125,7 @@ const events = defineCollection({
     country: z.string().optional(),
     programme: z.string().optional(),
     speakerIds: z.array(z.number()).default([]),
+    display,
     wpId: z.number().optional(),
     venue: z.string().optional(),
     locality: z.string().optional(),
@@ -144,6 +148,7 @@ const people = defineCollection({
     name: z.string(),
     role: z.string(),
     leads: z.array(z.string()).default([]),
+    email: z.string().optional(),
     institution: z.string(),
     institutionSlug: z.string().optional(),
     bio: z.string(),

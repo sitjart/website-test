@@ -24,8 +24,13 @@ const RENAME: Record<string, string> = { service: 'services', project: 'projects
 // WordPress (Greenshift) accordions and tabs lose their behaviour outside WordPress.
 // Rebuild them as native <details> accordions and accessible tabs.
 function rebuildWidgets(html: string): string {
-  if (!/gs-accordion-item|gspb-tabs|gs-counter/.test(html)) return html;
+  if (!/gs-accordion-item|gspb-tabs|gs-counter|gspb_infoBox/.test(html)) return html;
   const root = parse(html, { comment: false });
+  // Info boxes: icon + text → a note panel (the icon had no size outside WordPress)
+  root.querySelectorAll('.gspb_infoBox').forEach((box) => {
+    const text = box.querySelector('.gs-box-text')?.innerHTML ?? box.innerHTML;
+    box.replaceWith(`<aside class="wp-note">${text}</aside>`);
+  });
   // Animated counters start at 0 and count up with JavaScript: show the final figure instead
   root.querySelectorAll('.gs-counterwrap').forEach((c) => {
     const n = c.querySelector('.gs-counter')?.getAttribute('data-end') ?? c.querySelector('.gs-counter')?.text ?? '';

@@ -1,58 +1,171 @@
 [
-  { "label": "Who we are", "href": "/about/", "mega": {
-    "intro": "The UK Node of ELIXIR, Europe’s infrastructure for bioscience research data objects.",
-    "cta": { "label": "About ELIXIR-UK", "href": "/about/" },
-    "columns": [
-      { "heading": "The Node", "links": [
-        { "label": "About ELIXIR-UK", "href": "/about/", "desc": "Our role, vision and how the Node works" },
-        { "label": "People", "href": "/people/", "desc": "The people behind ELIXIR-UK" },
-        { "label": "Collaborations", "href": "/collaborations/", "desc": "Organisations we work with" }
-      ]},
-      { "heading": "Membership", "links": [
-        { "label": "Our members", "href": "/members/", "desc": "Research organisations across the UK" },
-        { "label": "Become a member", "href": "/new-members/", "desc": "How to join and what it brings" }
-      ]}
-    ],
-    "feature": "members"
-  }},
-  { "label": "What we do", "href": "/what-we-do/", "mega": {
-    "intro": "Services, communities and projects that make UK bioscience data FAIR and AI-ready.",
-    "cta": { "label": "What we do", "href": "/what-we-do/" },
-    "columns": [
-      { "heading": "Services", "links": [
-        { "label": "Endorsed services", "href": "/services/", "desc": "Open-access resources selected by the Node" },
-        { "label": "Call for services", "href": "/call-for-services/", "desc": "Get your service endorsed" }
-      ]},
-      { "heading": "Communities", "links": [
-        { "label": "Communities of practice", "href": "/activities/", "desc": "Clubs, ELIXIR Communities and Focus Groups" },
-        { "label": "Fellowship", "href": "/activities/fellowship/", "desc": "Data stewardship fellows and mentors" },
-        { "label": "How our communities work", "href": "/how-our-communities-of-practice-work/" }
-      ]},
-      { "heading": "Research", "links": [
-        { "label": "Projects", "href": "/projects/", "desc": "ELIXIR, European and national projects" },
-        { "label": "Thematic areas", "href": "/area/", "desc": "Research data management, workflows, training" }
-      ]}
-    ]
-  }},
-  { "label": "Members", "href": "/members/" },
-  { "label": "News & stories", "href": "/news/", "mega": {
-    "intro": "What the Node, its members and communities are doing.",
-    "cta": { "label": "All news and stories", "href": "/news/" },
-    "columns": [],
-    "feature": "news"
-  }},
-  { "label": "Events", "href": "/events/", "mega": {
-    "intro": "Community Calls, workshops, hackathons and the All Hands meeting.",
-    "cta": { "label": "All events", "href": "/events/" },
-    "columns": [
-      { "heading": "By type", "links": [
-        { "label": "Community Calls", "href": "/events/type/community-call/" },
-        { "label": "Workshops", "href": "/events/type/workshop/" },
-        { "label": "Conferences", "href": "/events/type/conference/" },
-        { "label": "Hackathons", "href": "/events/type/hackathon/" }
-      ]}
-    ],
-    "feature": "events"
-  }},
-  { "label": "Join in", "href": "/join-in/", "cta": true }
+  {
+    "label": "Who we are",
+    "href": "/about/",
+    "mega": {
+      "intro": "The UK Node of ELIXIR, Europe’s infrastructure for bioscience research data objects.",
+      "cta": {
+        "label": "About ELIXIR-UK",
+        "href": "/about/"
+      },
+      "columns": [
+        {
+          "heading": "The Node",
+          "links": [
+            {
+              "label": "About ELIXIR-UK",
+              "href": "/about/",
+              "desc": "Our role, vision and how the Node works"
+            },
+            {
+              "label": "People",
+              "href": "/people/",
+              "desc": "The people behind ELIXIR-UK"
+            },
+            {
+              "label": "Collaborations",
+              "href": "/collaborations/",
+              "desc": "Organisations we work with"
+            }
+          ]
+        },
+        {
+          "heading": "Membership",
+          "links": [
+            {
+              "label": "Our members",
+              "href": "/members/",
+              "desc": "Research organisations across the UK"
+            },
+            {
+              "label": "Become a member",
+              "href": "/new-members/",
+              "desc": "How to join and what it brings"
+            }
+          ]
+        }
+      ],
+      "feature": "members"
+    }
+  },
+  {
+    "label": "What we do",
+    "href": "/what-we-do/",
+    "mega": {
+      "intro": "Services, communities and projects that make UK bioscience data FAIR and AI-ready.",
+      "cta": {
+        "label": "What we do",
+        "href": "/what-we-do/"
+      },
+      "columns": [
+        {
+          "heading": "Services",
+          "links": [
+            {
+              "label": "Endorsed services",
+              "href": "/services/",
+              "desc": "Open-access resources selected by the Node"
+            },
+            {
+              "label": "Call for services",
+              "href": "/call-for-services/",
+              "desc": "Get your service endorsed"
+            }
+          ]
+        },
+        {
+          "heading": "Communities",
+          "links": [
+            {
+              "label": "Communities of practice",
+              "href": "/activities/",
+              "desc": "Clubs, ELIXIR Communities and Focus Groups"
+            },
+            {
+              "label": "Fellowship",
+              "href": "/activities/fellowship/",
+              "desc": "Data stewardship fellows and mentors"
+            },
+            {
+              "label": "How our communities work",
+              "href": "/how-our-communities-of-practice-work/"
+            }
+          ]
+        },
+        {
+          "heading": "Research",
+          "links": [
+            {
+              "label": "Projects",
+              "href": "/projects/",
+              "desc": "ELIXIR, European and national projects"
+            },
+            {
+              "label": "Thematic areas",
+              "href": "/area/",
+              "desc": "Research data management, workflows, training"
+            }
+          ]
+        }
+      ],
+      "feature": "clubs"
+    }
+  },
+  {
+    "label": "Members",
+    "href": "/members/"
+  },
+  {
+    "label": "News & stories",
+    "href": "/news/",
+    "mega": {
+      "intro": "What the Node, its members and communities are doing.",
+      "cta": {
+        "label": "All news and stories",
+        "href": "/news/"
+      },
+      "columns": [],
+      "feature": "news"
+    }
+  },
+  {
+    "label": "Events",
+    "href": "/events/",
+    "mega": {
+      "intro": "Community Calls, workshops, hackathons and the All Hands meeting.",
+      "cta": {
+        "label": "All events",
+        "href": "/events/"
+      },
+      "columns": [
+        {
+          "heading": "By type",
+          "links": [
+            {
+              "label": "Community Calls",
+              "href": "/events/type/community-call/"
+            },
+            {
+              "label": "Workshops",
+              "href": "/events/type/workshop/"
+            },
+            {
+              "label": "Conferences",
+              "href": "/events/type/conference/"
+            },
+            {
+              "label": "Hackathons",
+              "href": "/events/type/hackathon/"
+            }
+          ]
+        }
+      ],
+      "feature": "events"
+    }
+  },
+  {
+    "label": "Join in",
+    "href": "/join-in/",
+    "cta": true
+  }
 ]

@@ -10,7 +10,7 @@ import { slugify } from '../lib/baserow';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages');
-  return pages.filter((p) => p.id !== 'home').map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+  return pages.filter((p) => !['home', 'about'].includes(p.id)).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 const { entry } = Astro.props;
 await render(entry);

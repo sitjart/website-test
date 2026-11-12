@@ -67,11 +67,11 @@ const initials = name.split(/\s+/).map((w) => w[0]).join('').slice(0, 2);
   .side-name { font-size: clamp(1.6rem, 2.4vw, 2rem); margin: 0; }
   .side-subtitle { margin: -0.75rem 0 0; color: var(--text); }
   .side-block { width: 100%; text-align: left; }
-  .side-heading { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text); margin-bottom: 0.5rem; font-weight: 700; }
+  .side-heading { font-size: var(--fs-sm);  letter-spacing: 0; color: var(--text); margin-bottom: 0.5rem; font-weight: 700; }
   .side-pills { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
   .side-pills li { font-size: 12px; padding: 0.2rem 0.6rem; background: var(--blue); color: var(--white); border-radius: 3px; }
   .side-facts { margin: 0; display: grid; gap: 0.75rem; }
-  .side-facts dt { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--orange); font-weight: 700; }
+  .side-facts dt { font-size: var(--fs-sm);  letter-spacing: 0; color: var(--orange); font-weight: 700; }
   .side-facts dd { margin: 0.1rem 0 0; color: var(--navy); }
   .side-links { display: flex; flex-direction: column; gap: 0.35rem; font-size: 14px; }
 </style>
