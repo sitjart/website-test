@@ -1,0 +1,24 @@
+name: Fetch WordPress SVG assets
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download SVGs
+        run: |
+          mkdir -p public/assets/wp
+          while read -r u; do
+            f="public/assets/wp/$(basename "$u")"
+            curl -fsSL --retry 2 -A "Mozilla/5.0" "$u" -o "$f" || echo "failed $u"
+          done < tools/wp-svg-list.txt
+          ls public/assets/wp | wc -l
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add public/assets/wp
+          git commit -m "Add WordPress SVG assets" || echo "nothing to commit"
+          git push
