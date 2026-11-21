@@ -35,6 +35,7 @@
   .funding__table tr { padding: var(--s4); border-bottom: 1px solid var(--border); }
   .funding__table tbody tr:last-child { border-bottom: 0; }
   .funding__table td { padding: 0; border: 0; }
+  .funding__table td:empty { display: none; }
   .funding__table td + td { margin-top: var(--s1); }
   .funding__table td[data-label]::before { content: attr(data-label) " · "; color: var(--muted); font-size: var(--fs-xs); font-weight: 700; }
   .funding__years { font-size: var(--fs-xs); color: var(--orange-text); }
