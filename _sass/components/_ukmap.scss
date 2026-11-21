@@ -1,6 +1,6 @@
 // UkMap
 .ukmap { position: relative; margin: 0; }
-  svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .ukmap > svg { width: 100%; height: auto; display: block; overflow: visible; }
   .ukmap--dark .ukmap__land { fill: #0b3a5a; stroke: #1d5378; stroke-width: 1.5; }
   .ukmap--light .ukmap__land { fill: #dbe6ee; stroke: #c6d6e2; stroke-width: 1.5; }
   .ukmap__pt { fill: var(--orange); stroke-width: 3; transition: r 0.2s var(--ease), fill 0.2s; }
