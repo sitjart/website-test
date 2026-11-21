@@ -4,7 +4,8 @@
 
 1. Adds the site's base path to internal links (only needed on the test address, /website-test/).
    Templates and content write plain addresses such as /news/my-story/.
-2. Gives every <h2> an id, so "On this page" links and shared #links work.
+2. Stamps stylesheet and script addresses with the build number, so visitors get the new versions.
+   Gives every <h2> an id, so "On this page" links and shared #links work.
 3. Replaces WordPress counters ([member_counter] …) with today's figures.
 4. Builds the search index (Pagefind).
 5. Checks every internal link and image in the built site:
@@ -29,7 +30,12 @@ ATTR = re.compile(r'\b(href|src|poster|action)="(/(?!/)[^"]*)"')
 H2 = re.compile(r'<h2(?![^>]*\sid=)([^>]*)>(.*?)</h2>', re.S)
 
 
+VERSION = os.environ.get('GITHUB_RUN_ID') or str(int(__import__('time').time()))
+
+
 def finish_page(html, stats):
+    # A new address for the stylesheet and scripts on every build, so browsers don't keep an old copy
+    html = re.sub(r'((?:href|src)="/assets/(?:css|js)/[^"?]+)"', rf'\1?v={VERSION}"', html)
     if BASEURL:
         html = ATTR.sub(lambda m: m.group(0) if m.group(2).startswith(BASEURL + '/') else f'{m.group(1)}="{BASEURL}{m.group(2)}"', html)
     html = H2.sub(lambda m: f'<h2{m.group(1)} id="{slugify(plain(m.group(2)))}">{m.group(2)}</h2>' if plain(m.group(2)) else m.group(0), html)
@@ -39,7 +45,7 @@ def finish_page(html, stats):
 
 
 def target_exists(path):
-    path = path.split('#')[0].split('?')[0]
+    path = path.split('#')[0].split('?')[0]  # ignores ?v= build stamps
     if BASEURL and path.startswith(BASEURL + '/'):
         path = path[len(BASEURL):]
     f = SITE / path.lstrip('/')
