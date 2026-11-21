@@ -36,6 +36,15 @@ Front matter of a story or event (the block between `---` lines) can also list:
 
 `_data/corrections.json` removes people from leads or governance roles until the source data is fixed. Review it when moving people to Baserow.
 
+## Editing in the CMS, with review
+
+`.pages.yml` sets up [Pages CMS](https://pagescms.org) for stories, events and content pages. Images go to `assets/uploads/` and are resized at build time.
+
+1. Editors work on the **`content`** branch (pick it in Pages CMS), never on `main`.
+2. Every save is built and checked like any push, so a mistake shows up in the Actions run, not on the site.
+3. A pull request from `content` to `main` collects what is waiting. Xènia or Joe reviews it and merges; merging publishes.
+4. In GitHub, protect `main` (Settings › Branches): require a pull request and one approval.
+
 ## Working on it locally
 
 ```sh

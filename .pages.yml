@@ -1,0 +1,105 @@
+# Pages CMS (https://pagescms.org): what editors can change, and the form for each.
+# Editors save to the "content" branch, never to main. Every save is built and checked;
+# you or Joe review the pull request from content to main, and merging it publishes.
+# Records (services, members, people …) are not here: they live in Baserow.
+
+media:
+  - name: uploads
+    label: Images
+    input: assets/uploads
+    output: /assets/uploads
+    categories: [image]
+
+content:
+  - name: news
+    label: News and stories
+    type: collection
+    path: collections/_news
+    filename: "{primary}.html"
+    format: yaml-frontmatter
+    view: { primary: title, fields: [title, date, category], sort: [date, title], default: { sort: date, order: desc } }
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: date, label: Date, type: date, required: true }
+      - name: category
+        label: Type
+        type: select
+        options: { values: [News, Blog, Articles] }
+      - { name: standfirst, label: Standfirst (one or two sentences under the title), type: text }
+      - { name: excerpt, label: Card text (optional – the standfirst is used otherwise), type: text }
+      - { name: image, label: Lead image, type: image, options: { media: uploads } }
+      - name: related
+        label: Linked records (slugs, e.g. university-of-oxford)
+        type: object
+        fields:
+          - { name: activities, label: Communities, type: string, list: true }
+          - { name: services, label: Services, type: string, list: true }
+          - { name: projects, label: Projects, type: string, list: true }
+          - { name: members, label: Member organisations, type: string, list: true }
+          - { name: people, label: People, type: string, list: true }
+      - name: about
+        label: The story is about these organisations (kept even when one of their people is tagged)
+        type: object
+        fields:
+          - { name: members, label: Member organisations, type: string, list: true }
+      - { name: body, label: Text, type: rich-text, options: { format: html, media: uploads } }
+
+  - name: events
+    label: Events
+    type: collection
+    path: collections/_events
+    filename: "{primary}.html"
+    format: yaml-frontmatter
+    view: { primary: title, fields: [title, start, type], sort: [start, title], default: { sort: start, order: desc } }
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: start, label: Start date, type: date, required: true }
+      - { name: end, label: End date (several days only), type: date }
+      - { name: startTime, label: Start time (UK, e.g. 14:00), type: string, pattern: "^([01]\\d|2[0-3]):[0-5]\\d$" }
+      - { name: endTime, label: End time (UK), type: string, pattern: "^([01]\\d|2[0-3]):[0-5]\\d$" }
+      - name: type
+        label: Type
+        type: select
+        required: true
+        options: { values: [Community Call, Workshop, Webinar, Conference, Short course, Hackathon, Meeting] }
+      - name: format
+        label: Format
+        type: select
+        required: true
+        options: { values: [online, in-person, hybrid] }
+      - name: status
+        label: Status
+        type: select
+        options: { values: [scheduled, rescheduled, cancelled] }
+      - { name: standfirst, label: Standfirst, type: text }
+      - { name: registration, label: Registration or joining link, type: string }
+      - { name: venue, label: Venue, type: string }
+      - { name: street, label: Street, type: string }
+      - { name: locality, label: Town or city, type: string }
+      - { name: postcode, label: Postcode, type: string }
+      - { name: cost, label: Cost in pounds (0 for free), type: number }
+      - { name: programme, label: Programme link, type: string }
+      - { name: recording, label: Recording link, type: string }
+      - { name: slides, label: Slides link, type: string }
+      - { name: image, label: Banner image, type: image, options: { media: uploads } }
+      - name: related
+        label: Linked records (slugs)
+        type: object
+        fields:
+          - { name: activities, label: Communities (the first is shown as the organiser), type: string, list: true }
+          - { name: projects, label: Projects, type: string, list: true }
+          - { name: members, label: Member organisations, type: string, list: true }
+          - { name: people, label: People, type: string, list: true }
+      - { name: body, label: Description, type: rich-text, options: { format: html, media: uploads } }
+
+  - name: webpages
+    label: Pages
+    type: collection
+    path: collections/_webpages
+    filename: "{primary}.html"
+    format: yaml-frontmatter
+    view: { primary: title }
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: description, label: Introduction under the title, type: text }
+      - { name: body, label: Text, type: rich-text, options: { format: html, media: uploads } }
