@@ -639,4 +639,4 @@ class Views:
             m = re.search(r'id="([^"]+)"', attrs)
             toc.append({'id': m.group(1) if m else slugify(text), 'text': t(text)})
         return {'art': asset(art), 'legal': pg['slug'] in ('privacy-policy', 'terms-of-use'), 'toc': toc if len(toc) >= 3 else [],
-                'description': pg['description'] or None}
+                'description': pg['description'] or None, 'jsonld': None}
