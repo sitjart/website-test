@@ -1,0 +1,18 @@
+---
+layout: base
+page_class: pg-search
+title: Search
+description: Search the ELIXIR-UK website.
+permalink: /search/
+# Site search, powered by Pagefind: the index is built from the finished pages after Jekyll runs
+# (tools/finish.py) and searched in the browser – no server, nothing to maintain.
+---
+{% include page-header.html title="Search" intro=nil section=nil href=nil art=nil count=nil count_label=nil size="md" %}
+<section class="section">
+  <div class="container search-wrap">
+    <div id="search" data-base="{{ site.baseurl }}/pagefind/"></div>
+    <noscript><p>Search needs JavaScript. You can browse <a href="/news/">news</a>, <a href="/events/">events</a>, <a href="/services/">services</a> and <a href="/people/">people</a> instead.</p></noscript>
+  </div>
+</section>
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css">
+<script type="module" src="/assets/js/page-search.js"></script>

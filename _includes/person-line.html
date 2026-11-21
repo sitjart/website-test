@@ -1,0 +1,9 @@
+{%- comment -%} One person in a list: photo, name, organisation or role. p: person; size; ring; badge: text or nil {%- endcomment -%}
+<a class="pl" href="{{ include.p.href }}">
+  {% include avatar.html img=include.p.photo initials=include.p.initials alt="" size=include.size logo=false ring=include.ring eager=false %}
+  <span class="pl__text">
+    <span class="pl__name">{{ include.p.name }}</span>
+    {%- if include.p.sub != "" %}<span class="pl__sub">{{ include.p.sub }}</span>{% endif %}
+    {%- if include.badge %}<span class="pl__badge">{{ include.badge }}</span>{% endif %}
+  </span>
+</a>

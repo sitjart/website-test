@@ -1,0 +1,18 @@
+// HeroOrbit
+.orbit { position: relative; aspect-ratio: 1; width: 100%; container-type: inline-size; }
+  .orbit__lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .orbit__lines circle:not(.orbit__node) { fill: none; stroke: rgb(255 255 255 / 0.12); stroke-width: 0.18; }
+  .orbit__lines .l1 { stroke-dasharray: 0.6 1.2; }
+  .orbit__node { fill: var(--orange); }
+  .orbit__core { position: absolute; left: 50%; top: 50%; width: 22%; aspect-ratio: 1; transform: translate(-50%, -50%); display: grid; place-items: center; border-radius: 50%; background: rgb(255 255 255 / 0.04); box-shadow: 0 0 0 1px rgb(255 255 255 / 0.1), 0 0 80px 10px rgb(4 126 170 / 0.25); }
+  .orbit__core svg { width: 62%; height: auto; }
+  .orbit__ring { list-style: none; margin: 0; padding: 0; position: absolute; inset: 0; animation: spin var(--dur) linear infinite; animation-direction: var(--dir); }
+  .orbit__ring li { position: absolute; left: 50%; top: 50%; width: calc(var(--s) * 1%); aspect-ratio: 1; transform: translate(-50%, -50%) rotate(var(--deg)) translateX(calc(var(--r) / var(--s) * 100%)) rotate(calc(-1 * var(--deg))); }
+  .orbit__item { display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%; background: var(--white); box-shadow: 0 6px 18px rgb(0 0 0 / 0.3); animation: spin var(--dur) linear infinite; transition: box-shadow 0.25s var(--ease), outline-color 0.2s; outline: 3px solid transparent; outline-offset: 3px; }
+  .orbit__ring[style*='normal'] .orbit__item { animation-direction: reverse; }
+  .orbit__item img { width: 64%; height: 64%; object-fit: contain; transition: transform 0.25s var(--ease); }
+  .orbit__item:hover img, .orbit__item:focus-visible img { transform: scale(1.12); }
+  .orbit__item:focus-visible, .orbit__item:hover { outline-color: var(--orange); }
+  .orbit:hover .orbit__ring, .orbit:hover .orbit__item, .orbit:focus-within .orbit__ring, .orbit:focus-within .orbit__item { animation-play-state: paused; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .orbit__ring, .orbit__item { animation: none; } }

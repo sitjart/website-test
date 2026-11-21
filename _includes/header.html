@@ -1,0 +1,102 @@
+{%- comment -%}
+  Site header with mega menu: each section opens a full-width panel with an intro, grouped links and a live
+  feature (next events, latest stories, Clubs, members map). On small screens the menu becomes accordions.
+  Menu items: _data/navigation.json. Live features: tools/sitebuild/views.py (header).
+{%- endcomment -%}
+{%- assign h = site.data.gen.site.header -%}
+<header class="site-header{% if page.overlay_header %} site-header--overlay{% endif %}" data-header>
+  <div class="container site-header__inner">
+    <a class="site-header__logo" href="/"><img src="/assets/images/elixir-uk-logo.svg" alt="ELIXIR United Kingdom – home" width="112" height="38"></a>
+    <a class="site-header__search" href="/search/" aria-label="Search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </a>
+    <button class="site-header__toggle" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
+      <span class="visually-hidden">Menu</span>
+      <span aria-hidden="true"></span>
+    </button>
+    <nav id="primary-nav" class="site-nav" aria-label="Main">
+      <ul class="site-nav__list">
+        {%- for item in h.items %}
+        {%- assign insec = false -%}
+        {%- for href in item.section_hrefs %}{% assign n = href | size %}{% assign head = page.url | slice: 0, n %}{% if head == href %}{% assign insec = true %}{% endif %}{% endfor -%}
+        <li class="site-nav__item{% if item.cta %} is-cta{% endif %}{% if insec %} is-section{% endif %}{% if item.mega %} has-mega{% endif %}">
+          {%- if item.mega %}
+            {%- unless item.mega.has_columns %}<a class="site-nav__top site-nav__mobile-link" href="{{ item.href }}">{{ item.label }}</a>{% endunless %}
+            <button type="button" class="site-nav__top{% unless item.mega.has_columns %} site-nav__desktop-only{% endunless %}" aria-expanded="false" aria-controls="mega-{{ item.i }}" data-mega-btn>
+              {{ item.label }}
+              <svg class="chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" /></svg>
+            </button>
+            <div class="mega" id="mega-{{ item.i }}" data-mega>
+              <div class="container mega__grid">
+                <div class="mega__intro">
+                  <p class="mega__title">{{ item.label }}<span class="stop">.</span></p>
+                  <p>{{ item.mega.intro }}</p>
+                  <a class="more-link" href="{{ item.mega.cta.href }}">{{ item.mega.cta.label }}</a>
+                </div>
+                {%- for col in item.mega.columns %}
+                <div class="mega__col">
+                  <p class="mega__heading">{{ col.heading }}</p>
+                  <ul>
+                    {%- for l in col.links %}
+                    <li><a href="{{ l.href }}"{% if page.url == l.href %} aria-current="page"{% endif %}>
+                      <span class="mega__link">{{ l.label }}</span>
+                      {%- if l.desc %}<span class="mega__desc">{{ l.desc }}</span>{% endif %}
+                    </a></li>
+                    {%- endfor %}
+                  </ul>
+                </div>
+                {%- endfor %}
+                {%- if item.mega.feature == "events" %}
+                <div class="mega__feature mega__feature--wide">
+                  <p class="mega__heading">Coming up</p>
+                  <ul class="mega__events">
+                    {%- for e in h.next_events %}
+                    <li><a href="{{ e.href }}">
+                      <span class="mega__date"><b>{{ e.day }}</b>{{ e.month }}</span>
+                      <span><span class="mega__desc">{{ e.type }} · {{ e.format }}</span><span class="mega__link">{{ e.title }}</span></span>
+                    </a></li>
+                    {%- endfor %}
+                  </ul>
+                </div>
+                {%- endif %}
+                {%- if item.mega.feature == "news" %}
+                <div class="mega__feature mega__feature--news">
+                  {%- for n in h.latest %}
+                  <a class="mega__story" href="{{ n.href }}">
+                    <span class="mega__img">{% if n.image %}{% include img.html img=n.image size="small" alt="" cls=nil loading="lazy" %}{% endif %}</span>
+                    <span class="mega__desc">{{ n.category }} · {{ n.date }}</span>
+                    <span class="mega__link">{{ n.title }}</span>
+                  </a>
+                  {%- endfor %}
+                </div>
+                {%- endif %}
+                {%- if item.mega.feature == "clubs" %}
+                <div class="mega__feature mega__clubs">
+                  <p class="mega__heading">ELIXIR-UK Clubs</p>
+                  <ul>
+                    {%- for c in h.clubs %}
+                    <li><a href="{{ c.href }}">{% include icon-disc.html icon=c.icon lazy=true %}<span class="mega__link">{{ c.name }}</span></a></li>
+                    {%- endfor %}
+                  </ul>
+                </div>
+                {%- endif %}
+                {%- if item.mega.feature == "members" %}
+                <a class="mega__feature mega__map" href="/members/">
+                  {%- capture mapid %}map-mega-{{ item.i }}{% endcapture %}
+                  {% include ukmap.html id=mapid theme="dark" interactive=false filter=false highlight=nil label="Map of ELIXIR-UK members" cls=nil %}
+                  <span><b>{{ h.members }}</b> member organisations across the UK</span>
+                </a>
+                {%- endif %}
+              </div>
+            </div>
+          {%- else %}
+            <a class="site-nav__top" href="{{ item.href }}"{% if page.url == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
+  <div class="mega-scrim" data-mega-scrim hidden></div>
+</header>
+<script type="module" src="/assets/js/header.js"></script>

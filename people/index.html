@@ -1,0 +1,40 @@
+---
+layout: base
+page_class: pg-people
+title: People
+description: The people behind ELIXIR-UK.
+# Current people only (alumni and collaborators keep their profiles but are not listed),
+# filterable by governance group and by name, role or organisation.
+---
+{%- assign v = site.data.gen.pages.people -%}
+{% include page-header.html title="People" intro="The people behind ELIXIR-UK. Profiles appear only with consent." section=nil href=nil art="/assets/wp/illustration-isometrics-team-rowing.svg" count=nil count_label=nil size="lg" %}
+<section class="section">
+  <div class="container">
+    <div class="tools">
+      <div class="search">
+        <label for="q" class="visually-hidden">Search people</label>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="Search by name, role or organisation" autocomplete="off">
+      </div>
+      <div class="filters" role="group" aria-label="Filter by role in ELIXIR-UK">
+        <button type="button" class="chip is-active" data-g="" aria-pressed="true">Everyone</button>
+        {%- for g in v.groups %}<button type="button" class="chip" data-g="{{ g.slug }}" aria-pressed="false">{{ g.name }} <span>{{ g.n }}</span></button>{% endfor %}
+      </div>
+      <p class="status" aria-live="polite"></p>
+    </div>
+    <ul class="people-grid">
+      {%- for p in v.people %}
+      <li data-q="{{ p.q }}" data-g="{{ p.g }}">
+        <a class="person" href="{{ p.href }}">
+          {% include avatar.html img=p.photo initials=p.initials alt="" size=136 logo=false ring="var(--white)" eager=false %}
+          <span class="person__name">{{ p.name }}</span>
+          {%- if p.role != "" %}<span class="person__role">{{ p.role }}</span>{% endif %}
+          {%- if p.institution != "" %}<span class="person__inst">{{ p.institution }}</span>{% endif %}
+          {%- if p.gov %}<span class="person__gov">{{ p.gov }}</span>{% endif %}
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+<script type="module" src="/assets/js/page-people.js"></script>

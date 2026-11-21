@@ -1,0 +1,7 @@
+---
+layout: base
+# One type of event (generated: /events/type/…/)
+---
+{%- assign v = site.data.gen.eventtypes[page.slug] -%}
+{% include page-header.html title=v.name intro=nil section="Events" href="/events/" art=nil count=nil count_label=nil size="lg" %}
+{% include event-list.html l=v %}

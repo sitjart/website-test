@@ -1,0 +1,31 @@
+{%- comment -%}
+  Related records as cards that suit their kind: stories with pictures, events with a date block,
+  logos big enough to read, community icons, people with their photo.
+  cards: list from tools/sitebuild/views.py; limit: how many to show before "Show all"
+{%- endcomment -%}
+{%- assign style = include.cards[0].style -%}
+<div class="rc-wrap">
+  <ul class="rc rc--{{ style }}">
+    {%- for c in include.cards %}
+    <li{% if forloop.index > include.limit %} hidden{% endif %}>
+      <a class="rc__card" href="{{ c.href }}">
+        {%- if style == "story" %}<span class="rc__img">{% if c.image %}{% include img.html img=c.image size="small" alt="" cls=nil loading="lazy" %}{% else %}<span class="rc__ph"></span>{% endif %}</span>{% endif %}
+        {%- if style == "event" %}<span class="rc__date"><span>{{ c.date.month }}</span><b>{{ c.date.day }}</b><span>{{ c.date.year }}</span></span>{% endif %}
+        {%- if style == "person" %}{% include avatar.html img=c.image initials=c.initials alt="" size=72 logo=false ring="var(--white)" eager=false %}{% endif %}
+        {%- if style == "icon" %}<span class="icon-disc">{% if c.image %}<img src="{{ c.image.small.src }}" alt="" loading="lazy">{% else %}<b>{{ c.initials }}</b>{% endif %}</span>{% endif %}
+        {%- if style == "logo" %}<span class="rc__logo">{% if c.image %}{% include img.html img=c.image size="small" alt="" cls=nil loading="lazy" %}{% else %}<b>{{ c.title }}</b>{% endif %}</span>{% endif %}
+        {%- if style == "art" and c.image %}<span class="rc__art"><img src="{{ c.image.small.src }}" alt="" loading="lazy"></span>{% endif %}
+        <span class="rc__body">
+          {%- if style == "story" %}<span class="rc__meta">{{ c.meta }} · {{ c.date.long }}</span>{% endif %}
+          {%- if style == "event" or style == "project" or style == "icon" %}{% if c.meta %}<span class="rc__meta">{{ c.meta }}</span>{% endif %}{% endif %}
+          <span class="rc__title">{{ c.title }}</span>
+          {%- if style == "person" and c.meta %}<span class="rc__sub">{{ c.meta }}</span>{% endif %}
+          {%- if style == "story" or style == "project" %}{% if c.text %}<span class="rc__text">{{ c.text }}</span>{% endif %}{% endif %}
+        </span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- if include.cards.size > include.limit %}<button type="button" class="btn btn--line rc__more" data-rc-more>Show all {{ include.cards.size }}</button>{% endif %}
+</div>
+<script type="module" src="/assets/js/relatedcards.js"></script>

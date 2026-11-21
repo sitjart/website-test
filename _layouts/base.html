@@ -1,0 +1,42 @@
+---
+# Child layouts set page_class (e.g. pg-member) to switch on their page-only styles
+page_class: ""
+---
+<!doctype html>
+{%- comment -%}
+  Every page. Generated pages (members, services, stories, events …) take their description and
+  structured data (JSON-LD) from _data/gen; hand-written pages set them in their front matter.
+{%- endcomment -%}
+{%- assign description = page.description -%}
+{%- assign jsonld = page.jsonld -%}
+{%- if page.gen %}
+  {%- assign vm = site.data.gen[page.gen][page.slug] -%}
+  {%- assign description = description | default: vm.description -%}
+  {%- assign jsonld = jsonld | default: vm.jsonld -%}
+{%- endif %}
+{%- assign description = description | default: site.data.site.description -%}
+{%- if page.title %}{% capture full_title %}{{ page.title }} | {{ site.data.site.name }}{% endcapture %}{% else %}{% capture full_title %}{{ site.data.site.name }} | {{ site.data.site.tagline }}{% endcapture %}{% endif -%}
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ full_title | escape }}</title>
+    <meta name="description" content="{{ description | escape }}">
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <meta property="og:title" content="{{ full_title | escape }}">
+    <meta property="og:description" content="{{ description | escape }}">
+    {%- if jsonld %}
+    <script type="application/ld+json">{{ jsonld | jsonify }}</script>
+    {%- endif %}
+  </head>
+  <body class="{{ page.page_class }} {{ layout.page_class }}">
+    <a class="skip-link" href="#main">Skip to content</a>
+    {% include header.html %}
+    <main id="main" class="site-main" data-pagefind-body>
+      {{ content }}
+    </main>
+    {% include footer.html %}
+    <script type="module" src="/assets/js/base.js"></script>
+  </body>
+</html>

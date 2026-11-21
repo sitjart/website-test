@@ -1,0 +1,2 @@
+{%- comment -%} Community or platform icon in a white disc. icon: {src, letter}; lazy: true/false {%- endcomment -%}
+<span class="icon-disc">{% if include.icon.src %}<img src="{{ include.icon.src }}" alt=""{% if include.lazy %} loading="lazy"{% endif %}>{% else %}<b>{{ include.icon.letter }}</b>{% endif %}</span>

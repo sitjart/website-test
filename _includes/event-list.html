@@ -1,0 +1,43 @@
+{%- comment -%} Events: upcoming as date cards; past as a compact list by year, filterable by type. l: list from views.event_list {%- endcomment -%}
+{%- assign l = include.l -%}
+{%- if l.upcoming.size > 0 %}
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2 class="section-title">Upcoming<span class="stop">.</span></h2></div>
+    <ul class="up">
+      {%- for e in l.upcoming %}
+      <li><a class="card upcard" href="{{ e.href }}">
+        <span class="upcard__date"><span>{{ e.month }}</span><b>{{ e.day }}</b><span>{{ e.weekday }}</span></span>
+        <span class="upcard__body"><span class="card__meta">{{ e.type }}</span><span class="card__title">{{ e.title }}</span><span class="upcard__where">{{ e.where }}</span></span>
+      </a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+{%- if l.past_count > 0 %}
+<section class="section section--grey">
+  <div class="container">
+    <div class="section-head"><div><h2 class="section-title">Past events<span class="stop">.</span></h2><p>{{ l.past_count }} events, with recordings and slides where we have them.</p></div></div>
+    <div class="filters" role="group" aria-label="Filter by type">
+      <button type="button" class="chip is-active" data-type="" aria-pressed="true">All <span>{{ l.past_count }}</span></button>
+      {%- for t in l.types %}<button type="button" class="chip" data-type="{{ t.slug }}" aria-pressed="false">{{ t.name }} <span>{{ t.n }}</span></button>{% endfor %}
+    </div>
+    {%- for y in l.years %}
+    <section class="year" data-year>
+      <h3 class="year__h">{{ y.year }}</h3>
+      <ul class="past">
+        {%- for e in y.items %}
+        <li data-type="{{ e.type_slug }}"><a href="{{ e.href }}">
+          <span class="past__date"><b>{{ e.day }}</b>{{ e.month }}</span>
+          <span class="past__main"><span class="past__title">{{ e.title }}</span><span class="past__meta">{{ e.type }} · {{ e.where }}</span></span>
+          <span class="past__extra">{% if e.recording %}<span class="rec">▶ Recording</span>{% endif %}{% if e.slides %}<span class="rec">Slides</span>{% endif %}</span>
+        </a></li>
+        {%- endfor %}
+      </ul>
+    </section>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
+<script type="module" src="/assets/js/eventlist.js"></script>

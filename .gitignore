@@ -1,8 +1,23 @@
+# Built site and caches
+_site/
+.cache/
+.jekyll-cache/
+.sass-cache/
+vendor/
+# Written by tools/prepare.py on every build – never committed (people data in particular)
+_data/gen/
+assets/img/
+collections/_members/
+collections/_services/
+collections/_projects/
+collections/_collaborations/
+collections/_area/
+collections/_activities/
+collections/_people/
+collections/_newscats/
+collections/_eventtypes/
+# Old Astro build
 node_modules/
 dist/
 .astro/
-.env
-
-# WordPress exports contain personal data – never commit
-*.WordPress.*.xml
-wordpress-export*.xml
+__pycache__/

@@ -1,0 +1,123 @@
+---
+layout: base
+page_class: pg-activity
+# Community page: icon, excerpt and join link; next call; the description; everyone involved – leads first,
+# then members, each person once; stories; other related records; events. The Fellowship lists its people first.
+---
+{%- assign v = site.data.gen.activities[page.slug] -%}
+<section class="c-hero">
+  <div class="container c-hero__grid">
+    <div>
+      {% include crumbs.html section="Communities of practice" href="/activities/" current=v.name dark=false %}
+      <p class="eyebrow-sm">{{ v.kind_label }}{% if v.leading %} · UK co-leads{% endif %}</p>
+      <h1 class="display c-hero__title">{{ v.name }}{% if v.stop %}<span class="stop">.</span>{% endif %}</h1>
+      {%- if v.lead_text %}<p class="c-hero__lead">{{ v.lead_text }}</p>{% endif %}
+      <div class="c-hero__actions">
+        {%- if v.join %}<a class="btn" href="{{ v.join }}" rel="noopener">{{ v.join_label }}</a>{% endif %}
+        {%- if v.website %}<a class="btn btn--line" href="{{ v.website }}" rel="noopener">Visit website</a>{% endif %}
+      </div>
+    </div>
+    <div class="c-hero__icon">
+      <span class="avatar avatar--logo" style="width:260px; --ring:var(--grey-light); font-size:43px">
+        {%- if v.icon.src %}<img src="{{ v.icon.src }}" alt="{{ v.name }} logo" loading="eager" decoding="async">{% else %}<span class="avatar__fill" aria-hidden="true">{{ v.icon.letter }}</span>{% endif -%}
+      </span>
+    </div>
+  </div>
+</section>
+
+{%- if v.next %}
+<a class="c-next" href="{{ v.next.href }}">
+  <span class="container c-next__inner">
+    <span class="c-next__label">{{ v.next.label }}</span>
+    <strong>{{ v.next.when }}</strong>
+    <span class="c-next__title">{{ v.next.title }}</span>
+    <span class="c-next__go">{{ v.next.go }} →</span>
+  </span>
+</a>
+{%- endif %}
+
+{%- if v.fellowship and v.fellows.size > 0 %}
+<section class="container f-people">
+  <div class="section-head"><h2 class="section-title">People in the Fellowship<span class="stop">.</span></h2></div>
+  <ul class="f-grid">
+    {%- for p in v.fellows %}<li>{% include person-line.html p=p size=72 ring="var(--white)" badge=p.badge %}</li>{% endfor %}
+  </ul>
+</section>
+{%- endif %}
+
+<section class="container c-body">
+  <div class="prose c-copy" data-content>{{ v.body }}</div>
+  {%- unless v.fellowship %}{% if v.leads.size > 0 or v.others.size > 0 %}
+  <aside class="c-side" aria-label="People">
+    {%- if v.leads.size > 0 %}
+    <div class="c-box">
+      <p class="c-box__title">{% if v.leads.size == 1 %}Lead{% else %}Leads{% endif %} <span>{{ v.leads.size }}</span></p>
+      <ul>
+        {%- for p in v.leads %}
+        <li>
+          {% include person-line.html p=p size=56 ring="var(--grey-light)" badge=nil %}
+          {%- if v.club and p.email %}<a class="c-mail" href="mailto:{{ p.email }}">{{ p.email }}</a>{% endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endif %}
+    {%- if v.others.size > 0 %}
+    <div class="c-box">
+      <p class="c-box__title">{% if v.leads.size > 0 %}Also involved{% else %}People involved{% endif %} <span>{{ v.others.size }}</span></p>
+      <ul class="c-others">
+        {%- for p in v.others %}<li{% if forloop.index > 12 %} hidden{% endif %}>{% include person-line.html p=p size=44 ring="var(--grey-light)" badge=nil %}</li>{% endfor %}
+      </ul>
+      {%- if v.others.size > 12 %}<button type="button" class="c-more" data-more-people>Show all {{ v.others.size }}</button>{% endif %}
+    </div>
+    {%- endif %}
+  </aside>
+  {%- endif %}{% endunless %}
+</section>
+
+{%- if v.stories.size > 0 %}
+<section class="section c-stories" aria-labelledby="st-h">
+  <div class="container">
+    <div class="section-head"><h2 class="section-title" id="st-h">{{ v.stories_heading }}<span class="stop">.</span></h2></div>
+    {% include related-cards.html cards=v.stories limit=3 %}
+  </div>
+</section>
+{%- endif %}
+
+<section class="container c-related">
+  {% include smart-tabs.html tabs=v.tabs bio=nil %}
+</section>
+
+{%- if v.has_events %}
+<section class="container c-evs" aria-labelledby="ev-h">
+  <div class="section-head"><h2 class="section-title" id="ev-h">{{ v.events_heading }}<span class="stop">.</span></h2><a class="more-link" href="/events/">All events</a></div>
+  <div class="c-evs__cols">
+    <div>
+      <h3 class="c-sub">Coming up</h3>
+      {%- if v.upcoming.size > 0 %}
+      <ul class="evlist">{% for e in v.upcoming %}<li><a href="{{ e.href }}"><span class="evlist__date">{{ e.date }}</span><span class="evlist__title">{{ e.title }}</span><span class="evlist__meta">{{ e.meta }}</span></a></li>{% endfor %}</ul>
+      {%- else %}<p class="c-none">{{ v.none_text }}</p>{% endif %}
+    </div>
+    {%- if v.past.size > 0 %}
+    <div>
+      <h3 class="c-sub">Past</h3>
+      <ul class="evlist">{% for e in v.past %}<li{% if forloop.index > 8 %} hidden{% endif %}><a href="{{ e.href }}"><span class="evlist__date">{{ e.date }}</span><span class="evlist__title">{{ e.title }}</span>{% if e.recording %}<span class="evlist__rec">▶ Recording</span>{% endif %}</a></li>{% endfor %}</ul>
+      {%- if v.past.size > 8 %}<button type="button" class="c-more" data-more-people>Show all {{ v.past.size }}</button>{% endif %}
+    </div>
+    {%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{%- if v.join %}
+<section class="banner c-join-band">
+  <div class="container c-join">
+    <div>
+      <h2 class="section-title">Be part of it<span class="stop">.</span></h2>
+      <p>{{ v.join_text }}</p>
+    </div>
+    <a class="btn c-join__btn" href="{{ v.join }}" rel="noopener">{{ v.join_label }}</a>
+  </div>
+</section>
+{%- endif %}
+<script type="module" src="/assets/js/page-activity.js"></script>

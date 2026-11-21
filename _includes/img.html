@@ -1,0 +1,6 @@
+{%- comment -%}
+  A resized image from tools/sitebuild/images.py.
+  img: the image ({small, large}); size: "small" or "large"; alt; cls: class or nil; loading: "lazy" or "eager"
+{%- endcomment -%}
+{%- assign v = include.img[include.size] -%}
+<img src="{{ v.src }}" alt="{{ include.alt }}"{% if include.cls %} class="{{ include.cls }}"{% endif %} loading="{{ include.loading }}" decoding="async"{% if v.w %} width="{{ v.w }}" height="{{ v.h }}"{% endif %}>

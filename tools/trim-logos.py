@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Trim empty space around logo files in public/assets/wp so they read at small sizes.
+"""Trim empty space around logo files in assets/wp so they read at small sizes.
 SVG: measure the drawing's bounding box in a headless browser and tighten the viewBox.
 PNG/JPG: crop away transparent or near-white margins and cap the width at 800 px.
 Run: python3 -I tools/trim-logos.py   (needs playwright and pillow)"""
@@ -8,7 +8,7 @@ from pathlib import Path
 from PIL import Image, ImageChops
 from playwright.sync_api import sync_playwright
 
-DIR = Path(__file__).resolve().parent.parent / 'public/assets/wp'
+DIR = Path(__file__).resolve().parent.parent / 'assets/wp'
 LOGO = re.compile(r'(logo|project-|ro-crate|azn|bioinfo-core)', re.I)
 files = [f for f in DIR.iterdir() if LOGO.search(f.name)]
 

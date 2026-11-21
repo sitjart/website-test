@@ -1,0 +1,20 @@
+{%- comment -%}
+  Navy title banner for inner pages: breadcrumbs, display title with the orange stop, intro, illustration or a count.
+  title; intro or nil; section/href: breadcrumb parent or nil; art: illustration or nil; count/count_label: figure or nil; size: "lg" or "md"
+{%- endcomment -%}
+<header class="banner ph ph--{{ include.size }}{% if include.art %} ph--art{% endif %}">
+  <svg class="ph__mark" aria-hidden="true" viewBox="0 0 200 200"><circle cx="100" cy="100" r="99" fill="none" stroke="currentColor" stroke-width="1" /><circle cx="100" cy="100" r="64" fill="none" stroke="currentColor" stroke-width="1" /></svg>
+  <div class="container ph__grid">
+    <div class="ph__copy">
+      {% include crumbs.html section=include.section href=include.href current=include.title dark=true %}
+      <h1 class="display ph__title">{{ include.title }}{% include stop.html title=include.title %}</h1>
+      {%- if include.intro %}<p class="ph__intro">{{ include.intro }}</p>{% endif %}
+    </div>
+    {%- if include.art or include.count %}
+    <div class="ph__side">
+      {%- if include.art %}<img class="ph__art" src="{{ include.art }}" alt="">{% endif %}
+      {%- if include.count %}<p class="ph__count"><b>{{ include.count }}</b><span>{{ include.count_label }}</span></p>{% endif %}
+    </div>
+    {%- endif %}
+  </div>
+</header>

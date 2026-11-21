@@ -1,0 +1,79 @@
+---
+layout: base
+page_class: pg-services
+title: Services
+description: Open-access services for the life sciences community, endorsed by ELIXIR-UK.
+# Services grouped by status, with the labels explained and the call for services alongside.
+# Status and recognition labels: _data/service-labels.json
+---
+{%- assign v = site.data.gen.pages.services -%}
+{% include page-header.html title="Services" intro="Open-access services for the life sciences community, endorsed by ELIXIR-UK." section=nil href=nil art="/assets/wp/illustration-isometrics-mechanisms-working.svg" count=v.selected count_label="selected services" size="lg" %}
+
+<section class="section about-svc" id="about-services" aria-labelledby="about-h">
+  <div class="container about-svc__grid">
+    <div>
+      <h2 class="section-title" id="about-h">Supporting open-access services for the life sciences community<span class="stop">.</span></h2>
+      <p class="lead">Services selected by the UK Node amplify their reach and improve their opportunities for long-term sustainability.</p>
+      <p>ELIXIR-UK services benefit from exposure to a wide range of potential users and collaborators across Europe and globally.</p>
+      <p>Although Node Service status does not confer additional funding, it indicates the value placed on the service by ELIXIR. Furthermore, those offering Node Services can apply for ELIXIR Europe funding through their projects called Implementation Studies and for UK Node funding for participation in ELIXIR.</p>
+      <p class="about-svc__key">The most significant benefit is the raised profile throughout ELIXIR.</p>
+    </div>
+    <div class="selected-how">
+      <h3>How do services get selected?</h3>
+      <ol>
+        <li>An annual, open and transparent process to conform to a set of criteria designed to ensure high service quality and match UK priorities as identified by its funders.</li>
+        <li>Project commitments made to ELIXIR.</li>
+      </ol>
+      <a class="more-link" href="/call-for-services/">Selection criteria, process and benefits</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--grey">
+  <div class="container svc">
+    <div class="svc__main">
+      <div class="filters" role="group" aria-label="Filter by recognition">
+        <button type="button" class="chip is-active" data-label="" aria-pressed="true">All services <span>{{ v.all }}</span></button>
+        {%- for x in v.recognitions %}<button type="button" class="chip" data-label="{{ x.slug }}" aria-pressed="false">{{ x.short }} <span>{{ x.n }}</span></button>{% endfor %}
+      </div>
+      {%- for x in v.recognitions %}
+      <div class="label-explain" data-explain="{{ x.slug }}" hidden aria-live="polite"><p class="label-explain__h">{{ x.short }}</p><p>{{ x.text }}</p></div>
+      {%- endfor %}
+      {%- for g in v.groups %}
+      <section class="sgroup" id="{{ g.id }}" aria-labelledby="h-{{ g.tag }}">
+        <header class="sgroup__head">
+          <h2 id="h-{{ g.tag }}">{{ g.title }} <span>{{ g.items.size }}</span></h2>
+          <p>{{ g.text }}{% if g.draft %} <span class="draft">Draft wording</span>{% endif %}</p>
+        </header>
+        <ul class="scards">
+          {%- for r in g.items %}
+          <li data-labels="{{ r.labels }}"><a class="card scard" href="{{ r.href }}">
+            <span class="scard__logo">{% if r.logo %}{% include img.html img=r.logo size="small" alt="" cls=nil loading="lazy" %}{% else %}<b>{{ r.name }}</b>{% endif %}</span>
+            <span class="scard__body">
+              <span class="card__title">{{ r.name }}</span>
+              {%- if r.sum %}<span class="scard__sum">{{ r.sum }}</span>{% endif %}
+              {%- if r.badges.size > 0 %}<span class="scard__badges">{% for x in r.badges %}<span class="badge" title="{{ x.text }}">{{ x.short }}</span>{% endfor %}</span>{% endif %}
+            </span>
+          </a></li>
+          {%- endfor %}
+        </ul>
+      </section>
+      {%- endfor %}
+    </div>
+    <aside class="svc__side">
+      <div class="cfs">
+        <p class="eyebrow-sm">Call for services</p>
+        <p class="cfs__title">Do you have a service that could help the life science community deal with current data challenges?</p>
+        <p>Visit our call for services page to learn more about the selection criteria, process and benefits.</p>
+        <a class="btn" href="/call-for-services/">Become an endorsed service</a>
+      </div>
+      <div class="explain">
+        <p class="explain__h">What the labels mean</p>
+        {%- for x in v.statuses %}
+        <details class="acc"><summary>{{ x.title }}</summary><div class="acc__body"><p>{{ x.text }}</p>{% if x.draft %}<span class="draft">Draft wording</span>{% endif %}</div></details>
+        {%- endfor %}
+      </div>
+    </aside>
+  </div>
+</section>
+<script type="module" src="/assets/js/page-services.js"></script>

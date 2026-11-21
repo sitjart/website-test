@@ -1,0 +1,29 @@
+// UkMap
+.ukmap { position: relative; margin: 0; }
+  svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .ukmap--dark .ukmap__land { fill: #0b3a5a; stroke: #1d5378; stroke-width: 1.5; }
+  .ukmap--light .ukmap__land { fill: #dbe6ee; stroke: #c6d6e2; stroke-width: 1.5; }
+  .ukmap__pt { fill: var(--orange); stroke-width: 3; transition: r 0.2s var(--ease), fill 0.2s; }
+  .ukmap--dark .ukmap__pt { stroke: var(--ink); }
+  .ukmap--light .ukmap__pt { stroke: var(--white); }
+  .has-hi .ukmap__dot:not(.is-hi) .ukmap__pt { fill: #7a97ad; }
+  .ukmap__halo { fill: none; stroke: var(--orange); stroke-width: 3; opacity: 0.5; }
+  .ukmap__hit { fill: transparent; }
+  .ukmap__dot text { font: 900 17px var(--font); fill: var(--white); pointer-events: none; }
+  a.ukmap__dot { cursor: pointer; outline: none; }
+  a.ukmap__dot:hover .ukmap__pt, a.ukmap__dot:focus-visible .ukmap__pt { fill: var(--white); }
+  a.ukmap__dot:hover text, a.ukmap__dot:focus-visible text { fill: var(--navy); }
+  a.ukmap__dot:focus-visible .ukmap__hit { stroke: var(--orange); stroke-width: 3; }
+  .ukmap__dot { transform-box: fill-box; transform-origin: center; animation: pop 0.5s var(--ease) both; animation-delay: calc(var(--i) * 35ms + 250ms); }
+  @keyframes pop { from { transform: scale(0); opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .ukmap__dot { animation: none; } }
+  a.ukmap__dot.is-picked .ukmap__pt { fill: var(--navy); }
+  .ukmap--dark a.ukmap__dot.is-picked .ukmap__pt { fill: var(--white); }
+  .ukmap__pop::before { content: ''; position: absolute; left: -18px; top: 0; bottom: 0; width: 18px; }
+  .ukmap__pop.is-left::before { left: auto; right: -18px; }
+  .ukmap__pop { position: absolute; z-index: 5; transform: translate(18px, -50%); min-width: 200px; max-width: 280px; padding: 14px 16px; background: var(--white); color: var(--text); border-radius: 8px; box-shadow: 0 12px 32px rgb(0 0 0 / 0.25); font-size: 14px; line-height: 1.35; }
+  .ukmap__pop.is-left { transform: translate(calc(-100% - 18px), -50%); }
+  .ukmap__pop .ukmap__city { margin: 0 0 6px; font-size: var(--fs-sm); font-weight: 700; letter-spacing: 0;  color: var(--orange-text); }
+  .ukmap__pop ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .ukmap__pop a { font-weight: 700; color: var(--navy); }
+  .ukmap__pop a:hover { color: var(--orange-text); }

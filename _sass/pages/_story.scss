@@ -1,0 +1,29 @@
+// Page: story – applies only on this page
+:where(.pg-story) {
+.a-head { background: var(--grey-light); padding-block: clamp(40px, 5vw, 72px) clamp(56px, 7vw, 120px); }
+  .a-head__inner { max-width: 960px; }
+  .a-head .crumb a { color: var(--blue-dark); }
+  .a-meta { display: flex; gap: var(--s4); margin: 0 0 var(--s4); font-size: var(--fs-sm); color: var(--muted); }
+  .a-meta time { font-weight: 700; color: var(--orange-text); }
+  .a-title { font-size: clamp(2.2rem, 1.4rem + 3vw, 3.8rem); margin: 0; color: var(--navy); text-wrap: balance; }
+  .a-stand { margin: var(--s5) 0 0; font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.5rem); line-height: 1.45; color: #2f3e49; max-width: 46rem; }
+  .a-lead { margin: calc(-1 * clamp(32px, 5vw, 80px)) auto 0; }
+  .a-lead img { width: 100%; max-height: 620px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+  .a-body { display: grid; grid-template-columns: minmax(0, 68ch) minmax(220px, 300px); justify-content: space-between; gap: var(--s7); padding-block: var(--s8) var(--s7); align-items: start; }
+  .a-body:not(:has(.a-in)) { grid-template-columns: minmax(0, 68ch); justify-content: center; }
+  .a-text { font-size: 1.125rem; line-height: 1.75; }
+  .a-text p:first-child { font-size: 1.2rem; }
+  .a-share { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3); margin: var(--s7) 0 0; padding-top: var(--s5); border-top: 1px solid var(--border); font-size: var(--fs-sm); font-weight: 700; color: var(--navy); }
+  .a-share a { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  .a-in { position: sticky; top: 110px; padding: var(--s5); border-radius: var(--radius-lg); background: var(--grey-light); }
+  .a-in__h { margin: 0 0 var(--s3); font-size: var(--fs-sm); font-weight: 700; letter-spacing: 0;  color: var(--navy); }
+  .a-in ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+  .a-in ul + ul { margin-top: var(--s4); padding-top: var(--s4); border-top: 1px solid var(--border); }
+  .a-in__list a { display: flex; align-items: center; gap: var(--s3); padding: 6px 0; font-weight: 700; font-size: var(--fs-sm); color: var(--navy); }
+  .a-in__list .icon-disc { width: 36px; border: 0; }
+  .a-related { padding-bottom: var(--s8); }
+  @media (max-width: 1100px) {
+    .a-body, .a-body:not(:has(.a-in)) { grid-template-columns: minmax(0, 1fr); }
+    .a-in { position: static; }
+  }
+}

@@ -1,0 +1,32 @@
+{%- comment -%}
+  "Related" tabs: one tab per kind of linked record; the tab bar only appears when there is more than one tab.
+  Without JavaScript, all panels show one after another.
+  tabs: {uid, heading, panels}; bio: HTML for a first "Biography" tab, or nil
+{%- endcomment -%}
+{%- assign tabs = include.tabs -%}
+{%- assign count = tabs.panels.size -%}
+{%- if include.bio %}{% assign count = count | plus: 1 %}{% endif -%}
+{%- if count > 0 %}
+<div class="smart-tabs" data-smart-tabs>
+  {%- if tabs.heading %}<h2 class="section-title smart-tabs__h">{{ tabs.heading }}<span class="stop">.</span></h2>{% endif %}
+  {%- if count > 1 %}
+  <nav class="smart-tabs-nav" role="tablist">
+    {%- if include.bio %}<button type="button" role="tab" class="smart-tab-btn active" id="{{ tabs.uid }}-tab-bio" aria-controls="{{ tabs.uid }}-bio" aria-selected="true" data-tab="bio">Biography</button>{% endif %}
+    {%- for p in tabs.panels %}
+    {%- assign first = false %}{% if forloop.first and include.bio == nil %}{% assign first = true %}{% endif %}
+    <button type="button" role="tab" class="smart-tab-btn{% if first %} active{% endif %}" id="{{ tabs.uid }}-tab-{{ p.id }}" aria-controls="{{ tabs.uid }}-{{ p.id }}" aria-selected="{{ first }}" data-tab="{{ p.id }}">{{ p.label }}<span class="smart-tab-count">{{ p.count }}</span></button>
+    {%- endfor %}
+  </nav>
+  {%- endif %}
+  {%- if include.bio %}
+  <div class="tab-panel active" id="{{ tabs.uid }}-bio" role="tabpanel" aria-labelledby="{{ tabs.uid }}-tab-bio" data-panel="bio">{{ include.bio }}</div>
+  {%- endif %}
+  {%- for p in tabs.panels %}
+  {%- assign first = false %}{% if forloop.first and include.bio == nil %}{% assign first = true %}{% endif %}
+  <div class="tab-panel{% if first %} active{% endif %}" id="{{ tabs.uid }}-{{ p.id }}" role="tabpanel" aria-labelledby="{{ tabs.uid }}-tab-{{ p.id }}" data-panel="{{ p.id }}">
+    {% include related-cards.html cards=p.cards limit=6 %}
+  </div>
+  {%- endfor %}
+</div>
+<script type="module" src="/assets/js/smarttabs.js"></script>
+{%- endif %}

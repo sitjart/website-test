@@ -1,0 +1,21 @@
+---
+layout: base
+page_class: pg-webpage
+# Content pages written in the CMS (collections/_webpages): What we do, Join in, Call for services …
+# Long pages get an "On this page" list built from their main headings.
+---
+{%- assign v = site.data.gen.webpages[page.slug] -%}
+{%- if v.legal %}{% assign size = "md" %}{% else %}{% assign size = "lg" %}{% endif -%}
+{% include page-header.html title=page.title intro=v.description section=nil href=nil art=v.art count=nil count_label=nil size=size %}
+<section class="section">
+  <div class="container page{% if v.toc.size > 0 %} page--toc{% endif %}">
+    {%- if v.toc.size > 0 %}
+    <nav class="toc" aria-label="On this page">
+      <p class="eyebrow-sm">On this page</p>
+      <ol>{% for h in v.toc %}<li><a href="#{{ h.id }}">{{ h.text }}</a></li>{% endfor %}</ol>
+    </nav>
+    {%- endif %}
+    <div class="prose wp-content" data-content>{{ content }}</div>
+  </div>
+</section>
+<script type="module" src="/assets/js/page-webpage.js"></script>

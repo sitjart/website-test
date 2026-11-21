@@ -1,0 +1,24 @@
+{%- comment -%}
+  Hero art: ELIXIR-UK's own groups in orbit around the logo mark. Inner ring: the ELIXIR Platforms.
+  Middle ring: ELIXIR-UK Clubs and the Communities the UK co-leads. Outer ring: the other Communities and Focus Groups.
+  Rings turn slowly; motion pauses on hover or focus and is off for people who ask for reduced motion.
+{%- endcomment -%}
+{%- assign orbit = site.data.gen.site.orbit -%}
+<div class="orbit" data-orbit>
+  <svg class="orbit__lines" viewBox="0 0 100 100" aria-hidden="true">
+    {%- for ring in orbit.rings %}<circle cx="50" cy="50" r="{{ ring.r }}" class="l{{ ring.k }}" />{% endfor %}
+    {%- for ring in orbit.rings %}{% for n in ring.nodes %}<circle class="orbit__node" cx="{{ n.cx }}" cy="{{ n.cy }}" r="{{ n.r }}" />{% endfor %}{% endfor %}
+  </svg>
+  <div class="orbit__core" aria-hidden="true">
+    <svg viewBox="56 0 120 126"><path d="{{ orbit.mark }}" fill="#f47d21" /></svg>
+  </div>
+  {%- for ring in orbit.rings %}
+  <ul class="orbit__ring" style="--dur:{{ ring.dur }}s; --dir:{{ ring.dir }}" aria-label="{{ ring.label }}">
+    {%- for a in ring.items %}
+    <li style="--deg:{{ a.deg }}deg; --r:{{ ring.r }}; --s:{{ ring.size }}">
+      <a href="{{ a.href }}" class="orbit__item" title="{{ a.name }}" aria-label="{{ a.name }}"><img src="{{ a.icon }}" alt="" loading="eager" decoding="async"></a>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- endfor %}
+</div>

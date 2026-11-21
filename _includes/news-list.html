@@ -1,0 +1,38 @@
+{%- comment -%} News & stories: newest story as a feature, then a card grid with type filters and "Show more". l: list from views.news_list {%- endcomment -%}
+{%- assign l = include.l -%}
+<section class="section">
+  <div class="container">
+    {%- if l.feature %}
+    {%- assign f = l.feature %}
+    <a class="feature" href="{{ f.href }}">
+      <span class="feature__media tile">{% if f.image %}{% include img.html img=f.image size="large" alt="" cls="ph-img" loading="eager" %}{% endif %}<span class="ph-slide"></span></span>
+      <span class="feature__body">
+        <span class="card__meta">Latest · {{ f.category }} · {{ f.date }}</span>
+        <span class="feature__title">{{ f.title }}</span>
+        {%- if f.sum %}<span class="feature__sum">{{ f.sum }}</span>{% endif %}
+        <span class="more-link">Read the story</span>
+      </span>
+    </a>
+    {%- endif %}
+    {%- if l.cats.size > 0 %}
+    <div class="filters" role="group" aria-label="Filter by type">
+      <button type="button" class="chip is-active" data-cat="" aria-pressed="true">All <span>{{ l.count }}</span></button>
+      {%- for c in l.cats %}<button type="button" class="chip" data-cat="{{ c.slug }}" aria-pressed="false">{{ c.name }} <span>{{ c.n }}</span></button>{% endfor %}
+    </div>
+    {%- endif %}
+    <ul class="ngrid" data-page="{{ l.page }}">
+      {%- for n in l.items %}
+      <li data-cat="{{ n.cat }}"{% if forloop.index > l.page %} hidden{% endif %}>
+        <a class="ncard" href="{{ n.href }}">
+          <span class="ncard__media">{% if n.image %}{% include img.html img=n.image size="small" alt="" cls=nil loading="lazy" %}{% else %}<span class="ncard__ph" aria-hidden="true"></span>{% endif %}</span>
+          <span class="card__meta">{{ n.category }} · {{ n.date }}</span>
+          <span class="ncard__title">{{ n.title }}</span>
+          {%- if n.sum %}<span class="ncard__sum">{{ n.sum }}</span>{% endif %}
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+    <div class="more"><button type="button" class="btn btn--line" data-more>Show more stories</button></div>
+  </div>
+</section>
+<script type="module" src="/assets/js/newslist.js"></script>

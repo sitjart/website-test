@@ -1,0 +1,91 @@
+---
+layout: base
+page_class: pg-event
+# Event (collections/_events, written in the CMS): navy header over the event image with a date card;
+# description and key facts; speakers and the organising community; related records; other upcoming events.
+# The structured data search engines read (schema.org Event) is built in tools/sitebuild/views.py.
+---
+{%- assign v = site.data.gen.events[page.slug] -%}
+<section class="ev-hero">
+  {%- if v.image %}{% include img.html img=v.image size="large" alt="" cls="ev-hero__img" loading="eager" %}{% endif %}
+  <div class="ev-hero__shade"></div>
+  <div class="container ev-hero__grid">
+    <div>
+      {% include crumbs.html section="Events" href="/events/" current=page.title dark=true %}
+      <div class="ev-tags">
+        <a class="pill" href="/events/type/{{ v.type_slug }}/">{{ v.type }}</a>
+        {%- if v.org %}<a class="pill" href="{{ v.org.href }}">{{ v.org.name }}</a>{% endif %}
+        <span class="pill pill--format">{{ v.format_label }}</span>
+        {%- if v.cancelled %}<span class="pill pill--cancel">Cancelled</span>{% endif %}
+        {%- if v.past and v.cancelled == false %}<span class="pill">Past event</span>{% endif %}
+      </div>
+      <h1 class="display ev-title">{{ page.title }}{% if v.stop %}<span class="stop">.</span>{% endif %}</h1>
+      {%- if v.standfirst %}<p class="ev-stand">{{ v.standfirst }}</p>{% endif %}
+    </div>
+    <div class="ev-card">
+      <div class="ev-card__date"><span>{{ v.month }}</span><strong>{{ v.day }}</strong></div>
+      <div class="ev-card__body">
+        <p class="ev-card__when">{{ v.when_card }}</p>
+        {%- if v.time %}<p>{{ v.time }}</p>{% endif %}
+        <p>{{ v.where_card }}</p>
+        <p>{{ v.cost }}</p>
+      </div>
+      <div class="ev-card__actions">
+        {%- if v.past == false and v.cancelled == false and v.registration %}<a class="btn" href="{{ v.registration }}" rel="noopener">{{ v.cta }}</a>{% endif %}
+        {%- if v.past == false and v.cancelled == false %}<a class="btn btn--line" href="{{ v.calendar }}" rel="noopener">Add to calendar</a>{% endif %}
+        {%- if v.programme %}<a class="btn btn--line" href="{{ v.programme }}" rel="noopener">Programme</a>{% endif %}
+        {%- if v.cancelled %}<p class="ev-card__note">This event has been cancelled.</p>{% endif %}
+        {%- if v.recording %}<a class="btn" href="{{ v.recording }}" rel="noopener">Watch the recording</a>{% endif %}
+        {%- if v.slides %}<a class="btn btn--line" href="{{ v.slides }}" rel="noopener">Slides</a>{% endif %}
+        {%- if v.past and v.recording == nil and v.slides == nil %}<p class="ev-card__note">This event has finished.</p>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container ev-body">
+  <div>
+    <div class="prose" data-content>{{ content }}</div>
+    <dl class="ev-facts">
+      <div><dt>Date</dt><dd>{{ v.when }}</dd></div>
+      {%- if v.time %}<div><dt>Time</dt><dd>{{ v.time }}</dd></div>{% endif %}
+      <div><dt>Format</dt><dd>{{ v.format_label }}</dd></div>
+      {%- if v.where %}<div><dt>Where</dt><dd>{{ v.where }}</dd></div>{% endif %}
+      <div><dt>Cost</dt><dd>{{ v.cost }}</dd></div>
+    </dl>
+  </div>
+  <aside class="ev-side">
+    {%- if v.speakers.size > 0 %}
+    <div class="ev-box">
+      <p class="eyebrow-sm">{% if v.speakers.size == 1 %}Speaker{% else %}Speakers{% endif %}</p>
+      <ul class="ev-people">{% for p in v.speakers %}<li>{% include person-line.html p=p size=48 ring="var(--grey-light)" badge=nil %}</li>{% endfor %}</ul>
+    </div>
+    {%- endif %}
+    {%- if v.org %}
+    <a class="ev-org" href="{{ v.org.href }}">
+      <span class="eyebrow-sm">Organised by</span>
+      <span class="ev-org__row">
+        {%- if v.org.icon.src %}<span class="avatar avatar--logo" style="width:64px; --ring:var(--grey-light); font-size:10px"><img src="{{ v.org.icon.src }}" alt="{{ v.org.name }} logo" loading="lazy" decoding="async"></span>{% endif %}
+        <strong>{{ v.org.name }}</strong>
+      </span>
+      {%- if v.org.sum %}<span class="ev-org__sum">{{ v.org.sum }}</span>{% endif %}
+      <span class="ev-org__go">{{ v.org.go }}</span>
+    </a>
+    {%- endif %}
+  </aside>
+</section>
+
+<section class="container ev-related">{% include smart-tabs.html tabs=v.tabs bio=nil %}</section>
+
+{%- if v.also.size > 0 %}
+<section class="ev-more">
+  <div class="container">
+    <h2 class="section-title">Also coming up<span class="stop">.</span></h2>
+    <div class="ev-more__grid">
+      {%- for x in v.also %}
+      <a class="ev-more__item lift" href="{{ x.href }}"><span class="ev-more__date">{{ x.date }}</span><strong>{{ x.title }}</strong><span class="ev-more__type">{{ x.type }}</span></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}

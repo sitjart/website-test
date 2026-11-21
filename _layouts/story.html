@@ -1,0 +1,47 @@
+---
+layout: base
+page_class: pg-story
+# News story (collections/_news, written in the CMS): header with date and reading time, headline and standfirst;
+# a wide lead image; the text with "In this story" alongside; share links; related records; more stories.
+---
+{%- assign v = site.data.gen.news[page.slug] -%}
+<article>
+  <header class="a-head">
+    <div class="container a-head__inner">
+      {% include crumbs.html section="News & stories" href="/news/" current=page.title dark=false %}
+      <p class="a-meta"><time datetime="{{ v.date.iso }}">{{ v.date.long }}</time><span>{{ v.minutes }} min read</span></p>
+      <h1 class="display a-title">{{ page.title }}{% if v.stop %}<span class="stop">.</span>{% endif %}</h1>
+      {%- if v.standfirst %}<p class="a-stand">{{ v.standfirst }}</p>{% endif %}
+    </div>
+  </header>
+  {%- if v.image %}<figure class="container a-lead">{% include img.html img=v.image size="large" alt="" cls=nil loading="eager" %}</figure>{% endif %}
+  <div class="container a-body">
+    <div class="a-main">
+      <div class="prose a-text" data-content>{{ content }}</div>
+      <p class="a-share">Share this story:
+        <a href="{{ v.share.linkedin }}" rel="noopener">LinkedIn</a>
+        <a href="{{ v.share.bluesky }}" rel="noopener">Bluesky</a>
+        <a href="{{ v.share.email }}">Email</a>
+      </p>
+    </div>
+    {%- if v.people.size > 0 or v.communities.size > 0 or v.members.size > 0 %}
+    <aside class="a-in" aria-label="In this story">
+      <p class="a-in__h">In this story</p>
+      {%- if v.people.size > 0 %}<ul class="a-in__people">{% for p in v.people %}<li>{% include person-line.html p=p size=40 ring="var(--white)" badge=nil %}</li>{% endfor %}</ul>{% endif %}
+      {%- if v.communities.size > 0 %}<ul class="a-in__list">{% for c in v.communities %}<li><a href="{{ c.href }}">{% include icon-disc.html icon=c.icon lazy=false %}{{ c.name }}</a></li>{% endfor %}</ul>{% endif %}
+      {%- if v.members.size > 0 %}<ul class="a-in__list">{% for m in v.members %}<li><a href="{{ m.href }}">{{ m.name }}</a></li>{% endfor %}</ul>{% endif %}
+    </aside>
+    {%- endif %}
+  </div>
+</article>
+
+<section class="container a-related">
+  {% include smart-tabs.html tabs=v.tabs bio=nil %}
+</section>
+
+<section class="section section--grey">
+  <div class="container">
+    <div class="section-head"><h2 class="section-title">More stories<span class="stop">.</span></h2><a class="more-link" href="/news/">All news and stories</a></div>
+    {% include related-cards.html cards=v.more limit=3 %}
+  </div>
+</section>

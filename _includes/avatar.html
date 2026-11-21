@@ -1,0 +1,9 @@
+{%- comment -%}
+  Circle photo (or logo) with the orange dot on its edge; initials when there is no image.
+  img: image or nil; initials; alt; size: pixels; logo: true/false; ring: colour of the dot's ring; eager: true/false
+{%- endcomment -%}
+{%- if include.size > 80 %}{% assign variant = "large" %}{% else %}{% assign variant = "small" %}{% endif -%}
+{%- if include.eager %}{% assign load = "eager" %}{% else %}{% assign load = "lazy" %}{% endif -%}
+<span class="avatar{% if include.logo %} avatar--logo{% endif %}" style="width:{{ include.size }}px; --ring:{{ include.ring }}; font-size:{{ include.size | divided_by: 6 }}px">
+  {%- if include.img %}{% include img.html img=include.img size=variant alt=include.alt cls=nil loading=load %}{% else %}<span class="avatar__fill" aria-hidden="true">{{ include.initials }}</span>{% endif -%}
+</span>

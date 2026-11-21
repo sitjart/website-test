@@ -1,0 +1,11 @@
+{%- comment -%}
+  Breadcrumbs: Home › Section › This page.
+  section: label or nil; href: section address; current: this page; dark: true on navy banners
+{%- endcomment -%}
+<nav class="crumbs{% if include.dark %} crumbs--dark{% endif %}" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    {%- if include.section %}<li><a href="{{ include.href }}">{{ include.section }}</a></li>{% endif %}
+    <li><span aria-current="page">{{ include.current }}</span></li>
+  </ol>
+</nav>

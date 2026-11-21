@@ -1,0 +1,57 @@
+// Page: about – applies only on this page
+:where(.pg-about) {
+.split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+  .split .lead { margin-top: var(--s4); }
+  .split > div > p { margin-top: var(--s4); }
+  .three { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s4); }
+  .three .card { gap: var(--s2); }
+  .three .icon-disc { width: 56px; background: var(--grey-light); border: 0; margin-bottom: var(--s2); }
+  .three b { color: var(--navy); font-size: 1.15rem; }
+  .three span:last-child { font-size: var(--fs-sm); line-height: 1.5; }
+  .diff { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s3); }
+  .diff li { display: flex; gap: var(--s4); align-items: flex-start; padding: var(--s5); border-radius: var(--radius-lg); background: var(--white); }
+  .diff__n { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--orange); color: var(--on-orange); font-weight: 900; }
+  .diff li > span:last-child { display: flex; flex-direction: column; gap: 2px; }
+  .diff b { color: var(--navy); font-size: 1.1rem; }
+  .vision { padding-block: clamp(72px, 9vw, 128px); }
+  .vision__label { margin: 0 0 var(--s4); font-weight: 700; color: var(--orange-soft); }
+  .vision__text { margin: 0; max-width: 28ch; font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3.2rem); font-weight: 900; line-height: 1.12; letter-spacing: -0.02em; color: var(--white); }
+  .hub { display: grid; grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.4fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+  .hub__fig { margin: 0; }
+  .hub__fig svg { width: 100%; max-width: 380px; display: block; margin-inline: auto; overflow: visible; }
+  .d-coord { stroke: #c6d6e2; stroke-width: 0.8; stroke-dasharray: 2 3; }
+  .d-mesh { stroke: #7fa6bf; stroke-width: 1.4; }
+  .d-uk-link { stroke: var(--orange); stroke-width: 1; opacity: 0.7; }
+  .d-uk-member { fill: var(--orange); stroke: var(--grey-light); stroke-width: 1.5; }
+  .d-node { fill: var(--blue); stroke: var(--grey-light); stroke-width: 2.5; }
+  .d-node.uk { fill: var(--orange); }
+  .d-hub { fill: var(--navy); stroke: var(--grey-light); stroke-width: 3; }
+  .d-label { font: 700 11px var(--font); fill: var(--navy); text-anchor: middle; }
+  .d-label--uk { font-weight: 900; fill: var(--orange-text); }
+  .d-key { list-style: none; margin: var(--s4) 0 0; padding: 0; display: grid; gap: 6px; font-size: var(--fs-xs); color: var(--text); }
+  .d-key li { display: flex; align-items: center; gap: var(--s2); }
+  .d-key span { flex: none; width: 12px; height: 12px; border-radius: 50%; }
+  .k-node { background: var(--blue); }
+  .k-hub { background: var(--navy); }
+  .k-uk { background: var(--orange); }
+  .hub .section-title { font-size: clamp(1.8rem, 1.3rem + 1.8vw, 2.6rem); margin-bottom: var(--s5); }
+  .hub__list { padding-left: 1.2em; }
+  .hub__list li { margin-bottom: var(--s2); }
+  .hub__list li::marker { color: var(--orange); }
+  .figs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s6) var(--s5); }
+  @media (max-width: 1000px) { .figs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .figs a { display: flex; flex-direction: column; gap: var(--s2); padding-top: var(--s4); border-top: 3px solid var(--orange); color: var(--text); }
+  .figs b { font-size: clamp(2.6rem, 1.8rem + 3vw, 4.2rem); font-weight: 900; line-height: 1; letter-spacing: -0.03em; color: var(--navy); }
+  .figs a:hover b { color: var(--orange-text); }
+  .figs span { font-size: var(--fs-sm); line-height: 1.4; }
+  .gov { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: var(--s5); }
+  .gov__group { padding: var(--s5); border-radius: var(--radius-lg); background: var(--white); }
+  .gov__group h3 { font-size: 1.1rem; margin: 0 0 var(--s3); }
+  .gov__sc { color: var(--text); border: 2px dashed #f3c7a3; }
+  .gov__sc:hover { color: var(--text); border-color: var(--orange); }
+  .gov__group ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+  @media (max-width: 900px) {
+    .split, .hub { grid-template-columns: 1fr; }
+    .three { grid-template-columns: 1fr; }
+  }
+}

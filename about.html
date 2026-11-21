@@ -1,0 +1,123 @@
+---
+layout: base
+page_class: pg-about
+title: Who we are
+description: ELIXIR-UK is the United Kingdom’s national Node of ELIXIR.
+permalink: /about/
+# The WordPress "About" copy, word for word, given a layout. Figures, people and the diagram come
+# from _data/gen/pages.json (about); the copy is below.
+---
+{%- assign v = site.data.gen.pages.about -%}
+{%- assign s = v.stats -%}
+{%- assign d = v.diagram -%}
+{% include page-header.html title="Who we are" intro="ELIXIR-UK is the United Kingdom’s national Node of ELIXIR, the European infrastructure for bioscience data. We are a distributed research infrastructure and a collaborative network, bringing together leading UK research-performing organisations and the people behind them." section=nil href=nil art="/assets/wp/illustration-isometrics-mechanisms-like-extending-hand-join.svg" count=nil count_label=nil size="lg" %}
+
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div><h2 class="section-title">Our role<span class="stop">.</span></h2><p class="lead">Supporting the UK life science community to build, connect and sustain world-class digital research infrastructure.</p></div>
+      <ul class="three">
+        <li class="card"><span class="icon-disc"><img src="/assets/wp/icon-platform-tools.svg" alt=""></span><b>Enable delivery</b><span>Helping teams and individuals to provide world-class data services, resources and training.</span></li>
+        <li class="card"><span class="icon-disc"><img src="/assets/wp/icon-platform-training.svg" alt=""></span><b>Champion people</b><span>Supporting the researchers and technical professionals behind the work.</span></li>
+        <li class="card"><span class="icon-disc"><img src="/assets/wp/icon-focus-group-comms.svg" alt=""></span><b>Amplify voices</b><span>Shaping standards and policy at national and international levels.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--grey">
+  <div class="container split">
+    <div>
+      <h2 class="section-title">What makes us different<span class="stop">.</span></h2>
+      <p>ELIXIR-UK is not just a network you belong to, but a community you can actively shape. We ensure equitable access to meetings, collaborations, projects and leadership roles – so that contributions come from every level, not only from the top. This means early-career researchers, technical experts and established leaders work side by side, sharing responsibility for decisions and driving progress together.</p>
+    </div>
+    <ol class="diff">
+      <li><span class="diff__n">1</span><span><b>Open doors</b><span>Equitable access to meetings, collaborations projects and opportunities.</span></span></li>
+      <li><span class="diff__n">2</span><span><b>Shared leadership</b><span>Early voices and established leaders work side by side.</span></span></li>
+      <li><span class="diff__n">3</span><span><b>Real influence</b><span>Contributions at every level shape decisions and influence policy consultations.</span></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="banner vision">
+  <div class="container">
+    <p class="vision__label">Our vision</p>
+    <p class="vision__text">A UK research ecosystem where every life-science researcher and technical professional shapes and benefits from a world-leading, collaborative and FAIR digital research infrastructure that is AI-ready<span class="stop">.</span></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <h2 class="section-title">What “Infrastructure” means to us<span class="stop">.</span></h2>
+    <div class="prose">
+      <p>Our infrastructure is not simply a platform, whether digital or physical, it’s the collective expertise, resources and partnerships of our member organisations. ELIXIR-UK’s distributed model ensures that knowledge, innovation and support are accessible across the UK, strengthening both local and national capabilities. We funnel access to funding and community consultations at national and international levels, leveraging our strategic position inside the larger ELIXIR consortium.</p>
+      <p>As a distributed infrastructure, a network of UK universities and research institutes, the ELIXIR-UK Node doesn’t directly own or run services. Instead, we support and connect the people who deliver these and enable UK life science research to thrive. We ensure no one works in isolation and the interests of the UK bioscience community are jointly represented when we advocate for policy changes and funding strategies.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--grey">
+  <div class="container hub">
+    <figure class="hub__fig" aria-label="ELIXIR as a distributed network: national Nodes linked to each other, the Hub coordinating, and ELIXIR-UK linking its member organisations">
+      <svg viewBox="0 0 300 300" role="img" aria-hidden="true">
+        {%- for n in d.nodes %}<line x1="{{ d.hub.x }}" y1="{{ d.hub.y }}" x2="{{ n.x }}" y2="{{ n.y }}" class="d-coord" />{% endfor %}
+        {%- for l in d.mesh %}<line x1="{{ l.x1 }}" y1="{{ l.y1 }}" x2="{{ l.x2 }}" y2="{{ l.y2 }}" class="d-mesh" />{% endfor %}
+        {%- for m in d.uk_members %}<line x1="{{ d.uk.x }}" y1="{{ d.uk.y }}" x2="{{ m.x }}" y2="{{ m.y }}" class="d-uk-link" />{% endfor %}
+        {%- for m in d.uk_members %}<circle cx="{{ m.x }}" cy="{{ m.y }}" r="3.2" class="d-uk-member" />{% endfor %}
+        {%- for n in d.nodes %}<circle cx="{{ n.x }}" cy="{{ n.y }}" r="{{ n.r }}" class="d-node{% if n.uk %} uk{% endif %}" />{% endfor %}
+        <circle cx="{{ d.hub.x }}" cy="{{ d.hub.y }}" r="15" class="d-hub" />
+        <text x="{{ d.hub.x }}" y="{{ d.hub.y | plus: 30 }}" class="d-label">ELIXIR Hub</text>
+        <text x="{{ d.uk.x }}" y="{{ d.uk.label_y }}" class="d-label d-label--uk">ELIXIR-UK</text>
+      </svg>
+      <ul class="d-key">
+        <li><span class="k-node"></span>National Nodes, working directly with each other</li>
+        <li><span class="k-hub"></span>The Hub, coordinating across Europe</li>
+        <li><span class="k-uk"></span>ELIXIR-UK and its member organisations</li>
+      </ul>
+    </figure>
+    <div>
+      <h2 class="section-title">Us, the UK Node, inside the larger ELIXIR consortium<span class="stop">.</span></h2>
+      <p>The ELIXIR consortium follows a Hub and Spokes model:</p>
+      <ul class="hub__list">
+        <li><b>The ELIXIR Hub</b> (the headquarters located at the Wellcome Genome Campus) sets strategy and coordinates activities across Europe.</li>
+        <li><b>National Nodes</b>, like ELIXIR-UK, are the spokes, bringing together local expertise, resources and priorities.</li>
+      </ul>
+      <p>ELIXIR-UK connects the UK’s research community to the wider European infrastructure and contributes UK excellence and knowledge to the consortium. Being a member of ELIXIR-UK grants organisations access to the benefits of the entire consortium. This approach ensures that UK teams both benefit from and help shape international collaboration, innovation and standards-enhancing life science research across all participating countries.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <ul class="figs">
+      <li><a href="/members/"><b>{{ s.members }}</b><span>UK research-performing organisations</span></a></li>
+      <li><a href="/services/"><b>{{ s.services }}</b><span>Endorsed open-access services for the life sciences community</span></a></li>
+      <li><a href="/projects/"><b>{{ s.projects }}</b><span>Projects we are participating in or have completed</span></a></li>
+      <li><a href="/activities/"><b>{{ s.communities }}</b><span>Communities and groups we run or take part in</span></a></li>
+    </ul>
+  </div>
+</section>
+
+{%- if v.gov.size > 0 %}
+<section class="section section--grey">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Who leads the Node<span class="stop">.</span></h2>
+      <a class="more-link" href="/people/">See all our people</a>
+    </div>
+    <div class="gov">
+      {%- for g in v.gov %}
+      <section class="gov__group">
+        <h3>{{ g.name }}</h3>
+        <ul>{% for p in g.people %}<li>{% include person-line.html p=p size=48 ring="var(--white)" badge=nil %}</li>{% endfor %}</ul>
+      </section>
+      {%- endfor %}
+      <a class="gov__group gov__sc" href="/members/">
+        <h3>Steering Committee</h3>
+        <p>One representative from each member organisation. Find each organisation’s representative on its member page.</p>
+        <span class="more-link">Our members</span>
+      </a>
+    </div>
+  </div>
+</section>
+{%- endif %}

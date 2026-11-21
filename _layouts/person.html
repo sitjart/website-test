@@ -1,0 +1,38 @@
+---
+layout: base
+page_class: pg-person
+# People profile: photo, honorific above the name, role, organisation, roles in ELIXIR-UK and links on the left;
+# biography and related items on the right. People data is fetched at build time and never stored here.
+---
+{%- assign v = site.data.gen.people[page.slug] -%}
+<div class="banner pf-band"><div class="container">{% include crumbs.html section="People" href="/people/" current=v.name dark=true %}</div></div>
+<div class="container pf">
+  <aside class="pf-side">
+    <div class="pf-photo">{% include avatar.html img=v.photo initials=v.initials alt="" size=220 logo=false ring="var(--white)" eager=true %}</div>
+    {%- if v.honorific != "" %}<p class="pf-hon">{{ v.honorific }}</p>{% endif %}
+    <h1 class="pf-name">{{ v.name }}<span class="stop">.</span></h1>
+    {%- if v.role != "" %}<p class="pf-role">{{ v.role }}</p>{% endif %}
+    {%- if v.org %}
+    <a class="pf-org" href="{{ v.org.href }}">
+      {%- if v.org.logo %}<span class="pf-org__logo">{% include img.html img=v.org.logo size="small" alt="" cls=nil loading="lazy" %}</span>{% endif %}
+      <span>{{ v.org.name }}</span>
+    </a>
+    {%- elsif v.institution != "" %}<p class="pf-org pf-org--plain">{{ v.institution }}</p>{% endif %}
+    {%- if v.links.size > 0 %}
+    <ul class="pf-links">{% for l in v.links %}<li><a href="{{ l.href }}" rel="noopener"><span class="pf-ico" aria-hidden="true">{{ l.icon }}</span>{{ l.label }}</a></li>{% endfor %}</ul>
+    {%- endif %}
+    {%- if v.governance.size > 0 %}
+    <div class="pf-block"><p class="pf-sub">In ELIXIR-UK</p><ul class="pf-pills">{% for g in v.governance %}<li>{{ g }}</li>{% endfor %}</ul></div>
+    {%- endif %}
+    {%- if v.leads.size > 0 %}
+    <div class="pf-block">
+      <p class="pf-sub">Leads</p>
+      <ul class="pf-leads">{% for a in v.leads %}<li><a href="{{ a.href }}">{% include icon-disc.html icon=a.icon lazy=false %}{{ a.name }}</a></li>{% endfor %}</ul>
+    </div>
+    {%- endif %}
+  </aside>
+  <div class="pf-main">
+    {%- if v.bio %}{% capture bio %}<div class="prose pf-bio"><p>{{ v.bio }}</p></div>{% endcapture %}{% else %}{% assign bio = nil %}{% endif %}
+    {% include smart-tabs.html tabs=v.tabs bio=bio %}
+  </div>
+</div>

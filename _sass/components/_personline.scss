@@ -1,0 +1,9 @@
+// PersonLine
+.pl { display: flex; align-items: center; gap: var(--s3); padding: var(--s2); margin: 0 calc(-1 * var(--s2)); border-radius: 8px; color: var(--text); }
+  .pl:hover { background: rgb(2 52 82 / 0.05); color: var(--text); }
+  .pl__text { display: flex; flex-direction: column; min-width: 0; line-height: 1.25; }
+  .pl__hon { font-size: 11px; letter-spacing: 0.04em; color: var(--muted); }
+  .pl__name { font-weight: 700; color: var(--navy); }
+  .pl:hover .pl__name { color: var(--orange-text); }
+  .pl__sub { font-size: var(--fs-xs); color: var(--muted); margin-top: 2px; }
+  .pl__badge { align-self: flex-start; margin-top: 4px; font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 3px; background: #fdeee2; color: #8f4006; }

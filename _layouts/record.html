@@ -1,0 +1,63 @@
+---
+layout: base
+page_class: pg-record
+# Single service, project, collaborator or thematic area: banner with a readable logo panel,
+# the description beside an "At a glance" panel, then related records as cards.
+---
+{%- assign v = site.data.gen[page.gen][page.slug] -%}
+<section class="banner rec-hero">
+  <div class="container rec-hero__grid{% if v.art %} has-art{% endif %}">
+    <div>
+      {%- capture section_href %}/{{ v.kind }}/{% endcapture %}
+      {% include crumbs.html section=v.plural href=section_href current=v.name dark=true %}
+      <p class="eyebrow-sm rec-hero__eyebrow">{{ v.singular }}{% if v.status %} · {{ v.status }}{% endif %}</p>
+      <h1 class="display rec-hero__title">{{ v.name }}{% if v.stop %}<span class="stop">.</span>{% endif %}</h1>
+      {%- if v.lead_text %}<p class="rec-hero__lead">{{ v.lead_text }}</p>{% endif %}
+      {%- if v.recognitions.size > 0 %}
+      <ul class="rec-hero__badges">{% for x in v.recognitions %}<li><a href="/services/#{{ x.slug }}" title="{{ x.text }}">{{ x.short }}</a></li>{% endfor %}</ul>
+      {%- endif %}
+      <div class="rec-hero__actions">
+        {%- if v.website %}<a class="btn" href="{{ v.website }}" rel="noopener">Visit website</a>{% endif %}
+        {%- if v.join %}<a class="btn btn--ghost" href="{{ v.join }}" rel="noopener">Join in</a>{% endif %}
+      </div>
+    </div>
+    {%- if v.art %}<img class="rec-hero__art" src="{{ v.art }}" alt="">
+    {%- elsif v.logo %}<div class="rec-hero__logo">{% capture alt %}{{ v.name }} logo{% endcapture %}{% include img.html img=v.logo size="large" alt=alt cls=nil loading="eager" %}</div>{% endif %}
+  </div>
+</section>
+
+<div class="container rec-body">
+  <div class="rec-main">
+    <h2 class="rec-h">About</h2>
+    {%- if v.body %}<div class="prose" data-content>{{ v.body }}</div>{% else %}<p>{{ v.summary }}</p>{% endif %}
+  </div>
+  {%- if v.facts.size > 0 or v.hosts.size > 0 or v.leads.size > 0 or v.others.size > 0 or v.recognitions.size > 0 %}
+  <aside class="glance" aria-label="At a glance">
+    <p class="glance__h">At a glance</p>
+    {%- if v.facts.size > 0 %}<dl class="glance__facts">{% for f in v.facts %}<div><dt>{{ f.k }}</dt><dd>{{ f.v }}</dd></div>{% endfor %}</dl>{% endif %}
+    {%- if v.is_service %}<a class="glance__what" href="/services/#about-services">What being an ELIXIR-UK service means</a>{% endif %}
+    {%- if v.recognitions.size > 0 %}
+    <div class="glance__block">
+      <p class="glance__sub">Recognised as</p>
+      <ul class="glance__labels">{% for x in v.recognitions %}<li><a href="/services/#{{ x.slug }}">{{ x.short }}</a><span>{{ x.text }}</span></li>{% endfor %}</ul>
+    </div>
+    {%- endif %}
+    {%- if v.hosts.size > 0 %}
+    <div class="glance__block">
+      <p class="glance__sub">{{ v.hosts_label }}</p>
+      <ul class="glance__logos">{% for m in v.hosts %}<li><a href="{{ m.href }}" title="{{ m.name }}">{% if m.logo %}{% include img.html img=m.logo size="small" alt=m.name cls=nil loading="lazy" %}{% else %}{{ m.name }}{% endif %}</a></li>{% endfor %}</ul>
+    </div>
+    {%- endif %}
+    {%- if v.leads.size > 0 %}
+    <div class="glance__block"><p class="glance__sub">{% if v.leads.size == 1 %}Lead{% else %}Leads{% endif %}</p><ul class="glance__people">{% for p in v.leads %}<li>{% include person-line.html p=p size=44 ring="var(--grey-light)" badge=nil %}</li>{% endfor %}</ul></div>
+    {%- endif %}
+    {%- if v.others.size > 0 %}
+    <div class="glance__block"><p class="glance__sub">People involved</p><ul class="glance__people">{% for p in v.others %}<li>{% include person-line.html p=p size=40 ring="var(--grey-light)" badge=nil %}</li>{% endfor %}</ul></div>
+    {%- endif %}
+  </aside>
+  {%- endif %}
+</div>
+
+<section class="container rec-related">
+  {% include smart-tabs.html tabs=v.tabs bio=nil %}
+</section>

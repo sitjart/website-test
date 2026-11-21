@@ -1,0 +1,200 @@
+---
+layout: base
+page_class: pg-home
+gen: pages
+slug: home
+# Home – written for members and funders first: who we are, what the Node delivers, the evidence.
+# Everything below comes from _data/gen/pages.json (home), worked out in tools/sitebuild/views.py.
+---
+{%- assign v = site.data.gen.pages.home -%}
+{%- assign s = v.stats -%}
+<!-- 1. Who we are -->
+<section class="banner hero">
+  <div class="hero__stage">
+    <div class="hero__orbit">{% include hero-orbit.html %}</div>
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <h1 class="display hero__title">ELIXIR-UK<span class="stop">.</span></h1>
+        <p class="hero__intro">{{ v.intro }}</p>
+        <div class="hero__actions">
+          <a class="btn" href="/new-members/">Become a member</a>
+          {%- if v.video %}
+          <button type="button" class="btn btn--ghost" data-video="{{ v.video }}" aria-haspopup="dialog">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 8.5v7l6-3.5z" fill="currentColor"/></svg>
+            Watch our story
+          </button>
+          {%- endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container hero__facts-wrap">
+    <dl class="hero__facts">
+      <div><dt>Member organisations</dt><dd>{{ s.members }}</dd></div>
+      <div><dt>Endorsed services</dt><dd>{{ s.services }}</dd></div>
+      <div><dt>Communities and groups</dt><dd>{{ s.communities }}</dd></div>
+      <div><dt>Projects</dt><dd>{{ s.projects }}</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 2. Mission -->
+<section class="section mission-wrap" aria-labelledby="mission-h">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title" id="mission-h">Our mission<span class="stop">.</span></h2>
+        <p>Four pillars hold the Node together.</p>
+      </div>
+    </div>
+    <div class="mission">
+      {%- for m in v.mission %}
+      <a class="mission__card{% if m.highlight %} is-highlight{% endif %}" href="{{ m.href }}" data-reveal="fade-up" style="--delay:{{ forloop.index0 | times: 70 }}ms">
+        <span class="mission__art"><img src="{{ m.art }}" alt="" loading="lazy" decoding="async"></span>
+        <span class="mission__body">
+          <span class="mission__title">{{ m.title }}<span class="stop">.</span></span>
+          <span class="mission__text">{{ m.text }}</span>
+          {%- if m.draft %}<span class="draft">Draft wording</span>{% endif %}
+        </span>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 3. Evidence -->
+<section class="banner numbers" aria-labelledby="numbers-h">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title" id="numbers-h">The Node in numbers<span class="stop">.</span></h2>
+        <p class="numbers__sub">Counted from the records behind this site, updated on every build.</p>
+      </div>
+    </div>
+    <div class="numbers__top">
+      <div class="numbers__map">{% include ukmap.html id="map-home" theme="dark" interactive=true filter=false highlight=nil label="Map of ELIXIR-UK member organisations across the UK" cls=nil %}<p class="numbers__hint">Select a dot to see the members in that city.</p></div>
+      <ul class="kpis">
+        <li><a href="/members/"><strong>{{ s.members }}</strong><span>member organisations</span></a></li>
+        <li><a href="/services/"><strong>{{ s.services }}</strong><span>endorsed services</span></a></li>
+        <li><a href="/activities/"><strong>{{ s.communities }}</strong><span>communities and groups, {{ s.leading }} UK-led</span></a></li>
+        <li><a href="/projects/"><strong>{{ s.projects }}</strong><span>projects</span></a></li>
+        <li><a href="/events/"><strong>{{ s.events_total }}</strong><span>events since {{ s.events_since }}</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Thematic areas -->
+<section class="section" aria-labelledby="areas-h">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title" id="areas-h">Thematic areas<span class="stop">.</span></h2>
+        <p>Each area gathers the communities, services, projects and people working on it.</p>
+      </div>
+      <a class="more-link" href="/area/">All thematic areas</a>
+    </div>
+    <div class="areas">
+      {%- for a in v.areas %}
+      <a class="area" href="{{ a.href }}" data-reveal="fade-up" style="--delay:{{ forloop.index0 | times: 80 }}ms">
+        <span class="area__art">{% if a.art %}<img src="{{ a.art }}" alt="" loading="lazy" decoding="async">{% endif %}</span>
+        <span class="area__title">{{ a.name }}</span>
+        {%- if a.counts.size > 0 %}<span class="area__counts">{% for c in a.counts %}<span><b>{{ c.n }}</b> {{ c.label }}</span>{% endfor %}</span>{% endif %}
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 5. Where the UK leads -->
+<section class="section section--grey" aria-labelledby="leads-h">
+  <div class="container leads">
+    <div class="leads__intro">
+      <h2 class="section-title" id="leads-h">Where the UK leads<span class="stop">.</span></h2>
+      <p>ELIXIR-UK runs its own Clubs and co-leads {{ v.leads_abroad }} ELIXIR Communities and groups across Europe.</p>
+      <a class="more-link" href="/activities/">All communities</a>
+    </div>
+    <ul class="leads__grid">
+      {%- for l in v.leads %}
+      <li><a href="{{ l.href }}">{% include icon-disc.html icon=l.icon lazy=true %}<span class="leads__name">{{ l.name }}</span><span class="leads__kind">{{ l.kind }}</span></a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- 6. What's new -->
+<section class="section" aria-labelledby="news-h">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title" id="news-h">What’s new<span class="stop">.</span></h2>
+      <a class="more-link" href="/news/">All news and stories</a>
+    </div>
+    <div class="news-tiles">
+      {%- for n in v.news %}
+      {%- if forloop.first %}
+      <a class="tile news-tile news-tile--photo" href="{{ n.href }}">
+        {%- if n.image %}{% include img.html img=n.image size="large" alt="" cls="ph-img" loading="lazy" %}{% endif %}
+        <span class="ph-slide"></span>
+        <span class="scrim">
+          <span class="news-tile__meta">{{ n.meta }}</span>
+          <span class="news-tile__title news-tile__title--big">{{ n.title }}</span>
+        </span>
+      </a>
+      {%- else %}
+      <a class="news-tile {% if forloop.index == 2 %}news-tile--navy{% else %}news-tile--blue{% endif %}" href="{{ n.href }}">
+        <span class="news-tile__meta">{{ n.meta }}</span>
+        <span class="news-tile__title">{{ n.title }}</span>
+        {%- if n.sum %}<span class="news-tile__sum">{{ n.sum }}</span>{% endif %}
+        <span class="news-tile__more">Read the story</span>
+      </a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 7. Coming up -->
+{%- if v.upcoming.size > 0 %}
+<section class="banner coming" aria-labelledby="coming-h">
+  <img class="coming__art" src="/assets/wp/illustration-isometrics-mechanisms-like-extending-hand-join.svg" alt="" loading="lazy">
+  <div class="container coming__grid">
+    <div>
+      <h2 class="section-title" id="coming-h">Coming up<span class="stop">.</span></h2>
+      <p>Community Calls, workshops and the All Hands meeting.</p>
+      <a class="more-link" href="/events/">All events</a>
+    </div>
+    <ol class="coming__list">
+      {%- for e in v.upcoming %}
+      <li><a href="{{ e.href }}">
+        <span class="coming__date"><b>{{ e.day }}</b><span>{{ e.month }}</span></span>
+        <span class="coming__body"><span class="coming__type">{{ e.type }}</span><span class="coming__title">{{ e.title }}</span></span>
+        <span class="coming__go" aria-hidden="true">→</span>
+      </a></li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+{%- endif %}
+
+<!-- 8. Services -->
+<section class="section services-band" aria-labelledby="svc-h">
+  <div class="container services-band__grid">
+    <div>
+      <h2 class="section-title" id="svc-h"><span class="services-band__num">{{ v.services_count }}</span> services, endorsed<span class="stop">.</span></h2>
+      <p>Selected by ELIXIR-UK for quality, use and sustainability, and free for the life sciences community.</p>
+      <a class="btn" href="/services/">Discover our services</a>
+    </div>
+    <ul class="services-band__logos" aria-label="Endorsed services">
+      {%- for x in v.services %}
+      <li><a href="{{ x.href }}" title="{{ x.name }}">{% include img.html img=x.logo size="small" alt=x.name cls=nil loading="lazy" %}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- if v.video %}
+<dialog class="video-dialog" id="story-video" aria-label="Our story">
+  <button type="button" class="video-dialog__close" data-close aria-label="Close video">×</button>
+  <div class="video-dialog__frame"></div>
+</dialog>
+{%- endif %}
+<script type="module" src="/assets/js/page-home.js"></script>

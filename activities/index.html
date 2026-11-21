@@ -1,0 +1,84 @@
+---
+layout: base
+page_class: pg-activities
+title: Communities of practice
+description: ELIXIR-UK Clubs and the ELIXIR Platforms, Communities and Focus Groups UK members take part in.
+# UK Clubs (national level), then ELIXIR Platforms, Communities and Focus Groups (European level)
+# with the "Not sure which to join?" explainer; the Fellowship at the foot.
+---
+{%- assign v = site.data.gen.pages.activities -%}
+{% include page-header.html title="Our communities of practice" intro=nil section=nil href=nil art="/assets/wp/illustration-isometrics-team-rowing.svg" count=v.count count_label="Clubs, Communities, Platforms and Focus Groups" size="lg" %}
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2 class="section-title">At national level<span class="stop">.</span></h2></div>
+    <ul class="clubs">
+      {%- for r in v.clubs %}
+      <li><a class="card club" href="{{ r.href }}">
+        {% include icon-disc.html icon=r.icon lazy=false %}
+        <span class="card__title club__name">{{ r.name }}</span>
+        <span class="club__text">{{ r.text }}</span>
+        <span class="more-link" aria-hidden="true">Find out more</span>
+      </a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--grey">
+  <div class="container">
+    <div class="eu-intro">
+      <div>
+        <h2 class="section-title">At European level<span class="stop">.</span></h2>
+        <p class="lead">Activities within the wider ELIXIR Europe help coordinate the work of all its members and bring together experts across Europe, in or outside ELIXIR, to develop standards, services and training within specific life science domains. The UK Node co-leads several Communities, Platforms and ELIXIR Focus Groups, and our members are actively represented in all.</p>
+      </div>
+      <aside class="which">
+        <p class="which__h">Not sure which to join?</p>
+        <dl>
+          <div><dt>UK clubs</dt><dd>our UK-based groups, open to anyone. Everything else below is Europe-wide.</dd></div>
+          {%- for x in v.types %}<div><dt>{{ x.label }}</dt><dd>{{ x.text }}</dd></div>{% endfor %}
+        </dl>
+        <p class="which__foot">If you’re interested in participating in any of these, but don’t know where to start, <a href="/contact-us/">contact us</a>.</p>
+      </aside>
+    </div>
+    <div class="filters" role="group" aria-label="Filter by type">
+      <button type="button" class="chip is-active" data-type="" aria-pressed="true">Show all <span>{{ v.europe.size }}</span></button>
+      {%- for x in v.types %}<button type="button" class="chip" data-type="{{ x.key }}" aria-pressed="false">{{ x.label }} <span>{{ x.n }}</span></button>{% endfor %}
+    </div>
+    <ul class="eu">
+      {%- for r in v.europe %}
+      <li data-type="{{ r.type }}"><a class="card eucard" href="{{ r.href }}">
+        {% include icon-disc.html icon=r.icon lazy=true %}
+        <span class="eucard__body">
+          <span class="eucard__type">{{ r.type }}{% if r.leading %}<span class="lead-badge">UK co-leads</span>{% endif %}</span>
+          <span class="card__title">{{ r.name }}</span>
+          <span class="eucard__text">{{ r.text }}</span>
+        </span>
+      </a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container ctas">
+    <a class="cta-box" href="/how-our-communities-of-practice-work/">
+      <span class="cta-box__h">Clubs, Platforms, Communities or Focus Groups?</span>
+      <span>Find out how they differ and which one is right for you.</span>
+      <span class="more-link">How our communities of practice work</span>
+    </a>
+    <a class="cta-box cta-box--dark" href="/contact-us/">
+      <span class="cta-box__h">New to ELIXIR Europe?</span>
+      <span>Contact us and we’ll pair you with a UK member already involved.</span>
+      <span class="more-link">Contact us</span>
+    </a>
+  </div>
+  <div class="container">
+    <a class="fellow-card" href="/activities/fellowship/">
+      <span class="icon-disc"><img src="/assets/wp/emblem-fellowship.svg" alt=""></span>
+      <span><span class="card__meta">Also from ELIXIR-UK</span><span class="card__title">The Data Stewardship Fellowship</span><span class="eucard__text">Fellows and mentors professionalising data stewardship across UK research organisations.</span></span>
+      <span class="more-link" aria-hidden="true"></span>
+    </a>
+  </div>
+</section>
+<script type="module" src="/assets/js/page-activities.js"></script>

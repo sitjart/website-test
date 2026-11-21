@@ -1,0 +1,75 @@
+{%- comment -%}
+  Listing pages for the directory, one layout per kind: members beside the map, collaborators as logo cards,
+  projects as a scannable list in three groups, thematic areas as illustrated cards.
+  kind; title; intro or nil; art or nil; count_label
+{%- endcomment -%}
+{%- assign l = site.data.gen.pages[include.kind] -%}
+{% include page-header.html title=include.title intro=include.intro section=nil href=nil art=include.art count=l.count count_label=include.count_label size="lg" %}
+<section class="section">
+  <div class="container">
+    {%- if include.kind == "collaborations" %}
+    <ul class="cards cards--logo">
+      {%- for r in l.collaborations %}
+      <li><a class="card lcard" href="{{ r.href }}">
+        <span class="lcard__logo">{% if r.logo %}{% include img.html img=r.logo size="small" alt="" cls=nil loading="lazy" %}{% else %}<b>{{ r.letter }}</b>{% endif %}</span>
+        <span class="lcard__body"><span class="card__title">{{ r.name }}</span>{% if r.sum %}<span class="lcard__sum">{{ r.sum }}</span>{% endif %}</span>
+      </a></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+
+    {%- if include.kind == "members" %}
+    <div class="members">
+      <aside class="members__map">{% include ukmap.html id="map-members" theme="light" interactive=true filter=true highlight=nil label="Map of ELIXIR-UK member organisations across the UK" cls=nil %}<p class="members__hint">Select a city to show only its members.</p>
+        <div class="join-box">
+          <p class="join-box__h">Is your organisation interested in joining ELIXIR-UK?</p>
+          <a class="btn" href="/new-members/">Apply to become a member</a>
+        </div>
+      </aside>
+      <div>
+        <p class="members__filter" hidden data-member-filter><span></span> <button type="button" class="linkish" data-member-clear>Show all members</button></p>
+        <ul class="members__list">
+          {%- for r in l.members %}
+          <li data-slug="{{ r.slug }}"><a class="card mcard" href="{{ r.href }}">
+            <span class="mcard__logo">{% if r.logo %}{% include img.html img=r.logo size="small" alt="" cls=nil loading="lazy" %}{% else %}<b>{{ r.letter }}</b>{% endif %}</span>
+            <span class="card__title">{{ r.name }}</span>
+            <span class="mcard__meta">{{ r.meta }}</span>
+          </a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+    {%- endif %}
+
+    {%- if include.kind == "projects" %}
+    <nav class="jump" aria-label="Project groups">{% for g in l.project_groups %}<a href="#{{ g.id }}">{{ g.title }} <span>{{ g.items.size }}</span></a>{% endfor %}</nav>
+    {%- for g in l.project_groups %}
+    <section class="group" id="{{ g.id }}" aria-labelledby="h-{{ g.id }}">
+      <header class="group__head"><h2 id="h-{{ g.id }}">{{ g.title }} <span>{{ g.items.size }}</span></h2><p>{{ g.text }}</p></header>
+      <ul class="plist">
+        {%- for r in g.items %}
+        <li><a href="{{ r.href }}" class="plist__row">
+          <span class="plist__years">{{ r.years }}</span>
+          <span class="plist__main"><span class="plist__name">{{ r.name }}</span>{% if r.sum %}<span class="plist__sum">{{ r.sum }}</span>{% endif %}</span>
+          <span class="plist__tags">{% for x in r.tags %}<span>{{ x }}</span>{% endfor %}</span>
+        </a></li>
+        {%- endfor %}
+      </ul>
+    </section>
+    {%- endfor %}
+    {%- endif %}
+
+    {%- if include.kind == "area" %}
+    <ul class="cards cards--area">
+      {%- for r in l.areas %}
+      <li><a class="card acard" href="{{ r.href }}">
+        <span class="acard__art">{% if r.art %}<img src="{{ r.art }}" alt="" loading="lazy">{% endif %}</span>
+        <span class="acard__body"><span class="card__title">{{ r.name }}</span>{% if r.sum %}<span class="lcard__sum">{{ r.sum }}</span>{% endif %}</span>
+      </a></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+    <p class="filters__empty" hidden>Nothing matches this filter. <button type="button" class="linkish" data-filter="">Show all</button></p>
+  </div>
+</section>
+<script type="module" src="/assets/js/directorylist.js"></script>

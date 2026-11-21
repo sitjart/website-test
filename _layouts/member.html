@@ -1,0 +1,100 @@
+---
+layout: base
+page_class: pg-member
+# Member organisation: navy banner with circle logo; its Steering Committee representative;
+# its people; services; the communities its people are in; projects; events and stories – including
+# those about its people (see the organisation rule in tools/sitebuild/graph.py).
+---
+{%- assign v = site.data.gen.members[page.slug] -%}
+<section class="banner m-banner">
+  <div class="container m-banner__grid">
+    {% capture alt %}{{ v.name }} logo{% endcapture %}
+    {% include avatar.html img=v.logo initials=v.initials alt=alt size=200 logo=true ring="var(--ink)" eager=true %}
+    <div>
+      {% include crumbs.html section="Members" href="/members/" current=v.name dark=true %}
+      <p class="eyebrow-sm m-banner__eyebrow">Member organisation{% if v.city %} · {{ v.city }}{% endif %}{% if v.since %} · since {{ v.since }}{% endif %}</p>
+      <h1 class="display m-banner__title">{{ v.name }}{% if v.stop %}<span class="stop">.</span>{% endif %}</h1>
+      {%- if v.summary %}<p class="m-banner__about">{{ v.summary }}</p>{% endif %}
+      <div class="m-banner__actions">{% if v.website %}<a class="btn" href="{{ v.website }}" rel="noopener">Visit website</a>{% endif %}</div>
+    </div>
+    {%- if v.city %}<div class="m-banner__map">{% capture label %}{{ v.name }} is in {{ v.city }}{% endcapture %}{% include ukmap.html id="map-member" theme="dark" interactive=false filter=false highlight=v.slug label=label cls=nil %}</div>{% endif %}
+  </div>
+</section>
+
+<div class="container m-main">
+  {%- if v.reps.size > 0 %}
+  <section class="m-rep" aria-labelledby="rep-h">
+    <div class="m-rep__text">
+      <h2 id="rep-h" class="m-rep__h">{% if v.reps_plural %}Steering Committee representatives{% else %}Steering Committee representative{% endif %}</h2>
+      <p>Every member organisation has a seat on the ELIXIR-UK Steering Committee, which oversees the Node’s direction. {% if v.reps_plural %}These are{% else %}This is{% endif %} {{ v.name }}’s {% if v.reps_plural %}representatives{% else %}representative{% endif %} – the first person to talk to about ELIXIR-UK at {{ v.name }}.</p>
+      <p class="m-rep__contact">Not sure how to reach them? <a href="/contact-us/">Contact the Node office</a>.</p>
+    </div>
+    <ul class="m-rep__people">
+      {%- for p in v.reps %}
+      <li><a class="m-rep__card" href="{{ p.href }}">
+        {% include avatar.html img=p.photo initials=p.initials alt="" size=112 logo=false ring="var(--white)" eager=false %}
+        <span>
+          <span class="m-rep__name">{{ p.name }}</span>
+          {%- if p.role != "" %}<span class="m-person__role">{{ p.role }}</span>{% endif %}
+          <span class="more-link">View profile</span>
+        </span>
+      </a></li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  {%- if v.crew_count > 0 %}
+  <section class="m-sec m-sec--first">
+    <div class="m-sec__head"><h2>{% if v.reps.size > 0 %}Also involved{% else %}People{% endif %}<span class="stop">.</span> <span class="m-count">{{ v.crew_count }}</span></h2></div>
+    <div class="m-people">
+      {%- for p in v.crew %}
+      <a class="m-person lift" href="{{ p.href }}">
+        {% include avatar.html img=p.photo initials=p.initials alt="" size=96 logo=false ring="var(--grey-light)" eager=false %}
+        <span class="m-person__name">{{ p.name }}</span>
+        {%- if p.role != "" %}<span class="m-person__role">{{ p.role }}</span>{% endif %}
+      </a>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if v.services.size > 0 %}
+  <section class="m-sec">
+    <div class="m-sec__head"><h2>Services<span class="stop">.</span> <span class="m-count">{{ v.services.size }}</span></h2><a href="/services/">All services →</a></div>
+    {% include related-cards.html cards=v.services limit=12 %}
+  </section>
+  {%- endif %}
+
+  {%- if v.communities.size > 0 %}
+  <section class="m-sec">
+    <div class="m-sec__head"><h2>Communities our people are in<span class="stop">.</span> <span class="m-count">{{ v.communities.size }}</span></h2></div>
+    {% include related-cards.html cards=v.communities limit=12 %}
+  </section>
+  {%- endif %}
+
+  {%- if v.projects.size > 0 %}
+  <section class="m-sec">
+    <div class="m-sec__head"><h2>Projects<span class="stop">.</span> <span class="m-count">{{ v.projects.size }}</span></h2></div>
+    <ul class="m-list">
+      {%- for p in v.projects %}<li{% if forloop.index > 6 %} hidden data-extra{% endif %}><a href="{{ p.href }}">{% if p.meta %}<span class="m-list__meta">{{ p.meta }}</span>{% endif %}<span class="m-list__title">{{ p.name }}</span></a></li>{% endfor %}
+    </ul>
+    {%- if v.projects.size > 6 %}<button type="button" class="m-more" data-more>Show all {{ v.projects.size }} projects</button>{% endif %}
+  </section>
+  {%- endif %}
+
+  {%- if v.events.size > 0 %}
+  <section class="m-sec">
+    <div class="m-sec__head"><h2>Events<span class="stop">.</span> <span class="m-count">{{ v.events.size }}</span></h2><a href="/events/">All events →</a></div>
+    {% include related-cards.html cards=v.events limit=6 %}
+  </section>
+  {%- endif %}
+
+  {%- if v.news.size > 0 %}
+  <section class="m-sec">
+    <div class="m-sec__head"><h2>In the news<span class="stop">.</span> <span class="m-count">{{ v.news.size }}</span></h2></div>
+    {% include related-cards.html cards=v.news limit=6 %}
+  </section>
+  {%- endif %}
+</div>
+<script type="module" src="/assets/js/page-member.js"></script>

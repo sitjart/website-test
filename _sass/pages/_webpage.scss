@@ -1,0 +1,24 @@
+// Page: webpage – applies only on this page
+:where(.pg-webpage) {
+.page--toc { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+  .toc { position: sticky; top: 100px; font-size: var(--fs-sm); }
+  .toc ol { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--border); }
+  .toc a { display: block; padding: 6px 0 6px var(--s4); margin-left: -2px; border-left: 2px solid transparent; color: var(--muted); line-height: 1.35; }
+  .toc a:hover, .toc a.is-current { color: var(--navy); border-left-color: var(--orange); }
+  .wp-content { max-width: 72ch; }
+  .wp-content h2 { scroll-margin-top: 100px; }
+  .wp-content .wp-stat { display: block; font-size: clamp(2.5rem, 2rem + 2vw, 3.5rem); font-weight: 900; line-height: 1; color: var(--navy); letter-spacing: -0.03em; }
+  .wp-content .wp-block-buttons { display: flex; flex-wrap: wrap; gap: var(--s3); margin: var(--s5) 0; }
+  .wp-content .wp-block-button__link { display: inline-flex; align-items: center; min-height: 48px; padding: 0 1.5em; background: var(--orange); color: var(--on-orange); border-radius: var(--radius); font-weight: 700; text-decoration: none; }
+  .wp-content .wp-block-button__link:hover { background: var(--blue); color: var(--white); }
+  .wp-content hr, .wp-content .wp-block-separator { border: 0; border-top: 1px solid var(--border); margin: var(--s7) 0; }
+  .wp-content .gspb_row, .wp-content .wp-block-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--s5); margin-block: var(--s5); }
+  .wp-content .gspb_row:has(.wp-stat) .gspb_container { position: relative; padding: var(--s5); border-radius: var(--radius-lg); background: var(--grey-light); }
+  .wp-content .gspb_row:has(.wp-stat) p { margin: var(--s2) 0 0; text-align: left !important; font-size: var(--fs-sm); }
+  .wp-content .gspb-containerlink { position: absolute; inset: 0; z-index: 1; }
+  .wp-content .gspb_container { position: relative; }
+  @media (max-width: 900px) {
+    .page--toc { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+}

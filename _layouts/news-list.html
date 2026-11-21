@@ -1,0 +1,7 @@
+---
+layout: base
+# One news category (generated: /news/category/…/)
+---
+{%- assign v = site.data.gen.newscats[page.slug] -%}
+{% include page-header.html title=v.name intro=nil section="News & stories" href="/news/" art=nil count=nil count_label=nil size="lg" %}
+{% include news-list.html l=v %}
