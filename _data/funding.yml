@@ -1,0 +1,86 @@
+# How ELIXIR-UK is funded – shown at the foot of /projects/.
+# Text fields are Markdown. Edit in /admin/ (Site settings › Funding) or here.
+# Every grant needs all seven keys; leave a value empty ("") rather than deleting the key.
+# "check" is never shown on the site: it lists values that come from public sources (UKRI, BBSRC, papers) and need checking
+# and need checking against the award letters before launch. Empty it once checked.
+
+title: How we are funded
+lede: >-
+  ELIXIR-UK is funded to connect UK research organisations with ELIXIR and to channel its
+  resources, projects and opportunities to them. The Node does not fund members' services or
+  research: those are funded through projects.
+
+ways:
+  - title: The UK's subscription to ELIXIR
+    body: >-
+      The UK is a member of ELIXIR. UKRI pays the country's subscription through BBSRC, MRC and NERC,
+      and BBSRC signed the ELIXIR Consortium Agreement on the UK's behalf.
+
+
+      The subscription is an investment the UK has already made on behalf of its universities and
+      research institutes. Joining ELIXIR-UK is free. An eligible organisation that does not join
+      leaves part of that investment unused.
+    link: { label: Become a member, href: /about/new-members/ }
+  - title: The Coordination office
+    body: >-
+      BBSRC funds the ELIXIR-UK Coordination office at the Earlham Institute. The grant pays for
+      coordination and engagement: bringing UK people, services and training into ELIXIR, and bringing
+      ELIXIR's resources, funding calls and collaborations back to member organisations through visits,
+      bursaries, Clubs and the Ambassadors Programme.
+    link: null
+  - title: Projects
+    body: >-
+      Members are funded for their work in ELIXIR through projects: ELIXIR projects paid for from
+      ELIXIR's own budget, such as Commissioned Services; European projects that ELIXIR coordinates or
+      takes part in; and national projects from UK funders or the members themselves. They are listed
+      above.
+    link: null
+
+grants_title: Coordination office grants
+grants_intro: >-
+  Grants to the Earlham Institute as Lead Institute for ELIXIR-UK, newest first. The first award
+  was a joint award to several institutions.
+
+grants:
+  - years: "2025–2030"
+    title: ELIXIR-UK – deepening member engagement
+    funder: BBSRC
+    reference: BB/C001384/1
+    value: about £2 million
+    note: Five-year grant.
+    check: title, dates and value
+  - years: "2022–2024"
+    title: ELIXIR-UK Coordination Office
+    funder: BBSRC
+    reference: BB/X011100/1
+    value: £582,025
+    note: ""
+    check: ""
+  - years: "2022"
+    title: ELIXIR-UK Coordination Office – bridging award
+    funder: BBSRC
+    reference: ""
+    value: £47,300
+    note: ""
+    check: reference
+  - years: "2017–2022"
+    title: ELIXIR-UK Coordination Office
+    funder: BBSRC, MRC and NERC
+    reference: BB/P017193/1
+    value: £767,420
+    note: ""
+    check: dates; UKRI's page gives £752,000
+  - years: "2017"
+    title: "European Partnering Award: ELIXIR – Broadening UK Participation"
+    funder: BBSRC
+    reference: BB/P026001/1
+    value: £20,216
+    note: ""
+    check: year
+  - years: "2014–2017"
+    title: Delivering ELIXIR-UK
+    funder: BBSRC, MRC and NERC
+    reference: BB/L005026/1, BB/L005042/1, BB/L005069/1, BB/L005077/1
+    value: £1.3 million in total
+    note: Joint award to set up the Node's training coordination role.
+    check: dates and partner list (Edinburgh, Birmingham, Manchester, Oxford, TGAC, EMBL-EBI?)

@@ -158,3 +158,44 @@ collections:
       - { label: Sections, name: blocks, widget: list, required: false, hint: "Only for pages that need an accordion or tabs", types: *blocks }
       - { label: Text, name: body, widget: markdown, required: false }
       - { label: Address, name: permalink, widget: hidden, required: false }
+
+  - name: settings
+    label: Site settings
+    editor: { preview: false }
+    files:
+      - name: funding
+        label: How we are funded (projects page)
+        file: _data/funding.yml
+        format: yml
+        fields:
+          - { label: Heading, name: title, widget: string }
+          - { label: Introduction, name: lede, widget: text }
+          - label: Ways we are funded
+            name: ways
+            widget: list
+            summary: "{{title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: body, widget: markdown }
+              - label: Button
+                name: link
+                widget: object
+                required: false
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Address, name: href, widget: string, hint: "e.g. /about/new-members/" }
+          - { label: Grants heading, name: grants_title, widget: string }
+          - { label: Grants introduction, name: grants_intro, widget: text }
+          - label: Grants
+            name: grants
+            widget: list
+            summary: "{{years}} – {{title}}"
+            hint: "Newest first"
+            fields:
+              - { label: Years, name: years, widget: string, hint: "e.g. 2025–2030" }
+              - { label: Grant title, name: title, widget: string }
+              - { label: Funder, name: funder, widget: string }
+              - { label: Reference, name: reference, widget: string, required: false, default: "" }
+              - { label: Value, name: value, widget: string, hint: "e.g. £582,025" }
+              - { label: Note shown under the title, name: note, widget: string, required: false, default: "" }
+              - { label: To check (never shown), name: check, widget: string, required: false, default: "" }

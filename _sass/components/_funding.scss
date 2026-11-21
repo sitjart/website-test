@@ -1,0 +1,26 @@
+// How we are funded – /projects/ (_includes/funding.html)
+.funding__head { max-width: 46rem; margin-bottom: var(--s7); }
+.funding__head h2 { font-size: var(--fs-section); font-weight: 900; letter-spacing: -0.025em; line-height: 1; }
+.funding__head .lead { margin: var(--s4) 0 0; }
+
+.funding__ways { list-style: none; margin: 0 0 var(--s8); padding: 0; display: grid; gap: var(--s5); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); counter-reset: way; }
+.funding__way { counter-increment: way; gap: var(--s3); }
+.funding__way::before { content: counter(way, decimal-leading-zero); font-weight: 900; font-size: 1.5rem; line-height: 1; color: var(--orange); border-top: 3px solid var(--orange); padding-top: var(--s3); width: max-content; }
+.funding__way h3 { font-size: var(--fs-h3); margin: 0; }
+.funding__body { font-size: var(--fs-sm); line-height: 1.55; }
+.funding__body p { margin: 0 0 var(--s3); }
+.funding__body p:last-child { margin-bottom: 0; }
+.funding__way .btn { margin-top: auto; align-self: flex-start; }
+
+.funding__h { margin: 0; }
+.funding__intro { color: var(--muted); font-size: var(--fs-sm); margin: var(--s2) 0 var(--s5); max-width: 46rem; }
+.funding__scroll { overflow-x: auto; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.funding__table { width: 100%; min-width: 720px; border-collapse: collapse; font-size: var(--fs-sm); }
+.funding__table th, .funding__table td { text-align: left; vertical-align: top; padding: var(--s3) var(--s4); border-bottom: 1px solid var(--border); }
+.funding__table tbody tr:last-child td { border-bottom: 0; }
+.funding__table th { font-size: var(--fs-xs); color: var(--muted); font-weight: 700; }
+.funding__years { font-weight: 700; color: var(--navy); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.funding__title { display: block; font-weight: 700; color: var(--navy); }
+.funding__note { display: block; color: var(--muted); margin-top: 2px; }
+.funding__ref { font-variant-numeric: tabular-nums; max-width: 14rem; }
+.funding__value { white-space: nowrap; font-variant-numeric: tabular-nums; }

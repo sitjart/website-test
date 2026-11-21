@@ -1,0 +1,39 @@
+{%- comment -%}
+  How ELIXIR-UK is funded – from _data/funding.yml. Shown on /projects/ under the project list.
+{%- endcomment -%}
+{%- assign _fd = site.data.funding -%}
+<section class="section section--grey funding" id="funding" aria-labelledby="h-funding">
+  <div class="container">
+    <header class="funding__head">
+      <h2 id="h-funding">{{ _fd.title }}<span class="stop">.</span></h2>
+      <p class="lead">{{ _fd.lede }}</p>
+    </header>
+    <ol class="funding__ways">
+      {%- for _fd_w in _fd.ways %}
+      <li class="card funding__way">
+        <h3>{{ _fd_w.title }}</h3>
+        <div class="funding__body">{{ _fd_w.body | markdownify }}</div>
+        {%- if _fd_w.link and _fd_w.link.href != "" %}<a class="btn btn--line" href="{{ _fd_w.link.href }}">{{ _fd_w.link.label }}</a>{% endif %}
+      </li>
+      {%- endfor %}
+    </ol>
+    <h3 class="funding__h">{{ _fd.grants_title }}</h3>
+    <p class="funding__intro">{{ _fd.grants_intro }}</p>
+    <div class="funding__scroll">
+      <table class="funding__table">
+        <thead><tr><th scope="col">Years</th><th scope="col">Grant</th><th scope="col">Funder</th><th scope="col">Reference</th><th scope="col">Value</th></tr></thead>
+        <tbody>
+          {%- for _fd_g in _fd.grants %}
+          <tr>
+            <td class="funding__years">{{ _fd_g.years }}</td>
+            <td><span class="funding__title">{{ _fd_g.title }}</span>{% if _fd_g.note != "" %}<span class="funding__note">{{ _fd_g.note }}</span>{% endif %}</td>
+            <td>{{ _fd_g.funder }}</td>
+            <td class="funding__ref">{{ _fd_g.reference }}</td>
+            <td class="funding__value">{{ _fd_g.value }}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
