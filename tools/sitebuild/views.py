@@ -582,6 +582,9 @@ class Views:
         links = self.g.shown('events', e['slug'], e['display'])
         org = self.rec['activities'].get((links.get('activities') or [None])[0])
         speakers = [self.people_by_wp[i] for i in e['speakerIds'] if i in self.people_by_wp]
+        # Club Community Calls: you take part by joining the Club, so its join link is the way in
+        club = org if org and 'Club' in org['tags'] and org['joinLink'] else None
+        join = {'href': club['joinLink'], 'club': t(club['name'])} if call and club and not past and not cancelled else None
 
         def iso(d, tm):
             if not tm:
@@ -603,7 +606,7 @@ class Views:
             'month': f"{e['start']:%b}", 'day': str(e['start'].day), 'when': when, 'when_card': when if multi else date_parts(e['start'])['full'],
             'time': time, 'where': t(where) if where else None, 'cost': cost,
             'where_card': 'Online' if e['format'] == 'online' else (t(where) + (' and online' if e['format'] == 'hybrid' else '') if where else formats[e['format']]),
-            'cta': 'Join in' if call else 'Register', 'calendar': cal, 'standfirst': t(e['standfirst']) or None,
+            'cta': 'Join in' if call else 'Register', 'calendar': cal, 'join': join, 'standfirst': t(e['standfirst']) or None,
             'registration': e['registration'], 'programme': e['programme'], 'recording': e['recording'], 'slides': e['slides'],
             'speakers': [self.person(p) for p in speakers],
             'org': org and {'href': f"/activities/{org['slug']}/", 'name': t(org['name']), 'icon': self.icon(org),

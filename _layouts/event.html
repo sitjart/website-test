@@ -31,8 +31,10 @@ page_class: pg-event
         <p>{{ v.cost }}</p>
       </div>
       <div class="ev-card__actions">
-        {%- if v.past == false and v.cancelled == false and v.registration %}<a class="btn" href="{{ v.registration }}" rel="noopener">{{ v.cta }}</a>{% endif %}
-        {%- if v.past == false and v.cancelled == false %}<a class="btn btn--line" href="{{ v.calendar }}" rel="noopener">Add to calendar</a>{% endif %}
+        {%- if v.join %}
+        <p class="ev-card__join"><strong>How to take part:</strong> Community Calls are for members of the {{ v.join.club }}. Joining is free, and you’ll get the link to this call and every other.</p>
+        <a class="btn" href="{{ v.join.href }}" rel="noopener">Join the {{ v.join.club }}</a>
+        {%- elsif v.past == false and v.cancelled == false and v.registration %}<a class="btn" href="{{ v.registration }}" rel="noopener">{{ v.cta }}</a>{% endif %}
         {%- if v.programme %}<a class="btn btn--line" href="{{ v.programme }}" rel="noopener">Programme</a>{% endif %}
         {%- if v.cancelled %}<p class="ev-card__note">This event has been cancelled.</p>{% endif %}
         {%- if v.recording %}<a class="btn" href="{{ v.recording }}" rel="noopener">Watch the recording</a>{% endif %}
