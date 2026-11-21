@@ -1,0 +1,40 @@
+---
+title: "Introduction to data management for peatland research and monitoring"
+start: 2024-06-06
+type: "Workshop"
+online: true
+format: online
+wpId: 22456
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18603, 18656]
+end: 2024-06-06
+startTime: "11:00"
+endTime: "13:00"
+registration: "https://bradford-ac-uk.zoom.us/meeting/register/tZYkcuGppjksHNMfeAEfY7Ut1pPPczA7nLMx"
+image: "https://elixiruknode.org/wp-content/uploads/2024/05/banner-peatland-landscape-scaled.webp"
+related:
+  collaborations: ["university-of-leeds"]
+  members: ["university-of-bradford"]
+  projects: ["elixir-uk-dash"]
+---
+
+## What will you learn?
+
+This workshop will introduce FAIR (Findable, Accessible, Interoperable and Reusable) data management, research data lifecycle and the importance of creating a data management plan for peatland research and monitoring. Creating data management at the start of a project or monitoring planning facilitates data management and reuse.
+Join a hands-on session to develop a data management plan for peatland monitoring and research.
+
+## Who is this for?
+
+Researchers, students, practitioners, data managers, and data stewards interested in data management best practices for peatland conservation and management.
+
+## Course prerequisites
+
+Participants are encouraged to familiarise themselves with the Galaxy platform and the available training materials.
+
+## Questions and contact
+
+Should you have any questions, please contact us at contact@elixiruknode.org
+This course is funded as part of the UKRI Innovation Scholars. Data Science Training in Health and Bioscience call (DaSH). (MR/V038966/1)

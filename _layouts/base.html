@@ -22,6 +22,10 @@ page_class: ""
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ full_title | escape }}</title>
     <meta name="description" content="{{ description | escape }}">
+    <link rel="canonical" href="{{ site.canonical_root }}{{ page.url }}">
+    {%- unless site.indexable %}
+    <meta name="robots" content="noindex, nofollow">{% comment %} test site: keep it out of search engines {% endcomment %}
+    {%- endunless %}
     <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/css/site.css">
     <meta property="og:title" content="{{ full_title | escape }}">

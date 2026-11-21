@@ -106,6 +106,7 @@ def main():
         stub('eventtypes', slug, 'event-list', typ)
 
     images.process()
+    write_json(ROOT / 'assets/cms-index.json', v.cms_index())
 
     def drop_empty(x):
         # JSON-LD: leave out empty values rather than printing null

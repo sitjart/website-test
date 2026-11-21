@@ -38,10 +38,14 @@ class Graph:
             self._add('events', e['slug'], e, e['related'], e['about'], pending)
         for p in people:
             self._add('people', p['id'], p, p['related'], None, pending)
+        # People are tagged by number (their WordPress, later Baserow, id), so no names are stored in content
+        by_number = {str(p['wpId']): p['id'] for p in people if p.get('wpId')}
         dangling = defaultdict(list)
         for src, related in pending:
             for kind, slugs in related.items():
                 for s in slugs:
+                    if kind == 'people':
+                        s = by_number.get(str(s), s)
                     key = f'{kind}/{s}'
                     if key in self.nodes:
                         self._link(src, key)

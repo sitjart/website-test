@@ -1,0 +1,50 @@
+---
+title: "AHM Lyon debrief: training across the programme"
+start: 2026-06-29
+type: "Community Call"
+online: true
+format: online
+wpId: 25156
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18643, 18756, 22350]
+end: 2026-06-29
+image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-training-keyboard.webp"
+related:
+  activities: ["uk-training-club"]
+  members: ["university-of-bradford", "university-of-manchester", "university-of-cambridge"]
+---
+
+The ELIXIR All Hands Meeting (AHM) is one of the most competitive spaces for a slot in the ELIXIR calendar of events – and this year, training ran right through the programme rather than sitting in a single session.
+
+From training projects and crediting training materials as research outputs, to large language models in the classroom and the longer question of how ELIXIR builds and sustains its people, the training conversation surfaced across the week. Training Club co-leads were there across it: Alexia Cardona (University of Cambridge) and Krzysztof Poterlowicz (University of Bradford) contributing as speakers and organisers, with Urmi Trivedi (University of Manchester) following the programme alongside them.
+
+## **What was happening in Lyon**
+
+- **Training Platform mini-symposium** – **Training SPLASH in action**. Alexia Cardona presented a Learning Paths example, putting the Training Platform's resources to work through the SPLASH approach.
+- **Large Language Models in life science training: overcoming challenges to innovation**. This session looked at where LLMs support good training and where they get in the way.
+- **Crediting non-traditional research ariefacts in the life sciences across ELIXIR**. Alexia Cardona spoke to crediting training materials as research outputs in their own right, drawing on the Training Platform.
+- **Building people, strengthening ELIXIR: training, leadership and lasting impact.** Krzysztof Poterlowicz offered a train-the-trainer community member's perspective on developing and sustaining people in ELIXIR.
+
+## **What to expect**
+
+Following the AHM, our Training Club call will hear directly from those who took part in Lyon. We'll share:
+
+- Key takeaways from the training sessions across the programme
+- What the Training Platform and SPLASH work means for UK trainers
+- Early thinking on LLMs in life science training, and on crediting training materials as research outputs
+- Next steps for cross-node collaboration and community connection
+
+Whether you were in Lyon or not, this is your chance to stay connected with the training community's direction of travel across ELIXIR.
+
+## **Who is this for**
+
+This community call is for anyone with an interest in training and capacity-building across ELIXIR and beyond. You'll find it especially relevant if you:
+
+- Are a member of the ELIXIR-UK Training Club or curious about joining.
+- Design, deliver or coordinate training in a research or data context.
+- Are interested in the ELIXIR work around FAIR training materials or the use of LLMs in training.
+- Want to understand how different countries (ELIXIR Nodes) are approaching shared challenges around building and sustaining their people.
+- Couldn't make it to Lyon and want to stay connected with what's shaping the training community space.

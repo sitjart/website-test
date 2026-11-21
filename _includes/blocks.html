@@ -1,0 +1,24 @@
+{%- comment -%}
+  Page sections set in the CMS: text (Markdown), accordions and tabs. blocks: list from tools/sitebuild/content.py
+{%- endcomment -%}
+{%- for _b in include.blocks %}
+  {%- if _b.type == "text" %}
+{{ _b.body | markdownify }}
+  {%- elsif _b.type == "accordion" %}
+<div class="acc-group">
+    {%- for _it in _b.items %}
+  <details class="acc"><summary>{{ _it.title }}</summary><div class="acc__body">{{ _it.body | markdownify }}</div></details>
+    {%- endfor %}
+</div>
+  {%- elsif _b.type == "tabs" %}
+  {%- capture _tid %}tabs{{ forloop.index }}{% endcapture %}
+<div class="wp-tabs" data-wp-tabs>
+  <div class="wp-tabs__nav" role="tablist">
+    {%- for _it in _b.items %}<button type="button" role="tab" id="{{ _tid }}-t{{ forloop.index }}" aria-controls="{{ _tid }}-p{{ forloop.index }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" tabindex="{% if forloop.first %}0{% else %}-1{% endif %}">{{ _it.title }}</button>{% endfor %}
+  </div>
+  {%- for _it in _b.items %}
+  <div role="tabpanel" id="{{ _tid }}-p{{ forloop.index }}" aria-labelledby="{{ _tid }}-t{{ forloop.index }}" tabindex="0"{% unless forloop.first %} hidden{% endunless %}><h2 class="wp-tabs__print">{{ _it.title }}</h2>{{ _it.body | markdownify }}</div>
+  {%- endfor %}
+</div>
+  {%- endif %}
+{%- endfor %}

@@ -108,9 +108,34 @@ class Check:
             if kind not in LINK_KINDS:
                 REPORT.error(self.where, f'"{key}" has an unknown kind "{kind}" (use one of {", ".join(sorted(LINK_KINDS))})')
                 continue
-            if isinstance(slugs, str):
+            if isinstance(slugs, (str, int)):
                 slugs = [slugs]
             out[kind] = [str(s) for s in (slugs or [])]
+        return out
+
+    def blocks(self):
+        """blocks: an optional list of page sections – text (Markdown), accordion or tabs."""
+        v = self.data.get('blocks') or []
+        out = []
+        if not isinstance(v, list):
+            REPORT.error(self.where, '"blocks" should be a list')
+            return out
+        for i, b in enumerate(v, 1):
+            kind = (b or {}).get('type')
+            if kind == 'text':
+                out.append({'type': 'text', 'body': str(b.get('body') or ''), 'items': []})
+            elif kind in ('accordion', 'tabs'):
+                items = b.get('items') or []
+                if not items:
+                    REPORT.error(self.where, f'block {i} ({kind}) has no items')
+                clean = []
+                for j, it in enumerate(items, 1):
+                    if not (it or {}).get('title'):
+                        REPORT.error(self.where, f'block {i} ({kind}), item {j} has no title')
+                    clean.append({'title': str((it or {}).get('title') or ''), 'body': str((it or {}).get('body') or '')})
+                out.append({'type': kind, 'body': '', 'items': clean})
+            else:
+                REPORT.error(self.where, f'block {i} has an unknown type "{kind}" (use text, accordion or tabs)')
         return out
 
     def display(self):
@@ -120,7 +145,7 @@ class Check:
 
 def load_news():
     out = []
-    for f in sorted((ROOT / 'collections/_news').glob('*.html')):
+    for f in sorted((ROOT / 'collections/_news').glob('*.md')):
         data, body = read(f)
         if data is None:
             continue
@@ -131,19 +156,20 @@ def load_news():
             'date': c.date('date', required=True) or dt.date(1970, 1, 1),
             'standfirst': c.text('standfirst'),
             'excerpt': c.text('excerpt'),
-            'category': c.text('category', default='News'),
+            'category': c.choice('categories', ['News', 'Blog', 'Articles'], 'News') if data.get('categories') else c.text('category', default='News'),
             'image': c.text('image') or None,
             'wpId': data.get('wpId'),
             'related': c.links('related'),
             'about': c.links('about'),
             'display': c.display(),
+            'blocks': c.blocks(),
         })
     return out
 
 
 def load_events():
     out = []
-    for f in sorted((ROOT / 'collections/_events').glob('*.html')):
+    for f in sorted((ROOT / 'collections/_events').glob('*.md')):
         data, body = read(f)
         if data is None:
             continue
@@ -167,21 +193,22 @@ def load_events():
             'registration': c.text('registration') or None, 'programme': c.text('programme') or None,
             'recording': c.text('recording') or None, 'slides': c.text('slides') or None,
             'image': c.text('image') or None,
-            'speakerIds': c.ids('speakerIds'),
+            'speakerIds': [int(x) for x in (data.get('speakerIds') or []) if str(x).isdigit()],
             'wpId': data.get('wpId'),
             'related': c.links('related'), 'about': c.links('about'), 'display': c.display(),
+            'blocks': c.blocks(),
         })
     return out
 
 
 def load_webpages():
     out = []
-    for f in sorted((ROOT / 'collections/_webpages').glob('*.html')):
+    for f in sorted((ROOT / 'collections/_webpages').glob('*.md')):
         data, body = read(f)
         if data is None:
             continue
         c = Check(f.relative_to(ROOT), data)
-        out.append({'slug': f.stem, 'body': body, 'title': c.text('title', required=True), 'description': c.text('description')})
+        out.append({'slug': f.stem, 'body': body, 'title': c.text('title', required=True), 'description': c.text('description'), 'blocks': c.blocks()})
     return out
 
 

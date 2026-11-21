@@ -1,0 +1,25 @@
+---
+title: "DOME recommendations for reporting machine learning–based analyses"
+start: 2024-01-24
+type: "Community Call"
+online: true
+format: online
+wpId: 23020
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+speakerIds: [18652]
+startTime: "14:00"
+endTime: "15:00"
+venue: "online"
+slides: "https://docs.google.com/presentation/d/1JDyxBqmbZe-ox0ODi19ugYnCAMjnTSWkn2btbTOFBYs/edit?usp=sharing"
+image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-code.webp"
+related:
+  activities: ["uk-human-data-community"]
+  members: ["university-of-nottingham"]
+---
+
+At this ELIXIR-UK Human Data Community Call, [Tim Beck](/people/tim-beck/) will introduce [DOME](https://dome-ml.org/) guidelines and explain how to apply them to reporting health data machine-learning (ML) analyses.
+
+DOME-ML (or simply DOME) is an acronym standing for Data, Optimization, Model and Evaluation in Machine Learning. DOME is a set of community-wide guidelines, recommendations, and checklists spanning these four areas that help establish supervised machine learning validation standards in biology. The recommendations are formulated as questions to anyone wishing to pursue the implementation of a machine learning algorithm. Answers to these questions can be easily included in the supplementary material of published papers.

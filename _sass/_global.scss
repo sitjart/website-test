@@ -258,3 +258,7 @@ a.card:hover { color: var(--text); transform: translateY(-3px); box-shadow: var(
 .prose tbody tr:nth-child(even) td { background: var(--grey-light); }
 .prose tbody td:first-child { color: var(--navy); }
 .prose figure.wp-block-table { margin: var(--s5) 0; overflow-x: auto; }
+
+/* Markdown in the CMS: [Label](link){: .btn} is a button; a quote marked {: .wp-note} is a note panel */
+.prose a.btn { text-decoration: none; margin: var(--s2) var(--s2) var(--s2) 0; }
+.prose blockquote.wp-note { font-size: var(--fs-base); color: var(--text); border-left: 4px solid var(--orange); padding: var(--s5) var(--s5) var(--s5) 64px; }

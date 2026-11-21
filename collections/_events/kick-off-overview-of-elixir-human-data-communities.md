@@ -1,0 +1,30 @@
+---
+title: "Kick off & overview of ELIXIR Human Data Communities"
+start: 2023-12-01
+type: "Community Call"
+online: true
+format: online
+wpId: 23017
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+startTime: "14:00"
+endTime: "15:00"
+venue: "online"
+slides: "https://docs.google.com/presentation/d/1XnioC2F4FlXkwo9KkKadph6iWgm4QLQamJByswNx9CY/edit?usp=sharing"
+image: "https://elixiruknode.org/wp-content/uploads/2023/04/stream-of-binary-matrix-code-numbers-on-the-screen-2023-11-27-05-34-02-utc-scaled.webp"
+related:
+  activities: ["uk-human-data-community"]
+---
+
+Join the first ELIXIR-UK Human Data Community Call to explore the different ELIXIR Europe human data networks and discover how to continue engaging on them at the national level.
+
+- Human Data Communities (HDCs)
+- Federated Human Data Community (FHD)
+- Rare Diseases Community (RD)
+- Human Copy Number Variation Community (hCNV)
+- Health Data Focus Group
+- Cancer Data Focus Group
+- Beacon
+- ELIXIR:GA4GH Strategic Partnership

@@ -21,6 +21,8 @@ NAV = load_json(DATA / 'navigation.json')
 SINGULAR = {'services': 'Service', 'members': 'Member', 'projects': 'Project', 'activities': 'Activity', 'collaborations': 'Collaborator', 'area': 'Thematic area'}
 PLURAL = {'services': 'Services', 'members': 'Members', 'projects': 'Projects', 'activities': 'Communities of practice', 'collaborations': 'Collaborations', 'area': 'Thematic areas'}
 COMMUNITY_TYPES = ['Club', 'Community', 'Focus Group', 'Platform']
+# Page addresses that differ from the listing page (kept from WordPress): /event/<name>/ but /events/
+PATHS = {'events': 'event', 'services': 'service', 'projects': 'project', 'collaborations': 'collaborator'}
 
 
 def year(d):
@@ -44,6 +46,19 @@ def fmt_where(e):
     return e['locality'] or 'In person'
 
 
+def all_text(item):
+    """The text of a story, event or page, including text inside its blocks."""
+    parts = [item['body']] + [b['body'] for b in item.get('blocks', [])] + [it['body'] for b in item.get('blocks', []) for it in b['items']]
+    return plain(' '.join(parts))
+
+
+def md_plain(s):
+    """Markdown heading text without its formatting: [link](url) -> link, **bold** -> bold."""
+    s = re.sub(r'\[([^\]]*)\]\([^)]*\)', r'\1', s)
+    s = re.sub(r'\{:[^}]*\}', '', s)
+    return re.sub(r'[*_`#]', '', s).strip()
+
+
 def is_upcoming(e):
     return (e['end'] or e['start']) >= TODAY
 
@@ -61,6 +76,13 @@ class Views:
         self.upcoming = sorted([e for e in events if is_upcoming(e)], key=lambda e: e['start'])
 
     # ------------------------------------------------------------------ building blocks
+    def href(self, kind, slug):
+        """A record's address – the same as on the WordPress site, so links and search rankings carry over."""
+        if kind == 'news':
+            n = self.news_by[slug]
+            return f"/{slugify(n['category'])}/{n['date'].year}/{slug}/"
+        return f'/{PATHS.get(kind, kind)}/{slug}/'
+
     def icon(self, r):
         """Community or platform icon (always an SVG copied into the repo)."""
         return {'src': local_asset(r['logo']) if r['logo'] else None, 'letter': plain(r['name'])[:1]}
@@ -82,13 +104,13 @@ class Views:
             if not n:
                 return None
             text = n['excerpt'] or n['standfirst']
-            return {'kind': kind, 'style': 'story', 'href': f'/news/{slug}/', 'title': t(n['title']), 'image': self.img.get(n['image'], 'photo'),
+            return {'kind': kind, 'style': 'story', 'href': self.href('news', slug), 'title': t(n['title']), 'image': self.img.get(n['image'], 'photo'),
                     'initials': '', 'date': date_parts(n['date']), 'meta': t(n['category']), 'text': t(first_sentence(text, 140)) if text else None}
         if kind == 'events':
             e = self.events_by.get(slug)
             if not e:
                 return None
-            return {'kind': kind, 'style': 'event', 'href': f'/events/{slug}/', 'title': t(e['title']), 'image': None, 'initials': '',
+            return {'kind': kind, 'style': 'event', 'href': self.href('events', slug), 'title': t(e['title']), 'image': None, 'initials': '',
                     'date': date_parts(e['start']), 'meta': t(f"{e['type']} · {'Hybrid' if e['format'] == 'hybrid' else 'Online' if e['format'] == 'online' else e['locality'] or 'In person'}"), 'text': None}
         if kind == 'people':
             p = self.people_by.get(slug)
@@ -110,7 +132,7 @@ class Views:
         else:
             style, image = ('project' if kind == 'projects' else 'logo'), self.img.get(r['logo'], 'logo')
             meta = '–'.join(x for x in [year(r['start']), year(r['end'])] if x) if kind == 'projects' else (r['status'] or None)
-        return {'kind': kind, 'style': style, 'href': f'/{kind}/{slug}/', 'title': t(r['name']), 'image': image, 'initials': plain(r['name'])[:1],
+        return {'kind': kind, 'style': style, 'href': self.href(kind, slug), 'title': t(r['name']), 'image': image, 'initials': plain(r['name'])[:1],
                 'date': None, 'meta': t(meta) if meta else None, 'text': t(first_sentence(text, 140)) if text else None}
 
     def cards(self, kind, slugs):
@@ -217,9 +239,9 @@ class Views:
             }, 'section_hrefs': [h for h in hrefs if h != '/']})
         return {
             'items': items,
-            'next_events': [{'href': f"/events/{e['slug']}/", 'day': str(e['start'].day), 'month': f"{e['start']:%b}", 'type': t(e['type']),
+            'next_events': [{'href': self.href('events', e['slug']), 'day': str(e['start'].day), 'month': f"{e['start']:%b}", 'type': t(e['type']),
                              'format': {'in-person': 'In person', 'hybrid': 'Hybrid'}.get(e['format'], 'Online'), 'title': t(e['title'])} for e in self.upcoming[:3]],
-            'latest': [{'href': f"/news/{n['slug']}/", 'image': self.img.get(n['image'], 'photo'), 'category': t(n['category']),
+            'latest': [{'href': self.href('news', n['slug']), 'image': self.img.get(n['image'], 'photo'), 'category': t(n['category']),
                         'date': date_parts(n['date'])['long'], 'title': t(n['title'])} for n in self.news_sorted[:3]],
             'clubs': [{'href': f"/activities/{c['slug']}/", 'name': t(c['name']), 'icon': self.icon(c)} for c in clubs],
             'members': len(self.d['members']),
@@ -239,7 +261,7 @@ class Views:
         services = [s for s in self.d['services'] if s['status'] == 'Selected']
         news = []
         for n in self.news_sorted[:3]:
-            news.append({'href': f"/news/{n['slug']}/", 'image': self.img.get(n['image'], 'photo'), 'meta': f"{t(n['category'])} · {date_parts(n['date'])['long']}",
+            news.append({'href': self.href('news', n['slug']), 'image': self.img.get(n['image'], 'photo'), 'meta': f"{t(n['category'])} · {date_parts(n['date'])['long']}",
                          'title': t(n['title']), 'sum': t(first_sentence(n['standfirst'], 140)) if n['standfirst'] else None})
         return {
             'intro': t(HOME['intro']), 'video': yt.group(1) if yt else None, 'stats': stats,
@@ -248,9 +270,9 @@ class Views:
             'leads': [{'href': f"/activities/{a['slug']}/", 'name': t(a['name']), 'icon': self.icon(a), 'kind': 'ELIXIR-UK Club' if 'Club' in a['tags'] else 'ELIXIR Community'} for a in leads],
             'leads_abroad': sum(1 for a in leads if 'Club' not in a['tags']),
             'news': news,
-            'upcoming': [{'href': f"/events/{e['slug']}/", 'day': str(e['start'].day), 'month': f"{e['start']:%b}", 'type': t(e['type']) + (' · Online' if e['format'] == 'online' else ''), 'title': t(e['title'])} for e in self.upcoming[:4]],
+            'upcoming': [{'href': self.href('events', e['slug']), 'day': str(e['start'].day), 'month': f"{e['start']:%b}", 'type': t(e['type']) + (' · Online' if e['format'] == 'online' else ''), 'title': t(e['title'])} for e in self.upcoming[:4]],
             'services_count': len(services),
-            'services': [{'href': f"/services/{s['slug']}/", 'name': t(s['name']), 'logo': self.img.get(s['logo'], 'logo')} for s in services if s['logo']][:15],
+            'services': [{'href': self.href('services', s['slug']), 'name': t(s['name']), 'logo': self.img.get(s['logo'], 'logo')} for s in services if s['logo']][:15],
             'jsonld': {'@context': 'https://schema.org', '@type': 'Organization', 'name': 'ELIXIR-UK', 'url': 'https://elixiruknode.org',
                        'parentOrganization': {'@type': 'Organization', 'name': 'ELIXIR', 'url': 'https://elixir-europe.org'},
                        'member': [{'@type': 'Organization', 'name': plain(m['name'])} for m in self.d['members']]},
@@ -324,7 +346,7 @@ class Views:
         nxt = upcoming[0] if upcoming else None
         call = nxt and nxt['type'] == 'Community Call'
         lead_ids = {p['id'] for p in leads}
-        ev = lambda e: {'href': f"/events/{e['slug']}/", 'date': date_parts(e['start'])['short'], 'title': t(e['title']),
+        ev = lambda e: {'href': self.href('events', e['slug']), 'date': date_parts(e['start'])['short'], 'title': t(e['title']),
                         'meta': fmt_where(e) + (f" · {e['startTime']}" if e['startTime'] else ''), 'recording': bool(e['recording'])}
         return {
             'name': t(r['name']), 'stop': needs_stop(r['name']), 'club': club, 'fellowship': fellowship,
@@ -334,7 +356,7 @@ class Views:
             'join': r['joinLink'] or None,
             'website': r['website'] if r['website'] and 'elixiruknode.org' not in r['website'] else None,
             'icon': self.icon(r),
-            'next': nxt and {'href': f"/events/{nxt['slug']}/", 'label': 'Next call' if call else 'Next event',
+            'next': nxt and {'href': self.href('events', nxt['slug']), 'label': 'Next call' if call else 'Next event',
                              'when': date_parts(nxt['start'])['long'] + (f", {nxt['startTime']}" if nxt['startTime'] else ''),
                              'title': t(nxt['title']), 'go': 'Join in' if call else 'Register'},
             'fellows': [{**self.person(p), 'badge': 'Lead' if p['id'] in lead_ids else None} for p in leads + [o for o in others if o['id'] not in lead_ids]] if fellowship else [],
@@ -388,7 +410,7 @@ class Views:
             'crew': [crew_view(p) for p in crew[:10]], 'crew_count': len(crew),
             'services': self.cards('services', links.get('services', [])),
             'communities': act_cards,
-            'projects': [{'href': f'/projects/{s}/', 'name': t(self.rec['projects'][s]['name']), 'meta': t((self.rec['projects'][s]['tags'] or [None])[0]) or None} for s in links.get('projects', [])],
+            'projects': [{'href': self.href('projects', s), 'name': t(self.rec['projects'][s]['name']), 'meta': t((self.rec['projects'][s]['tags'] or [None])[0]) or None} for s in links.get('projects', [])],
             'events': self.cards('events', [e['slug'] for e in evs]),
             'news': self.cards('news', [n['slug'] for n in stories]),
             'jsonld': {'@context': 'https://schema.org', '@type': 'Organization', 'name': plain(r['name']), 'url': r['website'] or None, 'logo': r['logo'] or None,
@@ -435,7 +457,7 @@ class Views:
 
     def directory_list(self, kind):
         recs = sorted(self.d[kind], key=lambda r: plain(r['name']).lower())
-        href = lambda r: f"/{kind}/{r['slug']}/"
+        href = lambda r: self.href(kind, r['slug'])
         sum_ = lambda r, n: t(r['excerpt'] or first_sentence(r['summary'], n)) or None
         out = {'count': len(recs), 'members': [], 'collaborations': [], 'areas': [], 'project_groups': []}
         if kind == 'members':
@@ -468,7 +490,7 @@ class Views:
             items = sorted([r for r in recs if r['status'] == s['tag']], key=lambda r: plain(r['name']).lower())
             if items:
                 groups.append({'tag': s['tag'], 'id': s['tag'].lower(), 'title': s['title'], 'text': s['text'], 'draft': bool(s.get('draft')), 'items': [{
-                    'href': f"/services/{r['slug']}/", 'name': t(r['name']), 'logo': self.img.get(r['logo'], 'logo'),
+                    'href': self.href('services', r['slug']), 'name': t(r['name']), 'logo': self.img.get(r['logo'], 'logo'),
                     'sum': t(r['excerpt'] or first_sentence(r['summary'], 130)) or None,
                     'labels': ' '.join(slugify(x) for x in r['tags']),
                     'badges': [{'short': x['short'], 'text': x['text']} for x in LABELS_SVC['recognitions'] if x['tag'] in r['tags']]} for r in items]})
@@ -477,6 +499,18 @@ class Views:
             'recognitions': [{'slug': slugify(x['tag']), 'short': x['short'], 'text': x['text'], 'n': sum(1 for r in recs if x['tag'] in r['tags'])} for x in LABELS_SVC['recognitions']],
             'statuses': [{'title': s['title'], 'text': s['text'], 'draft': bool(s.get('draft'))} for s in LABELS_SVC['statuses']],
         }
+
+    def cms_index(self):
+        """What the editor's pickers offer, published on the site as /cms-index.json.
+        People: published, current people only, by number – the same names the People page already shows.
+        Records: every service, member, project … by slug. Nothing here is stored in the repository."""
+        ps = sorted([p for p in self.current if p['wpId']], key=lambda p: surname_key(p['name']))
+        out = {'people': [{'value': str(p['wpId']), 'label': ' – '.join(x for x in [plain(p['name']), plain(p['institution'] or p['role'])] if x)} for p in ps]}
+        for k in KINDS:
+            out[k] = sorted([{'value': r['slug'], 'label': plain(r['name'])} for r in self.d[k]], key=lambda o: o['label'].lower())
+        out['events'] = [{'value': e['slug'], 'label': f"{plain(e['title'])} ({e['start']:%b %Y})"} for e in sorted(self.events, key=lambda e: e['start'], reverse=True)]
+        out['news'] = [{'value': n['slug'], 'label': f"{plain(n['title'])} ({n['date'].year})"} for n in self.news_sorted]
+        return out
 
     def people_index(self):
         order = ['Heads of Node', 'Coordination office', 'Management Committee', 'Steering Committee', 'Scientific Development Group', 'Scientific and Industry Advisory Board']
@@ -501,7 +535,7 @@ class Views:
         tabs = self.tabs('people', p['id'], {'hide': [], 'show': []}, skip=('members',))
         return {
             **self.person(p), 'photo': self.img.get(p['photo'], 'person'),
-            'org': org and {'href': f"/{kind}/{org['slug']}/", 'name': t(org['name']), 'logo': self.img.get(org['logo'], 'logo')},
+            'org': org and {'href': self.href(kind, org['slug']), 'name': t(org['name']), 'logo': self.img.get(org['logo'], 'logo')},
             'links': links, 'governance': p['governance'],
             'leads': [{'href': f"/activities/{a['slug']}/", 'name': t(a['name']), 'icon': self.icon(a)} for a in leads],
             'bio': t(p['bio']) or None, 'tabs': tabs,
@@ -516,7 +550,7 @@ class Views:
         cats = {}
         for n in rest:
             cats[n['category']] = cats.get(n['category'], 0) + 1
-        row = lambda n: {'href': f"/news/{n['slug']}/", 'image': self.img.get(n['image'], 'photo'), 'category': t(n['category']), 'cat': slugify(n['category']),
+        row = lambda n: {'href': self.href('news', n['slug']), 'image': self.img.get(n['image'], 'photo'), 'category': t(n['category']), 'cat': slugify(n['category']),
                          'date': date_parts(n['date'])['long'], 'title': t(n['title']), 'sum': t(n['excerpt'] or first_sentence(n['standfirst'], 150)) or None}
         return {
             'feature': first and {**row(first), 'sum': t(first['excerpt'] or first['standfirst']) or None},
@@ -526,15 +560,15 @@ class Views:
 
     def story(self, n):
         links = self.g.shown('news', n['slug'], n['display'])
-        words = len(plain(n['body']).split())
-        page_url = f"https://elixiruknode.org/news/{n['slug']}/"
+        words = len(all_text(n).split())
+        page_url = f"https://elixiruknode.org{self.href('news', n['slug'])}"
         q = urllib.parse.quote
         acts = set(links.get('activities', []))
         more = [x for x in self.news_sorted if x['slug'] != n['slug'] and acts & set(x['related'].get('activities') or [])][:3]
         if not more:
             more = [x for x in self.news_sorted if x['slug'] != n['slug']][:3]
         return {
-            'date': date_parts(n['date']), 'minutes': max(1, round(words / 220)), 'stop': needs_stop(n['title']), 'standfirst': t(n['standfirst']) or None,
+            'blocks': n['blocks'], 'date': date_parts(n['date']), 'minutes': max(1, round(words / 220)), 'stop': needs_stop(n['title']), 'standfirst': t(n['standfirst']) or None,
             'image': self.img.get(n['image'], 'photo'),
             'share': {'linkedin': f'https://www.linkedin.com/sharing/share-offsite/?url={q(page_url, safe="")}',
                       'bluesky': f'https://bsky.app/intent/compose?text={q(plain(n["title"]) + " " + page_url, safe="")}',
@@ -559,10 +593,10 @@ class Views:
         for e in past:
             if not years or years[-1]['year'] != e['start'].year:
                 years.append({'year': e['start'].year, 'items': []})
-            years[-1]['items'].append({'href': f"/events/{e['slug']}/", 'day': str(e['start'].day), 'month': f"{e['start']:%b}", 'title': t(e['title']),
+            years[-1]['items'].append({'href': self.href('events', e['slug']), 'day': str(e['start'].day), 'month': f"{e['start']:%b}", 'title': t(e['title']),
                                        'type': t(e['type']), 'type_slug': slugify(e['type']), 'where': fmt_where(e), 'recording': bool(e['recording']), 'slides': bool(e['slides'])})
         return {
-            'upcoming': [{'href': f"/events/{e['slug']}/", 'month': f"{e['start']:%b}", 'day': str(e['start'].day), 'weekday': f"{e['start']:%a}",
+            'upcoming': [{'href': self.href('events', e['slug']), 'month': f"{e['start']:%b}", 'day': str(e['start'].day), 'weekday': f"{e['start']:%a}",
                           'type': t(e['type']), 'title': t(e['title']), 'where': fmt_where(e) + (f" · {e['startTime']} UK time" if e['startTime'] else '')} for e in up],
             'past_count': len(past), 'types': [{'name': k, 'slug': slugify(k), 'n': v} for k, v in sorted(types.items(), key=lambda x: -x[1])],
             'years': years,
@@ -601,7 +635,7 @@ class Views:
                     'addressLocality': e['locality'] or None, 'postalCode': e['postcode'] or None, 'addressCountry': e['country'] or 'GB'}}
         also = [x for x in self.upcoming if x['slug'] != e['slug']][:3]
         return {
-            'past': past, 'cancelled': cancelled, 'stop': needs_stop(e['title']), 'image': self.img.get(e['image'], 'photo'),
+            'blocks': e['blocks'], 'past': past, 'cancelled': cancelled, 'stop': needs_stop(e['title']), 'image': self.img.get(e['image'], 'photo'),
             'type': t(e['type']), 'type_slug': slugify(e['type']), 'format_label': formats[e['format']], 'online': e['format'] == 'online', 'hybrid': e['format'] == 'hybrid',
             'month': f"{e['start']:%b}", 'day': str(e['start'].day), 'when': when, 'when_card': when if multi else date_parts(e['start'])['full'],
             'time': time, 'where': t(where) if where else None, 'cost': cost,
@@ -612,11 +646,11 @@ class Views:
             'org': org and {'href': f"/activities/{org['slug']}/", 'name': t(org['name']), 'icon': self.icon(org),
                             'sum': t(first_sentence(org['summary'])) or None, 'go': 'Find out how to join →' if org['joinLink'] else 'About this community →'},
             'tabs': self.tabs('events', e['slug'], e['display'], skip=('people',), heading='Related'),
-            'also': [{'href': f"/events/{x['slug']}/", 'date': date_parts(x['start'])['long'], 'title': t(x['title']), 'type': t(x['type']) + (' · Online' if x['format'] == 'online' else '')} for x in also],
+            'also': [{'href': self.href('events', x['slug']), 'date': date_parts(x['start'])['long'], 'title': t(x['title']), 'type': t(x['type']) + (' · Online' if x['format'] == 'online' else '')} for x in also],
             'description': plain(e['standfirst']) or None,
             'jsonld': {
                 '@context': 'https://schema.org', '@type': 'Event', 'name': plain(e['title']),
-                'description': plain(e['standfirst']) or re.sub(r'\s+', ' ', plain(e['body']))[:300],
+                'description': plain(e['standfirst']) or re.sub(r'\s+', ' ', all_text(e))[:300],
                 'image': [e['image']] if e['image'] else None,
                 'startDate': iso(e['start'], e['startTime']), 'endDate': iso(end_d, e['endTime'] or e['startTime']),
                 'eventStatus': f"https://schema.org/{'EventCancelled' if cancelled else 'EventRescheduled' if e['status'] == 'rescheduled' else 'EventScheduled'}",
@@ -635,11 +669,11 @@ class Views:
                'recognition-badges': 'illustration-isometrics-training-copy-2.svg', 'call-for-services': 'illustration-isometrics-big-data-cloud.svg',
                'how-our-communities-of-practice-work': 'illustration-isometrics-team-rowing.svg'}.get(pg['slug'])
         toc = []
-        for attrs, inner in re.findall(r'<h2([^>]*)>(.*?)</h2>', pg['body'], re.S):
-            text = plain(inner)
-            if not text or 'wp-tabs__print' in attrs:
-                continue
-            m = re.search(r'id="([^"]+)"', attrs)
-            toc.append({'id': m.group(1) if m else slugify(text), 'text': t(text)})
-        return {'art': asset(art), 'legal': pg['slug'] in ('privacy-policy', 'terms-of-use'), 'toc': toc if len(toc) >= 3 else [],
+        sources = [pg['body']] + [b['body'] for b in pg['blocks'] if b['type'] == 'text']
+        for src in sources:
+            for line in re.findall(r'^##\s+(.+?)\s*#*\s*$', src, re.M):
+                text = md_plain(line)
+                if text:
+                    toc.append({'id': slugify(text), 'text': t(text)})   # tools/finish.py gives each h2 this id
+        return {'blocks': pg['blocks'], 'art': asset(art), 'legal': pg['slug'] in ('privacy-policy', 'terms-of-use'), 'toc': toc if len(toc) >= 3 else [],
                 'description': pg['description'] or None, 'jsonld': None}

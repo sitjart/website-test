@@ -21,3 +21,4 @@ node_modules/
 dist/
 .astro/
 __pycache__/
+assets/cms-index.json

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ELIXIR-UK – content editor</title>
+  <script>window.CMS_MANUAL_INIT = true;</script>
+  <script src="https://unpkg.com/decap-cms@^3.6/dist/decap-cms.js"></script>
+  <script src="https://unpkg.com/js-yaml@4/dist/js-yaml.min.js"></script>
+</head>
+<body>
+<script>
+  // Load admin/config.yml, fill the pickers (people, communities, services …) from the list the build
+  // publishes (assets/cms-index.json), then start the editor. Pickers store numbers or slugs, never names.
+  (async () => {
+    const config = jsyaml.load(await (await fetch('config.yml', { cache: 'no-store' })).text());
+    const index = await (await fetch('../assets/cms-index.json', { cache: 'no-store' })).json();
+    const fill = (fields) => (fields || []).forEach((f) => {
+      if (f.options_from) { f.options = index[f.options_from] || []; delete f.options_from; }
+      fill(f.fields);
+      (f.types || []).forEach((t) => fill(t.fields));
+    });
+    config.collections.forEach((c) => fill(c.fields));
+    CMS.registerPreviewStyle('../assets/css/site.css');
+    CMS.init({ config: { ...config, load_config_file: false } });
+  })();
+</script>
+</body>
+</html>

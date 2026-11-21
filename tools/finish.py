@@ -23,7 +23,7 @@ from collections import defaultdict
 from bs4 import BeautifulSoup
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from sitebuild.common import BASEURL, GEN, ROOT, plain, slugify  # noqa: E402
+from sitebuild.common import BASEURL, CONFIG, GEN, ROOT, plain, slugify  # noqa: E402
 
 SITE = ROOT / '_site'
 ATTR = re.compile(r'\b(href|src|poster|action)="(/(?!/)[^"]*)"')
@@ -60,6 +60,29 @@ def main():
 
     subprocess.run([sys.executable, '-m', 'pagefind', '--site', str(SITE)], check=True)
 
+    # Sitemap and robots.txt for search engines (the test site asks not to be indexed at all)
+    root = CONFIG['canonical_root'].rstrip('/')
+    urls = sorted('/' + str(p.relative_to(SITE)).replace('index.html', '') for p in pages
+                  if not p.is_relative_to(SITE / 'pagefind') and p.name == 'index.html' and '/search/' not in '/' + str(p.relative_to(SITE)))
+    (SITE / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                                      + ''.join(f'  <url><loc>{root}{u}</loc></url>\n' for u in urls) + '</urlset>\n')
+    (SITE / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {root}/sitemap.xml\n' if CONFIG.get('indexable')
+                                     else 'User-agent: *\nDisallow: /\n')
+
+    # Every WordPress address must still work, or be listed in _redirects
+    moved = {}
+    for line in (ROOT / '_redirects').read_text().splitlines():
+        parts = line.split()
+        if len(parts) >= 2 and not line.startswith('#'):
+            moved[parts[0]] = parts[1]
+    lost = []
+    for line in (ROOT / 'tools/wordpress-urls.txt').read_text().splitlines():
+        if not line.startswith('/'):
+            continue
+        if target_exists(line) or (line in moved and target_exists(moved[line])):
+            continue
+        lost.append(line)
+
     errors, warnings = defaultdict(set), defaultdict(set)
     leftovers = []
     for p in pages:
@@ -82,7 +105,9 @@ def main():
             bucket = warnings if el.find_parent(attrs={'data-content': True}) else errors
             bucket[url].add(page)
 
-    lines = ['## Checks on the built site', f'- {len(pages)} pages checked']
+    lines = ['## Checks on the built site', f'- {len(pages)} pages checked', f'- {len(urls)} addresses in the sitemap']
+    if lost:
+        lines += ['', f'### {len(lost)} WordPress addresses no longer work – add them to _redirects or restore the page', *[f'- {u}' for u in lost]]
     if leftovers:
         lines += ['', '### Unprocessed template code on these pages', *[f'- {x}' for x in leftovers]]
     if errors:
@@ -96,7 +121,7 @@ def main():
     if os.environ.get('GITHUB_STEP_SUMMARY'):
         with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
             f.write(text)
-    return 1 if errors or leftovers else 0
+    return 1 if errors or leftovers or lost else 0
 
 
 if __name__ == '__main__':

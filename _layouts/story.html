@@ -17,7 +17,7 @@ page_class: pg-story
   {%- if v.image %}<figure class="container a-lead">{% include img.html img=v.image size="large" alt="" cls=nil loading="eager" %}</figure>{% endif %}
   <div class="container a-body">
     <div class="a-main">
-      <div class="prose a-text" data-content>{{ content }}</div>
+      <div class="prose a-text" data-content>{{ content }}{% include blocks.html blocks=v.blocks %}</div>
       <p class="a-share">Share this story:
         <a href="{{ v.share.linkedin }}" rel="noopener">LinkedIn</a>
         <a href="{{ v.share.bluesky }}" rel="noopener">Bluesky</a>

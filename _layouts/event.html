@@ -47,7 +47,7 @@ page_class: pg-event
 
 <section class="container ev-body">
   <div>
-    <div class="prose" data-content>{{ content }}</div>
+    <div class="prose" data-content>{{ content }}{% include blocks.html blocks=v.blocks %}</div>
     <dl class="ev-facts">
       <div><dt>Date</dt><dd>{{ v.when }}</dd></div>
       {%- if v.time %}<div><dt>Time</dt><dd>{{ v.time }}</dd></div>{% endif %}

@@ -15,7 +15,7 @@ page_class: pg-webpage
       <ol>{% for h in v.toc %}<li><a href="#{{ h.id }}">{{ h.text }}</a></li>{% endfor %}</ol>
     </nav>
     {%- endif %}
-    <div class="prose wp-content" data-content>{{ content }}</div>
+    <div class="prose wp-content" data-content>{{ content }}{% include blocks.html blocks=v.blocks %}</div>
   </div>
 </section>
 <script type="module" src="/assets/js/page-webpage.js"></script>

@@ -1,0 +1,37 @@
+---
+title: "FAIR-in-action Bridge: How to communicate and advocate FAIR (Contentathon #3)"
+start: 2026-07-01
+type: "Hackathon"
+online: true
+format: online
+wpId: 25073
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+programme: "https://docs.google.com/document/d/1jiTMGtxPMU_JHEe_32_ty2drT72Ip4InP0TgEAuAlgo/edit?tab=t.8u9k94fr7rt6"
+end: 2026-07-01
+registration: "https://forms.clickup.com/20526645/f/kjdhn-17852/WRBL9B39JQEWP02HAP"
+image: "https://elixiruknode.org/wp-content/uploads/2024/04/illustration-isometrics-mechanisms-like-extending-hand-join.svg"
+related:
+  activities: ["uk-rdm-club"]
+  news: ["fair-in-action-bridge-building-the-practical-tools-rdm-professionals-need"]
+  projects: ["fair-in-action-bridge"]
+---
+
+The cultural barriers to FAIR are just as real as the practical ones. RDM is too often treated as administrative box-ticking rather than as a core part of research excellence.
+
+This is the practical core of the RDM Club’s BioFAIR pathfinder project, turning guidance into ready-to-deliver workshop activities, templates, slide decks and facilitator scripts that RDM professionals can take to their own institutions. This contentathon tackles the challenge head-on by co-creating Playbook 2: How to communicate and advocate FAIR.
+
+[Find out more about the project](/project/fair-in-action-bridge/).
+
+We'll be drafting the materials RDM professionals need to start the right conversations: FAIR games for engaging undergraduates, master's and PhD students; scripted talking points for researchers, PIs and decision-makers; and advocacy frameworks that work in real institutional settings.
+
+The day will combine hands-on creation with short interviews capturing real-world experience of FAIR advocacy. As with our 28 May session, the day is structured in sections – join the parts most relevant to you (agenda to be shared very soon)
+
+### What you'll do
+
+- Co-design FAIR games and engagement activities with acknowledgement of contributions in an open repository
+- Draft talking points and advocacy scripts for different audiences
+- Share what's worked (and hasn't) in your own context
+- Help shape Playbook v1 of How to communicate and advocate FAIR

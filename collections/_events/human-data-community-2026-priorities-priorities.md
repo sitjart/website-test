@@ -1,0 +1,32 @@
+---
+title: "Human Data Community – 2026 priorities, partnerships and funding"
+start: 2026-01-21
+type: "Community Call"
+online: true
+format: online
+wpId: 24387
+cost: 0
+currency: "GBP"
+status: scheduled
+country: "UK"
+startTime: "11:30"
+endTime: "12:30"
+venue: "Online"
+image: "https://elixiruknode.org/wp-content/uploads/2024/03/banner-connections-multiple.webp"
+related:
+  activities: ["uk-human-data-community"]
+---
+
+The January Human Data Community call will kick off our 2026 programme of monthly meetings. This session will focus on **planning, priorities, and strategic alignment** for the year ahead, providing a space for open discussion and coordination across our UK community.
+
+This planning and strategy session will focus on three core topics:
+
+- **Partnering with HDR UK to form a joint community**. Discussion on forming a joint human and health data technology community and exploring areas of mutual interest and collaboration.
+- **Proposal for an ELIXIR All Hands Meeting (AHM) workshop**. Initial ideas for a community-led workshop, including scope, objectives, and potential contributions.
+- **ELIXIR Europe 2027–2028 funding scheme – Expressions of Interest**. Early discussion of the upcoming funding scheme of ELIXIR for the Human Data and Translational Research priority area, with a focus on community coordination and shaping potential Expressions of Interest.
+
+### Who should attend?
+
+- Members of the UK Human Data Community
+- Contributors to human and health data technologies, standards and infrastructure who are interested in joining the community activities
+- Anyone interested in shaping the community’s direction and priorities for 2026

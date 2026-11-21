@@ -1,0 +1,7 @@
+# Old addresses that moved, one per line: old new 301
+# Read by Cloudflare Pages (up to 2,000 lines). tools/finish.py checks every WordPress address
+# (tools/wordpress-urls.txt) either still works or is listed here.
+/news-and-stories/                               /news/            301
+/type-of-opportunity/service-call/               /call-for-services/  301
+/type-of-opportunity/external-call/              /opportunities-past/ 301
+/type-of-opportunity/internal-call-members-only/ /opportunities-past/ 301

@@ -1,0 +1,160 @@
+# Decap CMS: what editors can change, and the form for each. Opens at /admin/.
+# Every save is a draft on its own branch with a pull request; Xènia or Joe review it on the
+# Workflow board and publish. Records (services, members, people …) are edited in Baserow, not here.
+#
+# The pickers marked "options_from" are filled in when the editor opens, from /assets/cms-index.json,
+# which the build publishes: people by number (published, current profiles only), records by slug.
+
+backend:
+  name: github
+  repo: sitjart/website-test
+  branch: main
+  base_url: https://REPLACE-WITH-YOUR-LOGIN-HELPER.workers.dev   # see admin/README.md
+  squash_merges: true
+publish_mode: editorial_workflow
+local_backend: true            # working on your own computer with "npx decap-server": no login needed
+
+site_url: https://sitjart.github.io/website-test
+display_url: https://sitjart.github.io/website-test
+logo_url: https://sitjart.github.io/website-test/assets/images/elixir-uk-logo.svg
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: news
+    label: News and stories
+    label_singular: Story
+    folder: collections/_news
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} – {{categories}} – {{date}}"
+    sortable_fields: [date, title]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, format: YYYY-MM-DD, date_format: YYYY-MM-DD, time_format: false }
+      - { label: Type, name: categories, widget: select, options: [News, Blog, Articles], default: News, hint: "Also sets the address: /news/2026/…, /blog/2026/… or /articles/2026/…" }
+      - { label: Standfirst, name: standfirst, widget: text, hint: "One or two sentences under the title" }
+      - { label: Card text, name: excerpt, widget: text, required: false, hint: "Optional – the standfirst is used otherwise" }
+      - { label: Lead image, name: image, widget: image, required: false }
+      - label: Linked records
+        name: related
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+          - { label: People, name: people, widget: select, multiple: true, required: false, options: [""], options_from: people }
+          - { label: Communities, name: activities, widget: select, multiple: true, required: false, options: [""], options_from: activities }
+          - { label: Services, name: services, widget: select, multiple: true, required: false, options: [""], options_from: services }
+          - { label: Projects, name: projects, widget: select, multiple: true, required: false, options: [""], options_from: projects }
+          - { label: Member organisations, name: members, widget: select, multiple: true, required: false, options: [""], options_from: members, hint: "Not needed if one of their people is tagged – unless the story is about the organisation (below)" }
+          - { label: Collaborators, name: collaborations, widget: select, multiple: true, required: false, options: [""], options_from: collaborations }
+          - { label: Events, name: events, widget: select, multiple: true, required: false, options: [""], options_from: events }
+          - { label: Thematic areas, name: area, widget: select, multiple: true, required: false, options: [""], options_from: area }
+      - label: The story is about these organisations
+        name: about
+        widget: object
+        collapsed: true
+        required: false
+        hint: "Kept even when one of their people is tagged"
+        fields:
+          - { label: Member organisations, name: members, widget: select, multiple: true, required: false, options: [""], options_from: members }
+      - label: Sections
+        name: blocks
+        widget: list
+        required: false
+        hint: "Only for stories that need an accordion or tabs. Otherwise write in Text below."
+        types: &blocks
+          - label: Text
+            name: text
+            widget: object
+            summary: "{{fields.body | truncate(60)}}"
+            fields: [{ label: Text, name: body, widget: markdown }]
+          - label: Accordion
+            name: accordion
+            widget: object
+            fields:
+              - { label: Items, name: items, widget: list, summary: "{{fields.title}}", fields: [{ label: Title, name: title, widget: string }, { label: Text, name: body, widget: markdown }] }
+          - label: Tabs
+            name: tabs
+            widget: object
+            fields:
+              - { label: Tabs, name: items, widget: list, summary: "{{fields.title}}", fields: [{ label: Tab name, name: title, widget: string }, { label: Text, name: body, widget: markdown }] }
+      - { label: Text, name: body, widget: markdown, required: false }
+      - { label: WordPress id, name: wpId, widget: hidden, required: false }
+      - { label: Display, name: display, widget: hidden, required: false }
+
+  - name: events
+    label: Events
+    label_singular: Event
+    folder: collections/_events
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} – {{type}} – {{start}}"
+    sortable_fields: [start, title]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Start date, name: start, widget: datetime, format: YYYY-MM-DD, date_format: YYYY-MM-DD, time_format: false }
+      - { label: End date, name: end, widget: datetime, format: YYYY-MM-DD, date_format: YYYY-MM-DD, time_format: false, required: false, hint: "Only for events over several days" }
+      - { label: Start time, name: startTime, widget: string, required: false, pattern: ['^([01]\d|2[0-3]):[0-5]\d$', "24-hour UK time, e.g. 14:00"] }
+      - { label: End time, name: endTime, widget: string, required: false, pattern: ['^([01]\d|2[0-3]):[0-5]\d$', "24-hour UK time, e.g. 15:30"] }
+      - { label: Type, name: type, widget: select, options: [Community Call, Workshop, Webinar, Conference, Short course, Hackathon, Meeting], hint: "Community Calls of a Club show 'Join the Club' as the way to take part" }
+      - { label: Format, name: format, widget: select, options: [{ label: Online, value: online }, { label: In person, value: in-person }, { label: Hybrid, value: hybrid }], default: online }
+      - { label: Status, name: status, widget: select, options: [scheduled, rescheduled, cancelled], default: scheduled }
+      - { label: Standfirst, name: standfirst, widget: text, required: false }
+      - { label: Registration or joining link, name: registration, widget: string, required: false }
+      - { label: Speakers, name: speakerIds, widget: select, multiple: true, required: false, options: [""], options_from: people }
+      - { label: Venue, name: venue, widget: string, required: false }
+      - { label: Street, name: street, widget: string, required: false }
+      - { label: Town or city, name: locality, widget: string, required: false }
+      - { label: Postcode, name: postcode, widget: string, required: false }
+      - { label: Country, name: country, widget: string, required: false, default: UK }
+      - { label: Cost in pounds, name: cost, widget: number, value_type: int, default: 0, hint: "0 for free" }
+      - { label: Programme link, name: programme, widget: string, required: false }
+      - { label: Recording link, name: recording, widget: string, required: false }
+      - { label: Slides link, name: slides, widget: string, required: false }
+      - { label: Banner image, name: image, widget: image, required: false }
+      - label: Linked records
+        name: related
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+          - { label: Communities (the first is shown as the organiser), name: activities, widget: select, multiple: true, required: false, options: [""], options_from: activities }
+          - { label: People, name: people, widget: select, multiple: true, required: false, options: [""], options_from: people }
+          - { label: Projects, name: projects, widget: select, multiple: true, required: false, options: [""], options_from: projects }
+          - { label: Services, name: services, widget: select, multiple: true, required: false, options: [""], options_from: services }
+          - { label: Member organisations, name: members, widget: select, multiple: true, required: false, options: [""], options_from: members }
+          - { label: Collaborators, name: collaborations, widget: select, multiple: true, required: false, options: [""], options_from: collaborations }
+          - { label: Stories, name: news, widget: select, multiple: true, required: false, options: [""], options_from: news }
+      - label: The event is about these organisations
+        name: about
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+          - { label: Member organisations, name: members, widget: select, multiple: true, required: false, options: [""], options_from: members }
+      - { label: Sections, name: blocks, widget: list, required: false, hint: "Only for events that need an accordion or tabs (e.g. a programme by day)", types: *blocks }
+      - { label: Description, name: body, widget: markdown, required: false }
+      - { label: WordPress id, name: wpId, widget: hidden, required: false }
+      - { label: Online, name: online, widget: hidden, required: false }
+      - { label: Currency, name: currency, widget: hidden, default: GBP }
+      - { label: Display, name: display, widget: hidden, required: false }
+
+  - name: webpages
+    label: Pages
+    label_singular: Page
+    folder: collections/_webpages
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Introduction under the title, name: description, widget: text, required: false }
+      - { label: Sections, name: blocks, widget: list, required: false, hint: "Only for pages that need an accordion or tabs", types: *blocks }
+      - { label: Text, name: body, widget: markdown, required: false }
+      - { label: Address, name: permalink, widget: hidden, required: false }
