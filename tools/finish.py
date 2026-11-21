@@ -65,7 +65,10 @@ def main():
         if re.search(r'Liquid (syntax )?error|\{\{|\{%', soup.get_text()):
             leftovers.append(page)
         for el in soup.select('a[href], img[src], link[href], script[src]'):
-            url = el.get('href') or el.get('src')
+            url = (el.get('href') if el.name in ('a', 'link') else el.get('src')) or ''
+            if url.strip() == '':
+                (warnings if el.find_parent(attrs={'data-content': True}) else errors)['(empty link)'].add(page)
+                continue
             if not url.startswith('/') or url.startswith('//') or url.startswith(f'{BASEURL}/pagefind/') or url.startswith('/pagefind/'):
                 continue
             if target_exists(url):
