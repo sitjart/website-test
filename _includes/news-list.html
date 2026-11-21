@@ -1,33 +1,33 @@
 {%- comment -%} News & stories: newest story as a feature, then a card grid with type filters and "Show more". l: list from views.news_list {%- endcomment -%}
-{%- assign l = include.l -%}
+{%- assign _nl = include.l -%}
 <section class="section">
   <div class="container">
-    {%- if l.feature %}
-    {%- assign f = l.feature %}
-    <a class="feature" href="{{ f.href }}">
-      <span class="feature__media tile">{% if f.image %}{% include img.html img=f.image size="large" alt="" cls="ph-img" loading="eager" %}{% endif %}<span class="ph-slide"></span></span>
+    {%- if _nl.feature %}
+    {%- assign _nl_f = _nl.feature %}
+    <a class="feature" href="{{ _nl_f.href }}">
+      <span class="feature__media tile">{% if _nl_f.image %}{% include img.html img=_nl_f.image size="large" alt="" cls="ph-img" loading="eager" %}{% endif %}<span class="ph-slide"></span></span>
       <span class="feature__body">
-        <span class="card__meta">Latest · {{ f.category }} · {{ f.date }}</span>
-        <span class="feature__title">{{ f.title }}</span>
-        {%- if f.sum %}<span class="feature__sum">{{ f.sum }}</span>{% endif %}
+        <span class="card__meta">Latest · {{ _nl_f.category }} · {{ _nl_f.date }}</span>
+        <span class="feature__title">{{ _nl_f.title }}</span>
+        {%- if _nl_f.sum %}<span class="feature__sum">{{ _nl_f.sum }}</span>{% endif %}
         <span class="more-link">Read the story</span>
       </span>
     </a>
     {%- endif %}
-    {%- if l.cats.size > 0 %}
+    {%- if _nl.cats.size > 0 %}
     <div class="filters" role="group" aria-label="Filter by type">
-      <button type="button" class="chip is-active" data-cat="" aria-pressed="true">All <span>{{ l.count }}</span></button>
-      {%- for c in l.cats %}<button type="button" class="chip" data-cat="{{ c.slug }}" aria-pressed="false">{{ c.name }} <span>{{ c.n }}</span></button>{% endfor %}
+      <button type="button" class="chip is-active" data-cat="" aria-pressed="true">All <span>{{ _nl.count }}</span></button>
+      {%- for _nl_c in _nl.cats %}<button type="button" class="chip" data-cat="{{ _nl_c.slug }}" aria-pressed="false">{{ _nl_c.name }} <span>{{ _nl_c.n }}</span></button>{% endfor %}
     </div>
     {%- endif %}
-    <ul class="ngrid" data-page="{{ l.page }}">
-      {%- for n in l.items %}
-      <li data-cat="{{ n.cat }}"{% if forloop.index > l.page %} hidden{% endif %}>
-        <a class="ncard" href="{{ n.href }}">
-          <span class="ncard__media">{% if n.image %}{% include img.html img=n.image size="small" alt="" cls=nil loading="lazy" %}{% else %}<span class="ncard__ph" aria-hidden="true"></span>{% endif %}</span>
-          <span class="card__meta">{{ n.category }} · {{ n.date }}</span>
-          <span class="ncard__title">{{ n.title }}</span>
-          {%- if n.sum %}<span class="ncard__sum">{{ n.sum }}</span>{% endif %}
+    <ul class="ngrid" data-page="{{ _nl.page }}">
+      {%- for _nl_n in _nl.items %}
+      <li data-cat="{{ _nl_n.cat }}"{% if forloop.index > _nl.page %} hidden{% endif %}>
+        <a class="ncard" href="{{ _nl_n.href }}">
+          <span class="ncard__media">{% if _nl_n.image %}{% include img.html img=_nl_n.image size="small" alt="" cls=nil loading="lazy" %}{% else %}<span class="ncard__ph" aria-hidden="true"></span>{% endif %}</span>
+          <span class="card__meta">{{ _nl_n.category }} · {{ _nl_n.date }}</span>
+          <span class="ncard__title">{{ _nl_n.title }}</span>
+          {%- if _nl_n.sum %}<span class="ncard__sum">{{ _nl_n.sum }}</span>{% endif %}
         </a>
       </li>
       {%- endfor %}

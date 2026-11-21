@@ -3,7 +3,7 @@
   feature (next events, latest stories, Clubs, members map). On small screens the menu becomes accordions.
   Menu items: _data/navigation.json. Live features: tools/sitebuild/views.py (header).
 {%- endcomment -%}
-{%- assign h = site.data.gen.site.header -%}
+{%- assign _hd = site.data.gen.site.header -%}
 <header class="site-header{% if page.overlay_header %} site-header--overlay{% endif %}" data-header>
   <div class="container site-header__inner">
     <a class="site-header__logo" href="/"><img src="/assets/images/elixir-uk-logo.svg" alt="ELIXIR United Kingdom – home" width="112" height="38"></a>
@@ -16,81 +16,81 @@
     </button>
     <nav id="primary-nav" class="site-nav" aria-label="Main">
       <ul class="site-nav__list">
-        {%- for item in h.items %}
-        {%- assign insec = false -%}
-        {%- for href in item.section_hrefs %}{% assign n = href | size %}{% assign head = page.url | slice: 0, n %}{% if head == href %}{% assign insec = true %}{% endif %}{% endfor -%}
-        <li class="site-nav__item{% if item.cta %} is-cta{% endif %}{% if insec %} is-section{% endif %}{% if item.mega %} has-mega{% endif %}">
-          {%- if item.mega %}
-            {%- unless item.mega.has_columns %}<a class="site-nav__top site-nav__mobile-link" href="{{ item.href }}">{{ item.label }}</a>{% endunless %}
-            <button type="button" class="site-nav__top{% unless item.mega.has_columns %} site-nav__desktop-only{% endunless %}" aria-expanded="false" aria-controls="mega-{{ item.i }}" data-mega-btn>
-              {{ item.label }}
+        {%- for _hd_item in _hd.items %}
+        {%- assign _hd_insec = false -%}
+        {%- for _hd_href in _hd_item.section_hrefs %}{% assign _hd_n = _hd_href | size %}{% assign _hd_head = page.url | slice: 0, _hd_n %}{% if _hd_head == _hd_href %}{% assign _hd_insec = true %}{% endif %}{% endfor -%}
+        <li class="site-nav__item{% if _hd_item.cta %} is-cta{% endif %}{% if _hd_insec %} is-section{% endif %}{% if _hd_item.mega %} has-mega{% endif %}">
+          {%- if _hd_item.mega %}
+            {%- unless _hd_item.mega.has_columns %}<a class="site-nav__top site-nav__mobile-link" href="{{ _hd_item.href }}">{{ _hd_item.label }}</a>{% endunless %}
+            <button type="button" class="site-nav__top{% unless _hd_item.mega.has_columns %} site-nav__desktop-only{% endunless %}" aria-expanded="false" aria-controls="mega-{{ _hd_item.i }}" data-mega-btn>
+              {{ _hd_item.label }}
               <svg class="chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" /></svg>
             </button>
-            <div class="mega" id="mega-{{ item.i }}" data-mega>
+            <div class="mega" id="mega-{{ _hd_item.i }}" data-mega>
               <div class="container mega__grid">
                 <div class="mega__intro">
-                  <p class="mega__title">{{ item.label }}<span class="stop">.</span></p>
-                  <p>{{ item.mega.intro }}</p>
-                  <a class="more-link" href="{{ item.mega.cta.href }}">{{ item.mega.cta.label }}</a>
+                  <p class="mega__title">{{ _hd_item.label }}<span class="stop">.</span></p>
+                  <p>{{ _hd_item.mega.intro }}</p>
+                  <a class="more-link" href="{{ _hd_item.mega.cta.href }}">{{ _hd_item.mega.cta.label }}</a>
                 </div>
-                {%- for col in item.mega.columns %}
+                {%- for _hd_col in _hd_item.mega.columns %}
                 <div class="mega__col">
-                  <p class="mega__heading">{{ col.heading }}</p>
+                  <p class="mega__heading">{{ _hd_col.heading }}</p>
                   <ul>
-                    {%- for l in col.links %}
-                    <li><a href="{{ l.href }}"{% if page.url == l.href %} aria-current="page"{% endif %}>
-                      <span class="mega__link">{{ l.label }}</span>
-                      {%- if l.desc %}<span class="mega__desc">{{ l.desc }}</span>{% endif %}
+                    {%- for _hd_l in _hd_col.links %}
+                    <li><a href="{{ _hd_l.href }}"{% if page.url == _hd_l.href %} aria-current="page"{% endif %}>
+                      <span class="mega__link">{{ _hd_l.label }}</span>
+                      {%- if _hd_l.desc %}<span class="mega__desc">{{ _hd_l.desc }}</span>{% endif %}
                     </a></li>
                     {%- endfor %}
                   </ul>
                 </div>
                 {%- endfor %}
-                {%- if item.mega.feature == "events" %}
+                {%- if _hd_item.mega.feature == "events" %}
                 <div class="mega__feature mega__feature--wide">
                   <p class="mega__heading">Coming up</p>
                   <ul class="mega__events">
-                    {%- for e in h.next_events %}
-                    <li><a href="{{ e.href }}">
-                      <span class="mega__date"><b>{{ e.day }}</b>{{ e.month }}</span>
-                      <span><span class="mega__desc">{{ e.type }} · {{ e.format }}</span><span class="mega__link">{{ e.title }}</span></span>
+                    {%- for _hd_e in _hd.next_events %}
+                    <li><a href="{{ _hd_e.href }}">
+                      <span class="mega__date"><b>{{ _hd_e.day }}</b>{{ _hd_e.month }}</span>
+                      <span><span class="mega__desc">{{ _hd_e.type }} · {{ _hd_e.format }}</span><span class="mega__link">{{ _hd_e.title }}</span></span>
                     </a></li>
                     {%- endfor %}
                   </ul>
                 </div>
                 {%- endif %}
-                {%- if item.mega.feature == "news" %}
+                {%- if _hd_item.mega.feature == "news" %}
                 <div class="mega__feature mega__feature--news">
-                  {%- for n in h.latest %}
-                  <a class="mega__story" href="{{ n.href }}">
-                    <span class="mega__img">{% if n.image %}{% include img.html img=n.image size="small" alt="" cls=nil loading="lazy" %}{% endif %}</span>
-                    <span class="mega__desc">{{ n.category }} · {{ n.date }}</span>
-                    <span class="mega__link">{{ n.title }}</span>
+                  {%- for _hd_n in _hd.latest %}
+                  <a class="mega__story" href="{{ _hd_n.href }}">
+                    <span class="mega__img">{% if _hd_n.image %}{% include img.html img=_hd_n.image size="small" alt="" cls=nil loading="lazy" %}{% endif %}</span>
+                    <span class="mega__desc">{{ _hd_n.category }} · {{ _hd_n.date }}</span>
+                    <span class="mega__link">{{ _hd_n.title }}</span>
                   </a>
                   {%- endfor %}
                 </div>
                 {%- endif %}
-                {%- if item.mega.feature == "clubs" %}
+                {%- if _hd_item.mega.feature == "clubs" %}
                 <div class="mega__feature mega__clubs">
                   <p class="mega__heading">ELIXIR-UK Clubs</p>
                   <ul>
-                    {%- for c in h.clubs %}
-                    <li><a href="{{ c.href }}">{% include icon-disc.html icon=c.icon lazy=true %}<span class="mega__link">{{ c.name }}</span></a></li>
+                    {%- for _hd_c in _hd.clubs %}
+                    <li><a href="{{ _hd_c.href }}">{% include icon-disc.html icon=_hd_c.icon lazy=true %}<span class="mega__link">{{ _hd_c.name }}</span></a></li>
                     {%- endfor %}
                   </ul>
                 </div>
                 {%- endif %}
-                {%- if item.mega.feature == "members" %}
+                {%- if _hd_item.mega.feature == "members" %}
                 <a class="mega__feature mega__map" href="/members/">
-                  {%- capture mapid %}map-mega-{{ item.i }}{% endcapture %}
-                  {% include ukmap.html id=mapid theme="dark" interactive=false filter=false highlight=nil label="Map of ELIXIR-UK members" cls=nil %}
-                  <span><b>{{ h.members }}</b> member organisations across the UK</span>
+                  {%- capture _hd_mapid %}map-mega-{{ _hd_item.i }}{% endcapture %}
+                  {% include ukmap.html id=_hd_mapid theme="dark" interactive=false filter=false highlight=nil label="Map of ELIXIR-UK members" cls=nil %}
+                  <span><b>{{ _hd.members }}</b> member organisations across the UK</span>
                 </a>
                 {%- endif %}
               </div>
             </div>
           {%- else %}
-            <a class="site-nav__top" href="{{ item.href }}"{% if page.url == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a>
+            <a class="site-nav__top" href="{{ _hd_item.href }}"{% if page.url == _hd_item.href %} aria-current="page"{% endif %}>{{ _hd_item.label }}</a>
           {%- endif %}
         </li>
         {%- endfor %}

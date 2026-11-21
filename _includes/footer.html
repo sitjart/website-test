@@ -1,41 +1,41 @@
 {%- comment -%} Footer: _data/footer.json and _data/site.json {%- endcomment -%}
-{%- assign footer = site.data.footer -%}
+{%- assign _footer = site.data.footer -%}
 <footer class="site-footer">
   <div class="container site-footer__main">
     <div class="site-footer__brand">
       <div data-reveal="fade-up-blur">
         <img class="site-footer__logo" src="/assets/images/elixir-uk-logo.svg" alt="ELIXIR United Kingdom" width="220" height="74">
-        <p class="site-footer__tagline">{{ footer.tagline }}</p>
+        <p class="site-footer__tagline">{{ _footer.tagline }}</p>
       </div>
-      <a class="site-footer__cta" href="{{ footer.cta.href }}" data-reveal="fade-right">
-        <strong>{{ footer.cta.heading }}</strong>
-        <span class="site-footer__cta-text">{{ footer.cta.text }}</span>
+      <a class="site-footer__cta" href="{{ _footer.cta.href }}" data-reveal="fade-right">
+        <strong>{{ _footer.cta.heading }}</strong>
+        <span class="site-footer__cta-text">{{ _footer.cta.text }}</span>
         <span class="site-footer__cta-link">
-          {{ footer.cta.label }}
+          {{ _footer.cta.label }}
           <svg viewBox="0 0 896 1024" width="14" height="16" aria-hidden="true"><path fill="currentColor" d="M436.202 76.202l-39.598 39.598c-9.372 9.372-9.372 24.568 0 33.942l310.26 310.26h-682.864c-13.254 0-24 10.746-24 24v56c0 13.254 10.746 24 24 24h682.864l-310.26 310.26c-9.372 9.372-9.372 24.568 0 33.942l39.598 39.598c9.372 9.372 24.568 9.372 33.942 0l418.828-418.828c9.372-9.372 9.372-24.568 0-33.942l-418.828-418.83c-9.374-9.372-24.57-9.372-33.942 0z" /></svg>
         </span>
       </a>
     </div>
     <div class="site-footer__nav">
       <div class="site-footer__cols" data-reveal="fade-down-blur">
-        {%- for col in footer.columns %}
+        {%- for _ft_col in _footer.columns %}
         <ul>
-          <li class="site-footer__heading">{{ col.heading }}</li>
-          {%- for l in col.links %}<li><a href="{{ l.href }}">{{ l.label }}</a></li>{% endfor %}
+          <li class="site-footer__heading">{{ _ft_col.heading }}</li>
+          {%- for _ft_l in _ft_col.links %}<li><a href="{{ _ft_l.href }}">{{ _ft_l.label }}</a></li>{% endfor %}
         </ul>
         {%- endfor %}
       </div>
       <div class="site-footer__funding" data-reveal="fade-up">
-        <img src="{{ footer.funding.logo }}" alt="Biotechnology and Biological Sciences Research Council" width="150" height="40" loading="lazy">
-        <p>{{ footer.funding.text }}</p>
+        <img src="{{ _footer.funding.logo }}" alt="Biotechnology and Biological Sciences Research Council" width="150" height="40" loading="lazy">
+        <p>{{ _footer.funding.text }}</p>
       </div>
     </div>
   </div>
   <div class="site-footer__bar">
     <div class="container site-footer__bar-inner">
       <ul class="site-footer__social">
-        {%- for s in site.data.site.social %}
-        <li><a href="{{ s.href }}" rel="noopener noreferrer" aria-label="{{ s.label }}" target="_blank"><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="{{ site.data.icons[s.label] }}" /></svg></a></li>
+        {%- for _ft_s in site.data.site.social %}
+        <li><a href="{{ _ft_s.href }}" rel="noopener noreferrer" aria-label="{{ _ft_s.label }}" target="_blank"><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="{{ site.data.icons[_ft_s.label] }}" /></svg></a></li>
         {%- endfor %}
       </ul>
       <p>Copyright © {{ site.time | date: "%Y" }} | {{ site.data.site.copyright }}</p>

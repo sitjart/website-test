@@ -3,16 +3,16 @@
   projects as a scannable list in three groups, thematic areas as illustrated cards.
   kind; title; intro or nil; art or nil; count_label
 {%- endcomment -%}
-{%- assign l = site.data.gen.pages[include.kind] -%}
-{% include page-header.html title=include.title intro=include.intro section=nil href=nil art=include.art count=l.count count_label=include.count_label size="lg" %}
+{%- assign _dl = site.data.gen.pages[include.kind] -%}
+{% include page-header.html title=include.title intro=include.intro section=nil href=nil art=include.art count=_dl.count count_label=include.count_label size="lg" %}
 <section class="section">
   <div class="container">
     {%- if include.kind == "collaborations" %}
     <ul class="cards cards--logo">
-      {%- for r in l.collaborations %}
-      <li><a class="card lcard" href="{{ r.href }}">
-        <span class="lcard__logo">{% if r.logo %}{% include img.html img=r.logo size="small" alt="" cls=nil loading="lazy" %}{% else %}<b>{{ r.letter }}</b>{% endif %}</span>
-        <span class="lcard__body"><span class="card__title">{{ r.name }}</span>{% if r.sum %}<span class="lcard__sum">{{ r.sum }}</span>{% endif %}</span>
+      {%- for _dl_r in _dl.collaborations %}
+      <li><a class="card lcard" href="{{ _dl_r.href }}">
+        <span class="lcard__logo">{% if _dl_r.logo %}{% include img.html img=_dl_r.logo size="small" alt="" cls=nil loading="lazy" %}{% else %}<b>{{ _dl_r.letter }}</b>{% endif %}</span>
+        <span class="lcard__body"><span class="card__title">{{ _dl_r.name }}</span>{% if _dl_r.sum %}<span class="lcard__sum">{{ _dl_r.sum }}</span>{% endif %}</span>
       </a></li>
       {%- endfor %}
     </ul>
@@ -29,11 +29,11 @@
       <div>
         <p class="members__filter" hidden data-member-filter><span></span> <button type="button" class="linkish" data-member-clear>Show all members</button></p>
         <ul class="members__list">
-          {%- for r in l.members %}
-          <li data-slug="{{ r.slug }}"><a class="card mcard" href="{{ r.href }}">
-            <span class="mcard__logo">{% if r.logo %}{% include img.html img=r.logo size="small" alt="" cls=nil loading="lazy" %}{% else %}<b>{{ r.letter }}</b>{% endif %}</span>
-            <span class="card__title">{{ r.name }}</span>
-            <span class="mcard__meta">{{ r.meta }}</span>
+          {%- for _dl_r in _dl.members %}
+          <li data-slug="{{ _dl_r.slug }}"><a class="card mcard" href="{{ _dl_r.href }}">
+            <span class="mcard__logo">{% if _dl_r.logo %}{% include img.html img=_dl_r.logo size="small" alt="" cls=nil loading="lazy" %}{% else %}<b>{{ _dl_r.letter }}</b>{% endif %}</span>
+            <span class="card__title">{{ _dl_r.name }}</span>
+            <span class="mcard__meta">{{ _dl_r.meta }}</span>
           </a></li>
           {%- endfor %}
         </ul>
@@ -42,16 +42,16 @@
     {%- endif %}
 
     {%- if include.kind == "projects" %}
-    <nav class="jump" aria-label="Project groups">{% for g in l.project_groups %}<a href="#{{ g.id }}">{{ g.title }} <span>{{ g.items.size }}</span></a>{% endfor %}</nav>
-    {%- for g in l.project_groups %}
-    <section class="group" id="{{ g.id }}" aria-labelledby="h-{{ g.id }}">
-      <header class="group__head"><h2 id="h-{{ g.id }}">{{ g.title }} <span>{{ g.items.size }}</span></h2><p>{{ g.text }}</p></header>
+    <nav class="jump" aria-label="Project groups">{% for _dl_g in _dl.project_groups %}<a href="#{{ _dl_g.id }}">{{ _dl_g.title }} <span>{{ _dl_g.items.size }}</span></a>{% endfor %}</nav>
+    {%- for _dl_g in _dl.project_groups %}
+    <section class="group" id="{{ _dl_g.id }}" aria-labelledby="h-{{ _dl_g.id }}">
+      <header class="group__head"><h2 id="h-{{ _dl_g.id }}">{{ _dl_g.title }} <span>{{ _dl_g.items.size }}</span></h2><p>{{ _dl_g.text }}</p></header>
       <ul class="plist">
-        {%- for r in g.items %}
-        <li><a href="{{ r.href }}" class="plist__row">
-          <span class="plist__years">{{ r.years }}</span>
-          <span class="plist__main"><span class="plist__name">{{ r.name }}</span>{% if r.sum %}<span class="plist__sum">{{ r.sum }}</span>{% endif %}</span>
-          <span class="plist__tags">{% for x in r.tags %}<span>{{ x }}</span>{% endfor %}</span>
+        {%- for _dl_r in _dl_g.items %}
+        <li><a href="{{ _dl_r.href }}" class="plist__row">
+          <span class="plist__years">{{ _dl_r.years }}</span>
+          <span class="plist__main"><span class="plist__name">{{ _dl_r.name }}</span>{% if _dl_r.sum %}<span class="plist__sum">{{ _dl_r.sum }}</span>{% endif %}</span>
+          <span class="plist__tags">{% for _dl_x in _dl_r.tags %}<span>{{ _dl_x }}</span>{% endfor %}</span>
         </a></li>
         {%- endfor %}
       </ul>
@@ -61,10 +61,10 @@
 
     {%- if include.kind == "area" %}
     <ul class="cards cards--area">
-      {%- for r in l.areas %}
-      <li><a class="card acard" href="{{ r.href }}">
-        <span class="acard__art">{% if r.art %}<img src="{{ r.art }}" alt="" loading="lazy">{% endif %}</span>
-        <span class="acard__body"><span class="card__title">{{ r.name }}</span>{% if r.sum %}<span class="lcard__sum">{{ r.sum }}</span>{% endif %}</span>
+      {%- for _dl_r in _dl.areas %}
+      <li><a class="card acard" href="{{ _dl_r.href }}">
+        <span class="acard__art">{% if _dl_r.art %}<img src="{{ _dl_r.art }}" alt="" loading="lazy">{% endif %}</span>
+        <span class="acard__body"><span class="card__title">{{ _dl_r.name }}</span>{% if _dl_r.sum %}<span class="lcard__sum">{{ _dl_r.sum }}</span>{% endif %}</span>
       </a></li>
       {%- endfor %}
     </ul>

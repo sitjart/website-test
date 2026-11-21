@@ -3,31 +3,31 @@
   id: unique on the page; theme: "dark" or "light"; interactive: true/false; filter: true on the members page (a city filters the list);
   highlight: a member slug to mark, or nil; label: text for screen readers; cls: extra class or nil
 {%- endcomment -%}
-{%- assign map = site.data.gen.site.map -%}
-{%- assign hi = nil -%}{%- if include.highlight %}{% assign hi = map.city_of[include.highlight] %}{% endif -%}
-<figure class="ukmap ukmap--{{ include.theme }}{% if include.cls %} {{ include.cls }}{% endif %}{% if hi %} has-hi{% endif %}" id="{{ include.id }}"{% if include.filter %} data-filter=""{% endif %}>
+{%- assign _map = site.data.gen.site.map -%}
+{%- assign _map_hi = nil -%}{%- if include.highlight %}{% assign _map_hi = _map.city_of[include.highlight] %}{% endif -%}
+<figure class="ukmap ukmap--{{ include.theme }}{% if include.cls %} {{ include.cls }}{% endif %}{% if _map_hi %} has-hi{% endif %}" id="{{ include.id }}"{% if include.filter %} data-filter=""{% endif %}>
   <svg viewBox="0 0 633 1049" role="{% if include.interactive %}group{% else %}img{% endif %}" aria-labelledby="{{ include.id }}-t">
     <title id="{{ include.id }}-t">{{ include.label }}</title>
-    <path class="ukmap__land" d="{{ map.outline }}" />
-    {%- for c in map.cities %}
+    <path class="ukmap__land" d="{{ _map.outline }}" />
+    {%- for _map_c in _map.cities %}
     {%- if include.interactive %}
-    <a href="{% if c.single_href %}{{ c.single_href }}{% else %}#{{ include.id }}-{{ c.i }}{% endif %}" class="ukmap__dot{% if c.city == hi %} is-hi{% endif %}" data-city="{{ c.city }}" data-i="{{ c.i }}" aria-label="{{ c.label }}" style="--i:{{ c.i }}">
-      <circle cx="{{ c.x }}" cy="{{ c.y }}" r="{{ c.hit }}" class="ukmap__hit" />
-      {%- if c.city == hi %}<circle cx="{{ c.x }}" cy="{{ c.y }}" r="{{ c.halo }}" class="ukmap__halo" />{% endif %}
-      <circle cx="{{ c.x }}" cy="{{ c.y }}" r="{{ c.r }}" class="ukmap__pt" />
-      {%- if c.n > 1 %}<text x="{{ c.x }}" y="{{ c.ty }}" text-anchor="middle">{{ c.n }}</text>{% endif %}
+    <a href="{% if _map_c.single_href %}{{ _map_c.single_href }}{% else %}#{{ include.id }}-{{ _map_c.i }}{% endif %}" class="ukmap__dot{% if _map_c.city == _map_hi %} is-hi{% endif %}" data-city="{{ _map_c.city }}" data-i="{{ _map_c.i }}" aria-label="{{ _map_c.label }}" style="--i:{{ _map_c.i }}">
+      <circle cx="{{ _map_c.x }}" cy="{{ _map_c.y }}" r="{{ _map_c.hit }}" class="ukmap__hit" />
+      {%- if _map_c.city == _map_hi %}<circle cx="{{ _map_c.x }}" cy="{{ _map_c.y }}" r="{{ _map_c.halo }}" class="ukmap__halo" />{% endif %}
+      <circle cx="{{ _map_c.x }}" cy="{{ _map_c.y }}" r="{{ _map_c.r }}" class="ukmap__pt" />
+      {%- if _map_c.n > 1 %}<text x="{{ _map_c.x }}" y="{{ _map_c.ty }}" text-anchor="middle">{{ _map_c.n }}</text>{% endif %}
     </a>
     {%- else %}
-    <g class="ukmap__dot{% if c.city == hi %} is-hi{% endif %}" style="--i:{{ c.i }}">
-      {%- if c.city == hi %}<circle cx="{{ c.x }}" cy="{{ c.y }}" r="{{ c.halo }}" class="ukmap__halo" />{% endif %}
-      <circle cx="{{ c.x }}" cy="{{ c.y }}" r="{{ c.r }}" class="ukmap__pt" />
+    <g class="ukmap__dot{% if _map_c.city == _map_hi %} is-hi{% endif %}" style="--i:{{ _map_c.i }}">
+      {%- if _map_c.city == _map_hi %}<circle cx="{{ _map_c.x }}" cy="{{ _map_c.y }}" r="{{ _map_c.halo }}" class="ukmap__halo" />{% endif %}
+      <circle cx="{{ _map_c.x }}" cy="{{ _map_c.y }}" r="{{ _map_c.r }}" class="ukmap__pt" />
     </g>
     {%- endif %}
     {%- endfor %}
   </svg>
   {%- if include.interactive %}
   <div class="ukmap__pop" role="dialog" aria-live="polite" hidden></div>
-  <template class="ukmap__data">{{ map.popup_data | jsonify }}</template>
+  <template class="ukmap__data">{{ _map.popup_data | jsonify }}</template>
   {%- endif %}
 </figure>
 {%- if include.interactive %}<script type="module" src="/assets/js/ukmap.js"></script>{% endif %}

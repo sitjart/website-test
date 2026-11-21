@@ -1,37 +1,37 @@
 {%- comment -%} Events: upcoming as date cards; past as a compact list by year, filterable by type. l: list from views.event_list {%- endcomment -%}
-{%- assign l = include.l -%}
-{%- if l.upcoming.size > 0 %}
+{%- assign _el = include.l -%}
+{%- if _el.upcoming.size > 0 %}
 <section class="section">
   <div class="container">
     <div class="section-head"><h2 class="section-title">Upcoming<span class="stop">.</span></h2></div>
     <ul class="up">
-      {%- for e in l.upcoming %}
-      <li><a class="card upcard" href="{{ e.href }}">
-        <span class="upcard__date"><span>{{ e.month }}</span><b>{{ e.day }}</b><span>{{ e.weekday }}</span></span>
-        <span class="upcard__body"><span class="card__meta">{{ e.type }}</span><span class="card__title">{{ e.title }}</span><span class="upcard__where">{{ e.where }}</span></span>
+      {%- for _el_e in _el.upcoming %}
+      <li><a class="card upcard" href="{{ _el_e.href }}">
+        <span class="upcard__date"><span>{{ _el_e.month }}</span><b>{{ _el_e.day }}</b><span>{{ _el_e.weekday }}</span></span>
+        <span class="upcard__body"><span class="card__meta">{{ _el_e.type }}</span><span class="card__title">{{ _el_e.title }}</span><span class="upcard__where">{{ _el_e.where }}</span></span>
       </a></li>
       {%- endfor %}
     </ul>
   </div>
 </section>
 {%- endif %}
-{%- if l.past_count > 0 %}
+{%- if _el.past_count > 0 %}
 <section class="section section--grey">
   <div class="container">
-    <div class="section-head"><div><h2 class="section-title">Past events<span class="stop">.</span></h2><p>{{ l.past_count }} events, with recordings and slides where we have them.</p></div></div>
+    <div class="section-head"><div><h2 class="section-title">Past events<span class="stop">.</span></h2><p>{{ _el.past_count }} events, with recordings and slides where we have them.</p></div></div>
     <div class="filters" role="group" aria-label="Filter by type">
-      <button type="button" class="chip is-active" data-type="" aria-pressed="true">All <span>{{ l.past_count }}</span></button>
-      {%- for t in l.types %}<button type="button" class="chip" data-type="{{ t.slug }}" aria-pressed="false">{{ t.name }} <span>{{ t.n }}</span></button>{% endfor %}
+      <button type="button" class="chip is-active" data-type="" aria-pressed="true">All <span>{{ _el.past_count }}</span></button>
+      {%- for _el_t in _el.types %}<button type="button" class="chip" data-type="{{ _el_t.slug }}" aria-pressed="false">{{ _el_t.name }} <span>{{ _el_t.n }}</span></button>{% endfor %}
     </div>
-    {%- for y in l.years %}
+    {%- for _el_y in _el.years %}
     <section class="year" data-year>
-      <h3 class="year__h">{{ y.year }}</h3>
+      <h3 class="year__h">{{ _el_y.year }}</h3>
       <ul class="past">
-        {%- for e in y.items %}
-        <li data-type="{{ e.type_slug }}"><a href="{{ e.href }}">
-          <span class="past__date"><b>{{ e.day }}</b>{{ e.month }}</span>
-          <span class="past__main"><span class="past__title">{{ e.title }}</span><span class="past__meta">{{ e.type }} · {{ e.where }}</span></span>
-          <span class="past__extra">{% if e.recording %}<span class="rec">▶ Recording</span>{% endif %}{% if e.slides %}<span class="rec">Slides</span>{% endif %}</span>
+        {%- for _el_e in _el_y.items %}
+        <li data-type="{{ _el_e.type_slug }}"><a href="{{ _el_e.href }}">
+          <span class="past__date"><b>{{ _el_e.day }}</b>{{ _el_e.month }}</span>
+          <span class="past__main"><span class="past__title">{{ _el_e.title }}</span><span class="past__meta">{{ _el_e.type }} · {{ _el_e.where }}</span></span>
+          <span class="past__extra">{% if _el_e.recording %}<span class="rec">▶ Recording</span>{% endif %}{% if _el_e.slides %}<span class="rec">Slides</span>{% endif %}</span>
         </a></li>
         {%- endfor %}
       </ul>

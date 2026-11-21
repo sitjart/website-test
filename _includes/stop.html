@@ -1,3 +1,3 @@
 {%- comment -%} The orange full stop after a display title, unless it already ends in punctuation. {%- endcomment -%}
-{%- assign last = include.title | strip | slice: -1 -%}
-{%- unless last == "." or last == "!" or last == "?" or last == "…" %}<span class="stop">.</span>{% endunless -%}
+{%- assign _stop_last = include.title | strip | slice: -1 -%}
+{%- unless _stop_last == "." or _stop_last == "!" or _stop_last == "?" or _stop_last == "…" %}<span class="stop">.</span>{% endunless -%}

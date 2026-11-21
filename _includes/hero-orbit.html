@@ -3,20 +3,20 @@
   Middle ring: ELIXIR-UK Clubs and the Communities the UK co-leads. Outer ring: the other Communities and Focus Groups.
   Rings turn slowly; motion pauses on hover or focus and is off for people who ask for reduced motion.
 {%- endcomment -%}
-{%- assign orbit = site.data.gen.site.orbit -%}
+{%- assign _orbit = site.data.gen.site.orbit -%}
 <div class="orbit" data-orbit>
   <svg class="orbit__lines" viewBox="0 0 100 100" aria-hidden="true">
-    {%- for ring in orbit.rings %}<circle cx="50" cy="50" r="{{ ring.r }}" class="l{{ ring.k }}" />{% endfor %}
-    {%- for ring in orbit.rings %}{% for n in ring.nodes %}<circle class="orbit__node" cx="{{ n.cx }}" cy="{{ n.cy }}" r="{{ n.r }}" />{% endfor %}{% endfor %}
+    {%- for _ring in _orbit.rings %}<circle cx="50" cy="50" r="{{ _ring.r }}" class="l{{ _ring.k }}" />{% endfor %}
+    {%- for _ring in _orbit.rings %}{% for _ring_n in _ring.nodes %}<circle class="orbit__node" cx="{{ _ring_n.cx }}" cy="{{ _ring_n.cy }}" r="{{ _ring_n.r }}" />{% endfor %}{% endfor %}
   </svg>
   <div class="orbit__core" aria-hidden="true">
-    <svg viewBox="56 0 120 126"><path d="{{ orbit.mark }}" fill="#f47d21" /></svg>
+    <svg viewBox="56 0 120 126"><path d="{{ _orbit.mark }}" fill="#f47d21" /></svg>
   </div>
-  {%- for ring in orbit.rings %}
-  <ul class="orbit__ring" style="--dur:{{ ring.dur }}s; --dir:{{ ring.dir }}" aria-label="{{ ring.label }}">
-    {%- for a in ring.items %}
-    <li style="--deg:{{ a.deg }}deg; --r:{{ ring.r }}; --s:{{ ring.size }}">
-      <a href="{{ a.href }}" class="orbit__item" title="{{ a.name }}" aria-label="{{ a.name }}"><img src="{{ a.icon }}" alt="" loading="eager" decoding="async"></a>
+  {%- for _ring in _orbit.rings %}
+  <ul class="orbit__ring" style="--dur:{{ _ring.dur }}s; --dir:{{ _ring.dir }}" aria-label="{{ _ring.label }}">
+    {%- for _ring_a in _ring.items %}
+    <li style="--deg:{{ _ring_a.deg }}deg; --r:{{ _ring.r }}; --s:{{ _ring.size }}">
+      <a href="{{ _ring_a.href }}" class="orbit__item" title="{{ _ring_a.name }}" aria-label="{{ _ring_a.name }}"><img src="{{ _ring_a.icon }}" alt="" loading="eager" decoding="async"></a>
     </li>
     {%- endfor %}
   </ul>
