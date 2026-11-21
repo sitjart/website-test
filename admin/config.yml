@@ -198,4 +198,4 @@ collections:
               - { label: Reference, name: reference, widget: string, required: false, default: "" }
               - { label: Value, name: value, widget: string, hint: "e.g. £582,025" }
               - { label: Note shown under the title, name: note, widget: string, required: false, default: "" }
-              - { label: To check (never shown), name: check, widget: string, required: false, default: "" }
+              - { label: Baserow row ids (never shown), name: baserow, widget: string, required: false, default: "" }

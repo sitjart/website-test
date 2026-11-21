@@ -38,49 +38,49 @@ ways:
 
 grants_title: Coordination office grants
 grants_intro: >-
-  Grants to the Earlham Institute as Lead Institute for ELIXIR-UK, newest first. The first award
-  was a joint award to several institutions.
+  BBSRC grants that have funded ELIXIR-UK's coordination, newest first. Figures from UKRI Gateway to
+  Research.
 
 grants:
   - years: "2025–2030"
-    title: ELIXIR-UK – deepening member engagement
+    title: ELIXIR-UK coordination office
     funder: BBSRC
-    reference: BB/C001384/1
-    value: about £2 million
-    note: Five-year grant.
-    check: title, dates and value
+    reference: UKRI1384
+    value: £2,378,911
+    note: Lead research organisation Earlham Institute.
+    baserow: "136"
   - years: "2022–2024"
     title: ELIXIR-UK Coordination Office
     funder: BBSRC
     reference: BB/X011100/1
     value: £582,025
     note: ""
-    check: ""
-  - years: "2022"
-    title: ELIXIR-UK Coordination Office – bridging award
-    funder: BBSRC
-    reference: ""
-    value: £47,300
-    note: ""
-    check: reference
-  - years: "2017–2022"
-    title: ELIXIR-UK Coordination Office
-    funder: BBSRC, MRC and NERC
-    reference: BB/P017193/1
-    value: £767,420
-    note: ""
-    check: dates; UKRI's page gives £752,000
-  - years: "2017"
+    baserow: "137"
+  - years: "2017–2019"
     title: "European Partnering Award: ELIXIR – Broadening UK Participation"
     funder: BBSRC
     reference: BB/P026001/1
     value: £20,216
     note: ""
-    check: year
-  - years: "2014–2017"
+    baserow: "140"
+  - years: "2016–2022"
+    title: ELIXIR-UK Coordination Office
+    funder: BBSRC
+    reference: BB/P017193/1
+    value: £767,420
+    note: ""
+    baserow: "138"
+  - years: "2016–2017"
+    title: ELIXIR-UK Coordination Office – institute project
+    funder: BBSRC
+    reference: BBS/E/T/000GP081
+    value: £5,285
+    note: ""
+    baserow: "139"
+  - years: "2014–2018"
     title: Delivering ELIXIR-UK
-    funder: BBSRC, MRC and NERC
-    reference: BB/L005026/1, BB/L005042/1, BB/L005069/1, BB/L005077/1
-    value: £1.3 million in total
-    note: Joint award to set up the Node's training coordination role.
-    check: dates and partner list (Edinburgh, Birmingham, Manchester, Oxford, TGAC, EMBL-EBI?)
+    funder: BBSRC
+    reference: BB/L005026/1, BB/L005042/1, BB/L005050/1, BB/L005069/1, BB/L005069/2, BB/L005077/1, BBS/E/T/000GP021
+    value: £1,880,764 in total
+    note: Seven linked grants to the Earlham Institute (then TGAC), EMBL-EBI and the universities of Birmingham, Edinburgh, Manchester and Oxford, which set up the Node and its training coordination role.
+    baserow: "141–147"
