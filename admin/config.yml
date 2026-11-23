@@ -164,7 +164,7 @@ collections:
     editor: { preview: false }
     files:
       - name: funding
-        label: How we are funded (projects page)
+        label: How we are funded (About page and Projects note)
         file: _data/funding.yml
         format: yml
         fields:
@@ -184,6 +184,7 @@ collections:
                 fields:
                   - { label: Label, name: label, widget: string }
                   - { label: Address, name: href, widget: string, hint: "e.g. /about/new-members/" }
+          - { label: Note at the top of the Projects page, name: projects_note, widget: text }
           - { label: Grants heading, name: grants_title, widget: string }
           - { label: Grants introduction, name: grants_intro, widget: text }
           - label: Grants

@@ -24,7 +24,7 @@ The templates contain no logic beyond "print this, repeat that". Anything that n
 | Services, members, projects, communities, collaborators, thematic areas | `_data/directory/*.json` | Baserow (later) |
 | People | fetched at build time; **never stored in this repository** | Baserow / WordPress |
 | Menus, footer, home page text, service labels | `_data/*.json` | GitHub |
-| How we are funded and the grants list (projects page) | `_data/funding.yml` | the CMS (Site settings) or GitHub |
+| How we are funded and the grants list (About page; short note on Projects) | `_data/funding.yml` | the CMS (Site settings) or GitHub |
 | Page templates | `_layouts/`, `_includes/`, `index.html`, `about.html`, `*/index.html` | GitHub |
 | Styles | `_sass/` – one file per component, and one per page (applies only to that page) | GitHub |
 | Scripts | `assets/js/` – one file per component or page | GitHub |

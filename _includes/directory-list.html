@@ -42,7 +42,8 @@
     {%- endif %}
 
     {%- if include.kind == "projects" %}
-    <nav class="jump" aria-label="Project groups">{% for _dl_g in _dl.project_groups %}<a href="#{{ _dl_g.id }}">{{ _dl_g.title }} <span>{{ _dl_g.items.size }}</span></a>{% endfor %}<a href="#funding">How we are funded</a></nav>
+    <aside class="wp-note projects-note"><p>{{ site.data.funding.projects_note | smartify }}</p><p><a href="/about/#funding">How we are funded</a> · <a href="https://elixiruknode.org/opportunities/">Find opportunities</a></p></aside>
+    <nav class="jump" aria-label="Project groups">{% for _dl_g in _dl.project_groups %}<a href="#{{ _dl_g.id }}">{{ _dl_g.title }} <span>{{ _dl_g.items.size }}</span></a>{% endfor %}</nav>
     {%- for _dl_g in _dl.project_groups %}
     <section class="group" id="{{ _dl_g.id }}" aria-labelledby="h-{{ _dl_g.id }}">
       <header class="group__head"><h2 id="h-{{ _dl_g.id }}">{{ _dl_g.title }} <span>{{ _dl_g.items.size }}</span></h2><p>{{ _dl_g.text }}</p></header>

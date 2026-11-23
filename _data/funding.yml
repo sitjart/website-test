@@ -1,4 +1,4 @@
-# How ELIXIR-UK is funded – shown at the foot of /projects/.
+# How ELIXIR-UK is funded – shown on /about/ (#funding). projects_note is shown at the top of /projects/.
 # Text fields are Markdown. Edit in /admin/ (Site settings › Funding) or here.
 # Every grant needs all seven keys; leave a value empty ("") rather than deleting the key.
 # "check" is never shown on the site: it lists values that come from public sources (UKRI, BBSRC, papers) and need checking
@@ -6,9 +6,9 @@
 
 title: How we are funded
 lede: >-
-  ELIXIR-UK is funded to connect UK research organisations with ELIXIR and to channel its
-  resources, projects and opportunities to them. The Node does not fund members' services or
-  research: those are funded through projects.
+  ELIXIR-UK is funded to connect UK research organisations with ELIXIR and to channel funding,
+  projects and opportunities from the UK and Europe to them. The Node does not fund members' services or
+  research: we help members win the funding that does.
 
 ways:
   - title: The UK's subscription to ELIXIR
@@ -24,17 +24,22 @@ ways:
   - title: The Coordination office
     body: >-
       BBSRC funds the ELIXIR-UK Coordination office at the Earlham Institute. The grant pays for
-      coordination and engagement: bringing UK people, services and training into ELIXIR, and bringing
-      ELIXIR's resources, funding calls and collaborations back to member organisations through visits,
-      bursaries, Clubs and the Ambassadors Programme.
-    link: null
-  - title: Projects
+      coordination and engagement: bringing UK people, services and training into ELIXIR, and channelling
+      funding calls, projects and collaborations from the UK and Europe to member organisations through
+      opportunities, visits, bursaries, Clubs and the Ambassadors Programme.
+    link: { label: Find opportunities, href: "https://elixiruknode.org/opportunities/" }
+  - title: Our members' projects
     body: >-
       Members are funded for their work in ELIXIR through projects: ELIXIR projects paid for from
       ELIXIR's own budget, such as Commissioned Services; European projects that ELIXIR coordinates or
-      takes part in; and national projects from UK funders or the members themselves. They are listed
-      above.
-    link: null
+      takes part in; and national projects from UK funders or the members themselves. We help members
+      find and join them. These projects fund members' work, not the Coordination office.
+    link: { label: See the projects, href: /projects/ }
+
+projects_note: >-
+  These projects fund our members' work in ELIXIR, Europe and the UK. None of them funds the ELIXIR-UK
+  Coordination office, which BBSRC funds directly. The Node helps members win this funding by channelling
+  calls and opportunities from the UK and Europe.
 
 grants_title: Coordination office grants
 grants_intro: >-

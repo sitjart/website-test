@@ -41,3 +41,8 @@
   .funding__years { font-size: var(--fs-xs); color: var(--orange-text); }
   .funding__value, .funding__ref { white-space: normal; max-width: none; }
 }
+
+// Note at the top of /projects/ pointing to /about/#funding
+.projects-note { margin: 0 0 var(--s6); max-width: 52rem; }
+.projects-note p { margin: 0 0 var(--s2); }
+.projects-note p:last-child { margin: 0; font-weight: 700; }
